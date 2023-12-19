@@ -102,6 +102,38 @@ def pq_ajout_piece(i_colonne: int, i_joueur: int,
     # Retourner un tuple des coordonnées du nouveau jeton
     return i_boucle - 1, i_colonne
 
+def pq_victoire_colonne(i_ligne: int, i_max_ligne: int, i_colonne: int, i_joueur: int, npa_grille: np.array, i_nb_victoire: int) -> bool:
+    if (i_max_ligne)  >= (i_nb_victoire + i_ligne):
+        compteur = 1
+        while (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne] == i_joueur):
+            compteur += 1
+        return compteur >= i_nb_victoire
+    else:
+        return False
+
+def pq_victoire_diago(i_ligne: int, i_max_ligne: int, i_colonne: int, i_max_colonne: int, i_joueur: int, npa_grille: np.array, i_nb_victoire: int) -> bool:
+        compteur = 1
+        while (i_ligne + compteur < i_max_ligne) and (i_colonne - compteur >= 0) and (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne - compteur] == i_joueur):
+            compteur += 1
+        if compteur >= i_nb_victoire:
+            return True
+        compteur = 1
+        while (i_ligne - compteur >= 0 ) and (i_colonne - compteur >= 0) and (compteur < i_nb_victoire) and (npa_grille[i_ligne - compteur][i_colonne - compteur] == i_joueur):
+            compteur += 1
+        if compteur >= i_nb_victoire:
+            return True
+        compteur = 1
+        while (i_ligne + compteur < i_max_ligne) and (i_colonne + compteur < i_max_colonne) and (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne + compteur] == i_joueur):
+            compteur += 1
+        if compteur >= i_nb_victoire:
+            return True
+        compteur = 1
+        while (i_ligne + compteur >= 0) and (i_colonne + compteur < i_max_colonne) and (compteur < i_nb_victoire) and (npa_grille[i_ligne - compteur][i_colonne + compteur] == i_joueur):
+            compteur += 1
+        if compteur >= i_nb_victoire:
+            return True
+        return False
+
 
 def pq_victoire_ligne(i_ligne: int, i_colonne: int, i_joueur: int,
                       npa_grille: np.array, i_nb_victoire: int) -> bool:
