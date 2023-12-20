@@ -7,36 +7,8 @@ la gestion du jeu.
 @see test_puissanceQuatre.py
 """
 import random
-
 import numpy as np
-
-
-def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
-    """! L'initiateur de la grille
-
-    **Variables :**
-    * npa_grille : np.array
-
-    **Préconditions :**
-    * i_max_ligne > 1
-    * i_max_colonne > 1
-
-    **Postconditions :**
-    * npa_grille initialisé
-
-    @param i_max_ligne: Le nombre de lignes de la grille
-    @param i_max_colonne: Le nombre de colonnes de la grille
-
-    @return La grille créée
-    """
-    assert i_max_ligne > 1 and i_max_colonne > 1, \
-        "La grille doit avoir au moins 2 lignes et 2 colonnes"
-    # Création de la grille
-    npa_grille = np.zeros((i_max_ligne, i_max_colonne))
-    # Changement du type contenu dans la grille par "int"
-    npa_grille.astype(int)
-    # Retourne la grille
-    return npa_grille
+import grid as gr
 
 
 def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
@@ -199,6 +171,7 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
     * i_max_ligne : Entier, Nombre de lignes dans la grille
+    * b_victoire : Booléen, Indique si le joueur a gagné ou non
 
     **Préconditions :**
     * npa_grille initialisé
@@ -212,15 +185,18 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
     """
+    # Initialisation du booléen de victoire à faux
+    b_victoire = False
+    # Récupération du nombre de lignes de la grille
     i_max_ligne = npa_grille.shape[0]
+    # Si le nombre de lignes restantes est suffisant pour gagner
     if i_max_ligne >= (i_nb_victoire + i_ligne):
         i_compteur = 1
         while (i_compteur < i_nb_victoire) and (
                 npa_grille[i_ligne + i_compteur][i_colonne] == i_joueur):
             i_compteur += 1
-        return i_compteur >= i_nb_victoire
-    else:
-        return False
+        b_victoire = i_compteur >= i_nb_victoire
+    return b_victoire
 
 
 def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
@@ -286,46 +262,6 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     if i_compteur >= i_nb_victoire:
         return True
     return False
-
-
-def pq_print_grille(npa_grille: np.array):
-    """! Affiche la grille
-
-    **Variables :**
-    * char_joueur : Le caractère du jeton du joueur
-    * char_bot : Le caractère du jeton du bot
-    * char_vide : Le caractère représentant une case vide
-    * i_max_ligne : Le nombre de lignes de la grille
-    * i_max_colonne : Le nombre de colonnes de la grille
-    * i_boucle_colonne : Le compteur de boucle pour les colonnes de la grille
-    * i_boucle_ligne : Le compteur de boucle pour les lignes de la grille
-
-    @param npa_grille: La grille à afficher
-    """
-    # Le caractère du jeton du joueur
-    char_joueur = 'X'
-    # Le caractère du jeton du bot
-    char_bot = '0'
-    # Le caractère représentant une case vide
-    char_vide = ' '
-    # Récupère la taille de la grille
-    i_max_ligne, i_max_colonne = npa_grille.shape
-
-    # Pour chaque colonne du tableau
-    for i_boucle_ligne in range(i_max_ligne):
-        # Pour chaque case de cette colonne
-        for i_boucle_colonne in range(i_max_colonne):
-            if npa_grille[i_boucle_ligne, i_boucle_colonne] == 1:
-                # Affiche charJoueur si le joueur est le joueur humain
-                print(f"|\033[91m{char_joueur}\033[00m", end="")
-            elif npa_grille[i_boucle_ligne, i_boucle_colonne] == 2:
-                # Affiche charBot si le joueur est le bot
-                print(f"|\033[93m{char_bot}\033[00m", end="")
-            else:
-                # Affiche charVide si la case est vide
-                print(f"|\033[00m{char_vide}\033[00m", end="")
-        # Retourne à la ligne et affiche la barre de séparation des lignes
-        print("|\n" + (2 * i_max_colonne + 1) * "-")
 
 
 def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
@@ -405,7 +341,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     # Initialisation d'une liste pour l'undo et le redo
     t_undo_redo = []
     # Initialisation de la grille de jeu
-    npa_grille = pq_init_grille(i_nb_lignes, i_nb_colonnes)
+    npa_grille = gr.pq_init_grille(i_nb_lignes, i_nb_colonnes)
     # Initialisation de la colonne où le joueur veut jouer
     i_colonne_joueur = 0
     # Initialisation de la ligne où le joueur veut jouer
@@ -423,7 +359,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         # pouvoir vérifier que la colonne est valide
         i_colonne_joueur = -1
         # Affichage de la grille
-        pq_print_grille(npa_grille)
+        gr.pq_print_grille(npa_grille)
         # Tant que la colonne n'est pas valide
         while (not (0 <= i_colonne_joueur < i_nb_colonnes)
                and pq_verif_colonne(i_colonne_joueur, npa_grille)):
@@ -437,7 +373,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
                         1, i_nb_jeton_victoire)):
             # Affichage de la grille
-            pq_print_grille(npa_grille)
+            gr.pq_print_grille(npa_grille)
             # Affichage du message de victoire
             print("Le joueur 1 a gagné !")
             # Passage du booléen de victoire à vrai
@@ -453,7 +389,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
             if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
                             2, i_nb_jeton_victoire)):
                 # Affichage de la grille
-                pq_print_grille(npa_grille)
+                gr.pq_print_grille(npa_grille)
                 # Affichage du message de victoire
                 print("Le joueur 2 a gagné !")
                 # Passage du booléen de victoire à vrai
