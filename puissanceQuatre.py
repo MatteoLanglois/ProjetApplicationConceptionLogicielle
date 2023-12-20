@@ -317,13 +317,13 @@ def pq_print_grille(npa_grille: np.array):
         for i_boucle_colonne in range(i_max_colonne):
             if npa_grille[i_boucle_ligne, i_boucle_colonne] == 1:
                 # Affiche charJoueur si le joueur est le joueur humain
-                print(f"|{char_joueur}", end="")
+                print(f"|\033[91m{char_joueur}\033[00m", end="")
             elif npa_grille[i_boucle_ligne, i_boucle_colonne] == 2:
                 # Affiche charBot si le joueur est le bot
-                print(f"|{char_bot}", end="")
+                print(f"|\033[93m{char_bot}\033[00m", end="")
             else:
                 # Affiche charVide si la case est vide
-                print(f"|{char_vide}", end="")
+                print(f"|\033[00m{char_vide}\033[00m", end="")
         # Retourne à la ligne et affiche la barre de séparation des lignes
         print("|\n" + (2 * i_max_colonne + 1) * "-")
 
