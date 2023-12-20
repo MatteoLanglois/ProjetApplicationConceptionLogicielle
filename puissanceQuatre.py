@@ -6,6 +6,7 @@ la gestion du jeu.
 
 @see test_puissanceQuatre.py
 """
+import random
 
 import numpy as np
 
@@ -310,9 +311,6 @@ def pq_print_grille(npa_grille: np.array):
     # Récupère la taille de la grille
     i_max_ligne, i_max_colonne = npa_grille.shape
 
-    # Inverse la matrice pour afficher la grille dans le bon sens
-    npa_grille = np.flip(npa_grille, 0)
-
     # Pour chaque colonne du tableau
     for i_boucle_ligne in range(i_max_ligne):
         # Pour chaque case de cette colonne
@@ -330,5 +328,104 @@ def pq_print_grille(npa_grille: np.array):
         print("|\n" + (2 * i_max_colonne + 1) * "-")
 
 
+def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
+    """! Vérification de si la partie est finie ou non.
+
+    La vérification se fait avec deux critères : Si la grille est pleine ou non,
+    ainsi que si le joueur peut encore utiliser son bonus.
+
+    **Variables :**
+    * i_nb_lignes : Le nombre de lignes de la grille
+    * i_nb_colonnes : Le nombre de colonnes de la grille
+    * b_tableau_plein : Booléen, True si la grille est pleine, False sinon
+    * i_boucle_ligne : Entier, Compteur de boucle pour les lignes
+    * i_boucle_colonne : Entier, Compteur de boucle pour les colonnes
+
+    **Préconditions :**
+    * npa_grille initialisé
+    * 2 ≤ i_nb_lignes
+    * 2 ≤ i_nb_colonnes
+
+    @param npa_grille: La grille du puissance 4
+    @param b_bonus_utilise: Un booléen permettant de savoir si le joueur a
+        utilisé son bonus ou non.
+    @return True si la partie est finie, False sinon
+    """
+    i_nb_lignes, i_nb_colonnes = npa_grille.shape
+    b_tableau_plein = True
+    i_boucle_ligne = 0
+    i_boucle_colonne = 0
+
+    while i_boucle_ligne <= i_nb_lignes and b_tableau_plein:
+        while i_boucle_colonne <= i_nb_colonnes and b_tableau_plein:
+            if npa_grille[i_boucle_ligne, i_boucle_colonne] == 0:
+                b_tableau_plein = False
+            i_boucle_colonne += 1
+        i_boucle_ligne += 1
+
+    return b_tableau_plein or b_bonus_utilise
+
+
+def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
+                      i_nb_jeton_victoire: int = 4):
+    """! Gère le déroulement d'une partie de puissance 4
+
+    Méthode gérant le déroulement d'une partie de puissance 4 en ligne de
+    commande.
+
+    **Variables :**
+    * b_victoire : Booléen, True si un joueur a gagné, False sinon
+    * b_bonus_utilise : Booléen, True si le joueur a utilisé son bonus, False
+        sinon
+    * t_undo_redo : Liste, contient les grilles pour l'undo et le redo
+    * npa_grille : np.array, la grille de jeu
+    * i_colonne_joueur : Entier, la colonne où le joueur veut jouer
+    * i_ligne_joueur : Entier, la ligne où le joueur veut jouer
+
+    @param i_nb_lignes: Taille de la grille en lignes
+    @param i_nb_colonnes: Taille de la grille en colonnes
+    @param i_nb_jeton_victoire:  Nombre de jetons à aligner pour gagner
+    """
+    b_victoire = False
+    b_bonus_utilise = False
+    t_undo_redo = []
+    npa_grille = pq_init_grille(i_nb_lignes, i_nb_colonnes)
+    i_colonne_joueur = 0
+    i_ligne_joueur = 0
+
+    print("Bienvenue dans le puissance 4 !")
+    print("Pour jouer, entrez le numéro de la colonne où vous voulez jouer.")
+    print("Vos jetons sont représentés par des X, ceux du bot par des 0.")
+    # WIP
+    print("Pour utiliser votre bonus, entrez 0. (WIP)")
+
+    while not pq_partie_finie(npa_grille, b_bonus_utilise) and not b_victoire:
+        i_colonne_joueur = -1
+        pq_print_grille(npa_grille)
+        while (not (0 <= i_colonne_joueur < i_nb_colonnes)
+               and pq_verif_colonne(i_colonne_joueur, npa_grille)):
+            i_colonne_joueur = int(input("\nDans quelle colonne voulez vous "
+                                         "jouer ? ")) - 1
+
+        i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 1)
+
+        if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
+                        1, i_nb_jeton_victoire)):
+            pq_print_grille(npa_grille)
+            print("Le joueur 1 a gagné !")
+            b_victoire = True
+        else:
+            # Appel du minMax (random pour commencer
+            i_colonne_joueur = random.randint(0, i_nb_colonnes)
+            i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
+
+            if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
+                            2, i_nb_jeton_victoire)):
+                pq_print_grille(npa_grille)
+                print("Le joueur 2 a gagné !")
+                b_victoire = True
+        t_undo_redo.append(npa_grille)
+
+
 if __name__ == '__main__':
-    pass
+    pq_gestion_partie(6, 7, 4)

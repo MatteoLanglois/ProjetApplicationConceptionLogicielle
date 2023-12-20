@@ -97,6 +97,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a49a8deccfedee9b11af3276fa585c318"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#a49a8deccfedee9b11af3276fa585c318">pq_print_grille</a> (np.array npa_grille)</td></tr>
 <tr class="memdesc:a49a8deccfedee9b11af3276fa585c318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille.  <a href="namespacepuissanceQuatre.html#a49a8deccfedee9b11af3276fa585c318">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a49a8deccfedee9b11af3276fa585c318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8737c1c69d05b81de53d6be62f348ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#ae8737c1c69d05b81de53d6be62f348ed">pq_partie_finie</a> (np.array npa_grille, bool b_bonus_utilise)</td></tr>
+<tr class="memdesc:ae8737c1c69d05b81de53d6be62f348ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de si la partie est finie ou non.  <a href="namespacepuissanceQuatre.html#ae8737c1c69d05b81de53d6be62f348ed">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae8737c1c69d05b81de53d6be62f348ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841fa2accbd9a77220e682dc036bcc89"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#a841fa2accbd9a77220e682dc036bcc89">pq_gestion_partie</a> (int i_nb_lignes=6, int i_nb_colonnes=7, int i_nb_jeton_victoire=4)</td></tr>
+<tr class="memdesc:a841fa2accbd9a77220e682dc036bcc89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le déroulement d'une partie de puissance 4.  <a href="namespacepuissanceQuatre.html#a841fa2accbd9a77220e682dc036bcc89">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a841fa2accbd9a77220e682dc036bcc89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p><b><a class="el" href="namespacepuissanceQuatre.html" title="puissanceQuatre Ce module contient l&#39;implémentation des règles du puissance 4.">puissanceQuatre</a></b> Ce module contient l'implémentation des règles du puissance 4. </p>
@@ -160,6 +166,59 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a841fa2accbd9a77220e682dc036bcc89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841fa2accbd9a77220e682dc036bcc89">&#9670;&nbsp;</a></span>pq_gestion_partie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def puissanceQuatre.pq_gestion_partie </td>
+          <td>(</td>
+          <td class="paramtype">int &#160;</td>
+          <td class="paramname"><em>i_nb_lignes</em> = <code>6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &#160;</td>
+          <td class="paramname"><em>i_nb_colonnes</em> = <code>7</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &#160;</td>
+          <td class="paramname"><em>i_nb_jeton_victoire</em> = <code>4</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gère le déroulement d'une partie de puissance 4. </p>
+<p>Méthode gérant le déroulement d'une partie de puissance 4 en ligne de commande.</p>
+<p><b>Variables :</b></p><ul>
+<li>b_victoire : Booléen, True si un joueur a gagné, False sinon</li>
+<li>b_bonus_utilise : Booléen, True si le joueur a utilisé son bonus, False sinon</li>
+<li>t_undo_redo : Liste, contient les grilles pour l'undo et le redo</li>
+<li>npa_grille : np.array, la grille de jeu</li>
+<li>i_colonne_joueur : Entier, la colonne où le joueur veut jouer</li>
+<li>i_ligne_joueur : Entier, la ligne où le joueur veut jouer</li>
+</ul>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_nb_lignes</td><td>Taille de la grille en lignes </td></tr>
+    <tr><td class="paramname">i_nb_colonnes</td><td>Taille de la grille en colonnes </td></tr>
+    <tr><td class="paramname">i_nb_jeton_victoire</td><td>Nombre de jetons à aligner pour gagner </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af84d30b01b94ece29b4e46af709beee7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af84d30b01b94ece29b4e46af709beee7">&#9670;&nbsp;</a></span>pq_init_grille()</h2>
 
@@ -205,6 +264,57 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La grille créée </dd></dl>
+
+</div>
+</div>
+<a id="ae8737c1c69d05b81de53d6be62f348ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8737c1c69d05b81de53d6be62f348ed">&#9670;&nbsp;</a></span>pq_partie_finie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bool puissanceQuatre.pq_partie_finie </td>
+          <td>(</td>
+          <td class="paramtype">np.array&#160;</td>
+          <td class="paramname"><em>npa_grille</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b_bonus_utilise</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérification de si la partie est finie ou non. </p>
+<p>La vérification se fait avec deux critères : Si la grille est pleine ou non, ainsi que si le joueur peut encore utiliser son bonus.</p>
+<p><b>Variables :</b></p><ul>
+<li>i_nb_lignes : Le nombre de lignes de la grille</li>
+<li>i_nb_colonnes : Le nombre de colonnes de la grille</li>
+<li>b_tableau_plein : Booléen, True si la grille est pleine, False sinon</li>
+<li>i_boucle_ligne : Entier, Compteur de boucle pour les lignes</li>
+<li>i_boucle_colonne : Entier, Compteur de boucle pour les colonnes</li>
+</ul>
+<p><b>Préconditions :</b></p><ul>
+<li>npa_grille initialisé</li>
+<li>2 ≤ i_nb_lignes</li>
+<li>2 ≤ i_nb_colonnes</li>
+</ul>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">npa_grille</td><td>La grille du puissance 4 </td></tr>
+    <tr><td class="paramname">b_bonus_utilise</td><td>Un booléen permettant de savoir si le joueur a utilisé son bonus ou non. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>True si la partie est finie, False sinon </dd></dl>
 
 </div>
 </div>
