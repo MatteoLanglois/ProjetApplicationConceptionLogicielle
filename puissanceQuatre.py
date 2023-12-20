@@ -3,6 +3,8 @@ Ce module contient l'implémentation des règles du puissance 4.
 
 Ce module contient la gestion de la structure du puissance 4 et
 la gestion du jeu.
+
+@see test_puissanceQuatre.py
 """
 
 import numpy as np
@@ -15,8 +17,8 @@ def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     * npa_grille : np.array
 
     **Préconditions :**
-    * i_max_ligne > 0
-    * i_max_colonne > 0
+    * i_max_ligne > 1
+    * i_max_colonne > 1
 
     **Postconditions :**
     * npa_grille initialisé
@@ -26,6 +28,8 @@ def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
 
     @return La grille créée
     """
+    assert i_max_ligne > 1 and i_max_colonne > 1, \
+        "La grille doit avoir au moins 2 lignes et 2 colonnes"
     # Création de la grille
     npa_grille = np.zeros((i_max_ligne, i_max_colonne))
     # Changement du type contenu dans la grille par "int"
@@ -66,8 +70,8 @@ def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
     return b_resultat
 
 
-def pq_ajout_piece(i_colonne: int, i_joueur: int,
-                   npa_grille: np.array) -> (int, int):
+def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
+                   i_joueur: int) -> (int, int):
     """! La méthode qui gère le placement de jetons
 
     **Variables :**
@@ -92,15 +96,20 @@ def pq_ajout_piece(i_colonne: int, i_joueur: int,
     i_boucle = 0
     # Récupère la taille de la grille
     i_max_ligne, _ = npa_grille.shape
+    # Initialisation des coordonnées du nouveau jeton
+    ti_coords = (None, None)
 
-    # Tant que la case de la grille de notre colonne est vide
-    while i_boucle < i_max_ligne and npa_grille[i_boucle][i_colonne] == 0:
-        # Augmenter le compteur de boucle
-        i_boucle += 1
-    # Ajouter le jeton du joueur dans la dernière case vide
-    npa_grille[i_boucle - 1][i_colonne] = i_joueur
-    # Retourner un tuple des coordonnées du nouveau jeton
-    return i_boucle - 1, i_colonne
+    # Si on peut jouer dans la colonne
+    if pq_verif_colonne(i_colonne, npa_grille):
+        # Tant que la case de la grille de notre colonne est vide
+        while i_boucle < i_max_ligne and npa_grille[i_boucle][i_colonne] == 0:
+            # Augmenter le compteur de boucle
+            i_boucle += 1
+        # Ajouter le jeton du joueur dans la dernière case vide
+        npa_grille[i_boucle - 1][i_colonne] = i_joueur
+        # Retourner un tuple des coordonnées du nouveau jeton
+        ti_coords = (i_boucle - 1, i_colonne)
+    return ti_coords
 
 
 def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
@@ -240,7 +249,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
            and (i_colonne - i_compteur >= 0)
            and (i_compteur < i_nb_victoire)
            and (
-            npa_grille[i_ligne + i_compteur][i_colonne - i_compteur] == i_joueur)):
+                   npa_grille[i_ligne + i_compteur][
+                       i_colonne - i_compteur] == i_joueur)):
         i_compteur += 1
     if i_compteur >= i_nb_victoire:
         return True
@@ -249,7 +259,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
            and (i_colonne - i_compteur >= 0)
            and (i_compteur < i_nb_victoire)
            and (
-            npa_grille[i_ligne - i_compteur][i_colonne - i_compteur] == i_joueur)):
+                   npa_grille[i_ligne - i_compteur][
+                       i_colonne - i_compteur] == i_joueur)):
         i_compteur += 1
     if i_compteur >= i_nb_victoire:
         return True
@@ -258,7 +269,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
            and (i_colonne + i_compteur < i_max_colonne)
            and (i_compteur < i_nb_victoire)
            and (
-            npa_grille[i_ligne + i_compteur][i_colonne + i_compteur] == i_joueur)):
+                   npa_grille[i_ligne + i_compteur][
+                       i_colonne + i_compteur] == i_joueur)):
         i_compteur += 1
     if i_compteur >= i_nb_victoire:
         return True
@@ -267,7 +279,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
            and (i_colonne + i_compteur < i_max_colonne)
            and (i_compteur < i_nb_victoire)
            and (
-            npa_grille[i_ligne - i_compteur][i_colonne + i_compteur] == i_joueur)):
+                   npa_grille[i_ligne - i_compteur][
+                       i_colonne + i_compteur] == i_joueur)):
         i_compteur += 1
     if i_compteur >= i_nb_victoire:
         return True
@@ -296,10 +309,14 @@ def pq_print_grille(npa_grille: np.array):
     char_vide = ' '
     # Récupère la taille de la grille
     i_max_ligne, i_max_colonne = npa_grille.shape
+
+    # Inverse la matrice pour afficher la grille dans le bon sens
+    npa_grille = np.flip(npa_grille, 0)
+
     # Pour chaque colonne du tableau
-    for i_boucle_ligne in range(0, i_max_ligne):
+    for i_boucle_ligne in range(i_max_ligne):
         # Pour chaque case de cette colonne
-        for i_boucle_colonne in range(0, i_max_colonne):
+        for i_boucle_colonne in range(i_max_colonne):
             if npa_grille[i_boucle_ligne, i_boucle_colonne] == 1:
                 # Affiche charJoueur si le joueur est le joueur humain
                 print(f"|{char_joueur}", end="")

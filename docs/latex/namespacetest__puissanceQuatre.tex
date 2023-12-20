@@ -1,0 +1,103 @@
+\hypertarget{namespacetest__puissanceQuatre}{}\doxysection{Référence de l\textquotesingle{}espace de nommage test\+\_\+puissance\+Quatre}
+\label{namespacetest__puissanceQuatre}\index{test\_puissanceQuatre@{test\_puissanceQuatre}}
+
+
+{\bfseries{\mbox{\hyperlink{namespacetest__puissanceQuatre}{test\+\_\+puissance\+Quatre}}}} Ce module contient les tests unitaires pour le module \mbox{\hyperlink{namespacepuissanceQuatre}{puissance\+Quatre}}.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest__puissanceQuatre_ac9c390e2e2be843f9ae84ef1a989076b}{test\+\_\+init\+\_\+grille}} ()
+\begin{DoxyCompactList}\small\item\em Teste la fonction pq\+\_\+init\+\_\+grille. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacetest__puissanceQuatre_ab2e31b99b593298f36976799d6a9c2f6}{test\+\_\+verif\+\_\+colonne}} ()
+\begin{DoxyCompactList}\small\item\em Teste la fonction pq\+\_\+verif\+\_\+colonne. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacetest__puissanceQuatre_ad77ca4c4333efbe30874cb211456979d}{test\+\_\+ajout\+\_\+piece}} ()
+\begin{DoxyCompactList}\small\item\em Teste la fonction pq\+\_\+ajout\+\_\+piece. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacetest__puissanceQuatre_ae41da3307e296df377ac61893e6d9dc9}\label{namespacetest__puissanceQuatre_ae41da3307e296df377ac61893e6d9dc9}} 
+def \mbox{\hyperlink{namespacetest__puissanceQuatre_ae41da3307e296df377ac61893e6d9dc9}{test\+\_\+all}} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui lance tous les tests unitaires. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+{\bfseries{\mbox{\hyperlink{namespacetest__puissanceQuatre}{test\+\_\+puissance\+Quatre}}}} Ce module contient les tests unitaires pour le module \mbox{\hyperlink{namespacepuissanceQuatre}{puissance\+Quatre}}. 
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{namespacepuissanceQuatre}{puissance\+Quatre}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacetest__puissanceQuatre_ad77ca4c4333efbe30874cb211456979d}\label{namespacetest__puissanceQuatre_ad77ca4c4333efbe30874cb211456979d}} 
+\index{test\_puissanceQuatre@{test\_puissanceQuatre}!test\_ajout\_piece@{test\_ajout\_piece}}
+\index{test\_ajout\_piece@{test\_ajout\_piece}!test\_puissanceQuatre@{test\_puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{test\_ajout\_piece()}{test\_ajout\_piece()}}
+{\footnotesize\ttfamily def test\+\_\+puissance\+Quatre.\+test\+\_\+ajout\+\_\+piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste la fonction pq\+\_\+ajout\+\_\+piece. 
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item {\itshape grille} \+: grille de jeu
+\item {\itshape ti\+\_\+coords} \+: tuple de coordonnées
+\item {\itshape i\+\_\+boucle} \+: variable de boucle
+\end{DoxyItemize}
+
+{\bfseries{Vérification \+:}}
+\begin{DoxyItemize}
+\item On teste 4 cas différents \+:
+\item Cas où une seule pièce est ajoutée par le joueur
+\item Cas où une seule pièce est ajoutée par le bot
+\item Cas normal pour le joueur
+\item Cas où on ne peut pas ajouter de pièce (verif\+\_\+colonne) 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacetest__puissanceQuatre_ac9c390e2e2be843f9ae84ef1a989076b}\label{namespacetest__puissanceQuatre_ac9c390e2e2be843f9ae84ef1a989076b}} 
+\index{test\_puissanceQuatre@{test\_puissanceQuatre}!test\_init\_grille@{test\_init\_grille}}
+\index{test\_init\_grille@{test\_init\_grille}!test\_puissanceQuatre@{test\_puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{test\_init\_grille()}{test\_init\_grille()}}
+{\footnotesize\ttfamily def test\+\_\+puissance\+Quatre.\+test\+\_\+init\+\_\+grille (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste la fonction pq\+\_\+init\+\_\+grille. 
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item {\itshape liste\+\_\+tailles} \+: liste des tailles de grille à tester
+\item {\itshape i\+\_\+boucle} \+: variable de boucle
+\item {\itshape i\+\_\+boucle\+\_\+2} \+: variable de boucle
+\item {\itshape grille} \+: grille de jeu
+\end{DoxyItemize}
+
+{\bfseries{Vérification \+:}}
+\begin{DoxyItemize}
+\item {\itshape grille} est bien initialisée avec des 0 partout avec la bonne taille
+\item On teste 16 cas différents, avec des tailles différentes \+:
+\item Toutes les combinaisons de 2 nombres de la liste {\itshape liste\+\_\+tailles} 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacetest__puissanceQuatre_ab2e31b99b593298f36976799d6a9c2f6}\label{namespacetest__puissanceQuatre_ab2e31b99b593298f36976799d6a9c2f6}} 
+\index{test\_puissanceQuatre@{test\_puissanceQuatre}!test\_verif\_colonne@{test\_verif\_colonne}}
+\index{test\_verif\_colonne@{test\_verif\_colonne}!test\_puissanceQuatre@{test\_puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{test\_verif\_colonne()}{test\_verif\_colonne()}}
+{\footnotesize\ttfamily def test\+\_\+puissance\+Quatre.\+test\+\_\+verif\+\_\+colonne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste la fonction pq\+\_\+verif\+\_\+colonne. 
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item {\itshape grille} \+: grille de jeu
+\item {\itshape i\+\_\+boucle} \+: variable de boucle
+\item {\itshape i\+\_\+boucle\+\_\+2} \+: variable de boucle
+\end{DoxyItemize}
+
+{\bfseries{Vérification \+:}}
+\begin{DoxyItemize}
+\item On teste 5 cas différents \+:
+\item Cas où la grille est vide
+\item Cas où une colonne est pleine
+\item Cas où une colonne est presque pleine
+\item Cas où la grille est un peu remplie
+\item Cas où la grille est pleine 
+\end{DoxyItemize}

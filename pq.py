@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def AjoutPiece(iColonne, iJoueur, npaGrille):
     """
     Préconditions :
@@ -35,6 +36,7 @@ def AjoutPiece(iColonne, iJoueur, npaGrille):
     # Retourner un tuple des coordonnées du nouveau jeton
     return (iBoucle - 1, iColonne)
 
+
 def PartieFinie(npaGrille, bBonusJoueur):
     """
     Variable:
@@ -67,33 +69,34 @@ def GestionPartie(iMaxLigne, iMaxColonne, npaGrille):
     bVictoire = False
     tUndoRedo = []
     bBonusJoueur = False
-    
+
     while (not PartieFinie(npaGrille, bBonusJoueur) and not bVictoire):
         # Les tours de boucle s'effectuent jusqu'à ce qu'il ne reste plus de coup à jouer.
         iColonneJoueur = int(input("Quelle colonne voulez-vous jouer ? "))
-        
-        if VerifColonne(iColonneJoueur,npaGrille):
+
+        if VerifColonne(iColonneJoueur, npaGrille):
             # On vérifie si le joueur peut jouer dans la colonne qu'il a sélectionnée
-            iLigneJoueur, iColonneJoueur = AjoutPiece(iColonneJoueur, 1, npaGrille)
-            
+            iLigneJoueur, iColonneJoueur = AjoutPiece(iColonneJoueur, 1,
+                                                      npaGrille)
+
             if VictoireColonne(iLigneJoueur, iColonneJoueur, 1, npaGrille) or \
-                VictoireLigne(iLigneJoueur, iColonneJoueur, 1, npaGrille) or \
-                VictoireDiago(iLigneJoueur, iColonneJoueur, 1, npaGrille):
+                    VictoireLigne(iLigneJoueur, iColonneJoueur, 1, npaGrille) or \
+                    VictoireDiago(iLigneJoueur, iColonneJoueur, 1, npaGrille):
                 # Vérification de la victoire
                 print("Le joueur 1 a gagné !")
                 bVictoire = True
             else:
-                iColonneBot = MinMax(2,  npaGrille, isFirst=True)
+                iColonneBot = MinMax(2, npaGrille, isFirst=True)
                 # On appelle MinesMax pour savoir dans quelle colonne le bot va jouer
                 iLigneBot, iColonneBot = AjoutPiece(iColonneBot, 2, npaGrille)
-                
+
                 if VictoireColonne(iLigneBot, iColonneBot, 2, npaGrille) or \
-                    VictoireLigne(iLigneBot, iColonneBot, 2, npaGrille) or \
-                    VictoireDiago(iLigneBot, iColonneBot, 2, npaGrille):
+                        VictoireLigne(iLigneBot, iColonneBot, 2, npaGrille) or \
+                        VictoireDiago(iLigneBot, iColonneBot, 2, npaGrille):
                     # Vérification de la victoire
                     print("Le joueur 2 a gagné !")
                     bVictoire = True
-                
+
                 tUndoRedo.append(npaGrille)
                 iBoucle += 1
             print(npaGrille)
@@ -101,7 +104,8 @@ def GestionPartie(iMaxLigne, iMaxColonne, npaGrille):
             print("Vous ne pouvez pas jouer dans cette colonne")
             # Si le joueur ne peut pas jouer dans la colonne qu'il a sélectionnée, il doit en choisir une autre
 
-def MinMax(iNextJoueur, npaGrilleCopy, iColonne=0, isFirst=False, tour = 0):
+
+def MinMax(iNextJoueur, npaGrilleCopy, iColonne=0, isFirst=False, tour=0):
     """
     Variables :
         iNextJoueur: Entier
@@ -116,8 +120,9 @@ def MinMax(iNextJoueur, npaGrilleCopy, iColonne=0, isFirst=False, tour = 0):
             # On doit être sûr de ne pas faire un coup illégal
             iLigne, iColonne = AjoutPiece(iNextJoueur, iColonne, npaGrilleCopy)
             if VictoireColonne(iLigne, iColonne, iNextJoueur, npaGrilleCopy) or \
-                VictoireLigne(iLigne, iColonne, iNextJoueur, npaGrilleCopy) or \
-                VictoireDiago(iLigne, iColonne, iNextJoueur, npaGrilleCopy):
+                    VictoireLigne(iLigne, iColonne, iNextJoueur,
+                                  npaGrilleCopy) or \
+                    VictoireDiago(iLigne, iColonne, iNextJoueur, npaGrilleCopy):
                 if iNextJoueur == 1:
                     # Si il y a une victoire, mais que c'est le joueur qui l'a obtenue, on renvoie -1
                     return -1
@@ -138,7 +143,8 @@ def MinMax(iNextJoueur, npaGrilleCopy, iColonne=0, isFirst=False, tour = 0):
 
     for iBoucle in range(iMaxColonne):
         # On fait un appel pour chacune des colonnes du plateau pour jouer le prochain coup
-        Resultat[iBoucle] = MinMax(iNextJoueur, npaGrilleCopy.copy(), iColonne=iBoucle, tour = tour + 1)
+        Resultat[iBoucle] = MinMax(iNextJoueur, npaGrilleCopy.copy(),
+                                   iColonne=iBoucle, tour=tour + 1)
 
     if iNextJoueur == 2:
         if not isFirst:
@@ -153,6 +159,7 @@ def MinMax(iNextJoueur, npaGrilleCopy, iColonne=0, isFirst=False, tour = 0):
     else:
         # On renvoie le MIN de l'arbre si c'est le joueur qui a joué
         return min(Resultat)
+
 
 def VerifColonne(iColonne, npaGrille):
     """
@@ -176,6 +183,7 @@ def VerifColonne(iColonne, npaGrille):
 
     # Retourner le résultat
     return bResultat
+
 
 def VictoireColonne(iLigne, iColonne, iJoueur, npaGrille):
     """
@@ -221,6 +229,7 @@ def VictoireColonne(iLigne, iColonne, iJoueur, npaGrille):
         return iCompteur >= iNbJetonVictoire
     else:
         return False
+
 
 def VictoireDiago(iLigne, iColonne, iJoueur, npaGrille):
     """
@@ -274,23 +283,30 @@ def VictoireDiago(iLigne, iColonne, iJoueur, npaGrille):
                 bVu = True
                 bSuite = True
                 iCompteur = 1
-            elif npaGrille[iDebutL + iBoucle][iFinL - iBoucle] == iJoueur and bSuite:
+            elif npaGrille[iDebutL + iBoucle][
+                iFinL - iBoucle] == iJoueur and bSuite:
                 iCompteur += 1
-            elif npaGrille[iDebutL + iBoucle][iFinL - iBoucle] != iJoueur and bVu:
+            elif npaGrille[iDebutL + iBoucle][
+                iFinL - iBoucle] != iJoueur and bVu:
                 bSuite = False
 
-            if npaGrille[iFinL - iBoucle][iFinL - iBoucle] == iJoueur and not bVu2:
+            if npaGrille[iFinL - iBoucle][
+                iFinL - iBoucle] == iJoueur and not bVu2:
                 bVu2 = True
                 bSuite2 = True
                 iCompteur2 = 1
-            elif npaGrille[iFinL - iBoucle][iFinL - iBoucle] == iJoueur and bSuite2:
+            elif npaGrille[iFinL - iBoucle][
+                iFinL - iBoucle] == iJoueur and bSuite2:
                 iCompteur2 += 1
-            elif npaGrille[iFinL - iBoucle][iFinL - iBoucle] != iJoueur and bVu2:
+            elif npaGrille[iFinL - iBoucle][
+                iFinL - iBoucle] != iJoueur and bVu2:
                 bSuite2 = False
 
-        return (iCompteur >= iNbJetonVictoire) or (iCompteur2 >= iNbJetonVictoire)
+        return (iCompteur >= iNbJetonVictoire) or (
+                    iCompteur2 >= iNbJetonVictoire)
     else:
         return False
+
 
 def VictoireLigne(iLigne, iColonne, iJoueur, npaGrille):
     """
@@ -339,7 +355,8 @@ def VictoireLigne(iLigne, iColonne, iJoueur, npaGrille):
     else:
         return False
 
+
 iMaxLigne = 6
 iMaxColonne = 7
 
-GestionPartie(6,7,np.array([[0]*7]*6))
+GestionPartie(6, 7, np.array([[0] * 7] * 6))
