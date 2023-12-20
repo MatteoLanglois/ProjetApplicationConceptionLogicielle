@@ -420,7 +420,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         # Sinon
         else:
             # Choix de la colonne où le bot va jouer (random pour commencer)
-            i_colonne_joueur = pq_minmax(2, np.copy(npa_grille), i_nb_jeton_victoire, isFirst = True, tour = 0)
+            i_colonne_joueur,_ = pq_minmax(2, np.copy(npa_grille), i_nb_jeton_victoire, isFirst = True, tour = 0)
             # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
 
