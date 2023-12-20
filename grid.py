@@ -1,4 +1,14 @@
+"""! **grid**
+Ce module contient les fonctions relatives à la grille de jeu.
+
+Ce module contient les fonctions de gestion de la grille de jeu.
+Notamment l'initialisation de la grille, l'affichage de la grille et la
+réinitialisation de la grille.
+
+@see puissanceQuatre
+"""
 import numpy as np
+
 
 def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     """! L'initiateur de la grille
@@ -26,6 +36,7 @@ def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     npa_grille.astype(int)
     # Retourne la grille
     return npa_grille
+
 
 def pq_reset_grille(npa_grille: np.array) -> np.array:
     """! Réinitialise la grille
@@ -55,6 +66,7 @@ def pq_reset_grille(npa_grille: np.array) -> np.array:
             npa_grille[i_boucle][i_boucle_2] = 0
     # Retourne la grille
     return npa_grille
+
 
 def pq_print_grille(npa_grille: np.array):
     """! Affiche la grille
