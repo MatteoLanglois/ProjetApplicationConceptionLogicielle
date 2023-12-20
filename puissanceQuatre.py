@@ -102,41 +102,29 @@ def pq_ajout_piece(i_colonne: int, i_joueur: int,
     # Retourner un tuple des coordonnées du nouveau jeton
     return i_boucle - 1, i_colonne
 
-def pq_victoire_colonne(i_ligne: int, i_max_ligne: int, i_colonne: int, i_joueur: int, npa_grille: np.array, i_nb_victoire: int) -> bool:
-    if (i_max_ligne)  >= (i_nb_victoire + i_ligne):
-        compteur = 1
-        while (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne] == i_joueur):
-            compteur += 1
-        return compteur >= i_nb_victoire
-    else:
-        return False
 
-def pq_victoire_diago(i_ligne: int, i_max_ligne: int, i_colonne: int, i_max_colonne: int, i_joueur: int, npa_grille: np.array, i_nb_victoire: int) -> bool:
-        compteur = 1
-        while (i_ligne + compteur < i_max_ligne) and (i_colonne - compteur >= 0) and (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne - compteur] == i_joueur):
-            compteur += 1
-        if compteur >= i_nb_victoire:
-            return True
-        compteur = 1
-        while (i_ligne - compteur >= 0 ) and (i_colonne - compteur >= 0) and (compteur < i_nb_victoire) and (npa_grille[i_ligne - compteur][i_colonne - compteur] == i_joueur):
-            compteur += 1
-        if compteur >= i_nb_victoire:
-            return True
-        compteur = 1
-        while (i_ligne + compteur < i_max_ligne) and (i_colonne + compteur < i_max_colonne) and (compteur < i_nb_victoire) and (npa_grille[i_ligne + compteur][i_colonne + compteur] == i_joueur):
-            compteur += 1
-        if compteur >= i_nb_victoire:
-            return True
-        compteur = 1
-        while (i_ligne + compteur >= 0) and (i_colonne + compteur < i_max_colonne) and (compteur < i_nb_victoire) and (npa_grille[i_ligne - compteur][i_colonne + compteur] == i_joueur):
-            compteur += 1
-        if compteur >= i_nb_victoire:
-            return True
-        return False
+def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
+                i_joueur: int, i_nb_victoire: int) -> bool:
+    """: Méthode appelant les trois vérifications de victoire.
+
+    @param npa_grille: La grille du puissance 4
+    @param i_ligne: La ligne où le jeton a été posé
+    @param i_colonne: La colonne où le jeton a été posé
+    @param i_joueur: Le joueur qui a joué (1 pour le joueur humain, 2 pour le
+                    bot)
+    @param i_nb_victoire: Nombre de jetons à combiner pour gagner
+    @return True si le joueur i_joueur a gagné, False sinon
+    """
+    return (pq_victoire_ligne(npa_grille, i_ligne, i_colonne, i_joueur,
+                              i_nb_victoire)
+            or pq_victoire_colonne(npa_grille, i_ligne, i_colonne, i_joueur,
+                                   i_nb_victoire)
+            or pq_victoire_diago(npa_grille, i_ligne, i_colonne, i_joueur,
+                                 i_nb_victoire))
 
 
-def pq_victoire_ligne(i_ligne: int, i_colonne: int, i_joueur: int,
-                      npa_grille: np.array, i_nb_victoire: int) -> bool:
+def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
+                      i_joueur: int, i_nb_victoire: int) -> bool:
     """! Verification de la victoire sur la ligne
 
     **Variables :**
@@ -155,10 +143,11 @@ def pq_victoire_ligne(i_ligne: int, i_colonne: int, i_joueur: int,
     * npa_grille contient un jeton en i_ligne, i_colonne
     * 1 ≤ i_joueur ≤ 2
 
+
+    @param npa_grille: La grille du jeu
     @param i_ligne: La ligne où le jeton a été posé
     @param i_colonne: La colonne où le jeton a été posé
     @param i_joueur: Le joueur qui a joué
-    @param npa_grille: La grille du jeu
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
 
     @return True si le joueur a gagné, False sinon
@@ -191,6 +180,98 @@ def pq_victoire_ligne(i_ligne: int, i_colonne: int, i_joueur: int,
         return i_compteur >= i_nb_victoire
     else:
         return False
+
+
+def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
+                        i_joueur: int, i_nb_victoire: int) -> bool:
+    """! Verification de la victoire sur une colonne
+
+    **Variables :**
+    * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
+    * i_max_ligne : Entier, Nombre de lignes dans la grille
+
+    **Préconditions :**
+    * npa_grille initialisé
+    * npa_grille contient un jeton en i_ligne, i_colonne
+    * 1 ≤ i_joueur ≤ 2
+
+    @param npa_grille: La grille du puissance 4
+    @param i_ligne: La ligne où le jeton a été posé
+    @param i_colonne: La colonne où le jeton a été posé
+    @param i_joueur: Le joueur qui a joué
+    @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
+    @return True si le joueur i_joueur a gagné, False sinon
+    """
+    i_max_ligne = npa_grille.shape[0]
+    if i_max_ligne >= (i_nb_victoire + i_ligne):
+        i_compteur = 1
+        while (i_compteur < i_nb_victoire) and (
+                npa_grille[i_ligne + i_compteur][i_colonne] == i_joueur):
+            i_compteur += 1
+        return i_compteur >= i_nb_victoire
+    else:
+        return False
+
+
+def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
+                      i_joueur: int, i_nb_victoire: int) -> bool:
+    """! Verification de la victoire sur les diagonales
+
+    **Variables :**
+    * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
+    * i_max_ligne : Entier, Nombre de lignes dans la grille
+    * i_max_colonne : Entier, Nombre de colonnes dans la grille
+
+    **Préconditions :**
+    * npa_grille initialisé
+    * npa_grille contient un jeton en i_ligne, i_colonne
+    * 1 ≤ i_joueur ≤ 2
+
+    @param npa_grille: La grille du puissance 4
+    @param i_ligne: La ligne où le jeton a été posé
+    @param i_colonne: La colonne où le jeton a été posé
+    @param i_joueur: Le joueur qui a joué
+    @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
+    @return True si le joueur i_joueur a gagné, False sinon
+    """
+    i_max_ligne, i_max_colonne = npa_grille.shape
+    i_compteur = 1
+    while ((i_ligne + i_compteur < i_max_ligne)
+           and (i_colonne - i_compteur >= 0)
+           and (i_compteur < i_nb_victoire)
+           and (
+            npa_grille[i_ligne + i_compteur][i_colonne - i_compteur] == i_joueur)):
+        i_compteur += 1
+    if i_compteur >= i_nb_victoire:
+        return True
+    i_compteur = 1
+    while ((i_ligne - i_compteur >= 0)
+           and (i_colonne - i_compteur >= 0)
+           and (i_compteur < i_nb_victoire)
+           and (
+            npa_grille[i_ligne - i_compteur][i_colonne - i_compteur] == i_joueur)):
+        i_compteur += 1
+    if i_compteur >= i_nb_victoire:
+        return True
+    i_compteur = 1
+    while ((i_ligne + i_compteur < i_max_ligne)
+           and (i_colonne + i_compteur < i_max_colonne)
+           and (i_compteur < i_nb_victoire)
+           and (
+            npa_grille[i_ligne + i_compteur][i_colonne + i_compteur] == i_joueur)):
+        i_compteur += 1
+    if i_compteur >= i_nb_victoire:
+        return True
+    i_compteur = 1
+    while ((i_ligne + i_compteur >= 0)
+           and (i_colonne + i_compteur < i_max_colonne)
+           and (i_compteur < i_nb_victoire)
+           and (
+            npa_grille[i_ligne - i_compteur][i_colonne + i_compteur] == i_joueur)):
+        i_compteur += 1
+    if i_compteur >= i_nb_victoire:
+        return True
+    return False
 
 
 def pq_print_grille(npa_grille: np.array):
