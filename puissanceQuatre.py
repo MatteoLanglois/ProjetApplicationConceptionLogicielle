@@ -84,6 +84,50 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
         ti_coords = (i_boucle - 1, i_colonne)
     return ti_coords
 
+def pq_minmax(iNextJoueur, npaGrilleCopy, i_nb_victoire, iColonne=0, isFirst=False, tour=0) -> (int, float):
+    if tour > 5:
+        return (0, 0)
+    if not isFirst:
+        if pq_verif_colonne(iColonne, npaGrilleCopy):
+            i_ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iNextJoueur)
+            if pq_victoire(npaGrilleCopy, i_ligne, iColonne, iNextJoueur, i_nb_victoire):
+                if iNextJoueur == 1:
+                    return (-1, -1)
+                else:
+                    return (1,1)
+    if iNextJoueur == 2:
+        iNextJoueur = 1
+    else:
+        iNextJoueur = 2
+
+    Resultat = [0]*(np.shape(npaGrilleCopy)[1])
+    Moy = [0] * (np.shape(npaGrilleCopy)[1])
+
+    for i in range(np.shape(npaGrilleCopy)[1]):
+        Resultat[i], Moy[i] = pq_minmax(iNextJoueur, np.copy(npaGrilleCopy), iColonne = i, tour = tour + 1, i_nb_victoire = i_nb_victoire)
+    if iNextJoueur == 2:
+        return (min(Resultat), sum(Resultat)/len(Resultat))
+    else:
+        if not isFirst:
+            return (max(Resultat), sum(Resultat)/len(Resultat))
+        else:
+            mini = min(Resultat)
+            maxi = max(Resultat)
+            if mini == -1:
+                maxi = mini
+            list_index = []
+            for i in range(len(Resultat)):
+                if Resultat[i] == maxi:
+                    list_index.append(i)
+            if len(list_index) == 1:
+                return list_index[0], 0
+            else:
+                maxi_moy = min(Moy)
+                for i in range(len(list_index)):
+                    if Moy[list_index[i]] == maxi_moy and pq_verif_colonne(list_index[i], npaGrilleCopy):
+                        return list_index[i],0
+                return None, None
+
 
 def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 i_joueur: int, i_nb_victoire: int) -> bool:
@@ -220,6 +264,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
     """
+    i_max_ligne = np.shape(npa_grille)[0]
+    i_max_colonne = np.shape(npa_grille)[1]
     i_debut_ligne = i_ligne - i_nb_victoire + 1 if i_ligne - i_nb_victoire + 1 >= 0 else 0
     i_fin_ligne = i_ligne + i_nb_victoire - 1 if i_ligne + i_nb_victoire - 1 < i_max_ligne else i_max_ligne - 1
     i_debut_colonne = i_colonne - i_nb_victoire + 1 if i_colonne - i_nb_victoire + 1 >= 0 else 0
@@ -374,7 +420,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         # Sinon
         else:
             # Choix de la colonne où le bot va jouer (random pour commencer)
-            i_colonne_joueur = random.randint(0, i_nb_colonnes)
+            i_colonne_joueur = pq_minmax(2, np.copy(npa_grille), i_nb_jeton_victoire, isFirst = True, tour = 0)
             # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
 
