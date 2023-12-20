@@ -351,18 +351,30 @@ def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
         utilisé son bonus ou non.
     @return True si la partie est finie, False sinon
     """
+    # Récupération de la taille de la grille
     i_nb_lignes, i_nb_colonnes = npa_grille.shape
+    # Initialisation du booléen à vrai afin de pouvoir le nier
     b_tableau_plein = True
+    # Initialisation du compteur de boucle pour les lignes
     i_boucle_ligne = 0
+    # Initialisation du compteur de boucle pour les colonnes
     i_boucle_colonne = 0
 
+    # Tant que le tableau est supposé plein et qu'on n'a pas parcouru toutes
+    # les lignes
     while i_boucle_ligne <= i_nb_lignes and b_tableau_plein:
+        # Tant que le tableau est supposé plein et qu'on n'a pas parcouru toutes
+        # les colonnes
         while i_boucle_colonne <= i_nb_colonnes and b_tableau_plein:
+            # Si la case est vide
             if npa_grille[i_boucle_ligne, i_boucle_colonne] == 0:
+                # Le tableau n'est pas plein
                 b_tableau_plein = False
+            # On incrémente le compteur de colonne
             i_boucle_colonne += 1
+        # On incrémente le compteur de ligne
         i_boucle_ligne += 1
-
+    # On retourne le résultat de la négation du booléen
     return b_tableau_plein or b_bonus_utilise
 
 
@@ -386,45 +398,70 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     @param i_nb_colonnes: Taille de la grille en colonnes
     @param i_nb_jeton_victoire:  Nombre de jetons à aligner pour gagner
     """
+    # Initialisation d'un booléen pour savoir s'il y a une victoire
     b_victoire = False
+    # Initialisation d'un booléen pour savoir si le joueur a utilisé son bonus
     b_bonus_utilise = False
+    # Initialisation d'une liste pour l'undo et le redo
     t_undo_redo = []
+    # Initialisation de la grille de jeu
     npa_grille = pq_init_grille(i_nb_lignes, i_nb_colonnes)
+    # Initialisation de la colonne où le joueur veut jouer
     i_colonne_joueur = 0
+    # Initialisation de la ligne où le joueur veut jouer
     i_ligne_joueur = 0
 
-    print("Bienvenue dans le puissance 4 !")
-    print("Pour jouer, entrez le numéro de la colonne où vous voulez jouer.")
-    print("Vos jetons sont représentés par des X, ceux du bot par des 0.")
-    # WIP
-    print("Pour utiliser votre bonus, entrez 0. (WIP)")
+    # Affichage des règles du jeu
+    print("Bienvenue dans le puissance 4 !\n"
+          "Pour jouer, entrez le numéro de la colonne où vous voulez jouer.\n"
+          "Vos jetons sont représentés par des X, ceux du bot par des 0.\n"
+          "Pour utiliser votre bonus, entrez 0. (WIP)\n")
 
+    # Tant que la partie n'est pas finie et qu'il n'y a pas de victoire
     while not pq_partie_finie(npa_grille, b_bonus_utilise) and not b_victoire:
+        # Initialisation de la colonne où le joueur veut jouer à -1 afin de
+        # pouvoir vérifier que la colonne est valide
         i_colonne_joueur = -1
+        # Affichage de la grille
         pq_print_grille(npa_grille)
+        # Tant que la colonne n'est pas valide
         while (not (0 <= i_colonne_joueur < i_nb_colonnes)
                and pq_verif_colonne(i_colonne_joueur, npa_grille)):
+            # Demande de la colonne où le joueur veut jouer
             i_colonne_joueur = int(input("\nDans quelle colonne voulez vous "
                                          "jouer ? ")) - 1
-
+        # Pose du jeton et récupération de la ligne où le jeton a été posé
         i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 1)
 
+        # Si le joueur a gagné
         if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
                         1, i_nb_jeton_victoire)):
+            # Affichage de la grille
             pq_print_grille(npa_grille)
+            # Affichage du message de victoire
             print("Le joueur 1 a gagné !")
+            # Passage du booléen de victoire à vrai
             b_victoire = True
+        # Sinon
         else:
-            # Appel du minMax (random pour commencer
+            # Choix de la colonne où le bot va jouer (random pour commencer)
             i_colonne_joueur = random.randint(0, i_nb_colonnes)
+            # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
 
+            # Si le bot a gagné
             if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
                             2, i_nb_jeton_victoire)):
+                # Affichage de la grille
                 pq_print_grille(npa_grille)
+                # Affichage du message de victoire
                 print("Le joueur 2 a gagné !")
+                # Passage du booléen de victoire à vrai
                 b_victoire = True
+        # Ajout de la grille à la liste pour l'undo et le redo
         t_undo_redo.append(npa_grille)
+    # Fin de partie
+    return
 
 
 if __name__ == '__main__':
