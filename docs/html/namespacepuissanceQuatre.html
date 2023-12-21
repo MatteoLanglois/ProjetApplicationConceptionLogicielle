@@ -74,9 +74,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:af84d30b01b94ece29b4e46af709beee7"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#af84d30b01b94ece29b4e46af709beee7">pq_init_grille</a> (int i_max_ligne, int i_max_colonne)</td></tr>
-<tr class="memdesc:af84d30b01b94ece29b4e46af709beee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'initiateur de la grille.  <a href="namespacepuissanceQuatre.html#af84d30b01b94ece29b4e46af709beee7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af84d30b01b94ece29b4e46af709beee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8994b142d63d40c658b53b256f8b9346"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#a8994b142d63d40c658b53b256f8b9346">pq_verif_colonne</a> (int i_colonne, np.array npa_grille)</td></tr>
 <tr class="memdesc:a8994b142d63d40c658b53b256f8b9346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si on peut poser un jeton dans cette colonne.  <a href="namespacepuissanceQuatre.html#a8994b142d63d40c658b53b256f8b9346">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8994b142d63d40c658b53b256f8b9346"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,9 +91,6 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a05b9dec0f147c2169a35e7e789285710"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#a05b9dec0f147c2169a35e7e789285710">pq_victoire_diago</a> (np.array npa_grille, int i_ligne, int i_colonne, int i_joueur, int i_nb_victoire)</td></tr>
 <tr class="memdesc:a05b9dec0f147c2169a35e7e789285710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verification de la victoire sur les diagonales.  <a href="namespacepuissanceQuatre.html#a05b9dec0f147c2169a35e7e789285710">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a05b9dec0f147c2169a35e7e789285710"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49a8deccfedee9b11af3276fa585c318"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#a49a8deccfedee9b11af3276fa585c318">pq_print_grille</a> (np.array npa_grille)</td></tr>
-<tr class="memdesc:a49a8deccfedee9b11af3276fa585c318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille.  <a href="namespacepuissanceQuatre.html#a49a8deccfedee9b11af3276fa585c318">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a49a8deccfedee9b11af3276fa585c318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8737c1c69d05b81de53d6be62f348ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepuissanceQuatre.html#ae8737c1c69d05b81de53d6be62f348ed">pq_partie_finie</a> (np.array npa_grille, bool b_bonus_utilise)</td></tr>
 <tr class="memdesc:ae8737c1c69d05b81de53d6be62f348ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de si la partie est finie ou non.  <a href="namespacepuissanceQuatre.html#ae8737c1c69d05b81de53d6be62f348ed">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae8737c1c69d05b81de53d6be62f348ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,54 +213,6 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="af84d30b01b94ece29b4e46af709beee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af84d30b01b94ece29b4e46af709beee7">&#9670;&nbsp;</a></span>pq_init_grille()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> np.array puissanceQuatre.pq_init_grille </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_max_ligne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_max_colonne</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>L'initiateur de la grille. </p>
-<p><b>Variables :</b></p><ul>
-<li>npa_grille : np.array</li>
-</ul>
-<p><b>Préconditions :</b></p><ul>
-<li>i_max_ligne &gt; 1</li>
-<li>i_max_colonne &gt; 1</li>
-</ul>
-<p><b>Postconditions :</b></p><ul>
-<li>npa_grille initialisé</li>
-</ul>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i_max_ligne</td><td>Le nombre de lignes de la grille </td></tr>
-    <tr><td class="paramname">i_max_colonne</td><td>Le nombre de colonnes de la grille</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>La grille créée </dd></dl>
-
-</div>
-</div>
 <a id="ae8737c1c69d05b81de53d6be62f348ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8737c1c69d05b81de53d6be62f348ed">&#9670;&nbsp;</a></span>pq_partie_finie()</h2>
 
@@ -315,41 +261,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>True si la partie est finie, False sinon </dd></dl>
-
-</div>
-</div>
-<a id="a49a8deccfedee9b11af3276fa585c318"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49a8deccfedee9b11af3276fa585c318">&#9670;&nbsp;</a></span>pq_print_grille()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def puissanceQuatre.pq_print_grille </td>
-          <td>(</td>
-          <td class="paramtype">np.array&#160;</td>
-          <td class="paramname"><em>npa_grille</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Affiche la grille. </p>
-<p><b>Variables :</b></p><ul>
-<li>char_joueur : Le caractère du jeton du joueur</li>
-<li>char_bot : Le caractère du jeton du bot</li>
-<li>char_vide : Le caractère représentant une case vide</li>
-<li>i_max_ligne : Le nombre de lignes de la grille</li>
-<li>i_max_colonne : Le nombre de colonnes de la grille</li>
-<li>i_boucle_colonne : Le compteur de boucle pour les colonnes de la grille</li>
-<li>i_boucle_ligne : Le compteur de boucle pour les lignes de la grille</li>
-</ul>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">npa_grille</td><td>La grille à afficher </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -505,6 +416,7 @@ Fonctions</h2></td></tr>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>i_max_ligne : Entier, Nombre de lignes dans la grille</li>
+<li>b_victoire : Booléen, Indique si le joueur a gagné ou non</li>
 </ul>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>

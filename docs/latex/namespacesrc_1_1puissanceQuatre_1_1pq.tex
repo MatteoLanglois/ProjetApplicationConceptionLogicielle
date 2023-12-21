@@ -1,0 +1,175 @@
+\hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+puissance\+Quatre.\+pq}
+\label{namespacesrc_1_1puissanceQuatre_1_1pq}\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a5b4a4e65ccaa97d51480f57b0ea56251}{Ajout\+Piece}} (i\+Colonne, i\+Joueur, npa\+Grille)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a6df3fa009da29ec42cbcc098eb9a0a8c}{Partie\+Finie}} (npa\+Grille, b\+Bonus\+Joueur)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_ae682da2c313b30053de1bae246576829}{Gestion\+Partie}} (\mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a5215cbe1af31e45596ee7aeec5079406}{i\+Max\+Ligne}}, \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_af0f1d26c4059b4ec790162b0871c5556}{i\+Max\+Colonne}}, npa\+Grille)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a075058d479469ce1debe3ffc0e433d22}{Min\+Max}} (i\+Next\+Joueur, npa\+Grille\+Copy, i\+Colonne=0, is\+First=False, tour=0)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a744fbfa7aab8742d7f1836af6223229e}{Verif\+Colonne}} (i\+Colonne, npa\+Grille)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a7022c4c066134f2d64ec492dff1ebfd4}{Victoire\+Colonne}} (i\+Ligne, i\+Colonne, i\+Joueur, npa\+Grille)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a4cbd81215ce9b8b61eb59b301b209995}{Victoire\+Diago}} (i\+Ligne, i\+Colonne, i\+Joueur, npa\+Grille)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_af652d4fd2e5806dbb329b5043d755ff1}{Victoire\+Ligne}} (i\+Ligne, i\+Colonne, i\+Joueur, npa\+Grille)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_a5215cbe1af31e45596ee7aeec5079406}{i\+Max\+Ligne}} = 6
+\item 
+int \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1pq_af0f1d26c4059b4ec790162b0871c5556}{i\+Max\+Colonne}} = 7
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a5b4a4e65ccaa97d51480f57b0ea56251}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a5b4a4e65ccaa97d51480f57b0ea56251}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!AjoutPiece@{AjoutPiece}}
+\index{AjoutPiece@{AjoutPiece}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{AjoutPiece()}{AjoutPiece()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Ajout\+Piece (\begin{DoxyParamCaption}\item[{}]{i\+Colonne,  }\item[{}]{i\+Joueur,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Préconditions :
+    Il faut que le joueur puisse poser son pion dans cette colonne
+    VerifColonne(iColonne)
+Postconditions : 
+    npaGrille[iColonne] contient le pion posé par le joueur
+Entrée :
+    iColonne: Entier
+    iJoueur: Entier
+Sortie :
+    TEEcoords: Tuple(Entier, Entier)
+Variable :
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] entiers
+    iMaxLigne: Entier
+    iMaxColonne: Entier      
+    iBoucle: Entier
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_ae682da2c313b30053de1bae246576829}\label{namespacesrc_1_1puissanceQuatre_1_1pq_ae682da2c313b30053de1bae246576829}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!GestionPartie@{GestionPartie}}
+\index{GestionPartie@{GestionPartie}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{GestionPartie()}{GestionPartie()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Gestion\+Partie (\begin{DoxyParamCaption}\item[{}]{i\+Max\+Ligne,  }\item[{}]{i\+Max\+Colonne,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Variables :
+    tUndoRedo: Tableau d'entiers
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] Entiers
+    iBoucle, iColonneJoueur, iColonneBot, iLigneJoueur, iLigneBot: Entier
+    bVictoire: Booléen
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a075058d479469ce1debe3ffc0e433d22}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a075058d479469ce1debe3ffc0e433d22}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!MinMax@{MinMax}}
+\index{MinMax@{MinMax}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{MinMax()}{MinMax()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Min\+Max (\begin{DoxyParamCaption}\item[{}]{i\+Next\+Joueur,  }\item[{}]{npa\+Grille\+Copy,  }\item[{}]{i\+Colonne = {\ttfamily 0},  }\item[{}]{is\+First = {\ttfamily False},  }\item[{}]{tour = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Variables :
+    iNextJoueur: Entier
+    Resultat: Tableau de [0,...,iMaxColonne] entiers
+    iBoucleTantQue: Entier
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a6df3fa009da29ec42cbcc098eb9a0a8c}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a6df3fa009da29ec42cbcc098eb9a0a8c}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!PartieFinie@{PartieFinie}}
+\index{PartieFinie@{PartieFinie}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{PartieFinie()}{PartieFinie()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Partie\+Finie (\begin{DoxyParamCaption}\item[{}]{npa\+Grille,  }\item[{}]{b\+Bonus\+Joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Variable:
+    iMaxLigne, iMaxColonne : Entier
+    bTableauPlein : Booleen
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a744fbfa7aab8742d7f1836af6223229e}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a744fbfa7aab8742d7f1836af6223229e}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!VerifColonne@{VerifColonne}}
+\index{VerifColonne@{VerifColonne}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{VerifColonne()}{VerifColonne()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Verif\+Colonne (\begin{DoxyParamCaption}\item[{}]{i\+Colonne,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Entree:
+    iColonne: Entier
+Sortie:
+    bResultat: Booleen
+Variable:
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] Entiers
+    iBoucle: Entier
+    bResultat: Booleen
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a7022c4c066134f2d64ec492dff1ebfd4}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a7022c4c066134f2d64ec492dff1ebfd4}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!VictoireColonne@{VictoireColonne}}
+\index{VictoireColonne@{VictoireColonne}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{VictoireColonne()}{VictoireColonne()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Victoire\+Colonne (\begin{DoxyParamCaption}\item[{}]{i\+Ligne,  }\item[{}]{i\+Colonne,  }\item[{}]{i\+Joueur,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Preconditions :
+    AjoutPiece a été appelé
+Sortie:
+    iWinner: Entier
+Variable :
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] entiers
+    iNbJetonVictoire: Entier
+    iMaxLigne, iMaxColonne, iBoucle, iCompteur : Entier
+    iWinnerDown, iWinnerUp, bVu, bSuite: Booleen
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a4cbd81215ce9b8b61eb59b301b209995}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a4cbd81215ce9b8b61eb59b301b209995}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!VictoireDiago@{VictoireDiago}}
+\index{VictoireDiago@{VictoireDiago}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{VictoireDiago()}{VictoireDiago()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Victoire\+Diago (\begin{DoxyParamCaption}\item[{}]{i\+Ligne,  }\item[{}]{i\+Colonne,  }\item[{}]{i\+Joueur,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Preconditions :
+    AjoutPiece a été appelé
+Sortie:
+    Booleen
+Variable :
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] entiers
+    iNbJetonVictoire: Entier
+    iMaxLigne: Entier
+    iMaxColonne: Entier 
+    iBoucle: Entier
+    bWinner: Booleen
+    bIsWinning: Booleen
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_af652d4fd2e5806dbb329b5043d755ff1}\label{namespacesrc_1_1puissanceQuatre_1_1pq_af652d4fd2e5806dbb329b5043d755ff1}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!VictoireLigne@{VictoireLigne}}
+\index{VictoireLigne@{VictoireLigne}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{VictoireLigne()}{VictoireLigne()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+pq.\+Victoire\+Ligne (\begin{DoxyParamCaption}\item[{}]{i\+Ligne,  }\item[{}]{i\+Colonne,  }\item[{}]{i\+Joueur,  }\item[{}]{npa\+Grille }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Preconditions :
+    AjoutPiece a été appelé
+Sortie:
+    iWinner: Entier
+Variable :
+    npaGrille: Tableau de [0,...,iMaxLigne] 
+        de Tableau de [0,...,iMaxColonne] entiers
+    iNbJetonVictoire: Entier
+    iMaxLigne: Entier
+    iMaxColonne: Entier 
+    iBoucle, iCompteur: Entier
+    bWinnerDown, bWinnerUp, bVu,bSuite: Booleen
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_af0f1d26c4059b4ec790162b0871c5556}\label{namespacesrc_1_1puissanceQuatre_1_1pq_af0f1d26c4059b4ec790162b0871c5556}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!iMaxColonne@{iMaxColonne}}
+\index{iMaxColonne@{iMaxColonne}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{iMaxColonne}{iMaxColonne}}
+{\footnotesize\ttfamily int src.\+puissance\+Quatre.\+pq.\+i\+Max\+Colonne = 7}
+
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1pq_a5215cbe1af31e45596ee7aeec5079406}\label{namespacesrc_1_1puissanceQuatre_1_1pq_a5215cbe1af31e45596ee7aeec5079406}} 
+\index{src.puissanceQuatre.pq@{src.puissanceQuatre.pq}!iMaxLigne@{iMaxLigne}}
+\index{iMaxLigne@{iMaxLigne}!src.puissanceQuatre.pq@{src.puissanceQuatre.pq}}
+\doxysubsubsection{\texorpdfstring{iMaxLigne}{iMaxLigne}}
+{\footnotesize\ttfamily int src.\+puissance\+Quatre.\+pq.\+i\+Max\+Ligne = 6}
+

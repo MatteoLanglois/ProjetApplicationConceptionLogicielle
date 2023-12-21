@@ -8,8 +8,6 @@
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-np.\+array \mbox{\hyperlink{namespacepuissanceQuatre_af84d30b01b94ece29b4e46af709beee7}{pq\+\_\+init\+\_\+grille}} (int i\+\_\+max\+\_\+ligne, int i\+\_\+max\+\_\+colonne)
-\begin{DoxyCompactList}\small\item\em L\textquotesingle{}initiateur de la grille. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacepuissanceQuatre_a8994b142d63d40c658b53b256f8b9346}{pq\+\_\+verif\+\_\+colonne}} (int i\+\_\+colonne, np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Vérifie si on peut poser un jeton dans cette colonne. \end{DoxyCompactList}\item 
 (int, int) \mbox{\hyperlink{namespacepuissanceQuatre_a52b1865e02bb5dbe2042a29d87e90f7f}{pq\+\_\+ajout\+\_\+piece}} (np.\+array npa\+\_\+grille, int i\+\_\+colonne, int i\+\_\+joueur)
@@ -22,8 +20,6 @@ bool \mbox{\hyperlink{namespacepuissanceQuatre_a3aaab334eba25a0bbb5ceac91e3ff2c4
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur une colonne. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacepuissanceQuatre_a05b9dec0f147c2169a35e7e789285710}{pq\+\_\+victoire\+\_\+diago}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur les diagonales. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacepuissanceQuatre_a49a8deccfedee9b11af3276fa585c318}{pq\+\_\+print\+\_\+grille}} (np.\+array npa\+\_\+grille)
-\begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacepuissanceQuatre_ae8737c1c69d05b81de53d6be62f348ed}{pq\+\_\+partie\+\_\+finie}} (np.\+array npa\+\_\+grille, bool b\+\_\+bonus\+\_\+utilise)
 \begin{DoxyCompactList}\small\item\em Vérification de si la partie est finie ou non. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacepuissanceQuatre_a841fa2accbd9a77220e682dc036bcc89}{pq\+\_\+gestion\+\_\+partie}} (int i\+\_\+nb\+\_\+lignes=6, int i\+\_\+nb\+\_\+colonnes=7, int i\+\_\+nb\+\_\+jeton\+\_\+victoire=4)
@@ -112,42 +108,6 @@ Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en
 {\em i\+\_\+nb\+\_\+jeton\+\_\+victoire} & Nombre de jetons à aligner pour gagner \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacepuissanceQuatre_af84d30b01b94ece29b4e46af709beee7}\label{namespacepuissanceQuatre_af84d30b01b94ece29b4e46af709beee7}} 
-\index{puissanceQuatre@{puissanceQuatre}!pq\_init\_grille@{pq\_init\_grille}}
-\index{pq\_init\_grille@{pq\_init\_grille}!puissanceQuatre@{puissanceQuatre}}
-\doxysubsubsection{\texorpdfstring{pq\_init\_grille()}{pq\_init\_grille()}}
-{\footnotesize\ttfamily  np.\+array puissance\+Quatre.\+pq\+\_\+init\+\_\+grille (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+max\+\_\+ligne,  }\item[{int}]{i\+\_\+max\+\_\+colonne }\end{DoxyParamCaption})}
-
-
-
-L\textquotesingle{}initiateur de la grille. 
-
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille \+: np.\+array
-\end{DoxyItemize}
-
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item i\+\_\+max\+\_\+ligne $>$ 1
-\item i\+\_\+max\+\_\+colonne $>$ 1
-\end{DoxyItemize}
-
-{\bfseries{Postconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille initialisé
-\end{DoxyItemize}
-
-
-\begin{DoxyParams}{Paramètres}
-{\em i\+\_\+max\+\_\+ligne} & Le nombre de lignes de la grille \\
-\hline
-{\em i\+\_\+max\+\_\+colonne} & Le nombre de colonnes de la grille\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-La grille créée 
-\end{DoxyReturn}
 \mbox{\Hypertarget{namespacepuissanceQuatre_ae8737c1c69d05b81de53d6be62f348ed}\label{namespacepuissanceQuatre_ae8737c1c69d05b81de53d6be62f348ed}} 
 \index{puissanceQuatre@{puissanceQuatre}!pq\_partie\_finie@{pq\_partie\_finie}}
 \index{pq\_partie\_finie@{pq\_partie\_finie}!puissanceQuatre@{puissanceQuatre}}
@@ -186,32 +146,6 @@ La vérification se fait avec deux critères \+: Si la grille est pleine ou non,
 \begin{DoxyReturn}{Renvoie}
 True si la partie est finie, False sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacepuissanceQuatre_a49a8deccfedee9b11af3276fa585c318}\label{namespacepuissanceQuatre_a49a8deccfedee9b11af3276fa585c318}} 
-\index{puissanceQuatre@{puissanceQuatre}!pq\_print\_grille@{pq\_print\_grille}}
-\index{pq\_print\_grille@{pq\_print\_grille}!puissanceQuatre@{puissanceQuatre}}
-\doxysubsubsection{\texorpdfstring{pq\_print\_grille()}{pq\_print\_grille()}}
-{\footnotesize\ttfamily def puissance\+Quatre.\+pq\+\_\+print\+\_\+grille (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
-
-
-
-Affiche la grille. 
-
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item char\+\_\+joueur \+: Le caractère du jeton du joueur
-\item char\+\_\+bot \+: Le caractère du jeton du bot
-\item char\+\_\+vide \+: Le caractère représentant une case vide
-\item i\+\_\+max\+\_\+ligne \+: Le nombre de lignes de la grille
-\item i\+\_\+max\+\_\+colonne \+: Le nombre de colonnes de la grille
-\item i\+\_\+boucle\+\_\+colonne \+: Le compteur de boucle pour les colonnes de la grille
-\item i\+\_\+boucle\+\_\+ligne \+: Le compteur de boucle pour les lignes de la grille
-\end{DoxyItemize}
-
-
-\begin{DoxyParams}{Paramètres}
-{\em npa\+\_\+grille} & La grille à afficher \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{namespacepuissanceQuatre_a8994b142d63d40c658b53b256f8b9346}\label{namespacepuissanceQuatre_a8994b142d63d40c658b53b256f8b9346}} 
 \index{puissanceQuatre@{puissanceQuatre}!pq\_verif\_colonne@{pq\_verif\_colonne}}
 \index{pq\_verif\_colonne@{pq\_verif\_colonne}!puissanceQuatre@{puissanceQuatre}}
@@ -279,6 +213,7 @@ Verification de la victoire sur une colonne.
 \begin{DoxyItemize}
 \item i\+\_\+compteur \+: Entier, Le nombre de jetons du joueur dans la ligne
 \item i\+\_\+max\+\_\+ligne \+: Entier, Nombre de lignes dans la grille
+\item b\+\_\+victoire \+: Booléen, Indique si le joueur a gagné ou non
 \end{DoxyItemize}
 
 {\bfseries{Préconditions \+:}}

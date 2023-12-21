@@ -1,24 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "pt",
-  1: "pt",
-  2: "pt",
-  3: "p"
+  0: "_cglmprstvw",
+  1: "st",
+  2: "_cgmprtv",
+  3: "cmptvw",
+  4: "lp"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "namespaces",
-  2: "functions",
-  3: "pages"
+  2: "files",
+  3: "functions",
+  4: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "Tout",
   1: "Espaces de nommage",
-  2: "Fonctions",
-  3: "Pages"
+  2: "Fichiers",
+  3: "Fonctions",
+  4: "Pages"
 };
 

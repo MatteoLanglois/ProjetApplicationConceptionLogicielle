@@ -1,0 +1,88 @@
+\hypertarget{namespacesrc_1_1view_1_1view__main}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+view.\+view\+\_\+main}
+\label{namespacesrc_1_1view_1_1view__main}\index{src.view.view\_main@{src.view.view\_main}}
+
+
+Vue principale du jeu Ce module contient les fonctions de base utile à la vue du jeu.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+tk.\+Tk \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}{win\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}{win\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
+\begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}{win\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Initialise le menu de la fenêtre de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Vue principale du jeu Ce module contient les fonctions de base utile à la vue du jeu. 
+
+Ce module permet de facilement avoir le menu sur toutes les fenêtres. De quitter le jeu, de recommencer une partie, etc.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{ctrl__main_8py}{src/controller/ctrl\+\_\+main.\+py}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}\label{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}} 
+\index{src.view.view\_main@{src.view.view\_main}!win\_init@{win\_init}}
+\index{win\_init@{win\_init}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{win\_init()}{win\_init()}}
+{\footnotesize\ttfamily  tk.\+Tk src.\+view.\+view\+\_\+main.\+win\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise la fenêtre de jeu. 
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item tk\+\_\+root \+: Fenêtre principale
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Renvoie}
+Fenêtre principale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}\label{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}} 
+\index{src.view.view\_main@{src.view.view\_main}!win\_menu@{win\_menu}}
+\index{win\_menu@{win\_menu}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{win\_menu()}{win\_menu()}}
+{\footnotesize\ttfamily  tk.\+Menu src.\+view.\+view\+\_\+main.\+win\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise le menu de la fenêtre de jeu. 
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item tkm\+\_\+menu\+\_\+bar \+: Menu de la fenêtre de jeu
+\item tkm\+\_\+menu\+\_\+partie \+: sous-\/menu permettant de gérer la partie
+\item tkm\+\_\+menu\+\_\+param \+: sous-\/menu permettant d\textquotesingle{}accéder aux paramètres
+\item tkm\+\_\+menu\+\_\+a\+\_\+propos \+: sous-\/menu permettant d\textquotesingle{}accéder à la page \char`\"{}À propos\char`\"{}
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Renvoie}
+Menu de la fenêtre de jeu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}\label{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}} 
+\index{src.view.view\_main@{src.view.view\_main}!win\_quit@{win\_quit}}
+\index{win\_quit@{win\_quit}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{win\_quit()}{win\_quit()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+win\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
+
+
+
+Ferme la fenêtre de jeu. 
+
+{\bfseries{Préconditions \+:}}
+\begin{DoxyItemize}
+\item tk\+\_\+root initialisé
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+root} & Fenêtre principale \\
+\hline
+\end{DoxyParams}
