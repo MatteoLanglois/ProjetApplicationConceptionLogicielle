@@ -9,6 +9,10 @@ le jeu, de recommencer une partie, etc.
 
 import tkinter as tk
 
+from src.controller import ctrl_main as ctrl_m
+
+global tk_root
+
 
 def win_init() -> tk.Tk:
     """! Initialise la fenêtre de jeu
@@ -18,27 +22,28 @@ def win_init() -> tk.Tk:
 
     @return Fenêtre principale
     """
+    global tk_root
     # Création de la fenêtre principale
     tk_root = tk.Tk()
     # Changement du titre de la fenêtre principale
     tk_root.title("Puissance 4")
-
+    # Renvoie de la fenêtre créée
     return tk_root
 
 
-def win_quit(tk_root: tk.Tk):
+def win_quit(tk_win_root: tk.Tk):
     """! Ferme la fenêtre de jeu
 
     **Préconditions :**
     * tk_root initialisé
 
-    @param tk_root: Fenêtre principale
+    @param tk_win_root: Fenêtre principale
     """
     # Suppression de la fenêtre principale
-    tk_root.quit()
+    tk_win_root.quit()
 
 
-def win_menu() -> tk.Menu:
+def win_menu(tk_old_frame: tk.Frame) -> tk.Menu:
     """! Initialise le menu de la fenêtre de jeu
 
     **Variables :**
@@ -49,6 +54,7 @@ def win_menu() -> tk.Menu:
 
     @return Menu de la fenêtre de jeu
     """
+    global tk_root
     # Création du menu
     tkm_menu_bar = tk.Menu()
 
@@ -58,16 +64,24 @@ def win_menu() -> tk.Menu:
     tkm_menu_bar.add_cascade(label="Partie",
                              menu=tkm_menu_partie)
     # Ajout d'une commande permettant de lancer une partie
-    tkm_menu_partie.add_command(label="Nouvelle partie")
+    tkm_menu_partie.add_command(label="Nouvelle partie",
+                                command= lambda:
+                                ctrl_m.win_ctrl_page_play(tk_root,
+                                                          tk_old_frame))
     # Ajout d'une commande permettant de relancer une partie
-    tkm_menu_partie.add_command(label="Recommencer")
+    tkm_menu_partie.add_command(label="Recommencer",
+                                command=lambda:
+                                ctrl_m.win_ctrl_page_play(tk_root,
+                                                          tk_old_frame))
     # Ajout d'une commande permettant de quitter le jeu
     tkm_menu_partie.add_command(label="Quitter",
                                 command=lambda: win_quit)
 
     # Ajout d'un bouton dans le menu pour accéder aux paramètres
     tkm_menu_bar.add_command(label="Paramètres",
-                             command=lambda: print("Paramètres"))
+                             command=lambda:
+                             ctrl_m.win_ctrl_page_parameters(tk_root,
+                                                             tk_old_frame))
     # Ajout d'un bouton dans le menu pour accéder à la page à propos
     tkm_menu_bar.add_command(label="A propos",
                              command=lambda: print("A propos"))

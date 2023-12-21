@@ -10,9 +10,9 @@ Vue principale du jeu Ce module contient les fonctions de base utile à la vue d
 \item 
 tk.\+Tk \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}{win\+\_\+init}} ()
 \begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}{win\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}{win\+\_\+quit}} (tk.\+Tk tk\+\_\+win\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
-tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}{win\+\_\+menu}} ()
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}{win\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame)
 \begin{DoxyCompactList}\small\item\em Initialise le menu de la fenêtre de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,11 +45,11 @@ Initialise la fenêtre de jeu.
 \begin{DoxyReturn}{Renvoie}
 Fenêtre principale 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}\label{namespacesrc_1_1view_1_1view__main_a8b73bd417b17229a8fc950d26bb9f0c5}} 
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}\label{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}} 
 \index{src.view.view\_main@{src.view.view\_main}!win\_menu@{win\_menu}}
 \index{win\_menu@{win\_menu}!src.view.view\_main@{src.view.view\_main}}
 \doxysubsubsection{\texorpdfstring{win\_menu()}{win\_menu()}}
-{\footnotesize\ttfamily  tk.\+Menu src.\+view.\+view\+\_\+main.\+win\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  tk.\+Menu src.\+view.\+view\+\_\+main.\+win\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
@@ -66,11 +66,11 @@ Initialise le menu de la fenêtre de jeu.
 \begin{DoxyReturn}{Renvoie}
 Menu de la fenêtre de jeu 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}\label{namespacesrc_1_1view_1_1view__main_a2bc592c0d20e7f2656705d7c9f91a477}} 
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}\label{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}} 
 \index{src.view.view\_main@{src.view.view\_main}!win\_quit@{win\_quit}}
 \index{win\_quit@{win\_quit}!src.view.view\_main@{src.view.view\_main}}
 \doxysubsubsection{\texorpdfstring{win\_quit()}{win\_quit()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+win\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+win\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
 
 
 
@@ -83,6 +83,6 @@ Ferme la fenêtre de jeu.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em tk\+\_\+root} & Fenêtre principale \\
+{\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
 \hline
 \end{DoxyParams}

@@ -84,9 +84,15 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aa1562943cfb639287b99a4c017707541"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#aa1562943cfb639287b99a4c017707541">win_ctrl_quit</a> (tk.Tk tk_root)</td></tr>
 <tr class="memdesc:aa1562943cfb639287b99a4c017707541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme la fenêtre de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#aa1562943cfb639287b99a4c017707541">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa1562943cfb639287b99a4c017707541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28f57562dd6b69060f8ef01eb688d6af"><td class="memItemLeft" align="right" valign="top">tk.Menu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a28f57562dd6b69060f8ef01eb688d6af">win_ctrl_menu</a> ()</td></tr>
-<tr class="memdesc:a28f57562dd6b69060f8ef01eb688d6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le menu de la fenêtre.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#a28f57562dd6b69060f8ef01eb688d6af">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a28f57562dd6b69060f8ef01eb688d6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0e5e321793c72405220dbae7d775a6"><td class="memItemLeft" align="right" valign="top">tk.Menu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#afd0e5e321793c72405220dbae7d775a6">win_ctrl_menu</a> (tk.Frame tk_old_frame)</td></tr>
+<tr class="memdesc:afd0e5e321793c72405220dbae7d775a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le menu de la fenêtre.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#afd0e5e321793c72405220dbae7d775a6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd0e5e321793c72405220dbae7d775a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a104848074b335180bd1f9193cf119d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a0a104848074b335180bd1f9193cf119d">win_ctrl_page_play</a> (tk.Tk tk_root, tk.Frame tkf_old_frame)</td></tr>
+<tr class="memdesc:a0a104848074b335180bd1f9193cf119d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de passer à la fenêtre de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#a0a104848074b335180bd1f9193cf119d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0a104848074b335180bd1f9193cf119d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91976fa982ebefc350382376cd232ed"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ab91976fa982ebefc350382376cd232ed">win_ctrl_page_parameters</a> (tk.Tk tk_root, tk.Frame tkf_old_frame)</td></tr>
+<tr class="memdesc:ab91976fa982ebefc350382376cd232ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de passer à la fenêtre de paramètres.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#ab91976fa982ebefc350382376cd232ed">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab91976fa982ebefc350382376cd232ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Contrôleur de la fenêtre globale Ce module contient les fonctions permettant de gérer la fenêtre globale. </p>
@@ -116,8 +122,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a28f57562dd6b69060f8ef01eb688d6af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28f57562dd6b69060f8ef01eb688d6af">&#9670;&nbsp;</a></span>win_ctrl_menu()</h2>
+<a id="afd0e5e321793c72405220dbae7d775a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0e5e321793c72405220dbae7d775a6">&#9670;&nbsp;</a></span>win_ctrl_menu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +131,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"> tk.Menu src.controller.ctrl_main.win_ctrl_menu </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">tk.Frame&#160;</td>
+          <td class="paramname"><em>tk_old_frame</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -133,6 +140,80 @@ Fonctions</h2></td></tr>
 
 <p>Crée le menu de la fenêtre. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Menu de la fenêtre </dd></dl>
+
+</div>
+</div>
+<a id="ab91976fa982ebefc350382376cd232ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91976fa982ebefc350382376cd232ed">&#9670;&nbsp;</a></span>win_ctrl_page_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_main.win_ctrl_page_parameters </td>
+          <td>(</td>
+          <td class="paramtype">tk.Tk&#160;</td>
+          <td class="paramname"><em>tk_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tk.Frame&#160;</td>
+          <td class="paramname"><em>tkf_old_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de passer à la fenêtre de paramètres. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tk_root</td><td>La fenêtre principale </td></tr>
+    <tr><td class="paramname">tkf_old_frame</td><td>Le cadre de la dernière fenêtre </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a104848074b335180bd1f9193cf119d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a104848074b335180bd1f9193cf119d">&#9670;&nbsp;</a></span>win_ctrl_page_play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_main.win_ctrl_page_play </td>
+          <td>(</td>
+          <td class="paramtype">tk.Tk&#160;</td>
+          <td class="paramname"><em>tk_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tk.Frame&#160;</td>
+          <td class="paramname"><em>tkf_old_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de passer à la fenêtre de jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tk_root</td><td>La fenêtre principale </td></tr>
+    <tr><td class="paramname">tkf_old_frame</td><td>Le cadre de la dernière fenêtre </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -8,6 +8,7 @@ Ce module contient les fonctions permettant de gérer la vue de la page de jeu.
 
 import tkinter as tk
 from src.controller import ctrl_pageJeu as ctrl_pj
+from src.controller import ctrl_main as ctrl_m
 
 """! Frame de la page de jeu
 """
@@ -53,6 +54,9 @@ def v_page_jeu_init(tk_root: tk.Tk):
     # Affichage du cadre
     tkf_page_jeu.grid(row=0, column=0, sticky="nsew")
 
+    # Affichage du menu sur toutes les fenêtres
+    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_jeu))
+
     # On définit la largeur du canvas qui va permettre d'afficher la grille
     i_canvas_width = 430
     # On définit la hauteur du canvas qui va permettre d'afficher la grille
@@ -70,25 +74,25 @@ def v_page_jeu_init(tk_root: tk.Tk):
     tkB_undo = tk.Button(tkf_page_jeu, text="Undo", font=("Helvetica", 20),
                          command=lambda: ctrl_pj.ctrl_page_jeu_undo())
     # Affichage du bouton
-    tkB_undo.grid(row=4, column=0, sticky="nsew", pady=50, padx=50)
+    tkB_undo.grid(row=4, column=0, sticky="nsew", pady=50, padx=20)
 
     # Création d'un bouton pour refaire le dernier coup
     tkB_redo = tk.Button(tkf_page_jeu, text="Redo", font=("Helvetica", 20),
                          command=lambda: ctrl_pj.ctrl_page_jeu_redo())
     # Affichage du bouton
-    tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=50)
+    tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=20)
 
     # Création d'un bouton pour jouer son bonus
     tkB_bonus = tk.Button(tkf_page_jeu, text="Bonus", font=("Helvetica", 20),
                           command=lambda: ctrl_pj.ctrl_page_jeu_bonus())
     # Affichage du bouton
-    tkB_bonus.grid(row=4, column=2, sticky="nsew", pady=50, padx=50)
+    tkB_bonus.grid(row=4, column=2, sticky="nsew", pady=50, padx=20)
 
     # Création d'un bouton pour quitter le jeu
     tkB_quit = tk.Button(tkf_page_jeu, text="Quitter", font=("Helvetica", 20),
                          command=lambda: ctrl_pj.ctrl_page_jeu_quit())
     # Affichage du bouton
-    tkB_quit.grid(row=4, column=3, sticky="nsew", pady=50, padx=50)
+    tkB_quit.grid(row=4, column=3, sticky="nsew", pady=50, padx=20)
 
 
 def v_page_jeu_destroy():

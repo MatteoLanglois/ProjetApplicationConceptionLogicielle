@@ -35,8 +35,10 @@ def ctrl_page_jeu_init(tk_win_root: tk.Tk):
     global npa_grid
     # Enregistrement de manière globale de la fenêtre principale
     global tk_root
+
+    tk_root = tk_win_root
     # Initialisation de la page de jeu
-    view_pj.v_page_jeu_init(tk_win_root)
+    view_pj.v_page_jeu_init(tk_root)
     # Dessin de la grille de jeu
     ctrl_page_jeu_draw_grid()
     # Initialisation de la grille de jeu pour le puissance 4

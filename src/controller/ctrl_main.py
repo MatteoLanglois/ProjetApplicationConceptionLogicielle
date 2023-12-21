@@ -4,6 +4,8 @@ Ce module contient les fonctions permettant de gérer la fenêtre globale.
 
 import tkinter as tk
 from src.controller import ctrl_pageAccueil as ctrl_pa
+from src.controller import ctrl_pageJeu as ctrl_pj
+from src.controller import ctrl_pageParametres as ctrl_pp
 from src.view import view_main as view_m
 
 
@@ -20,8 +22,6 @@ def win_ctrl_init():
     tk_root = view_m.win_init()
     # Initialisation de la page d'accueil
     ctrl_pa.ctrl_page_accueil_init(tk_root)
-    # Affichage du menu sur toutes les fenêtres
-    tk_root.configure(menu=win_ctrl_menu())
     # Boucle principale
     tk.mainloop()
 
@@ -38,10 +38,38 @@ def win_ctrl_quit(tk_root: tk.Tk):
     view_m.win_quit(tk_root)
 
 
-def win_ctrl_menu() -> tk.Menu:
+def win_ctrl_menu(tk_old_frame: tk.Frame) -> tk.Menu:
     """! Crée le menu de la fenêtre
 
     @return Menu de la fenêtre
     """
     # Création du menu
-    return view_m.win_menu()
+    return view_m.win_menu(tk_old_frame)
+
+
+def win_ctrl_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
+    """! Fonction permettant de passer à la fenêtre de jeu.
+
+    @param tk_root: La fenêtre principale
+    @param tkf_old_frame: Le cadre de la dernière fenêtre
+    """
+    # Efface le cadre
+    tkf_old_frame.forget()
+    # Supprime le cadre
+    tkf_old_frame.destroy()
+    # Initialise la page jeu
+    ctrl_pj.ctrl_page_jeu_init(tk_root)
+
+
+def win_ctrl_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
+    """! Fonction permettant de passer à la fenêtre de paramètres
+
+    @param tk_root: La fenêtre principale
+    @param tkf_old_frame: Le cadre de la dernière fenêtre
+    """
+    # Efface le cadre
+    tkf_old_frame.forget()
+    # Supprime le cadre
+    tkf_old_frame.destroy()
+    # Initialise la page de paramètres
+    ctrl_pp.ctrl_page_parameter_init(tk_root)

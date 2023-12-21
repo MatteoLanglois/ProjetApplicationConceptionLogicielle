@@ -6,7 +6,7 @@ Ce module contient les tests unitaires pour le module puissanceQuatre.
 
 import numpy as np
 
-from src.puissance4 import puissanceQuatre as ps4, grid as gr
+from src.puissanceQuatre import puissanceQuatre as ps4, grid as gr
 
 
 # TODO : Pour les vérifications de victoire, mettre plus de cas de non victoire

@@ -12,8 +12,12 @@ def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a3ef155b0221737320
 \begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}{win\+\_\+ctrl\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
-tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a28f57562dd6b69060f8ef01eb688d6af}{win\+\_\+ctrl\+\_\+menu}} ()
-\begin{DoxyCompactList}\small\item\em Crée le menu de la fenêtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}{win\+\_\+ctrl\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Crée le menu de la fenêtre. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}{win\+\_\+ctrl\+\_\+page\+\_\+play}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}{win\+\_\+ctrl\+\_\+page\+\_\+parameters}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de paramètres. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -38,11 +42,11 @@ Initialise la fenêtre de jeu.
 {\bfseries{Préconditions \+:}}
 \begin{DoxyItemize}
 \item tk\+\_\+root initialisé 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a28f57562dd6b69060f8ef01eb688d6af}\label{namespacesrc_1_1controller_1_1ctrl__main_a28f57562dd6b69060f8ef01eb688d6af}} 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}\label{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}} 
 \index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_menu@{win\_ctrl\_menu}}
 \index{win\_ctrl\_menu@{win\_ctrl\_menu}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
 \doxysubsubsection{\texorpdfstring{win\_ctrl\_menu()}{win\_ctrl\_menu()}}
-{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
@@ -51,6 +55,40 @@ Crée le menu de la fenêtre.
 \begin{DoxyReturn}{Renvoie}
 Menu de la fenêtre 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}\label{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_page\_parameters@{win\_ctrl\_page\_parameters}}
+\index{win\_ctrl\_page\_parameters@{win\_ctrl\_page\_parameters}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{win\_ctrl\_page\_parameters()}{win\_ctrl\_page\_parameters()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+page\+\_\+parameters (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de passer à la fenêtre de paramètres. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+root} & La fenêtre principale \\
+\hline
+{\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}\label{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_page\_play@{win\_ctrl\_page\_play}}
+\index{win\_ctrl\_page\_play@{win\_ctrl\_page\_play}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{win\_ctrl\_page\_play()}{win\_ctrl\_page\_play()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+page\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de passer à la fenêtre de jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+root} & La fenêtre principale \\
+\hline
+{\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}\label{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}} 
 \index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_quit@{win\_ctrl\_quit}}
 \index{win\_ctrl\_quit@{win\_ctrl\_quit}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}

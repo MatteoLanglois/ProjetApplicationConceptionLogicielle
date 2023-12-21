@@ -6,7 +6,7 @@ d'accueil.
 """
 
 import tkinter as tk
-from src.controller import ctrl_pageAccueil as ctrl_pa
+from src.controller import ctrl_main as ctrl_m
 
 """! Frame de la page d'accueil
 """
@@ -36,6 +36,9 @@ def v_page_accueil_init(tk_root: tk.Tk):
     # Affichage du cadre de la page d'accueil
     tkf_page_accueil.grid(row=0, column=0, sticky="nsew")
 
+    # Affichage du menu sur toutes les fenêtres
+    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_accueil))
+
     # Création d'un label contenant puissance 4
     tkl_title = tk.Label(tkf_page_accueil, text="Puissance 4 !",
                          font=("Helvetica", 24))
@@ -45,7 +48,7 @@ def v_page_accueil_init(tk_root: tk.Tk):
     # Création d'un bouton pour jouer
     tkB_play = tk.Button(tkf_page_accueil, text="Jouer", font=("Helvetica", 20),
                          command=lambda:
-                         ctrl_pa.ctrl_page_accueil_play(tk_root))
+                         ctrl_m.win_ctrl_page_play(tk_root, tkf_page_accueil))
     # Affichage de ce bouton
     tkB_play.grid(row=1, column=0, sticky="nsew", pady=50, padx=50)
 
