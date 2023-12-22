@@ -50,7 +50,7 @@ def v_page_parameter_init(tk_root: tk.Tk):
     tkf_page_parameter.grid(row=0, column=1, sticky="nsew")
 
     # Affichage du menu sur la fenêtre
-    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_parameter))
+    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_parameter, False))
 
     # Ajout d'un label pour "Paramètres"
     tkl_param = tk.Label(tkf_page_parameter, text="Paramètres",

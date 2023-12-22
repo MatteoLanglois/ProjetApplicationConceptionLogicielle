@@ -4,19 +4,16 @@ Ce module contient les fonctions permettant de gérer la page de jeu.
 @see src/view/view_pageJeu.py
 """
 import tkinter as tk
+
+import numpy as np
+
 from src.view import view_pageJeu as view_pj
 from src.controller import ctrl_main as ctrl_m
 from src.puissanceQuatre import puissanceQuatre as ps4
 from src.puissanceQuatre import grid as gr
 
-"""! Grille de jeu
-@see src/puissanceQuatre/grid.py
-"""
-global npa_grid
 
-"""! Fenêtre principale du jeu
-@see src/controller/ctrl_main.py
-"""
+global npa_grid
 global tk_root
 
 
@@ -26,8 +23,7 @@ def ctrl_page_jeu_init(tk_win_root: tk.Tk):
     **Variables :**
     * npa_grid : Grille de jeu
 
-    **Préconditions :**
-    * tk_root initialisé
+    \pre tk_root initialisé
 
     @param tk_win_root: Fenêtre principale
     """
@@ -52,10 +48,14 @@ def ctrl_page_jeu_draw_grid():
     view_pj.v_page_jeu_draw_grid(6, 7)
 
 
-def ctrl_page_jeu_put_coin():
+def ctrl_page_jeu_put_coin(i_row: int, i_cols: int, i_joueur: int):
     """! Place un jeton dans la grille de jeu
     @todo
     """
+    if i_joueur == 1:
+        view_pj.v_page_jeu_show_coin(i_row, i_cols, "yellow")
+    else:
+        view_pj.v_page_jeu_show_coin(i_row, i_cols, "red")
 
 
 def ctrl_page_jeu_undo():
@@ -87,6 +87,15 @@ def ctrl_page_jeu_play(event: tk.Event):
     @todo
     """
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
+    i_grid_x, _ = view_pj.v_page_jeu_get_grid_cell(event.x, event.y)
+    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
+                                            i_colonne=i_grid_x, i_joueur=1)
+    ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 1)
+    i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2, npaGrilleCopy=np.copy(npa_grid),
+                                i_nb_victoire=4)
+    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
+                                            i_colonne=i_grid_x, i_joueur=2)
+    ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 2)
 
 
 def ctrl_page_jeu_bonus():

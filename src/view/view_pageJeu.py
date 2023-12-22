@@ -45,7 +45,7 @@ def v_page_jeu_init(tk_root: tk.Tk):
     tkf_page_jeu.grid(row=0, column=0, sticky="nsew")
 
     # Affichage du menu sur toutes les fenêtres
-    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_jeu))
+    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_jeu, True))
 
     # On définit la largeur du canvas qui va permettre d'afficher la grille
     i_canvas_width = 500
@@ -159,6 +159,22 @@ def v_page_jeu_show_coin(row: int, column: int, color: str):
     @todo
     """
     global i_canvas_width, i_canvas_height, i_nb_rows, i_nb_columns
+
+    # On définit la largeur d'une cellule en fonction de la taille du canvas
+    # et du nombre de colonnes dans la grille
+    cell_width = i_canvas_width / i_nb_columns
+    # On définit la hauteur d'une cellule en fonction de la taille du canvas
+    # et du nombre de lignes dans la grille
+    cell_height = i_canvas_height / i_nb_rows
+
+    # On calcule les coordonnées du point supérieur gauche de la cellule
+    ti_upper_left = (column * cell_width + 5, row * cell_height + 5)
+    # On calcule les coordonnées du point inférieur droit de la cellule
+    ti_lower_right = (column * cell_width + cell_width - 5,
+                      row * cell_height + cell_height - 5)
+
+    # On dessine le jeton
+    tkc_grid.create_oval((ti_upper_left, ti_lower_right), fill=color)
 
 
 def v_page_jeu_get_grid_cell(i_x: int, i_y: int) -> (int, int):

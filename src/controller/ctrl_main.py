@@ -15,8 +15,7 @@ def win_ctrl_init():
     **Variables :**
     * tk_root : Fenêtre principale
 
-    **Préconditions :**
-    * tk_root initialisé
+    \pre tk_root initialisé
     """
     # Initialisation de la fenêtre
     tk_root = view_m.win_init()
@@ -38,13 +37,13 @@ def win_ctrl_quit(tk_root: tk.Tk):
     view_m.win_quit(tk_root)
 
 
-def win_ctrl_menu(tk_old_frame: tk.Frame) -> tk.Menu:
+def win_ctrl_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     """! Crée le menu de la fenêtre
 
     @return Menu de la fenêtre
     """
     # Création du menu
-    return view_m.win_menu(tk_old_frame)
+    return view_m.win_menu(tk_old_frame, b_in_game)
 
 
 def win_ctrl_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):

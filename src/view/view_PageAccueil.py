@@ -37,7 +37,7 @@ def v_page_accueil_init(tk_root: tk.Tk):
     tkf_page_accueil.grid(row=0, column=0, sticky="nsew")
 
     # Affichage du menu sur toutes les fenêtres
-    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_accueil))
+    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_accueil, False))
 
     # Création d'un label contenant puissance 4
     tkl_title = tk.Label(tkf_page_accueil, text="Puissance 4 !",

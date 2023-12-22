@@ -43,7 +43,7 @@ def win_quit(tk_win_root: tk.Tk):
     tk_win_root.quit()
 
 
-def win_menu(tk_old_frame: tk.Frame) -> tk.Menu:
+def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     """! Initialise le menu de la fenêtre de jeu
 
     **Variables :**
@@ -68,11 +68,13 @@ def win_menu(tk_old_frame: tk.Frame) -> tk.Menu:
                                 command=lambda:
                                 ctrl_m.win_ctrl_page_play(tk_root,
                                                           tk_old_frame))
-    # Ajout d'une commande permettant de relancer une partie
-    tkm_menu_partie.add_command(label="Recommencer",
-                                command=lambda:
-                                ctrl_m.win_ctrl_page_play(tk_root,
-                                                          tk_old_frame))
+    if b_in_game:
+        # Ajout d'une commande permettant de relancer une partie
+        tkm_menu_partie.add_command(label="Recommencer",
+                                    command=lambda:
+                                    ctrl_m.win_ctrl_page_play(tk_root,
+                                                              tk_old_frame))
+
     # Ajout d'une commande permettant de quitter le jeu
     tkm_menu_partie.add_command(label="Quitter",
                                 command=lambda: win_quit)
