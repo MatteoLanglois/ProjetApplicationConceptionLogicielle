@@ -186,34 +186,27 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
 
     @return True si le joueur a gagné, False sinon
     """
-    i_compteur = 0
-    b_vu = False
-    b_suite = False
-    _, i_max_colonne = npa_grille.shape
+    i_max_ligne = np.shape(npa_grille)[0]
+    i_max_colonne = np.shape(npa_grille)[1]
 
-    if i_ligne >= i_nb_victoire - 1:
-        iDebut = i_colonne - i_nb_victoire + 1
-        iFin = i_colonne + i_nb_victoire - 1
-
-        if iDebut < 0:
-            iDebut = 0
-
-        if iFin > i_max_colonne:
-            iFin = i_max_colonne
-
-        for i_boucle in range(iDebut, iFin):
-            if npa_grille[i_ligne][i_boucle] == i_joueur and not b_vu:
-                b_vu = True
-                b_suite = True
-                i_compteur = 1
-            elif npa_grille[i_ligne][i_boucle] == i_joueur and b_suite:
-                i_compteur += 1
-            elif npa_grille[i_ligne][i_boucle] != i_joueur and b_vu:
-                b_suite = False
-
-        return i_compteur >= i_nb_victoire
-    else:
-        return False
+    i_debut = i_colonne - i_nb_victoire + 1 \
+        if i_colonne - i_nb_victoire + 1 >= 0 else 0
+    i_fin = i_colonne + i_nb_victoire - 1 \
+        if i_colonne + i_nb_victoire - 1 < i_max_colonne else i_max_colonne - 1
+    for i in range(i_debut, i_fin):
+        if npa_grille[i_ligne][i] == i_joueur:
+            i_compteur = 1
+            i_boucle = 1
+            b_suite = True
+            while i_boucle < i_nb_victoire and i + i_boucle < i_max_colonne and b_suite:
+                if npa_grille[i_ligne][i + i_boucle] == i_joueur:
+                    i_compteur += 1
+                else:
+                    b_suite = False
+                i_boucle += 1
+            if i_compteur >= i_nb_victoire:
+                return True
+    return False
 
 
 def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
@@ -274,59 +267,28 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     """
     i_max_ligne = np.shape(npa_grille)[0]
     i_max_colonne = np.shape(npa_grille)[1]
-    i_debut_ligne = i_ligne - i_nb_victoire + 1 \
+    i_haut_ligne = i_ligne - i_nb_victoire + 1 \
         if i_ligne - i_nb_victoire + 1 >= 0 else 0
-    i_fin_ligne = i_ligne + i_nb_victoire - 1 \
+    i_bas_ligne = i_ligne + i_nb_victoire - 1 \
         if i_ligne + i_nb_victoire - 1 < i_max_ligne else i_max_ligne - 1
-    i_debut_colonne = i_colonne - i_nb_victoire + 1 \
+    i_gauche_colonne = i_colonne - i_nb_victoire + 1 \
         if i_colonne - i_nb_victoire + 1 >= 0 else 0
-    i_fin_colonne = i_colonne + i_nb_victoire - 1 \
+    i_droite_colonne = i_colonne + i_nb_victoire - 1 \
         if i_colonne + i_nb_victoire - 1 < i_max_colonne else i_max_colonne - 1
-
-    compteur = 0
-    i_suite_jeton = 0
-    i_max_suite_jeton = 0
-    b_suite = False
-    while (i_debut_ligne + compteur < i_max_ligne
-           and i_debut_colonne + compteur < i_max_colonne):
-        if (npa_grille[
-            i_debut_ligne + compteur, i_debut_colonne + compteur] == i_joueur
-                and not b_suite):
-            i_suite_jeton = 1
-            b_suite = True
-        elif (npa_grille[
-                  i_debut_ligne + compteur, i_debut_colonne + compteur] == i_joueur
-              and b_suite):
-            i_suite_jeton += 1
-        elif (npa_grille[
-                  i_debut_ligne + compteur, i_debut_colonne + compteur] != i_joueur
-              and b_suite):
-            b_suite = False
-        if i_suite_jeton > i_max_suite_jeton:
-            i_max_suite_jeton = i_suite_jeton
-        compteur += 1
-    compteur = 0
-    i_suite_jeton = 0
-    b_suite = False
-    while (i_debut_ligne - compteur >= 0
-           and i_debut_colonne + compteur < i_max_colonne):
-        if (npa_grille[i_debut_ligne - compteur][
-            i_debut_colonne + compteur] == i_joueur
-                and not b_suite):
-            i_suite_jeton = 1
-            b_suite = True
-        elif (npa_grille[
-                  i_debut_ligne - compteur, i_debut_colonne + compteur] == i_joueur
-              and b_suite):
-            i_suite_jeton += 1
-        elif (npa_grille[
-                  i_debut_ligne - compteur, i_debut_colonne + compteur] != i_joueur
-              and b_suite):
-            b_suite = False
-        if i_suite_jeton > i_max_suite_jeton:
-            i_max_suite_jeton = i_suite_jeton
-        compteur += 1
-    return i_max_suite_jeton >= i_nb_victoire
+    for i in range(i_haut_ligne, i_bas_ligne):
+        for j in range(i_gauche_colonne, i_droite_colonne):
+            if npa_grille[i][j] == i_joueur:
+                i_compteur = 1
+                i_boucle = 1
+                b_suite = True
+                while i_boucle < i_nb_victoire and i + i_boucle < i_max_ligne and j + i_boucle < i_max_colonne and b_suite:
+                    if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
+                        i_compteur += 1
+                    else:
+                        b_suite = False
+                    i_boucle += 1
+                if i_compteur >= i_nb_victoire:
+                    return True
 
 
 def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
@@ -446,9 +408,11 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         # Sinon
         else:
             # Choix de la colonne où le bot va jouer (random pour commencer)
-            i_colonne_joueur, _ = pq_minmax(2, np.copy(npa_grille),
+            """i_colonne_joueur, _ = pq_minmax(2, np.copy(npa_grille),
                                             i_nb_jeton_victoire, isFirst=True,
                                             tour=0)
+            """
+            i_colonne_joueur = int(input("Colonne du bot : ")) - 1
             # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
 
