@@ -290,6 +290,39 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 if i_compteur >= i_nb_victoire:
                     return True
 
+def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
+    """! Méthode permettant de revenir en arrière dans le jeu
+
+    @param npa_grille: La grille du puissance 4
+    @param t_undo_redo: La liste contenant les grilles pour l'undo et le redo
+    @return La grille du puissance 4 après l'undo
+    """
+    # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
+    if t_undo_redo:
+        # On récupère la dernière grille
+        if len(t_undo_redo) == 1:
+            print("Recommence et fait pas chier")
+        else:
+            npa = t_undo_redo.pop()
+            npa = t_undo_redo.pop()
+            return npa
+    # On retourne la grille
+    return npa_grille
+
+def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
+    """! Méthode permettant de revenir en avant dans le jeu
+
+    @param npa_grille: La grille du puissance 4
+    @param t_redo: La liste contenant les grilles pour l'undo et le redo
+    @return La grille du puissance 4 après le redo
+    """
+    # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
+    if t_redo:
+        # On récupère la dernière grille
+        npa = t_redo.pop()
+        return npa
+    # On retourne la grille
+    return npa_grille
 
 def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
     """! Vérification de si la partie est finie ou non.
@@ -367,6 +400,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     b_bonus_utilise = False
     # Initialisation d'une liste pour l'undo et le redo
     t_undo_redo = []
+    t_redo = []
     # Initialisation de la grille de jeu
     npa_grille = gr.pq_init_grille(i_nb_lignes, i_nb_colonnes)
     # Initialisation de la colonne où le joueur veut jouer
@@ -384,29 +418,50 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     while not pq_partie_finie(npa_grille, b_bonus_utilise) and not b_victoire:
         # Initialisation de la colonne où le joueur veut jouer à -1 afin de
         # pouvoir vérifier que la colonne est valide
-        i_colonne_joueur = -1
+        i_colonne_joueur = -4
         # Affichage de la grille
         gr.pq_print_grille(npa_grille)
         # Tant que la colonne n'est pas valide
+        t_redo = []
         while (not (0 <= i_colonne_joueur < i_nb_colonnes)
                and pq_verif_colonne(i_colonne_joueur, npa_grille)):
             # Demande de la colonne où le joueur veut jouer
+            is_play = False
             i_colonne_joueur = int(input("\nDans quelle colonne voulez vous "
                                          "jouer ? ")) - 1
-        # Pose du jeton et récupération de la ligne où le jeton a été posé
-        i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 1)
+            if i_colonne_joueur == -1:
+                print("Utilisation du bonus !")
 
-        # Si le joueur a gagné
-        if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
-                        1, i_nb_jeton_victoire)):
-            # Affichage de la grille
-            gr.pq_print_grille(npa_grille)
-            # Affichage du message de victoire
-            print("Le joueur 1 a gagné !")
-            # Passage du booléen de victoire à vrai
-            b_victoire = True
-        # Sinon
-        else:
+            elif i_colonne_joueur == -2:
+                t_redo.append(np.copy(npa_grille))
+                npa_grille = pq_undo(npa_grille, t_undo_redo)
+                print("Undo !")
+                gr.pq_print_grille(npa_grille)
+                t_undo_redo.append(npa_grille)
+
+            elif i_colonne_joueur == -3:
+                t_undo_redo.append(np.copy(npa_grille))
+                npa_grille = pq_redo(npa_grille, t_redo)
+                print("Redo !")
+                gr.pq_print_grille(npa_grille)
+
+            else:
+                is_play = True
+        # Pose du jeton et récupération de la ligne où le jeton a été posé
+        if is_play:
+            i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 1)
+
+            # Si le joueur a gagné
+            if (pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
+                            1, i_nb_jeton_victoire)):
+                # Affichage de la grille
+                gr.pq_print_grille(npa_grille)
+                # Affichage du message de victoire
+                print("Le joueur 1 a gagné !")
+                # Passage du booléen de victoire à vrai
+                b_victoire = True
+
+        if not b_victoire and not pq_partie_finie(npa_grille, b_bonus_utilise):
             # Choix de la colonne où le bot va jouer (random pour commencer)
             """i_colonne_joueur, _ = pq_minmax(2, np.copy(npa_grille),
                                             i_nb_jeton_victoire, isFirst=True,
@@ -426,7 +481,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
                 # Passage du booléen de victoire à vrai
                 b_victoire = True
         # Ajout de la grille à la liste pour l'undo et le redo
-        t_undo_redo.append(npa_grille)
+        t_undo_redo.append(np.copy(npa_grille))
     # Fin de partie
     return
 
