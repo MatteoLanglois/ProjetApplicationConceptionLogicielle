@@ -53,9 +53,9 @@ def ctrl_page_jeu_put_coin(i_row: int, i_cols: int, i_joueur: int):
     @todo
     """
     if i_joueur == 1:
-        view_pj.v_page_jeu_show_coin(i_row, i_cols, "yellow")
-    else:
         view_pj.v_page_jeu_show_coin(i_row, i_cols, "red")
+    else:
+        view_pj.v_page_jeu_show_coin(i_row, i_cols, "yellow")
 
 
 def ctrl_page_jeu_undo():
@@ -80,25 +80,55 @@ def ctrl_page_jeu_quit():
     ctrl_m.win_ctrl_quit(tk_root)
 
 
-def ctrl_page_jeu_play(event: tk.Event):
+def ctrl_page_jeu_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     """! Joue un coup dans la grille de jeu
 
     @param event: Evenement de la souris sur la grille de jeu
+    @param tkf_page_jeu : Frame de la page de jeu
     @todo
     """
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.v_page_jeu_get_grid_cell(event.x, event.y)
-    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
-                                            i_colonne=i_grid_x, i_joueur=1)
-    ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 1)
-    i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2, npaGrilleCopy=np.copy(npa_grid),
-                                i_nb_victoire=4)
-    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
-                                            i_colonne=i_grid_x, i_joueur=2)
-    ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 2)
+    b_joueur_gagne = False
+    b_joueur_joue = False
+
+    if not ps4.pq_partie_finie(npa_grid, False):
+        if ps4.pq_verif_colonne(i_grid_x, npa_grid):
+            i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
+                                                    i_colonne=i_grid_x,
+                                                    i_joueur=1)
+            print("Joueur 1 joue en " + str(i_grid_x) + ", " + str(i_grid_y))
+            ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 1)
+            b_joueur_joue = True
+            if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 1, 4):
+                ctrl_m.win_ctrl_ended_game("Le Joueur 1 a gagné",
+                                           tkf_old_frame=tkf_page_jeu)
+                b_joueur_gagne = True
+        if (not b_joueur_gagne and b_joueur_joue
+                and not ps4.pq_partie_finie(npa_grid, False)):
+            ctrl_page_jeu_bot_play(tkf_page_jeu)
+
+    else:
+        ctrl_m.win_ctrl_ended_game("Match nul",
+                                   tkf_old_frame=tkf_page_jeu)
 
 
 def ctrl_page_jeu_bonus():
     """! Utilise un bonus
     @todo
     """
+
+
+def ctrl_page_jeu_bot_play(tkf_page_jeu: tk.Frame):
+    """! Fait jouer le bot
+    @todo
+    """
+    i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2,
+                                npaGrilleCopy=np.copy(npa_grid),
+                                i_nb_victoire=4)
+    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
+                                            i_colonne=i_grid_x, i_joueur=2)
+    ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 2)
+    if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 2, 4):
+        ctrl_m.win_ctrl_ended_game("Le joueur 2 a gagné",
+                                   tkf_old_frame=tkf_page_jeu)

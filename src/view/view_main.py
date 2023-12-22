@@ -8,6 +8,7 @@ le jeu, de recommencer une partie, etc.
 """
 
 import tkinter as tk
+from tkinter.messagebox import showinfo, askyesno
 
 from src.controller import ctrl_main as ctrl_m
 
@@ -89,3 +90,24 @@ def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
                              command=lambda: print("A propos"))
     # Renvoie du menu
     return tkm_menu_bar
+
+
+def win_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
+    """! Affiche un message de fin de partie
+
+    **Préconditions :**
+    * tk_root initialisé
+
+    @param s_message: Message à afficher
+    @param tkf_page_jeu: La page de jeu
+    """
+    # Affichage du message
+    if askyesno(title="Fin de partie",
+                message=f"Fin de partie\n{s_message}\nVoulez-vous rejouer ?"):
+        # Si l'utilisateur veut rejouer, on relance une partie
+        ctrl_m.win_ctrl_page_play(tk_root, tkf_page_jeu)
+    else:
+        # Sinon, on revient à la page d'accueil
+        ctrl_m.win_ctrl_page_accueil(tk_root, tkf_page_jeu)
+
+

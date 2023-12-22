@@ -58,7 +58,7 @@ def v_page_jeu_init(tk_root: tk.Tk):
     tkc_grid.grid(row=0, column=0, sticky="nsew", columnspan=4, rowspan=4)
     # Lorsque l'on clique sur le canvas, cela appellera la fonction
     # ctrl_pj.ctrl_page_jeu_play(event)
-    tkc_grid.bind('<Button-1>', lambda event: ctrl_pj.ctrl_page_jeu_play(event))
+    tkc_grid.bind('<Button-1>', lambda event: ctrl_pj.ctrl_page_jeu_play(event, tkf_page_jeu))
 
     # Création d'un bouton pour annuler le dernier coup
     tkB_undo = tk.Button(tkf_page_jeu, text="Undo", font=("Helvetica", 16),

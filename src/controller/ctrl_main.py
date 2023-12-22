@@ -72,3 +72,21 @@ def win_ctrl_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     tkf_old_frame.destroy()
     # Initialise la page de paramètres
     ctrl_pp.ctrl_page_parameter_init(tk_root)
+
+
+def win_ctrl_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
+    """! Fonction permettant de passer à la fenêtre d'accueil
+
+    @param tk_root: La fenêtre principale
+    @param tkf_old_frame: Le cadre de la dernière fenêtre
+    """
+    # Efface le cadre
+    tkf_old_frame.forget()
+    # Supprime le cadre
+    tkf_old_frame.destroy()
+    # Initialise la page d'accueil
+    ctrl_pa.ctrl_page_accueil_init(tk_root)
+
+
+def win_ctrl_ended_game(str_message: str, tkf_old_frame: tk.Frame):
+    view_m.win_message_game_ended(str_message, tkf_old_frame)
