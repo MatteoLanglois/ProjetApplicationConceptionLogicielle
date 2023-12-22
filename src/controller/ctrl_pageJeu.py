@@ -12,7 +12,6 @@ from src.controller import ctrl_main as ctrl_m
 from src.puissanceQuatre import puissanceQuatre as ps4
 from src.puissanceQuatre import grid as gr
 
-
 global npa_grid
 global tk_root
 
@@ -125,6 +124,8 @@ def ctrl_page_jeu_bot_play(tkf_page_jeu: tk.Frame):
     """
     i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2,
                                 npaGrilleCopy=np.copy(npa_grid),
+                                isFirst=True,
+                                tour=-1,
                                 i_nb_victoire=4)
     i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
                                             i_colonne=i_grid_x, i_joueur=2)
