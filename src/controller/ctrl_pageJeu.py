@@ -87,7 +87,6 @@ def ctrl_page_jeu_play(event: tk.Event):
     @todo
     """
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
-    print(view_pj.v_page_jeu_get_grid_cell(event.x, event.y))
 
 
 def ctrl_page_jeu_bonus():

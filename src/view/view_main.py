@@ -65,7 +65,7 @@ def win_menu(tk_old_frame: tk.Frame) -> tk.Menu:
                              menu=tkm_menu_partie)
     # Ajout d'une commande permettant de lancer une partie
     tkm_menu_partie.add_command(label="Nouvelle partie",
-                                command= lambda:
+                                command=lambda:
                                 ctrl_m.win_ctrl_page_play(tk_root,
                                                           tk_old_frame))
     # Ajout d'une commande permettant de relancer une partie
