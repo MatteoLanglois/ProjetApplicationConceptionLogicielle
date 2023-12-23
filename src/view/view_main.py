@@ -36,11 +36,11 @@ def vm_init() -> tk.Tk:
     """
     global TK_ROOT
     # Création de la fenêtre principale
-    tk_root = tk.Tk()
+    TK_ROOT = tk.Tk()
     # Changement du titre de la fenêtre principale
-    tk_root.title("Puissance 4")
+    TK_ROOT.title("Puissance 4")
     # Renvoie de la fenêtre créée
-    return tk_root
+    return TK_ROOT
 
 
 def vm_quit(tk_win_root: tk.Tk):
@@ -78,13 +78,13 @@ def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     # Ajout d'une commande permettant de lancer une partie
     tkm_menu_partie.add_command(label="Nouvelle partie",
                                 command=lambda:
-                                ctrl_m.cm_page_play(tk_root,
+                                ctrl_m.cm_page_play(TK_ROOT,
                                                     tk_old_frame))
     if b_in_game:
         # Ajout d'une commande permettant de relancer une partie
         tkm_menu_partie.add_command(label="Recommencer",
                                     command=lambda:
-                                    ctrl_m.cm_page_play(tk_root,
+                                    ctrl_m.cm_page_play(TK_ROOT,
                                                         tk_old_frame))
 
     # Ajout d'une commande permettant de quitter le jeu
@@ -94,7 +94,7 @@ def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     # Ajout d'un bouton dans le menu pour accéder aux paramètres
     tkm_menu_bar.add_command(label="Paramètres",
                              command=lambda:
-                             ctrl_m.cm_page_parameters(tk_root,
+                             ctrl_m.cm_page_parameters(TK_ROOT,
                                                        tk_old_frame))
     # Ajout d'un bouton dans le menu pour accéder à la page à propos
     tkm_menu_bar.add_command(label="A propos",
