@@ -1,24 +1,35 @@
-"""! **Vue de la page de jeu**
-Ce module représente la vue de la page de jeu.
+"""! @brief Un programme qui joue au jeu puissance 4++.
 
-Ce module contient les fonctions permettant de gérer la vue de la page de jeu.
+@mainpage Projet Puissance 4++
 
-@see src/controller/ctrl_pageJeu.py
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package src.view.view_pageJeu
+@brief Ce module représente la vue de la page de jeu.
+@details Ce module contient les fonctions permettant de gérer la vue de la page 
+de jeu.
 """
 
 import tkinter as tk
 from src.controller import ctrl_pageJeu as ctrl_pj
 from src.controller import ctrl_main as ctrl_m
 
-global tkf_page_jeu
-global tkc_grid
-global i_canvas_width
-global i_canvas_height
-global i_nb_rows
-global i_nb_columns
+global TKF_PAGE_JEU
+global TKC_GRID
+global I_CANVAS_WIDTH
+global I_CANVAS_HEIGHT
+global I_NB_ROWS
+global I_NB_COLUMNS
 
 
-def v_page_jeu_init(tk_root: tk.Tk, st_color_grid: str):
+def vpj_init(tk_root: tk.Tk, st_color_grid: str):
     """! Initialise la page de jeu
 
     **Variables :**
@@ -39,55 +50,55 @@ def v_page_jeu_init(tk_root: tk.Tk, st_color_grid: str):
     """
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
-    global tkf_page_jeu, tkc_grid, i_canvas_width, i_canvas_height
+    global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT
     # Création du cadre permettant l'affichage de la page du jeu
-    tkf_page_jeu = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
+    TKF_PAGE_JEU = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
     # Affichage du cadre
-    tkf_page_jeu.grid(row=0, column=0, sticky="nsew")
+    TKF_PAGE_JEU.grid(row=0, column=0, sticky="nsew")
 
     # Affichage du menu sur toutes les fenêtres
-    tk_root.configure(menu=ctrl_m.win_ctrl_menu(tkf_page_jeu, True))
+    tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_JEU, True))
 
     # On définit la largeur du canvas qui va permettre d'afficher la grille
-    i_canvas_width = 500
+    I_CANVAS_WIDTH = 500
     # On définit la hauteur du canvas qui va permettre d'afficher la grille
-    i_canvas_height = 430
+    I_CANVAS_HEIGHT = 430
     # On crée le canvas
-    tkc_grid = tk.Canvas(tkf_page_jeu, bg=st_color_grid,
-                         width=i_canvas_width, height=i_canvas_height)
+    TKC_GRID = tk.Canvas(TKF_PAGE_JEU, bg=st_color_grid,
+                         width=I_CANVAS_WIDTH, height=I_CANVAS_HEIGHT)
     # On affiche le canvas
-    tkc_grid.grid(row=0, column=0, sticky="nsew", columnspan=4, rowspan=4)
+    TKC_GRID.grid(row=0, column=0, sticky="nsew", columnspan=4, rowspan=4)
     # Lorsque l'on clique sur le canvas, cela appellera la fonction
     # ctrl_pj.ctrl_page_jeu_play(event)
-    tkc_grid.bind('<Button-1>',
-                  lambda event: ctrl_pj.ctrl_page_jeu_play(event, tkf_page_jeu))
+    TKC_GRID.bind('<Button-1>',
+                  lambda event: ctrl_pj.cpj_play(event, TKF_PAGE_JEU))
 
     # Création d'un bouton pour annuler le dernier coup
-    tkB_undo = tk.Button(tkf_page_jeu, text="Undo", font=("Helvetica", 16),
-                         command=lambda: ctrl_pj.ctrl_page_jeu_undo())
+    tkB_undo = tk.Button(TKF_PAGE_JEU, text="Undo", font=("Helvetica", 16),
+                         command=lambda: ctrl_pj.cpj_undo())
     # Affichage du bouton
     tkB_undo.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour refaire le dernier coup
-    tkB_redo = tk.Button(tkf_page_jeu, text="Redo", font=("Helvetica", 16),
-                         command=lambda: ctrl_pj.ctrl_page_jeu_redo())
+    tkB_redo = tk.Button(TKF_PAGE_JEU, text="Redo", font=("Helvetica", 16),
+                         command=lambda: ctrl_pj.cpj_redo())
     # Affichage du bouton
     tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour jouer son bonus
-    tkB_bonus = tk.Button(tkf_page_jeu, text="Bonus", font=("Helvetica", 16),
-                          command=lambda: ctrl_pj.ctrl_page_jeu_bonus())
+    tkB_bonus = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
+                          command=lambda: ctrl_pj.cpj_bonus())
     # Affichage du bouton
     tkB_bonus.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour quitter le jeu
-    tkB_quit = tk.Button(tkf_page_jeu, text="Quitter", font=("Helvetica", 16),
-                         command=lambda: ctrl_pj.ctrl_page_jeu_quit())
+    tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica", 16),
+                         command=lambda: ctrl_pj.cpj_quit())
     # Affichage du bouton
     tkB_quit.grid(row=4, column=3, sticky="nsew", pady=50, padx=10)
 
 
-def v_page_jeu_destroy():
+def vpj_destroy():
     """! Détruit la page de jeu
 
     **Variables :**
@@ -98,14 +109,14 @@ def v_page_jeu_destroy():
 
     """
     # On définit de manière globale la variable tkf_page_jeu
-    global tkf_page_jeu
+    global TKF_PAGE_JEU
     # On efface le cadre
-    tkf_page_jeu.pack_forget()
+    TKF_PAGE_JEU.pack_forget()
     # On supprime le cadre
-    tkf_page_jeu.destroy()
+    TKF_PAGE_JEU.destroy()
 
 
-def v_page_jeu_draw_grid(rows: int, columns: int):
+def vpj_draw_grid(rows: int, columns: int):
     """! Dessine la grille de jeu
 
     **Variables :**
@@ -122,26 +133,26 @@ def v_page_jeu_draw_grid(rows: int, columns: int):
     """
     # On définit de manière globale les variables tkc_grid, i_canvas_width,
     # i_canvas_height, i_nb_rows, i_nb_columns
-    global tkc_grid, i_canvas_width, i_canvas_height, i_nb_rows, i_nb_columns
+    global TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
-    i_nb_rows = rows
-    i_nb_columns = columns
+    I_NB_ROWS = rows
+    I_NB_COLUMNS = columns
 
     # On vide le canvas
-    tkc_grid.delete("all")
+    TKC_GRID.delete("all")
 
     # On définit la largeur d'une cellule en fonction de la taille du canvas
     # et du nombre de colonnes dans la grille
-    cell_width = i_canvas_width / columns
+    cell_width = I_CANVAS_WIDTH / columns
     # On définit la hauteur d'une cellule en fonction de la taille du canvas
     # et du nombre de lignes dans la grille
-    cell_height = i_canvas_height / rows
+    cell_height = I_CANVAS_HEIGHT / rows
 
     # Pour chaque colonne de la grille
     for i_rows in range(columns):
         # Pour chaque ligne de la colonne
-        tkc_grid.create_line((i_rows * cell_width, 0),
-                             (i_rows * cell_width, i_canvas_height))
+        TKC_GRID.create_line((i_rows * cell_width, 0),
+                             (i_rows * cell_width, I_CANVAS_HEIGHT))
         for i_cols in range(rows):
             # On calcule les coordonnées du point supérieur gauche de la cellule
             ti_upper_left = (i_rows * cell_width + 5, i_cols * cell_height + 5)
@@ -149,10 +160,10 @@ def v_page_jeu_draw_grid(rows: int, columns: int):
             ti_lower_right = (i_rows * cell_width + cell_width - 5,
                               i_cols * cell_height + cell_height - 5)
             # On dessine la cellule
-            tkc_grid.create_oval((ti_upper_left, ti_lower_right), fill="white")
+            TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill="white")
 
 
-def v_page_jeu_show_coin(row: int, column: int, color: str):
+def vpj_show_coin(row: int, column: int, color: str):
     """! Dessine un jeton dans une cellule
 
     @param row: Ligne de la cellule où l'on va dessiner le jeton
@@ -160,14 +171,14 @@ def v_page_jeu_show_coin(row: int, column: int, color: str):
     @param color: Couleur du jeton
     @todo
     """
-    global i_canvas_width, i_canvas_height, i_nb_rows, i_nb_columns
+    global I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
     # On définit la largeur d'une cellule en fonction de la taille du canvas
     # et du nombre de colonnes dans la grille
-    cell_width = i_canvas_width / i_nb_columns
+    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
     # On définit la hauteur d'une cellule en fonction de la taille du canvas
     # et du nombre de lignes dans la grille
-    cell_height = i_canvas_height / i_nb_rows
+    cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
 
     # On calcule les coordonnées du point supérieur gauche de la cellule
     ti_upper_left = (column * cell_width + 5, row * cell_height + 5)
@@ -176,10 +187,10 @@ def v_page_jeu_show_coin(row: int, column: int, color: str):
                       row * cell_height + cell_height - 5)
 
     # On dessine le jeton
-    tkc_grid.create_oval((ti_upper_left, ti_lower_right), fill=color)
+    TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill=color)
 
 
-def v_page_jeu_get_grid_cell(i_x: int, i_y: int) -> (int, int):
+def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
     """! Récupère les coordonnées dans la grille de la cellule cliquée
     Récupère les coordonnées dans la grille de la cellule cliquée en fonction
     des coordonnées du clic dans le canvas.
@@ -194,14 +205,14 @@ def v_page_jeu_get_grid_cell(i_x: int, i_y: int) -> (int, int):
     @return: Coordonnées de la cellule cliquée dans la grille
     @todo
     """
-    global i_canvas_width, i_canvas_height, i_nb_rows, i_nb_columns
+    global I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
     # On définit la largeur d'une cellule en fonction de la taille du canvas
     # et du nombre de colonnes dans la grille
-    cell_width = i_canvas_width / i_nb_columns
+    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
     # On définit la hauteur d'une cellule en fonction de la taille du canvas
     # et du nombre de lignes dans la grille
-    cell_height = i_canvas_height / i_nb_rows
+    cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
 
     # On retourne les coordonnées de la cellule cliquée
     return int(i_x / cell_width), int(i_y / cell_height)

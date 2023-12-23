@@ -1,0 +1,205 @@
+\hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+controller.\+ctrl\+\_\+page\+Parametres}
+\label{namespacesrc_1_1controller_1_1ctrl__pageParametres}\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+
+
+Un module qui gère la page des paramètres.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_a56036bff22abd21ad9f10cefad3f0371}{ctrl\+\_\+page\+\_\+parameter\+\_\+init}} (tk.\+Tk tk\+\_\+win\+\_\+root)
+\begin{DoxyCompactList}\small\item\em Initialise la page des paramètres. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_ace7aa021a8b7660c01112e676a720903}{ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+save}} ()
+\begin{DoxyCompactList}\small\item\em Sauvegarde les paramètres. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0baab0a6fdbb4f1ee3dfb06f09a6c166}{ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Réinitialise les paramètres. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_ac6254253643a92c22f735a212a4ed40b}{ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+save}} ()
+\begin{DoxyCompactList}\small\item\em Sauvegarde des paramètres de personnalisation. \end{DoxyCompactList}\item 
+(int, int, int, int) \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0812f4b5b3cc14d74183a109a3b42508}{ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+load}} ()
+\begin{DoxyCompactList}\small\item\em Charge les paramètres. \end{DoxyCompactList}\item 
+(str, str, str) \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_a1eefa4df4ad0c5e9222510405ce289f4}{ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+load}} ()
+\begin{DoxyCompactList}\small\item\em Charge les paramètres de personnalisation. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_ae96e20f17b2ac1b0830fede02da47448}{ctrl\+\_\+page\+\_\+parameter\+\_\+askcolor}} (str s\+\_\+element)
+\begin{DoxyCompactList}\small\item\em Ouvre un sélecteur de couleur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageParametres_a62ea8d66d37ebcf62a4feed86644ab31}{ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Réinitialise les paramètres de personnalisation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Un module qui gère la page des paramètres. 
+
+Contient les fonctions permettant de gérer la page des paramètres 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_ae96e20f17b2ac1b0830fede02da47448}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_ae96e20f17b2ac1b0830fede02da47448}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_askcolor@{ctrl\_page\_parameter\_askcolor}}
+\index{ctrl\_page\_parameter\_askcolor@{ctrl\_page\_parameter\_askcolor}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_askcolor()}{ctrl\_page\_parameter\_askcolor()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+askcolor (\begin{DoxyParamCaption}\item[{str}]{s\+\_\+element }\end{DoxyParamCaption})}
+
+
+
+Ouvre un sélecteur de couleur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+element} & Élément à colorer (joueur, bot ou grille) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a1eefa4df4ad0c5e9222510405ce289f4}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a1eefa4df4ad0c5e9222510405ce289f4}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_custom\_load@{ctrl\_page\_parameter\_custom\_load}}
+\index{ctrl\_page\_parameter\_custom\_load@{ctrl\_page\_parameter\_custom\_load}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_custom\_load()}{ctrl\_page\_parameter\_custom\_load()}}
+{\footnotesize\ttfamily  (str, str, str) src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Charge les paramètres de personnalisation. 
+
+\begin{DoxyPrecond}{Précondition}
+res/custom.\+txt existant 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Renvoie}
+st\+\_\+color\+\_\+joueur\+: Couleur des jetons du joueur 
+
+st\+\_\+color\+\_\+bot\+: Couleur des jetons du bot 
+
+st\+\_\+color\+\_\+grid\+: Couleur de la grille
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item st\+\_\+color\+\_\+joueur \+: Couleur des jetons du joueur
+\item st\+\_\+color\+\_\+bot \+: Couleur des jetons du bot
+\item st\+\_\+color\+\_\+grid \+: Couleur de la grille 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a62ea8d66d37ebcf62a4feed86644ab31}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a62ea8d66d37ebcf62a4feed86644ab31}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_custom\_reset@{ctrl\_page\_parameter\_custom\_reset}}
+\index{ctrl\_page\_parameter\_custom\_reset@{ctrl\_page\_parameter\_custom\_reset}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_custom\_reset()}{ctrl\_page\_parameter\_custom\_reset()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Réinitialise les paramètres de personnalisation. 
+
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_ac6254253643a92c22f735a212a4ed40b}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_ac6254253643a92c22f735a212a4ed40b}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_custom\_save@{ctrl\_page\_parameter\_custom\_save}}
+\index{ctrl\_page\_parameter\_custom\_save@{ctrl\_page\_parameter\_custom\_save}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_custom\_save()}{ctrl\_page\_parameter\_custom\_save()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+custom\+\_\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde des paramètres de personnalisation. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+res/custom.\+txt existant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+paramètres de personnalisation sauvegardés ou str\+\_\+message d\textquotesingle{}erreur affiché
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item st\+\_\+color\+\_\+joueur \+: Couleur des jetons du joueur
+\item st\+\_\+color\+\_\+bot \+: Couleur des jetons du bot
+\item st\+\_\+color\+\_\+grid \+: Couleur de la grille
+\item str\+\_\+message \+: Message d\textquotesingle{}information
+\item f\+\_\+custom \+: Fichier de sauvegarde des paramètres de personnalisation 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a56036bff22abd21ad9f10cefad3f0371}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a56036bff22abd21ad9f10cefad3f0371}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_init@{ctrl\_page\_parameter\_init}}
+\index{ctrl\_page\_parameter\_init@{ctrl\_page\_parameter\_init}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_init()}{ctrl\_page\_parameter\_init()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
+
+
+
+Initialise la page des paramètres. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+page des paramètres initialisée
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item tk\+\_\+root \+: Fenêtre principale
+\item i\+\_\+rows \+: Nombre de lignes de la grille
+\item i\+\_\+columns \+: Nombre de colonnes de la grille
+\item i\+\_\+nb\+\_\+jetons \+: Nombre de jetons à aligner pour gagner
+\item i\+\_\+difficulty \+: Difficulté du bot
+\item st\+\_\+color\+\_\+joueur \+: Couleur des jetons du joueur
+\item st\+\_\+color\+\_\+bot \+: Couleur des jetons du bot
+\item st\+\_\+color\+\_\+grid \+: Couleur de la grille 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0812f4b5b3cc14d74183a109a3b42508}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0812f4b5b3cc14d74183a109a3b42508}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_settings\_load@{ctrl\_page\_parameter\_settings\_load}}
+\index{ctrl\_page\_parameter\_settings\_load@{ctrl\_page\_parameter\_settings\_load}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_settings\_load()}{ctrl\_page\_parameter\_settings\_load()}}
+{\footnotesize\ttfamily  (int, int, int, int) src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Charge les paramètres. 
+
+\begin{DoxyPrecond}{Précondition}
+res/settings.\+txt existant 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Renvoie}
+i\+\_\+rows\+: Nombre de lignes de la grille 
+
+i\+\_\+columns\+: Nombre de colonnes de la grille 
+
+i\+\_\+nb\+\_\+jetons\+: Nombre de jetons à aligner pour gagner 
+
+i\+\_\+difficulty\+: Difficulté du bot
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+rows \+: Nombre de lignes de la grille
+\item i\+\_\+columns \+: Nombre de colonnes de la grille
+\item i\+\_\+nb\+\_\+jetons \+: Nombre de jetons à aligner pour gagner
+\item i\+\_\+difficulty \+: Difficulté du bot 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0baab0a6fdbb4f1ee3dfb06f09a6c166}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a0baab0a6fdbb4f1ee3dfb06f09a6c166}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_settings\_reset@{ctrl\_page\_parameter\_settings\_reset}}
+\index{ctrl\_page\_parameter\_settings\_reset@{ctrl\_page\_parameter\_settings\_reset}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_settings\_reset()}{ctrl\_page\_parameter\_settings\_reset()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Réinitialise les paramètres. 
+
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_ace7aa021a8b7660c01112e676a720903}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_ace7aa021a8b7660c01112e676a720903}} 
+\index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!ctrl\_page\_parameter\_settings\_save@{ctrl\_page\_parameter\_settings\_save}}
+\index{ctrl\_page\_parameter\_settings\_save@{ctrl\_page\_parameter\_settings\_save}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_settings\_save()}{ctrl\_page\_parameter\_settings\_save()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Parametres.\+ctrl\+\_\+page\+\_\+parameter\+\_\+settings\+\_\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde les paramètres. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+res/settings.\+txt existant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+paramètres sauvegardés ou str\+\_\+message d\textquotesingle{}erreur affiché
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+rows \+: Nombre de lignes de la grille
+\item i\+\_\+columns \+: Nombre de colonnes de la grille
+\item i\+\_\+nb\+\_\+jetons \+: Nombre de jetons à aligner pour gagner
+\item i\+\_\+difficulty \+: Difficulté du bot
+\item str\+\_\+message \+: Message d\textquotesingle{}information
+\item f\+\_\+settings \+: Fichier de sauvegarde des paramètres 
+\end{DoxyItemize}

@@ -1,17 +1,31 @@
-"""! Controller de la page d'accueil
-Ce module contient les fonctions permettant de gérer la page d'accueil.
+"""! @brief Un programme qui joue au jeu puissance 4++.
+
+@mainpage Projet Puissance 4++
+
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package src.controller.ctrl_pageAccueil
+@brief Un module qui gère la page d'accueil du jeu
+@details Ce module gère la page d'accueil du jeu
 """
+# Importations de tkinter
 import tkinter as tk
-from src.view import view_PageAccueil as view_pa
+# Importation de la vue de la page d'accueil
+from src.view import view_pageAccueil as view_pa
 
 
-def ctrl_page_accueil_init(tk_root: tk.Tk):
+def cpa_init(tk_root: tk.Tk):
     """! Initialise la page d'accueil
 
-    **Préconditions :**
-    * tk_root initialisé
-
+    @pre tk_root initialisé
     @param tk_root: Fenêtre principale
     """
     # Initialisation de la page d'accueil
-    view_pa.v_page_accueil_init(tk_root)
+    view_pa.vpa_init(tk_root)

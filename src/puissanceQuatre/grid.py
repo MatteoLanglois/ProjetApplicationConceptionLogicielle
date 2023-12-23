@@ -1,11 +1,21 @@
-"""! **grid**
-Ce module contient les fonctions relatives à la grille de jeu.
+"""! @brief Un programme qui joue au jeu puissance 4++.
 
-Ce module contient les fonctions de gestion de la grille de jeu.
+@mainpage Projet Puissance 4++
+
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package src.puissanceQuatre.grid
+@brief Ce module contient les fonctions relatives à la grille de jeu.
+@details Ce module contient les fonctions de gestion de la grille de jeu.
 Notamment l'initialisation de la grille, l'affichage de la grille et la
 réinitialisation de la grille.
-
-@see puissanceQuatre
 """
 import numpy as np
 

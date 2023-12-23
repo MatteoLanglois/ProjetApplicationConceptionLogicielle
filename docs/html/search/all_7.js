@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['controller_35',['controller',['../namespacesrc_1_1controller.html',1,'src']]],
-  ['ctrl_5fmain_36',['ctrl_main',['../namespacesrc_1_1controller_1_1ctrl__main.html',1,'src::controller']]],
-  ['ctrl_5fpageaccueil_37',['ctrl_pageAccueil',['../namespacesrc_1_1controller_1_1ctrl__pageAccueil.html',1,'src::controller']]],
-  ['ctrl_5fpagejeu_38',['ctrl_pageJeu',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html',1,'src::controller']]],
-  ['ctrl_5fpageparametres_39',['ctrl_pageParametres',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html',1,'src::controller']]],
-  ['grid_40',['grid',['../namespacesrc_1_1puissanceQuatre_1_1grid.html',1,'src::puissanceQuatre']]],
-  ['main_41',['main',['../namespacesrc_1_1main.html',1,'src']]],
-  ['puissancequatre_42',['puissanceQuatre',['../namespacesrc_1_1puissanceQuatre.html',1,'src.puissanceQuatre'],['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html',1,'src.puissanceQuatre.puissanceQuatre']]],
-  ['src_43',['src',['../namespacesrc.html',1,'']]],
-  ['view_44',['view',['../namespacesrc_1_1view.html',1,'src']]],
-  ['view_5fmain_45',['view_main',['../namespacesrc_1_1view_1_1view__main.html',1,'src::view']]],
-  ['view_5fpageaccueil_46',['view_PageAccueil',['../namespacesrc_1_1view_1_1view__PageAccueil.html',1,'src::view']]],
-  ['view_5fpagejeu_47',['view_pageJeu',['../namespacesrc_1_1view_1_1view__pageJeu.html',1,'src::view']]],
-  ['view_5fpageparametres_48',['view_pageParametres',['../namespacesrc_1_1view_1_1view__pageParametres.html',1,'src::view']]]
+  ['colors_5futils_59',['colors_utils',['../namespacesrc_1_1utils_1_1colors__utils.html',1,'src::utils']]],
+  ['controller_60',['controller',['../namespacesrc_1_1controller.html',1,'src']]],
+  ['ctrl_5fmain_61',['ctrl_main',['../namespacesrc_1_1controller_1_1ctrl__main.html',1,'src::controller']]],
+  ['ctrl_5fpageaccueil_62',['ctrl_pageAccueil',['../namespacesrc_1_1controller_1_1ctrl__pageAccueil.html',1,'src::controller']]],
+  ['ctrl_5fpagejeu_63',['ctrl_pageJeu',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html',1,'src::controller']]],
+  ['ctrl_5fpageparametres_64',['ctrl_pageParametres',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html',1,'src::controller']]],
+  ['grid_65',['grid',['../namespacesrc_1_1puissanceQuatre_1_1grid.html',1,'src::puissanceQuatre']]],
+  ['main_66',['main',['../namespacesrc_1_1main.html',1,'src']]],
+  ['puissancequatre_67',['puissanceQuatre',['../namespacesrc_1_1puissanceQuatre.html',1,'src.puissanceQuatre'],['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html',1,'src.puissanceQuatre.puissanceQuatre']]],
+  ['src_68',['src',['../namespacesrc.html',1,'']]],
+  ['utils_69',['utils',['../namespacesrc_1_1utils.html',1,'src']]],
+  ['view_70',['view',['../namespacesrc_1_1view.html',1,'src']]],
+  ['view_5fmain_71',['view_main',['../namespacesrc_1_1view_1_1view__main.html',1,'src::view']]],
+  ['view_5fpageaccueil_72',['view_pageAccueil',['../namespacesrc_1_1view_1_1view__pageAccueil.html',1,'src::view']]],
+  ['view_5fpagejeu_73',['view_pageJeu',['../namespacesrc_1_1view_1_1view__pageJeu.html',1,'src::view']]],
+  ['view_5fpageparametres_74',['view_pageParametres',['../namespacesrc_1_1view_1_1view__pageParametres.html',1,'src::view']]]
 ];

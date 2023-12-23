@@ -2,40 +2,35 @@
 \label{namespacesrc_1_1view_1_1view__pageJeu}\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}}
 
 
-{\bfseries{Vue de la page de jeu}} Ce module représente la vue de la page de jeu.  
+Ce module représente la vue de la page de jeu.  
 
 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a25c4828f9e9ace3b821735f43fa93654}{v\+\_\+page\+\_\+jeu\+\_\+init}} (tk.\+Tk tk\+\_\+root)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}{vpj\+\_\+init}} (tk.\+Tk tk\+\_\+root, str st\+\_\+color\+\_\+grid)
 \begin{DoxyCompactList}\small\item\em Initialise la page de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a363dee385d8e5ee30ef322b45971ca21}{v\+\_\+page\+\_\+jeu\+\_\+destroy}} ()
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}{vpj\+\_\+destroy}} ()
 \begin{DoxyCompactList}\small\item\em Détruit la page de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a9a559723cb556ddb712010601fcd544d}{v\+\_\+page\+\_\+jeu\+\_\+draw\+\_\+grid}} (int rows, int columns)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}{vpj\+\_\+draw\+\_\+grid}} (int rows, int columns)
 \begin{DoxyCompactList}\small\item\em Dessine la grille de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a3c7d44b5ff8408f4c4b0b12c636ebda7}{v\+\_\+page\+\_\+jeu\+\_\+show\+\_\+coin}} (int row, int column, str color)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a07e89df868628c69908c7cb71ec1525c}{vpj\+\_\+show\+\_\+coin}} (int row, int column, str color)
 \begin{DoxyCompactList}\small\item\em Dessine un jeton dans une cellule. \end{DoxyCompactList}\item 
-(int, int) \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a82fe7003f0ec2468060e342f79a746c2}{v\+\_\+page\+\_\+jeu\+\_\+get\+\_\+grid\+\_\+cell}} (int i\+\_\+x, int i\+\_\+y)
+(int, int) \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}{vpj\+\_\+get\+\_\+grid\+\_\+cell}} (int i\+\_\+x, int i\+\_\+y)
 \begin{DoxyCompactList}\small\item\em Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-{\bfseries{Vue de la page de jeu}} Ce module représente la vue de la page de jeu. 
+Ce module représente la vue de la page de jeu. 
 
-Ce module contient les fonctions permettant de gérer la vue de la page de jeu.
-
-\begin{DoxySeeAlso}{Voir également}
-\mbox{\hyperlink{ctrl__pageJeu_8py}{src/controller/ctrl\+\_\+page\+Jeu.\+py}} 
-\end{DoxySeeAlso}
-
+Ce module contient les fonctions permettant de gérer la vue de la page de jeu. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a363dee385d8e5ee30ef322b45971ca21}\label{namespacesrc_1_1view_1_1view__pageJeu_a363dee385d8e5ee30ef322b45971ca21}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!v\_page\_jeu\_destroy@{v\_page\_jeu\_destroy}}
-\index{v\_page\_jeu\_destroy@{v\_page\_jeu\_destroy}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{v\_page\_jeu\_destroy()}{v\_page\_jeu\_destroy()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+v\+\_\+page\+\_\+jeu\+\_\+destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}\label{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_destroy@{vpj\_destroy}}
+\index{vpj\_destroy@{vpj\_destroy}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_destroy()}{vpj\_destroy()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -49,11 +44,11 @@ Détruit la page de jeu.
 {\bfseries{Préconditions \+:}}
 \begin{DoxyItemize}
 \item tkf\+\_\+page\+\_\+jeu initialisé 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a9a559723cb556ddb712010601fcd544d}\label{namespacesrc_1_1view_1_1view__pageJeu_a9a559723cb556ddb712010601fcd544d}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!v\_page\_jeu\_draw\_grid@{v\_page\_jeu\_draw\_grid}}
-\index{v\_page\_jeu\_draw\_grid@{v\_page\_jeu\_draw\_grid}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{v\_page\_jeu\_draw\_grid()}{v\_page\_jeu\_draw\_grid()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+v\+\_\+page\+\_\+jeu\+\_\+draw\+\_\+grid (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}\label{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_draw\_grid@{vpj\_draw\_grid}}
+\index{vpj\_draw\_grid@{vpj\_draw\_grid}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_draw\_grid()}{vpj\_draw\_grid()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+draw\+\_\+grid (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
 
 
@@ -77,11 +72,11 @@ Dessine la grille de jeu.
 {\em columns} & Nombre de colonnes de la grille \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a82fe7003f0ec2468060e342f79a746c2}\label{namespacesrc_1_1view_1_1view__pageJeu_a82fe7003f0ec2468060e342f79a746c2}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!v\_page\_jeu\_get\_grid\_cell@{v\_page\_jeu\_get\_grid\_cell}}
-\index{v\_page\_jeu\_get\_grid\_cell@{v\_page\_jeu\_get\_grid\_cell}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{v\_page\_jeu\_get\_grid\_cell()}{v\_page\_jeu\_get\_grid\_cell()}}
-{\footnotesize\ttfamily  (int, int) src.\+view.\+view\+\_\+page\+Jeu.\+v\+\_\+page\+\_\+jeu\+\_\+get\+\_\+grid\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+x,  }\item[{int}]{i\+\_\+y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}\label{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_get\_grid\_cell@{vpj\_get\_grid\_cell}}
+\index{vpj\_get\_grid\_cell@{vpj\_get\_grid\_cell}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_get\_grid\_cell()}{vpj\_get\_grid\_cell()}}
+{\footnotesize\ttfamily  (int, int) src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+get\+\_\+grid\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+x,  }\item[{int}]{i\+\_\+y }\end{DoxyParamCaption})}
 
 
 
@@ -104,12 +99,12 @@ Récupère les coordonnées dans la grille de la cellule cliquée Récupère les
 \+: Coordonnées de la cellule cliquée dans la grille 
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000014}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a25c4828f9e9ace3b821735f43fa93654}\label{namespacesrc_1_1view_1_1view__pageJeu_a25c4828f9e9ace3b821735f43fa93654}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!v\_page\_jeu\_init@{v\_page\_jeu\_init}}
-\index{v\_page\_jeu\_init@{v\_page\_jeu\_init}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{v\_page\_jeu\_init()}{v\_page\_jeu\_init()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+v\+\_\+page\+\_\+jeu\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
+\item[\mbox{\hyperlink{todo__todo000007}{A faire}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}\label{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_init@{vpj\_init}}
+\index{vpj\_init@{vpj\_init}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_init()}{vpj\_init()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{str}]{st\+\_\+color\+\_\+grid }\end{DoxyParamCaption})}
 
 
 
@@ -136,12 +131,14 @@ Initialise la page de jeu.
 \begin{DoxyParams}{Paramètres}
 {\em tk\+\_\+root} & Fenêtre principale \\
 \hline
+{\em st\+\_\+color\+\_\+grid} & Couleur de la grille au format hexadécimal \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a3c7d44b5ff8408f4c4b0b12c636ebda7}\label{namespacesrc_1_1view_1_1view__pageJeu_a3c7d44b5ff8408f4c4b0b12c636ebda7}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!v\_page\_jeu\_show\_coin@{v\_page\_jeu\_show\_coin}}
-\index{v\_page\_jeu\_show\_coin@{v\_page\_jeu\_show\_coin}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{v\_page\_jeu\_show\_coin()}{v\_page\_jeu\_show\_coin()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+v\+\_\+page\+\_\+jeu\+\_\+show\+\_\+coin (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{str}]{color }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a07e89df868628c69908c7cb71ec1525c}\label{namespacesrc_1_1view_1_1view__pageJeu_a07e89df868628c69908c7cb71ec1525c}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_show\_coin@{vpj\_show\_coin}}
+\index{vpj\_show\_coin@{vpj\_show\_coin}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_show\_coin()}{vpj\_show\_coin()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+show\+\_\+coin (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{str}]{color }\end{DoxyParamCaption})}
 
 
 
@@ -157,4 +154,4 @@ Dessine un jeton dans une cellule.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000013}{A faire}}]\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000006}{A faire}}]\end{DoxyRefDesc}

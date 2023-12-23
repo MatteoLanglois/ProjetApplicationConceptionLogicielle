@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}{src.\+puissance\+Quatre.\+puissance\+Quatre}}
-\begin{DoxyCompactList}\small\item\em {\bfseries{\mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}{puissance\+Quatre}}}} Ce module contient l\textquotesingle{}implémentation des règles du puissance 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce module contient l\textquotesingle{}implémentation des règles du puissance 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,7 +13,7 @@ bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5
 (int, int) \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+ajout\+\_\+piece}} (np.\+array npa\+\_\+grille, int i\+\_\+colonne, int i\+\_\+joueur)
 \begin{DoxyCompactList}\small\item\em La méthode qui gère le placement de jetons. \end{DoxyCompactList}\item 
 (int, float) \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ae905af98dd54e79d8be7e67b59955437}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+minmax}} (i\+Next\+Joueur, npa\+Grille\+Copy, i\+\_\+nb\+\_\+victoire, i\+Colonne=0, is\+First=False, tour=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Méthode implémentant l\textquotesingle{}algorithme minmax. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+victoire}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
 \item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_aa13c5a20d8aa478adda10bc609f1fc1b}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+victoire\+\_\+ligne}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
@@ -22,6 +22,10 @@ bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a662f22
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur une colonne. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a2f76c9e9fd0ced658f382d854abdefea}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+victoire\+\_\+diago}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur les diagonales. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+undo}} (np.\+array npa\+\_\+grille, list t\+\_\+undo\+\_\+redo)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de revenir en arrière dans le jeu. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a06bdaec03582d0146e06983760361992}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+redo}} (np.\+array npa\+\_\+grille, list t\+\_\+redo)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de revenir en avant dans le jeu. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+partie\+\_\+finie}} (np.\+array npa\+\_\+grille, bool b\+\_\+bonus\+\_\+utilise)
 \begin{DoxyCompactList}\small\item\em Vérification de si la partie est finie ou non. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}{src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+gestion\+\_\+partie}} (int i\+\_\+nb\+\_\+lignes=6, int i\+\_\+nb\+\_\+colonnes=7, int i\+\_\+nb\+\_\+jeton\+\_\+victoire=4)

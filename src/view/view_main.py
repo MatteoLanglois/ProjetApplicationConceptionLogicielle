@@ -1,10 +1,21 @@
-"""! Vue principale du jeu
-Ce module contient les fonctions de base utile à la vue du jeu.
+"""! @brief Un programme qui joue au jeu puissance 4++.
 
-Ce module permet de facilement avoir le menu sur toutes les fenêtres. De quitter
-le jeu, de recommencer une partie, etc.
+@mainpage Projet Puissance 4++
 
-@see src/controller/ctrl_main.py
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package src.view.view_main
+@brief Ce module contient les fonctions de base utile à la vue du jeu.
+@details Ce module permet de facilement avoir le menu sur toutes les fenêtres.
+De quitter le jeu, de recommencer une partie, etc. Il permet aussi d'afficher
+des messages d'information ou d'avertissement.
 """
 
 import tkinter as tk
@@ -12,10 +23,10 @@ from tkinter.messagebox import showinfo, askyesno, showwarning
 
 from src.controller import ctrl_main as ctrl_m
 
-global tk_root
+global TK_ROOT
 
 
-def win_init() -> tk.Tk:
+def vm_init() -> tk.Tk:
     """! Initialise la fenêtre de jeu
 
     **Variables :**
@@ -23,7 +34,7 @@ def win_init() -> tk.Tk:
 
     @return Fenêtre principale
     """
-    global tk_root
+    global TK_ROOT
     # Création de la fenêtre principale
     tk_root = tk.Tk()
     # Changement du titre de la fenêtre principale
@@ -32,7 +43,7 @@ def win_init() -> tk.Tk:
     return tk_root
 
 
-def win_quit(tk_win_root: tk.Tk):
+def vm_quit(tk_win_root: tk.Tk):
     """! Ferme la fenêtre de jeu
 
     **Préconditions :**
@@ -44,7 +55,7 @@ def win_quit(tk_win_root: tk.Tk):
     tk_win_root.quit()
 
 
-def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
+def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     """! Initialise le menu de la fenêtre de jeu
 
     **Variables :**
@@ -55,7 +66,7 @@ def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
 
     @return Menu de la fenêtre de jeu
     """
-    global tk_root
+    global TK_ROOT
     # Création du menu
     tkm_menu_bar = tk.Menu()
 
@@ -67,24 +78,24 @@ def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     # Ajout d'une commande permettant de lancer une partie
     tkm_menu_partie.add_command(label="Nouvelle partie",
                                 command=lambda:
-                                ctrl_m.win_ctrl_page_play(tk_root,
-                                                          tk_old_frame))
+                                ctrl_m.cm_page_play(tk_root,
+                                                    tk_old_frame))
     if b_in_game:
         # Ajout d'une commande permettant de relancer une partie
         tkm_menu_partie.add_command(label="Recommencer",
                                     command=lambda:
-                                    ctrl_m.win_ctrl_page_play(tk_root,
-                                                              tk_old_frame))
+                                    ctrl_m.cm_page_play(tk_root,
+                                                        tk_old_frame))
 
     # Ajout d'une commande permettant de quitter le jeu
     tkm_menu_partie.add_command(label="Quitter",
-                                command=lambda: win_quit)
+                                command=lambda: vm_quit)
 
     # Ajout d'un bouton dans le menu pour accéder aux paramètres
     tkm_menu_bar.add_command(label="Paramètres",
                              command=lambda:
-                             ctrl_m.win_ctrl_page_parameters(tk_root,
-                                                             tk_old_frame))
+                             ctrl_m.cm_page_parameters(tk_root,
+                                                       tk_old_frame))
     # Ajout d'un bouton dans le menu pour accéder à la page à propos
     tkm_menu_bar.add_command(label="A propos",
                              command=lambda: print("A propos"))
@@ -92,7 +103,7 @@ def win_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     return tkm_menu_bar
 
 
-def win_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
+def vm_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
     """! Affiche un message de fin de partie
 
     **Préconditions :**
@@ -105,13 +116,13 @@ def win_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
     if askyesno(title="Fin de partie",
                 message=f"Fin de partie\n{s_message}\nVoulez-vous rejouer ?"):
         # Si l'utilisateur veut rejouer, on relance une partie
-        ctrl_m.win_ctrl_page_play(tk_root, tkf_page_jeu)
+        ctrl_m.cm_page_play(TK_ROOT, tkf_page_jeu)
     else:
         # Sinon, on revient à la page d'accueil
-        ctrl_m.win_ctrl_page_accueil(tk_root, tkf_page_jeu)
+        ctrl_m.cm_page_accueil(TK_ROOT, tkf_page_jeu)
 
 
-def win_message_warning(str_message):
+def vm_message_warning(str_message):
     """! Affiche un message d'avertissement
 
     @param str_message: Message à afficher
@@ -119,7 +130,7 @@ def win_message_warning(str_message):
     showwarning(title="Avertissement", message=str_message)
 
 
-def win_message_info(str_message):
+def vm_message_info(str_message):
     """! Affiche un message d'information
 
     @param str_message: Message à afficher

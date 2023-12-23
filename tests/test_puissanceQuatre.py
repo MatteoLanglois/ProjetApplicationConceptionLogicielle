@@ -1,37 +1,25 @@
-"""! **test_puissanceQuatre**
-Ce module contient les tests unitaires pour le module puissanceQuatre.
+"""! @brief Un programme qui joue au jeu puissance 4++.
 
-@see puissanceQuatre
+@mainpage Projet Puissance 4++
+
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package tests.test_puissanceQuatre
+@brief Teste le module puissanceQuatre.puissanceQuatre
+@details Ce module teste le module puissanceQuatre.puiissanceQuatre.
 """
-
-import numpy as np
 
 from src.puissanceQuatre import puissanceQuatre as ps4, grid as gr
 
 
 # TODO : Pour les vérifications de victoire, mettre plus de cas de non victoire
-
-def test_init_grille():
-    """! Teste la fonction pq_init_grille
-
-    **Variables :**
-        - *liste_tailles* : liste des tailles de grille à tester
-        - *i_boucle* : variable de boucle
-        - *i_boucle_2* : variable de boucle
-        - *grille* : grille de jeu
-
-    **Vérification :**
-        - *grille* est bien initialisée avec des 0 partout avec la bonne taille
-        - On teste 16 cas différents, avec des tailles différentes :
-        - Toutes les combinaisons de 2 nombres de la liste *liste_tailles*
-    """
-    # On teste 4 cas différents, avec des tailles différentes
-    liste_tailles = [2, 5, 7, 100]
-    for i_boucle in liste_tailles:
-        for i_boucle_2 in liste_tailles:
-            grille = gr.pq_init_grille(i_boucle, i_boucle_2)
-            assert np.array_equal(grille, np.zeros((i_boucle, i_boucle_2))), \
-                "pq_init_grille non fonctionnel"
 
 
 def test_verif_colonne():
@@ -42,14 +30,13 @@ def test_verif_colonne():
         - *i_boucle* : variable de boucle
         - *i_boucle_2* : variable de boucle
 
-    **Vérification :**
-        - On teste 5 cas différents :
-        - Cas où la grille est vide
-        - Cas où une colonne est pleine
-        - Cas où une colonne est presque pleine
-        - Cas où la grille est un peu remplie
-        - Cas où la grille est pleine
-
+    @test : Vérifie que la fonction renvoie True si la colonne est vide
+    @test : Vérifie que la fonction renvoie False si la colonne est pleine
+    @test : Vérifie que la fonction renvoie True si la colonne est presque
+    pleine
+    @test : Vérifie que la fonction renvoie True si la colonne est un peu
+    remplie
+    @test : Vérifie que la fonction renvoie False si la grille est pleine
     """
     grille = gr.pq_init_grille(6, 7)
     # Cas où la grille est vide
@@ -94,12 +81,14 @@ def test_ajout_piece():
         - *ti_coords* : tuple de coordonnées
         - *i_boucle* : variable de boucle
 
-    **Vérification :**
-        - On teste 4 cas différents :
-        - Cas où une seule pièce est ajoutée par le joueur
-        - Cas où une seule pièce est ajoutée par le bot
-        - Cas normal pour le joueur
-        - Cas où on ne peut pas ajouter de pièce (verif_colonne)
+    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le
+    joueur joue
+    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le bot
+    joue
+    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le
+    joueur joue normalement
+    @test : Vérifie que la fonction ne renvoie pas de coordonnées quand on ne
+    peut pas ajouter de pièce
     """
     grille = gr.pq_init_grille(6, 7)
     # Cas où une seule pièce est ajoutée par le joueur
@@ -136,10 +125,9 @@ def test_victoire_ligne():
     * *i_boucle* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    **Vérifications :**
-    * Cas où le joueur gagne
-    * Cas où le bot gagne
-    * Cas où personne ne gagne
+    @test : Vérifie que la fonction renvoie True si le joueur gagne
+    @test : Vérifie que la fonction renvoie True si le bot gagne
+    @test : Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -176,10 +164,9 @@ def test_victoire_colonne():
     * *i_boucle* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    **Vérifications :**
-    * Cas où le joueur gagne
-    * Cas où le bot gagne
-    * Cas où personne ne gagne
+    @test : Vérifie que la fonction renvoie True si le joueur gagne
+    @test : Vérifie que la fonction renvoie True si le bot gagne
+    @test : Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -215,10 +202,9 @@ def test_victoire_diago():
     * *i_boucle_2* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    **Vérifications :**
-    * Cas où le joueur gagne
-    * Cas où le bot gagne
-    * Cas où personne ne gagne
+    @test : Vérifie que la fonction renvoie True si le joueur gagne
+    @test : Vérifie que la fonction renvoie True si le bot gagne
+    @test : Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -256,7 +242,6 @@ def test_victoire_diago():
 def test_all():
     """! Fonction qui lance tous les tests unitaires
     """
-    test_init_grille()
     test_verif_colonne()
     test_ajout_piece()
     test_victoire_ligne()

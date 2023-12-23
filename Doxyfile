@@ -958,6 +958,7 @@ RECURSIVE              = YES
 
 EXCLUDE                = venv \
                          venv/* \
+                         venv/Lib
 
 
 

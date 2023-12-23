@@ -67,8 +67,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt>Membre <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08">src::puissanceQuatre::puissanceQuatre.pq_verif_colonne</a>  (int i_colonne, np.array npa_grille)</dt>
-<dd><a class="anchor" id="_test000001"></a><a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a5334253573b649c8f36f3af1380b41a3" title="Teste la fonction pq_verif_colonne.">test_verif_colonne()</a></dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__grid.html#a7520f5c548106e9c3b0250d987577c3f">tests::test_grid.test_init_grille</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000001"></a>: Vérifie que la grille est bien initialisée avec des 0 partout avec la bonne taille </p>
+<p class="enddd">: Vérifie que toutes les combinaisons de 2 nombres de la liste <em>liste_tailles</em> sont testées </p>
+</dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#af5070e55f86c1578a98ee3a7af424587">tests::test_puissanceQuatre.test_ajout_piece</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000003"></a>: Vérifie que la fonction renvoie les bonnes coordonnées quand le joueur joue </p>
+<p class="interdd">: Vérifie que la fonction renvoie les bonnes coordonnées quand le bot joue </p>
+<p class="interdd">: Vérifie que la fonction renvoie les bonnes coordonnées quand le joueur joue normalement </p>
+<p class="enddd">: Vérifie que la fonction ne renvoie pas de coordonnées quand on ne peut pas ajouter de pièce </p>
+</dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a5334253573b649c8f36f3af1380b41a3">tests::test_puissanceQuatre.test_verif_colonne</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000002"></a>: Vérifie que la fonction renvoie True si la colonne est vide </p>
+<p class="interdd">: Vérifie que la fonction renvoie False si la colonne est pleine </p>
+<p class="interdd">: Vérifie que la fonction renvoie True si la colonne est presque pleine </p>
+<p class="interdd">: Vérifie que la fonction renvoie True si la colonne est un peu remplie </p>
+<p class="enddd">: Vérifie que la fonction renvoie False si la grille est pleine </p>
+</dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a1d9fe9633e808ac195d30c477c5ba726">tests::test_puissanceQuatre.test_victoire_colonne</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000005"></a>: Vérifie que la fonction renvoie True si le joueur gagne </p>
+<p class="interdd">: Vérifie que la fonction renvoie True si le bot gagne </p>
+<p class="enddd">: Vérifie que la fonction renvoie False si personne ne gagne </p>
+</dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a3f45d827e4e515ce405870f9e6e60d7e">tests::test_puissanceQuatre.test_victoire_diago</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000006"></a>: Vérifie que la fonction renvoie True si le joueur gagne </p>
+<p class="interdd">: Vérifie que la fonction renvoie True si le bot gagne </p>
+<p class="enddd">: Vérifie que la fonction renvoie False si personne ne gagne </p>
+</dd>
+<dt>Membre <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a5a14786a10a6aa04c1b52ceda1c3db85">tests::test_puissanceQuatre.test_victoire_ligne</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_test000004"></a>: Vérifie que la fonction renvoie True si le joueur gagne </p>
+<p class="interdd">: Vérifie que la fonction renvoie True si le bot gagne </p>
+<p class="enddd">: Vérifie que la fonction renvoie False si personne ne gagne</p>
+</dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

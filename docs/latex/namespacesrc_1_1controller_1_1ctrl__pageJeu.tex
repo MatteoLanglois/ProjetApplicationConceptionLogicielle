@@ -2,148 +2,237 @@
 \label{namespacesrc_1_1controller_1_1ctrl__pageJeu}\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 
 
-Contient le contrôleur de la page de jeu Ce module contient les fonctions permettant de gérer la page de jeu.  
+Un module qui gère la page de jeu.  
 
 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a13fde22f3810fff2f64b7de74c11ae91}{ctrl\+\_\+page\+\_\+jeu\+\_\+init}} (tk.\+Tk tk\+\_\+win\+\_\+root)
-\begin{DoxyCompactList}\small\item\em Initialise la page d\textquotesingle{}accueil. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_adb8b918d42995295aa997546b426320f}{ctrl\+\_\+page\+\_\+jeu\+\_\+draw\+\_\+grid}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}{cpj\+\_\+init}} (tk.\+Tk tk\+\_\+win\+\_\+root)
+\begin{DoxyCompactList}\small\item\em Initialise la page de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}{cpj\+\_\+draw\+\_\+grid}} (int i\+\_\+nb\+\_\+rows, int i\+\_\+nb\+\_\+columns)
 \begin{DoxyCompactList}\small\item\em Dessine la grille de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae979666bfcbc1de91565a937bb995a0c}{ctrl\+\_\+page\+\_\+jeu\+\_\+put\+\_\+coin}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}{cpj\+\_\+put\+\_\+coin}} (int i\+\_\+row, int i\+\_\+cols, int i\+\_\+joueur)
 \begin{DoxyCompactList}\small\item\em Place un jeton dans la grille de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_aad66d5446b3f2f7419479197fcdccc9a}{ctrl\+\_\+page\+\_\+jeu\+\_\+undo}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}{cpj\+\_\+undo}} ()
 \begin{DoxyCompactList}\small\item\em Annule le dernier coup. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a76658291632d226236162aaa5287a141}{ctrl\+\_\+page\+\_\+jeu\+\_\+redo}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a46555fa951b27730d85476196e84c594}{cpj\+\_\+redo}} ()
 \begin{DoxyCompactList}\small\item\em Refait le dernier coup. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a41f50326894732ac256cf12f83a42be1}{ctrl\+\_\+page\+\_\+jeu\+\_\+quit}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a1bb30ed375d988d1772e54acfa9677fb}{cpj\+\_\+quit}} ()
 \begin{DoxyCompactList}\small\item\em Quitte la partie. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4d3971f62f73766f8539d62c4e203685}{ctrl\+\_\+page\+\_\+jeu\+\_\+play}} (tk.\+Event event)
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}{cpj\+\_\+play}} (tk.\+Event event, tk.\+Frame tkf\+\_\+page\+\_\+jeu)
 \begin{DoxyCompactList}\small\item\em Joue un coup dans la grille de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a05d084bb63f7f9db8996a0c6175a726e}{ctrl\+\_\+page\+\_\+jeu\+\_\+bonus}} ()
-\begin{DoxyCompactList}\small\item\em Utilise un bonus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4c36c8421a6673162c8b7d26eec6ff5a}{cpj\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Utilise un bonus. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc32463683be9c6da658860d411}{cpj\+\_\+bot\+\_\+play}} (tk.\+Frame tkf\+\_\+page\+\_\+jeu)
+\begin{DoxyCompactList}\small\item\em Fait jouer le bot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Contient le contrôleur de la page de jeu Ce module contient les fonctions permettant de gérer la page de jeu. 
+Un module qui gère la page de jeu. 
 
-\begin{DoxySeeAlso}{Voir également}
-\mbox{\hyperlink{view__pageJeu_8py}{src/view/view\+\_\+page\+Jeu.\+py}} 
-\end{DoxySeeAlso}
-
+Ce module contient les fonctions permettant de gérer la page de jeu. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a05d084bb63f7f9db8996a0c6175a726e}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a05d084bb63f7f9db8996a0c6175a726e}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_bonus@{ctrl\_page\_jeu\_bonus}}
-\index{ctrl\_page\_jeu\_bonus@{ctrl\_page\_jeu\_bonus}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_bonus()}{ctrl\_page\_jeu\_bonus()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4c36c8421a6673162c8b7d26eec6ff5a}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4c36c8421a6673162c8b7d26eec6ff5a}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_bonus@{cpj\_bonus}}
+\index{cpj\_bonus@{cpj\_bonus}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_bonus()}{cpj\_bonus()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Utilise un bonus. 
 
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000006}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_adb8b918d42995295aa997546b426320f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_adb8b918d42995295aa997546b426320f}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_draw\_grid@{ctrl\_page\_jeu\_draw\_grid}}
-\index{ctrl\_page\_jeu\_draw\_grid@{ctrl\_page\_jeu\_draw\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_draw\_grid()}{ctrl\_page\_jeu\_draw\_grid()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+draw\+\_\+grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\item[\mbox{\hyperlink{todo__todo000004}{A faire}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc32463683be9c6da658860d411}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc32463683be9c6da658860d411}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_bot\_play@{cpj\_bot\_play}}
+\index{cpj\_bot\_play@{cpj\_bot\_play}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_bot\_play()}{cpj\_bot\_play()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+bot\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+page\+\_\+jeu }\end{DoxyParamCaption})}
+
+
+
+Fait jouer le bot. 
+
+\begin{DoxyPrecond}{Précondition}
+tkf\+\_\+page\+\_\+jeu initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tkf\+\_\+page\+\_\+jeu} & \+: Frame de la page de jeu\\
+\hline
+\end{DoxyParams}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
+\item I\+\_\+\+DIFFICULTY \+: Difficulté du bot
+\item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
+\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000005}{A faire}}]\+: A finir\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_draw\_grid@{cpj\_draw\_grid}}
+\index{cpj\_draw\_grid@{cpj\_draw\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_draw\_grid()}{cpj\_draw\_grid()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+draw\+\_\+grid (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+nb\+\_\+rows,  }\item[{int}]{i\+\_\+nb\+\_\+columns }\end{DoxyParamCaption})}
 
 
 
 Dessine la grille de jeu. 
 
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a13fde22f3810fff2f64b7de74c11ae91}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a13fde22f3810fff2f64b7de74c11ae91}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_init@{ctrl\_page\_jeu\_init}}
-\index{ctrl\_page\_jeu\_init@{ctrl\_page\_jeu\_init}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_init()}{ctrl\_page\_jeu\_init()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
+\begin{DoxyPrecond}{Précondition}
+i\+\_\+nb\+\_\+rows $>$ 0 
+
+i\+\_\+nb\+\_\+columns $>$ 0 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+nb\+\_\+rows} & Nombre de lignes de la grille de jeu \\
+\hline
+{\em i\+\_\+nb\+\_\+columns} & Nombre de colonnes de la grille de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+grille de jeu dessinée 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_init@{cpj\_init}}
+\index{cpj\_init@{cpj\_init}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_init()}{cpj\_init()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
 
 
 
-Initialise la page d\textquotesingle{}accueil. 
+Initialise la page de jeu. 
 
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grid \+: Grille de jeu
-\end{DoxyItemize}
-
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item tk\+\_\+root initialisé
-\end{DoxyItemize}
-
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4d3971f62f73766f8539d62c4e203685}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a4d3971f62f73766f8539d62c4e203685}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_play@{ctrl\_page\_jeu\_play}}
-\index{ctrl\_page\_jeu\_play@{ctrl\_page\_jeu\_play}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_play()}{ctrl\_page\_jeu\_play()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Event}]{event }\end{DoxyParamCaption})}
+\begin{DoxyPostcond}{Postcondition}
+page de jeu initialisée
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item NPA\+\_\+\+GRID \+: Grille de jeu
+\item TK\+\_\+\+ROOT \+: Fenêtre principale
+\item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
+\item ST\+\_\+\+COLOR\+\_\+\+JOUEUR \+: Couleur des jetons du joueur
+\item ST\+\_\+\+COLOR\+\_\+\+BOT \+: Couleur des jetons du bot
+\item I\+\_\+\+DIFFICULTY \+: Difficulté du bot
+\item i\+\_\+nb\+\_\+rows \+: Nombre de lignes de la grille de jeu
+\item i\+\_\+nb\+\_\+columns \+: Nombre de colonnes de la grille de jeu 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_play@{cpj\_play}}
+\index{cpj\_play@{cpj\_play}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_play()}{cpj\_play()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Event}]{event,  }\item[{tk.\+Frame}]{tkf\+\_\+page\+\_\+jeu }\end{DoxyParamCaption})}
 
 
 
 Joue un coup dans la grille de jeu. 
 
+\begin{DoxyPrecond}{Précondition}
+event est un évènement de la souris 
+
+tkf\+\_\+page\+\_\+jeu initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
-{\em event} & Evenement de la souris sur la grille de jeu \\
+{\em event} & Évènement de la souris sur la grille de jeu \\
+\hline
+{\em tkf\+\_\+page\+\_\+jeu} & \+: Frame de la page de jeu\\
 \hline
 \end{DoxyParams}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
+\item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
+\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu
+\item b\+\_\+joueur\+\_\+gagne \+: Booléen indiquant si le joueur a gagné
+\item b\+\_\+joueur\+\_\+joue \+: Booléen indiquant si le joueur a joué
+\end{DoxyItemize}
+
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000005}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae979666bfcbc1de91565a937bb995a0c}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae979666bfcbc1de91565a937bb995a0c}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_put\_coin@{ctrl\_page\_jeu\_put\_coin}}
-\index{ctrl\_page\_jeu\_put\_coin@{ctrl\_page\_jeu\_put\_coin}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_put\_coin()}{ctrl\_page\_jeu\_put\_coin()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+put\+\_\+coin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\item[\mbox{\hyperlink{todo__todo000003}{A faire}}]\+: A finir\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_put\_coin@{cpj\_put\_coin}}
+\index{cpj\_put\_coin@{cpj\_put\_coin}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_put\_coin()}{cpj\_put\_coin()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+put\+\_\+coin (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+row,  }\item[{int}]{i\+\_\+cols,  }\item[{int}]{i\+\_\+joueur }\end{DoxyParamCaption})}
 
 
 
 Place un jeton dans la grille de jeu. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000001}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a41f50326894732ac256cf12f83a42be1}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a41f50326894732ac256cf12f83a42be1}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_quit@{ctrl\_page\_jeu\_quit}}
-\index{ctrl\_page\_jeu\_quit@{ctrl\_page\_jeu\_quit}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_quit()}{ctrl\_page\_jeu\_quit()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\begin{DoxyPrecond}{Précondition}
+i\+\_\+row $>$= 0 
+
+i\+\_\+cols $>$= 0 
+
+i\+\_\+joueur $>$= 1 et i\+\_\+joueur ≤ 2 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+row} & Ligne de la grille de jeu \\
+\hline
+{\em i\+\_\+cols} & Colonne de la grille de jeu \\
+\hline
+{\em i\+\_\+joueur} & Joueur qui joue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+jeton placé dans la grille de jeu
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item ST\+\_\+\+COLOR\+\_\+\+JOUEUR \+: Couleur des jetons du joueur
+\item ST\+\_\+\+COLOR\+\_\+\+BOT \+: Couleur des jetons du bot 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a1bb30ed375d988d1772e54acfa9677fb}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a1bb30ed375d988d1772e54acfa9677fb}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_quit@{cpj\_quit}}
+\index{cpj\_quit@{cpj\_quit}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_quit()}{cpj\_quit()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Quitte la partie. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000004}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a76658291632d226236162aaa5287a141}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a76658291632d226236162aaa5287a141}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_redo@{ctrl\_page\_jeu\_redo}}
-\index{ctrl\_page\_jeu\_redo@{ctrl\_page\_jeu\_redo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_redo()}{ctrl\_page\_jeu\_redo()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+page de jeu détruite 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a46555fa951b27730d85476196e84c594}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a46555fa951b27730d85476196e84c594}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_redo@{cpj\_redo}}
+\index{cpj\_redo@{cpj\_redo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_redo()}{cpj\_redo()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Refait le dernier coup. 
 
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000003}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_aad66d5446b3f2f7419479197fcdccc9a}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_aad66d5446b3f2f7419479197fcdccc9a}} 
-\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!ctrl\_page\_jeu\_undo@{ctrl\_page\_jeu\_undo}}
-\index{ctrl\_page\_jeu\_undo@{ctrl\_page\_jeu\_undo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{ctrl\_page\_jeu\_undo()}{ctrl\_page\_jeu\_undo()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+ctrl\+\_\+page\+\_\+jeu\+\_\+undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\item[\mbox{\hyperlink{todo__todo000002}{A faire}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_undo@{cpj\_undo}}
+\index{cpj\_undo@{cpj\_undo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_undo()}{cpj\_undo()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Annule le dernier coup. 
 
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000002}{A faire}}]\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000001}{A faire}}]\end{DoxyRefDesc}

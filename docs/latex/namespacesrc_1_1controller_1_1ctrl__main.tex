@@ -2,69 +2,160 @@
 \label{namespacesrc_1_1controller_1_1ctrl__main}\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}}
 
 
-Contrôleur de la fenêtre globale Ce module contient les fonctions permettant de gérer la fenêtre globale.  
+Un module qui gère la fenêtre principale du jeu.  
 
 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a3ef155b0221737320123471f5f9b18a4}{win\+\_\+ctrl\+\_\+init}} ()
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ad4089499e6b14761718f8d364351884a}{cm\+\_\+init}} ()
 \begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}{win\+\_\+ctrl\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_aadb66adbf5dae2be4c63626e3e1a4b85}{cm\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
-tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}{win\+\_\+ctrl\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame)
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}{cm\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame, bool b\+\_\+in\+\_\+game)
 \begin{DoxyCompactList}\small\item\em Crée le menu de la fenêtre. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}{win\+\_\+ctrl\+\_\+page\+\_\+play}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a8eaca19ef0fa1b79357877a458c23f2e}{cm\+\_\+page\+\_\+play}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}{win\+\_\+ctrl\+\_\+page\+\_\+parameters}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
-\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de paramètres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a0cd0f0a0ac3edbade38eaa77c6cc7e95}{cm\+\_\+page\+\_\+parameters}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de paramètres. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a8fdce8d8dcf92ddee23da3a5e22c705d}{cm\+\_\+page\+\_\+accueil}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre d\textquotesingle{}accueil. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a54688bd9c133c30482bfd04771376202}{cm\+\_\+ended\+\_\+game}} (str str\+\_\+message, tk.\+Frame tkf\+\_\+old\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de fin de partie. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a949b8fa235c3e16937f485936a9b26f3}{cm\+\_\+warning}} (str str\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}avertissement. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a3ae3b84a620ae0f55c98d8d89b3c3809}{cm\+\_\+info}} (str str\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Contrôleur de la fenêtre globale Ce module contient les fonctions permettant de gérer la fenêtre globale. 
+Un module qui gère la fenêtre principale du jeu. 
+
+Ce module gère la fenêtre principale du jeu et les transitions entre les différentes fenêtres. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a3ef155b0221737320123471f5f9b18a4}\label{namespacesrc_1_1controller_1_1ctrl__main_a3ef155b0221737320123471f5f9b18a4}} 
-\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_init@{win\_ctrl\_init}}
-\index{win\_ctrl\_init@{win\_ctrl\_init}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
-\doxysubsubsection{\texorpdfstring{win\_ctrl\_init()}{win\_ctrl\_init()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a54688bd9c133c30482bfd04771376202}\label{namespacesrc_1_1controller_1_1ctrl__main_a54688bd9c133c30482bfd04771376202}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_ended\_game@{cm\_ended\_game}}
+\index{cm\_ended\_game@{cm\_ended\_game}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_ended\_game()}{cm\_ended\_game()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+ended\+\_\+game (\begin{DoxyParamCaption}\item[{str}]{str\+\_\+message,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de passer à la fenêtre de fin de partie. 
+
+\begin{DoxyPrecond}{Précondition}
+tkf\+\_\+old\+\_\+frame initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em str\+\_\+message} & Message à afficher \\
+\hline
+{\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a3ae3b84a620ae0f55c98d8d89b3c3809}\label{namespacesrc_1_1controller_1_1ctrl__main_a3ae3b84a620ae0f55c98d8d89b3c3809}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_info@{cm\_info}}
+\index{cm\_info@{cm\_info}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_info()}{cm\_info()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+info (\begin{DoxyParamCaption}\item[{str}]{str\+\_\+message }\end{DoxyParamCaption})}
+
+
+
+Affiche un message d\textquotesingle{}information. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str\+\_\+message} & Message à afficher \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_ad4089499e6b14761718f8d364351884a}\label{namespacesrc_1_1controller_1_1ctrl__main_ad4089499e6b14761718f8d364351884a}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_init@{cm\_init}}
+\index{cm\_init@{cm\_init}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_init()}{cm\_init()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Initialise la fenêtre de jeu. 
 
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+boucle principale lancée
+\end{DoxyPostcond}
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
-\item tk\+\_\+root \+: Fenêtre principale
-\end{DoxyItemize}
-
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item tk\+\_\+root initialisé 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}\label{namespacesrc_1_1controller_1_1ctrl__main_afd0e5e321793c72405220dbae7d775a6}} 
-\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_menu@{win\_ctrl\_menu}}
-\index{win\_ctrl\_menu@{win\_ctrl\_menu}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
-\doxysubsubsection{\texorpdfstring{win\_ctrl\_menu()}{win\_ctrl\_menu()}}
-{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+\item tk\+\_\+root \+: Fenêtre principale 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}\label{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_menu@{cm\_menu}}
+\index{cm\_menu@{cm\_menu}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_menu()}{cm\_menu()}}
+{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame,  }\item[{bool}]{b\+\_\+in\+\_\+game }\end{DoxyParamCaption})}
 
 
 
 Crée le menu de la fenêtre. 
 
+\begin{DoxyPrecond}{Précondition}
+tkf\+\_\+old\+\_\+frame initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+\hline
+{\em b\+\_\+in\+\_\+game} & Booléen indiquant si le joueur est en jeu ou non \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 Menu de la fenêtre 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}\label{namespacesrc_1_1controller_1_1ctrl__main_ab91976fa982ebefc350382376cd232ed}} 
-\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_page\_parameters@{win\_ctrl\_page\_parameters}}
-\index{win\_ctrl\_page\_parameters@{win\_ctrl\_page\_parameters}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
-\doxysubsubsection{\texorpdfstring{win\_ctrl\_page\_parameters()}{win\_ctrl\_page\_parameters()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+page\+\_\+parameters (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+\begin{DoxyPostcond}{Postcondition}
+Menu créé 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a8fdce8d8dcf92ddee23da3a5e22c705d}\label{namespacesrc_1_1controller_1_1ctrl__main_a8fdce8d8dcf92ddee23da3a5e22c705d}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_page\_accueil@{cm\_page\_accueil}}
+\index{cm\_page\_accueil@{cm\_page\_accueil}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_page\_accueil()}{cm\_page\_accueil()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+page\+\_\+accueil (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de passer à la fenêtre d\textquotesingle{}accueil. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+tkf\+\_\+old\+\_\+frame initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+root} & La fenêtre principale \\
+\hline
+{\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+tkf\+\_\+old\+\_\+frame détruit 
+
+fenêtre d\textquotesingle{}accueil initialisée 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a0cd0f0a0ac3edbade38eaa77c6cc7e95}\label{namespacesrc_1_1controller_1_1ctrl__main_a0cd0f0a0ac3edbade38eaa77c6cc7e95}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_page\_parameters@{cm\_page\_parameters}}
+\index{cm\_page\_parameters@{cm\_page\_parameters}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_page\_parameters()}{cm\_page\_parameters()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+page\+\_\+parameters (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
 Fonction permettant de passer à la fenêtre de paramètres. 
 
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+tkf\+\_\+old\+\_\+frame initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em tk\+\_\+root} & La fenêtre principale \\
@@ -72,16 +163,26 @@ Fonction permettant de passer à la fenêtre de paramètres.
 {\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}\label{namespacesrc_1_1controller_1_1ctrl__main_a0a104848074b335180bd1f9193cf119d}} 
-\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_page\_play@{win\_ctrl\_page\_play}}
-\index{win\_ctrl\_page\_play@{win\_ctrl\_page\_play}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
-\doxysubsubsection{\texorpdfstring{win\_ctrl\_page\_play()}{win\_ctrl\_page\_play()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+page\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+\begin{DoxyPostcond}{Postcondition}
+tkf\+\_\+old\+\_\+frame détruit 
+
+fenêtre de paramètres initialisée 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a8eaca19ef0fa1b79357877a458c23f2e}\label{namespacesrc_1_1controller_1_1ctrl__main_a8eaca19ef0fa1b79357877a458c23f2e}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_page\_play@{cm\_page\_play}}
+\index{cm\_page\_play@{cm\_page\_play}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_page\_play()}{cm\_page\_play()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+page\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
 Fonction permettant de passer à la fenêtre de jeu. 
 
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+tkf\+\_\+old\+\_\+frame initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em tk\+\_\+root} & La fenêtre principale \\
@@ -89,23 +190,41 @@ Fonction permettant de passer à la fenêtre de jeu.
 {\em tkf\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}\label{namespacesrc_1_1controller_1_1ctrl__main_aa1562943cfb639287b99a4c017707541}} 
-\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!win\_ctrl\_quit@{win\_ctrl\_quit}}
-\index{win\_ctrl\_quit@{win\_ctrl\_quit}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
-\doxysubsubsection{\texorpdfstring{win\_ctrl\_quit()}{win\_ctrl\_quit()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+win\+\_\+ctrl\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
+\begin{DoxyPostcond}{Postcondition}
+tkf\+\_\+old\+\_\+frame détruit 
+
+fenêtre de jeu initialisée 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_aadb66adbf5dae2be4c63626e3e1a4b85}\label{namespacesrc_1_1controller_1_1ctrl__main_aadb66adbf5dae2be4c63626e3e1a4b85}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_quit@{cm\_quit}}
+\index{cm\_quit@{cm\_quit}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_quit()}{cm\_quit()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
 
 
 
 Ferme la fenêtre de jeu. 
 
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item tk\+\_\+root initialisé
-\end{DoxyItemize}
-
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em tk\+\_\+root} & Fenêtre principale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a949b8fa235c3e16937f485936a9b26f3}\label{namespacesrc_1_1controller_1_1ctrl__main_a949b8fa235c3e16937f485936a9b26f3}} 
+\index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_warning@{cm\_warning}}
+\index{cm\_warning@{cm\_warning}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
+\doxysubsubsection{\texorpdfstring{cm\_warning()}{cm\_warning()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+warning (\begin{DoxyParamCaption}\item[{str}]{str\+\_\+message }\end{DoxyParamCaption})}
+
+
+
+Affiche un message d\textquotesingle{}avertissement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str\+\_\+message} & Message à afficher \\
 \hline
 \end{DoxyParams}

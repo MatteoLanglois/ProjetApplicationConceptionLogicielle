@@ -1,36 +1,40 @@
-"""! **puissanceQuatre**
-Ce module contient l'implémentation des règles du puissance 4.
+"""! @brief Un programme qui joue au jeu puissance 4++.
 
-Ce module contient la gestion de la structure du puissance 4 et
+@mainpage Projet Puissance 4++
+
+@section description_main Description
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
+un nombre de pions à aligner variable, des bonus et un undo.
+
+@section import_section Importations
+Ce programme utilise les modules externes suivants :
+- tkinter
+- numpy
+
+@package src.puissanceQuatre.puissanceQuatre
+@brief Ce module contient l'implémentation des règles du puissance 4.
+@details Ce module contient la gestion de la structure du puissance 4 et
 la gestion du jeu.
-
-@see test_puissanceQuatre.py
 """
-import random
+# Importation de numpy
 import numpy as np
+# Importation de la grille
 from src.puissanceQuatre import grid as gr
 
 
 def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
     """! Vérifie si on peut poser un jeton dans cette colonne
 
+    @pre 0 < i_colonne ≤ npa_grille.shape[0]
+    @pre npa_grille initialisé
+    @param i_colonne: La colonne où on souhaite poser un jeton
+    @param npa_grille: La grille de jeu
+    @post npa_grille[i_colonne] contient au moins un 0
+    @return True si on peut poser le jeton, False sinon
+
     **Variable :**
     * b_resultat : Booléen
     * i_boucle : Entier
-
-    **Préconditions :**
-    * 0 < i_colonne ≤ npa_grille.shape[0]
-    * npa_grille initialisé
-
-    **Postconditions :**
-    * npa_grille[i_colonne] contient au moins un 0
-
-    @param i_colonne: La colonne où on souhaite poser un jeton
-    @param npa_grille: La grille de jeu
-
-    @return True si on peut poser le jeton, False sinon
-
-    @test test_verif_colonne()
     """
     # Initialisation du booléen a faux
     b_resultat = False
@@ -48,24 +52,18 @@ def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
 def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
                    i_joueur: int) -> (int, int):
     """! La méthode qui gère le placement de jetons
-
-    **Variables :**
-    * i_boucle : Entier
-    * i_max_ligne : Entier
-    * i_boucle : Entier
-
-    **Preconditions :**
-    * 0 < i_colonne ≤ npa_grille.shape[0]
-    * npa_grille initialisé
-
-    **Postconditions :**
-    * npa_grille contient un nouvel entier
-
+    @pre 0 < i_colonne ≤ npa_grille.shape[0]
+    @pre npa_grille initialisé
     @param i_colonne: La colonne où le joueur pose le jeton
     @param i_joueur: Le joueur qui joue (1 pour le joueur, 2 pour le bot)
     @param npa_grille: La grille du puissance 4
-
+    @post npa_grille contient un nouvel entier
     @return Les coordonnées du nouveau jeton
+
+    **Variables :**
+    * i_boucle **Entier** : Compteur de boucle
+    * i_max_ligne **Entier** : Nombre de lignes dans la grille
+    * ti_coords **Tuple d'entiers** : Coordonnées du nouveau jeton
     """
     # Initialise le compteur de boucle
     i_boucle = 0
@@ -84,11 +82,14 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
         npa_grille[i_boucle - 1][i_colonne] = i_joueur
         # Retourner un tuple des coordonnées du nouveau jeton
         ti_coords = (i_boucle - 1, i_colonne)
+    # Retourner les coordonnées du nouveau jeton
     return ti_coords
 
 
 def pq_minmax(iNextJoueur, npaGrilleCopy, i_nb_victoire, iColonne=0,
               isFirst=False, tour=0) -> (int, float):
+    """! Méthode implémentant l'algorithme minmax
+    """
     if tour > 5:
         return 0, 0
     if not isFirst:

@@ -2,36 +2,37 @@
 \label{namespacesrc_1_1view_1_1view__main}\index{src.view.view\_main@{src.view.view\_main}}
 
 
-Vue principale du jeu Ce module contient les fonctions de base utile à la vue du jeu.  
+Ce module contient les fonctions de base utile à la vue du jeu.  
 
 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-tk.\+Tk \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}{win\+\_\+init}} ()
+tk.\+Tk \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a27f2a4099a97bea464396870d85d3d4f}{vm\+\_\+init}} ()
 \begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}{win\+\_\+quit}} (tk.\+Tk tk\+\_\+win\+\_\+root)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_ae47a061923540ba4218d18675ff8859e}{vm\+\_\+quit}} (tk.\+Tk tk\+\_\+win\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
-tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}{win\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame)
-\begin{DoxyCompactList}\small\item\em Initialise le menu de la fenêtre de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a2ba7a18fed9f16b17fae1ecfcc0e5d17}{vm\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame, bool b\+\_\+in\+\_\+game)
+\begin{DoxyCompactList}\small\item\em Initialise le menu de la fenêtre de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a4b3945581f516544aeb0675d4104da59}{vm\+\_\+message\+\_\+game\+\_\+ended}} (str s\+\_\+message, tk.\+Frame tkf\+\_\+page\+\_\+jeu)
+\begin{DoxyCompactList}\small\item\em Affiche un message de fin de partie. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}{vm\+\_\+message\+\_\+warning}} (str\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}avertissement. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}{vm\+\_\+message\+\_\+info}} (str\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Vue principale du jeu Ce module contient les fonctions de base utile à la vue du jeu. 
+Ce module contient les fonctions de base utile à la vue du jeu. 
 
-Ce module permet de facilement avoir le menu sur toutes les fenêtres. De quitter le jeu, de recommencer une partie, etc.
-
-\begin{DoxySeeAlso}{Voir également}
-\mbox{\hyperlink{ctrl__main_8py}{src/controller/ctrl\+\_\+main.\+py}} 
-\end{DoxySeeAlso}
-
+Ce module permet de facilement avoir le menu sur toutes les fenêtres. De quitter le jeu, de recommencer une partie, etc. Il permet aussi d\textquotesingle{}afficher des messages d\textquotesingle{}information ou d\textquotesingle{}avertissement. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}\label{namespacesrc_1_1view_1_1view__main_a7659931ad3cfab9bea584d551786a97b}} 
-\index{src.view.view\_main@{src.view.view\_main}!win\_init@{win\_init}}
-\index{win\_init@{win\_init}!src.view.view\_main@{src.view.view\_main}}
-\doxysubsubsection{\texorpdfstring{win\_init()}{win\_init()}}
-{\footnotesize\ttfamily  tk.\+Tk src.\+view.\+view\+\_\+main.\+win\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a27f2a4099a97bea464396870d85d3d4f}\label{namespacesrc_1_1view_1_1view__main_a27f2a4099a97bea464396870d85d3d4f}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_init@{vm\_init}}
+\index{vm\_init@{vm\_init}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_init()}{vm\_init()}}
+{\footnotesize\ttfamily  tk.\+Tk src.\+view.\+view\+\_\+main.\+vm\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -45,11 +46,11 @@ Initialise la fenêtre de jeu.
 \begin{DoxyReturn}{Renvoie}
 Fenêtre principale 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}\label{namespacesrc_1_1view_1_1view__main_a835c8e8a5b421a688b4ab3521ca76fd1}} 
-\index{src.view.view\_main@{src.view.view\_main}!win\_menu@{win\_menu}}
-\index{win\_menu@{win\_menu}!src.view.view\_main@{src.view.view\_main}}
-\doxysubsubsection{\texorpdfstring{win\_menu()}{win\_menu()}}
-{\footnotesize\ttfamily  tk.\+Menu src.\+view.\+view\+\_\+main.\+win\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a2ba7a18fed9f16b17fae1ecfcc0e5d17}\label{namespacesrc_1_1view_1_1view__main_a2ba7a18fed9f16b17fae1ecfcc0e5d17}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_menu@{vm\_menu}}
+\index{vm\_menu@{vm\_menu}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_menu()}{vm\_menu()}}
+{\footnotesize\ttfamily  tk.\+Menu src.\+view.\+view\+\_\+main.\+vm\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame,  }\item[{bool}]{b\+\_\+in\+\_\+game }\end{DoxyParamCaption})}
 
 
 
@@ -66,11 +67,63 @@ Initialise le menu de la fenêtre de jeu.
 \begin{DoxyReturn}{Renvoie}
 Menu de la fenêtre de jeu 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}\label{namespacesrc_1_1view_1_1view__main_a94359cb88e9ba3a420c41c43ecf430af}} 
-\index{src.view.view\_main@{src.view.view\_main}!win\_quit@{win\_quit}}
-\index{win\_quit@{win\_quit}!src.view.view\_main@{src.view.view\_main}}
-\doxysubsubsection{\texorpdfstring{win\_quit()}{win\_quit()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+win\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a4b3945581f516544aeb0675d4104da59}\label{namespacesrc_1_1view_1_1view__main_a4b3945581f516544aeb0675d4104da59}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_message\_game\_ended@{vm\_message\_game\_ended}}
+\index{vm\_message\_game\_ended@{vm\_message\_game\_ended}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_message\_game\_ended()}{vm\_message\_game\_ended()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+game\+\_\+ended (\begin{DoxyParamCaption}\item[{str}]{s\+\_\+message,  }\item[{tk.\+Frame}]{tkf\+\_\+page\+\_\+jeu }\end{DoxyParamCaption})}
+
+
+
+Affiche un message de fin de partie. 
+
+{\bfseries{Préconditions \+:}}
+\begin{DoxyItemize}
+\item tk\+\_\+root initialisé
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+message} & Message à afficher \\
+\hline
+{\em tkf\+\_\+page\+\_\+jeu} & La page de jeu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}\label{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_message\_info@{vm\_message\_info}}
+\index{vm\_message\_info@{vm\_message\_info}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_message\_info()}{vm\_message\_info()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+info (\begin{DoxyParamCaption}\item[{}]{str\+\_\+message }\end{DoxyParamCaption})}
+
+
+
+Affiche un message d\textquotesingle{}information. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str\+\_\+message} & Message à afficher \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}\label{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_message\_warning@{vm\_message\_warning}}
+\index{vm\_message\_warning@{vm\_message\_warning}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_message\_warning()}{vm\_message\_warning()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+warning (\begin{DoxyParamCaption}\item[{}]{str\+\_\+message }\end{DoxyParamCaption})}
+
+
+
+Affiche un message d\textquotesingle{}avertissement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str\+\_\+message} & Message à afficher \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_ae47a061923540ba4218d18675ff8859e}\label{namespacesrc_1_1view_1_1view__main_ae47a061923540ba4218d18675ff8859e}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_quit@{vm\_quit}}
+\index{vm\_quit@{vm\_quit}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_quit()}{vm\_quit()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+quit (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
 
 
 

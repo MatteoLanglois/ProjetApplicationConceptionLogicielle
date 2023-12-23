@@ -2,7 +2,7 @@
 \label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}\index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 
 
-{\bfseries{\mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}{puissance\+Quatre}}}} Ce module contient l\textquotesingle{}implémentation des règles du puissance 4.  
+Ce module contient l\textquotesingle{}implémentation des règles du puissance 4.  
 
 
 \doxysubsection*{Fonctions}
@@ -13,7 +13,7 @@ bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5
 (int, int) \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}{pq\+\_\+ajout\+\_\+piece}} (np.\+array npa\+\_\+grille, int i\+\_\+colonne, int i\+\_\+joueur)
 \begin{DoxyCompactList}\small\item\em La méthode qui gère le placement de jetons. \end{DoxyCompactList}\item 
 (int, float) \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ae905af98dd54e79d8be7e67b59955437}{pq\+\_\+minmax}} (i\+Next\+Joueur, npa\+Grille\+Copy, i\+\_\+nb\+\_\+victoire, i\+Colonne=0, is\+First=False, tour=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Méthode implémentant l\textquotesingle{}algorithme minmax. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}{pq\+\_\+victoire}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
 \item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_aa13c5a20d8aa478adda10bc609f1fc1b}{pq\+\_\+victoire\+\_\+ligne}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
@@ -22,6 +22,10 @@ bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a662f22
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur une colonne. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a2f76c9e9fd0ced658f382d854abdefea}{pq\+\_\+victoire\+\_\+diago}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne, int i\+\_\+colonne, int i\+\_\+joueur, int i\+\_\+nb\+\_\+victoire)
 \begin{DoxyCompactList}\small\item\em Verification de la victoire sur les diagonales. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}{pq\+\_\+undo}} (np.\+array npa\+\_\+grille, list t\+\_\+undo\+\_\+redo)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de revenir en arrière dans le jeu. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a06bdaec03582d0146e06983760361992}{pq\+\_\+redo}} (np.\+array npa\+\_\+grille, list t\+\_\+redo)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de revenir en avant dans le jeu. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}{pq\+\_\+partie\+\_\+finie}} (np.\+array npa\+\_\+grille, bool b\+\_\+bonus\+\_\+utilise)
 \begin{DoxyCompactList}\small\item\em Vérification de si la partie est finie ou non. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}{pq\+\_\+gestion\+\_\+partie}} (int i\+\_\+nb\+\_\+lignes=6, int i\+\_\+nb\+\_\+colonnes=7, int i\+\_\+nb\+\_\+jeton\+\_\+victoire=4)
@@ -29,14 +33,9 @@ def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b0
 
 
 \doxysubsection{Description détaillée}
-{\bfseries{\mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}{puissance\+Quatre}}}} Ce module contient l\textquotesingle{}implémentation des règles du puissance 4. 
+Ce module contient l\textquotesingle{}implémentation des règles du puissance 4. 
 
-Ce module contient la gestion de la structure du puissance 4 et la gestion du jeu.
-
-\begin{DoxySeeAlso}{Voir également}
-\mbox{\hyperlink{test__puissanceQuatre_8py}{test\+\_\+puissance\+Quatre.\+py}} 
-\end{DoxySeeAlso}
-
+Ce module contient la gestion de la structure du puissance 4 et la gestion du jeu. 
 
 \doxysubsection{Documentation des fonctions}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}} 
@@ -49,37 +48,32 @@ Ce module contient la gestion de la structure du puissance 4 et la gestion du je
 
 La méthode qui gère le placement de jetons. 
 
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item i\+\_\+boucle \+: Entier
-\item i\+\_\+max\+\_\+ligne \+: Entier
-\item i\+\_\+boucle \+: Entier
-\end{DoxyItemize}
+\begin{DoxyPrecond}{Précondition}
+0 $<$ i\+\_\+colonne ≤ npa\+\_\+grille.\+shape\mbox{[}0\mbox{]} 
 
-{\bfseries{Preconditions \+:}}
-\begin{DoxyItemize}
-\item 0 $<$ i\+\_\+colonne ≤ npa\+\_\+grille.\+shape\mbox{[}0\mbox{]}
-\item npa\+\_\+grille initialisé
-\end{DoxyItemize}
-
-{\bfseries{Postconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille contient un nouvel entier
-\end{DoxyItemize}
-
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em i\+\_\+colonne} & La colonne où le joueur pose le jeton \\
 \hline
 {\em i\+\_\+joueur} & Le joueur qui joue (1 pour le joueur, 2 pour le bot) \\
 \hline
-{\em npa\+\_\+grille} & La grille du puissance 4\\
+{\em npa\+\_\+grille} & La grille du puissance 4 \\
 \hline
 \end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+npa\+\_\+grille contient un nouvel entier 
+\end{DoxyPostcond}
 \begin{DoxyReturn}{Renvoie}
-Les coordonnées du nouveau jeton 
+Les coordonnées du nouveau jeton
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}} 
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+boucle {\bfseries{Entier}} \+: Compteur de boucle
+\item i\+\_\+max\+\_\+ligne {\bfseries{Entier}} \+: Nombre de lignes dans la grille
+\item ti\+\_\+coords {\bfseries{Tuple d\textquotesingle{}entiers}} \+: Coordonnées du nouveau jeton 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af6da2b03aae8975513c8c43a701b54d4}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_gestion\_partie@{pq\_gestion\_partie}}
 \index{pq\_gestion\_partie@{pq\_gestion\_partie}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_gestion\_partie()}{pq\_gestion\_partie()}}
@@ -115,6 +109,10 @@ Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en
 \index{pq\_minmax@{pq\_minmax}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_minmax()}{pq\_minmax()}}
 {\footnotesize\ttfamily  (int, float) src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+minmax (\begin{DoxyParamCaption}\item[{}]{i\+Next\+Joueur,  }\item[{}]{npa\+Grille\+Copy,  }\item[{}]{i\+\_\+nb\+\_\+victoire,  }\item[{}]{i\+Colonne = {\ttfamily 0},  }\item[{}]{is\+First = {\ttfamily False},  }\item[{}]{tour = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Méthode implémentant l\textquotesingle{}algorithme minmax. 
 
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_partie\_finie@{pq\_partie\_finie}}
@@ -154,6 +152,46 @@ La vérification se fait avec deux critères \+: Si la grille est pleine ou non,
 \begin{DoxyReturn}{Renvoie}
 True si la partie est finie, False sinon 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a06bdaec03582d0146e06983760361992}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a06bdaec03582d0146e06983760361992}} 
+\index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_redo@{pq\_redo}}
+\index{pq\_redo@{pq\_redo}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{pq\_redo()}{pq\_redo()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+redo (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille,  }\item[{list}]{t\+\_\+redo }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de revenir en avant dans le jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & La grille du puissance 4 \\
+\hline
+{\em t\+\_\+redo} & La liste contenant les grilles pour l\textquotesingle{}undo et le redo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La grille du puissance 4 après le redo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}} 
+\index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_undo@{pq\_undo}}
+\index{pq\_undo@{pq\_undo}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{pq\_undo()}{pq\_undo()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+undo (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille,  }\item[{list}]{t\+\_\+undo\+\_\+redo }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de revenir en arrière dans le jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & La grille du puissance 4 \\
+\hline
+{\em t\+\_\+undo\+\_\+redo} & La liste contenant les grilles pour l\textquotesingle{}undo et le redo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La grille du puissance 4 après l\textquotesingle{}undo 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_verif\_colonne@{pq\_verif\_colonne}}
 \index{pq\_verif\_colonne@{pq\_verif\_colonne}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
@@ -164,36 +202,29 @@ True si la partie est finie, False sinon
 
 Vérifie si on peut poser un jeton dans cette colonne. 
 
-{\bfseries{Variable \+:}}
-\begin{DoxyItemize}
-\item b\+\_\+resultat \+: Booléen
-\item i\+\_\+boucle \+: Entier
-\end{DoxyItemize}
+\begin{DoxyPrecond}{Précondition}
+0 $<$ i\+\_\+colonne ≤ npa\+\_\+grille.\+shape\mbox{[}0\mbox{]} 
 
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item 0 $<$ i\+\_\+colonne ≤ npa\+\_\+grille.\+shape\mbox{[}0\mbox{]}
-\item npa\+\_\+grille initialisé
-\end{DoxyItemize}
-
-{\bfseries{Postconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille\mbox{[}i\+\_\+colonne\mbox{]} contient au moins un 0
-\end{DoxyItemize}
-
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em i\+\_\+colonne} & La colonne où on souhaite poser un jeton \\
 \hline
-{\em npa\+\_\+grille} & La grille de jeu\\
+{\em npa\+\_\+grille} & La grille de jeu \\
 \hline
 \end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+npa\+\_\+grille\mbox{[}i\+\_\+colonne\mbox{]} contient au moins un 0 
+\end{DoxyPostcond}
 \begin{DoxyReturn}{Renvoie}
 True si on peut poser le jeton, False sinon
 \end{DoxyReturn}
-\begin{DoxyRefDesc}{Test}
-\item[\mbox{\hyperlink{test__test000001}{Test}}]\mbox{\hyperlink{namespacetests_1_1test__puissanceQuatre_a5334253573b649c8f36f3af1380b41a3}{test\+\_\+verif\+\_\+colonne()}}\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}} 
+{\bfseries{Variable \+:}}
+\begin{DoxyItemize}
+\item b\+\_\+resultat \+: Booléen
+\item i\+\_\+boucle \+: Entier 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ac684727bae3bfbadc62404364e4511b8}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_victoire@{pq\_victoire}}
 \index{pq\_victoire@{pq\_victoire}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_victoire()}{pq\_victoire()}}
