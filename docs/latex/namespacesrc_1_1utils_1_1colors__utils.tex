@@ -1,0 +1,82 @@
+\hypertarget{namespacesrc_1_1utils_1_1colors__utils}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+utils.\+colors\+\_\+utils}
+\label{namespacesrc_1_1utils_1_1colors__utils}\index{src.utils.colors\_utils@{src.utils.colors\_utils}}
+
+
+Ce module contient les fonctions relatives aux couleurs.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+(int, int, int) \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_a9d09ed86218dd51f6e3af6ae97bbb6e9}{ctrl\+\_\+page\+\_\+parameter\+\_\+hex\+\_\+to\+\_\+rgb}} (str s\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Convertit une couleur hexadécimale en RGB. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_a95bef9ee1da051dc743025ed6eb84c86}{ctrl\+\_\+page\+\_\+parameter\+\_\+rgb\+\_\+distance}} ((int, int, int) rgb1,(int, int, int) rgb2)
+\begin{DoxyCompactList}\small\item\em Calcule la distance entre deux couleurs RGB. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_ae3358d102775708d915cd9a671a47b01}{ctrl\+\_\+page\+\_\+parameter\+\_\+colors\+\_\+too\+\_\+close}} (str color1, str color2)
+\begin{DoxyCompactList}\small\item\em Vérifie si deux couleurs sont trop proches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Ce module contient les fonctions relatives aux couleurs. 
+
+Ce module contient les fonctions de gestion des couleurs. Notamment la conversion d\textquotesingle{}une couleur hexadécimale en RGB et la vérification de la distance entre deux couleurs. 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_ae3358d102775708d915cd9a671a47b01}\label{namespacesrc_1_1utils_1_1colors__utils_ae3358d102775708d915cd9a671a47b01}} 
+\index{src.utils.colors\_utils@{src.utils.colors\_utils}!ctrl\_page\_parameter\_colors\_too\_close@{ctrl\_page\_parameter\_colors\_too\_close}}
+\index{ctrl\_page\_parameter\_colors\_too\_close@{ctrl\_page\_parameter\_colors\_too\_close}!src.utils.colors\_utils@{src.utils.colors\_utils}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_colors\_too\_close()}{ctrl\_page\_parameter\_colors\_too\_close()}}
+{\footnotesize\ttfamily  bool src.\+utils.\+colors\+\_\+utils.\+ctrl\+\_\+page\+\_\+parameter\+\_\+colors\+\_\+too\+\_\+close (\begin{DoxyParamCaption}\item[{str}]{color1,  }\item[{str}]{color2 }\end{DoxyParamCaption})}
+
+
+
+Vérifie si deux couleurs sont trop proches. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em color1} & Couleur 1 au format hexadécimal \\
+\hline
+{\em color2} & Couleur 2 au format hexadécimal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si les couleurs sont trop proches, False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_a9d09ed86218dd51f6e3af6ae97bbb6e9}\label{namespacesrc_1_1utils_1_1colors__utils_a9d09ed86218dd51f6e3af6ae97bbb6e9}} 
+\index{src.utils.colors\_utils@{src.utils.colors\_utils}!ctrl\_page\_parameter\_hex\_to\_rgb@{ctrl\_page\_parameter\_hex\_to\_rgb}}
+\index{ctrl\_page\_parameter\_hex\_to\_rgb@{ctrl\_page\_parameter\_hex\_to\_rgb}!src.utils.colors\_utils@{src.utils.colors\_utils}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_hex\_to\_rgb()}{ctrl\_page\_parameter\_hex\_to\_rgb()}}
+{\footnotesize\ttfamily  (int, int, int) src.\+utils.\+colors\+\_\+utils.\+ctrl\+\_\+page\+\_\+parameter\+\_\+hex\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{str}]{s\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Convertit une couleur hexadécimale en RGB. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+color} & Couleur hexadécimale \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Couleur RGB 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_a95bef9ee1da051dc743025ed6eb84c86}\label{namespacesrc_1_1utils_1_1colors__utils_a95bef9ee1da051dc743025ed6eb84c86}} 
+\index{src.utils.colors\_utils@{src.utils.colors\_utils}!ctrl\_page\_parameter\_rgb\_distance@{ctrl\_page\_parameter\_rgb\_distance}}
+\index{ctrl\_page\_parameter\_rgb\_distance@{ctrl\_page\_parameter\_rgb\_distance}!src.utils.colors\_utils@{src.utils.colors\_utils}}
+\doxysubsubsection{\texorpdfstring{ctrl\_page\_parameter\_rgb\_distance()}{ctrl\_page\_parameter\_rgb\_distance()}}
+{\footnotesize\ttfamily  int src.\+utils.\+colors\+\_\+utils.\+ctrl\+\_\+page\+\_\+parameter\+\_\+rgb\+\_\+distance (\begin{DoxyParamCaption}\item[{(int, int, int)}]{rgb1,  }\item[{(int, int, int)}]{rgb2 }\end{DoxyParamCaption})}
+
+
+
+Calcule la distance entre deux couleurs RGB. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rgb1} & Couleur 1 \\
+\hline
+{\em rgb2} & Couleur 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Distance entre les deux couleurs 
+\end{DoxyReturn}
