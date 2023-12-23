@@ -8,7 +8,7 @@ le jeu, de recommencer une partie, etc.
 """
 
 import tkinter as tk
-from tkinter.messagebox import showinfo, askyesno
+from tkinter.messagebox import showinfo, askyesno, showwarning
 
 from src.controller import ctrl_main as ctrl_m
 
@@ -111,3 +111,17 @@ def win_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
         ctrl_m.win_ctrl_page_accueil(tk_root, tkf_page_jeu)
 
 
+def win_message_warning(str_message):
+    """! Affiche un message d'avertissement
+
+    @param str_message: Message à afficher
+    """
+    showwarning(title="Avertissement", message=str_message)
+
+
+def win_message_info(str_message):
+    """! Affiche un message d'information
+
+    @param str_message: Message à afficher
+    """
+    showinfo(title="Information", message=str_message)

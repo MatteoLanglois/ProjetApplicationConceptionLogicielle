@@ -9,11 +9,16 @@ import numpy as np
 
 from src.view import view_pageJeu as view_pj
 from src.controller import ctrl_main as ctrl_m
+from src.controller import ctrl_pageParametres as ctrl_pp
 from src.puissanceQuatre import puissanceQuatre as ps4
 from src.puissanceQuatre import grid as gr
 
 global npa_grid
 global tk_root
+global i_nb_jetons
+global st_color_joueur
+global st_color_bot
+global i_difficulty
 
 
 def ctrl_page_jeu_init(tk_win_root: tk.Tk):
@@ -22,7 +27,7 @@ def ctrl_page_jeu_init(tk_win_root: tk.Tk):
     **Variables :**
     * npa_grid : Grille de jeu
 
-    \pre tk_root initialisé
+    @pre tk_root initialisé
 
     @param tk_win_root: Fenêtre principale
     """
@@ -30,31 +35,44 @@ def ctrl_page_jeu_init(tk_win_root: tk.Tk):
     global npa_grid
     # Enregistrement de manière globale de la fenêtre principale
     global tk_root
+    global i_nb_jetons
+    global st_color_joueur
+    global st_color_bot
+    global i_difficulty
+
+    # Récupération des couleurs pour la grille de jeu
+    st_color_joueur, st_color_bot, st_color_grid = (
+        ctrl_pp.ctrl_page_parameter_custom_load())
+
+    i_nb_rows, i_nb_columns, i_nb_jetons, i_difficulty = (
+        ctrl_pp.ctrl_page_parameter_settings_load())
 
     tk_root = tk_win_root
     # Initialisation de la page de jeu
-    view_pj.v_page_jeu_init(tk_root)
+    view_pj.v_page_jeu_init(tk_root, st_color_grid)
     # Dessin de la grille de jeu
-    ctrl_page_jeu_draw_grid()
-    # Initialisation de la grille de jeu pour le puissance 4
-    npa_grid = gr.pq_init_grille(6, 7)
+    ctrl_page_jeu_draw_grid(i_nb_rows, i_nb_columns)
+    # Initialisation de la grille de jeu pour le jeu puissance 4
+    npa_grid = gr.pq_init_grille(i_nb_rows, i_nb_columns)
 
 
-def ctrl_page_jeu_draw_grid():
+def ctrl_page_jeu_draw_grid(i_nb_rows: int, i_nb_columns: int):
     """! Dessine la grille de jeu
     """
     # Dessin de la grille de jeu
-    view_pj.v_page_jeu_draw_grid(6, 7)
+    view_pj.v_page_jeu_draw_grid(i_nb_rows, i_nb_columns)
 
 
 def ctrl_page_jeu_put_coin(i_row: int, i_cols: int, i_joueur: int):
     """! Place un jeton dans la grille de jeu
     @todo
     """
+    global st_color_joueur
+    global st_color_bot
     if i_joueur == 1:
-        view_pj.v_page_jeu_show_coin(i_row, i_cols, "red")
+        view_pj.v_page_jeu_show_coin(i_row, i_cols, st_color_joueur)
     else:
-        view_pj.v_page_jeu_show_coin(i_row, i_cols, "yellow")
+        view_pj.v_page_jeu_show_coin(i_row, i_cols, st_color_bot)
 
 
 def ctrl_page_jeu_undo():
@@ -86,6 +104,7 @@ def ctrl_page_jeu_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     @param tkf_page_jeu : Frame de la page de jeu
     @todo
     """
+    global i_nb_jetons
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.v_page_jeu_get_grid_cell(event.x, event.y)
     b_joueur_gagne = False
@@ -96,10 +115,9 @@ def ctrl_page_jeu_play(event: tk.Event, tkf_page_jeu: tk.Frame):
             i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
                                                     i_colonne=i_grid_x,
                                                     i_joueur=1)
-            print("Joueur 1 joue en " + str(i_grid_x) + ", " + str(i_grid_y))
             ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 1)
             b_joueur_joue = True
-            if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 1, 4):
+            if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 1, i_nb_jetons):
                 ctrl_m.win_ctrl_ended_game("Le Joueur 1 a gagné",
                                            tkf_old_frame=tkf_page_jeu)
                 b_joueur_gagne = True
@@ -122,14 +140,15 @@ def ctrl_page_jeu_bot_play(tkf_page_jeu: tk.Frame):
     """! Fait jouer le bot
     @todo
     """
+    global i_nb_jetons, i_difficulty
     i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2,
                                 npaGrilleCopy=np.copy(npa_grid),
                                 isFirst=True,
-                                tour=-1,
+                                tour=-i_difficulty,
                                 i_nb_victoire=4)
     i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=npa_grid,
                                             i_colonne=i_grid_x, i_joueur=2)
     ctrl_page_jeu_put_coin(i_grid_x, i_grid_y, 2)
-    if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 2, 4):
+    if ps4.pq_victoire(npa_grid, i_grid_x, i_grid_y, 2, i_nb_jetons):
         ctrl_m.win_ctrl_ended_game("Le joueur 2 a gagné",
                                    tkf_old_frame=tkf_page_jeu)

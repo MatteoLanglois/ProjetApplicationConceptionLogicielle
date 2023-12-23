@@ -18,7 +18,7 @@ global i_nb_rows
 global i_nb_columns
 
 
-def v_page_jeu_init(tk_root: tk.Tk):
+def v_page_jeu_init(tk_root: tk.Tk, st_color_grid: str):
     """! Initialise la page de jeu
 
     **Variables :**
@@ -35,6 +35,7 @@ def v_page_jeu_init(tk_root: tk.Tk):
     * tk_root initialisé
 
     @param tk_root: Fenêtre principale
+    @param st_color_grid: Couleur de la grille au format hexadécimal
     """
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
@@ -52,13 +53,14 @@ def v_page_jeu_init(tk_root: tk.Tk):
     # On définit la hauteur du canvas qui va permettre d'afficher la grille
     i_canvas_height = 430
     # On crée le canvas
-    tkc_grid = tk.Canvas(tkf_page_jeu, bg="white",
+    tkc_grid = tk.Canvas(tkf_page_jeu, bg=st_color_grid,
                          width=i_canvas_width, height=i_canvas_height)
     # On affiche le canvas
     tkc_grid.grid(row=0, column=0, sticky="nsew", columnspan=4, rowspan=4)
     # Lorsque l'on clique sur le canvas, cela appellera la fonction
     # ctrl_pj.ctrl_page_jeu_play(event)
-    tkc_grid.bind('<Button-1>', lambda event: ctrl_pj.ctrl_page_jeu_play(event, tkf_page_jeu))
+    tkc_grid.bind('<Button-1>',
+                  lambda event: ctrl_pj.ctrl_page_jeu_play(event, tkf_page_jeu))
 
     # Création d'un bouton pour annuler le dernier coup
     tkB_undo = tk.Button(tkf_page_jeu, text="Undo", font=("Helvetica", 16),
@@ -147,7 +149,7 @@ def v_page_jeu_draw_grid(rows: int, columns: int):
             ti_lower_right = (i_rows * cell_width + cell_width - 5,
                               i_cols * cell_height + cell_height - 5)
             # On dessine la cellule
-            tkc_grid.create_oval((ti_upper_left, ti_lower_right))
+            tkc_grid.create_oval((ti_upper_left, ti_lower_right), fill="white")
 
 
 def v_page_jeu_show_coin(row: int, column: int, color: str):

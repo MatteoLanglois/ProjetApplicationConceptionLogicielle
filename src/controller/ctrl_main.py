@@ -90,3 +90,11 @@ def win_ctrl_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
 
 def win_ctrl_ended_game(str_message: str, tkf_old_frame: tk.Frame):
     view_m.win_message_game_ended(str_message, tkf_old_frame)
+
+
+def win_ctrl_warning(str_message: str):
+    view_m.win_message_warning(str_message)
+
+
+def win_ctrl_info(str_message: str):
+    view_m.win_message_info(str_message)
