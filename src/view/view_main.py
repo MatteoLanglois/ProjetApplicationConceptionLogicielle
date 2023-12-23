@@ -96,9 +96,7 @@ def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
                              command=lambda:
                              ctrl_m.cm_page_parameters(TK_ROOT,
                                                        tk_old_frame))
-    # Ajout d'un bouton dans le menu pour accéder à la page à propos
-    tkm_menu_bar.add_command(label="A propos",
-                             command=lambda: print("A propos"))
+
     # Renvoie du menu
     return tkm_menu_bar
 

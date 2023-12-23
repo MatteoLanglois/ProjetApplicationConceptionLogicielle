@@ -45,6 +45,14 @@ global ST_COLOR_JOUEUR
 global ST_COLOR_BOT
 # Difficulté du bot
 global I_DIFFICULTY
+# Liste des coups joués
+global T_UNDO_REDO
+# Liste des coups annulés
+global T_REDO
+# Nombre de lignes de la grille de jeu
+global I_ROWS
+# Nombre de colonnes de la grille de jeu
+global I_COLS
 
 
 def cpj_init(tk_win_root: tk.Tk):
@@ -70,13 +78,20 @@ def cpj_init(tk_win_root: tk.Tk):
     global ST_COLOR_JOUEUR
     global ST_COLOR_BOT
     global I_DIFFICULTY
+    global I_ROWS
+    global I_COLS
+    global T_UNDO_REDO
+    global T_REDO
+
+    T_UNDO_REDO = []
+    T_REDO = []
 
     # Récupération des couleurs pour la grille de jeu
     ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
         ctrl_pp.ctrl_page_parameter_custom_load())
 
     # Récupération des paramètres pour la partie
-    i_nb_rows, i_nb_columns, I_NB_JETONS, I_DIFFICULTY = (
+    I_ROWS, I_COLS, I_NB_JETONS, I_DIFFICULTY = (
         ctrl_pp.ctrl_page_parameter_settings_load())
 
     # Initialisation de la fenêtre principale
@@ -84,9 +99,9 @@ def cpj_init(tk_win_root: tk.Tk):
     # Initialisation de la page de jeu
     view_pj.vpj_init(TK_ROOT, st_color_grid)
     # Dessin de la grille de jeu
-    cpj_draw_grid(i_nb_rows, i_nb_columns)
+    cpj_draw_grid(I_ROWS, I_COLS)
     # Initialisation de la grille de jeu pour le jeu puissance 4
-    NPA_GRID = gr.pq_init_grille(i_nb_rows, i_nb_columns)
+    NPA_GRID = gr.pq_init_grille(I_ROWS, I_COLS)
 
 
 def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
@@ -127,14 +142,21 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
 def cpj_undo():
     """! Annule le dernier coup
-    @todo
+    @todo : Afficher le dernier coup annulé sur l'interface graphique
     """
+    global T_UNDO_REDO, T_REDO, NPA_GRID
+    T_REDO.append(NPA_GRID)
+    NPA_GRID = ps4.pq_undo(NPA_GRID, T_UNDO_REDO)
+    cpj_update_grid()
 
 
 def cpj_redo():
     """! Refait le dernier coup
     @todo
     """
+    global T_UNDO_REDO, T_REDO, NPA_GRID
+    NPA_GRID = ps4.pq_redo(NPA_GRID, T_REDO)
+    cpj_update_grid()
 
 
 def cpj_quit():
@@ -167,7 +189,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
     @todo : A finir
     """
-    global I_NB_JETONS
+    global I_NB_JETONS, NPA_GRID, T_UNDO_REDO
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.vpj_get_grid_cell(event.x, event.y)
     b_joueur_gagne = False
@@ -175,10 +197,12 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
     if not ps4.pq_partie_finie(NPA_GRID, False):
         if ps4.pq_verif_colonne(i_grid_x, NPA_GRID):
+            T_REDO = []
             i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                                     i_colonne=i_grid_x,
                                                     i_joueur=1)
             cpj_put_coin(i_grid_x, i_grid_y, 1)
+            T_UNDO_REDO.append(NPA_GRID)
             b_joueur_joue = True
             if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 1, I_NB_JETONS):
                 ctrl_m.cm_ended_game("Le Joueur 1 a gagné",
@@ -225,3 +249,15 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 2, I_NB_JETONS):
         ctrl_m.cm_ended_game("Le joueur 2 a gagné",
                              tkf_old_frame=tkf_page_jeu)
+
+
+def cpj_update_grid():
+    """! Réinitialise la grille de jeu
+    @todo
+    """
+    global I_ROWS, I_COLS
+    cpj_draw_grid(I_ROWS, I_COLS)
+    for i_boucle_row in range(I_ROWS):
+        for i_boucle_col in range(I_COLS):
+            cpj_put_coin(i_boucle_row, i_boucle_col,
+                         NPA_GRID[i_boucle_row, i_boucle_col])

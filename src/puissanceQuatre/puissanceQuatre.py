@@ -291,6 +291,7 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 if i_compteur >= i_nb_victoire:
                     return True
 
+
 def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     """! Méthode permettant de revenir en arrière dans le jeu
 
@@ -310,6 +311,7 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     # On retourne la grille
     return npa_grille
 
+
 def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
     """! Méthode permettant de revenir en avant dans le jeu
 
@@ -324,6 +326,7 @@ def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
         return npa
     # On retourne la grille
     return npa_grille
+
 
 def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
     """! Vérification de si la partie est finie ou non.
@@ -485,5 +488,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     return
 
 
+# Si on exécute ce fichier
 if __name__ == '__main__':
+    # Lance une partie normale en ligne de commande
     pq_gestion_partie(6, 7, 4)

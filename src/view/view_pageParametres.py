@@ -68,7 +68,7 @@ def vpp_init_custom():
     tkl_perso = tk.Label(TKF_PAGE_PARAMETER, text="Personnalisation",
                          font="Helvetica 24")
     # Affichage du label
-    tkl_perso.grid(row=6, column=1)
+    tkl_perso.grid(row=6, column=1, pady=20)
 
     # Création d'un label pour indiquer le choix de la couleur des jetons du
     # joueur
@@ -76,11 +76,11 @@ def vpp_init_custom():
                                 text="Couleur des jetons du joueur :",
                                 font="Helvetica 16")
     # Affichage du label
-    tkl_color_joueur.grid(row=7, column=0)
+    tkl_color_joueur.grid(row=7, column=0, pady=10)
 
     # Création d'un bouton ouvrant un sélectionneur de couleur pour les jetons
     # du joueur
-    TKB_PICKER_JOUEUR = tk.Button(TKF_PAGE_PARAMETER,
+    TKB_PICKER_JOUEUR = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                   font="Helvetica 16",
                                   command=lambda:
                                   ctrl_pp.ctrl_page_parameter_askcolor("joueur")
@@ -94,11 +94,11 @@ def vpp_init_custom():
                              text="Couleur des jetons du bot :",
                              font="Helvetica 16")
     # Affichage du Label
-    tkl_color_bot.grid(row=8, column=0)
+    tkl_color_bot.grid(row=8, column=0, pady=10)
 
     # Création d'un bouton ouvrant un sélectionneur de couleur pour les jetons
     # du bot
-    TKB_PICKER_BOT = tk.Button(TKF_PAGE_PARAMETER,
+    TKB_PICKER_BOT = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                font="Helvetica 16",
                                command=lambda:
                                ctrl_pp.ctrl_page_parameter_askcolor("bot")
@@ -111,10 +111,10 @@ def vpp_init_custom():
                               text="Couleur de la grille :",
                               font="Helvetica 16")
     # Affichage du label
-    tkl_color_grid.grid(row=9, column=0)
+    tkl_color_grid.grid(row=9, column=0, pady=10)
 
     # Création d'un bouton ouvrant un sélectionneur de couleur pour la grille
-    TKB_PICKER_GRID = tk.Button(TKF_PAGE_PARAMETER,
+    TKB_PICKER_GRID = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                 font="Helvetica 16",
                                 command=lambda:
                                 ctrl_pp.ctrl_page_parameter_askcolor("grille")
@@ -127,7 +127,7 @@ def vpp_init_custom():
                          command=lambda:
                          ctrl_pp.ctrl_page_parameter_custom_save()
                          )
-    tkb_save.grid(row=10, column=1)
+    tkb_save.grid(row=10, column=1, pady=20)
 
     tkb_reset = tk.Button(TKF_PAGE_PARAMETER, text="Réinitialiser",
                           font="Helvetica 16",
@@ -143,13 +143,13 @@ def vpp_init_settings():
     tkl_param = tk.Label(TKF_PAGE_PARAMETER, text="Paramètres",
                          font="Helvetica 24")
     # Affichage du label
-    tkl_param.grid(row=1, column=1)
+    tkl_param.grid(row=1, column=1, pady=20)
 
     # Création d'un label pour demander la taille de la grille
     tkl_size = tk.Label(TKF_PAGE_PARAMETER, text="Taille de la grille :",
                         font="Helvetica 16", justify="left")
     # Affichage du label
-    tkl_size.grid(row=2, column=0)
+    tkl_size.grid(row=2, column=0, pady=10)
 
     # Initialisation d'un stringVar pour récupérer la valeur du champ suivant
     STV_ROWS = tk.StringVar()
@@ -157,43 +157,47 @@ def vpp_init_settings():
     tksb_nb_rows = tk.Spinbox(TKF_PAGE_PARAMETER, font="Helvetica 16", from_=4,
                               to=100, textvariable=STV_ROWS, width=5)
     # Affichage de l'entrée
-    tksb_nb_rows.grid(row=2, column=1)
+    tksb_nb_rows.grid(row=2, column=1, padx=10, sticky="e")
 
-    tkl_lines = tk.Label(TKF_PAGE_PARAMETER, text="Lignes")
-    tkl_lines.grid(row=2, column=2)
+    tkl_lines = tk.Label(TKF_PAGE_PARAMETER, text="Lignes,",
+                         font="Helvetica 14")
+    tkl_lines.grid(row=2, column=2, sticky="w")
 
     # Initialisation d'un stringVar pour récupérer la valeur du champ suivant
     STV_COLUMNS = tk.StringVar()
     # Création d'une spinbox pour le nombre de colonnes
     tksb_nb_columns = tk.Spinbox(TKF_PAGE_PARAMETER, font="Helvetica 16",
-                                 from_=5, to=110, textvariable=STV_COLUMNS)
+                                 from_=5, to=110, textvariable=STV_COLUMNS,
+                                 width=5)
     # Affichage de l'entrée
-    tksb_nb_columns.grid(row=2, column=3)
+    tksb_nb_columns.grid(row=2, column=3, padx=10, sticky="e")
 
-    tkl_colonnes = tk.Label(TKF_PAGE_PARAMETER, text="Colonnes")
-    tkl_colonnes.grid(row=2, column=4)
+    tkl_colonnes = tk.Label(TKF_PAGE_PARAMETER, text="Colonnes",
+                            font="Helvetica 14")
+    tkl_colonnes.grid(row=2, column=4, sticky="w")
 
     # Création d'un label pour demander le nombre de jetons requis
     tkl_nb_jetons = tk.Label(TKF_PAGE_PARAMETER,
                              text="Nombre de jetons requis :",
                              font="Helvetica 16", justify="left")
     # Affichage du label
-    tkl_nb_jetons.grid(row=3, column=0)
+    tkl_nb_jetons.grid(row=3, column=0, pady=10)
 
     # Initialisation d'un stringVar pour récupérer la valeur du champ suivant
     STV_NB_JETONS = tk.StringVar()
     # Création d'une spinbox pour le nombre de jetons requis pour gagner
     tksb_nb_jetons = tk.Spinbox(TKF_PAGE_PARAMETER, font="Helvetica 16",
-                                from_=1, to=100, textvariable=STV_NB_JETONS)
+                                from_=1, to=100, textvariable=STV_NB_JETONS,
+                                width=5)
     # Affichage de l'entrée
-    tksb_nb_jetons.grid(row=3, column=1)
+    tksb_nb_jetons.grid(row=3, column=1, padx=10, sticky="w")
 
     # Création d'un label
     tkl_difficulty = tk.Label(TKF_PAGE_PARAMETER,
                               text="Difficulté",
                               font="Helvetica 16", justify="left")
     # Affichage du label
-    tkl_difficulty.grid(row=4, column=0)
+    tkl_difficulty.grid(row=4, column=0, pady=10)
 
     # Création d'un slider pour la difficulté
     TKS_SCALE = tk.Scale(TKF_PAGE_PARAMETER, from_=0, to=5, orient="horizontal")
@@ -204,7 +208,7 @@ def vpp_init_settings():
                          font="Helvetica 16",
                          command=
                          lambda: ctrl_pp.ctrl_page_parameter_settings_save())
-    tkb_save.grid(row=5, column=1)
+    tkb_save.grid(row=5, column=1, pady=20)
 
     tkb_reset = tk.Button(TKF_PAGE_PARAMETER, text="Réinitialiser",
                           font="Helvetica 16",
