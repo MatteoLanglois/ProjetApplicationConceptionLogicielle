@@ -16,6 +16,7 @@ Ce programme utilise les modules externes suivants :
 @details Ce module contient les fonctions de bonus.
 """
 import numpy as np
+from src.puissanceQuatre import puissanceQuatre as ps4
 
 
 def p4b_init():
@@ -70,9 +71,42 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
             for i_col in range(i_nb_cols):
                 npa_grid[i_row, i_col] = 0
             # Redescendre les pions
-            for i_row2 in range(i_row, i_nb_rows-1):
+            for i_row2 in range(i_row, i_nb_rows - 1):
                 for i_col in range(i_nb_cols):
-                    npa_grid[i_row2, i_col] = npa_grid[i_row2+1, i_col]
+                    npa_grid[i_row2, i_col] = npa_grid[i_row2 + 1, i_col]
     return npa_grid
 
 
+def p4b_block_column(npa_grid: np.array, i_col: int) -> np.array:
+    """! Bloque une colonne
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille
+    @param i_col: Colonne à bloquer
+    @return npa_grid: Grille avec une colonne bloquée
+
+    **Variables :**
+    * i_nb_rows : Nombre de lignes de la grille
+    * i_nb_cols : Nombre de colonnes de la grille
+    * i_col : Indice de colonne
+    """
+    i_nb_rows, i_nb_cols = npa_grid.shape
+    for i_row in range(i_nb_rows):
+        npa_grid[i_row, i_col] = 3
+    return npa_grid
+
+
+def p4b_use_min_max(npa_grid: np.array) -> np.array:
+    """! Bonus permettant au joueur d'utiliser l'algorithme min max pour son
+    prochain coup
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille de jeu
+    @return npa_grid : Grille avec un coup de plus de joué
+
+    **Variables :**
+    * i_col : La colonne qui va être jouée avec l'algorithme min max
+    """
+    i_col, _ = ps4.pq_minmax(1, np.copy(npa_grid), 4, 0, True, 0)
+    ps4.pq_ajout_piece(npa_grid, 1, i_col)
+    return npa_grid
