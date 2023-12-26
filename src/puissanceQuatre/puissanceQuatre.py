@@ -282,7 +282,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 i_compteur = 1
                 i_boucle = 1
                 b_suite = True
-                while i_boucle < i_nb_victoire and i + i_boucle < i_max_ligne and j + i_boucle < i_max_colonne and b_suite:
+                while (i_boucle < i_nb_victoire and i + i_boucle < i_max_ligne
+                       and j + i_boucle < i_max_colonne and b_suite):
                     if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
                         i_compteur += 1
                     else:
@@ -411,6 +412,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     i_colonne_joueur = 0
     # Initialisation de la ligne où le joueur veut jouer
     i_ligne_joueur = 0
+    b_is_play = False
 
     # Affichage des règles du jeu
     print("Bienvenue dans le puissance 4 !\n"
@@ -430,7 +432,7 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         while (not (0 <= i_colonne_joueur < i_nb_colonnes)
                and pq_verif_colonne(i_colonne_joueur, npa_grille)):
             # Demande de la colonne où le joueur veut jouer
-            is_play = False
+            b_is_play = False
             i_colonne_joueur = int(input("\nDans quelle colonne voulez vous "
                                          "jouer ? ")) - 1
             if i_colonne_joueur == -1:
@@ -450,9 +452,9 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
                 gr.pq_print_grille(npa_grille)
 
             else:
-                is_play = True
+                b_is_play = True
         # Pose du jeton et récupération de la ligne où le jeton a été posé
-        if is_play:
+        if b_is_play:
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 1)
 
             # Si le joueur a gagné

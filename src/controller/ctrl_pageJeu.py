@@ -83,7 +83,9 @@ def cpj_init(tk_win_root: tk.Tk):
     global T_UNDO_REDO
     global T_REDO
 
+    # Initialisation de la liste pour revenir en arrière
     T_UNDO_REDO = []
+    # Initialisation de la liste pour redo
     T_REDO = []
 
     # Récupération des couleurs pour la grille de jeu
@@ -134,9 +136,13 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
     """
     global ST_COLOR_JOUEUR
     global ST_COLOR_BOT
+    # Si le joueur est le joueur humain
     if i_joueur == 1:
+        # Afficher le pion
         view_pj.vpj_show_coin(i_row, i_cols, ST_COLOR_JOUEUR)
+    # Si le joueur est le bot
     elif i_joueur == 2:
+        # Afficher le pion
         view_pj.vpj_show_coin(i_row, i_cols, ST_COLOR_BOT)
 
 
@@ -145,8 +151,11 @@ def cpj_undo():
     @todo : Afficher le dernier coup annulé sur l'interface graphique
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
+    # Ajouter à la liste des coups annulés la grille actuelle
     T_REDO.append(NPA_GRID)
+    # Récupérer la précédente grille
     NPA_GRID = ps4.pq_undo(NPA_GRID, T_UNDO_REDO)
+    # Mise à jour de la grille
     cpj_update_grid()
 
 
@@ -155,7 +164,9 @@ def cpj_redo():
     @todo
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
+    # Récupération de la grille dont le coup a été annulé
     NPA_GRID = ps4.pq_redo(NPA_GRID, T_REDO)
+    # Mise à jour de la grille
     cpj_update_grid()
 
 
@@ -192,27 +203,44 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     global I_NB_JETONS, NPA_GRID, T_UNDO_REDO
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.vpj_get_grid_cell(event.x, event.y)
+    # Initialisation d'un booléen permettant de savoir si le joueur a gagné, à
+    # faux
     b_joueur_gagne = False
+    # Initialisation d'un booléen permettant de savoir si le joueur a joué,
+    # à faux
     b_joueur_joue = False
 
+    # Si la partie n'est pas finie
     if not ps4.pq_partie_finie(NPA_GRID, False):
+        # Si on peut poser un pion dans cette colonne
         if ps4.pq_verif_colonne(i_grid_x, NPA_GRID):
-            T_REDO = []
+            # On pose le jeton et on récupère les coordonnées de là où il a été
+            # posé
             i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                                     i_colonne=i_grid_x,
                                                     i_joueur=1)
+            # Afficher le pion qui vient d'être posé
             cpj_put_coin(i_grid_x, i_grid_y, 1)
+            # Ajout à la liste des coups joués de la grille
             T_UNDO_REDO.append(NPA_GRID)
+            # On indique que le joueur a joué
             b_joueur_joue = True
+            # Si le joueur a gagné
             if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 1, I_NB_JETONS):
+                # Afficher la fenêtre de fin de partie
                 ctrl_m.cm_ended_game("Le Joueur 1 a gagné",
                                      tkf_old_frame=tkf_page_jeu)
+                # Indiquer que le joueur a gagné
                 b_joueur_gagne = True
+        # Si le joueur n'a pas gagné, qu'il a joué et que la partie n'est pas
+        # finie
         if (not b_joueur_gagne and b_joueur_joue
                 and not ps4.pq_partie_finie(NPA_GRID, False)):
+            # Faire jouer le bot
             cpj_bot_play(tkf_page_jeu)
-
+    # Sinon
     else:
+        # Afficher la page de fin de partie indiquant le match nul.
         ctrl_m.cm_ended_game("Match nul",
                              tkf_old_frame=tkf_page_jeu)
 
@@ -238,15 +266,20 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     @todo : A finir
     """
     global I_NB_JETONS, I_DIFFICULTY
+    # On utilise l'algorithme min max pour choisir le prochain coup du bot
     i_grid_x, _ = ps4.pq_minmax(iNextJoueur=2,
                                 npaGrilleCopy=np.copy(NPA_GRID),
                                 isFirst=True,
                                 tour=-I_DIFFICULTY,
                                 i_nb_victoire=4)
+    # On pose le pion et on récupère les coordonnées de là où il a été posé
     i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                             i_colonne=i_grid_x, i_joueur=2)
+    # On affiche le pion posé
     cpj_put_coin(i_grid_x, i_grid_y, 2)
+    # Si le bot a gagné
     if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 2, I_NB_JETONS):
+        # On affiche la fenêtre de victoire indiquant que le bot a gagné
         ctrl_m.cm_ended_game("Le joueur 2 a gagné",
                              tkf_old_frame=tkf_page_jeu)
 
@@ -256,8 +289,14 @@ def cpj_update_grid():
     @todo
     """
     global I_ROWS, I_COLS
+    # Dessiner la grille pour la reset
     cpj_draw_grid(I_ROWS, I_COLS)
+    # Pour chaque ligne de la grille
     for i_boucle_row in range(I_ROWS):
+        # Pour chaque colonne de la ligne
         for i_boucle_col in range(I_COLS):
-            cpj_put_coin(i_boucle_row, i_boucle_col,
-                         NPA_GRID[i_boucle_row, i_boucle_col])
+            # S'il y a un jeton à la position I_ROWS, I_COLS
+            if NPA_GRID[I_ROWS, I_COLS] == 1 or NPA_GRID[I_ROWS, I_COLS] == 2:
+                # Afficher le pion à cette position
+                cpj_put_coin(i_boucle_row, i_boucle_col,
+                             NPA_GRID[i_boucle_row, i_boucle_col])
