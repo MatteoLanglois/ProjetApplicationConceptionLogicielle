@@ -166,7 +166,7 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
     * b_vu : Booléen, ajouter explication
     * b_suite : Booléen, ajouter explication
-    * i_max_colonne : Entier, Nombre de colonnes dans la grille
+    * i_nb_colonnes : Entier, Nombre de colonnes dans la grille
     * i_boucle : Entier, Compteur de boucle
     * i_debut : Entier, premier emplacement possible pour la combinaison de
             victoire dans la ligne
@@ -187,19 +187,19 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
 
     @return True si le joueur a gagné, False sinon
     """
-    i_max_ligne = np.shape(npa_grille)[0]
-    i_max_colonne = np.shape(npa_grille)[1]
+    i_nb_colonnes = np.shape(npa_grille)[1]
 
     i_debut = i_colonne - i_nb_victoire + 1 \
         if i_colonne - i_nb_victoire + 1 >= 0 else 0
     i_fin = i_colonne + i_nb_victoire - 1 \
-        if i_colonne + i_nb_victoire - 1 < i_max_colonne else i_max_colonne - 1
+        if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
     for i in range(i_debut, i_fin):
         if npa_grille[i_ligne][i] == i_joueur:
             i_compteur = 1
             i_boucle = 1
             b_suite = True
-            while i_boucle < i_nb_victoire and i + i_boucle < i_max_colonne and b_suite:
+            while (i_boucle < i_nb_victoire and i + i_boucle < i_nb_colonnes
+                   and b_suite):
                 if npa_grille[i_ligne][i + i_boucle] == i_joueur:
                     i_compteur += 1
                 else:
@@ -216,7 +216,7 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
 
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
-    * i_max_ligne : Entier, Nombre de lignes dans la grille
+    * i_nb_lignes : Entier, Nombre de lignes dans la grille
     * b_victoire : Booléen, Indique si le joueur a gagné ou non
 
     **Préconditions :**
@@ -234,9 +234,9 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     # Initialisation du booléen de victoire à faux
     b_victoire = False
     # Récupération du nombre de lignes de la grille
-    i_max_ligne = npa_grille.shape[0]
+    i_nb_lignes = npa_grille.shape[0]
     # Si le nombre de lignes restantes est suffisant pour gagner
-    if i_max_ligne >= (i_nb_victoire + i_ligne):
+    if i_nb_lignes >= (i_nb_victoire + i_ligne):
         i_compteur = 1
         while (i_compteur < i_nb_victoire) and (
                 npa_grille[i_ligne + i_compteur][i_colonne] == i_joueur):
@@ -251,8 +251,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
 
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
-    * i_max_ligne : Entier, Nombre de lignes dans la grille
-    * i_max_colonne : Entier, Nombre de colonnes dans la grille
+    * i_nb_lignes : Entier, Nombre de lignes dans la grille
+    * i_nb_colonnes : Entier, Nombre de colonnes dans la grille
 
     **Préconditions :**
     * npa_grille initialisé
@@ -266,24 +266,23 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
     """
-    i_max_ligne = np.shape(npa_grille)[0]
-    i_max_colonne = np.shape(npa_grille)[1]
+    i_nb_lignes, i_nb_colonnes = npa_grille.shape
     i_haut_ligne = i_ligne - i_nb_victoire + 1 \
         if i_ligne - i_nb_victoire + 1 >= 0 else 0
     i_bas_ligne = i_ligne + i_nb_victoire - 1 \
-        if i_ligne + i_nb_victoire - 1 < i_max_ligne else i_max_ligne - 1
+        if i_ligne + i_nb_victoire - 1 < i_nb_lignes else i_nb_lignes - 1
     i_gauche_colonne = i_colonne - i_nb_victoire + 1 \
         if i_colonne - i_nb_victoire + 1 >= 0 else 0
     i_droite_colonne = i_colonne + i_nb_victoire - 1 \
-        if i_colonne + i_nb_victoire - 1 < i_max_colonne else i_max_colonne - 1
+        if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
     for i in range(i_haut_ligne, i_bas_ligne):
         for j in range(i_gauche_colonne, i_droite_colonne):
             if npa_grille[i][j] == i_joueur:
                 i_compteur = 1
                 i_boucle = 1
                 b_suite = True
-                while (i_boucle < i_nb_victoire and i + i_boucle < i_max_ligne
-                       and j + i_boucle < i_max_colonne and b_suite):
+                while (i_boucle < i_nb_victoire and i + i_boucle < i_nb_lignes
+                       and j + i_boucle < i_nb_colonnes and b_suite):
                     if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
                         i_compteur += 1
                     else:
