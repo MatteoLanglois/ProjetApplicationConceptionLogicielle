@@ -150,6 +150,8 @@ def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Nombre de jetons à combiner pour gagner
     @return True si le joueur i_joueur a gagné, False sinon
     """
+    # Si pq_victoire_ligne ou pq_victoire_colonne ou pq_victoire_diago renvoie
+    # Vrai alors cette méthode renvoie true
     return (pq_victoire_ligne(npa_grille, i_ligne, i_colonne, i_joueur,
                               i_nb_victoire)
             or pq_victoire_colonne(npa_grille, i_ligne, i_colonne, i_joueur,

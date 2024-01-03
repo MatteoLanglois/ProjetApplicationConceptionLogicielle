@@ -36,13 +36,21 @@ def p4b_invert_grid(npa_grid: np.array) -> np.array:
     * i_row : Indice de ligne
     * i_col : Indice de colonne
     """
+    # Récupération de la taille de la grille
     i_nb_rows, i_nb_cols = npa_grid.shape
+    # Pour chaque ligne de la grille
     for i_row in range(i_nb_rows):
+        # Pour chaque case de la ligne
         for i_col in range(i_nb_cols):
+            # S'il y a un jeton du joueur
             if npa_grid[i_row, i_col] == 1:
+                # Le transformer en jeton du bot
                 npa_grid[i_row, i_col] = 2
+            # S'il y a un jeton du bot
             elif npa_grid[i_row, i_col] == 2:
+                # Le transformer en jeton du bot
                 npa_grid[i_row, i_col] = 1
+    # Retourner la grille
     return npa_grid
 
 
@@ -61,19 +69,31 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
     * b_full : Booléen indiquant si la ligne est pleine
     * i_row2 : Indice de ligne
     """
+    # Récupérer la taille de la grille
     i_nb_rows, i_nb_cols = npa_grid.shape
+    # Pour chaque ligne
     for i_row in range(i_nb_rows):
+        # Initialisation d'un booléen à True indiquant si une ligne est pleine.
         b_full = True
-        for i_col in range(i_nb_rows):
+        # Pour chaque case de cette ligne
+        for i_col in range(i_nb_cols):
+            # Si une des cases est vide
             if npa_grid[i_nb_rows, i_nb_cols] == 0:
+                # La ligne ne peut pas être pleine
                 b_full = False
+        # Si la ligne peut être pleine
         if b_full:
+            # Pour chaque colonne de cette ligne
             for i_col in range(i_nb_cols):
+                # On vide la ligne
                 npa_grid[i_row, i_col] = 0
-            # Redescendre les pions
+            # Pour chaque ligne
             for i_row2 in range(i_row, i_nb_rows - 1):
+                # Pour chaque colonne de la ligne
                 for i_col in range(i_nb_cols):
+                    # Redescendre les pions
                     npa_grid[i_row2, i_col] = npa_grid[i_row2 + 1, i_col]
+    # Renvoyer la grille
     return npa_grid
 
 
@@ -90,9 +110,13 @@ def p4b_block_column(npa_grid: np.array, i_col: int) -> np.array:
     * i_nb_cols : Nombre de colonnes de la grille
     * i_col : Indice de colonne
     """
+    # Récupération de la taille de la grille
     i_nb_rows, i_nb_cols = npa_grid.shape
+    # Pour chaque ligne de la grille
     for i_row in range(i_nb_rows):
+        # Mettre un jeton d'une valeur différente des deux joueurs
         npa_grid[i_row, i_col] = 3
+    # Retourner la grille
     return npa_grid
 
 
@@ -107,6 +131,9 @@ def p4b_use_min_max(npa_grid: np.array) -> np.array:
     **Variables :**
     * i_col : La colonne qui va être jouée avec l'algorithme min max
     """
+    # On calcule la colonne où le joueur doit poser son jeton avec min-max
     i_col, _ = ps4.pq_minmax(1, np.copy(npa_grid), 4, 0, True, 0)
-    ps4.pq_ajout_piece(npa_grid, 1, i_col)
+    # On pose le jeton
+    ps4.pq_ajout_piece(npa_grid, i_col, 1)
+    # On retourne la grille
     return npa_grid
