@@ -80,10 +80,8 @@ def cm_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     @post tkf_old_frame détruit
     @post fenêtre de jeu initialisée
     """
-    # Efface le cadre
-    tkf_old_frame.forget()
     # Supprime le cadre
-    tkf_old_frame.destroy()
+    view_m.vm_remove_frame(tkf_old_frame)
     # Initialise la page jeu
     ctrl_pj.cpj_init(tk_root)
 
@@ -98,10 +96,8 @@ def cm_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     @post tkf_old_frame détruit
     @post fenêtre de paramètres initialisée
     """
-    # Efface le cadre
-    tkf_old_frame.forget()
     # Supprime le cadre
-    tkf_old_frame.destroy()
+    view_m.vm_remove_frame(tkf_old_frame)
     # Initialise la page de paramètres
     ctrl_pp.ctrl_page_parameter_init(tk_root)
 
@@ -116,10 +112,8 @@ def cm_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     @post tkf_old_frame détruit
     @post fenêtre d'accueil initialisée
     """
-    # Efface le cadre
-    tkf_old_frame.forget()
     # Supprime le cadre
-    tkf_old_frame.destroy()
+    view_m.vm_remove_frame(tkf_old_frame)
     # Initialise la page d'accueil
     ctrl_pa.cpa_init(tk_root)
 

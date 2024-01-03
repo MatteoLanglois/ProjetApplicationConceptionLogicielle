@@ -120,7 +120,7 @@ def vm_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
         ctrl_m.cm_page_accueil(TK_ROOT, tkf_page_jeu)
 
 
-def vm_message_warning(str_message):
+def vm_message_warning(str_message: str):
     """! Affiche un message d'avertissement
 
     @param str_message: Message à afficher
@@ -128,9 +128,22 @@ def vm_message_warning(str_message):
     showwarning(title="Avertissement", message=str_message)
 
 
-def vm_message_info(str_message):
+def vm_message_info(str_message: str):
     """! Affiche un message d'information
 
     @param str_message: Message à afficher
     """
     showinfo(title="Information", message=str_message)
+
+
+def vm_remove_frame(frame: tk.Frame):
+    """! Supprime un cadre
+
+    @pre frame existe
+    @param frame: Le cadre à supprimer
+    @post frame n'existe plus
+    """
+    # Efface le cadre
+    frame.forget()
+    # Supprime le cadre
+    frame.destroy()
