@@ -12,8 +12,8 @@ Ce programme utilise les modules externes suivants :
 - numpy
 - inspect
 
-@package src.puissanceQuatre.bonus
-@brief Ce module contient les fonctions relatives aux bonus.
+@package src.utils.bonus_utils
+@brief Ce module contient les fonctions utiles aux bonus.
 @details Ce module contient les fonctions utilitaires relatives aux bonus.
 """
 from src.puissanceQuatre import bonus as p4b
