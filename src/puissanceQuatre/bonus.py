@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package src.puissanceQuatre.bonus
 @brief Ce module contient les fonctions relatives aux bonus.
@@ -17,10 +18,6 @@ Ce programme utilise les modules externes suivants :
 """
 import numpy as np
 from src.puissanceQuatre import puissanceQuatre as ps4
-
-
-def p4b_init():
-    pass
 
 
 def p4b_invert_grid(npa_grid: np.array) -> np.array:
@@ -109,6 +106,8 @@ def p4b_block_column(npa_grid: np.array, i_col: int) -> np.array:
     * i_nb_rows : Nombre de lignes de la grille
     * i_nb_cols : Nombre de colonnes de la grille
     * i_col : Indice de colonne
+    @todo Trouver comment gérer la disparition du jeton ajouté par le bonus
+    @todo Comment choisir la colonne à bloquer ?
     """
     # Récupération de la taille de la grille
     i_nb_rows, i_nb_cols = npa_grid.shape
@@ -137,3 +136,6 @@ def p4b_use_min_max(npa_grid: np.array) -> np.array:
     ps4.pq_ajout_piece(npa_grid, i_col, 1)
     # On retourne la grille
     return npa_grid
+
+
+

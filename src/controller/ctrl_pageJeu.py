@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package src.controller.ctrl_pageJeu
 @brief Un module qui gère la page de jeu
@@ -31,6 +32,8 @@ from src.controller import ctrl_pageParametres as ctrl_pp
 from src.puissanceQuatre import puissanceQuatre as ps4
 # Importation du modèle de la grille de jeu
 from src.puissanceQuatre import grid as gr
+# Importation du modèle des bonus
+from src.utils import bonus_utils as bu
 
 # Variables globales ##########################
 # Grille de jeu
@@ -50,60 +53,33 @@ global T_UNDO_REDO
 # Liste des coups annulés
 global T_REDO
 # Nombre de lignes de la grille de jeu
-global I_ROWS
+global I_NB_ROWS
 # Nombre de colonnes de la grille de jeu
-global I_COLS
+global I_NB_COLS
+# Bonus sélectionné
+global S_BONUS
+# Bonus utilisé
+global B_BONUS_USED
 
 
 def cpj_init(tk_win_root: tk.Tk):
-    """! Initialise la page de jeu
+    """! Initialise la page de choix du bonus
 
     @pre tk_root initialisé
     @param tk_win_root: Fenêtre principale
-    @post page de jeu initialisée
+    @post page de choix du bonus initialisée
 
     **Variables :**
     * NPA_GRID : Grille de jeu
     * TK_ROOT : Fenêtre principale
-    * I_NB_JETONS : Nombre de jetons à aligner pour gagner
-    * ST_COLOR_JOUEUR : Couleur des jetons du joueur
-    * ST_COLOR_BOT : Couleur des jetons du bot
-    * I_DIFFICULTY : Difficulté du bot
-    * i_nb_rows : Nombre de lignes de la grille de jeu
-    * i_nb_columns : Nombre de colonnes de la grille de jeu
     """
-    global NPA_GRID
-    global TK_ROOT
-    global I_NB_JETONS
-    global ST_COLOR_JOUEUR
-    global ST_COLOR_BOT
-    global I_DIFFICULTY
-    global I_ROWS
-    global I_COLS
-    global T_UNDO_REDO
-    global T_REDO
-
-    # Initialisation de la liste pour revenir en arrière
-    T_UNDO_REDO = []
-    # Initialisation de la liste pour redo
-    T_REDO = []
-
-    # Récupération des couleurs pour la grille de jeu
-    ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
-        ctrl_pp.ctrl_page_parameter_custom_load())
-
-    # Récupération des paramètres pour la partie
-    I_ROWS, I_COLS, I_NB_JETONS, I_DIFFICULTY = (
-        ctrl_pp.ctrl_page_parameter_settings_load())
-
+    global TK_ROOT, B_BONUS_USED
     # Initialisation de la fenêtre principale
     TK_ROOT = tk_win_root
-    # Initialisation de la page de jeu
-    view_pj.vpj_init(TK_ROOT, st_color_grid)
-    # Dessin de la grille de jeu
-    cpj_draw_grid(I_ROWS, I_COLS)
-    # Initialisation de la grille de jeu pour le jeu puissance 4
-    NPA_GRID = gr.pq_init_grille(I_ROWS, I_COLS)
+    # Initialisation de la page de choix des bonus
+    view_pj.vpj_init_choix_bonus(TK_ROOT)
+    # Définition de la variable globale B_BONUS_USED à faux
+    B_BONUS_USED = False
 
 
 def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
@@ -148,20 +124,21 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
 def cpj_undo():
     """! Annule le dernier coup
-    @todo : Afficher le dernier coup annulé sur l'interface graphique
+    @todo Afficher le dernier coup annulé sur l'interface graphique
+    @todo L'undo ne fonctionne pas
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Ajouter à la liste des coups annulés la grille actuelle
     T_REDO.append(NPA_GRID)
     # Récupérer la précédente grille
-    NPA_GRID = ps4.pq_undo(NPA_GRID, T_UNDO_REDO)
+    NPA_GRID = ps4.pq_undo(NPA_GRID.copy(), T_UNDO_REDO)
     # Mise à jour de la grille
     cpj_update_grid()
 
 
 def cpj_redo():
     """! Refait le dernier coup
-    @todo
+    @todo Vérifier que cela fonctionne bien
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Récupération de la grille dont le coup a été annulé
@@ -198,7 +175,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     * b_joueur_gagne : Booléen indiquant si le joueur a gagné
     * b_joueur_joue : Booléen indiquant si le joueur a joué
 
-    @todo : A finir
+    @todo A finir
     """
     global I_NB_JETONS, NPA_GRID, T_UNDO_REDO
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
@@ -247,8 +224,15 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
 def cpj_bonus():
     """! Utilise un bonus
-    @todo
     """
+    global S_BONUS, NPA_GRID, B_BONUS_USED
+    if not B_BONUS_USED:
+        B_BONUS_USED = True
+        m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
+        f_bonus = getattr(m_module, S_BONUS)
+        NPA_GRID = f_bonus(NPA_GRID.copy())
+        cpj_update_grid()
+        view_pj.vpj_disable_bonus()
 
 
 def cpj_bot_play(tkf_page_jeu: tk.Frame):
@@ -263,7 +247,7 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     * i_grid_x : Colonne de la grille de jeu
     * i_grid_y : Ligne de la grille de jeu
 
-    @todo : A finir
+    @todo A finir
     """
     global I_NB_JETONS, I_DIFFICULTY
     # On utilise l'algorithme min max pour choisir le prochain coup du bot
@@ -286,17 +270,78 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
 
 def cpj_update_grid():
     """! Réinitialise la grille de jeu
-    @todo
+    @todo Finir commentaire
     """
-    global I_ROWS, I_COLS
+    global I_NB_ROWS, I_NB_COLS
     # Dessiner la grille pour la reset
-    cpj_draw_grid(I_ROWS, I_COLS)
+    cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
     # Pour chaque ligne de la grille
-    for i_boucle_row in range(I_ROWS):
+    for i_boucle_row in range(I_NB_ROWS):
         # Pour chaque colonne de la ligne
-        for i_boucle_col in range(I_COLS):
+        for i_boucle_col in range(I_NB_COLS):
             # S'il y a un jeton à la position I_ROWS, I_COLS
-            if NPA_GRID[I_ROWS, I_COLS] == 1 or NPA_GRID[I_ROWS, I_COLS] == 2:
+            if (NPA_GRID[i_boucle_row, i_boucle_col] == 1
+                    or NPA_GRID[i_boucle_row, i_boucle_col] == 2):
                 # Afficher le pion à cette position
                 cpj_put_coin(i_boucle_row, i_boucle_col,
                              NPA_GRID[i_boucle_row, i_boucle_col])
+
+
+def cpj_get_bonuses() -> []:
+    """! Récupère les bonus disponibles
+    """
+    # On récupère les fonctions du module bonus
+    return [bu.p4b_get_bonus_name(s_bonus)
+            for s_bonus in bu.p4b_get_bonuses()]
+
+
+def cpj_valider_bonus():
+    """! Récupère les bonus sélectionnés par le joueur
+    @todo Finir commentaire
+    """
+    global S_BONUS
+    S_BONUS = view_pj.vpj_get_bonus()
+    cpj_show_page_jeu()
+
+
+def cpj_show_page_jeu():
+    """! Affiche la page de jeu
+
+    @pre tk_root initialisé
+    @post page de jeu affichée
+
+    **Variables :**
+    * TK_ROOT : Fenêtre principale
+    * ST_COLOR_JOUEUR : Couleur des jetons du joueur
+    * ST_COLOR_BOT : Couleur des jetons du bot
+    * I_NB_ROWS : Nombre de lignes de la grille de jeu
+    * I_NB_COLS : Nombre de colonnes de la grille de jeu
+    * NPA_GRID : Grille de jeu
+    * T_UNDO_REDO : Liste des coups joués
+    * T_REDO : Liste des coups annulés
+    * I_DIFFICULTY : Difficulté du bot
+    * I_NB_JETONS : Nombre de jetons à aligner pour gagner
+    * st_color_grid : Couleur de la grille de jeu
+
+    """
+    global T_UNDO_REDO, T_REDO, I_NB_JETONS, ST_COLOR_JOUEUR, ST_COLOR_BOT
+    global I_DIFFICULTY, I_NB_ROWS, I_NB_COLS, NPA_GRID
+
+    # Initialisation de la liste pour revenir en arrière
+    T_UNDO_REDO = []
+    # Initialisation de la liste pour redo
+    T_REDO = []
+
+    # Récupération des couleurs pour la grille de jeu
+    ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
+        ctrl_pp.ctrl_page_parameter_custom_load())
+
+    # Récupération des paramètres pour la partie
+    I_NB_ROWS, I_NB_COLS, I_NB_JETONS, I_DIFFICULTY = (
+        ctrl_pp.ctrl_page_parameter_settings_load())
+    # Afficher la page de jeu
+    view_pj.vpj_init_page_jeu(TK_ROOT, st_color_grid)
+    # Initialisation de la grille de jeu
+    NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
+    # Dessin de la grille de jeu
+    cpj_draw_grid(I_NB_ROWS, I_NB_COLS)

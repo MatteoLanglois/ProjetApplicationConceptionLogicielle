@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package src.view.view_pageAccueil
 @brief Ce module représente la vue de la page d'accueil.

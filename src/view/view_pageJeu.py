@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package src.view.view_pageJeu
 @brief Ce module représente la vue de la page de jeu.
@@ -27,9 +28,32 @@ global I_CANVAS_WIDTH
 global I_CANVAS_HEIGHT
 global I_NB_ROWS
 global I_NB_COLUMNS
+global TKS_BONUS
+global TKB_BONUS
 
 
-def vpj_init(tk_root: tk.Tk, st_color_grid: str):
+def vpj_init_choix_bonus(tk_root: tk.Tk):
+    global TKS_BONUS
+    TKF_PAGE_CHOIX = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
+    TKF_PAGE_CHOIX.grid(row=0, column=0, sticky="nsew")
+
+    tkL_titre = tk.Label(TKF_PAGE_CHOIX, text="Choisissez votre bonus",
+                         font=("Helvetica", 20))
+    tkL_titre.grid(row=0, column=0, sticky="nsew", pady=50, padx=10)
+
+    TKS_BONUS = tk.StringVar()
+    ls_bonuses = ctrl_pj.cpj_get_bonuses()
+    TKS_BONUS.set(ls_bonuses[0])
+
+    tkC_bonus = tk.OptionMenu(TKF_PAGE_CHOIX, TKS_BONUS, *ls_bonuses)
+    tkC_bonus.grid(row=1, column=0, sticky="nsew", pady=50, padx=10)
+
+    tkB_valider = tk.Button(TKF_PAGE_CHOIX, text="Valider",
+                            command=lambda: ctrl_pj.cpj_valider_bonus())
+    tkB_valider.grid(row=2, column=0, sticky="nsew", pady=50, padx=10)
+
+
+def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     """! Initialise la page de jeu
 
     **Variables :**
@@ -50,13 +74,14 @@ def vpj_init(tk_root: tk.Tk, st_color_grid: str):
     """
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
-    global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT
+    global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, TKS_BONUS
+
     # Création du cadre permettant l'affichage de la page du jeu
     TKF_PAGE_JEU = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
     # Affichage du cadre
     TKF_PAGE_JEU.grid(row=0, column=0, sticky="nsew")
 
-    # Affichage du menu sur toutes les fenêtres
+    # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_JEU, True))
 
     # On définit la largeur du canvas qui va permettre d'afficher la grille
@@ -86,10 +111,10 @@ def vpj_init(tk_root: tk.Tk, st_color_grid: str):
     tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour jouer son bonus
-    tkB_bonus = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
+    TKS_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
                           command=lambda: ctrl_pj.cpj_bonus())
     # Affichage du bouton
-    tkB_bonus.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
+    TKS_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour quitter le jeu
     tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica", 16),
@@ -169,7 +194,6 @@ def vpj_show_coin(row: int, column: int, color: str):
     @param row: Ligne de la cellule où l'on va dessiner le jeton
     @param column: Colonne de la cellule où l'on va dessiner le jeton
     @param color: Couleur du jeton
-    @todo
     """
     global I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
@@ -203,7 +227,6 @@ def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
     @param i_y: Coordonnée y du clic dans le canvas
 
     @return: Coordonnées de la cellule cliquée dans la grille
-    @todo
     """
     global I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
@@ -216,3 +239,14 @@ def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
 
     # On retourne les coordonnées de la cellule cliquée
     return int(i_x / cell_width), int(i_y / cell_height)
+
+
+def vpj_get_bonus() -> tuple[str, ...]:
+    global TKS_BONUS
+    return TKS_BONUS.get()
+
+
+def vpj_disable_bonus():
+    global TKS_BONUS
+    TKS_BONUS.config(state="disabled")
+    TKS_BONUS.config(relief="sunken")

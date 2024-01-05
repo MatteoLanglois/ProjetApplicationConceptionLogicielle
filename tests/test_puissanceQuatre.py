@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package tests.test_puissanceQuatre
 @brief Teste le module puissanceQuatre.puissanceQuatre
@@ -22,7 +23,7 @@ from src.puissanceQuatre import puissanceQuatre as ps4, grid as gr
 # TODO : Pour les vérifications de victoire, mettre plus de cas de non victoire
 
 
-def test_verif_colonne():
+def tp_verif_colonne():
     """! Teste la fonction pq_verif_colonne
 
     **Variables :**
@@ -30,13 +31,13 @@ def test_verif_colonne():
         - *i_boucle* : variable de boucle
         - *i_boucle_2* : variable de boucle
 
-    @test : Vérifie que la fonction renvoie True si la colonne est vide
-    @test : Vérifie que la fonction renvoie False si la colonne est pleine
-    @test : Vérifie que la fonction renvoie True si la colonne est presque
+    @test Vérifie que la fonction renvoie True si la colonne est vide
+    @test Vérifie que la fonction renvoie False si la colonne est pleine
+    @test Vérifie que la fonction renvoie True si la colonne est presque
     pleine
-    @test : Vérifie que la fonction renvoie True si la colonne est un peu
+    @test Vérifie que la fonction renvoie True si la colonne est un peu
     remplie
-    @test : Vérifie que la fonction renvoie False si la grille est pleine
+    @test Vérifie que la fonction renvoie False si la grille est pleine
     """
     grille = gr.pq_init_grille(6, 7)
     # Cas où la grille est vide
@@ -73,7 +74,7 @@ def test_verif_colonne():
             "pleine"
 
 
-def test_ajout_piece():
+def tp_ajout_piece():
     """! Teste la fonction pq_ajout_piece
 
     **Variables :**
@@ -81,13 +82,13 @@ def test_ajout_piece():
         - *ti_coords* : tuple de coordonnées
         - *i_boucle* : variable de boucle
 
-    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le
+    @test Vérifie que la fonction renvoie les bonnes coordonnées quand le
     joueur joue
-    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le bot
+    @test Vérifie que la fonction renvoie les bonnes coordonnées quand le bot
     joue
-    @test : Vérifie que la fonction renvoie les bonnes coordonnées quand le
+    @test Vérifie que la fonction renvoie les bonnes coordonnées quand le
     joueur joue normalement
-    @test : Vérifie que la fonction ne renvoie pas de coordonnées quand on ne
+    @test Vérifie que la fonction ne renvoie pas de coordonnées quand on ne
     peut pas ajouter de pièce
     """
     grille = gr.pq_init_grille(6, 7)
@@ -117,7 +118,7 @@ def test_ajout_piece():
         "de pièce"
 
 
-def test_victoire_ligne():
+def tp_victoire_ligne():
     """! Test de la fonction pq_victoire_ligne
 
     **Variables :**
@@ -125,9 +126,9 @@ def test_victoire_ligne():
     * *i_boucle* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    @test : Vérifie que la fonction renvoie True si le joueur gagne
-    @test : Vérifie que la fonction renvoie True si le bot gagne
-    @test : Vérifie que la fonction renvoie False si personne ne gagne
+    @test Vérifie que la fonction renvoie True si le joueur gagne
+    @test Vérifie que la fonction renvoie True si le bot gagne
+    @test Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -156,7 +157,7 @@ def test_victoire_ligne():
         "pq_victoire_ligne non fonctionnel dans le cas où personne ne gagne"
 
 
-def test_victoire_colonne():
+def tp_victoire_colonne():
     """! Test de la fonction pq_victoire_colonne
 
     **Variables :**
@@ -164,9 +165,9 @@ def test_victoire_colonne():
     * *i_boucle* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    @test : Vérifie que la fonction renvoie True si le joueur gagne
-    @test : Vérifie que la fonction renvoie True si le bot gagne
-    @test : Vérifie que la fonction renvoie False si personne ne gagne
+    @test Vérifie que la fonction renvoie True si le joueur gagne
+    @test Vérifie que la fonction renvoie True si le bot gagne
+    @test Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -193,7 +194,7 @@ def test_victoire_colonne():
         "pq_victoire_colonne non fonctionnel dans le cas où personne ne gagne"
 
 
-def test_victoire_diago():
+def tp_victoire_diago():
     """! Test de la fonction pq_victoire_diagonale
 
     **Variables :**
@@ -202,9 +203,9 @@ def test_victoire_diago():
     * *i_boucle_2* : Variable de boucle
     * *ti_coords* : Tuple de coordonnées
 
-    @test : Vérifie que la fonction renvoie True si le joueur gagne
-    @test : Vérifie que la fonction renvoie True si le bot gagne
-    @test : Vérifie que la fonction renvoie False si personne ne gagne
+    @test Vérifie que la fonction renvoie True si le joueur gagne
+    @test Vérifie que la fonction renvoie True si le bot gagne
+    @test Vérifie que la fonction renvoie False si personne ne gagne
     """
     grille = gr.pq_init_grille(6, 7)
     ti_coords = (0, 0)
@@ -239,14 +240,15 @@ def test_victoire_diago():
         "gagne"
 
 
-def test_all():
+def tp_test_all():
     """! Fonction qui lance tous les tests unitaires
     """
-    test_verif_colonne()
-    test_ajout_piece()
-    test_victoire_ligne()
-    test_victoire_colonne()
-    test_victoire_diago()
+    tp_verif_colonne()
+    tp_ajout_piece()
+    tp_victoire_ligne()
+    tp_victoire_colonne()
+    tp_victoire_diago()
 
 
-test_all()
+if __name__ == "__main__":
+    tp_test_all()

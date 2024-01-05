@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package src.controller.ctrl_main
 @brief Un module qui gère la fenêtre principale du jeu

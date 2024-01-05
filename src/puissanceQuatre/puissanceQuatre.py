@@ -10,6 +10,8 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
+- inspect
 
 @package src.puissanceQuatre.puissanceQuatre
 @brief Ce module contient l'implémentation des règles du puissance 4.
@@ -89,6 +91,8 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
 def pq_minmax(iNextJoueur, npaGrilleCopy, i_nb_victoire, iColonne=0,
               isFirst=False, tour=0) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
+    @todo Optimiser
+    @todo Commenter
     """
     if tour > 5:
         return 0, 0
@@ -188,6 +192,7 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
 
     @return True si le joueur a gagné, False sinon
+    @todo Commenter
     """
     i_nb_colonnes = np.shape(npa_grille)[1]
 
@@ -267,6 +272,7 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_joueur: Le joueur qui a joué
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
+    @todo Commenter
     """
     i_nb_lignes, i_nb_colonnes = npa_grille.shape
     i_haut_ligne = i_ligne - i_nb_victoire + 1 \
@@ -398,7 +404,8 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
 
     @param i_nb_lignes: Taille de la grille en lignes
     @param i_nb_colonnes: Taille de la grille en colonnes
-    @param i_nb_jeton_victoire:  Nombre de jetons à aligner pour gagner
+    @param i_nb_jeton_victoire:  Nombre de jetons à aligner pour gagner*
+    @todo Gérer le bonus
     """
     # Initialisation d'un booléen pour savoir s'il y a une victoire
     b_victoire = False

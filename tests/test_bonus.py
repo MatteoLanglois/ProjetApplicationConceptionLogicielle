@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package tests.test_bonus
 @brief Teste le module puissanceQuatre.bonus
@@ -20,30 +21,42 @@ import numpy as np
 from src.puissanceQuatre import grid as gr
 
 
-def test_invert_grid():
+def tb_invert_grid():
+    """! Teste la fonction pq_invert_grid
+    @todo A tester
+    """
     pass
 
 
-def test_remove_full_line():
+def tb_remove_full_line():
+    """! Teste la fonction pq_remove_full_line
+    @todo A tester
+    """
     pass
 
 
-def test_block_column():
+def tb_block_column():
+    """! Teste la fonction pq_block_column
+    @todo A tester
+    """
     pass
 
 
-def test_use_min_max():
+def tb_use_min_max():
+    """! Teste la fonction pq_use_min_max
+    @todo A tester
+    """
     pass
 
 
-def test_all():
+def tb_test_all():
     """! Lance tous les tests
     """
-    test_invert_grid()
-    test_remove_full_line()
-    test_block_column()
-    test_use_min_max()
+    tb_invert_grid()
+    tb_remove_full_line()
+    tb_block_column()
+    tb_use_min_max()
 
 
 if __name__ == "__main__":
-    test_all()
+    tb_test_all()

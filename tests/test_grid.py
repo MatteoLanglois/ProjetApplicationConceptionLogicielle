@@ -10,6 +10,7 @@ un nombre de pions à aligner variable, des bonus et un undo.
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
+- inspect
 
 @package tests.test_grid
 @brief Teste le module puissanceQuatre.grid
@@ -20,7 +21,7 @@ import numpy as np
 from src.puissanceQuatre import grid as gr
 
 
-def test_init_grille():
+def tg_init_grille():
     """! Teste la fonction pq_init_grille
 
     **Variables :**
@@ -29,9 +30,9 @@ def test_init_grille():
         - *i_boucle_2* : variable de boucle
         - *grille* : grille de jeu
 
-    @test : Vérifie que la grille est bien initialisée avec des 0 partout avec
+    @test Vérifie que la grille est bien initialisée avec des 0 partout avec
     la bonne taille
-    @test : Vérifie que toutes les combinaisons de 2 nombres de la liste
+    @test Vérifie que toutes les combinaisons de 2 nombres de la liste
     *liste_tailles* sont testées
     """
     # On teste 4 cas différents, avec des tailles différentes
@@ -43,11 +44,20 @@ def test_init_grille():
                 "pq_init_grille non fonctionnel"
 
 
-def test_all():
+def tg_reset_grille():
+    """! Teste la fonction pq_reset_grille
+
+    @todo A tester
+    """
+    pass
+
+
+def tg_test_all():
     """! Lance tous les tests
     """
-    test_init_grille()
+    tg_init_grille()
+    tg_reset_grille()
 
 
 if __name__ == "__main__":
-    test_all()
+    tg_test_all()
