@@ -14,7 +14,7 @@ Ce programme utilise les modules externes suivants :
 
 @package src.puissanceQuatre.bonus
 @brief Ce module contient les fonctions relatives aux bonus.
-@details Ce module contient les fonctions de bonus.
+@details Ce module contient les fonctions utilitaires relatives aux bonus.
 """
 from src.puissanceQuatre import bonus as p4b
 from inspect import getmembers, isfunction
@@ -22,6 +22,7 @@ from inspect import getmembers, isfunction
 
 def p4b_get_bonuses() -> list[tuple[str, ...]]:
     """! Retourne la liste des noms des fonctions bonus
+    @todo Finir commentaire
     """
     # On récupère les fonctions du module bonus
     ts_functions = getmembers(p4b, isfunction)
@@ -38,6 +39,7 @@ def p4b_get_bonuses() -> list[tuple[str, ...]]:
 
 def p4b_get_bonus_name(t_function: tuple) -> str:
     """! Retourne le nom d'une fonction bonus
+    @todo Finir commentaire
     """
     # On retourne le nom de la fonction
     return t_function[0][t_function[0].find("'") + 1:]

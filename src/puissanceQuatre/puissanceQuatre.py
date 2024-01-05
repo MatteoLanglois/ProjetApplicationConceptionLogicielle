@@ -237,6 +237,7 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_joueur: Le joueur qui a joué
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
+    @todo Commenter
     """
     # Initialisation du booléen de victoire à faux
     b_victoire = False
@@ -306,14 +307,14 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     @param npa_grille: La grille du puissance 4
     @param t_undo_redo: La liste contenant les grilles pour l'undo et le redo
     @return La grille du puissance 4 après l'undo
+    @todo Commenter
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if t_undo_redo:
         # On récupère la dernière grille
         if len(t_undo_redo) == 1:
-            print("Recommence et fait pas chier")
+            print("Recommence")
         else:
-            npa = t_undo_redo.pop()
             npa = t_undo_redo.pop()
             return npa
     # On retourne la grille

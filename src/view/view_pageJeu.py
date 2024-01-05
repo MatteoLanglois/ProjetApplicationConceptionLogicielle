@@ -129,8 +129,7 @@ def vpj_destroy():
     **Variables :**
     * tkf_page_jeu : Frame de la page de jeu
 
-    **Préconditions :**
-    * tkf_page_jeu initialisé
+    @pre tkf_page_jeu initialisé
 
     """
     # On définit de manière globale la variable tkf_page_jeu
@@ -242,11 +241,22 @@ def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
 
 
 def vpj_get_bonus() -> tuple[str, ...]:
+    """! Récupère le nom du bonus sélectionné par le joueur
+    @return: Le nom du bonus sélectionné par le joueur
+    @pre TKS_BONUS initialisé
+    """
     global TKS_BONUS
+    # On retourne le nom du bonus sélectionné
     return TKS_BONUS.get()
 
 
 def vpj_disable_bonus():
+    """! Désactive le bouton bonus
+
+    @pre TKS_BONUS initialisé
+    """
     global TKS_BONUS
+    # On désactive le bouton bonus
     TKS_BONUS.config(state="disabled")
+    # On change le relief du bouton bonus
     TKS_BONUS.config(relief="sunken")

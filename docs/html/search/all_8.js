@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['test_5fajout_5fpiece_75',['test_ajout_piece',['../namespacetests_1_1test__puissanceQuatre.html#af5070e55f86c1578a98ee3a7af424587',1,'tests::test_puissanceQuatre']]],
-  ['test_5fall_76',['test_all',['../namespacetests_1_1test__grid.html#a15a4fd006e190db5c32e09771d2fd638',1,'tests.test_grid.test_all()'],['../namespacetests_1_1test__puissanceQuatre.html#a6816dd789dc809ae416174fc7e581cf4',1,'tests.test_puissanceQuatre.test_all()']]],
-  ['test_5fgrid_77',['test_grid',['../namespacetests_1_1test__grid.html',1,'tests']]],
-  ['test_5fgrid_2epy_78',['test_grid.py',['../test__grid_8py.html',1,'']]],
-  ['test_5finit_5fgrille_79',['test_init_grille',['../namespacetests_1_1test__grid.html#a7520f5c548106e9c3b0250d987577c3f',1,'tests::test_grid']]],
-  ['test_5fpuissancequatre_80',['test_puissanceQuatre',['../namespacetests_1_1test__puissanceQuatre.html',1,'tests']]],
-  ['test_5fpuissancequatre_2epy_81',['test_puissanceQuatre.py',['../test__puissanceQuatre_8py.html',1,'']]],
-  ['test_5fverif_5fcolonne_82',['test_verif_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a5334253573b649c8f36f3af1380b41a3',1,'tests::test_puissanceQuatre']]],
-  ['test_5fvictoire_5fcolonne_83',['test_victoire_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a1d9fe9633e808ac195d30c477c5ba726',1,'tests::test_puissanceQuatre']]],
-  ['test_5fvictoire_5fdiago_84',['test_victoire_diago',['../namespacetests_1_1test__puissanceQuatre.html#a3f45d827e4e515ce405870f9e6e60d7e',1,'tests::test_puissanceQuatre']]],
-  ['test_5fvictoire_5fligne_85',['test_victoire_ligne',['../namespacetests_1_1test__puissanceQuatre.html#a5a14786a10a6aa04c1b52ceda1c3db85',1,'tests::test_puissanceQuatre']]],
-  ['tests_86',['tests',['../namespacetests.html',1,'']]]
+  ['bonus_70',['bonus',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html',1,'src::puissanceQuatre']]],
+  ['bonus_5futils_71',['bonus_utils',['../namespacesrc_1_1utils_1_1bonus__utils.html',1,'src::utils']]],
+  ['colors_5futils_72',['colors_utils',['../namespacesrc_1_1utils_1_1colors__utils.html',1,'src::utils']]],
+  ['controller_73',['controller',['../namespacesrc_1_1controller.html',1,'src']]],
+  ['ctrl_5fmain_74',['ctrl_main',['../namespacesrc_1_1controller_1_1ctrl__main.html',1,'src::controller']]],
+  ['ctrl_5fpageaccueil_75',['ctrl_pageAccueil',['../namespacesrc_1_1controller_1_1ctrl__pageAccueil.html',1,'src::controller']]],
+  ['ctrl_5fpagejeu_76',['ctrl_pageJeu',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html',1,'src::controller']]],
+  ['ctrl_5fpageparametres_77',['ctrl_pageParametres',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html',1,'src::controller']]],
+  ['grid_78',['grid',['../namespacesrc_1_1puissanceQuatre_1_1grid.html',1,'src::puissanceQuatre']]],
+  ['main_79',['main',['../namespacesrc_1_1main.html',1,'src']]],
+  ['puissancequatre_80',['puissanceQuatre',['../namespacesrc_1_1puissanceQuatre.html',1,'src.puissanceQuatre'],['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html',1,'src.puissanceQuatre.puissanceQuatre']]],
+  ['src_81',['src',['../namespacesrc.html',1,'']]],
+  ['utils_82',['utils',['../namespacesrc_1_1utils.html',1,'src']]],
+  ['view_83',['view',['../namespacesrc_1_1view.html',1,'src']]],
+  ['view_5fmain_84',['view_main',['../namespacesrc_1_1view_1_1view__main.html',1,'src::view']]],
+  ['view_5fpageaccueil_85',['view_pageAccueil',['../namespacesrc_1_1view_1_1view__pageAccueil.html',1,'src::view']]],
+  ['view_5fpagejeu_86',['view_pageJeu',['../namespacesrc_1_1view_1_1view__pageJeu.html',1,'src::view']]],
+  ['view_5fpageparametres_87',['view_pageParametres',['../namespacesrc_1_1view_1_1view__pageParametres.html',1,'src::view']]]
 ];

@@ -224,6 +224,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
 def cpj_bonus():
     """! Utilise un bonus
+    @todo Finir commentaire
     """
     global S_BONUS, NPA_GRID, B_BONUS_USED
     if not B_BONUS_USED:
@@ -289,6 +290,7 @@ def cpj_update_grid():
 
 def cpj_get_bonuses() -> []:
     """! Récupère les bonus disponibles
+    @todo Finir commentaire
     """
     # On récupère les fonctions du module bonus
     return [bu.p4b_get_bonus_name(s_bonus)

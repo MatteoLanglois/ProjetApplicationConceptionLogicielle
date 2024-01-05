@@ -16,10 +16,12 @@ tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a2ba7a18fed9f16b17
 \begin{DoxyCompactList}\small\item\em Initialise le menu de la fenêtre de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a4b3945581f516544aeb0675d4104da59}{vm\+\_\+message\+\_\+game\+\_\+ended}} (str s\+\_\+message, tk.\+Frame tkf\+\_\+page\+\_\+jeu)
 \begin{DoxyCompactList}\small\item\em Affiche un message de fin de partie. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}{vm\+\_\+message\+\_\+warning}} (str\+\_\+message)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a97c7b850d8e2927320372c1086c0443a}{vm\+\_\+message\+\_\+warning}} (str str\+\_\+message)
 \begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}avertissement. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}{vm\+\_\+message\+\_\+info}} (str\+\_\+message)
-\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a72fdc36736a48d3b7b0059f555ae7e22}{vm\+\_\+message\+\_\+info}} (str str\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Affiche un message d\textquotesingle{}information. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}{vm\+\_\+remove\+\_\+frame}} (tk.\+Frame frame)
+\begin{DoxyCompactList}\small\item\em Supprime un cadre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -89,11 +91,11 @@ Affiche un message de fin de partie.
 {\em tkf\+\_\+page\+\_\+jeu} & La page de jeu \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}\label{namespacesrc_1_1view_1_1view__main_a4896976b7738eaa11d03301738037cd2}} 
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a72fdc36736a48d3b7b0059f555ae7e22}\label{namespacesrc_1_1view_1_1view__main_a72fdc36736a48d3b7b0059f555ae7e22}} 
 \index{src.view.view\_main@{src.view.view\_main}!vm\_message\_info@{vm\_message\_info}}
 \index{vm\_message\_info@{vm\_message\_info}!src.view.view\_main@{src.view.view\_main}}
 \doxysubsubsection{\texorpdfstring{vm\_message\_info()}{vm\_message\_info()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+info (\begin{DoxyParamCaption}\item[{}]{str\+\_\+message }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+info (\begin{DoxyParamCaption}\item[{str}]{str\+\_\+message }\end{DoxyParamCaption})}
 
 
 
@@ -104,11 +106,11 @@ Affiche un message d\textquotesingle{}information.
 {\em str\+\_\+message} & Message à afficher \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}\label{namespacesrc_1_1view_1_1view__main_abfb88c6ea5f2fc1095961563bfe56d1f}} 
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a97c7b850d8e2927320372c1086c0443a}\label{namespacesrc_1_1view_1_1view__main_a97c7b850d8e2927320372c1086c0443a}} 
 \index{src.view.view\_main@{src.view.view\_main}!vm\_message\_warning@{vm\_message\_warning}}
 \index{vm\_message\_warning@{vm\_message\_warning}!src.view.view\_main@{src.view.view\_main}}
 \doxysubsubsection{\texorpdfstring{vm\_message\_warning()}{vm\_message\_warning()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+warning (\begin{DoxyParamCaption}\item[{}]{str\+\_\+message }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+message\+\_\+warning (\begin{DoxyParamCaption}\item[{str}]{str\+\_\+message }\end{DoxyParamCaption})}
 
 
 
@@ -139,3 +141,24 @@ Ferme la fenêtre de jeu.
 {\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}\label{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}} 
+\index{src.view.view\_main@{src.view.view\_main}!vm\_remove\_frame@{vm\_remove\_frame}}
+\index{vm\_remove\_frame@{vm\_remove\_frame}!src.view.view\_main@{src.view.view\_main}}
+\doxysubsubsection{\texorpdfstring{vm\_remove\_frame()}{vm\_remove\_frame()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+main.\+vm\+\_\+remove\+\_\+frame (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{frame }\end{DoxyParamCaption})}
+
+
+
+Supprime un cadre. 
+
+\begin{DoxyPrecond}{Précondition}
+frame existe 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em frame} & Le cadre à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+frame n\textquotesingle{}existe plus 
+\end{DoxyPostcond}

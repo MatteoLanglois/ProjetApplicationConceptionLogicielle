@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projet d&#39;application: Référence de l&#39;espace de nommage src.puissanceQuatre.puissanceQuatre</title>
+<title>Projet d&#39;application : P4++: Référence de l&#39;espace de nommage src.puissanceQuatre.puissanceQuatre</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Projet d&#39;application
+   <div id="projectname">Projet d&#39;application : P4++
    </div>
    <div id="projectbrief">Réalisation d&#39;un puissance 4 avec tkinter en python</div>
   </td>
@@ -215,10 +215,11 @@ npa_grille initialisé </dd></dl>
   <table class="params">
     <tr><td class="paramname">i_nb_lignes</td><td>Taille de la grille en lignes </td></tr>
     <tr><td class="paramname">i_nb_colonnes</td><td>Taille de la grille en colonnes </td></tr>
-    <tr><td class="paramname">i_nb_jeton_victoire</td><td>Nombre de jetons à aligner pour gagner </td></tr>
+    <tr><td class="paramname">i_nb_jeton_victoire</td><td>Nombre de jetons à aligner pour gagner* </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">A faire:</a></b></dt><dd>Gérer le bonus</dd></dl>
 
 </div>
 </div>
@@ -273,6 +274,9 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode implémentant l'algorithme minmax. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">A faire:</a></b></dt><dd><p class="startdd">Optimiser </p>
+<p class="enddd">Commenter</p>
+</dd></dl>
 
 </div>
 </div>
@@ -400,6 +404,7 @@ npa_grille initialisé </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La grille du puissance 4 après l'undo </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">A faire:</a></b></dt><dd>Commenter</dd></dl>
 
 </div>
 </div>
@@ -551,7 +556,7 @@ npa_grille initialisé </dd></dl>
 <p>Verification de la victoire sur une colonne. </p>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
-<li>i_max_ligne : Entier, Nombre de lignes dans la grille</li>
+<li>i_nb_lignes : Entier, Nombre de lignes dans la grille</li>
 <li>b_victoire : Booléen, Indique si le joueur a gagné ou non</li>
 </ul>
 <p><b>Préconditions :</b></p><ul>
@@ -570,6 +575,7 @@ npa_grille initialisé </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>True si le joueur i_joueur a gagné, False sinon </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">A faire:</a></b></dt><dd>Commenter</dd></dl>
 
 </div>
 </div>
@@ -620,8 +626,8 @@ npa_grille initialisé </dd></dl>
 <p>Verification de la victoire sur les diagonales. </p>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
-<li>i_max_ligne : Entier, Nombre de lignes dans la grille</li>
-<li>i_max_colonne : Entier, Nombre de colonnes dans la grille</li>
+<li>i_nb_lignes : Entier, Nombre de lignes dans la grille</li>
+<li>i_nb_colonnes : Entier, Nombre de colonnes dans la grille</li>
 </ul>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>
@@ -639,6 +645,7 @@ npa_grille initialisé </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>True si le joueur i_joueur a gagné, False sinon </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">A faire:</a></b></dt><dd>Commenter</dd></dl>
 
 </div>
 </div>
@@ -691,7 +698,7 @@ npa_grille initialisé </dd></dl>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>b_vu : Booléen, ajouter explication</li>
 <li>b_suite : Booléen, ajouter explication</li>
-<li>i_max_colonne : Entier, Nombre de colonnes dans la grille</li>
+<li>i_nb_colonnes : Entier, Nombre de colonnes dans la grille</li>
 <li>i_boucle : Entier, Compteur de boucle</li>
 <li>i_debut : Entier, premier emplacement possible pour la combinaison de victoire dans la ligne</li>
 <li>i_fin : Entier, dernier emplacement possible pour la combinaison de victoire dans la ligne</li>
@@ -708,6 +715,7 @@ npa_grille initialisé </dd></dl>
 @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
 
 @return True si le joueur a gagné, False sinon
+@todo Commenter
 </pre> 
 </div>
 </div>

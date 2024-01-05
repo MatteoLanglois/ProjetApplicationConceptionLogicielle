@@ -126,6 +126,7 @@ def vm_message_warning(str_message: str):
 
     @param str_message: Message à afficher
     """
+    # Affiche un message d'avertissement
     showwarning(title="Avertissement", message=str_message)
 
 
@@ -134,6 +135,7 @@ def vm_message_info(str_message: str):
 
     @param str_message: Message à afficher
     """
+    # Affiche un message d'information
     showinfo(title="Information", message=str_message)
 
 

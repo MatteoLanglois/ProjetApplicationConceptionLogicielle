@@ -8,7 +8,9 @@ Ce module représente la vue de la page de jeu.
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}{vpj\+\_\+init}} (tk.\+Tk tk\+\_\+root, str st\+\_\+color\+\_\+grid)
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a22e9fa35f2d5cd68fb149ce306849c17}{vpj\+\_\+init\+\_\+choix\+\_\+bonus}} (tk.\+Tk tk\+\_\+root)
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a25df1780623f762df8a738d598be518d}{vpj\+\_\+init\+\_\+page\+\_\+jeu}} (tk.\+Tk tk\+\_\+root, str st\+\_\+color\+\_\+grid)
 \begin{DoxyCompactList}\small\item\em Initialise la page de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}{vpj\+\_\+destroy}} ()
 \begin{DoxyCompactList}\small\item\em Détruit la page de jeu. \end{DoxyCompactList}\item 
@@ -17,7 +19,11 @@ def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f53
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a07e89df868628c69908c7cb71ec1525c}{vpj\+\_\+show\+\_\+coin}} (int row, int column, str color)
 \begin{DoxyCompactList}\small\item\em Dessine un jeton dans une cellule. \end{DoxyCompactList}\item 
 (int, int) \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}{vpj\+\_\+get\+\_\+grid\+\_\+cell}} (int i\+\_\+x, int i\+\_\+y)
-\begin{DoxyCompactList}\small\item\em Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. \end{DoxyCompactList}\item 
+tuple\mbox{[}str,...\mbox{]} \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a190779b89e27ef75702fde9f55c71016}{vpj\+\_\+get\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Récupère le nom du bonus sélectionné par le joueur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a200675c1948e4b941a19621dec899fc0}{vpj\+\_\+disable\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Désactive le bouton bonus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -41,10 +47,23 @@ Détruit la page de jeu.
 \item tkf\+\_\+page\+\_\+jeu \+: Frame de la page de jeu
 \end{DoxyItemize}
 
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item tkf\+\_\+page\+\_\+jeu initialisé 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}\label{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}} 
+\begin{DoxyPrecond}{Précondition}
+tkf\+\_\+page\+\_\+jeu initialisé 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a200675c1948e4b941a19621dec899fc0}\label{namespacesrc_1_1view_1_1view__pageJeu_a200675c1948e4b941a19621dec899fc0}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_disable\_bonus@{vpj\_disable\_bonus}}
+\index{vpj\_disable\_bonus@{vpj\_disable\_bonus}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_disable\_bonus()}{vpj\_disable\_bonus()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+disable\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Désactive le bouton bonus. 
+
+\begin{DoxyPrecond}{Précondition}
+TKS\+\_\+\+BONUS initialisé 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}\label{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f530cacb38504f5}} 
 \index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_draw\_grid@{vpj\_draw\_grid}}
 \index{vpj\_draw\_grid@{vpj\_draw\_grid}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{vpj\_draw\_grid()}{vpj\_draw\_grid()}}
@@ -72,6 +91,22 @@ Dessine la grille de jeu.
 {\em columns} & Nombre de colonnes de la grille \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a190779b89e27ef75702fde9f55c71016}\label{namespacesrc_1_1view_1_1view__pageJeu_a190779b89e27ef75702fde9f55c71016}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_get\_bonus@{vpj\_get\_bonus}}
+\index{vpj\_get\_bonus@{vpj\_get\_bonus}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_get\_bonus()}{vpj\_get\_bonus()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, ...\mbox{]} src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+get\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère le nom du bonus sélectionné par le joueur. 
+
+\begin{DoxyReturn}{Renvoie}
+\+: Le nom du bonus sélectionné par le joueur 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Précondition}
+TKS\+\_\+\+BONUS initialisé 
+\end{DoxyPrecond}
 \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}\label{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}} 
 \index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_get\_grid\_cell@{vpj\_get\_grid\_cell}}
 \index{vpj\_get\_grid\_cell@{vpj\_get\_grid\_cell}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
@@ -98,13 +133,17 @@ Récupère les coordonnées dans la grille de la cellule cliquée Récupère les
 \begin{DoxyReturn}{Renvoie}
 \+: Coordonnées de la cellule cliquée dans la grille 
 \end{DoxyReturn}
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000007}{A faire}}]\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}\label{namespacesrc_1_1view_1_1view__pageJeu_a92da3055eff69383a72edd06dd7b76e0}} 
-\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_init@{vpj\_init}}
-\index{vpj\_init@{vpj\_init}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
-\doxysubsubsection{\texorpdfstring{vpj\_init()}{vpj\_init()}}
-{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{str}]{st\+\_\+color\+\_\+grid }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a22e9fa35f2d5cd68fb149ce306849c17}\label{namespacesrc_1_1view_1_1view__pageJeu_a22e9fa35f2d5cd68fb149ce306849c17}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_init\_choix\_bonus@{vpj\_init\_choix\_bonus}}
+\index{vpj\_init\_choix\_bonus@{vpj\_init\_choix\_bonus}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_init\_choix\_bonus()}{vpj\_init\_choix\_bonus()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+init\+\_\+choix\+\_\+bonus (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a25df1780623f762df8a738d598be518d}\label{namespacesrc_1_1view_1_1view__pageJeu_a25df1780623f762df8a738d598be518d}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_init\_page\_jeu@{vpj\_init\_page\_jeu}}
+\index{vpj\_init\_page\_jeu@{vpj\_init\_page\_jeu}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_init\_page\_jeu()}{vpj\_init\_page\_jeu()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+init\+\_\+page\+\_\+jeu (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{str}]{st\+\_\+color\+\_\+grid }\end{DoxyParamCaption})}
 
 
 
@@ -153,5 +192,3 @@ Dessine un jeton dans une cellule.
 {\em color} & Couleur du jeton \\
 \hline
 \end{DoxyParams}
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000006}{A faire}}]\end{DoxyRefDesc}
