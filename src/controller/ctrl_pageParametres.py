@@ -31,7 +31,7 @@ from src.controller import ctrl_main as ctrl_m
 global TK_ROOT
 
 
-def ctrl_page_parameter_init(tk_win_root: tk.Tk):
+def cpp_init(tk_win_root: tk.Tk):
     """! Initialise la page des paramètres
 
     @pre tk_root initialisé
@@ -56,7 +56,7 @@ def ctrl_page_parameter_init(tk_win_root: tk.Tk):
 
     # Chargement des paramètres sauvegardés
     i_rows, i_columns, i_nb_jetons, i_difficulty = (
-        ctrl_page_parameter_settings_load())
+        cpp_settings_load())
     # Affichage du nombre de lignes enregistré
     view_pp.vpp_set_nb_rows(i_rows)
     # Affichage du nombre de colonnes enregistré
@@ -68,7 +68,7 @@ def ctrl_page_parameter_init(tk_win_root: tk.Tk):
 
     # Chargement des paramètres de personnalisation sauvegardés
     st_color_joueur, st_color_bot, st_color_grid = (
-        ctrl_page_parameter_custom_load())
+        cpp_custom_load())
     # Affichage de la couleur des jetons du joueur enregistrée
     view_pp.vpp_set_joueur_color(st_color_joueur)
     # Affichage de la couleur des jetons du bot enregistrée
@@ -77,7 +77,7 @@ def ctrl_page_parameter_init(tk_win_root: tk.Tk):
     view_pp.vpp_set_grid_color(st_color_grid)
 
 
-def ctrl_page_parameter_settings_save():
+def cpp_settings_save():
     """! Sauvegarde les paramètres
 
     @pre tk_root initialisé
@@ -128,14 +128,14 @@ def ctrl_page_parameter_settings_save():
         ctrl_m.cm_info(str_message)
 
 
-def ctrl_page_parameter_settings_reset():
+def cpp_settings_reset():
     """! Réinitialise les paramètres
     """
     # Réinitialisation des paramètres
-    view_pp.v_page_parameter_reset_settings()
+    view_pp.vpp_reset_settings()
 
 
-def ctrl_page_parameter_custom_save():
+def cpp_custom_save():
     """! Sauvegarde des paramètres de personnalisation
 
     @pre tk_root initialisé
@@ -185,7 +185,7 @@ def ctrl_page_parameter_custom_save():
         ctrl_m.cm_info(str_message)
 
 
-def ctrl_page_parameter_settings_load() -> (int, int, int, int):
+def cpp_settings_load() -> (int, int, int, int):
     """! Charge les paramètres
     @pre res/settings.txt existant
     @return i_rows: Nombre de lignes de la grille
@@ -217,7 +217,7 @@ def ctrl_page_parameter_settings_load() -> (int, int, int, int):
     return i_rows, i_columns, i_nb_jetons, i_difficulty
 
 
-def ctrl_page_parameter_custom_load() -> (str, str, str):
+def cpp_custom_load() -> (str, str, str):
     """! Charge les paramètres de personnalisation
     @pre res/custom.txt existant
     @return st_color_joueur: Couleur des jetons du joueur
@@ -252,7 +252,7 @@ def ctrl_page_parameter_custom_load() -> (str, str, str):
     return st_color_joueur, st_color_bot, st_color_grid
 
 
-def ctrl_page_parameter_askcolor(s_element: str):
+def cpp_askcolor(s_element: str):
     """! Ouvre un sélecteur de couleur
 
     @param s_element: Élément à colorer (joueur, bot ou grille)
@@ -261,7 +261,7 @@ def ctrl_page_parameter_askcolor(s_element: str):
     view_pp.vpp_askcolor(s_element)
 
 
-def ctrl_page_parameter_custom_reset():
+def cpp_custom_reset():
     """! Réinitialise les paramètres de personnalisation
     """
     # Réinitialisation des paramètres de personnalisation

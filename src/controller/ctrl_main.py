@@ -100,7 +100,7 @@ def cm_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     # Supprime le cadre
     view_m.vm_remove_frame(tkf_old_frame)
     # Initialise la page de paramètres
-    ctrl_pp.ctrl_page_parameter_init(tk_root)
+    ctrl_pp.cpp_init(tk_root)
 
 
 def cm_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):

@@ -84,7 +84,7 @@ def vpp_init_custom():
     TKB_PICKER_JOUEUR = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                   font="Helvetica 16",
                                   command=lambda:
-                                  ctrl_pp.ctrl_page_parameter_askcolor("joueur")
+                                  ctrl_pp.cpp_askcolor("joueur")
                                   )
     # Affichage du bouton
     TKB_PICKER_JOUEUR.grid(row=7, column=1)
@@ -102,7 +102,7 @@ def vpp_init_custom():
     TKB_PICKER_BOT = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                font="Helvetica 16",
                                command=lambda:
-                               ctrl_pp.ctrl_page_parameter_askcolor("bot")
+                               ctrl_pp.cpp_askcolor("bot")
                                )
     # Affichage du bouton
     TKB_PICKER_BOT.grid(row=8, column=1)
@@ -118,7 +118,7 @@ def vpp_init_custom():
     TKB_PICKER_GRID = tk.Button(TKF_PAGE_PARAMETER, width=3,
                                 font="Helvetica 16",
                                 command=lambda:
-                                ctrl_pp.ctrl_page_parameter_askcolor("grille")
+                                ctrl_pp.cpp_askcolor("grille")
                                 )
     # Affichage du bouton
     TKB_PICKER_GRID.grid(row=9, column=1)
@@ -126,14 +126,14 @@ def vpp_init_custom():
     tkb_save = tk.Button(TKF_PAGE_PARAMETER, text="Enregistrer",
                          font="Helvetica 16",
                          command=lambda:
-                         ctrl_pp.ctrl_page_parameter_custom_save()
+                         ctrl_pp.cpp_custom_save()
                          )
     tkb_save.grid(row=10, column=1, pady=20)
 
     tkb_reset = tk.Button(TKF_PAGE_PARAMETER, text="Réinitialiser",
                           font="Helvetica 16",
                           command=lambda:
-                          ctrl_pp.ctrl_page_parameter_custom_reset()
+                          ctrl_pp.cpp_custom_reset()
                           )
     tkb_reset.grid(row=10, column=2)
 
@@ -208,13 +208,13 @@ def vpp_init_settings():
     tkb_save = tk.Button(TKF_PAGE_PARAMETER, text="Enregistrer",
                          font="Helvetica 16",
                          command=
-                         lambda: ctrl_pp.ctrl_page_parameter_settings_save())
+                         lambda: ctrl_pp.cpp_settings_save())
     tkb_save.grid(row=5, column=1, pady=20)
 
     tkb_reset = tk.Button(TKF_PAGE_PARAMETER, text="Réinitialiser",
                           font="Helvetica 16",
                           command=
-                          lambda: ctrl_pp.ctrl_page_parameter_settings_reset())
+                          lambda: ctrl_pp.cpp_settings_reset())
     tkb_reset.grid(row=5, column=2)
 
 
@@ -255,7 +255,7 @@ def vpp_set_difficulty(i_difficulty):
     TKS_SCALE.set(i_difficulty)
 
 
-def v_page_parameter_reset_settings():
+def vpp_reset_settings():
     vpp_set_nb_rows(6)
     vpp_set_nb_columns(7)
     vpp_set_nb_jetons(4)

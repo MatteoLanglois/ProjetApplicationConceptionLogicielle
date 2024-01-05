@@ -336,11 +336,11 @@ def cpj_show_page_jeu():
 
     # Récupération des couleurs pour la grille de jeu
     ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
-        ctrl_pp.ctrl_page_parameter_custom_load())
+        ctrl_pp.cpp_custom_load())
 
     # Récupération des paramètres pour la partie
     I_NB_ROWS, I_NB_COLS, I_NB_JETONS, I_DIFFICULTY = (
-        ctrl_pp.ctrl_page_parameter_settings_load())
+        ctrl_pp.cpp_settings_load())
     # Afficher la page de jeu
     view_pj.vpj_init_page_jeu(TK_ROOT, st_color_grid)
     # Initialisation de la grille de jeu
