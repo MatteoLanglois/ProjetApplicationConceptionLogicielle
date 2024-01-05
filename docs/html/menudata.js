@@ -29,12 +29,14 @@ var menudata={children:[
 {text:"Paquetages",url:"namespaces.html"},
 {text:"Fonctions de paquetage",url:"namespacemembers.html",children:[
 {text:"Tout",url:"namespacemembers.html",children:[
+{text:"b",url:"namespacemembers.html#index_b"},
 {text:"c",url:"namespacemembers.html#index_c"},
 {text:"m",url:"namespacemembers.html#index_m"},
 {text:"p",url:"namespacemembers.html#index_p"},
 {text:"t",url:"namespacemembers.html#index_t"},
 {text:"v",url:"namespacemembers.html#index_v"}]},
 {text:"Fonctions",url:"namespacemembers_func.html",children:[
+{text:"b",url:"namespacemembers_func.html#index_b"},
 {text:"c",url:"namespacemembers_func.html#index_c"},
 {text:"m",url:"namespacemembers_func.html#index_m"},
 {text:"p",url:"namespacemembers_func.html#index_p"},

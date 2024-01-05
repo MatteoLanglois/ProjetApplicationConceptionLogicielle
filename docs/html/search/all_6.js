@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['p4b_5fblock_5fcolumn_47',['p4b_block_column',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#af98d92eddfe18f1059af0c912ab8b402',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5fget_5fbonus_5fname_48',['p4b_get_bonus_name',['../namespacesrc_1_1utils_1_1bonus__utils.html#a8fe3ba34ae05735b4e67ee1ab2ce8614',1,'src::utils::bonus_utils']]],
-  ['p4b_5fget_5fbonuses_49',['p4b_get_bonuses',['../namespacesrc_1_1utils_1_1bonus__utils.html#ad70578ade75b7ff6de4b2e7730690316',1,'src::utils::bonus_utils']]],
+  ['p4b_5fblock_5fcolumn_49',['p4b_block_column',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#af98d92eddfe18f1059af0c912ab8b402',1,'src::puissanceQuatre::bonus']]],
   ['p4b_5finvert_5fgrid_50',['p4b_invert_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b',1,'src::puissanceQuatre::bonus']]],
   ['p4b_5fremove_5ffull_5fline_51',['p4b_remove_full_line',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f',1,'src::puissanceQuatre::bonus']]],
   ['p4b_5fuse_5fmin_5fmax_52',['p4b_use_min_max',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459',1,'src::puissanceQuatre::bonus']]],

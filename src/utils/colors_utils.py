@@ -20,7 +20,7 @@ distance entre deux couleurs.
 """
 
 
-def ctrl_page_parameter_hex_to_rgb(s_color: str) -> (int, int, int):
+def cu_hex_to_rgb(s_color: str) -> (int, int, int):
     """! Convertit une couleur hexadécimale en RGB
 
     @param s_color: Couleur hexadécimale
@@ -29,8 +29,8 @@ def ctrl_page_parameter_hex_to_rgb(s_color: str) -> (int, int, int):
     return tuple(int(s_color[i:i + 2], 16) for i in (1, 3, 5))
 
 
-def ctrl_page_parameter_rgb_distance(rgb1: (int, int, int),
-                                     rgb2: (int, int, int)) -> int:
+def cu_rgb_distance(rgb1: (int, int, int),
+                    rgb2: (int, int, int)) -> int:
     """! Calcule la distance entre deux couleurs RGB
 
     @param rgb1: Couleur 1
@@ -40,14 +40,14 @@ def ctrl_page_parameter_rgb_distance(rgb1: (int, int, int),
     return sum((a - b) ** 2 for a, b in zip(rgb1, rgb2)) ** 0.5
 
 
-def ctrl_page_parameter_colors_too_close(color1: str, color2: str) -> bool:
+def cu_colors_too_close(color1: str, color2: str) -> bool:
     """! Vérifie si deux couleurs sont trop proches
 
     @param color1: Couleur 1 au format hexadécimal
     @param color2: Couleur 2 au format hexadécimal
     @return True si les couleurs sont trop proches, False sinon
     """
-    rgb1 = ctrl_page_parameter_hex_to_rgb(color1)
-    rgb2 = ctrl_page_parameter_hex_to_rgb(color2)
+    rgb1 = cu_hex_to_rgb(color1)
+    rgb2 = cu_hex_to_rgb(color2)
 
-    return ctrl_page_parameter_rgb_distance(rgb1, rgb2) < 50
+    return cu_rgb_distance(rgb1, rgb2) < 50

@@ -20,7 +20,7 @@ Ce programme utilise les modules externes suivants :
 import tkinter as tk
 # Importation d'un module permettant de vérifier si deux couleurs sont trop
 # proches
-from src.utils.colors_utils import ctrl_page_parameter_colors_too_close
+from src.utils.colors_utils import cu_colors_too_close
 # Importation de la vue de la page des paramètres
 from src.view import view_pageParametres as view_pp
 # Importation du controller de la page d'accueil afin d'initialiser la fenêtre
@@ -160,11 +160,11 @@ def cpp_custom_save():
     st_color_grid = view_pp.vpp_get_grid_color()
 
     # Si deux couleurs sont trop proches
-    if (ctrl_page_parameter_colors_too_close(st_color_joueur, st_color_bot)
+    if (cu_colors_too_close(st_color_joueur, st_color_bot)
             or
-            ctrl_page_parameter_colors_too_close(st_color_joueur, st_color_grid)
+            cu_colors_too_close(st_color_joueur, st_color_grid)
             or
-            ctrl_page_parameter_colors_too_close(st_color_bot, st_color_grid)):
+            cu_colors_too_close(st_color_bot, st_color_grid)):
         # Changement du message par un message d'avertissement
         str_message = ("Les paramètres de personnalisation ne peuvent pas être "
                        "sauvegardés car deux éléments ont la même couleur !")

@@ -20,7 +20,7 @@ from src.puissanceQuatre import bonus as p4b
 from inspect import getmembers, isfunction
 
 
-def p4b_get_bonuses() -> list[tuple[str, ...]]:
+def bu_get_bonuses() -> list[tuple[str, ...]]:
     """! Retourne la liste des noms des fonctions bonus
     @todo Finir commentaire
     """
@@ -37,7 +37,7 @@ def p4b_get_bonuses() -> list[tuple[str, ...]]:
     return ts_functions
 
 
-def p4b_get_bonus_name(t_function: tuple) -> str:
+def bu_get_bonus_name(t_function: tuple) -> str:
     """! Retourne le nom d'une fonction bonus
     @todo Finir commentaire
     """

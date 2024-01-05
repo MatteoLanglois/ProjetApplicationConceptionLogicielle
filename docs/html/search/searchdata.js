@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "_bcglmprstv",
   1: "st",
   2: "_bcgmprtv",
-  3: "cmptv",
+  3: "bcmptv",
   4: "lp"
 };
 

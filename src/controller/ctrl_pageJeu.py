@@ -293,8 +293,8 @@ def cpj_get_bonuses() -> []:
     @todo Finir commentaire
     """
     # On récupère les fonctions du module bonus
-    return [bu.p4b_get_bonus_name(s_bonus)
-            for s_bonus in bu.p4b_get_bonuses()]
+    return [bu.bu_get_bonus_name(s_bonus)
+            for s_bonus in bu.bu_get_bonuses()]
 
 
 def cpj_valider_bonus():
