@@ -20,6 +20,7 @@ la page d'accueil.
 
 import tkinter as tk
 from src.controller import ctrl_main as ctrl_m
+from src.controller import ctrl_pageAccueil as ctrl_pa
 
 """! Frame de la page d'accueil
 """
@@ -60,8 +61,9 @@ def vpa_init(tk_root: tk.Tk):
 
     # Création d'un bouton pour jouer
     tkB_play = tk.Button(TKF_PAGE_ACCUEIL, text="Jouer", font=("Helvetica", 20),
-                         command=lambda:
-                         ctrl_m.cm_page_play(tk_root, TKF_PAGE_ACCUEIL))
+                         command=lambda: ctrl_pa.cpa_play(tk_root,
+                                                          TKF_PAGE_ACCUEIL)
+                         )
     # Affichage de ce bouton
     tkB_play.grid(row=1, column=0, sticky="nsew", pady=50, padx=50)
 

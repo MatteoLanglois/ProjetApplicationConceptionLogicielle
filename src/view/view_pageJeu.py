@@ -28,42 +28,7 @@ global I_CANVAS_WIDTH
 global I_CANVAS_HEIGHT
 global I_NB_ROWS
 global I_NB_COLUMNS
-global TKS_BONUS
 global TKB_BONUS
-global TKL_DESCRIPTION_BONUS
-
-
-def vpj_init_choix_bonus(tk_root: tk.Tk):
-    global TKS_BONUS, TKL_DESCRIPTION_BONUS
-    TKF_PAGE_CHOIX = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
-    TKF_PAGE_CHOIX.grid(row=0, column=0, sticky="nsew")
-
-    tkL_titre = tk.Label(TKF_PAGE_CHOIX, text="Choisissez votre bonus",
-                         font=("Helvetica", 20))
-    tkL_titre.grid(row=0, column=0, sticky="nsew", pady=50, padx=10)
-
-    TKS_BONUS = tk.StringVar()
-    ls_bonuses = ctrl_pj.cpj_get_bonuses()
-    TKS_BONUS.set(ls_bonuses[0])
-
-    tkC_bonus = tk.OptionMenu(TKF_PAGE_CHOIX, TKS_BONUS, *ls_bonuses)
-    tkC_bonus.grid(row=1, column=0, sticky="nsew", pady=50, padx=10)
-    TKS_BONUS.trace("w", lambda *args: ctrl_pj
-                    .cpj_show_bonus_description(TKS_BONUS.get()))
-
-    tkL_description = tk.Label(TKF_PAGE_CHOIX, text="Description du bonus :",
-                               font=("Helvetica", 16))
-    tkL_description.grid(row=2, column=0, sticky="nsew", pady=10, padx=10)
-
-    TKL_DESCRIPTION_BONUS = tk.Label(TKF_PAGE_CHOIX, text="", width=40,
-                                     font=("Helvetica", 14), wraplength=300)
-    TKL_DESCRIPTION_BONUS.grid(row=3, column=0, sticky="nsew", pady=10, padx=10)
-    ctrl_pj.cpj_show_bonus_description(ls_bonuses[0])
-
-    tkB_valider = tk.Button(TKF_PAGE_CHOIX, text="Valider",
-                            font=("Helvetica", 16),
-                            command=lambda: ctrl_pj.cpj_valider_bonus())
-    tkB_valider.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)
 
 
 def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
@@ -87,7 +52,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     """
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
-    global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, TKS_BONUS
+    global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, TKB_BONUS
 
     # Création du cadre permettant l'affichage de la page du jeu
     TKF_PAGE_JEU = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
@@ -124,10 +89,10 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour jouer son bonus
-    TKS_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
+    TKB_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
                           command=lambda: ctrl_pj.cpj_use_bonus())
     # Affichage du bouton
-    TKS_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
+    TKB_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour quitter le jeu
     tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica", 16),
@@ -253,33 +218,18 @@ def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
     return int(i_x / cell_width), int(i_y / cell_height)
 
 
-def vpj_get_bonus() -> tuple[str, ...]:
-    """! Récupère le nom du bonus sélectionné par le joueur
-    @return: Le nom du bonus sélectionné par le joueur
-    @pre TKS_BONUS initialisé
-    """
-    global TKS_BONUS
-    # On retourne le nom du bonus sélectionné
-    return TKS_BONUS.get()
-
-
 def vpj_disable_bonus():
     """! Désactive le bouton bonus
 
     @pre TKS_BONUS initialisé
     """
-    global TKS_BONUS
+    global TKB_BONUS
     # On désactive le bouton bonus
-    TKS_BONUS.config(state="disabled")
+    TKB_BONUS.config(state="disabled")
     # On change le relief du bouton bonus
-    TKS_BONUS.config(relief="sunken")
+    TKB_BONUS.config(relief="sunken")
 
 
-def vpj_show_bonus_description(s_description: str):
-    """! Affiche la description d'un bonus
-    @param s_description: Description du bonus
-    @pre TKL_DESCRIPTION_BONUS initialisé
-    """
-    global TKL_DESCRIPTION_BONUS
-    # On affiche la description du bonus
-    TKL_DESCRIPTION_BONUS.config(text=s_description)
+def get_frame() -> tk.Frame:
+    global TKF_PAGE_JEU
+    return TKF_PAGE_JEU

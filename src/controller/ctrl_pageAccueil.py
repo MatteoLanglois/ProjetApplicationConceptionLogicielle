@@ -20,6 +20,7 @@ Ce programme utilise les modules externes suivants :
 import tkinter as tk
 # Importation de la vue de la page d'accueil
 from src.view import view_pageAccueil as view_pa
+from src.controller import ctrl_main as ctrl_m
 
 
 def cpa_init(tk_root: tk.Tk):
@@ -30,3 +31,7 @@ def cpa_init(tk_root: tk.Tk):
     """
     # Initialisation de la page d'accueil
     view_pa.vpa_init(tk_root)
+
+
+def cpa_play(tk_root: tk.Tk, tkf_frame: tk.Frame):
+    ctrl_m.cm_page_bonus(tk_root, tkf_frame)

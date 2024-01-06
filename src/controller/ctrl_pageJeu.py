@@ -28,6 +28,7 @@ from src.controller import ctrl_main as ctrl_m
 # Importation du controller de la page de paramètres afin d'initialiser la
 # fenêtre
 from src.controller import ctrl_pageParametres as ctrl_pp
+from src.controller import ctrl_PageBonus as ctrl_pb
 # Importation du modèle du jeu puissance 4
 from src.puissanceQuatre import puissanceQuatre as ps4
 # Importation du modèle de la grille de jeu
@@ -63,23 +64,55 @@ global B_BONUS_USED
 
 
 def cpj_init(tk_win_root: tk.Tk):
-    """! Initialise la page de choix du bonus
+    """! Affiche la page de jeu
 
-    @pre tk_root initialisé
-    @param tk_win_root: Fenêtre principale
-    @post page de choix du bonus initialisée
+        @pre tk_root initialisé
+        @post page de jeu affichée
 
-    **Variables :**
-    * NPA_GRID : Grille de jeu
-    * TK_ROOT : Fenêtre principale
-    """
-    global TK_ROOT, B_BONUS_USED
-    # Initialisation de la fenêtre principale
+        **Variables :**
+        * TK_ROOT : Fenêtre principale
+        * ST_COLOR_JOUEUR : Couleur des jetons du joueur
+        * ST_COLOR_BOT : Couleur des jetons du bot
+        * I_NB_ROWS : Nombre de lignes de la grille de jeu
+        * I_NB_COLS : Nombre de colonnes de la grille de jeu
+        * NPA_GRID : Grille de jeu
+        * T_UNDO_REDO : Liste des coups joués
+        * T_REDO : Liste des coups annulés
+        * I_DIFFICULTY : Difficulté du bot
+        * I_NB_JETONS : Nombre de jetons à aligner pour gagner
+        * st_color_grid : Couleur de la grille de jeu
+        """
+    global T_UNDO_REDO, T_REDO, I_NB_JETONS, ST_COLOR_JOUEUR, ST_COLOR_BOT, \
+        I_DIFFICULTY, I_NB_ROWS, I_NB_COLS, NPA_GRID, TK_ROOT, B_BONUS_USED, \
+        S_BONUS
+
+    # On enregistre la fenêtre principale
     TK_ROOT = tk_win_root
-    # Initialisation de la page de choix des bonus
-    view_pj.vpj_init_choix_bonus(TK_ROOT)
-    # Définition de la variable globale B_BONUS_USED à faux
+
+    # On indique que le bonus n'a pas été utilisé
     B_BONUS_USED = False
+    # On récupère le Bonus choisit
+    S_BONUS = ctrl_pb.cpb_get_chosen_bonus()
+    print(S_BONUS)
+
+    # Initialisation de la liste pour revenir en arrière
+    T_UNDO_REDO = []
+    # Initialisation de la liste pour redo
+    T_REDO = []
+
+    # Récupération des couleurs pour la grille de jeu
+    ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
+        ctrl_pp.cpp_custom_load())
+
+    # Récupération des paramètres pour la partie
+    I_NB_ROWS, I_NB_COLS, I_NB_JETONS, I_DIFFICULTY = (
+        ctrl_pp.cpp_settings_load())
+    # Afficher la page de jeu
+    view_pj.vpj_init_page_jeu(TK_ROOT, st_color_grid)
+    # Initialisation de la grille de jeu
+    NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
+    # Dessin de la grille de jeu
+    cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
 
 
 def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
@@ -286,74 +319,3 @@ def cpj_update_grid():
                 # Afficher le pion à cette position
                 cpj_put_coin(i_boucle_row, i_boucle_col,
                              NPA_GRID[i_boucle_row, i_boucle_col])
-
-
-def cpj_get_bonuses() -> []:
-    """! Récupère les bonus disponibles
-    @todo Finir commentaire
-    """
-    # On récupère les fonctions du module bonus
-    return [bu.bu_format_bonus_name(bu.bu_get_bonus_name(s_bonus))
-            for s_bonus in bu.bu_get_bonuses()]
-
-
-def cpj_valider_bonus():
-    """! Récupère les bonus sélectionnés par le joueur
-    @todo Finir commentaire
-    """
-    global S_BONUS
-    S_BONUS = view_pj.vpj_get_bonus()
-    cpj_show_page_jeu()
-
-
-def cpj_show_page_jeu():
-    """! Affiche la page de jeu
-
-    @pre tk_root initialisé
-    @post page de jeu affichée
-
-    **Variables :**
-    * TK_ROOT : Fenêtre principale
-    * ST_COLOR_JOUEUR : Couleur des jetons du joueur
-    * ST_COLOR_BOT : Couleur des jetons du bot
-    * I_NB_ROWS : Nombre de lignes de la grille de jeu
-    * I_NB_COLS : Nombre de colonnes de la grille de jeu
-    * NPA_GRID : Grille de jeu
-    * T_UNDO_REDO : Liste des coups joués
-    * T_REDO : Liste des coups annulés
-    * I_DIFFICULTY : Difficulté du bot
-    * I_NB_JETONS : Nombre de jetons à aligner pour gagner
-    * st_color_grid : Couleur de la grille de jeu
-
-    """
-    global T_UNDO_REDO, T_REDO, I_NB_JETONS, ST_COLOR_JOUEUR, ST_COLOR_BOT
-    global I_DIFFICULTY, I_NB_ROWS, I_NB_COLS, NPA_GRID
-
-    # Initialisation de la liste pour revenir en arrière
-    T_UNDO_REDO = []
-    # Initialisation de la liste pour redo
-    T_REDO = []
-
-    # Récupération des couleurs pour la grille de jeu
-    ST_COLOR_JOUEUR, ST_COLOR_BOT, st_color_grid = (
-        ctrl_pp.cpp_custom_load())
-
-    # Récupération des paramètres pour la partie
-    I_NB_ROWS, I_NB_COLS, I_NB_JETONS, I_DIFFICULTY = (
-        ctrl_pp.cpp_settings_load())
-    # Afficher la page de jeu
-    view_pj.vpj_init_page_jeu(TK_ROOT, st_color_grid)
-    # Initialisation de la grille de jeu
-    NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
-    # Dessin de la grille de jeu
-    cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
-
-
-def cpj_show_bonus_description(s_bonus: str):
-    """! Affiche la description du bonus sélectionné
-    @todo Finir commentaire
-    """
-    # On récupère la description du bonus
-    s_desc = bu.bu_get_bonus_description(bu.bu_unformat_bonus_name(s_bonus))
-    # On affiche la description du bonus
-    view_pj.vpj_show_bonus_description(s_desc)

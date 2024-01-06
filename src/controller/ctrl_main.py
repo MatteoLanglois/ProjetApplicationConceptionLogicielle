@@ -26,6 +26,7 @@ from src.controller import ctrl_pageJeu as ctrl_pj
 # Importation du controller de la page de paramètres afin d'initialiser la
 # fenêtre
 from src.controller import ctrl_pageParametres as ctrl_pp
+from src.controller import ctrl_PageBonus as ctrl_pb
 # Importation de la vue de la fenêtre globale
 from src.view import view_main as view_m
 
@@ -85,6 +86,22 @@ def cm_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     view_m.vm_remove_frame(tkf_old_frame)
     # Initialise la page jeu
     ctrl_pj.cpj_init(tk_root)
+
+
+def cm_page_bonus(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
+    """! Fonction permettant de passer à la fenêtre de jeu.
+
+    @pre tk_root initialisé
+    @pre tkf_old_frame initialisé
+    @param tk_root: La fenêtre principale
+    @param tkf_old_frame: Le cadre de la dernière fenêtre
+    @post tkf_old_frame détruit
+    @post fenêtre de jeu initialisée
+    """
+    # Supprime le cadre
+    view_m.vm_remove_frame(tkf_old_frame)
+    # Initialise la page jeu
+    ctrl_pb.cpb_init(tk_root)
 
 
 def cm_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):

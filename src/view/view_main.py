@@ -79,14 +79,14 @@ def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     # Ajout d'une commande permettant de lancer une partie
     tkm_menu_partie.add_command(label="Nouvelle partie",
                                 command=lambda:
-                                ctrl_m.cm_page_play(TK_ROOT,
-                                                    tk_old_frame))
+                                ctrl_m.cm_page_bonus(TK_ROOT,
+                                                     tk_old_frame))
     if b_in_game:
         # Ajout d'une commande permettant de relancer une partie
         tkm_menu_partie.add_command(label="Recommencer",
                                     command=lambda:
-                                    ctrl_m.cm_page_play(TK_ROOT,
-                                                        tk_old_frame))
+                                    ctrl_m.cm_page_bonus(TK_ROOT,
+                                                         tk_old_frame))
 
     # Ajout d'une commande permettant de quitter le jeu
     tkm_menu_partie.add_command(label="Quitter",
