@@ -30,10 +30,11 @@ global I_NB_ROWS
 global I_NB_COLUMNS
 global TKS_BONUS
 global TKB_BONUS
+global TKL_DESCRIPTION_BONUS
 
 
 def vpj_init_choix_bonus(tk_root: tk.Tk):
-    global TKS_BONUS
+    global TKS_BONUS, TKL_DESCRIPTION_BONUS
     TKF_PAGE_CHOIX = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
     TKF_PAGE_CHOIX.grid(row=0, column=0, sticky="nsew")
 
@@ -47,10 +48,22 @@ def vpj_init_choix_bonus(tk_root: tk.Tk):
 
     tkC_bonus = tk.OptionMenu(TKF_PAGE_CHOIX, TKS_BONUS, *ls_bonuses)
     tkC_bonus.grid(row=1, column=0, sticky="nsew", pady=50, padx=10)
+    TKS_BONUS.trace("w", lambda *args: ctrl_pj
+                    .cpj_show_bonus_description(TKS_BONUS.get()))
+
+    tkL_description = tk.Label(TKF_PAGE_CHOIX, text="Description du bonus :",
+                               font=("Helvetica", 16))
+    tkL_description.grid(row=2, column=0, sticky="nsew", pady=10, padx=10)
+
+    TKL_DESCRIPTION_BONUS = tk.Label(TKF_PAGE_CHOIX, text="", width=40,
+                                     font=("Helvetica", 14), wraplength=300)
+    TKL_DESCRIPTION_BONUS.grid(row=3, column=0, sticky="nsew", pady=10, padx=10)
+    ctrl_pj.cpj_show_bonus_description(ls_bonuses[0])
 
     tkB_valider = tk.Button(TKF_PAGE_CHOIX, text="Valider",
+                            font=("Helvetica", 16),
                             command=lambda: ctrl_pj.cpj_valider_bonus())
-    tkB_valider.grid(row=2, column=0, sticky="nsew", pady=50, padx=10)
+    tkB_valider.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)
 
 
 def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
@@ -112,7 +125,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
 
     # Création d'un bouton pour jouer son bonus
     TKS_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
-                          command=lambda: ctrl_pj.cpj_bonus())
+                          command=lambda: ctrl_pj.cpj_use_bonus())
     # Affichage du bouton
     TKS_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
 
@@ -260,3 +273,13 @@ def vpj_disable_bonus():
     TKS_BONUS.config(state="disabled")
     # On change le relief du bouton bonus
     TKS_BONUS.config(relief="sunken")
+
+
+def vpj_show_bonus_description(s_description: str):
+    """! Affiche la description d'un bonus
+    @param s_description: Description du bonus
+    @pre TKL_DESCRIPTION_BONUS initialisé
+    """
+    global TKL_DESCRIPTION_BONUS
+    # On affiche la description du bonus
+    TKL_DESCRIPTION_BONUS.config(text=s_description)

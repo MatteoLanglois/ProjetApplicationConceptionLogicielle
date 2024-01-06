@@ -222,7 +222,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
                              tkf_old_frame=tkf_page_jeu)
 
 
-def cpj_bonus():
+def cpj_use_bonus():
     """! Utilise un bonus
     @todo Finir commentaire
     """
@@ -230,7 +230,7 @@ def cpj_bonus():
     if not B_BONUS_USED:
         B_BONUS_USED = True
         m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
-        f_bonus = getattr(m_module, S_BONUS)
+        f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(S_BONUS))
         NPA_GRID = f_bonus(NPA_GRID.copy())
         cpj_update_grid()
         view_pj.vpj_disable_bonus()
@@ -293,7 +293,7 @@ def cpj_get_bonuses() -> []:
     @todo Finir commentaire
     """
     # On récupère les fonctions du module bonus
-    return [bu.bu_get_bonus_name(s_bonus)
+    return [bu.bu_format_bonus_name(bu.bu_get_bonus_name(s_bonus))
             for s_bonus in bu.bu_get_bonuses()]
 
 
@@ -347,3 +347,13 @@ def cpj_show_page_jeu():
     NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
     # Dessin de la grille de jeu
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
+
+
+def cpj_show_bonus_description(s_bonus: str):
+    """! Affiche la description du bonus sélectionné
+    @todo Finir commentaire
+    """
+    # On récupère la description du bonus
+    s_desc = bu.bu_get_bonus_description(bu.bu_unformat_bonus_name(s_bonus))
+    # On affiche la description du bonus
+    view_pj.vpj_show_bonus_description(s_desc)

@@ -94,6 +94,7 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
     return npa_grid
 
 
+'''
 def p4b_block_column(npa_grid: np.array, i_col: int) -> np.array:
     """! Bloque une colonne
 
@@ -117,6 +118,7 @@ def p4b_block_column(npa_grid: np.array, i_col: int) -> np.array:
         npa_grid[i_row, i_col] = 3
     # Retourner la grille
     return npa_grid
+'''
 
 
 def p4b_use_min_max(npa_grid: np.array) -> np.array:
@@ -136,6 +138,3 @@ def p4b_use_min_max(npa_grid: np.array) -> np.array:
     ps4.pq_ajout_piece(npa_grid, i_col, 1)
     # On retourne la grille
     return npa_grid
-
-
-

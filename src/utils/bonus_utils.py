@@ -26,20 +26,38 @@ def bu_get_bonuses() -> list[tuple[str, ...]]:
     """
     # On récupère les fonctions du module bonus
     ts_functions = getmembers(p4b, isfunction)
-    # On enlève les fonctions qui ne sont pas des bonus
-    ts_functions = [t_function for t_function in ts_functions
-                    if t_function[0].startswith("p4b_")]
-    # On enlève la fonction p4b_get_bonuses
-    ts_functions = [t_function for t_function in ts_functions
-                    if t_function[0] != "p4b_get_bonuses"]
-    # On enlève la fonction p4b_get_bonus_name
     # On retourne la liste des noms des fonctions bonus
     return ts_functions
 
 
 def bu_get_bonus_name(t_function: tuple) -> str:
     """! Retourne le nom d'une fonction bonus
-    @todo Finir commentaire
     """
     # On retourne le nom de la fonction
     return t_function[0][t_function[0].find("'") + 1:]
+
+
+def bu_format_bonus_name(s_bonus_name: str) -> str:
+    """! Formate le nom d'un bonus
+    """
+    # On retourne le nom du bonus formaté
+    return (s_bonus_name.replace("_", " ")
+            .replace("p4b ", "")).title()
+
+
+def bu_unformat_bonus_name(s_bonus_name: str) -> str:
+    """! Déformate le nom d'un bonus
+    """
+    # On retourne le nom du bonus déformaté
+    return f"p4b_{s_bonus_name.replace(' ', '_').lower()}"
+
+
+def bu_get_bonus_description(s_bonus_name: str) -> str:
+    """! Retourne la description d'un bonus
+    """
+    # On récupère la fonction bonus choisie
+    t_function = [t_function for t_function in bu_get_bonuses()
+                  if bu_get_bonus_name(t_function) == s_bonus_name][0]
+    # On retourne la description brève du bonus
+    return t_function[1].__doc__[1:t_function[1].__doc__.find("@pre")] \
+        if t_function[1].__doc__ else ""
