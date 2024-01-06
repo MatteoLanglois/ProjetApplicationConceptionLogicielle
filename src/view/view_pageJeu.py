@@ -17,17 +17,27 @@ Ce programme utilise les modules externes suivants :
 @details Ce module contient les fonctions permettant de gérer la vue de la page 
 de jeu.
 """
-
+# Importation de tkinter
 import tkinter as tk
+# Importation du contrôleur de la page de jeu
 from src.controller import ctrl_pageJeu as ctrl_pj
+# Importation du contrôleur principal pour avoir le menu
 from src.controller import ctrl_main as ctrl_m
 
+# Variables globales ##########################
+# Frame de la page de jeu
 global TKF_PAGE_JEU
+# Canvas de la page de jeu
 global TKC_GRID
+# Largeur du canvas
 global I_CANVAS_WIDTH
+# Hauteur du canvas
 global I_CANVAS_HEIGHT
+# Nombre de lignes de la grille
 global I_NB_ROWS
+# Nombre de colonnes de la grille
 global I_NB_COLUMNS
+# Bouton pour utiliser un bonus
 global TKB_BONUS
 
 
@@ -136,8 +146,9 @@ def vpj_draw_grid(rows: int, columns: int):
     # On définit de manière globale les variables tkc_grid, i_canvas_width,
     # i_canvas_height, i_nb_rows, i_nb_columns
     global TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
-
+    # On définit la variable globale i_nb_rows
     I_NB_ROWS = rows
+    # On définit la variable globale i_nb_columns
     I_NB_COLUMNS = columns
 
     # On vide le canvas
@@ -231,5 +242,14 @@ def vpj_disable_bonus():
 
 
 def vpj_get_frame() -> tk.Frame:
+    """! Accesseur de la frame de la page de jeu
+
+    @pre TKF_PAGE_JEU initialisé
+    @return: Frame de la page de jeu
+
+    **Variables :**
+    * TKF_PAGE_JEU : Frame de la page de jeu
+    """
     global TKF_PAGE_JEU
+    # On retourne la frame de la page de jeu
     return TKF_PAGE_JEU

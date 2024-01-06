@@ -22,7 +22,11 @@ from inspect import getmembers, isfunction
 
 def bu_get_bonuses() -> list[tuple[str, ...]]:
     """! Retourne la liste des noms des fonctions bonus
-    @todo Finir commentaire
+
+    @post La liste des noms des fonctions bonus est retournée
+
+    **Variables :**
+    * ts_functions : Liste des fonctions du module bonus
     """
     # On récupère les fonctions du module bonus
     ts_functions = getmembers(p4b, isfunction)

@@ -47,4 +47,5 @@ _____________________
 - [x] Bonus d'inversion de la grille
 - [x] Bonus de suppression de ligne pleine
 - [x] Bonus d'aide avec MinMax
+- [ ] Bonus de retournement de la grille
 - [ ] Bonus permettant de bloquer une colonne

@@ -20,6 +20,7 @@ Ce programme utilise les modules externes suivants :
 import tkinter as tk
 # Importation de la vue de la page d'accueil
 from src.view import view_pageAccueil as view_pa
+# Importation du controller de la page principale afin de lancer une partie
 from src.controller import ctrl_main as ctrl_m
 
 
@@ -34,4 +35,12 @@ def cpa_init(tk_root: tk.Tk):
 
 
 def cpa_play(tk_root: tk.Tk, tkf_frame: tk.Frame):
+    """! Lance une partie
+
+    @pre tk_root initialisé
+    @pre tkf_frame initialisé
+    @param tk_root: Fenêtre principale
+    @param tkf_frame: Frame de la page d'accueil
+    @post Fenêtre de choix du bonus ouverte
+    """
     ctrl_m.cm_page_bonus(tk_root, tkf_frame)

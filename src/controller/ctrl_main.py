@@ -26,6 +26,7 @@ from src.controller import ctrl_pageJeu as ctrl_pj
 # Importation du controller de la page de paramètres afin d'initialiser la
 # fenêtre
 from src.controller import ctrl_pageParametres as ctrl_pp
+# Importation du controller de la page de bonus afin d'initialiser la fenêtre
 from src.controller import ctrl_PageBonus as ctrl_pb
 # Importation de la vue de la fenêtre globale
 from src.view import view_main as view_m

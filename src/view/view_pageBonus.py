@@ -17,60 +17,95 @@ Ce programme utilise les modules externes suivants :
 @details Ce module contient les fonctions permettant de gérer la vue de la page
 de choix du bonus.
 """
+# Importation de tkinter pour l'interface graphique
 import tkinter as tk
+# Importation du contrôleur de cette fenêtre
 from src.controller import ctrl_PageBonus as ctrl_pb
+# Importation du contrôleur principal pour le menu
 from src.controller import ctrl_main as ctrl_m
 
+# Variables globales ##########################
+# Variable de choix du bonus
 global TKS_BONUS
+# Label de la description du bonus
 global TKL_DESCRIPTION_BONUS
+# Cadre de la fenêtre de choix du bonus
 global TKF_PAGE_CHOIX
 
 
 def vpb_init(tk_root: tk.Tk) -> None:
     """! Initialisation de la fenêtre de choix du bonus.
-    @todo à commenter
 
+    @pre tk_root initialisé
     @param tk_root: la fenêtre de base
+    @post Fenêtre de choix du bonus initialisée
+
+    **Variables :**
+    * TKS_BONUS : Variable de choix du bonus.
+    * TKL_DESCRIPTION_BONUS : Label de la description du bonus.
+    * TKF_PAGE_CHOIX : Cadre de la fenêtre de choix du bonus.
+    * tkL_titre : Label du titre de la fenêtre de choix du bonus.
+    * tkC_bonus : Menu déroulant pour le choix du bonus.
+    * tkL_description : Label de la description du bonus.
+    * tkB_valider : Bouton de validation du bonus.
     """
     global TKS_BONUS, TKL_DESCRIPTION_BONUS, TKF_PAGE_CHOIX
+    # Initialisation du cadre de la fenêtre de choix du bonus
     TKF_PAGE_CHOIX = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
+    # Affichage du cadre de la fenêtre de choix du bonus
     TKF_PAGE_CHOIX.grid(row=0, column=0, sticky="nsew")
 
     # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_CHOIX, True))
-
+    # Initialisation du titre de la fenêtre de choix du bonus
     tkL_titre = tk.Label(TKF_PAGE_CHOIX, text="Choisissez votre bonus",
                          font=("Helvetica", 20))
+    # Affichage du titre de la fenêtre de choix du bonus
     tkL_titre.grid(row=0, column=0, sticky="nsew", pady=50, padx=10)
 
+    # Création d'une variable pour le choix du bonus
     TKS_BONUS = tk.StringVar()
+    # Récupération de la liste des bonus
     ls_bonuses = ctrl_pb.cpb_get_bonuses()
+    # Initialisation de la variable de choix du bonus
     TKS_BONUS.set(ls_bonuses[0])
-
+    # Création du menu déroulant pour le choix du bonus
     tkC_bonus = tk.OptionMenu(TKF_PAGE_CHOIX, TKS_BONUS, *ls_bonuses)
+    # Affichage du menu déroulant pour le choix du bonus
     tkC_bonus.grid(row=1, column=0, sticky="nsew", pady=50, padx=10)
+    # Affichage de la description du bonus sélectionné
     TKS_BONUS.trace("w", lambda *args: ctrl_pb
                     .cpb_show_bonus_description(TKS_BONUS.get()))
-
+    # Initialisation du label de la description du bonus
     tkL_description = tk.Label(TKF_PAGE_CHOIX, text="Description du bonus :",
                                font=("Helvetica", 16))
+    # Affichage du label de la description du bonus
     tkL_description.grid(row=2, column=0, sticky="nsew", pady=10, padx=10)
 
+    # Initialisation du label de la description du bonus
     TKL_DESCRIPTION_BONUS = tk.Label(TKF_PAGE_CHOIX, text="", width=40,
                                      font=("Helvetica", 14), wraplength=300)
+    # Affichage du label de la description du bonus
     TKL_DESCRIPTION_BONUS.grid(row=3, column=0, sticky="nsew", pady=10, padx=10)
+    # Affichage de la description du premier bonus
     ctrl_pb.cpb_show_bonus_description(ls_bonuses[0])
 
+    # Initialisation du bouton de validation du bonus
     tkB_valider = tk.Button(TKF_PAGE_CHOIX, text="Valider",
                             font=("Helvetica", 16),
                             command=lambda: ctrl_pb.cpb_valider_bonus())
+    # Affichage du bouton de validation du bonus
     tkB_valider.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)
 
 
 def vpb_get_bonus() -> tuple[str, ...]:
     """! Récupère le nom du bonus sélectionné par le joueur
-    @return: Le nom du bonus sélectionné par le joueur
+
     @pre TKS_BONUS initialisé
+    @return: Le nom du bonus sélectionné par le joueur
+
+    **Variables :**
+    * TKS_BONUS : Variable de choix du bonus.
     """
     global TKS_BONUS
     # On retourne le nom du bonus sélectionné
@@ -78,9 +113,13 @@ def vpb_get_bonus() -> tuple[str, ...]:
 
 
 def vpb_show_bonus_description(s_description: str):
-    """! Affiche la description d'un bonus
-    @param s_description: Description du bonus
+    """! Affiche la description d'un bonus*
+
     @pre TKL_DESCRIPTION_BONUS initialisé
+    @param s_description: Description du bonus
+
+    **Variables :**
+    * TKL_DESCRIPTION_BONUS : Label de la description du bonus.
     """
     global TKL_DESCRIPTION_BONUS
     # On affiche la description du bonus
@@ -97,4 +136,5 @@ def vpb_get_frame() -> tk.Frame:
     * TKF_PAGE_CHOIX : Cadre de la fenêtre de choix du bonus.
     """
     global TKF_PAGE_CHOIX
+    # On retourne le cadre de la fenêtre de choix du bonus
     return TKF_PAGE_CHOIX

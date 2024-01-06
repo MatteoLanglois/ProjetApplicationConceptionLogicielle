@@ -68,22 +68,22 @@ global B_BONUS_USED
 def cpj_init(tk_win_root: tk.Tk):
     """! Affiche la page de jeu
 
-        @pre tk_root initialisé
-        @post page de jeu affichée
+    @pre tk_root initialisé
+    @post page de jeu affichée
 
-        **Variables :**
-        * TK_ROOT : Fenêtre principale
-        * ST_COLOR_JOUEUR : Couleur des jetons du joueur
-        * ST_COLOR_BOT : Couleur des jetons du bot
-        * I_NB_ROWS : Nombre de lignes de la grille de jeu
-        * I_NB_COLS : Nombre de colonnes de la grille de jeu
-        * NPA_GRID : Grille de jeu
-        * T_UNDO_REDO : Liste des coups joués
-        * T_REDO : Liste des coups annulés
-        * I_DIFFICULTY : Difficulté du bot
-        * I_NB_JETONS : Nombre de jetons à aligner pour gagner
-        * st_color_grid : Couleur de la grille de jeu
-        """
+    **Variables :**
+    * TK_ROOT : Fenêtre principale
+    * ST_COLOR_JOUEUR : Couleur des jetons du joueur
+    * ST_COLOR_BOT : Couleur des jetons du bot
+    * I_NB_ROWS : Nombre de lignes de la grille de jeu
+    * I_NB_COLS : Nombre de colonnes de la grille de jeu
+    * NPA_GRID : Grille de jeu
+    * T_UNDO_REDO : Liste des coups joués
+    * T_REDO : Liste des coups annulés
+    * I_DIFFICULTY : Difficulté du bot
+    * I_NB_JETONS : Nombre de jetons à aligner pour gagner
+    * st_color_grid : Couleur de la grille de jeu
+    """
     global T_UNDO_REDO, T_REDO, I_NB_JETONS, ST_COLOR_JOUEUR, ST_COLOR_BOT, \
         I_DIFFICULTY, I_NB_ROWS, I_NB_COLS, NPA_GRID, TK_ROOT, B_BONUS_USED, \
         S_BONUS
@@ -258,8 +258,18 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
 
 def cpj_use_bonus():
-    """! Utilise un bonus
-    @todo Finir docstring
+    """! Utilise un bonus puis met à jour la grille de jeu
+
+    @pre S_BONUS est un bonus
+    @pre NPA_GRID est une grille de jeu
+    @post Bonus utilisé si B_BONUS_USED est faux
+
+    **Variables :**
+    * S_BONUS : Bonus sélectionné
+    * NPA_GRID : Grille de jeu
+    * B_BONUS_USED : Booléen indiquant si le bonus a été utilisé
+    * m_module : Module du bonus
+    * f_bonus : Fonction du bonus
     @todo Vérifier si le bonus a entraîné une victoire
     """
     global S_BONUS, NPA_GRID, B_BONUS_USED
@@ -273,7 +283,6 @@ def cpj_use_bonus():
         f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(S_BONUS))
         # On applique le bonus à la grille
         NPA_GRID = f_bonus(NPA_GRID.copy())
-        gr.pq_print_grille(NPA_GRID)
         # On met à jour la grille
         cpj_update_grid()
         # On désactive le bouton du bonus
@@ -315,9 +324,18 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
 
 def cpj_update_grid():
     """! Réinitialise la grille de jeu
-    @todo Finir docstring
+
+    @pre NPA_GRID initialisé
+    @post Grille de jeu mise à jour
+
+    **Variables :**
+    * I_NB_ROWS : Nombre de lignes de la grille de jeu
+    * I_NB_COLS : Nombre de colonnes de la grille de jeu
+    * NPA_GRID : Grille de jeu
+    * i_boucle_row : Ligne de la grille de jeu
+    * i_boucle_col : Colonne de la grille de jeu
     """
-    global I_NB_ROWS, I_NB_COLS
+    global I_NB_ROWS, I_NB_COLS, NPA_GRID
     # Dessiner la grille pour la reset
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
     # Pour chaque ligne de la grille

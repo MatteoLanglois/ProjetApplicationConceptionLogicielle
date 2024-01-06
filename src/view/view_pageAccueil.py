@@ -17,13 +17,15 @@ Ce programme utilise les modules externes suivants :
 @details Ce module contient les fonctions d'initialisation et de destruction de
 la page d'accueil.
 """
-
+# Importation de tkinter
 import tkinter as tk
+# Importation du contrôleur principal pour avoir le menu
 from src.controller import ctrl_main as ctrl_m
+# Importation du contrôleur de la page d'accueil pour lancer une partie
 from src.controller import ctrl_pageAccueil as ctrl_pa
 
-"""! Frame de la page d'accueil
-"""
+# Variables globales ##########################
+# Frame de la page d'accueil
 global TKF_PAGE_ACCUEIL
 
 

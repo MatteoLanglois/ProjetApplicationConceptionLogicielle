@@ -17,12 +17,19 @@ Ce programme utilise les modules externes suivants :
 @details Ce module contient les fonctions permettant de gérer la page de choix
 du bonus.
 """
+# Importations de tkinter
 import tkinter as tk
+# Importation des fonctions utilitaires des bonus
 from src.utils import bonus_utils as bu
+# Importation de la vue de la page de choix du bonus
 from src.view import view_pageBonus as view_pb
+# Importation du controller de la page principale afin de lancer une partie
 from src.controller import ctrl_main as ctrl_m
 
+# Variables globales ##########################
+# Fenêtre principale
 global TK_ROOT
+# Nom du bonus sélectionné
 global S_BONUS
 
 
@@ -36,7 +43,7 @@ def cpb_init(tk_win_root: tk.Tk):
     **Variables :**
     * NPA_GRID : Grille de jeu
     * TK_ROOT : Fenêtre principale
-        """
+    """
     global TK_ROOT
     # Initialisation de la fenêtre principale
     TK_ROOT = tk_win_root

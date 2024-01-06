@@ -18,12 +18,15 @@ Ce programme utilise les modules externes suivants :
 De quitter le jeu, de recommencer une partie, etc. Il permet aussi d'afficher
 des messages d'information ou d'avertissement.
 """
-
+# Importation de tkinter
 import tkinter as tk
+# Importation de tkinter.messagebox pour les messages
 from tkinter.messagebox import showinfo, askyesno, showwarning
-
+# Importation de ctrl_main pour les fonctions de contrôle
 from src.controller import ctrl_main as ctrl_m
 
+# Variables globales ##########################
+# Fenêtre principale
 global TK_ROOT
 
 
