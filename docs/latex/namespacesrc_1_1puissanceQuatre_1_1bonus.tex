@@ -12,10 +12,10 @@ np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1bonus_a807a155ca4
 \begin{DoxyCompactList}\small\item\em Echange les pions des joueurs. \end{DoxyCompactList}\item 
 np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1bonus_a2f6027d252a8e7462c433d31423de14f}{p4b\+\_\+remove\+\_\+full\+\_\+line}} (np.\+array npa\+\_\+grid)
 \begin{DoxyCompactList}\small\item\em Supprime une ligne pleine. \end{DoxyCompactList}\item 
-np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1bonus_af98d92eddfe18f1059af0c912ab8b402}{p4b\+\_\+block\+\_\+column}} (np.\+array npa\+\_\+grid, int i\+\_\+col)
-\begin{DoxyCompactList}\small\item\em Bloque une colonne. \end{DoxyCompactList}\item 
 np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1bonus_a612b03c34c59e092d08cb2757d0fa459}{p4b\+\_\+use\+\_\+min\+\_\+max}} (np.\+array npa\+\_\+grid)
-\begin{DoxyCompactList}\small\item\em Bonus permettant au joueur d\textquotesingle{}utiliser l\textquotesingle{}algorithme min max pour son prochain coup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Bonus permettant au joueur d\textquotesingle{}utiliser l\textquotesingle{}algorithme min max pour son prochain coup. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1bonus_af9c2820cab1c2496e2fecb6bb5e48e73}{p4b\+\_\+flip\+\_\+grid}} (np.\+array npa\+\_\+grid)
+\begin{DoxyCompactList}\small\item\em Bonus permettant de retourner la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -24,39 +24,30 @@ Ce module contient les fonctions relatives aux bonus.
 Ce module contient les fonctions de bonus. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1bonus_af98d92eddfe18f1059af0c912ab8b402}\label{namespacesrc_1_1puissanceQuatre_1_1bonus_af98d92eddfe18f1059af0c912ab8b402}} 
-\index{src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}!p4b\_block\_column@{p4b\_block\_column}}
-\index{p4b\_block\_column@{p4b\_block\_column}!src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}}
-\doxysubsubsection{\texorpdfstring{p4b\_block\_column()}{p4b\_block\_column()}}
-{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+bonus.\+p4b\+\_\+block\+\_\+column (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grid,  }\item[{int}]{i\+\_\+col }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1bonus_af9c2820cab1c2496e2fecb6bb5e48e73}\label{namespacesrc_1_1puissanceQuatre_1_1bonus_af9c2820cab1c2496e2fecb6bb5e48e73}} 
+\index{src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}!p4b\_flip\_grid@{p4b\_flip\_grid}}
+\index{p4b\_flip\_grid@{p4b\_flip\_grid}!src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}}
+\doxysubsubsection{\texorpdfstring{p4b\_flip\_grid()}{p4b\_flip\_grid()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+bonus.\+p4b\+\_\+flip\+\_\+grid (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grid }\end{DoxyParamCaption})}
 
 
 
-Bloque une colonne. 
+Bonus permettant de retourner la grille. 
 
 \begin{DoxyPrecond}{Précondition}
 npa\+\_\+grid initialisé 
 \end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
-{\em npa\+\_\+grid} & Grille \\
-\hline
-{\em i\+\_\+col} & Colonne à bloquer \\
+{\em npa\+\_\+grid} & Grille de jeu \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-npa\+\_\+grid\+: Grille avec une colonne bloquée
+npa\+\_\+grid \+: Grille retournée 
 \end{DoxyReturn}
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item i\+\_\+nb\+\_\+rows \+: Nombre de lignes de la grille
-\item i\+\_\+nb\+\_\+cols \+: Nombre de colonnes de la grille
-\item i\+\_\+col \+: Indice de colonne \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000009}{A faire}}]Trouver comment gérer la disparition du jeton ajouté par le bonus 
-
-Comment choisir la colonne à bloquer ?\end{DoxyRefDesc}
-
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1bonus_a807a155ca42efd08b4fdda7db535586b}\label{namespacesrc_1_1puissanceQuatre_1_1bonus_a807a155ca42efd08b4fdda7db535586b}} 
+\begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000007}{A faire}}]Descendre les pions\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1bonus_a807a155ca42efd08b4fdda7db535586b}\label{namespacesrc_1_1puissanceQuatre_1_1bonus_a807a155ca42efd08b4fdda7db535586b}} 
 \index{src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}!p4b\_invert\_grid@{p4b\_invert\_grid}}
 \index{p4b\_invert\_grid@{p4b\_invert\_grid}!src.puissanceQuatre.bonus@{src.puissanceQuatre.bonus}}
 \doxysubsubsection{\texorpdfstring{p4b\_invert\_grid()}{p4b\_invert\_grid()}}

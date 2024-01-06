@@ -230,6 +230,6 @@ def vpj_disable_bonus():
     TKB_BONUS.config(relief="sunken")
 
 
-def get_frame() -> tk.Frame:
+def vpj_get_frame() -> tk.Frame:
     global TKF_PAGE_JEU
     return TKF_PAGE_JEU

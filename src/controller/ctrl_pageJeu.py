@@ -28,6 +28,8 @@ from src.controller import ctrl_main as ctrl_m
 # Importation du controller de la page de paramètres afin d'initialiser la
 # fenêtre
 from src.controller import ctrl_pageParametres as ctrl_pp
+# Importation du controller de la page de bonus afin de récupérer le bonus
+# sélectionné
 from src.controller import ctrl_PageBonus as ctrl_pb
 # Importation du modèle du jeu puissance 4
 from src.puissanceQuatre import puissanceQuatre as ps4
@@ -257,15 +259,24 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
 def cpj_use_bonus():
     """! Utilise un bonus
-    @todo Finir commentaire
+    @todo Finir docstring
+    @todo Vérifier si le bonus a entraîné une victoire
     """
     global S_BONUS, NPA_GRID, B_BONUS_USED
+    # Si le bonus n'a pas été utilisé
     if not B_BONUS_USED:
+        # On indique que le bonus a été utilisé
         B_BONUS_USED = True
+        # On importe le module du bonus
         m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
+        # On récupère la fonction du bonus
         f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(S_BONUS))
+        # On applique le bonus à la grille
         NPA_GRID = f_bonus(NPA_GRID.copy())
+        gr.pq_print_grille(NPA_GRID)
+        # On met à jour la grille
         cpj_update_grid()
+        # On désactive le bouton du bonus
         view_pj.vpj_disable_bonus()
 
 
@@ -304,7 +315,7 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
 
 def cpj_update_grid():
     """! Réinitialise la grille de jeu
-    @todo Finir commentaire
+    @todo Finir docstring
     """
     global I_NB_ROWS, I_NB_COLS
     # Dessiner la grille pour la reset

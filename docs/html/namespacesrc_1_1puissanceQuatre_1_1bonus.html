@@ -84,61 +84,43 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a2f6027d252a8e7462c433d31423de14f"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f">p4b_remove_full_line</a> (np.array npa_grid)</td></tr>
 <tr class="memdesc:a2f6027d252a8e7462c433d31423de14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime une ligne pleine.  <a href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2f6027d252a8e7462c433d31423de14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af98d92eddfe18f1059af0c912ab8b402"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af98d92eddfe18f1059af0c912ab8b402">p4b_block_column</a> (np.array npa_grid, int i_col)</td></tr>
-<tr class="memdesc:af98d92eddfe18f1059af0c912ab8b402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bloque une colonne.  <a href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af98d92eddfe18f1059af0c912ab8b402">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af98d92eddfe18f1059af0c912ab8b402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a612b03c34c59e092d08cb2757d0fa459"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459">p4b_use_min_max</a> (np.array npa_grid)</td></tr>
 <tr class="memdesc:a612b03c34c59e092d08cb2757d0fa459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bonus permettant au joueur d'utiliser l'algorithme min max pour son prochain coup.  <a href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a612b03c34c59e092d08cb2757d0fa459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c2820cab1c2496e2fecb6bb5e48e73"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73">p4b_flip_grid</a> (np.array npa_grid)</td></tr>
+<tr class="memdesc:af9c2820cab1c2496e2fecb6bb5e48e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bonus permettant de retourner la grille.  <a href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9c2820cab1c2496e2fecb6bb5e48e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Ce module contient les fonctions relatives aux bonus. </p>
 <p>Ce module contient les fonctions de bonus. </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="af98d92eddfe18f1059af0c912ab8b402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af98d92eddfe18f1059af0c912ab8b402">&#9670;&nbsp;</a></span>p4b_block_column()</h2>
+<a id="af9c2820cab1c2496e2fecb6bb5e48e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c2820cab1c2496e2fecb6bb5e48e73">&#9670;&nbsp;</a></span>p4b_flip_grid()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> np.array src.puissanceQuatre.bonus.p4b_block_column </td>
+          <td class="memname"> np.array src.puissanceQuatre.bonus.p4b_flip_grid </td>
           <td>(</td>
           <td class="paramtype">np.array&#160;</td>
-          <td class="paramname"><em>npa_grid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>npa_grid</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_col</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bloque une colonne. </p>
+<p>Bonus permettant de retourner la grille. </p>
 <dl class="section pre"><dt>Précondition</dt><dd>npa_grid initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">npa_grid</td><td>Grille </td></tr>
-    <tr><td class="paramname">i_col</td><td>Colonne à bloquer </td></tr>
+    <tr><td class="paramname">npa_grid</td><td>Grille de jeu </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>npa_grid: Grille avec une colonne bloquée</dd></dl>
-<p><b>Variables :</b></p><ul>
-<li>i_nb_rows : Nombre de lignes de la grille</li>
-<li>i_nb_cols : Nombre de colonnes de la grille</li>
-<li>i_col : Indice de colonne <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">A faire:</a></b></dt><dd><p class="startdd">Trouver comment gérer la disparition du jeton ajouté par le bonus </p>
-<p class="enddd">Comment choisir la colonne à bloquer ?</p>
-</dd></dl>
-</li>
-</ul>
+<dl class="section return"><dt>Renvoie</dt><dd>npa_grid : Grille retournée </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">A faire:</a></b></dt><dd>Descendre les pions</dd></dl>
 
 </div>
 </div>

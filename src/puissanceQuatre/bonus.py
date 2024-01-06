@@ -138,3 +138,17 @@ def p4b_use_min_max(npa_grid: np.array) -> np.array:
     ps4.pq_ajout_piece(npa_grid, i_col, 1)
     # On retourne la grille
     return npa_grid
+
+
+def p4b_flip_grid(npa_grid: np.array) -> np.array:
+    """! Bonus permettant de retourner la grille
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille de jeu
+    @return npa_grid : Grille retournée
+    @todo Descendre les pions
+    """
+    # On retourne la grille
+    np.flip(npa_grid, 0)
+
+    return npa_grid
