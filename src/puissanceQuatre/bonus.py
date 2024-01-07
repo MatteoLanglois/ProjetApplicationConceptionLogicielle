@@ -152,3 +152,14 @@ def p4b_flip_grid(npa_grid: np.array) -> np.array:
     np.flip(npa_grid, 0)
 
     return npa_grid
+
+
+def p4b_no_bonus(npa_grid: np.array) -> np.array:
+    """! Bonus permettant de ne pas jouer de bonus
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille de jeu
+    @return npa_grid : Grille retournée
+    """
+    # On retourne la grille
+    return npa_grid
