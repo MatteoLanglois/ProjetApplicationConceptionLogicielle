@@ -43,6 +43,8 @@ def vm_init() -> tk.Tk:
     TK_ROOT = tk.Tk()
     # Changement du titre de la fenêtre principale
     TK_ROOT.title("Puissance 4")
+    # Importation du logo
+    TK_ROOT.iconbitmap("res/LogoP4++.ico")
     # Renvoie de la fenêtre créée
     return TK_ROOT
 
