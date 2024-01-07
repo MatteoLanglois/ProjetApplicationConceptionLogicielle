@@ -45,6 +45,8 @@ def vm_init() -> tk.Tk:
     TK_ROOT.title("Puissance 4")
     # Importation du logo
     TK_ROOT.iconbitmap("res/LogoP4++.ico")
+    # Désactive le redimensionnement de la fenêtre
+    TK_ROOT.resizable(width=False, height=False)
     # Renvoie de la fenêtre créée
     return TK_ROOT
 
