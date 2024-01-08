@@ -439,7 +439,7 @@ def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
         # On incrémente le compteur de ligne
         i_boucle_ligne += 1
     # On retourne le résultat de la négation du booléen
-    return b_tableau_plein or b_bonus_utilise
+    return b_tableau_plein and b_bonus_utilise
 
 
 def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
