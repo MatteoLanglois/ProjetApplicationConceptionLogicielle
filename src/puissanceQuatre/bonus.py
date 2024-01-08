@@ -18,6 +18,19 @@ Ce programme utilise les modules externes suivants :
 """
 import numpy as np
 from src.puissanceQuatre import puissanceQuatre as ps4
+from src.puissanceQuatre import grid as gr
+from src.utils import bonus_utils as bu
+
+
+def p4b_no_bonus(npa_grid: np.array) -> np.array:
+    """! Bonus permettant de ne pas jouer de bonus
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille de jeu
+    @return npa_grid : Grille retournée
+    """
+    # On retourne la grille
+    return npa_grid
 
 
 def p4b_invert_grid(npa_grid: np.array) -> np.array:
@@ -146,20 +159,46 @@ def p4b_flip_grid(npa_grid: np.array) -> np.array:
     @pre npa_grid initialisé
     @param npa_grid: Grille de jeu
     @return npa_grid : Grille retournée
-    @todo Descendre les pions
     """
     # On retourne la grille
     np.flip(npa_grid, 0)
-
+    # On applique la gravité
+    npa_grid = gr.pq_apply_gravity(npa_grid)
+    # On retourne la grille
     return npa_grid
 
 
-def p4b_no_bonus(npa_grid: np.array) -> np.array:
-    """! Bonus permettant de ne pas jouer de bonus
+def p4b_random_placement(npa_grid: np.array) -> np.array:
+    """! Bonus permettant de placer un jeton aléatoirement
 
     @pre npa_grid initialisé
     @param npa_grid: Grille de jeu
     @return npa_grid : Grille retournée
     """
+    # On récupère le nombre de colonnes
+    i_nb_columns = npa_grid.shape[1]
+    # On récupère une colonne aléatoire
+    i_col = np.random.randint(0, i_nb_columns)
+    # On place le jeton
+    ps4.pq_ajout_piece(npa_grid, i_col, 1)
+    # On retourne la grille
+    return npa_grid
+
+
+def p4b_random_bonus(npa_grid: np.array) -> np.array:
+    """! Bonus permettant de choisir un bonus aléatoirement
+
+    @pre npa_grid initialisé
+    @param npa_grid: Grille de jeu
+    @return npa_grid : Grille retournée
+    """
+    # On récupère les bonus :
+    ts_bonus = bu.bu_get_bonuses()
+    # On récupère un bonus aléatoire
+    s_bonus = ts_bonus[np.random.randint(0, len(ts_bonus))]
+    # On récupère la fonction du bonus
+    f_bonus = getattr(bu, s_bonus[1])
+    # On applique le bonus
+    npa_grid = f_bonus(npa_grid)
     # On retourne la grille
     return npa_grid

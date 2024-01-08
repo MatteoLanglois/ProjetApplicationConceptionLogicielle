@@ -95,7 +95,6 @@ def cpj_init(tk_win_root: tk.Tk):
     B_BONUS_USED = False
     # On récupère le Bonus choisit
     S_BONUS = ctrl_pb.cpb_get_chosen_bonus()
-    print(S_BONUS)
 
     # Initialisation de la liste pour revenir en arrière
     T_UNDO_REDO = []
@@ -212,7 +211,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 
     @todo A finir
     """
-    global I_NB_JETONS, NPA_GRID, T_UNDO_REDO
+    global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.vpj_get_grid_cell(event.x, event.y)
     # Initialisation d'un booléen permettant de savoir si le joueur a gagné, à
@@ -223,7 +222,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     b_joueur_joue = False
 
     # Si la partie n'est pas finie
-    if not ps4.pq_partie_finie(NPA_GRID, False):
+    if not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED):
         # Si on peut poser un pion dans cette colonne
         if ps4.pq_verif_colonne(i_grid_x, NPA_GRID):
             # On pose le jeton et on récupère les coordonnées de là où il a été
@@ -247,7 +246,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
         # Si le joueur n'a pas gagné, qu'il a joué et que la partie n'est pas
         # finie
         if (not b_joueur_gagne and b_joueur_joue
-                and not ps4.pq_partie_finie(NPA_GRID, False)):
+                and not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED)):
             # Faire jouer le bot
             cpj_bot_play(tkf_page_jeu)
     # Sinon
@@ -339,6 +338,7 @@ def cpj_update_grid():
     * i_boucle_col : Colonne de la grille de jeu
     """
     global I_NB_ROWS, I_NB_COLS, NPA_GRID
+    gr.pq_print_grille(NPA_GRID)
     # Dessiner la grille pour la reset
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
     # Pour chaque ligne de la grille
