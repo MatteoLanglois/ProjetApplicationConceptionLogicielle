@@ -192,28 +192,48 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
 
     @return True si le joueur a gagné, False sinon
-    @todo Commenter
     """
-    i_nb_colonnes = np.shape(npa_grille)[1]
+    # On récupère la taille de la grille
+    _, i_nb_colonnes = np.shape(npa_grille)
 
+    # On calcule le premier emplacement possible pour la combinaison de
+    # victoire dans la ligne
     i_debut = i_colonne - i_nb_victoire + 1 \
         if i_colonne - i_nb_victoire + 1 >= 0 else 0
+    # On calcule le dernier emplacement possible pour la combinaison de
+    # victoire dans la ligne
     i_fin = i_colonne + i_nb_victoire - 1 \
         if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
+    # Pour chaque emplacement possible pour la combinaison de victoire dans la
+    # ligne
     for i in range(i_debut, i_fin):
+        # Si le jeton est celui du joueur
         if npa_grille[i_ligne][i] == i_joueur:
+            # On initialise le compteur à 1
             i_compteur = 1
+            # On initialise le compteur de boucle à 1
             i_boucle = 1
+            # On initialise le booléen de suite à vrai
             b_suite = True
+            # Tant qu'on n'a pas atteint le nombre de jetons nécessaire pour
+            # gagner et qu'on est dans la grille et qu'on a une suite
             while (i_boucle < i_nb_victoire and i + i_boucle < i_nb_colonnes
                    and b_suite):
+                # Si le jeton est celui du joueur
                 if npa_grille[i_ligne][i + i_boucle] == i_joueur:
+                    # On incrémente le compteur
                     i_compteur += 1
+                # Sinon
                 else:
+                    # On arrête la suite
                     b_suite = False
+                # On incrémente le compteur de boucle
                 i_boucle += 1
+            # Si le compteur est supérieur ou égal au nombre de jetons
             if i_compteur >= i_nb_victoire:
+                # On retourne vrai
                 return True
+    # On retourne faux
     return False
 
 
@@ -237,7 +257,6 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_joueur: Le joueur qui a joué
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
-    @todo Commenter
     """
     # Initialisation du booléen de victoire à faux
     b_victoire = False
@@ -245,11 +264,17 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     i_nb_lignes = npa_grille.shape[0]
     # Si le nombre de lignes restantes est suffisant pour gagner
     if i_nb_lignes >= (i_nb_victoire + i_ligne):
+        # On initialise le compteur à 1
         i_compteur = 1
+        # Tant qu'on n'a pas atteint le nombre de jetons nécessaire pour
+        # gagner et qu'on est dans la grille
         while (i_compteur < i_nb_victoire) and (
                 npa_grille[i_ligne + i_compteur][i_colonne] == i_joueur):
+            # On incrémente le compteur
             i_compteur += 1
+        # On vérifie si le compteur est supérieur ou égal au nombre de jetons
         b_victoire = i_compteur >= i_nb_victoire
+    # On retourne le booléen de victoire
     return b_victoire
 
 
@@ -273,32 +298,59 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     @param i_joueur: Le joueur qui a joué
     @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
     @return True si le joueur i_joueur a gagné, False sinon
-    @todo Commenter
     """
+    # Récupération de la taille de la grille
     i_nb_lignes, i_nb_colonnes = npa_grille.shape
+    # On calcule le premier emplacement possible pour la combinaison de
+    # victoire dans la diagonale de en haut à gauche vers en bas à droite
     i_haut_ligne = i_ligne - i_nb_victoire + 1 \
         if i_ligne - i_nb_victoire + 1 >= 0 else 0
+    # On calcule le dernier emplacement possible pour la combinaison de
+    # victoire dans la diagonale de en haut à gauche vers en bas à droite
     i_bas_ligne = i_ligne + i_nb_victoire - 1 \
         if i_ligne + i_nb_victoire - 1 < i_nb_lignes else i_nb_lignes - 1
+    # On calcule le premier emplacement possible pour la combinaison de
+    # victoire dans la diagonale de en haut à droite vers en bas à gauche
     i_gauche_colonne = i_colonne - i_nb_victoire + 1 \
         if i_colonne - i_nb_victoire + 1 >= 0 else 0
+    # On calcule le dernier emplacement possible pour la combinaison de
+    # victoire dans la diagonale de en haut à droite vers en bas à gauche
     i_droite_colonne = i_colonne + i_nb_victoire - 1 \
         if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
+    # Pour chaque emplacement possible pour la combinaison de victoire dans la
+    # diagonale de en haut à gauche vers en bas à droite
     for i in range(i_haut_ligne, i_bas_ligne):
+        # Pour chaque emplacement possible pour la combinaison de victoire dans
+        # la diagonale de en haut à gauche vers en bas à droite
         for j in range(i_gauche_colonne, i_droite_colonne):
+            # Si le jeton est celui du joueur
             if npa_grille[i][j] == i_joueur:
+                # On initialise le compteur à 1
                 i_compteur = 1
+                # On initialise le compteur de boucle à 1
                 i_boucle = 1
+                # On initialise le booléen de suite à vrai
                 b_suite = True
+                # Tant qu'on n'a pas atteint le nombre de jetons nécessaire
+                # pour gagner et qu'on est dans la grille et qu'on a une suite
                 while (i_boucle < i_nb_victoire and i + i_boucle < i_nb_lignes
                        and j + i_boucle < i_nb_colonnes and b_suite):
+                    # Si le jeton est celui du joueur
                     if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
+                        # On incrémente le compteur
                         i_compteur += 1
+                    # Sinon
                     else:
+                        # On arrête la suite
                         b_suite = False
+                    # On incrémente le compteur de boucle
                     i_boucle += 1
+                # Si le compteur est supérieur ou égal au nombre de jetons
                 if i_compteur >= i_nb_victoire:
+                    # On retourne vrai
                     return True
+    # On retourne faux
+    return False
 
 
 def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
@@ -307,7 +359,9 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     @param npa_grille: La grille du puissance 4
     @param t_undo_redo: La liste contenant les grilles pour l'undo et le redo
     @return La grille du puissance 4 après l'undo
-    @todo Commenter
+
+    **Variables :**
+    * npa : np.array, la grille du puissance 4 au coup précédent
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if t_undo_redo:
@@ -327,6 +381,9 @@ def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
     @param npa_grille: La grille du puissance 4
     @param t_redo: La liste contenant les grilles pour l'undo et le redo
     @return La grille du puissance 4 après le redo
+
+    **Variables :**
+    * npa : np.array, la grille du puissance 4 au coup annulé
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if t_redo:
