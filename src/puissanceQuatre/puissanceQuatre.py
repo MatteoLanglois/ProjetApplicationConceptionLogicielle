@@ -364,14 +364,17 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     * npa : np.array, la grille du puissance 4 au coup précédent
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
-    if t_undo_redo:
+    if len(t_undo_redo) > 0:
         # On récupère la dernière grille
         if len(t_undo_redo) == 1:
             print("Recommence")
         else:
+            t_undo_redo.pop()
             npa = t_undo_redo.pop()
             return npa
     # On retourne la grille
+    else:
+        print("Impossible")
     return npa_grille
 
 
