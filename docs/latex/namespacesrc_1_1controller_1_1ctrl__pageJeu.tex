@@ -22,8 +22,8 @@ def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a1bb30ed375d988
 \begin{DoxyCompactList}\small\item\em Quitte la partie. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}{cpj\+\_\+play}} (tk.\+Event event, tk.\+Frame tkf\+\_\+page\+\_\+jeu)
 \begin{DoxyCompactList}\small\item\em Joue un coup dans la grille de jeu. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a17f60c0a267571ae9b534390e92bfa23}{cpj\+\_\+use\+\_\+bonus}} ()
-\begin{DoxyCompactList}\small\item\em Utilise un bonus. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a2cb6e3e3f71344d368f0c2abf858cb68}{cpj\+\_\+use\+\_\+bonus}} (tk.\+Frame tkf\+\_\+page\+\_\+jeu)
+\begin{DoxyCompactList}\small\item\em Utilise un bonus puis met à jour la grille de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc32463683be9c6da658860d411}{cpj\+\_\+bot\+\_\+play}} (tk.\+Frame tkf\+\_\+page\+\_\+jeu)
 \begin{DoxyCompactList}\small\item\em Fait jouer le bot. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}{cpj\+\_\+update\+\_\+grid}} ()
@@ -99,23 +99,26 @@ grille de jeu dessinée
 
 Affiche la page de jeu. 
 
-\begin{DoxyVerb}   @pre tk_root initialisé
-   @post page de jeu affichée
-
-   **Variables :**
-   * TK_ROOT : Fenêtre principale
-   * ST_COLOR_JOUEUR : Couleur des jetons du joueur
-   * ST_COLOR_BOT : Couleur des jetons du bot
-   * I_NB_ROWS : Nombre de lignes de la grille de jeu
-   * I_NB_COLS : Nombre de colonnes de la grille de jeu
-   * NPA_GRID : Grille de jeu
-   * T_UNDO_REDO : Liste des coups joués
-   * T_REDO : Liste des coups annulés
-   * I_DIFFICULTY : Difficulté du bot
-   * I_NB_JETONS : Nombre de jetons à aligner pour gagner
-   * st_color_grid : Couleur de la grille de jeu
-\end{DoxyVerb}
- \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}} 
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+page de jeu affichée
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item TK\+\_\+\+ROOT \+: Fenêtre principale
+\item ST\+\_\+\+COLOR\+\_\+\+JOUEUR \+: Couleur des jetons du joueur
+\item ST\+\_\+\+COLOR\+\_\+\+BOT \+: Couleur des jetons du bot
+\item I\+\_\+\+NB\+\_\+\+ROWS \+: Nombre de lignes de la grille de jeu
+\item I\+\_\+\+NB\+\_\+\+COLS \+: Nombre de colonnes de la grille de jeu
+\item NPA\+\_\+\+GRID \+: Grille de jeu
+\item T\+\_\+\+UNDO\+\_\+\+REDO \+: Liste des coups joués
+\item T\+\_\+\+REDO \+: Liste des coups annulés
+\item I\+\_\+\+DIFFICULTY \+: Difficulté du bot
+\item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
+\item st\+\_\+color\+\_\+grid \+: Couleur de la grille de jeu 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a40404805f413c0c4832002ab40bb935f}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_play@{cpj\_play}}
 \index{cpj\_play@{cpj\_play}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_play()}{cpj\_play()}}
@@ -233,19 +236,49 @@ L\textquotesingle{}undo ne fonctionne pas\end{DoxyRefDesc}
 
 Réinitialise la grille de jeu. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000006}{A faire}}]Finir docstring\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a17f60c0a267571ae9b534390e92bfa23}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a17f60c0a267571ae9b534390e92bfa23}} 
+\begin{DoxyPrecond}{Précondition}
+NPA\+\_\+\+GRID initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Grille de jeu mise à jour
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item I\+\_\+\+NB\+\_\+\+ROWS \+: Nombre de lignes de la grille de jeu
+\item I\+\_\+\+NB\+\_\+\+COLS \+: Nombre de colonnes de la grille de jeu
+\item NPA\+\_\+\+GRID \+: Grille de jeu
+\item i\+\_\+boucle\+\_\+row \+: Ligne de la grille de jeu
+\item i\+\_\+boucle\+\_\+col \+: Colonne de la grille de jeu 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a2cb6e3e3f71344d368f0c2abf858cb68}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a2cb6e3e3f71344d368f0c2abf858cb68}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_use\_bonus@{cpj\_use\_bonus}}
 \index{cpj\_use\_bonus@{cpj\_use\_bonus}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_use\_bonus()}{cpj\_use\_bonus()}}
-{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+use\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+use\+\_\+bonus (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+page\+\_\+jeu }\end{DoxyParamCaption})}
 
 
 
-Utilise un bonus. 
+Utilise un bonus puis met à jour la grille de jeu. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000004}{A faire}}]Finir docstring 
+\begin{DoxyPrecond}{Précondition}
+S\+\_\+\+BONUS est un bonus 
 
-Vérifier si le bonus a entraîné une victoire\end{DoxyRefDesc}
+NPA\+\_\+\+GRID est une grille de jeu 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tkf\+\_\+page\+\_\+jeu} & \+: Frame de la page de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Bonus utilisé si B\+\_\+\+BONUS\+\_\+\+USED est faux
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item S\+\_\+\+BONUS \+: Bonus sélectionné
+\item NPA\+\_\+\+GRID \+: Grille de jeu
+\item B\+\_\+\+BONUS\+\_\+\+USED \+: Booléen indiquant si le bonus a été utilisé
+\item m\+\_\+module \+: Module du bonus
+\item f\+\_\+bonus \+: Fonction du bonus \begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000004}{A faire}}]Vérifier si le bonus a entraîné une victoire\end{DoxyRefDesc}
+
+\end{DoxyItemize}

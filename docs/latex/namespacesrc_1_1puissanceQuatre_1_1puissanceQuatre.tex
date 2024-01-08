@@ -105,7 +105,7 @@ Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000012}{A faire}}]Gérer le bonus\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000008}{A faire}}]Gérer le bonus\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ae905af98dd54e79d8be7e67b59955437}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_ae905af98dd54e79d8be7e67b59955437}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_minmax@{pq\_minmax}}
 \index{pq\_minmax@{pq\_minmax}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
@@ -117,7 +117,7 @@ Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en
 Méthode implémentant l\textquotesingle{}algorithme minmax. 
 
 \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000008}{A faire}}]Optimiser 
+\item[\mbox{\hyperlink{todo__todo000007}{A faire}}]Optimiser 
 
 Commenter\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a259daf90f3409ef02cf8a7ddd2}} 
@@ -176,9 +176,12 @@ Méthode permettant de revenir en avant dans le jeu.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La grille du puissance 4 après le redo 
+La grille du puissance 4 après le redo
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}} 
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item npa \+: np.\+array, la grille du puissance 4 au coup annulé 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_undo@{pq\_undo}}
 \index{pq\_undo@{pq\_undo}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_undo()}{pq\_undo()}}
@@ -196,11 +199,12 @@ Méthode permettant de revenir en arrière dans le jeu.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La grille du puissance 4 après l\textquotesingle{}undo 
+La grille du puissance 4 après l\textquotesingle{}undo
 \end{DoxyReturn}
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000011}{A faire}}]Commenter\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}} 
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item npa \+: np.\+array, la grille du puissance 4 au coup précédent 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_verif\_colonne@{pq\_verif\_colonne}}
 \index{pq\_verif\_colonne@{pq\_verif\_colonne}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_verif\_colonne()}{pq\_verif\_colonne()}}
@@ -288,8 +292,6 @@ Verification de la victoire sur une colonne.
 \begin{DoxyReturn}{Renvoie}
 True si le joueur i\+\_\+joueur a gagné, False sinon 
 \end{DoxyReturn}
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000009}{A faire}}]Commenter\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a2f76c9e9fd0ced658f382d854abdefea}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a2f76c9e9fd0ced658f382d854abdefea}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_victoire\_diago@{pq\_victoire\_diago}}
 \index{pq\_victoire\_diago@{pq\_victoire\_diago}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
@@ -330,8 +332,6 @@ Verification de la victoire sur les diagonales.
 \begin{DoxyReturn}{Renvoie}
 True si le joueur i\+\_\+joueur a gagné, False sinon 
 \end{DoxyReturn}
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000010}{A faire}}]Commenter\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_aa13c5a20d8aa478adda10bc609f1fc1b}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_aa13c5a20d8aa478adda10bc609f1fc1b}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_victoire\_ligne@{pq\_victoire\_ligne}}
 \index{pq\_victoire\_ligne@{pq\_victoire\_ligne}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
@@ -367,6 +367,5 @@ Verification de la victoire sur la ligne.
 @param i_nb_victoire: Le nombre de jetons nécessaire pour la victoire
 
 @return True si le joueur a gagné, False sinon
-@todo Commenter
 \end{DoxyVerb}
  

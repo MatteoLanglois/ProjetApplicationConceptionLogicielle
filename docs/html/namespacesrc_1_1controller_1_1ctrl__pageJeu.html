@@ -99,9 +99,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a40404805f413c0c4832002ab40bb935f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a40404805f413c0c4832002ab40bb935f">cpj_play</a> (tk.Event event, tk.Frame tkf_page_jeu)</td></tr>
 <tr class="memdesc:a40404805f413c0c4832002ab40bb935f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joue un coup dans la grille de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a40404805f413c0c4832002ab40bb935f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a40404805f413c0c4832002ab40bb935f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f60c0a267571ae9b534390e92bfa23"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a17f60c0a267571ae9b534390e92bfa23">cpj_use_bonus</a> ()</td></tr>
-<tr class="memdesc:a17f60c0a267571ae9b534390e92bfa23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilise un bonus.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a17f60c0a267571ae9b534390e92bfa23">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a17f60c0a267571ae9b534390e92bfa23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb6e3e3f71344d368f0c2abf858cb68"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a2cb6e3e3f71344d368f0c2abf858cb68">cpj_use_bonus</a> (tk.Frame tkf_page_jeu)</td></tr>
+<tr class="memdesc:a2cb6e3e3f71344d368f0c2abf858cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilise un bonus puis met à jour la grille de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a2cb6e3e3f71344d368f0c2abf858cb68">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2cb6e3e3f71344d368f0c2abf858cb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47c3cc32463683be9c6da658860d411"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ae47c3cc32463683be9c6da658860d411">cpj_bot_play</a> (tk.Frame tkf_page_jeu)</td></tr>
 <tr class="memdesc:ae47c3cc32463683be9c6da658860d411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait jouer le bot.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ae47c3cc32463683be9c6da658860d411">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae47c3cc32463683be9c6da658860d411"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,22 +205,22 @@ i_nb_columns &gt; 0 </dd></dl>
 </div><div class="memdoc">
 
 <p>Affiche la page de jeu. </p>
-<pre class="fragment">   @pre tk_root initialisé
-   @post page de jeu affichée
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>page de jeu affichée</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>TK_ROOT : Fenêtre principale</li>
+<li>ST_COLOR_JOUEUR : Couleur des jetons du joueur</li>
+<li>ST_COLOR_BOT : Couleur des jetons du bot</li>
+<li>I_NB_ROWS : Nombre de lignes de la grille de jeu</li>
+<li>I_NB_COLS : Nombre de colonnes de la grille de jeu</li>
+<li>NPA_GRID : Grille de jeu</li>
+<li>T_UNDO_REDO : Liste des coups joués</li>
+<li>T_REDO : Liste des coups annulés</li>
+<li>I_DIFFICULTY : Difficulté du bot</li>
+<li>I_NB_JETONS : Nombre de jetons à aligner pour gagner</li>
+<li>st_color_grid : Couleur de la grille de jeu </li>
+</ul>
 
-   **Variables :**
-   * TK_ROOT : Fenêtre principale
-   * ST_COLOR_JOUEUR : Couleur des jetons du joueur
-   * ST_COLOR_BOT : Couleur des jetons du bot
-   * I_NB_ROWS : Nombre de lignes de la grille de jeu
-   * I_NB_COLS : Nombre de colonnes de la grille de jeu
-   * NPA_GRID : Grille de jeu
-   * T_UNDO_REDO : Liste des coups joués
-   * T_REDO : Liste des coups annulés
-   * I_DIFFICULTY : Difficulté du bot
-   * I_NB_JETONS : Nombre de jetons à aligner pour gagner
-   * st_color_grid : Couleur de la grille de jeu
-</pre> 
 </div>
 </div>
 <a id="a40404805f413c0c4832002ab40bb935f"></a>
@@ -404,12 +404,20 @@ i_joueur &gt;= 1 et i_joueur ≤ 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise la grille de jeu. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">A faire:</a></b></dt><dd>Finir docstring</dd></dl>
+<dl class="section pre"><dt>Précondition</dt><dd>NPA_GRID initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Grille de jeu mise à jour</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>I_NB_ROWS : Nombre de lignes de la grille de jeu</li>
+<li>I_NB_COLS : Nombre de colonnes de la grille de jeu</li>
+<li>NPA_GRID : Grille de jeu</li>
+<li>i_boucle_row : Ligne de la grille de jeu</li>
+<li>i_boucle_col : Colonne de la grille de jeu </li>
+</ul>
 
 </div>
 </div>
-<a id="a17f60c0a267571ae9b534390e92bfa23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17f60c0a267571ae9b534390e92bfa23">&#9670;&nbsp;</a></span>cpj_use_bonus()</h2>
+<a id="a2cb6e3e3f71344d368f0c2abf858cb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb6e3e3f71344d368f0c2abf858cb68">&#9670;&nbsp;</a></span>cpj_use_bonus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,16 +425,32 @@ i_joueur &gt;= 1 et i_joueur ≤ 2 </dd></dl>
         <tr>
           <td class="memname">def src.controller.ctrl_pageJeu.cpj_use_bonus </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">tk.Frame&#160;</td>
+          <td class="paramname"><em>tkf_page_jeu</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Utilise un bonus. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">A faire:</a></b></dt><dd><p class="startdd">Finir docstring </p>
-<p class="enddd">Vérifier si le bonus a entraîné une victoire</p>
-</dd></dl>
+<p>Utilise un bonus puis met à jour la grille de jeu. </p>
+<dl class="section pre"><dt>Précondition</dt><dd>S_BONUS est un bonus </dd>
+<dd>
+NPA_GRID est une grille de jeu </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tkf_page_jeu</td><td>: Frame de la page de jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Bonus utilisé si B_BONUS_USED est faux</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>S_BONUS : Bonus sélectionné</li>
+<li>NPA_GRID : Grille de jeu</li>
+<li>B_BONUS_USED : Booléen indiquant si le bonus a été utilisé</li>
+<li>m_module : Module du bonus</li>
+<li>f_bonus : Fonction du bonus <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">A faire:</a></b></dt><dd>Vérifier si le bonus a entraîné une victoire</dd></dl>
+</li>
+</ul>
 
 </div>
 </div>

@@ -27,7 +27,7 @@ var searchData=
   ['cpj_5fredo_32',['cpj_redo',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a46555fa951b27730d85476196e84c594',1,'src::controller::ctrl_pageJeu']]],
   ['cpj_5fundo_33',['cpj_undo',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ae21bd21e863bcfecc6295c0432e8ef1d',1,'src::controller::ctrl_pageJeu']]],
   ['cpj_5fupdate_5fgrid_34',['cpj_update_grid',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a81868138c404cf6214153a7fa1aac7e5',1,'src::controller::ctrl_pageJeu']]],
-  ['cpj_5fuse_5fbonus_35',['cpj_use_bonus',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a17f60c0a267571ae9b534390e92bfa23',1,'src::controller::ctrl_pageJeu']]],
+  ['cpj_5fuse_5fbonus_35',['cpj_use_bonus',['../namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a2cb6e3e3f71344d368f0c2abf858cb68',1,'src::controller::ctrl_pageJeu']]],
   ['cpp_5faskcolor_36',['cpp_askcolor',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html#afae422de112c48199bb975538758d2b4',1,'src::controller::ctrl_pageParametres']]],
   ['cpp_5fcustom_5fload_37',['cpp_custom_load',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html#af15eef5d46c59b6bc40d88b82c22d0ed',1,'src::controller::ctrl_pageParametres']]],
   ['cpp_5fcustom_5freset_38',['cpp_custom_reset',['../namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a150237cdc549e2c3cc5e9c1c0c7bfda3',1,'src::controller::ctrl_pageParametres']]],

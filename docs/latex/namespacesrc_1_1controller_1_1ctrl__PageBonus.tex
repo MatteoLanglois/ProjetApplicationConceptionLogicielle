@@ -1,13 +1,127 @@
-\hypertarget{namespacesrc_1_1controller_1_1ctrl__pageBonus}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+controller.\+ctrl\+\_\+page\+Bonus}
-\label{namespacesrc_1_1controller_1_1ctrl__pageBonus}\index{src.controller.ctrl\_pageBonus@{src.controller.ctrl\_pageBonus}}
+\hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+controller.\+ctrl\+\_\+\+Page\+Bonus}
+\label{namespacesrc_1_1controller_1_1ctrl__PageBonus}\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
 
 
 Un module qui gère la page de bonus.  
 
 
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a7b29e9bee741f5cd88b82426c2a3e12e}{cpb\+\_\+init}} (tk.\+Tk tk\+\_\+win\+\_\+root)
+\begin{DoxyCompactList}\small\item\em Initialise la page de choix du bonus. \end{DoxyCompactList}\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_adada698a3b6ae1acee5ba7c424f3f30d}{cpb\+\_\+get\+\_\+bonuses}} ()
+\begin{DoxyCompactList}\small\item\em Récupère les bonus disponibles. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a37db4dbfdab85bd08b5117b3e0eb1b97}{cpb\+\_\+valider\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Récupère les bonus sélectionnés par le joueur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a09463a6299c903d6078dd4c2b57cfcda}{cpb\+\_\+show\+\_\+bonus\+\_\+description}} (str s\+\_\+bonus)
+\begin{DoxyCompactList}\small\item\em Affiche la description du bonus sélectionné \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}{cpb\+\_\+get\+\_\+chosen\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du bonus choisi par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 Un module qui gère la page de bonus. 
 
 Ce module contient les fonctions permettant de gérer la page de choix du bonus. 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_adada698a3b6ae1acee5ba7c424f3f30d}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_adada698a3b6ae1acee5ba7c424f3f30d}} 
+\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_get\_bonuses@{cpb\_get\_bonuses}}
+\index{cpb\_get\_bonuses@{cpb\_get\_bonuses}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
+\doxysubsubsection{\texorpdfstring{cpb\_get\_bonuses()}{cpb\_get\_bonuses()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} src.\+controller.\+ctrl\+\_\+\+Page\+Bonus.\+cpb\+\_\+get\+\_\+bonuses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère les bonus disponibles. 
+
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}} 
+\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_get\_chosen\_bonus@{cpb\_get\_chosen\_bonus}}
+\index{cpb\_get\_chosen\_bonus@{cpb\_get\_chosen\_bonus}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
+\doxysubsubsection{\texorpdfstring{cpb\_get\_chosen\_bonus()}{cpb\_get\_chosen\_bonus()}}
+{\footnotesize\ttfamily  str src.\+controller.\+ctrl\+\_\+\+Page\+Bonus.\+cpb\+\_\+get\+\_\+chosen\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accesseur du bonus choisi par l\textquotesingle{}utilisateur. 
+
+\begin{DoxyPrecond}{Précondition}
+S\+\_\+\+BONUS non nul 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Renvoie}
+\+: Bonus choisi par l\textquotesingle{}utilisateur
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item S\+\_\+\+BONUS \+: nom du bonus sélectionné 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_a7b29e9bee741f5cd88b82426c2a3e12e}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_a7b29e9bee741f5cd88b82426c2a3e12e}} 
+\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_init@{cpb\_init}}
+\index{cpb\_init@{cpb\_init}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
+\doxysubsubsection{\texorpdfstring{cpb\_init()}{cpb\_init()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+\+Page\+Bonus.\+cpb\+\_\+init (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+win\+\_\+root }\end{DoxyParamCaption})}
+
+
+
+Initialise la page de choix du bonus. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+page de choix du bonus initialisée
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item NPA\+\_\+\+GRID \+: Grille de jeu
+\item TK\+\_\+\+ROOT \+: Fenêtre principale 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_a09463a6299c903d6078dd4c2b57cfcda}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_a09463a6299c903d6078dd4c2b57cfcda}} 
+\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_show\_bonus\_description@{cpb\_show\_bonus\_description}}
+\index{cpb\_show\_bonus\_description@{cpb\_show\_bonus\_description}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
+\doxysubsubsection{\texorpdfstring{cpb\_show\_bonus\_description()}{cpb\_show\_bonus\_description()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+\+Page\+Bonus.\+cpb\+\_\+show\+\_\+bonus\+\_\+description (\begin{DoxyParamCaption}\item[{str}]{s\+\_\+bonus }\end{DoxyParamCaption})}
+
+
+
+Affiche la description du bonus sélectionné 
+
+\begin{DoxyPrecond}{Précondition}
+s\+\_\+bonus non vide 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+bonus} & Nom du bonus \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Description du bonus affichée
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item s\+\_\+desc \+: Description du bonus 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_a37db4dbfdab85bd08b5117b3e0eb1b97}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_a37db4dbfdab85bd08b5117b3e0eb1b97}} 
+\index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_valider\_bonus@{cpb\_valider\_bonus}}
+\index{cpb\_valider\_bonus@{cpb\_valider\_bonus}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
+\doxysubsubsection{\texorpdfstring{cpb\_valider\_bonus()}{cpb\_valider\_bonus()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+\+Page\+Bonus.\+cpb\+\_\+valider\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère les bonus sélectionnés par le joueur. 
+
+\begin{DoxyPrecond}{Précondition}
+fenêtre de choix du bonus affichée 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Choix du bonus enregistré
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item S\+\_\+\+BONUS \+: Nom du bonus sélectionné
+\item TK\+\_\+\+ROOT \+: Fenêtre principale 
+\end{DoxyItemize}

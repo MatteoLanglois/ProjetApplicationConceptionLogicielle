@@ -87,11 +87,52 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a5b8192e1a86f93d2caf77550d37f9a62"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a5b8192e1a86f93d2caf77550d37f9a62">pq_print_grille</a> (np.array npa_grille)</td></tr>
 <tr class="memdesc:a5b8192e1a86f93d2caf77550d37f9a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille.  <a href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a5b8192e1a86f93d2caf77550d37f9a62">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5b8192e1a86f93d2caf77550d37f9a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea18179c00172ad478307e9a17a24d7"><td class="memItemLeft" align="right" valign="top">np.array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a9ea18179c00172ad478307e9a17a24d7">pq_apply_gravity</a> (np.array npa_grille)</td></tr>
+<tr class="memdesc:a9ea18179c00172ad478307e9a17a24d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille.  <a href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a9ea18179c00172ad478307e9a17a24d7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9ea18179c00172ad478307e9a17a24d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Ce module contient les fonctions relatives à la grille de jeu. </p>
 <p>Ce module contient les fonctions de gestion de la grille de jeu. Notamment l'initialisation de la grille, l'affichage de la grille et la réinitialisation de la grille. </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a9ea18179c00172ad478307e9a17a24d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea18179c00172ad478307e9a17a24d7">&#9670;&nbsp;</a></span>pq_apply_gravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> np.array src.puissanceQuatre.grid.pq_apply_gravity </td>
+          <td>(</td>
+          <td class="paramtype">np.array&#160;</td>
+          <td class="paramname"><em>npa_grille</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille. </p>
+<dl class="section pre"><dt>Précondition</dt><dd>npa_grille initialisé </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">npa_grille</td><td>La grille à modifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section post"><dt>Postcondition</dt><dd>npa_grille contient des 0 et des 1 ou 2 </dd>
+<dd>
+il n'y a pas de 0 sous un 1 ou un 2</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>i_nb_ligne : Nombre de lignes de la grille</li>
+<li>i_nb_colonne : Nombre de colonnes de la grille</li>
+<li>i_boucle_colonne : Compteur de boucle pour les colonnes de la grille</li>
+<li>i_boucle_ligne : Compteur de boucle pour les lignes de la grille</li>
+<li>i_boucle_ligne_2 : Compteur de boucle pour les lignes de la grille <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">A faire:</a></b></dt><dd>: Ecriture de la fonction</dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
 <a id="a81ed1760743ce62de2b07ed56f1f13af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81ed1760743ce62de2b07ed56f1f13af">&#9670;&nbsp;</a></span>pq_init_grille()</h2>
 
@@ -119,24 +160,19 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>L'initiateur de la grille. </p>
-<p><b>Variables :</b></p><ul>
-<li>npa_grille : np.array</li>
-</ul>
-<p><b>Préconditions :</b></p><ul>
-<li>i_max_ligne &gt; 1</li>
-<li>i_max_colonne &gt; 1</li>
-</ul>
-<p><b>Postconditions :</b></p><ul>
-<li>npa_grille initialisé</li>
-</ul>
+<dl class="section pre"><dt>Précondition</dt><dd>i_max_ligne &gt; 1 et i_max_colonne &gt; 1 </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">i_max_ligne</td><td>Le nombre de lignes de la grille </td></tr>
-    <tr><td class="paramname">i_max_colonne</td><td>Le nombre de colonnes de la grille</td></tr>
+    <tr><td class="paramname">i_max_colonne</td><td>Le nombre de colonnes de la grille </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>La grille créée </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>npa_grille initialisé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La grille créée</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>npa_grille : np.array </li>
+</ul>
 
 </div>
 </div>
@@ -197,18 +233,14 @@ Fonctions</h2></td></tr>
 <li>i_max_ligne : Entier</li>
 <li>i_max_colonne : Entier</li>
 </ul>
-<p><b>Préconditions :</b></p><ul>
-<li>npa_grille initialisé</li>
-</ul>
-<p><b>Postconditions :</b></p><ul>
-<li>npa_grille contient des 0.</li>
-</ul>
+<dl class="section pre"><dt>Précondition</dt><dd>npa_grille initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">npa_grille</td><td>La grille à réinitialiser</td></tr>
+    <tr><td class="paramname">npa_grille</td><td>La grille à réinitialiser </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section post"><dt>Postcondition</dt><dd>npa_grille contient des 0</dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La grille réinitialisée </dd></dl>
 
 </div>

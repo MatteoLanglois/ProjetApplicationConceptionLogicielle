@@ -11,7 +11,7 @@ Un module qui gère la page d\textquotesingle{}accueil du jeu.
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageAccueil_afef6b4681839e4cc8d8ea15b30ac5339}{cpa\+\_\+init}} (tk.\+Tk tk\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Initialise la page d\textquotesingle{}accueil. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageAccueil_aca3bacfe76883aedb26a35b0d0c1d202}{cpa\+\_\+play}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+frame)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lance une partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -44,3 +44,22 @@ tk\+\_\+root initialisé
 \doxysubsubsection{\texorpdfstring{cpa\_play()}{cpa\_play()}}
 {\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Accueil.\+cpa\+\_\+play (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+root,  }\item[{tk.\+Frame}]{tkf\+\_\+frame }\end{DoxyParamCaption})}
 
+
+
+Lance une partie. 
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+tkf\+\_\+frame initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+root} & Fenêtre principale \\
+\hline
+{\em tkf\+\_\+frame} & Frame de la page d\textquotesingle{}accueil \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Fenêtre de choix du bonus ouverte 
+\end{DoxyPostcond}

@@ -13,7 +13,9 @@ np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743
 np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9c75b8d9afc2678075985ab3420d61e0}{pq\+\_\+reset\+\_\+grille}} (np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Réinitialise la grille. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}{pq\+\_\+print\+\_\+grille}} (np.\+array npa\+\_\+grille)
-\begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}{pq\+\_\+apply\+\_\+gravity}} (np.\+array npa\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -22,7 +24,39 @@ Ce module contient les fonctions relatives à la grille de jeu.
 Ce module contient les fonctions de gestion de la grille de jeu. Notamment l\textquotesingle{}initialisation de la grille, l\textquotesingle{}affichage de la grille et la réinitialisation de la grille. 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}} 
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}} 
+\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_apply\_gravity@{pq\_apply\_gravity}}
+\index{pq\_apply\_gravity@{pq\_apply\_gravity}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
+\doxysubsubsection{\texorpdfstring{pq\_apply\_gravity()}{pq\_apply\_gravity()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+pq\+\_\+apply\+\_\+gravity (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille. 
+
+\begin{DoxyPrecond}{Précondition}
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & La grille à modifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+npa\+\_\+grille contient des 0 et des 1 ou 2 
+
+il n\textquotesingle{}y a pas de 0 sous un 1 ou un 2
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+nb\+\_\+ligne \+: Nombre de lignes de la grille
+\item i\+\_\+nb\+\_\+colonne \+: Nombre de colonnes de la grille
+\item i\+\_\+boucle\+\_\+colonne \+: Compteur de boucle pour les colonnes de la grille
+\item i\+\_\+boucle\+\_\+ligne \+: Compteur de boucle pour les lignes de la grille
+\item i\+\_\+boucle\+\_\+ligne\+\_\+2 \+: Compteur de boucle pour les lignes de la grille \begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000006}{A faire}}]\+: Ecriture de la fonction\end{DoxyRefDesc}
+
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}} 
 \index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_init\_grille@{pq\_init\_grille}}
 \index{pq\_init\_grille@{pq\_init\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
 \doxysubsubsection{\texorpdfstring{pq\_init\_grille()}{pq\_init\_grille()}}
@@ -32,33 +66,26 @@ Ce module contient les fonctions de gestion de la grille de jeu. Notamment l\tex
 
 L\textquotesingle{}initiateur de la grille. 
 
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille \+: np.\+array
-\end{DoxyItemize}
-
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item i\+\_\+max\+\_\+ligne $>$ 1
-\item i\+\_\+max\+\_\+colonne $>$ 1
-\end{DoxyItemize}
-
-{\bfseries{Postconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille initialisé
-\end{DoxyItemize}
-
+\begin{DoxyPrecond}{Précondition}
+i\+\_\+max\+\_\+ligne $>$ 1 et i\+\_\+max\+\_\+colonne $>$ 1 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em i\+\_\+max\+\_\+ligne} & Le nombre de lignes de la grille \\
 \hline
-{\em i\+\_\+max\+\_\+colonne} & Le nombre de colonnes de la grille\\
+{\em i\+\_\+max\+\_\+colonne} & Le nombre de colonnes de la grille \\
 \hline
 \end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+npa\+\_\+grille initialisé 
+\end{DoxyPostcond}
 \begin{DoxyReturn}{Renvoie}
-La grille créée 
+La grille créée
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}} 
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item npa\+\_\+grille \+: np.\+array 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}} 
 \index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_print\_grille@{pq\_print\_grille}}
 \index{pq\_print\_grille@{pq\_print\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
 \doxysubsubsection{\texorpdfstring{pq\_print\_grille()}{pq\_print\_grille()}}
@@ -101,21 +128,17 @@ Réinitialise la grille.
 \item i\+\_\+max\+\_\+colonne \+: Entier
 \end{DoxyItemize}
 
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille initialisé
-\end{DoxyItemize}
-
-{\bfseries{Postconditions \+:}}
-\begin{DoxyItemize}
-\item npa\+\_\+grille contient des 0.
-\end{DoxyItemize}
-
+\begin{DoxyPrecond}{Précondition}
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
-{\em npa\+\_\+grille} & La grille à réinitialiser\\
+{\em npa\+\_\+grille} & La grille à réinitialiser \\
 \hline
 \end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+npa\+\_\+grille contient des 0
+\end{DoxyPostcond}
 \begin{DoxyReturn}{Renvoie}
 La grille réinitialisée 
 \end{DoxyReturn}

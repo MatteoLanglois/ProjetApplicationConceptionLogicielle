@@ -24,20 +24,14 @@ import numpy as np
 def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     """! L'initiateur de la grille
 
-    **Variables :**
-    * npa_grille : np.array
-
-    **Préconditions :**
-    * i_max_ligne > 1
-    * i_max_colonne > 1
-
-    **Postconditions :**
-    * npa_grille initialisé
-
+    @pre i_max_ligne > 1 et i_max_colonne > 1
     @param i_max_ligne: Le nombre de lignes de la grille
     @param i_max_colonne: Le nombre de colonnes de la grille
-
+    @post npa_grille initialisé
     @return La grille créée
+
+    **Variables :**
+    * npa_grille : np.array
     """
     assert i_max_ligne > 1 and i_max_colonne > 1, \
         "La grille doit avoir au moins 2 lignes et 2 colonnes"
@@ -57,13 +51,9 @@ def pq_reset_grille(npa_grille: np.array) -> np.array:
     * i_max_ligne : Entier
     * i_max_colonne : Entier
 
-    **Préconditions :**
-    * npa_grille initialisé
-
-    **Postconditions :**
-    * npa_grille contient des 0.
-
+    @pre npa_grille initialisé
     @param npa_grille: La grille à réinitialiser
+    @post npa_grille contient des 0
 
     @return La grille réinitialisée
     """
@@ -117,3 +107,25 @@ def pq_print_grille(npa_grille: np.array):
                 print(f"|\033[00m{char_vide}\033[00m", end="")
         # Retourne à la ligne et affiche la barre de séparation des lignes
         print("|\n" + (2 * i_max_colonne + 1) * "-")
+
+
+def pq_apply_gravity(npa_grille: np.array) -> np.array:
+    """! Applique la gravité sur la grille, cela permet de faire tomber les
+    jetons dans la grille.
+
+    @pre npa_grille initialisé
+    @param npa_grille: La grille à modifier
+    @post npa_grille contient des 0 et des 1 ou 2
+    @post il n'y a pas de 0 sous un 1 ou un 2
+
+    **Variables :**
+    * i_nb_ligne : Nombre de lignes de la grille
+    * i_nb_colonne : Nombre de colonnes de la grille
+    * i_boucle_colonne : Compteur de boucle pour les colonnes de la grille
+    * i_boucle_ligne : Compteur de boucle pour les lignes de la grille
+    * i_boucle_ligne_2 : Compteur de boucle pour les lignes de la grille
+    @todo : Ecriture de la fonction
+    """
+    i_nb_ligne, i_nb_colonne = npa_grille.shape
+
+    return npa_grille

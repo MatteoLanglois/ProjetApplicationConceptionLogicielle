@@ -158,7 +158,6 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
 def cpj_undo():
     """! Annule le dernier coup
-    @todo Afficher le dernier coup annulé sur l'interface graphique
     @todo L'undo ne fonctionne pas
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
@@ -212,6 +211,8 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     @todo A finir
     """
     global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED
+    for i in T_UNDO_REDO:
+        gr.pq_print_grille(i)
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.vpj_get_grid_cell(event.x, event.y)
     # Initialisation d'un booléen permettant de savoir si le joueur a gagné, à
@@ -338,7 +339,6 @@ def cpj_update_grid():
     * i_boucle_col : Colonne de la grille de jeu
     """
     global I_NB_ROWS, I_NB_COLS, NPA_GRID
-    gr.pq_print_grille(NPA_GRID)
     # Dessiner la grille pour la reset
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
     # Pour chaque ligne de la grille
