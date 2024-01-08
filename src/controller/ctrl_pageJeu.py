@@ -158,7 +158,6 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
 def cpj_undo():
     """! Annule le dernier coup
-    @todo L'undo ne fonctionne pas
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Ajouter à la liste des coups annulés la grille actuelle
@@ -171,7 +170,6 @@ def cpj_undo():
 
 def cpj_redo():
     """! Refait le dernier coup
-    @todo Ne fonctionne pas
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Récupération de la grille dont le coup a été annulé
