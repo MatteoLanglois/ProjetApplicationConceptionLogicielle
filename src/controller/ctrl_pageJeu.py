@@ -162,7 +162,7 @@ def cpj_undo():
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Ajouter à la liste des coups annulés la grille actuelle
-    T_REDO.append(NPA_GRID)
+    T_REDO.append(NPA_GRID.copy())
     # Récupérer la précédente grille
     NPA_GRID = ps4.pq_undo(NPA_GRID.copy(), T_UNDO_REDO)
     # Mise à jour de la grille
@@ -171,11 +171,11 @@ def cpj_undo():
 
 def cpj_redo():
     """! Refait le dernier coup
-    @todo Vérifier que cela fonctionne bien
+    @todo Ne fonctionne pas
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Récupération de la grille dont le coup a été annulé
-    NPA_GRID = ps4.pq_redo(NPA_GRID, T_REDO)
+    NPA_GRID = ps4.pq_redo(NPA_GRID.copy(), T_REDO)
     # Mise à jour de la grille
     cpj_update_grid()
 
@@ -208,11 +208,11 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     * b_joueur_gagne : Booléen indiquant si le joueur a gagné
     * b_joueur_joue : Booléen indiquant si le joueur a joué
 
-    @todo A finir
+    @todo Vérifier que tout est bon
     """
-    global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED
-    for i in T_UNDO_REDO:
-        gr.pq_print_grille(i)
+    global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED, T_REDO
+    # On enregistre l'état actuel de la grille
+    T_UNDO_REDO.append(NPA_GRID.copy())
     # Affichage des coordonnées de la cellule sur laquelle on a cliquée
     i_grid_x, _ = view_pj.vpj_get_grid_cell(event.x, event.y)
     # Initialisation d'un booléen permettant de savoir si le joueur a gagné, à
@@ -233,8 +233,8 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
                                                     i_joueur=1)
             # Afficher le pion qui vient d'être posé
             cpj_put_coin(i_grid_x, i_grid_y, 1)
-            # Ajout à la liste des coups joués de la grille
-            T_UNDO_REDO.append(NPA_GRID)
+            # On réinitialise la liste des coups annulés
+            T_REDO = []
             # On indique que le joueur a joué
             b_joueur_joue = True
             # Si le joueur a gagné
@@ -304,7 +304,7 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     * i_grid_x : Colonne de la grille de jeu
     * i_grid_y : Ligne de la grille de jeu
 
-    @todo A finir
+    @todo Vérifier que tout est bon
     """
     global I_NB_JETONS, I_DIFFICULTY
     # On utilise l'algorithme min max pour choisir le prochain coup du bot

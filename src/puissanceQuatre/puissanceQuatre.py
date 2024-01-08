@@ -365,16 +365,11 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if len(t_undo_redo) > 0:
-        # On récupère la dernière grille
-        if len(t_undo_redo) == 1:
-            print("Recommence")
-        else:
-            t_undo_redo.pop()
-            npa = t_undo_redo.pop()
-            return npa
-    # On retourne la grille
+        npa = t_undo_redo.pop()
+        return npa
     else:
         print("Impossible")
+    # On retourne la grille
     return npa_grille
 
 
