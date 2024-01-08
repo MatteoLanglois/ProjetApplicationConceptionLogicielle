@@ -206,7 +206,7 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     * b_joueur_gagne : Booléen indiquant si le joueur a gagné
     * b_joueur_joue : Booléen indiquant si le joueur a joué
 
-    @todo Vérifier que tout est bon
+    @Ftodo Vérifier que tout est bon
     """
     global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED, T_REDO
     # On enregistre l'état actuel de la grille
@@ -288,6 +288,8 @@ def cpj_use_bonus(tkf_page_jeu: tk.Frame):
         view_pj.vpj_disable_bonus()
         # On fait jouer le bot.
         cpj_bot_play(tkf_page_jeu)
+        # On enregistre la grille actuelle dans la liste des coups joués
+        T_UNDO_REDO.append(NPA_GRID.copy())
 
 
 def cpj_bot_play(tkf_page_jeu: tk.Frame):
