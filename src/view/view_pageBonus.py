@@ -12,7 +12,7 @@ Ce programme utilise les modules externes suivants :
 - numpy
 - inspect
 
-@package src.view.view_PageBonus
+@package src.view.view_pageBonus
 @brief Ce module représente la vue de la page de choix du bonus.
 @details Ce module contient les fonctions permettant de gérer la vue de la page
 de choix du bonus.

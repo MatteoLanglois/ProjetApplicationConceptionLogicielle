@@ -12,7 +12,7 @@ Ce programme utilise les modules externes suivants :
 - numpy
 - inspect
 
-@package src.controller.ctrl_pageBonus
+@package src.controller.ctrl_PageBonus
 @brief Un module qui gère la page de bonus
 @details Ce module contient les fonctions permettant de gérer la page de choix
 du bonus.

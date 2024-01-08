@@ -257,11 +257,12 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
                              tkf_old_frame=tkf_page_jeu)
 
 
-def cpj_use_bonus():
+def cpj_use_bonus(tkf_page_jeu: tk.Frame):
     """! Utilise un bonus puis met à jour la grille de jeu
 
     @pre S_BONUS est un bonus
     @pre NPA_GRID est une grille de jeu
+    @param tkf_page_jeu : Frame de la page de jeu
     @post Bonus utilisé si B_BONUS_USED est faux
 
     **Variables :**
@@ -287,6 +288,8 @@ def cpj_use_bonus():
         cpj_update_grid()
         # On désactive le bouton du bonus
         view_pj.vpj_disable_bonus()
+        # On fait jouer le bot.
+        cpj_bot_play(tkf_page_jeu)
 
 
 def cpj_bot_play(tkf_page_jeu: tk.Frame):

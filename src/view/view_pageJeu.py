@@ -100,7 +100,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
 
     # Création d'un bouton pour jouer son bonus
     TKB_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
-                          command=lambda: ctrl_pj.cpj_use_bonus())
+                          command=lambda: ctrl_pj.cpj_use_bonus(TKF_PAGE_JEU))
     # Affichage du bouton
     TKB_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
 
