@@ -124,8 +124,14 @@ def pq_apply_gravity(npa_grille: np.array) -> np.array:
     * i_boucle_colonne : Compteur de boucle pour les colonnes de la grille
     * i_boucle_ligne : Compteur de boucle pour les lignes de la grille
     * i_boucle_ligne_2 : Compteur de boucle pour les lignes de la grille
-    @todo : Ecriture de la fonction
+
     """
     i_nb_ligne, i_nb_colonne = npa_grille.shape
-
+    for i in range(i_nb_colonne):
+        compt = 0
+        while npa_grille[i_nb_ligne-1][i] == 0 and compt < i_nb_ligne -1:
+            for j in range(i_nb_ligne-1,0, -1):
+                npa_grille[j][i] = npa_grille[j - 1][i]
+                npa_grille[j-1][i] = 0
+            compt += 1
     return npa_grille
