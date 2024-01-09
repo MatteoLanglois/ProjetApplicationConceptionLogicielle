@@ -22,6 +22,8 @@ la gestion du jeu.
 import numpy as np
 # Importation de la grille
 from src.puissanceQuatre import grid as gr
+# Importation des bonus
+from src.utils import bonus_utils as bu
 
 
 def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
@@ -88,58 +90,63 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
     return ti_coords
 
 
-def pq_minmax(iNextJoueur, npaGrilleCopy, i_nb_victoire, iColonne=0,
+def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iColonne=0,
               isFirst=False, tour=0) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
     @todo Optimiser
     @todo Commenter
     """
-    if tour > 5:
-        return 0, 0
-    if not isFirst:
-        if pq_verif_colonne(iColonne, npaGrilleCopy):
-            i_ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iNextJoueur)
-            if pq_victoire(npaGrilleCopy, i_ligne, iColonne, iNextJoueur,
-                           i_nb_victoire):
-                if iNextJoueur == 1:
-                    return -1, -1
-                else:
-                    return 1, 1
-    if iNextJoueur == 2:
-        iNextJoueur = 1
-    else:
-        iNextJoueur = 2
-
-    Resultat = [0] * (np.shape(npaGrilleCopy)[1])
-    Moy = [0] * (np.shape(npaGrilleCopy)[1])
-
-    for i in range(np.shape(npaGrilleCopy)[1]):
-        Resultat[i], Moy[i] = pq_minmax(iNextJoueur, np.copy(npaGrilleCopy),
-                                        iColonne=i, tour=tour + 1,
-                                        i_nb_victoire=i_nb_victoire)
-    if iNextJoueur == 2:
-        return min(Resultat), sum(Resultat) / len(Resultat)
-    else:
-        if not isFirst:
-            return max(Resultat), sum(Resultat) / len(Resultat)
-        else:
-            mini = min(Resultat)
-            maxi = max(Resultat)
-            if mini == -1:
-                maxi = mini
-            list_index = []
-            for i in range(len(Resultat)):
-                if Resultat[i] == maxi:
-                    list_index.append(i)
-            if len(list_index) == 1:
-                return list_index[0], 0
+    if tour < 5:
+        if iJoueur == 1:
+            if iColonne == -1:
+                m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
+                # On récupère la fonction du bonus
+                f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(s_bonus))
+                # On applique le bonus à la grille
+                npaGrilleCopy = f_bonus(npaGrilleCopy.copy())
+                b_bonus_used = True
             else:
-                maxi_moy = min(Moy)
-                for i in range(len(list_index)):
-                    if Moy[list_index[i]] == maxi_moy and pq_verif_colonne(
-                            list_index[i], npaGrilleCopy):
-                        return list_index[i], 0
-                return None, None
+                ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+                if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+                    return 10
+            if pq_partie_finie(npaGrilleCopy, False):
+                return 0
+        elif iJoueur == 2 and not isFirst:
+            ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+            if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+                return -10
+            elif pq_partie_finie(npaGrilleCopy, False):
+                return 0
+        if iJoueur == 1:
+            iJoueur = 2
+        else:
+            iJoueur = 1
+        result = []
+        for i in range(npaGrilleCopy.shape[1]):
+            if pq_verif_colonne(i, npaGrilleCopy):
+                result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus, b_bonus_used, i,
+                                 False, tour + 1))
+            else:
+                result.append(-1)
+
+        if not b_bonus_used:
+            result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
+                                    False, -1, False, tour + 1))
+        if iJoueur == 1 and isFirst:
+            maximum = max(result)
+            return result.index(maximum)
+        try:
+            return float(float(sum(result)) / float(len(result)))
+        except TypeError:
+            print(result)
+            return 0
+    else:
+        return 0
+
+
+
+
+
 
 
 def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
@@ -533,8 +540,8 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
 
         if not b_victoire and not pq_partie_finie(npa_grille, b_bonus_utilise):
             # Choix de la colonne où le bot va jouer (random pour commencer)
-            i_colonne_joueur, _ = pq_minmax(2, np.copy(npa_grille),
-                                            i_nb_jeton_victoire, isFirst=True,
+            i_colonne_joueur = pq_minmax(2, np.copy(npa_grille),
+                                            i_nb_jeton_victoire, "", True, isFirst=True,
                                             tour=0)
             # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
