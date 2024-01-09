@@ -23,8 +23,6 @@ import tkinter as tk
 from src.controller import ctrl_pageJeu as ctrl_pj
 # Importation du contrôleur principal pour avoir le menu
 from src.controller import ctrl_main as ctrl_m
-# Importation du fichier pour créer les widgets
-from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Frame de la page de jeu
@@ -77,7 +75,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_JEU, True))
 
-    TKL_INFO = wu.wu_tkl_init_label(TKF_PAGE_JEU, "")
+    TKL_INFO = tk.Label(TKF_PAGE_JEU, text="", font=("Helvetica", 20))
     TKL_INFO.grid(row=0, column=0, columnspan=4, sticky="nsew")
 
     # On définit la largeur du canvas qui va permettre d'afficher la grille

@@ -35,13 +35,6 @@ def tb_remove_full_line():
     pass
 
 
-def tb_block_column():
-    """! Teste la fonction pq_block_column
-    @todo A tester
-    """
-    pass
-
-
 def tb_use_min_max():
     """! Teste la fonction pq_use_min_max
     @todo A tester
