@@ -96,51 +96,75 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iCol
     @todo Optimiser
     @todo Commenter
     """
-    if tour < 5:
+    # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
+    if tour < 1:
+        # Si le joueur est le joueur humain
         if iJoueur == 1:
+            # Si on joue un bonus
             if iColonne == -1:
+                # On importe le module du bonus
                 m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
                 # On récupère la fonction du bonus
                 f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(s_bonus))
                 # On applique le bonus à la grille
                 npaGrilleCopy = f_bonus(npaGrilleCopy.copy())
+                # On indique que le bonus a été utilisé
                 b_bonus_used = True
+            # Sinon
             else:
+                # On joue le jeton dans la colonne
                 ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+                # Si le joueur a gagné
                 if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+                    # On retourne 10
                     return 10
+            # Si la partie est finie
             if pq_partie_finie(npaGrilleCopy, False):
+                # On retourne 0, indiquant un chemin neutre
                 return 0
+        # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du premier appel
         elif iJoueur == 2 and not isFirst:
+            # On joue le jeton dans la colonne
             ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+            # Si l'ordinateur a gagné
             if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+                # On retourne -10
                 return -10
+            # Si la partie est finie
             elif pq_partie_finie(npaGrilleCopy, False):
+                # On retourne 0, indiquant un chemin neutre
                 return 0
+        # On change de joueur
         if iJoueur == 1:
             iJoueur = 2
         else:
             iJoueur = 1
+        # On crée la liste qui contiendra les résultats
         result = []
+        # Pour chaque colonne de la grille
         for i in range(npaGrilleCopy.shape[1]):
+            # Si on peut jouer dans la colonne
             if pq_verif_colonne(i, npaGrilleCopy):
+                # On ajoute le résultat de l'appel récursif dans la liste (la moyenne des coups joués)
                 result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus, b_bonus_used, i,
                                  False, tour + 1))
             else:
-                result.append(-1)
-
+                # Si on ne peut pas jouer dans la colonne, on renvoit 0
+                result.append(0)
+        # Si le bonus n'a pas encore été joué
         if not b_bonus_used:
+            # On enregistre aussi l'appel qui joue le bonus
             result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
                                     False, -1, False, tour + 1))
+        # Si c'est le premier appel
         if iJoueur == 1 and isFirst:
+            # On retourne l'indice de la meilleure moyenne coup à jouer
             maximum = max(result)
             return result.index(maximum)
-        try:
-            return float(float(sum(result)) / float(len(result)))
-        except TypeError:
-            print(result)
-            return 0
+        # On renvoit sinon la moyenne des scores des coups joués
+        return float(float(sum(result)) / float(len(result)))
     else:
+        # Si on a dépassé le nombre de tours on renvoit 0
         return 0
 
 
