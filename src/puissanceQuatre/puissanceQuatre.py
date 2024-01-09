@@ -358,6 +358,16 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     # victoire dans la diagonale de en haut à droite vers en bas à gauche
     i_droite_colonne = i_colonne + i_nb_victoire - 1 \
         if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
+    i_max_ligne, i_max_colonne = npa_grille.shape
+    if (npa_grille[i_max_ligne - i_nb_victoire - 1][i_max_colonne - 1] == i_joueur):
+        i_boucle = 1
+        while (i_boucle < i_nb_victoire
+               and i_max_ligne - 1 - i_nb_victoire + i_boucle >= 0
+               and i_max_colonne - 1 - i_boucle >= 0
+               and npa_grille[i_max_ligne - 1 - i_nb_victoire + i_boucle][i_max_colonne - 1 - i_boucle] == i_joueur):
+            i_boucle += 1
+        if i_boucle >= i_nb_victoire:
+            return True
     # Pour chaque emplacement possible pour la combinaison de victoire dans la
     # diagonale de en haut à gauche vers en bas à droite
     for i in range(i_haut_ligne, i_bas_ligne):
