@@ -16,6 +16,7 @@ Ce programme utilise les modules externes suivants :
 @brief Un module qui gère la page de jeu
 @details Ce module contient les fonctions permettant de gérer la page de jeu.
 """
+import time
 # Importation de tkinter
 import tkinter as tk
 # Importation de numpy
@@ -114,6 +115,8 @@ def cpj_init(tk_win_root: tk.Tk):
     NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
     # Dessin de la grille de jeu
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
+    # On indique que c'est au joueur de jouer
+    cpj_info_turn(True)
 
 
 def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
@@ -246,6 +249,8 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
         # finie
         if (not b_joueur_gagne and b_joueur_joue
                 and not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED)):
+            # On indique que c'est au joueur de jouer
+            cpj_info_turn(False)
             # Faire jouer le bot
             cpj_bot_play(tkf_page_jeu)
     # Sinon
@@ -286,6 +291,8 @@ def cpj_use_bonus(tkf_page_jeu: tk.Frame):
         cpj_update_grid()
         # On désactive le bouton du bonus
         view_pj.vpj_disable_bonus()
+        # On indique que c'est au joueur de jouer
+        cpj_info_turn(False)
         # On fait jouer le bot.
         cpj_bot_play(tkf_page_jeu)
         # On enregistre la grille actuelle dans la liste des coups joués
@@ -323,6 +330,10 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
         # On affiche la fenêtre de victoire indiquant que le bot a gagné
         ctrl_m.cm_ended_game("Le joueur 2 a gagné",
                              tkf_old_frame=tkf_page_jeu)
+    # Sinon
+    else:
+        # On indique que c'est au joueur de jouer
+        cpj_info_turn(True)
 
 
 def cpj_update_grid():
@@ -351,3 +362,22 @@ def cpj_update_grid():
                 # Afficher le pion à cette position
                 cpj_put_coin(i_boucle_row, i_boucle_col,
                              NPA_GRID[i_boucle_row, i_boucle_col])
+
+
+def cpj_info_turn(b_is_player: bool):
+    """! Affiche le joueur qui doit jouer
+
+    @param b_is_player : Booléen indiquant si c'est au joueur de jouer
+    @post Affichage du joueur qui doit jouer
+
+    **Variables :**
+    * b_is_player : Booléen indiquant si c'est au joueur de jouer
+    """
+    # Si c'est au joueur de jouer
+    if b_is_player:
+        # Afficher le joueur qui doit jouer
+        view_pj.vpj_set_info("C'est à vous de jouer")
+    # Sinon
+    else:
+        # Afficher le bot qui doit jouer
+        view_pj.vpj_set_info("C'est au bot de jouer")

@@ -23,6 +23,8 @@ import tkinter as tk
 from src.controller import ctrl_pageJeu as ctrl_pj
 # Importation du contrôleur principal pour avoir le menu
 from src.controller import ctrl_main as ctrl_m
+# Importation du fichier pour créer les widgets
+from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Frame de la page de jeu
@@ -39,6 +41,8 @@ global I_NB_ROWS
 global I_NB_COLUMNS
 # Bouton pour utiliser un bonus
 global TKB_BONUS
+# Label pour afficher des informations
+global TKL_INFO
 
 
 def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
@@ -63,6 +67,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
     global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, TKB_BONUS
+    global TKL_INFO
 
     # Création du cadre permettant l'affichage de la page du jeu
     TKF_PAGE_JEU = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
@@ -72,6 +77,9 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_JEU, True))
 
+    TKL_INFO = wu.wu_tkl_init_label(TKF_PAGE_JEU, "")
+    TKL_INFO.grid(row=0, column=0, columnspan=4, sticky="nsew")
+
     # On définit la largeur du canvas qui va permettre d'afficher la grille
     I_CANVAS_WIDTH = 500
     # On définit la hauteur du canvas qui va permettre d'afficher la grille
@@ -80,7 +88,7 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     TKC_GRID = tk.Canvas(TKF_PAGE_JEU, bg=st_color_grid,
                          width=I_CANVAS_WIDTH, height=I_CANVAS_HEIGHT)
     # On affiche le canvas
-    TKC_GRID.grid(row=0, column=0, sticky="nsew", columnspan=4, rowspan=4)
+    TKC_GRID.grid(row=1, column=0, sticky="nsew", columnspan=4, rowspan=4)
     # Lorsque l'on clique sur le canvas, cela appellera la fonction
     # ctrl_pj.ctrl_page_jeu_play(event)
     TKC_GRID.bind('<Button-1>',
@@ -90,25 +98,25 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     tkB_undo = tk.Button(TKF_PAGE_JEU, text="Undo", font=("Helvetica", 16),
                          command=lambda: ctrl_pj.cpj_undo())
     # Affichage du bouton
-    tkB_undo.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)
+    tkB_undo.grid(row=5, column=0, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour refaire le dernier coup
     tkB_redo = tk.Button(TKF_PAGE_JEU, text="Redo", font=("Helvetica", 16),
                          command=lambda: ctrl_pj.cpj_redo())
     # Affichage du bouton
-    tkB_redo.grid(row=4, column=1, sticky="nsew", pady=50, padx=10)
+    tkB_redo.grid(row=5, column=1, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour jouer son bonus
     TKB_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
                           command=lambda: ctrl_pj.cpj_use_bonus(TKF_PAGE_JEU))
     # Affichage du bouton
-    TKB_BONUS.grid(row=4, column=2, sticky="nsew", pady=50, padx=10)
+    TKB_BONUS.grid(row=5, column=2, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour quitter le jeu
     tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica", 16),
                          command=lambda: ctrl_pj.cpj_quit())
     # Affichage du bouton
-    tkB_quit.grid(row=4, column=3, sticky="nsew", pady=50, padx=10)
+    tkB_quit.grid(row=5, column=3, sticky="nsew", pady=50, padx=10)
 
 
 def vpj_destroy():
@@ -253,3 +261,12 @@ def vpj_get_frame() -> tk.Frame:
     global TKF_PAGE_JEU
     # On retourne la frame de la page de jeu
     return TKF_PAGE_JEU
+
+
+def vpj_set_info(st_info: str):
+    """! Modifie le texte du label d'information
+
+    @param st_info: Texte à afficher dans le label d'information
+    """
+    global TKL_INFO
+    TKL_INFO.config(text=st_info)
