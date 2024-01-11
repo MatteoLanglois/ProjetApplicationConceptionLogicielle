@@ -314,28 +314,32 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     * i_grid_y : Ligne de la grille de jeu
     """
     global I_NB_JETONS, I_DIFFICULTY
-    # On utilise l'algorithme min max pour choisir le prochain coup du bot
-    i_grid_x = ps4.pq_minmax(iJoueur=2,
-                             npaGrilleCopy=np.copy(NPA_GRID),
-                             s_bonus=S_BONUS,
-                             b_bonus_used=B_BONUS_USED,
-                             isFirst=True,
-                             tour=-I_DIFFICULTY,
-                             i_nb_victoire=I_NB_JETONS)
-    # On pose le pion et on récupère les coordonnées de là où il a été posé
-    i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
-                                            i_colonne=i_grid_x, i_joueur=2)
-    # On affiche le pion posé
-    cpj_put_coin(i_grid_x, i_grid_y, 2)
-    # Si le bot a gagné
-    if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 2, I_NB_JETONS):
-        # On affiche la fenêtre de victoire indiquant que le bot a gagné
-        ctrl_m.cm_ended_game("Le joueur 2 a gagné",
-                             tkf_old_frame=tkf_page_jeu)
-    # Sinon
+    if not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED):
+        # On utilise l'algorithme min max pour choisir le prochain coup du bot
+        i_grid_x = ps4.pq_minmax(iJoueur=2,
+                                 npaGrilleCopy=np.copy(NPA_GRID),
+                                 s_bonus=S_BONUS,
+                                 b_bonus_used=B_BONUS_USED,
+                                 isFirst=True,
+                                 tour=-I_DIFFICULTY,
+                                 i_nb_victoire=I_NB_JETONS)
+        # On pose le pion et on récupère les coordonnées de là où il a été posé
+        i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
+                                                i_colonne=i_grid_x, i_joueur=2)
+        # On affiche le pion posé
+        cpj_put_coin(i_grid_x, i_grid_y, 2)
+        # Si le bot a gagné
+        if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 2, I_NB_JETONS):
+            # On affiche la fenêtre de victoire indiquant que le bot a gagné
+            ctrl_m.cm_ended_game("Le joueur 2 a gagné",
+                                 tkf_old_frame=tkf_page_jeu)
+        # Sinon
+        else:
+            # On indique que c'est au joueur de jouer
+            cpj_info_turn(True)
     else:
-        # On indique que c'est au joueur de jouer
-        cpj_info_turn(True)
+        ctrl_m.cm_ended_game("Match nul",
+                             tkf_old_frame=tkf_page_jeu)
 
 
 def cpj_update_grid():
