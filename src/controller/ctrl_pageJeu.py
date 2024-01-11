@@ -312,18 +312,16 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     * I_DIFFICULTY : Difficulté du bot
     * i_grid_x : Colonne de la grille de jeu
     * i_grid_y : Ligne de la grille de jeu
-
-    @todo Vérifier que tout est bon
     """
     global I_NB_JETONS, I_DIFFICULTY
     # On utilise l'algorithme min max pour choisir le prochain coup du bot
     i_grid_x = ps4.pq_minmax(iJoueur=2,
-                                npaGrilleCopy=np.copy(NPA_GRID),
-                                s_bonus=S_BONUS,
-                                b_bonus_used=B_BONUS_USED,
-                                isFirst=True,
-                                tour=-I_DIFFICULTY,
-                                i_nb_victoire=I_NB_JETONS)
+                             npaGrilleCopy=np.copy(NPA_GRID),
+                             s_bonus=S_BONUS,
+                             b_bonus_used=B_BONUS_USED,
+                             isFirst=True,
+                             tour=-I_DIFFICULTY,
+                             i_nb_victoire=I_NB_JETONS)
     # On pose le pion et on récupère les coordonnées de là où il a été posé
     i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                             i_colonne=i_grid_x, i_joueur=2)
