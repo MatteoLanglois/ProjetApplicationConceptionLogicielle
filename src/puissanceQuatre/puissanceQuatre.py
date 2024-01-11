@@ -188,7 +188,7 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
             max_index = result.index(maximum)
             # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
             # ne l'est pas
-            while pq_verif_colonne(max_index, npaGrilleCopy) is False:
+            while max_index >= npaGrilleCopy.shape[1] or not pq_verif_colonne(max_index, npaGrilleCopy):
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 # On met le meilleur coup à -100 pour ne pas le reprendre
                 result[max_index] = -100
@@ -560,7 +560,7 @@ def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
     while i_boucle_ligne <= i_nb_lignes and b_tableau_plein:
         # Tant que le tableau est supposé plein et qu'on n'a pas parcouru toutes
         # les colonnes
-        while i_boucle_colonne <= i_nb_colonnes and b_tableau_plein:
+        while i_boucle_colonne < i_nb_colonnes and b_tableau_plein:
             # Si la case est vide
             if npa_grille[i_boucle_ligne, i_boucle_colonne] == 0:
                 # Le tableau n'est pas plein
