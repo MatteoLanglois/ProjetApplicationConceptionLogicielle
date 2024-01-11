@@ -249,10 +249,10 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
         # finie
         if (not b_joueur_gagne and b_joueur_joue
                 and not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED)):
-            # Actualiser l'interface avant le tour du bot
-            ctrl_m.cm_update(TK_ROOT)
             # On indique que c'est au joueur de jouer
             cpj_info_turn(False)
+            # Actualiser l'interface avant le tour du bot
+            ctrl_m.cm_update(TK_ROOT)
             # Faire jouer le bot
             cpj_bot_play(tkf_page_jeu)
     # Sinon
