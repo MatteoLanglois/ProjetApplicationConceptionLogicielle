@@ -23,6 +23,8 @@ distance entre deux couleurs.
 def cu_hex_to_rgb(s_color: str) -> (int, int, int):
     """! Convertit une couleur hexadécimale en RGB
 
+    Cette fonction convertit une couleur hexadécimale en RGB.
+
     @param s_color: Couleur hexadécimale
     @return Couleur RGB
     """
@@ -33,6 +35,9 @@ def cu_rgb_distance(rgb1: (int, int, int),
                     rgb2: (int, int, int)) -> int:
     """! Calcule la distance entre deux couleurs RGB
 
+    Cette fonction calcule la distance entre deux couleurs RGB. Elle utilise
+    la formule de la distance euclidienne.
+
     @param rgb1: Couleur 1
     @param rgb2: Couleur 2
     @return Distance entre les deux couleurs
@@ -41,7 +46,12 @@ def cu_rgb_distance(rgb1: (int, int, int),
 
 
 def cu_colors_too_close(color1: str, color2: str) -> bool:
-    """! Vérifie si deux couleurs sont trop proches
+    """! Vérifie si deux couleurs sont trop proches.
+
+    Cette fonction vérifie si deux couleurs sont trop proches. Elle utilise
+    la fonction cu_rgb_distance pour calculer la distance entre les deux
+    couleurs. Si la distance est inférieure à 50, les couleurs sont trop
+    proches.
 
     @param color1: Couleur 1 au format hexadécimal
     @param color2: Couleur 2 au format hexadécimal

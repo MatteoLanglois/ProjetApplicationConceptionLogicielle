@@ -23,6 +23,10 @@ from inspect import getmembers, isfunction
 def bu_get_bonuses() -> list[tuple[str, ...]]:
     """! Retourne la liste des noms des fonctions bonus
 
+    Cette fonction retourne la liste des noms des fonctions bonus. Elle utilise
+    le module bonus pour récupérer les fonctions bonus. Elle utilise aussi
+    l'inspecteur pour récupérer le nom des fonctions bonus.
+
     @post La liste des noms des fonctions bonus est retournée
 
     **Variables :**
@@ -36,6 +40,9 @@ def bu_get_bonuses() -> list[tuple[str, ...]]:
 
 def bu_get_bonus_name(t_function: tuple) -> str:
     """! Retourne le nom d'une fonction bonus
+
+    Cette fonction retourne le nom d'une fonction bonus.
+
     """
     # On retourne le nom de la fonction
     return t_function[0][t_function[0].find("'") + 1:]
@@ -43,6 +50,10 @@ def bu_get_bonus_name(t_function: tuple) -> str:
 
 def bu_format_bonus_name(s_bonus_name: str) -> str:
     """! Formate le nom d'un bonus
+
+    Cette fonction formate le nom d'un bonus pour l'afficher dans le menu. Elle
+    enlève le préfixe "p4b_" et remplace-les "_" par des espaces.
+
     """
     # On retourne le nom du bonus formaté
     return (s_bonus_name.replace("_", " ")
@@ -51,6 +62,11 @@ def bu_format_bonus_name(s_bonus_name: str) -> str:
 
 def bu_unformat_bonus_name(s_bonus_name: str) -> str:
     """! Déformate le nom d'un bonus
+
+    Cette fonction déformate le nom d'un bonus pour l'utiliser dans le code.
+    Elle ajoute le préfixe "p4b_" et remplace-les espaces par des "_" afin de
+    retrouver le nom de la fonction.
+
     """
     # On retourne le nom du bonus déformaté
     return f"p4b_{s_bonus_name.replace(' ', '_').lower()}"
@@ -58,6 +74,10 @@ def bu_unformat_bonus_name(s_bonus_name: str) -> str:
 
 def bu_get_bonus_description(s_bonus_name: str) -> str:
     """! Retourne la description d'un bonus
+
+    Cette fonction retourne la description d'un bonus. Elle utilise pour cela
+    la documentation de la fonction bonus.
+
     """
     # On récupère la fonction bonus choisie
     t_function = [t_function for t_function in bu_get_bonuses()
