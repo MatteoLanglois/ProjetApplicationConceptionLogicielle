@@ -157,3 +157,13 @@ def vm_remove_frame(frame: tk.Frame):
     frame.forget()
     # Supprime le cadre
     frame.destroy()
+
+
+def vm_update(tk_root: tk.Tk):
+    """! Met à jour la fenêtre principale
+
+    @param tk_root: Fenêtre principale
+    """
+    # Met à jour la fenêtre principale
+    tk_root.update_idletasks()
+

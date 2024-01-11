@@ -137,7 +137,7 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
     @pre i_row >= 0
     @pre i_cols >= 0
-    @pre i_joueur >= 1 et i_joueur ≤ 2
+    @pre i_joueur >= 1 et i_joueur <= 2
     @param i_row: Ligne de la grille de jeu
     @param i_cols: Colonne de la grille de jeu
     @param i_joueur: Joueur qui joue
@@ -249,6 +249,8 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
         # finie
         if (not b_joueur_gagne and b_joueur_joue
                 and not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED)):
+            # Actualiser l'interface avant le tour du bot
+            ctrl_m.cm_update(TK_ROOT)
             # On indique que c'est au joueur de jouer
             cpj_info_turn(False)
             # Faire jouer le bot

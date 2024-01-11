@@ -164,3 +164,13 @@ def cm_info(str_message: str):
     """
     # Affiche le message d'information
     view_m.vm_message_info(str_message)
+
+
+def cm_update(tk_root: tk.Tk):
+    """! Met à jour la fenêtre
+
+    @pre tk_root initialisé
+    @param tk_root: Fenêtre principale
+    """
+    # Met à jour la fenêtre
+    view_m.vm_update(tk_root)

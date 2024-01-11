@@ -29,7 +29,12 @@ from src.utils import bonus_utils as bu
 def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
     """! Vérifie si on peut poser un jeton dans cette colonne
 
-    @pre 0 < i_colonne ≤ npa_grille.shape[0]
+    Cette fonction permet de vérifier si on peut poser un jeton dans une
+    colonne donnée. Elle vérifie si la colonne est valide et si elle n'est pas
+    pleine. Elle renvoie un booléen indiquant si on peut poser un jeton dans
+    cette colonne ou non.
+
+    @pre 0 < i_colonne <= npa_grille.shape[0]
     @pre npa_grille initialisé
     @param i_colonne: La colonne où on souhaite poser un jeton
     @param npa_grille: La grille de jeu
@@ -56,7 +61,12 @@ def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
 def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
                    i_joueur: int) -> (int, int):
     """! La méthode qui gère le placement de jetons
-    @pre 0 < i_colonne ≤ npa_grille.shape[0]
+
+    Cette méthode permet de placer un jeton dans une colonne donnée. Elle
+    vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie
+    les coordonnées du nouveau jeton.
+
+    @pre 0 < i_colonne <= npa_grille.shape[0]
     @pre npa_grille initialisé
     @param i_colonne: La colonne où le joueur pose le jeton
     @param i_joueur: Le joueur qui joue (1 pour le joueur, 2 pour le bot)
@@ -90,7 +100,8 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
     return ti_coords
 
 
-def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iColonne=0,
+def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
+              iColonne=0,
               isFirst=False, tour=0) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
     @todo Optimiser
@@ -103,7 +114,8 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iCol
             # Si on joue un bonus
             if iColonne == -1:
                 # On importe le module du bonus
-                m_module = __import__("src.puissanceQuatre.bonus", fromlist=["bonus"])
+                m_module = __import__("src.puissanceQuatre.bonus",
+                                      fromlist=["bonus"])
                 # On récupère la fonction du bonus
                 f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(s_bonus))
                 # On applique le bonus à la grille
@@ -115,19 +127,22 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iCol
                 # On joue le jeton dans la colonne
                 ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
                 # Si le joueur a gagné
-                if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+                if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
+                               i_nb_victoire):
                     # On retourne 10
                     return 10
             # Si la partie est finie
             if pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
-        # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du premier appel
+        # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du
+        # premier appel
         elif iJoueur == 2 and not isFirst:
             # On joue le jeton dans la colonne
             ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
             # Si l'ordinateur a gagné
-            if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur, i_nb_victoire):
+            if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
+                           i_nb_victoire):
                 # On retourne -10
                 return -10
             # Si la partie est finie
@@ -145,42 +160,42 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iCol
         for i in range(npaGrilleCopy.shape[1]):
             # Si on peut jouer dans la colonne
             if pq_verif_colonne(i, npaGrilleCopy):
-                # On ajoute le résultat de l'appel récursif dans la liste (la moyenne des coups joués)
-                result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus, b_bonus_used, i,
-                                 False, tour + 1))
+                # On ajoute le résultat de l'appel récursif dans la liste (la
+                # moyenne des coups joués)
+                result.append(
+                    pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire,
+                              s_bonus, b_bonus_used, i,
+                              False, tour + 1))
             else:
-                # Si on ne peut pas jouer dans la colonne, on renvoit 0
+                # Si on ne peut pas jouer dans la colonne, on renvoie 0
                 result.append(-1)
         # Si le bonus n'a pas encore été joué
         if not b_bonus_used and iJoueur == 1:
             # On enregistre aussi l'appel qui joue le bonus
-            result.append(pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
-                                    False, -1, False, tour + 1))
+            result.append(
+                pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
+                          False, -1, False, tour + 1))
         # Si c'est le premier appel
         if iJoueur == 1 and isFirst:
             # On retourne l'indice de la meilleure moyenne coup à jouer
             maximum = max(result)
             # On récupère l'indice du maximum
             max_index = result.index(maximum)
-            # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle ne l'est pas
+            # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
+            # ne l'est pas
             while pq_verif_colonne(max_index, npaGrilleCopy) is False:
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 result[max_index] = -100
                 maximum = max(result)
                 # On récupère le nouvel indice du maximum
                 max_index = result.index(maximum)
-            # On renvoit la colonne à jouer
+            # On renvoie la colonne à jouer
             return max_index
-        # On renvoit sinon la moyenne des scores des coups joués
+        # On renvoie sinon la moyenne des scores des coups joués
         return float(float(sum(result)) / float(len(result)))
     else:
-        # Si on a dépassé le nombre de tours on renvoit 0
+        # Si on a dépassé le nombre de tours, on renvoie 0
         return 0
-
-
-
-
-
 
 
 def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
@@ -223,7 +238,7 @@ def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     **Préconditions :**
     * npa_grille initialisé
     * npa_grille contient un jeton en i_ligne, i_colonne
-    * 1 ≤ i_joueur ≤ 2
+    * 1 <= i_joueur <= 2
 
 
     @param npa_grille: La grille du jeu
@@ -290,7 +305,7 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
     **Préconditions :**
     * npa_grille initialisé
     * npa_grille contient un jeton en i_ligne, i_colonne
-    * 1 ≤ i_joueur ≤ 2
+    * 1 <= i_joueur <= 2
 
     @param npa_grille: La grille du puissance 4
     @param i_ligne: La ligne où le jeton a été posé
@@ -331,7 +346,7 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     **Préconditions :**
     * npa_grille initialisé
     * npa_grille contient un jeton en i_ligne, i_colonne
-    * 1 ≤ i_joueur ≤ 2
+    * 1 <= i_joueur <= 2
 
     @param npa_grille: La grille du puissance 4
     @param i_ligne: La ligne où le jeton a été posé
@@ -359,16 +374,17 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     i_droite_colonne = i_colonne + i_nb_victoire - 1 \
         if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
     i_max_ligne, i_max_colonne = npa_grille.shape
-    # Cas particulier: Si le pion joué est sur le bord droit de la grille
-    if (npa_grille[i_max_ligne - i_nb_victoire - 1][i_max_colonne - 1] == i_joueur):
-        # On initialise le compteur de boucle à 1
+    # Cas particulier : Si le pion joué est sur le bord droit de la grille
+    if npa_grille[i_max_ligne - i_nb_victoire-1][i_max_colonne-1] == i_joueur:
+        # On initialise le compteur de boucle à 1.
         i_boucle = 1
         # Tant qu'on n'a pas atteint le nombre de jetons nécessaire pour
         # gagner et qu'on est dans la grille
         while (i_boucle < i_nb_victoire
                and i_max_ligne - 1 - i_nb_victoire + i_boucle >= 0
                and i_max_colonne - 1 - i_boucle >= 0
-               and npa_grille[i_max_ligne - 1 - i_nb_victoire + i_boucle][i_max_colonne - 1 - i_boucle] == i_joueur):
+               and npa_grille[i_max_ligne - 1 - i_nb_victoire + i_boucle][
+                   i_max_colonne - 1 - i_boucle] == i_joueur):
             # On incrémente le compteur
             i_boucle += 1
         # Si le compteur est supérieur ou égal au nombre de jetons
@@ -383,15 +399,15 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
         for j in range(i_gauche_colonne, i_droite_colonne):
             # Si le jeton est celui du joueur
             if npa_grille[i][j] == i_joueur:
-                # On initialise le compteur à 1
+                # On initialise le compteur à 1.
                 i_compteur1 = 1
-                # On initialise le compteur à 1
+                # On initialise le compteur à 1.
                 i_compteur2 = 1
-                # On initialise le compteur à 1
+                # On initialise le compteur à 1.
                 i_compteur3 = 1
-                # On initialise le compteur à 1
+                # On initialise le compteur à 1.
                 i_compteur4 = 1
-                # On initialise le compteur de boucle à 1
+                # On initialise le compteur de boucle à 1.
                 i_boucle = 1
                 # On initialise le booléen de suite à vrai
                 b_suite1 = True
@@ -400,10 +416,12 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 b_suite4 = True
                 # Tant qu'on n'a pas atteint le nombre de jetons nécessaire
                 # pour gagner et qu'on est dans la grille et qu'on a une suite
-                while (i_boucle < i_nb_victoire and (b_suite1 or b_suite2 or b_suite3 or b_suite4)):
-                    # Si on peut continuer dans la diagonale en bas à droite et que la suite n'est pas brisé
+                while (i_boucle < i_nb_victoire and (
+                        b_suite1 or b_suite2 or b_suite3 or b_suite4)):
+                    # Si on peut continuer dans la diagonale en bas à droite et
+                    # que la suite n'est pas brisé
                     if (i + i_boucle < i_nb_lignes
-                       and j + i_boucle < i_nb_colonnes and b_suite1):
+                            and j + i_boucle < i_nb_colonnes and b_suite1):
                         # Si le jeton est celui du joueur
                         if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
                             # On incrémente le compteur
@@ -412,9 +430,10 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                         else:
                             # On arrête la suite
                             b_suite1 = False
-                    # Si on peut continuer dans la diagonale en haut à droite et que la suite n'est pas brisé
+                    # Si on peut continuer dans la diagonale en haut à droite et
+                    # que la suite n'est pas brisé
                     if (i - i_boucle >= 0
-                       and j + i_boucle < i_nb_colonnes and b_suite2):
+                            and j + i_boucle < i_nb_colonnes and b_suite2):
                         # Si le jeton est celui du joueur
                         if npa_grille[i - i_boucle][j + i_boucle] == i_joueur:
                             # On incrémente le compteur
@@ -423,9 +442,10 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                         else:
                             # On arrête la suite
                             b_suite2 = False
-                    # Si on peut continuer dans la diagonale en bas à gauche et que la suite n'est pas brisé
+                    # Si on peut continuer dans la diagonale en bas à gauche et
+                    # que la suite n'est pas brisé
                     if (i + i_boucle < i_nb_lignes
-                       and j - i_boucle >= 0 and b_suite3):
+                            and j - i_boucle >= 0 and b_suite3):
                         # Si le jeton est celui du joueur
                         if npa_grille[i + i_boucle][j - i_boucle] == i_joueur:
                             # On incrémente le compteur
@@ -434,9 +454,10 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                         else:
                             # On arrête la suite
                             b_suite3 = False
-                    # Si on peut continuer dans la diagonale en haut à gauche et que la suite n'est pas brisé
+                    # Si on peut continuer dans la diagonale en haut à gauche et
+                    # que la suite n'est pas brisé
                     if (i - i_boucle >= 0
-                       and j - i_boucle >= 0 and b_suite4):
+                            and j - i_boucle >= 0 and b_suite4):
                         # Si le jeton est celui du joueur
                         if npa_grille[i - i_boucle][j - i_boucle] == i_joueur:
                             # On incrémente le compteur
@@ -448,8 +469,8 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                     i_boucle += 1
                 # Si le compteur est supérieur ou égal au nombre de jetons
                 if (i_compteur1 >= i_nb_victoire) \
-                        or (i_compteur2 >= i_nb_victoire)\
-                        or (i_compteur3 >= i_nb_victoire)\
+                        or (i_compteur2 >= i_nb_victoire) \
+                        or (i_compteur3 >= i_nb_victoire) \
                         or (i_compteur4 >= i_nb_victoire):
                     # On retourne vrai
                     return True
@@ -511,8 +532,8 @@ def pq_partie_finie(npa_grille: np.array, b_bonus_utilise: bool) -> bool:
 
     **Préconditions :**
     * npa_grille initialisé
-    * 2 ≤ i_nb_lignes
-    * 2 ≤ i_nb_colonnes
+    * 2 <= i_nb_lignes
+    * 2 <= i_nb_colonnes
 
     @param npa_grille: La grille du puissance 4
     @param b_bonus_utilise: Un booléen permettant de savoir si le joueur a
@@ -638,8 +659,9 @@ def pq_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
         if not b_victoire and not pq_partie_finie(npa_grille, b_bonus_utilise):
             # Choix de la colonne où le bot va jouer (random pour commencer)
             i_colonne_joueur = pq_minmax(2, np.copy(npa_grille),
-                                            i_nb_jeton_victoire, "", True, isFirst=True,
-                                            tour=0)
+                                         i_nb_jeton_victoire, "", True,
+                                         isFirst=True,
+                                         tour=0)
             # Pose du jeton et récupération de la ligne où le jeton a été posé
             i_ligne_joueur, _ = pq_ajout_piece(npa_grille, i_colonne_joueur, 2)
 

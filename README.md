@@ -32,7 +32,8 @@ _____________________
 - [x] Utilisation des bonus
 - [x] Affichage de la victoire/Défaite
 - [ ] Affichage de l'aide
-- [ ] Affichage du tour du joueur
+- [x] Affichage du tour du joueur
+- [ ] Interface responsive
 
 ## Personnalisation
 - [x] Personnalisation des jetons
@@ -42,10 +43,9 @@ _____________________
 - [x] Personnalisation de la difficulté de l'IA
 
 ## Bonus
-- [ ] Utilisation des bonus en ligne de commande
+- [x] Utilisation des bonus en ligne de commande
 - [x] Utilisation des bonus dans la fenêtre
 - [x] Bonus d'inversion de la grille
 - [x] Bonus de suppression de ligne pleine
 - [x] Bonus d'aide avec MinMax
-- [ ] Bonus de retournement de la grille
-- [ ] Bonus permettant de bloquer une colonne
+- [x] Bonus de retournement de la grille
