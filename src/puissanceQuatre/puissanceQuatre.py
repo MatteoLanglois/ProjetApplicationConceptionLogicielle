@@ -348,6 +348,9 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
     * i_nb_lignes : Entier, Nombre de lignes dans la grille
     * i_nb_colonnes : Entier, Nombre de colonnes dans la grille
+    * tti_directions : Tableau de tuples d'entiers, Les directions à vérifier
+    * i_dx : Entier, Composante x de la direction
+    * i_dy : Entier, Composante y de la direction
 
     **Préconditions :**
     * npa_grille initialisé
@@ -363,124 +366,20 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     """
     # Récupération de la taille de la grille
     i_nb_lignes, i_nb_colonnes = npa_grille.shape
-    # On calcule le premier emplacement possible pour la combinaison de
-    # victoire dans la diagonale de en haut à gauche vers en bas à droite
-    i_haut_ligne = i_ligne - i_nb_victoire + 1 \
-        if i_ligne - i_nb_victoire + 1 >= 0 else 0
-    # On calcule le dernier emplacement possible pour la combinaison de
-    # victoire dans la diagonale de en haut à gauche vers en bas à droite
-    i_bas_ligne = i_ligne + i_nb_victoire - 1 \
-        if i_ligne + i_nb_victoire - 1 < i_nb_lignes else i_nb_lignes - 1
-    # On calcule le premier emplacement possible pour la combinaison de
-    # victoire dans la diagonale de en haut à droite vers en bas à gauche
-    i_gauche_colonne = i_colonne - i_nb_victoire + 1 \
-        if i_colonne - i_nb_victoire + 1 >= 0 else 0
-    # On calcule le dernier emplacement possible pour la combinaison de
-    # victoire dans la diagonale de en haut à droite vers en bas à gauche
-    i_droite_colonne = i_colonne + i_nb_victoire - 1 \
-        if i_colonne + i_nb_victoire - 1 < i_nb_colonnes else i_nb_colonnes - 1
-    i_max_ligne, i_max_colonne = npa_grille.shape
-    # Cas particulier : Si le pion joué est sur le bord droit de la grille
-    if npa_grille[i_max_ligne - i_nb_victoire-1][i_max_colonne-1] == i_joueur:
-        # On initialise le compteur de boucle à 1.
-        i_boucle = 1
-        # Tant qu'on n'a pas atteint le nombre de jetons nécessaire pour
-        # gagner et qu'on est dans la grille
-        while (i_boucle < i_nb_victoire
-               and i_max_ligne - 1 - i_nb_victoire + i_boucle >= 0
-               and i_max_colonne - 1 - i_boucle >= 0
-               and npa_grille[i_max_ligne - 1 - i_nb_victoire + i_boucle][
-                   i_max_colonne - 1 - i_boucle] == i_joueur):
-            # On incrémente le compteur
-            i_boucle += 1
-        # Si le compteur est supérieur ou égal au nombre de jetons
-        if i_boucle >= i_nb_victoire:
-            # On retourne vrai
-            return True
-    # Pour chaque emplacement possible pour la combinaison de victoire dans la
-    # diagonale de en haut à gauche vers en bas à droite
-    for i in range(i_haut_ligne, i_bas_ligne):
-        # Pour chaque emplacement possible pour la combinaison de victoire dans
-        # la diagonale de en haut à gauche vers en bas à droite
-        for j in range(i_gauche_colonne, i_droite_colonne):
-            # Si le jeton est celui du joueur
-            if npa_grille[i][j] == i_joueur:
-                # On initialise le compteur à 1.
-                i_compteur1 = 1
-                # On initialise le compteur à 1.
-                i_compteur2 = 1
-                # On initialise le compteur à 1.
-                i_compteur3 = 1
-                # On initialise le compteur à 1.
-                i_compteur4 = 1
-                # On initialise le compteur de boucle à 1.
-                i_boucle = 1
-                # On initialise le booléen de suite à vrai
-                b_suite1 = True
-                b_suite2 = True
-                b_suite3 = True
-                b_suite4 = True
-                # Tant qu'on n'a pas atteint le nombre de jetons nécessaire
-                # pour gagner et qu'on est dans la grille et qu'on a une suite
-                while (i_boucle < i_nb_victoire and (
-                        b_suite1 or b_suite2 or b_suite3 or b_suite4)):
-                    # Si on peut continuer dans la diagonale en bas à droite et
-                    # que la suite n'est pas brisé
-                    if (i + i_boucle < i_nb_lignes
-                            and j + i_boucle < i_nb_colonnes and b_suite1):
-                        # Si le jeton est celui du joueur
-                        if npa_grille[i + i_boucle][j + i_boucle] == i_joueur:
-                            # On incrémente le compteur
-                            i_compteur1 += 1
-                        # Sinon
-                        else:
-                            # On arrête la suite
-                            b_suite1 = False
-                    # Si on peut continuer dans la diagonale en haut à droite et
-                    # que la suite n'est pas brisé
-                    if (i - i_boucle >= 0
-                            and j + i_boucle < i_nb_colonnes and b_suite2):
-                        # Si le jeton est celui du joueur
-                        if npa_grille[i - i_boucle][j + i_boucle] == i_joueur:
-                            # On incrémente le compteur
-                            i_compteur2 += 1
-                        # Sinon
-                        else:
-                            # On arrête la suite
-                            b_suite2 = False
-                    # Si on peut continuer dans la diagonale en bas à gauche et
-                    # que la suite n'est pas brisé
-                    if (i + i_boucle < i_nb_lignes
-                            and j - i_boucle >= 0 and b_suite3):
-                        # Si le jeton est celui du joueur
-                        if npa_grille[i + i_boucle][j - i_boucle] == i_joueur:
-                            # On incrémente le compteur
-                            i_compteur3 += 1
-                        # Sinon
-                        else:
-                            # On arrête la suite
-                            b_suite3 = False
-                    # Si on peut continuer dans la diagonale en haut à gauche et
-                    # que la suite n'est pas brisé
-                    if (i - i_boucle >= 0
-                            and j - i_boucle >= 0 and b_suite4):
-                        # Si le jeton est celui du joueur
-                        if npa_grille[i - i_boucle][j - i_boucle] == i_joueur:
-                            # On incrémente le compteur
-                            i_compteur4 += 1
-                        # Sinon
-                        else:
-                            # On arrête la suite
-                            b_suite4 = False
-                    i_boucle += 1
-                # Si le compteur est supérieur ou égal au nombre de jetons
-                if (i_compteur1 >= i_nb_victoire) \
-                        or (i_compteur2 >= i_nb_victoire) \
-                        or (i_compteur3 >= i_nb_victoire) \
-                        or (i_compteur4 >= i_nb_victoire):
-                    # On retourne vrai
+    # Initialisation du tableau des directions à vérifier
+    tti_directions = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
+
+    for i_dx, i_dy in tti_directions:
+        i_compteur = 0
+        for d in range(-i_nb_victoire + 1, i_nb_victoire):
+            x, y = i_ligne + d * i_dx, i_colonne + d * i_dy
+            if 0 <= x < i_nb_lignes and 0 <= y < i_nb_colonnes and \
+                    npa_grille[x][y] == i_joueur:
+                i_compteur += 1
+                if i_compteur >= i_nb_victoire:
                     return True
-    # On retourne faux
+            else:
+                i_compteur = 0
     return False
 
 
