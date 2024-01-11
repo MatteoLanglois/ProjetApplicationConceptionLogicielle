@@ -69,6 +69,10 @@ global B_BONUS_USED
 def cpj_init(tk_win_root: tk.Tk):
     """! Affiche la page de jeu
 
+    Cette fonction affiche la page de jeu et initialise la grille de jeu. Elle
+    récupère également les paramètres de la partie. Elle initialise également
+    les variables globales.
+
     @pre tk_root initialisé
     @post page de jeu affichée
 
@@ -122,6 +126,9 @@ def cpj_init(tk_win_root: tk.Tk):
 def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
     """! Dessine la grille de jeu
 
+    Cette fonction appelle la fonction de la vue permettant de dessiner la
+    grille de jeu.
+
     @pre i_nb_rows > 0
     @pre i_nb_columns > 0
     @param i_nb_rows: Nombre de lignes de la grille de jeu
@@ -134,6 +141,9 @@ def cpj_draw_grid(i_nb_rows: int, i_nb_columns: int):
 
 def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
     """! Place un jeton dans la grille de jeu
+
+    Cette fonction appelle la fonction de la vue permettant de placer un jeton
+    dans la grille de jeu.
 
     @pre i_row >= 0
     @pre i_cols >= 0
@@ -161,6 +171,12 @@ def cpj_put_coin(i_row: int, i_cols: int, i_joueur: int):
 
 def cpj_undo():
     """! Annule le dernier coup
+
+    Cette fonction annule le dernier coup joué et met à jour la grille de jeu.
+
+    @pre tk_root initialisé
+    @post dernier coup annulé
+
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Ajouter à la liste des coups annulés la grille actuelle
@@ -173,6 +189,12 @@ def cpj_undo():
 
 def cpj_redo():
     """! Refait le dernier coup
+
+    Cette fonction refait le dernier coup annulé et met à jour la grille de jeu.
+
+    @pre tk_root initialisé
+    @post dernier coup refait
+
     """
     global T_UNDO_REDO, T_REDO, NPA_GRID
     # Récupération de la grille dont le coup a été annulé
@@ -183,6 +205,8 @@ def cpj_redo():
 
 def cpj_quit():
     """! Quitte la partie
+
+    Cette fonction détruit la page de jeu et ferme la fenêtre principale.
 
     @pre tk_root initialisé
     @post page de jeu détruite
@@ -196,6 +220,9 @@ def cpj_quit():
 
 def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     """! Joue un coup dans la grille de jeu
+
+    Cette fonction joue un coup dans la grille de jeu et met à jour la grille
+    de jeu.
 
     @pre event est un évènement de la souris
     @pre tkf_page_jeu initialisé
@@ -265,6 +292,8 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
 def cpj_use_bonus(tkf_page_jeu: tk.Frame):
     """! Utilise un bonus puis met à jour la grille de jeu
 
+    Cette fonction utilise un bonus puis met à jour la grille de jeu.
+
     @pre S_BONUS est un bonus
     @pre NPA_GRID est une grille de jeu
     @param tkf_page_jeu : Frame de la page de jeu
@@ -303,6 +332,8 @@ def cpj_use_bonus(tkf_page_jeu: tk.Frame):
 
 def cpj_bot_play(tkf_page_jeu: tk.Frame):
     """! Fait jouer le bot
+
+    Cette fonction fait jouer le bot puis met à jour la grille de jeu.
 
     @pre tkf_page_jeu initialisé
     @param tkf_page_jeu : Frame de la page de jeu
@@ -345,6 +376,9 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
 def cpj_update_grid():
     """! Réinitialise la grille de jeu
 
+    Cette fonction réinitialise la grille de jeu puis met à jour la grille de
+    jeu. Elle permet de mettre à jour la grille de jeu après un undo ou un redo.
+
     @pre NPA_GRID initialisé
     @post Grille de jeu mise à jour
 
@@ -372,6 +406,8 @@ def cpj_update_grid():
 
 def cpj_info_turn(b_is_player: bool):
     """! Affiche le joueur qui doit jouer
+
+    Cette fonction affiche le joueur qui doit jouer.
 
     @param b_is_player : Booléen indiquant si c'est au joueur de jouer
     @post Affichage du joueur qui doit jouer

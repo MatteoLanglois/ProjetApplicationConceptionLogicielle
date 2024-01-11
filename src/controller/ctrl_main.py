@@ -35,6 +35,8 @@ from src.view import view_main as view_m
 def cm_init():
     """! Initialise la fenêtre de jeu
 
+    Cette fonction initialise la fenêtre de jeu et lance la boucle principale.
+
     @pre tk_root initialisé
     @post boucle principale lancée
 
@@ -53,6 +55,8 @@ def cm_init():
 def cm_quit(tk_root: tk.Tk):
     """! Ferme la fenêtre de jeu
 
+    Cette fonction appelle la fonction de fermeture de la fenêtre de jeu.
+
     @pre tk_root initialisé
     @param tk_root: Fenêtre principale
     """
@@ -60,21 +64,29 @@ def cm_quit(tk_root: tk.Tk):
     view_m.vm_quit(tk_root)
 
 
-def cm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
+def cm_menu(tk_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     """! Crée le menu de la fenêtre
 
+    Cette fonction appelle la fonction de création du menu de la fenêtre. Elle
+    renvoie le menu créé. Elle prend en paramètre le cadre de la dernière
+    fenêtre et un booléen indiquant si le joueur est en jeu ou non.
+
     @pre tkf_old_frame initialisé
-    @param tk_old_frame: Le cadre de la dernière fenêtre
+    @param tk_frame: Le cadre de la dernière fenêtre
     @param b_in_game: Booléen indiquant si le joueur est en jeu ou non
     @return Menu de la fenêtre
     @post Menu créé
     """
     # Création du menu
-    return view_m.vm_menu(tk_old_frame, b_in_game)
+    return view_m.vm_menu(tk_frame, b_in_game)
 
 
 def cm_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     """! Fonction permettant de passer à la fenêtre de jeu.
+
+    Cette fonction appelle la fonction de suppression du cadre de la dernière
+    fenêtre et la fonction d'initialisation de la page de jeu. Elle permet de
+    passer à la fenêtre de jeu.
 
     @pre tk_root initialisé
     @pre tkf_old_frame initialisé
@@ -92,6 +104,10 @@ def cm_page_play(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
 def cm_page_bonus(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     """! Fonction permettant de passer à la fenêtre de jeu.
 
+    Cette fonction appelle la fonction de suppression du cadre de la dernière
+    fenêtre et la fonction d'initialisation de la page de jeu. Elle permet de
+    passer à la fenêtre de jeu.
+
     @pre tk_root initialisé
     @pre tkf_old_frame initialisé
     @param tk_root: La fenêtre principale
@@ -107,6 +123,10 @@ def cm_page_bonus(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
 
 def cm_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     """! Fonction permettant de passer à la fenêtre de paramètres
+
+    Cette fonction appelle la fonction de suppression du cadre de la dernière
+    fenêtre et la fonction d'initialisation de la page de paramètres. Elle
+    permet de passer à la fenêtre de paramètres.
 
     @pre tk_root initialisé
     @pre tkf_old_frame initialisé
@@ -124,6 +144,10 @@ def cm_page_parameters(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
 def cm_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
     """! Fonction permettant de passer à la fenêtre d'accueil
 
+    Cette fonction appelle la fonction de suppression du cadre de la dernière
+    fenêtre et la fonction d'initialisation de la page d'accueil. Elle permet
+    de passer à la fenêtre d'accueil.
+
     @pre tk_root initialisé
     @pre tkf_old_frame initialisé
     @param tk_root: La fenêtre principale
@@ -140,6 +164,10 @@ def cm_page_accueil(tk_root: tk.Tk, tkf_old_frame: tk.Frame):
 def cm_ended_game(str_message: str, tkf_old_frame: tk.Frame):
     """! Fonction permettant de passer à la fenêtre de fin de partie
 
+    Cette fonction appelle la fonction de suppression du cadre de la dernière
+    fenêtre et la fonction d'initialisation de la page de fin de partie. Elle
+    permet de passer à la fenêtre de fin de partie.
+
     @pre tkf_old_frame initialisé
     @param str_message: Message à afficher
     @param tkf_old_frame: Le cadre de la dernière fenêtre
@@ -149,7 +177,9 @@ def cm_ended_game(str_message: str, tkf_old_frame: tk.Frame):
 
 
 def cm_warning(str_message: str):
-    """! Affiche un message d'avertissement
+    """! Affiche un message d'avertissement.
+
+    Cette fonction appelle la fonction d'affichage d'un message d'avertissement.
 
     @param str_message: Message à afficher
     """
@@ -158,7 +188,9 @@ def cm_warning(str_message: str):
 
 
 def cm_info(str_message: str):
-    """! Affiche un message d'information
+    """! Affiche un message d'information.
+
+    Cette fonction appelle la fonction d'affichage d'un message d'information.
 
     @param str_message: Message à afficher
     """
@@ -168,6 +200,8 @@ def cm_info(str_message: str):
 
 def cm_update(tk_root: tk.Tk):
     """! Met à jour la fenêtre
+
+    Cette fonction appelle la fonction de mise à jour de la fenêtre principale.
 
     @pre tk_root initialisé
     @param tk_root: Fenêtre principale

@@ -36,6 +36,9 @@ global S_BONUS
 def cpb_init(tk_win_root: tk.Tk):
     """! Initialise la page de choix du bonus
 
+    Cette fonction initialise la page de choix du bonus en affichant la fenêtre
+    principale et en initialisant la page de choix du bonus.
+
     @pre tk_root initialisé
     @param tk_win_root: Fenêtre principale
     @post page de choix du bonus initialisée
@@ -52,7 +55,12 @@ def cpb_init(tk_win_root: tk.Tk):
 
 
 def cpb_get_bonuses() -> list[str]:
-    """! Récupère les bonus disponibles
+    """! Récupère les bonus disponibles.
+
+    Cette fonction récupère les bonus disponibles et les formate pour
+    l'affichage.
+
+    @return : Liste des bonus disponibles
     """
     # On récupère les fonctions du module bonus en formatant leur nom pour
     # l'affichage
@@ -62,6 +70,9 @@ def cpb_get_bonuses() -> list[str]:
 
 def cpb_valider_bonus():
     """! Récupère les bonus sélectionnés par le joueur
+
+    Cette fonction récupère les bonus sélectionnés par le joueur et passe à la
+    fenêtre de jeu.
 
     @pre fenêtre de choix du bonus affichée
     @post Choix du bonus enregistré
@@ -78,7 +89,10 @@ def cpb_valider_bonus():
 
 
 def cpb_show_bonus_description(s_bonus: str):
-    """! Affiche la description du bonus sélectionné
+    """! Affiche la description du bonus sélectionné.
+
+    Cette fonction affiche la description du bonus sélectionné. Pour cela, elle
+    récupère la description du bonus et l'affiche.
 
     @pre s_bonus non vide
     @param s_bonus: Nom du bonus
@@ -95,6 +109,8 @@ def cpb_show_bonus_description(s_bonus: str):
 
 def cpb_get_chosen_bonus() -> str:
     """! Accesseur du bonus choisi par l'utilisateur
+
+    Cette fonction retourne le bonus choisi par l'utilisateur.
 
     @pre S_BONUS non nul
     @return : Bonus choisi par l'utilisateur

@@ -27,6 +27,8 @@ from src.controller import ctrl_main as ctrl_m
 def cpa_init(tk_root: tk.Tk):
     """! Initialise la page d'accueil
 
+    Cette fonction initialise la page d'accueil du jeu.
+
     @pre tk_root initialisé
     @param tk_root: Fenêtre principale
     """
@@ -36,6 +38,9 @@ def cpa_init(tk_root: tk.Tk):
 
 def cpa_play(tk_root: tk.Tk, tkf_frame: tk.Frame):
     """! Lance une partie
+
+    Cette fonction lance une partie de puissance 4++. Elle est appelée lorsque
+    l'utilisateur clique sur le bouton "Jouer".
 
     @pre tk_root initialisé
     @pre tkf_frame initialisé

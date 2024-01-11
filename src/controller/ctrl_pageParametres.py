@@ -34,6 +34,9 @@ global TK_ROOT
 def cpp_init(tk_win_root: tk.Tk):
     """! Initialise la page des paramètres
 
+    Cette fonction initialise la page des paramètres en chargeant les
+    paramètres sauvegardés et en les affichant.
+
     @pre tk_root initialisé
     @param tk_win_root: Fenêtre principale
     @post page des paramètres initialisée
@@ -79,6 +82,11 @@ def cpp_init(tk_win_root: tk.Tk):
 
 def cpp_settings_save():
     """! Sauvegarde les paramètres
+
+    Cette fonction sauvegarde les paramètres dans un fichier texte. Si les
+    paramètres ne sont pas valides, un message d'erreur est affiché. Les
+    paramètres sont valides si le nombre de jetons à aligner est inférieur ou
+    égal au nombre de lignes ou au nombre de colonnes.
 
     @pre tk_root initialisé
     @pre res/settings.txt existant
@@ -130,6 +138,12 @@ def cpp_settings_save():
 
 def cpp_settings_reset():
     """! Réinitialise les paramètres
+
+    Cette fonction réinitialise les paramètres par défaut.
+
+    @pre tk_root initialisé
+    @pre view_pp initialisé
+
     """
     # Réinitialisation des paramètres
     view_pp.vpp_reset_settings()
@@ -137,6 +151,12 @@ def cpp_settings_reset():
 
 def cpp_custom_save():
     """! Sauvegarde des paramètres de personnalisation
+
+    Cette fonction sauvegarde les paramètres de personnalisation dans un
+    fichier texte. Si les paramètres ne sont pas valides, un message d'erreur
+    est affiché. Les paramètres sont valides si deux couleurs ne sont pas trop
+    proches. Deux couleurs sont trop proches si la différence entre les
+    composantes rouges, vertes et bleues est inférieure à 50.
 
     @pre tk_root initialisé
     @pre res/custom.txt existant
@@ -187,6 +207,12 @@ def cpp_custom_save():
 
 def cpp_settings_load() -> (int, int, int, int):
     """! Charge les paramètres
+
+    Cette fonction charge les paramètres sauvegardés dans un fichier texte. Elle
+    récupère le nombre de lignes, le nombre de colonnes, le nombre de jetons à
+    aligner et la difficulté du bot. Si le fichier n'existe pas, les paramètres
+    par défaut sont retournés.
+
     @pre res/settings.txt existant
     @return i_rows: Nombre de lignes de la grille
     @return i_columns: Nombre de colonnes de la grille
@@ -200,7 +226,7 @@ def cpp_settings_load() -> (int, int, int, int):
     * i_difficulty : Difficulté du bot
     """
     # Initialisation des variables
-    i_rows, i_columns, i_nb_jetons, i_difficulty = 0, 0, 0, 0
+    i_rows, i_columns, i_nb_jetons, i_difficulty = 6, 7, 4, 0
 
     # Ouverture du fichier de sauvegarde des paramètres
     with open("res/settings.txt", "r") as f_settings:
@@ -219,6 +245,12 @@ def cpp_settings_load() -> (int, int, int, int):
 
 def cpp_custom_load() -> (str, str, str):
     """! Charge les paramètres de personnalisation
+
+    Cette fonction charge les paramètres de personnalisation sauvegardés dans
+    un fichier texte. Elle récupère la couleur des jetons du joueur, la couleur
+    des jetons du bot et la couleur de la grille. Si le fichier n'existe pas,
+    les paramètres par défaut sont retournés.
+
     @pre res/custom.txt existant
     @return st_color_joueur: Couleur des jetons du joueur
     @return st_color_bot: Couleur des jetons du bot
@@ -230,7 +262,8 @@ def cpp_custom_load() -> (str, str, str):
     * st_color_grid : Couleur de la grille
     """
     # Initialisation des variables
-    st_color_joueur, st_color_bot, st_color_grid = "", "", ""
+    st_color_joueur, st_color_bot, st_color_grid = ("#ff0000", "#ffff00",
+                                                    "#5064F1")
 
     # Ouverture du fichier de sauvegarde des paramètres de personnalisation
     with open("res/custom.txt", "r") as f_custom:
@@ -253,8 +286,13 @@ def cpp_custom_load() -> (str, str, str):
 
 
 def cpp_askcolor(s_element: str):
-    """! Ouvre un sélecteur de couleur
+    """! Ouvre un sélecteur de couleur.
 
+    Cette fonction ouvre un sélecteur de couleur pour l'élément passé en
+    paramètre. L'élément peut être le joueur, le bot ou la grille.
+
+    @pre tk_root initialisé
+    @pre view_pp initialisé
     @param s_element: Élément à colorer (joueur, bot ou grille)
     """
     # Demande de la couleur
@@ -263,6 +301,11 @@ def cpp_askcolor(s_element: str):
 
 def cpp_custom_reset():
     """! Réinitialise les paramètres de personnalisation
+
+    Cette fonction réinitialise les paramètres de personnalisation par défaut.
+
+    @pre tk_root initialisé
+    @pre view_pp initialisé
     """
     # Réinitialisation des paramètres de personnalisation
     view_pp.vpp_reset_customs()
