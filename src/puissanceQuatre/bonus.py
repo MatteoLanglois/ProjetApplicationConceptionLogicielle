@@ -20,6 +20,7 @@ import numpy as np
 from src.puissanceQuatre import puissanceQuatre as ps4
 from src.puissanceQuatre import grid as gr
 from src.utils import bonus_utils as bu
+from src.controller import ctrl_pageJeu as cpj
 
 
 def p4b_no_bonus(npa_grid: np.array) -> np.array:
@@ -146,7 +147,8 @@ def p4b_use_min_max(npa_grid: np.array) -> np.array:
     * i_col : La colonne qui va être jouée avec l'algorithme min max
     """
     # On calcule la colonne où le joueur doit poser son jeton avec min-max
-    i_col, _ = ps4.pq_minmax(1, np.copy(npa_grid), 4, 0, True, 0)
+    i_col = ps4.pq_minmax(2, npa_grid.copy(), cpj.I_NB_JETONS, "use_min_max", True, 0,
+              True, 0, True)
     # On pose le jeton
     ps4.pq_ajout_piece(npa_grid, i_col, 1)
     # On retourne la grille

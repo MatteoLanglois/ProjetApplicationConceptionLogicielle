@@ -102,10 +102,9 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
 
 def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
               iColonne=0,
-              isFirst=False, tour=0) -> (int, float):
+              isFirst=False, tour=0, isthebonus = False) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
     @todo Optimiser
-    @todo Commenter
     """
     # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
     if tour < 2:
@@ -130,7 +129,10 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
                 if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
                                i_nb_victoire):
                     # On retourne 10
-                    return 10
+                    if isthebonus:
+                        return -10
+                    else:
+                        return 10
             # Si la partie est finie
             if pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
@@ -144,7 +146,10 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
             if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
                            i_nb_victoire):
                 # On retourne -10
-                return -10
+                if isthebonus:
+                    return 10
+                else:
+                    return -10
             # Si la partie est finie
             elif pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
@@ -167,7 +172,7 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
                               s_bonus, b_bonus_used, i,
                               False, tour + 1))
             else:
-                # Si on ne peut pas jouer dans la colonne, on renvoie 0
+                # Si on ne peut pas jouer dans la colonne, on renvoie -1 (cela évite mieux ces colonnes)
                 result.append(-1)
         # Si le bonus n'a pas encore été joué
         if not b_bonus_used and iJoueur == 1:
@@ -185,13 +190,14 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
             # ne l'est pas
             while pq_verif_colonne(max_index, npaGrilleCopy) is False:
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
+                # On met le meilleur coup à -100 pour ne pas le reprendre
                 result[max_index] = -100
                 maximum = max(result)
                 # On récupère le nouvel indice du maximum
                 max_index = result.index(maximum)
             # On renvoie la colonne à jouer
             return max_index
-        # On renvoie sinon la moyenne des scores des coups joués
+        # Sinon on renvoit la moyenne des scores des coups joués
         return float(float(sum(result)) / float(len(result)))
     else:
         # Si on a dépassé le nombre de tours, on renvoie 0
