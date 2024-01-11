@@ -33,6 +33,10 @@ global TK_ROOT
 def vm_init() -> tk.Tk:
     """! Initialise la fenêtre de jeu
 
+    Cette fonction initialise la fenêtre principale du jeu. Elle crée la
+    fenêtre, lui donne un titre, un logo, la rend non redimensionnable et
+    renvoie la fenêtre créée.
+
     **Variables :**
     * tk_root : Fenêtre principale
 
@@ -54,6 +58,9 @@ def vm_init() -> tk.Tk:
 def vm_quit(tk_win_root: tk.Tk):
     """! Ferme la fenêtre de jeu
 
+    Cette fonction ferme la fenêtre principale du jeu.
+
+
     **Préconditions :**
     * tk_root initialisé
 
@@ -65,6 +72,10 @@ def vm_quit(tk_win_root: tk.Tk):
 
 def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
     """! Initialise le menu de la fenêtre de jeu
+
+    Cette fonction initialise le menu de la fenêtre principale du jeu. Elle
+    crée le menu, les sous-menus, les commandes et renvoie le menu créé. Ce
+    menu est affiché dans toutes les fenêtres.
 
     **Variables :**
     * tkm_menu_bar : Menu de la fenêtre de jeu
@@ -112,6 +123,11 @@ def vm_menu(tk_old_frame: tk.Frame, b_in_game: bool) -> tk.Menu:
 def vm_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
     """! Affiche un message de fin de partie
 
+    Cette fonction affiche un message de fin de partie. Elle demande à
+    l'utilisateur s'il veut rejouer ou non. Si oui, elle relance une partie
+    sinon elle revient à la page d'accueil. Elle est appelée lorsque la partie
+    est terminée.
+
     **Préconditions :**
     * tk_root initialisé
 
@@ -131,6 +147,11 @@ def vm_message_game_ended(s_message: str, tkf_page_jeu: tk.Frame):
 def vm_message_warning(str_message: str):
     """! Affiche un message d'avertissement
 
+    Cette fonction affiche un message d'avertissement. Elle est appelée lorsque
+    l'utilisateur fait une action qui n'est pas autorisée. Par exemple, si
+    l'utilisateur choisit des paramètres qui ne sont pas compatibles avec le
+    jeu.
+
     @param str_message: Message à afficher
     """
     # Affiche un message d'avertissement
@@ -140,6 +161,10 @@ def vm_message_warning(str_message: str):
 def vm_message_info(str_message: str):
     """! Affiche un message d'information
 
+    Cette fonction affiche un message d'information. Elle est appelée lorsque
+    l'utilisateur fait une action qui est autorisée. Par exemple, lorsque
+    l'utilisateur change les paramètres du jeu.
+
     @param str_message: Message à afficher
     """
     # Affiche un message d'information
@@ -148,6 +173,9 @@ def vm_message_info(str_message: str):
 
 def vm_remove_frame(frame: tk.Frame):
     """! Supprime un cadre
+
+    Cette fonction supprime un cadre. Elle est appelée lorsque l'on veut
+    changer de page.
 
     @pre frame existe
     @param frame: Le cadre à supprimer
@@ -161,6 +189,9 @@ def vm_remove_frame(frame: tk.Frame):
 
 def vm_update(tk_root: tk.Tk):
     """! Met à jour la fenêtre principale
+
+    Cette fonction met à jour la fenêtre principale. Elle est appelée lorsque
+    l'on veut mettre à jour la fenêtre principale.
 
     @param tk_root: Fenêtre principale
     """

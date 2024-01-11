@@ -36,6 +36,11 @@ global TKF_PAGE_CHOIX
 def vpb_init(tk_root: tk.Tk) -> None:
     """! Initialisation de la fenêtre de choix du bonus.
 
+    Cette fonction initialise la fenêtre de choix du bonus. Elle crée un cadre,
+    un titre, un menu déroulant pour le choix du bonus, un label pour la
+    description du bonus et un bouton pour valider le bonus. Elle affiche aussi
+    la description du premier bonus. Elle affiche aussi le menu sur la fenêtre.
+
     @pre tk_root initialisé
     @param tk_root: la fenêtre de base
     @post Fenêtre de choix du bonus initialisée
@@ -101,6 +106,9 @@ def vpb_init(tk_root: tk.Tk) -> None:
 def vpb_get_bonus() -> tuple[str, ...]:
     """! Récupère le nom du bonus sélectionné par le joueur
 
+    Cette fonction récupère le nom du bonus sélectionné par le joueur. Elle
+    renvoie le nom du bonus sélectionné.
+
     @pre TKS_BONUS initialisé
     @return: Le nom du bonus sélectionné par le joueur
 
@@ -113,7 +121,11 @@ def vpb_get_bonus() -> tuple[str, ...]:
 
 
 def vpb_show_bonus_description(s_description: str):
-    """! Affiche la description d'un bonus*
+    """! Affiche la description d'un bonus
+
+    Cette fonction affiche la description d'un bonus. Elle prend en paramètre
+    la description du bonus à afficher. Elle affiche la description du bonus
+    dans le label de la description du bonus.
 
     @pre TKL_DESCRIPTION_BONUS initialisé
     @param s_description: Description du bonus
@@ -128,6 +140,10 @@ def vpb_show_bonus_description(s_description: str):
 
 def vpb_get_frame() -> tk.Frame:
     """! Accesseur du cadre de la fenêtre de choix du bonus
+
+    Cette fonction renvoie le cadre de la fenêtre de choix du bonus. Elle est
+    utilisée par le contrôleur principal pour afficher la fenêtre de choix du
+    bonus.
 
     @pre Cadre initialisé
     @return : Cadre de la fenêtre de choix du bonus.

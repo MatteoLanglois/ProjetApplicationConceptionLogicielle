@@ -32,6 +32,9 @@ global TKF_PAGE_ACCUEIL
 def vpa_init(tk_root: tk.Tk):
     """! Initialise la page d'accueil
 
+    Cette fonction initialise la page d'accueil. Elle crée un cadre, un label
+    contenant le titre et un bouton pour lancer une partie.
+
     **Variables :**
     * tkf_page_accueil : Frame de la page d'accueil
     * tkl_title : Label contenant le titre
@@ -72,6 +75,9 @@ def vpa_init(tk_root: tk.Tk):
 
 def vpa_destroy():
     """! Détruit la page d'accueil
+
+    Cette fonction détruit la page d'accueil. Elle efface le cadre et le
+    supprime.
 
     **Variables :**
     * tkf_page_accueil : Frame de la page d'accueil

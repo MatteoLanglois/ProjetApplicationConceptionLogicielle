@@ -55,6 +55,10 @@ global TKS_SCALE
 def vpp_init(tk_root: tk.Tk):
     """! Fonction initialisant la page des paramètres
 
+    Cette fonction initialise la page des paramètres. Elle crée un cadre et
+    affiche le menu sur la fenêtre. Elle initialise aussi les paramètres de jeu
+    et de personnalisation.
+
     **Variables :**
     * tkf_page_parameter : Frame de la page des paramètres
 
@@ -80,6 +84,11 @@ def vpp_init(tk_root: tk.Tk):
 
 def vpp_init_custom():
     """! Fonction initialisant la partie personnalisation des paramètres
+
+    Cette fonction initialise la partie personnalisation des paramètres. Elle
+    crée des labels pour indiquer les choix de couleurs et des boutons pour
+    ouvrir un sélecteur de couleur. Elle initialise aussi les couleurs par
+    défaut.
 
     @pre TKF_PAGE_PARAMETER initialisé
     @post La partie personnalisation des paramètres est initialisée
@@ -180,6 +189,10 @@ def vpp_init_custom():
 
 def vpp_init_settings():
     """! Fonction initialisant la partie paramètres du jeu
+
+    Cette fonction initialise la partie paramètres du jeu. Elle crée des labels
+    pour indiquer les choix de paramètres et des spinbox pour choisir les
+    paramètres. Elle initialise aussi les paramètres par défaut.
 
     @pre TKF_PAGE_PARAMETER initialisé
     @post La partie paramètres du jeu est initialisée
@@ -286,6 +299,9 @@ def vpp_init_settings():
 def vpp_get_nb_rows():
     """! Accesseur retournant le nombre de lignes sélectionné
 
+    Cette fonction retourne le nombre de lignes sélectionné par l'utilisateur.
+    Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer"
+
     @pre STV_ROWS initialisé
     @return Le nombre de lignes sélectionné
 
@@ -300,6 +316,9 @@ def vpp_get_nb_rows():
 def vpp_get_nb_columns():
     """! Accesseur retournant le nombre de colonnes sélectionné
 
+    Cette fonction retourne le nombre de colonnes sélectionné par l'utilisateur.
+    Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer"
+
     @pre STV_COLUMNS initialisé
     @return Le nombre de colonnes sélectionné
 
@@ -313,6 +332,10 @@ def vpp_get_nb_columns():
 
 def vpp_get_nb_jetons():
     """! Accesseur retournant le nombre de jetons requis sélectionné
+
+    Cette fonction retourne le nombre de jetons requis sélectionné par
+    l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton
+    "Enregistrer".
 
     @pre STV_NB_JETONS initialisé
     @return Le nombre de jetons requis sélectionné
@@ -329,6 +352,9 @@ def vpp_get_nb_jetons():
 def vpp_get_difficulty():
     """! Accesseur retournant la difficulté sélectionnée
 
+    Cette fonction retourne la difficulté sélectionnée par l'utilisateur. Elle
+    est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".
+
     @pre TKS_SCALE initialisé
     @return La difficulté sélectionnée
 
@@ -342,6 +368,9 @@ def vpp_get_difficulty():
 
 def vpp_set_nb_rows(i_rows: int):
     """! Mutateur pour le nombre de lignes
+
+    Cette fonction modifie le nombre de lignes sélectionné par l'utilisateur.
+    Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".
 
     @pre STV_ROWS initialisé
     @param i_rows: Le nouveau nombre de lignes
@@ -358,6 +387,9 @@ def vpp_set_nb_rows(i_rows: int):
 def vpp_set_nb_columns(i_columns: int):
     """! Mutateur pour le nombre de colonnes
 
+    Cette fonction modifie le nombre de colonnes sélectionné par l'utilisateur.
+    Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".
+
     @pre STV_COLUMNS initialisé*
     @param i_columns: Le nouveau nombre de colonnes
     @post STV_COLUMNS est modifié
@@ -371,6 +403,10 @@ def vpp_set_nb_columns(i_columns: int):
 
 def vpp_set_nb_jetons(i_nb_jetons: int):
     """! Mutateur pour le nombre de jetons requis
+
+    Cette fonction modifie le nombre de jetons requis sélectionné par
+    l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton
+    "Réinitialiser".
 
     @pre STV_NB_JETONS initialisé
     @param i_nb_jetons: Le nouveau nombre de jetons requis
@@ -388,6 +424,9 @@ def vpp_set_nb_jetons(i_nb_jetons: int):
 def vpp_set_difficulty(i_difficulty):
     """! Mutateur pour la difficulté
 
+    Cette fonction modifie la difficulté sélectionnée par l'utilisateur. Elle
+    est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".
+
     @pre TKS_SCALE initialisé
     @param i_difficulty: La nouvelle difficulté
     @post TKS_SCALE est modifié
@@ -403,6 +442,9 @@ def vpp_set_difficulty(i_difficulty):
 
 def vpp_reset_settings():
     """! Réinitialise les paramètres du jeu
+
+    Cette fonction réinitialise les paramètres du jeu. Elle est appelée lorsque
+    l'utilisateur clique sur le bouton "Réinitialiser".
     """
     # Définit le nombre de lignes de la grille à 6.
     vpp_set_nb_rows(6)
@@ -416,6 +458,9 @@ def vpp_reset_settings():
 
 def vpp_get_joueur_color():
     """! Accesseur retournant la couleur des jetons du joueur
+
+    Cette fonction retourne la couleur des jetons du joueur. Elle est appelée
+    lorsque l'utilisateur clique sur le bouton "Enregistrer".
 
     @pre TIS_CUSTOM_COLOR_JOUEUR initialisé
     @return La couleur des jetons du joueur
@@ -432,6 +477,9 @@ def vpp_get_joueur_color():
 def vpp_get_bot_color():
     """! Accesseur retournant la couleur des jetons du bot
 
+    Cette fonction retourne la couleur des jetons du bot. Elle est appelée
+    lorsque l'utilisateur clique sur le bouton "Enregistrer".
+
     @pre TIS_CUSTOM_COLOR_BOT initialisé
     @return La couleur des jetons du bot
 
@@ -446,6 +494,9 @@ def vpp_get_bot_color():
 def vpp_get_grid_color():
     """! Accesseur retournant la couleur de la grille
 
+    Cette fonction retourne la couleur de la grille. Elle est appelée lorsque
+    l'utilisateur clique sur le bouton "Enregistrer".
+
     @pre TIS_CUSTOM_COLOR_GRID initialisé
     @return La couleur de la grille
 
@@ -459,6 +510,9 @@ def vpp_get_grid_color():
 
 def vpp_set_joueur_color(s_color: str):
     """! Mutateur pour la couleur des jetons du joueur
+
+    Cette fonction modifie la couleur des jetons du joueur. Elle est appelée
+    lorsque l'utilisateur clique sur le bouton "Réinitialiser".
 
     @pre TIS_CUSTOM_COLOR_JOUEUR initialisé
     @param s_color: La nouvelle couleur des jetons du joueur
@@ -480,6 +534,9 @@ def vpp_set_joueur_color(s_color: str):
 def vpp_set_bot_color(s_color: str):
     """! Mutateur pour la couleur des jetons du bot
 
+    Cette fonction modifie la couleur des jetons du bot. Elle est appelée
+    lorsque l'utilisateur clique sur le bouton "Réinitialiser".
+
     @pre TIS_CUSTOM_COLOR_BOT initialisé
     @param s_color: La nouvelle couleur des jetons du bot
     @post TIS_CUSTOM_COLOR_BOT est modifié
@@ -499,6 +556,9 @@ def vpp_set_bot_color(s_color: str):
 def vpp_set_grid_color(s_color: str):
     """! Mutateur pour la couleur de la grille
 
+    Cette fonction modifie la couleur de la grille. Elle est appelée lorsque
+    l'utilisateur clique sur le bouton "Réinitialiser".
+
     @pre TIS_CUSTOM_COLOR_GRID initialisé
     @param s_color: La nouvelle couleur de la grille
     @post TIS_CUSTOM_COLOR_GRID est modifié
@@ -517,6 +577,10 @@ def vpp_set_grid_color(s_color: str):
 
 def vpp_reset_customs():
     """! Réinitialise les paramètres de personnalisation
+
+    Cette fonction réinitialise les paramètres de personnalisation. Elle est
+    appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".
+
     """
     # Définit la couleur des jetons du joueur à rouge
     vpp_set_joueur_color("#ff0000")
@@ -528,6 +592,13 @@ def vpp_reset_customs():
 
 def vpp_askcolor(s_element: str):
     """! Ouvre un sélecteur de couleur
+
+    Cette fonction ouvre un sélecteur de couleur. Elle est appelée lorsque
+    l'utilisateur clique sur le bouton pour choisir la couleur.
+
+    @pre s_element est soit "joueur", "bot" ou "grille"
+    @param s_element: L'élément dont on veut changer la couleur
+    @post La couleur de l'élément est modifiée
     """
     # Demande la couleur de l'élément
     s_colors = f"{askcolor(title=s_element)[1]}"

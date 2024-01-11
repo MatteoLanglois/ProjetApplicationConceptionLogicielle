@@ -46,6 +46,11 @@ global TKL_INFO
 def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     """! Initialise la page de jeu
 
+    Cette fonction initialise la page de jeu. Elle crée un cadre, un canvas
+    pour afficher la grille, un bouton pour annuler le dernier coup, un bouton
+    pour refaire le dernier coup, un bouton pour utiliser un bonus et un bouton
+    pour quitter la partie. Elle affiche aussi le menu sur la fenêtre.
+
     **Variables :**
     * tkf_page_jeu : Frame de la page de jeu
     * tkc_grid : Canvas de la page de jeu
@@ -120,6 +125,8 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
 def vpj_destroy():
     """! Détruit la page de jeu
 
+    Cette fonction détruit la page de jeu. Elle efface le cadre et le supprime.
+
     **Variables :**
     * tkf_page_jeu : Frame de la page de jeu
 
@@ -136,6 +143,10 @@ def vpj_destroy():
 
 def vpj_draw_grid(rows: int, columns: int):
     """! Dessine la grille de jeu
+
+    Cette fonction dessine la grille de jeu. Elle prend en paramètre le nombre
+    de lignes et de colonnes de la grille. Elle dessine la grille dans le
+    canvas.
 
     **Variables :**
     * tkc_grid : Canvas de la page de jeu
@@ -185,6 +196,10 @@ def vpj_draw_grid(rows: int, columns: int):
 def vpj_show_coin(row: int, column: int, color: str):
     """! Dessine un jeton dans une cellule
 
+    Cette fonction dessine un jeton dans une cellule. Elle prend en paramètre
+    la ligne et la colonne de la cellule où l'on va dessiner le jeton et la
+    couleur du jeton. Elle dessine le jeton dans la cellule.
+
     @param row: Ligne de la cellule où l'on va dessiner le jeton
     @param column: Colonne de la cellule où l'on va dessiner le jeton
     @param color: Couleur du jeton
@@ -210,6 +225,7 @@ def vpj_show_coin(row: int, column: int, color: str):
 
 def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
     """! Récupère les coordonnées dans la grille de la cellule cliquée
+
     Récupère les coordonnées dans la grille de la cellule cliquée en fonction
     des coordonnées du clic dans le canvas.
 
@@ -238,6 +254,9 @@ def vpj_get_grid_cell(i_x: int, i_y: int) -> (int, int):
 def vpj_disable_bonus():
     """! Désactive le bouton bonus
 
+    Cette fonction désactive le bouton bonus et change son relief. Elle est
+    utilisée par le contrôleur de la page de jeu pour désactiver le bouton.
+
     @pre TKS_BONUS initialisé
     """
     global TKB_BONUS
@@ -249,6 +268,9 @@ def vpj_disable_bonus():
 
 def vpj_get_frame() -> tk.Frame:
     """! Accesseur de la frame de la page de jeu
+
+    Cette fonction renvoie la frame de la page de jeu. Elle est utilisée par le
+    contrôleur principal pour afficher la page de jeu.
 
     @pre TKF_PAGE_JEU initialisé
     @return: Frame de la page de jeu
@@ -263,6 +285,10 @@ def vpj_get_frame() -> tk.Frame:
 
 def vpj_set_info(st_info: str):
     """! Modifie le texte du label d'information
+
+    Cette fonction modifie le texte du label d'information. Elle prend en
+    paramètre le texte à afficher dans le label d'information. Elle affiche le
+    texte dans le label d'information.
 
     @param st_info: Texte à afficher dans le label d'information
     """
