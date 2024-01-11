@@ -84,9 +84,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">pq_ajout_piece</a> (np.array npa_grille, int i_colonne, int i_joueur)</td></tr>
 <tr class="memdesc:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">La méthode qui gère le placement de jetons.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae905af98dd54e79d8be7e67b59955437"><td class="memItemLeft" align="right" valign="top">(int, float)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ae905af98dd54e79d8be7e67b59955437">pq_minmax</a> (iNextJoueur, npaGrilleCopy, i_nb_victoire, iColonne=0, isFirst=False, tour=0)</td></tr>
-<tr class="memdesc:ae905af98dd54e79d8be7e67b59955437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode implémentant l'algorithme minmax.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ae905af98dd54e79d8be7e67b59955437">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae905af98dd54e79d8be7e67b59955437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="memItemLeft" align="right" valign="top">(int, float)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a9dbc2c483ae89fa3dad8833cc3845e2b">pq_minmax</a> (iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iColonne=0, isFirst=False, tour=0, isthebonus=False)</td></tr>
+<tr class="memdesc:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode implémentant l'algorithme minmax.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a9dbc2c483ae89fa3dad8833cc3845e2b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac684727bae3bfbadc62404364e4511b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8">pq_victoire</a> (np.array npa_grille, int i_ligne, int i_colonne, int i_joueur, int i_nb_victoire)</td></tr>
 <tr class="separator:ac684727bae3bfbadc62404364e4511b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13c5a20d8aa478adda10bc609f1fc1b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b">pq_victoire_ligne</a> (np.array npa_grille, int i_ligne, int i_colonne, int i_joueur, int i_nb_victoire)</td></tr>
@@ -107,9 +107,6 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a43c21a259daf90f3409ef02cf8a7ddd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2">pq_partie_finie</a> (np.array npa_grille, bool b_bonus_utilise)</td></tr>
 <tr class="memdesc:a43c21a259daf90f3409ef02cf8a7ddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de si la partie est finie ou non.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a43c21a259daf90f3409ef02cf8a7ddd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6da2b03aae8975513c8c43a701b54d4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af6da2b03aae8975513c8c43a701b54d4">pq_gestion_partie</a> (int i_nb_lignes=6, int i_nb_colonnes=7, int i_nb_jeton_victoire=4)</td></tr>
-<tr class="memdesc:af6da2b03aae8975513c8c43a701b54d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le déroulement d'une partie de puissance 4.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af6da2b03aae8975513c8c43a701b54d4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af6da2b03aae8975513c8c43a701b54d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Ce module contient l'implémentation des règles du puissance 4. </p>
@@ -148,7 +145,8 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>La méthode qui gère le placement de jetons. </p>
-<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne ≤ npa_grille.shape[0] </dd>
+<p>Cette méthode permet de placer un jeton dans une colonne donnée. Elle vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie les coordonnées du nouveau jeton.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne &lt;= npa_grille.shape[0] </dd>
 <dd>
 npa_grille initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
@@ -169,62 +167,8 @@ npa_grille initialisé </dd></dl>
 
 </div>
 </div>
-<a id="af6da2b03aae8975513c8c43a701b54d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6da2b03aae8975513c8c43a701b54d4">&#9670;&nbsp;</a></span>pq_gestion_partie()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def src.puissanceQuatre.puissanceQuatre.pq_gestion_partie </td>
-          <td>(</td>
-          <td class="paramtype">int &#160;</td>
-          <td class="paramname"><em>i_nb_lignes</em> = <code>6</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &#160;</td>
-          <td class="paramname"><em>i_nb_colonnes</em> = <code>7</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &#160;</td>
-          <td class="paramname"><em>i_nb_jeton_victoire</em> = <code>4</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gère le déroulement d'une partie de puissance 4. </p>
-<p>Méthode gérant le déroulement d'une partie de puissance 4 en ligne de commande.</p>
-<p><b>Variables :</b></p><ul>
-<li>b_victoire : Booléen, True si un joueur a gagné, False sinon</li>
-<li>b_bonus_utilise : Booléen, True si le joueur a utilisé son bonus, False sinon</li>
-<li>t_undo_redo : Liste, contient les grilles pour l'undo et le redo</li>
-<li>npa_grille : np.array, la grille de jeu</li>
-<li>i_colonne_joueur : Entier, la colonne où le joueur veut jouer</li>
-<li>i_ligne_joueur : Entier, la ligne où le joueur veut jouer</li>
-</ul>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i_nb_lignes</td><td>Taille de la grille en lignes </td></tr>
-    <tr><td class="paramname">i_nb_colonnes</td><td>Taille de la grille en colonnes </td></tr>
-    <tr><td class="paramname">i_nb_jeton_victoire</td><td>Nombre de jetons à aligner pour gagner* </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">A faire:</a></b></dt><dd>Gérer le bonus</dd></dl>
-
-</div>
-</div>
-<a id="ae905af98dd54e79d8be7e67b59955437"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae905af98dd54e79d8be7e67b59955437">&#9670;&nbsp;</a></span>pq_minmax()</h2>
+<a id="a9dbc2c483ae89fa3dad8833cc3845e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dbc2c483ae89fa3dad8833cc3845e2b">&#9670;&nbsp;</a></span>pq_minmax()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +177,7 @@ npa_grille initialisé </dd></dl>
           <td class="memname"> (int, float) src.puissanceQuatre.puissanceQuatre.pq_minmax </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>iNextJoueur</em>, </td>
+          <td class="paramname"><em>iJoueur</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -251,6 +195,18 @@ npa_grille initialisé </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>s_bonus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>b_bonus_used</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>iColonne</em> = <code>0</code>, </td>
         </tr>
         <tr>
@@ -263,7 +219,13 @@ npa_grille initialisé </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>tour</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>tour</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>isthebonus</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -274,9 +236,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode implémentant l'algorithme minmax. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">A faire:</a></b></dt><dd><p class="startdd">Optimiser </p>
-<p class="enddd">Commenter</p>
-</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">A faire:</a></b></dt><dd>Optimiser</dd></dl>
 
 </div>
 </div>
@@ -317,8 +277,8 @@ npa_grille initialisé </dd></dl>
 </ul>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>
-<li>2 ≤ i_nb_lignes</li>
-<li>2 ≤ i_nb_colonnes</li>
+<li>2 &lt;= i_nb_lignes</li>
+<li>2 &lt;= i_nb_colonnes</li>
 </ul>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -440,7 +400,8 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Vérifie si on peut poser un jeton dans cette colonne. </p>
-<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne ≤ npa_grille.shape[0] </dd>
+<p>Cette fonction permet de vérifier si on peut poser un jeton dans une colonne donnée. Elle vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie un booléen indiquant si on peut poser un jeton dans cette colonne ou non.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne &lt;= npa_grille.shape[0] </dd>
 <dd>
 npa_grille initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
@@ -567,7 +528,7 @@ npa_grille initialisé </dd></dl>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>
 <li>npa_grille contient un jeton en i_ligne, i_colonne</li>
-<li>1 ≤ i_joueur ≤ 2</li>
+<li>1 &lt;= i_joueur &lt;= 2</li>
 </ul>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -632,11 +593,14 @@ npa_grille initialisé </dd></dl>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>i_nb_lignes : Entier, Nombre de lignes dans la grille</li>
 <li>i_nb_colonnes : Entier, Nombre de colonnes dans la grille</li>
+<li>tti_directions : Tableau de tuples d'entiers, Les directions à vérifier</li>
+<li>i_dx : Entier, Composante x de la direction</li>
+<li>i_dy : Entier, Composante y de la direction</li>
 </ul>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>
 <li>npa_grille contient un jeton en i_ligne, i_colonne</li>
-<li>1 ≤ i_joueur ≤ 2</li>
+<li>1 &lt;= i_joueur &lt;= 2</li>
 </ul>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -709,7 +673,7 @@ npa_grille initialisé </dd></dl>
 <p><b>Préconditions :</b></p><ul>
 <li>npa_grille initialisé</li>
 <li>npa_grille contient un jeton en i_ligne, i_colonne</li>
-<li>1 ≤ i_joueur ≤ 2</li>
+<li>1 &lt;= i_joueur &lt;= 2</li>
 </ul>
 <pre class="fragment">@param npa_grille: La grille du jeu
 @param i_ligne: La ligne où le jeton a été posé

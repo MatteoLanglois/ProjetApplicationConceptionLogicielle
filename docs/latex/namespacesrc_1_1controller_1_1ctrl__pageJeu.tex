@@ -27,7 +27,9 @@ def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a2cb6e3e3f71344
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc32463683be9c6da658860d411}{cpj\+\_\+bot\+\_\+play}} (tk.\+Frame tkf\+\_\+page\+\_\+jeu)
 \begin{DoxyCompactList}\small\item\em Fait jouer le bot. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}{cpj\+\_\+update\+\_\+grid}} ()
-\begin{DoxyCompactList}\small\item\em Réinitialise la grille de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Réinitialise la grille de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}{cpj\+\_\+info\+\_\+turn}} (bool b\+\_\+is\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Affiche le joueur qui doit jouer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -59,12 +61,8 @@ tkf\+\_\+page\+\_\+jeu initialisé
 \item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
 \item I\+\_\+\+DIFFICULTY \+: Difficulté du bot
 \item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
-\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu
-\end{DoxyItemize}
-
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000005}{A faire}}]A finir\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}} 
+\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_draw\_grid@{cpj\_draw\_grid}}
 \index{cpj\_draw\_grid@{cpj\_draw\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_draw\_grid()}{cpj\_draw\_grid()}}
@@ -89,7 +87,28 @@ i\+\_\+nb\+\_\+columns $>$ 0
 \begin{DoxyPostcond}{Postcondition}
 grille de jeu dessinée 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}} 
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_info\_turn@{cpj\_info\_turn}}
+\index{cpj\_info\_turn@{cpj\_info\_turn}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_info\_turn()}{cpj\_info\_turn()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+info\+\_\+turn (\begin{DoxyParamCaption}\item[{bool}]{b\+\_\+is\+\_\+player }\end{DoxyParamCaption})}
+
+
+
+Affiche le joueur qui doit jouer. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em b\+\_\+is\+\_\+player} & \+: Booléen indiquant si c\textquotesingle{}est au joueur de jouer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Affichage du joueur qui doit jouer
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item b\+\_\+is\+\_\+player \+: Booléen indiquant si c\textquotesingle{}est au joueur de jouer 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a3fd86d8e8a9c1e6605d5164f822337a7}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_init@{cpj\_init}}
 \index{cpj\_init@{cpj\_init}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_init()}{cpj\_init()}}
@@ -149,9 +168,7 @@ tkf\+\_\+page\+\_\+jeu initialisé
 \item b\+\_\+joueur\+\_\+joue \+: Booléen indiquant si le joueur a joué
 \end{DoxyItemize}
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000003}{A faire}}]A finir\end{DoxyRefDesc}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}} 
+@\+Ftodo Vérifier que tout est bon \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_put\_coin@{cpj\_put\_coin}}
 \index{cpj\_put\_coin@{cpj\_put\_coin}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_put\_coin()}{cpj\_put\_coin()}}
@@ -166,7 +183,7 @@ i\+\_\+row $>$= 0
 
 i\+\_\+cols $>$= 0 
 
-i\+\_\+joueur $>$= 1 et i\+\_\+joueur ≤ 2 
+i\+\_\+joueur $>$= 1 et i\+\_\+joueur $<$= 2 
 \end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
@@ -210,8 +227,6 @@ page de jeu détruite
 
 Refait le dernier coup. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000002}{A faire}}]Vérifier que cela fonctionne bien\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_undo@{cpj\_undo}}
 \index{cpj\_undo@{cpj\_undo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
@@ -222,10 +237,6 @@ Refait le dernier coup.
 
 Annule le dernier coup. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000001}{A faire}}]Afficher le dernier coup annulé sur l\textquotesingle{}interface graphique 
-
-L\textquotesingle{}undo ne fonctionne pas\end{DoxyRefDesc}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_update\_grid@{cpj\_update\_grid}}
 \index{cpj\_update\_grid@{cpj\_update\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
@@ -279,6 +290,6 @@ Bonus utilisé si B\+\_\+\+BONUS\+\_\+\+USED est faux
 \item B\+\_\+\+BONUS\+\_\+\+USED \+: Booléen indiquant si le bonus a été utilisé
 \item m\+\_\+module \+: Module du bonus
 \item f\+\_\+bonus \+: Fonction du bonus \begin{DoxyRefDesc}{A faire}
-\item[\mbox{\hyperlink{todo__todo000004}{A faire}}]Vérifier si le bonus a entraîné une victoire\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000001}{A faire}}]Vérifier si le bonus a entraîné une victoire\end{DoxyRefDesc}
 
 \end{DoxyItemize}

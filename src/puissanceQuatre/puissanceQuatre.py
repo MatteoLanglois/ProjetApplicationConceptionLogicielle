@@ -144,20 +144,14 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
             # Si l'ordinateur a gagné
             if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
                            i_nb_victoire):
-                # On retourne -10
-                if isthebonus:
-                    return 10
-                else:
-                    return -10
+                # On retourne 10 si c'est le bonus, -10 sinon
+                return 10 if isthebonus else -10
             # Si la partie est finie
             elif pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
         # On change de joueur
-        if iJoueur == 1:
-            iJoueur = 2
-        else:
-            iJoueur = 1
+        iJoueur = 2 if iJoueur == 1 else 1
         # On crée la liste qui contiendra les résultats
         result = []
         # Pour chaque colonne de la grille
@@ -171,7 +165,8 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
                               s_bonus, b_bonus_used, i,
                               False, tour + 1))
             else:
-                # Si on ne peut pas jouer dans la colonne, on renvoie -1 (cela évite mieux ces colonnes)
+                # Si on ne peut pas jouer dans la colonne, on renvoie -1
+                # (cela évite mieux ces colonnes)
                 result.append(-1)
         # Si le bonus n'a pas encore été joué
         if not b_bonus_used and iJoueur == 1:
@@ -181,23 +176,21 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
                           False, -1, False, tour + 1))
         # Si c'est le premier appel
         if iJoueur == 1 and isFirst:
-            # On retourne l'indice de la meilleure moyenne coup à jouer
-            maximum = max(result)
             # On récupère l'indice du maximum
-            max_index = result.index(maximum)
+            max_index = result.index(max(result))
             # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
             # ne l'est pas
-            while max_index >= npaGrilleCopy.shape[1] or not pq_verif_colonne(max_index, npaGrilleCopy):
+            while (max_index >= npaGrilleCopy.shape[1]
+                   or not pq_verif_colonne(max_index, npaGrilleCopy)):
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 # On met le meilleur coup à -100 pour ne pas le reprendre
                 result[max_index] = -100
-                maximum = max(result)
                 # On récupère le nouvel indice du maximum
-                max_index = result.index(maximum)
+                max_index = result.index(max(result))
             # On renvoie la colonne à jouer
             return max_index
         # Sinon on renvoit la moyenne des scores des coups joués
-        return float(float(sum(result)) / float(len(result)))
+        return float(sum(result) / len(result))
     else:
         # Si on a dépassé le nombre de tours, on renvoie 0
         return 0

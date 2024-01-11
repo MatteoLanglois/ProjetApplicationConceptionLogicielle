@@ -108,6 +108,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a81868138c404cf6214153a7fa1aac7e5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a81868138c404cf6214153a7fa1aac7e5">cpj_update_grid</a> ()</td></tr>
 <tr class="memdesc:a81868138c404cf6214153a7fa1aac7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise la grille de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a81868138c404cf6214153a7fa1aac7e5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a81868138c404cf6214153a7fa1aac7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b24be9078b1c7e614d53bfda036587f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a9b24be9078b1c7e614d53bfda036587f">cpj_info_turn</a> (bool b_is_player)</td></tr>
+<tr class="memdesc:a9b24be9078b1c7e614d53bfda036587f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le joueur qui doit jouer.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a9b24be9078b1c7e614d53bfda036587f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9b24be9078b1c7e614d53bfda036587f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un module qui gère la page de jeu. </p>
@@ -141,9 +144,8 @@ Fonctions</h2></td></tr>
 <li>I_NB_JETONS : Nombre de jetons à aligner pour gagner</li>
 <li>I_DIFFICULTY : Difficulté du bot</li>
 <li>i_grid_x : Colonne de la grille de jeu</li>
-<li>i_grid_y : Ligne de la grille de jeu</li>
+<li>i_grid_y : Ligne de la grille de jeu </li>
 </ul>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">A faire:</a></b></dt><dd>A finir</dd></dl>
 
 </div>
 </div>
@@ -185,6 +187,36 @@ i_nb_columns &gt; 0 </dd></dl>
   </dd>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>grille de jeu dessinée </dd></dl>
+
+</div>
+</div>
+<a id="a9b24be9078b1c7e614d53bfda036587f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b24be9078b1c7e614d53bfda036587f">&#9670;&nbsp;</a></span>cpj_info_turn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_pageJeu.cpj_info_turn </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b_is_player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche le joueur qui doit jouer. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b_is_player</td><td>: Booléen indiquant si c'est au joueur de jouer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Affichage du joueur qui doit jouer</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>b_is_player : Booléen indiquant si c'est au joueur de jouer </li>
+</ul>
 
 </div>
 </div>
@@ -267,7 +299,7 @@ tkf_page_jeu initialisé </dd></dl>
 <li>b_joueur_gagne : Booléen indiquant si le joueur a gagné</li>
 <li>b_joueur_joue : Booléen indiquant si le joueur a joué</li>
 </ul>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">A faire:</a></b></dt><dd>A finir</dd></dl>
+<p>@Ftodo Vérifier que tout est bon </p>
 
 </div>
 </div>
@@ -308,7 +340,7 @@ tkf_page_jeu initialisé </dd></dl>
 <dd>
 i_cols &gt;= 0 </dd>
 <dd>
-i_joueur &gt;= 1 et i_joueur ≤ 2 </dd></dl>
+i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">i_row</td><td>Ligne de la grille de jeu </td></tr>
@@ -362,7 +394,6 @@ i_joueur &gt;= 1 et i_joueur ≤ 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Refait le dernier coup. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">A faire:</a></b></dt><dd>Vérifier que cela fonctionne bien</dd></dl>
 
 </div>
 </div>
@@ -382,9 +413,6 @@ i_joueur &gt;= 1 et i_joueur ≤ 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Annule le dernier coup. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">A faire:</a></b></dt><dd><p class="startdd">Afficher le dernier coup annulé sur l'interface graphique </p>
-<p class="enddd">L'undo ne fonctionne pas</p>
-</dd></dl>
 
 </div>
 </div>
@@ -448,7 +476,7 @@ NPA_GRID est une grille de jeu </dd></dl>
 <li>NPA_GRID : Grille de jeu</li>
 <li>B_BONUS_USED : Booléen indiquant si le bonus a été utilisé</li>
 <li>m_module : Module du bonus</li>
-<li>f_bonus : Fonction du bonus <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">A faire:</a></b></dt><dd>Vérifier si le bonus a entraîné une victoire</dd></dl>
+<li>f_bonus : Fonction du bonus <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">A faire:</a></b></dt><dd>Vérifier si le bonus a entraîné une victoire</dd></dl>
 </li>
 </ul>
 
