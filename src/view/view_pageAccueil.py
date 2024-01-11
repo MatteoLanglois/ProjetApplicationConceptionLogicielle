@@ -23,6 +23,8 @@ import tkinter as tk
 from src.controller import ctrl_main as ctrl_m
 # Importation du contrôleur de la page d'accueil pour lancer une partie
 from src.controller import ctrl_pageAccueil as ctrl_pa
+# Importation du module de gestion des widgets
+from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Frame de la page d'accueil
@@ -55,17 +57,21 @@ def vpa_init(tk_root: tk.Tk):
     # Affichage du cadre de la page d'accueil
     TKF_PAGE_ACCUEIL.grid(row=0, column=0, sticky="nsew")
 
+    # Récupération de la taille de police du titre
+    i_font_size_title = wu.wu_get_font_size(TKF_PAGE_ACCUEIL, True)
+
     # Affichage du menu sur toutes les fenêtres
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_ACCUEIL, False))
 
     # Création d'un label contenant puissance 4
     tkl_title = tk.Label(TKF_PAGE_ACCUEIL, text="Puissance 4 !",
-                         font=("Helvetica", 24))
+                         font=("Helvetica", i_font_size_title))
     # Affichage de ce label
     tkl_title.grid(row=0, column=0, sticky="nsew", pady=50, padx=50)
 
     # Création d'un bouton pour jouer
-    tkB_play = tk.Button(TKF_PAGE_ACCUEIL, text="Jouer", font=("Helvetica", 20),
+    tkB_play = tk.Button(TKF_PAGE_ACCUEIL, text="Jouer",
+                         font=("Helvetica", i_font_size_title),
                          command=lambda: ctrl_pa.cpa_play(tk_root,
                                                           TKF_PAGE_ACCUEIL)
                          )

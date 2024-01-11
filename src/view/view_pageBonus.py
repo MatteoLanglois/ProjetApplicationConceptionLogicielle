@@ -23,6 +23,8 @@ import tkinter as tk
 from src.controller import ctrl_PageBonus as ctrl_pb
 # Importation du contrôleur principal pour le menu
 from src.controller import ctrl_main as ctrl_m
+# Importation du module de gestion des widgets
+from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Variable de choix du bonus
@@ -60,11 +62,16 @@ def vpb_init(tk_root: tk.Tk) -> None:
     # Affichage du cadre de la fenêtre de choix du bonus
     TKF_PAGE_CHOIX.grid(row=0, column=0, sticky="nsew")
 
+    # Récupération de la taille de police du menu
+    i_font_size = wu.wu_get_font_size(TKF_PAGE_CHOIX, False)
+    # Récupération de la taille de police du titre
+    i_font_size_title = wu.wu_get_font_size(TKF_PAGE_CHOIX, True)
+
     # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_CHOIX, True))
     # Initialisation du titre de la fenêtre de choix du bonus
     tkL_titre = tk.Label(TKF_PAGE_CHOIX, text="Choisissez votre bonus",
-                         font=("Helvetica", 20))
+                         font=("Helvetica", i_font_size_title))
     # Affichage du titre de la fenêtre de choix du bonus
     tkL_titre.grid(row=0, column=0, sticky="nsew", pady=50, padx=10)
 
@@ -83,13 +90,14 @@ def vpb_init(tk_root: tk.Tk) -> None:
                     .cpb_show_bonus_description(TKS_BONUS.get()))
     # Initialisation du label de la description du bonus
     tkL_description = tk.Label(TKF_PAGE_CHOIX, text="Description du bonus :",
-                               font=("Helvetica", 16))
+                               font=("Helvetica", i_font_size))
     # Affichage du label de la description du bonus
     tkL_description.grid(row=2, column=0, sticky="nsew", pady=10, padx=10)
 
     # Initialisation du label de la description du bonus
     TKL_DESCRIPTION_BONUS = tk.Label(TKF_PAGE_CHOIX, text="", width=40,
-                                     font=("Helvetica", 14), wraplength=300)
+                                     font=("Helvetica", i_font_size),
+                                     wraplength=300)
     # Affichage du label de la description du bonus
     TKL_DESCRIPTION_BONUS.grid(row=3, column=0, sticky="nsew", pady=10, padx=10)
     # Affichage de la description du premier bonus
@@ -97,7 +105,7 @@ def vpb_init(tk_root: tk.Tk) -> None:
 
     # Initialisation du bouton de validation du bonus
     tkB_valider = tk.Button(TKF_PAGE_CHOIX, text="Valider",
-                            font=("Helvetica", 16),
+                            font=("Helvetica", i_font_size),
                             command=lambda: ctrl_pb.cpb_valider_bonus())
     # Affichage du bouton de validation du bonus
     tkB_valider.grid(row=4, column=0, sticky="nsew", pady=50, padx=10)

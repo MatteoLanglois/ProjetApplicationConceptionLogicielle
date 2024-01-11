@@ -23,6 +23,8 @@ import tkinter as tk
 from src.controller import ctrl_pageJeu as ctrl_pj
 # Importation du contrôleur principal pour avoir le menu
 from src.controller import ctrl_main as ctrl_m
+# Importation des utilitaires de gestion des widgets
+from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Frame de la page de jeu
@@ -77,16 +79,20 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # Affichage du cadre
     TKF_PAGE_JEU.grid(row=0, column=0, sticky="nsew")
 
+    # Récupération de la taille de police du menu
+    i_font_size = wu.wu_get_font_size(TKF_PAGE_JEU, False)
+    # Récupération de la taille de police du titre
+    i_font_size_title = wu.wu_get_font_size(TKF_PAGE_JEU, True)
+
     # Affichage du menu sur la fenêtre
     tk_root.configure(menu=ctrl_m.cm_menu(TKF_PAGE_JEU, True))
 
-    TKL_INFO = tk.Label(TKF_PAGE_JEU, text="", font=("Helvetica", 20))
+    TKL_INFO = tk.Label(TKF_PAGE_JEU, text="", font=("Helvetica",
+                                                     i_font_size_title))
     TKL_INFO.grid(row=0, column=0, columnspan=4, sticky="nsew")
 
-    # On définit la largeur du canvas qui va permettre d'afficher la grille
-    I_CANVAS_WIDTH = 500
-    # On définit la hauteur du canvas qui va permettre d'afficher la grille
-    I_CANVAS_HEIGHT = 430
+    # On définit la taille du canvas
+    I_CANVAS_WIDTH, I_CANVAS_HEIGHT = wu.wu_get_grid_size(TKF_PAGE_JEU)
     # On crée le canvas
     TKC_GRID = tk.Canvas(TKF_PAGE_JEU, bg=st_color_grid,
                          width=I_CANVAS_WIDTH, height=I_CANVAS_HEIGHT)
@@ -98,25 +104,29 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
                   lambda event: ctrl_pj.cpj_play(event, TKF_PAGE_JEU))
 
     # Création d'un bouton pour annuler le dernier coup
-    tkB_undo = tk.Button(TKF_PAGE_JEU, text="Undo", font=("Helvetica", 16),
+    tkB_undo = tk.Button(TKF_PAGE_JEU, text="Undo", font=("Helvetica",
+                                                          i_font_size),
                          command=lambda: ctrl_pj.cpj_undo())
     # Affichage du bouton
     tkB_undo.grid(row=5, column=0, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour refaire le dernier coup
-    tkB_redo = tk.Button(TKF_PAGE_JEU, text="Redo", font=("Helvetica", 16),
+    tkB_redo = tk.Button(TKF_PAGE_JEU, text="Redo", font=("Helvetica",
+                                                          i_font_size),
                          command=lambda: ctrl_pj.cpj_redo())
     # Affichage du bouton
     tkB_redo.grid(row=5, column=1, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour jouer son bonus
-    TKB_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica", 16),
+    TKB_BONUS = tk.Button(TKF_PAGE_JEU, text="Bonus", font=("Helvetica",
+                                                            i_font_size),
                           command=lambda: ctrl_pj.cpj_use_bonus(TKF_PAGE_JEU))
     # Affichage du bouton
     TKB_BONUS.grid(row=5, column=2, sticky="nsew", pady=50, padx=10)
 
     # Création d'un bouton pour quitter le jeu
-    tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica", 16),
+    tkB_quit = tk.Button(TKF_PAGE_JEU, text="Quitter", font=("Helvetica",
+                                                             i_font_size),
                          command=lambda: ctrl_pj.cpj_quit())
     # Affichage du bouton
     tkB_quit.grid(row=5, column=3, sticky="nsew", pady=50, padx=10)
