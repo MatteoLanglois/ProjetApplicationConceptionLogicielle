@@ -163,7 +163,7 @@ def p4b_flip_grid(npa_grid: np.array) -> np.array:
     @return npa_grid : Grille retournée
     """
     # On retourne la grille
-    np.flip(npa_grid, 0)
+    npa_grid = np.flip(npa_grid.copy(), 0)
     # On applique la gravité
     npa_grid = gr.pq_apply_gravity(npa_grid)
     # On retourne la grille
