@@ -17,7 +17,7 @@ def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a25e401eb65721ca85f53
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a07e89df868628c69908c7cb71ec1525c}{vpj\+\_\+show\+\_\+coin}} (int row, int column, str color)
 \begin{DoxyCompactList}\small\item\em Dessine un jeton dans une cellule. \end{DoxyCompactList}\item 
 (int, int) \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_aa18eb1e225804aceaf9b20ee09352b2c}{vpj\+\_\+get\+\_\+grid\+\_\+cell}} (int i\+\_\+x, int i\+\_\+y)
-\begin{DoxyCompactList}\small\item\em Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Récupère les coordonnées dans la grille de la cellule cliquée. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a200675c1948e4b941a19621dec899fc0}{vpj\+\_\+disable\+\_\+bonus}} ()
 \begin{DoxyCompactList}\small\item\em Désactive le bouton bonus. \end{DoxyCompactList}\item 
 tk.\+Frame \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a7a6943df6975a6283f8f331171537eef}{vpj\+\_\+get\+\_\+frame}} ()
@@ -42,6 +42,8 @@ Ce module contient les fonctions permettant de gérer la vue de la page de jeu.
 
 Détruit la page de jeu. 
 
+Cette fonction détruit la page de jeu. Elle efface le cadre et le supprime.
+
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
 \item tkf\+\_\+page\+\_\+jeu \+: Frame de la page de jeu
@@ -60,6 +62,8 @@ tkf\+\_\+page\+\_\+jeu initialisé
 
 Désactive le bouton bonus. 
 
+Cette fonction désactive le bouton bonus et change son relief. Elle est utilisée par le contrôleur de la page de jeu pour désactiver le bouton.
+
 \begin{DoxyPrecond}{Précondition}
 TKS\+\_\+\+BONUS initialisé 
 \end{DoxyPrecond}
@@ -72,6 +76,8 @@ TKS\+\_\+\+BONUS initialisé
 
 
 Dessine la grille de jeu. 
+
+Cette fonction dessine la grille de jeu. Elle prend en paramètre le nombre de lignes et de colonnes de la grille. Elle dessine la grille dans le canvas.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
@@ -101,6 +107,8 @@ Dessine la grille de jeu.
 
 Accesseur de la frame de la page de jeu. 
 
+Cette fonction renvoie la frame de la page de jeu. Elle est utilisée par le contrôleur principal pour afficher la page de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 TKF\+\_\+\+PAGE\+\_\+\+JEU initialisé 
 \end{DoxyPrecond}
@@ -118,7 +126,9 @@ TKF\+\_\+\+PAGE\+\_\+\+JEU initialisé
 
 
 
-Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. 
+Récupère les coordonnées dans la grille de la cellule cliquée. 
+
+Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
@@ -145,6 +155,8 @@ Récupère les coordonnées dans la grille de la cellule cliquée Récupère les
 
 
 Initialise la page de jeu. 
+
+Cette fonction initialise la page de jeu. Elle crée un cadre, un canvas pour afficher la grille, un bouton pour annuler le dernier coup, un bouton pour refaire le dernier coup, un bouton pour utiliser un bonus et un bouton pour quitter la partie. Elle affiche aussi le menu sur la fenêtre.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
@@ -180,6 +192,8 @@ Initialise la page de jeu.
 
 Modifie le texte du label d\textquotesingle{}information. 
 
+Cette fonction modifie le texte du label d\textquotesingle{}information. Elle prend en paramètre le texte à afficher dans le label d\textquotesingle{}information. Elle affiche le texte dans le label d\textquotesingle{}information.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em st\+\_\+info} & Texte à afficher dans le label d\textquotesingle{}information \\
@@ -194,6 +208,8 @@ Modifie le texte du label d\textquotesingle{}information.
 
 
 Dessine un jeton dans une cellule. 
+
+Cette fonction dessine un jeton dans une cellule. Elle prend en paramètre la ligne et la colonne de la cellule où l\textquotesingle{}on va dessiner le jeton et la couleur du jeton. Elle dessine le jeton dans la cellule.
 
 
 \begin{DoxyParams}{Paramètres}

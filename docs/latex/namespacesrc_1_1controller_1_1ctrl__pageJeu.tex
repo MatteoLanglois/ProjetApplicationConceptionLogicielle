@@ -48,6 +48,8 @@ Ce module contient les fonctions permettant de gérer la page de jeu.
 
 Fait jouer le bot. 
 
+Cette fonction fait jouer le bot puis met à jour la grille de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 tkf\+\_\+page\+\_\+jeu initialisé 
 \end{DoxyPrecond}
@@ -71,6 +73,8 @@ tkf\+\_\+page\+\_\+jeu initialisé
 
 
 Dessine la grille de jeu. 
+
+Cette fonction appelle la fonction de la vue permettant de dessiner la grille de jeu.
 
 \begin{DoxyPrecond}{Précondition}
 i\+\_\+nb\+\_\+rows $>$ 0 
@@ -97,6 +101,8 @@ grille de jeu dessinée
 
 Affiche le joueur qui doit jouer. 
 
+Cette fonction affiche le joueur qui doit jouer.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em b\+\_\+is\+\_\+player} & \+: Booléen indiquant si c\textquotesingle{}est au joueur de jouer \\
@@ -117,6 +123,8 @@ Affichage du joueur qui doit jouer
 
 
 Affiche la page de jeu. 
+
+Cette fonction affiche la page de jeu et initialise la grille de jeu. Elle récupère également les paramètres de la partie. Elle initialise également les variables globales.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -147,6 +155,8 @@ page de jeu affichée
 
 Joue un coup dans la grille de jeu. 
 
+Cette fonction joue un coup dans la grille de jeu et met à jour la grille de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 event est un évènement de la souris 
 
@@ -165,10 +175,8 @@ tkf\+\_\+page\+\_\+jeu initialisé
 \item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
 \item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu
 \item b\+\_\+joueur\+\_\+gagne \+: Booléen indiquant si le joueur a gagné
-\item b\+\_\+joueur\+\_\+joue \+: Booléen indiquant si le joueur a joué
-\end{DoxyItemize}
-
-@\+Ftodo Vérifier que tout est bon \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}} 
+\item b\+\_\+joueur\+\_\+joue \+: Booléen indiquant si le joueur a joué 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a01c802112e2d4e1e2180446c6fe48b65}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_put\_coin@{cpj\_put\_coin}}
 \index{cpj\_put\_coin@{cpj\_put\_coin}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_put\_coin()}{cpj\_put\_coin()}}
@@ -177,6 +185,8 @@ tkf\+\_\+page\+\_\+jeu initialisé
 
 
 Place un jeton dans la grille de jeu. 
+
+Cette fonction appelle la fonction de la vue permettant de placer un jeton dans la grille de jeu.
 
 \begin{DoxyPrecond}{Précondition}
 i\+\_\+row $>$= 0 
@@ -211,6 +221,8 @@ jeton placé dans la grille de jeu
 
 Quitte la partie. 
 
+Cette fonction détruit la page de jeu et ferme la fenêtre principale.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 \end{DoxyPrecond}
@@ -227,6 +239,14 @@ page de jeu détruite
 
 Refait le dernier coup. 
 
+Cette fonction refait le dernier coup annulé et met à jour la grille de jeu.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+dernier coup refait 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae21bd21e863bcfecc6295c0432e8ef1d}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_undo@{cpj\_undo}}
 \index{cpj\_undo@{cpj\_undo}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
@@ -237,6 +257,14 @@ Refait le dernier coup.
 
 Annule le dernier coup. 
 
+Cette fonction annule le dernier coup joué et met à jour la grille de jeu.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+dernier coup annulé 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_update\_grid@{cpj\_update\_grid}}
 \index{cpj\_update\_grid@{cpj\_update\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
@@ -246,6 +274,8 @@ Annule le dernier coup.
 
 
 Réinitialise la grille de jeu. 
+
+Cette fonction réinitialise la grille de jeu puis met à jour la grille de jeu. Elle permet de mettre à jour la grille de jeu après un undo ou un redo.
 
 \begin{DoxyPrecond}{Précondition}
 NPA\+\_\+\+GRID initialisé 
@@ -269,6 +299,8 @@ Grille de jeu mise à jour
 
 
 Utilise un bonus puis met à jour la grille de jeu. 
+
+Cette fonction utilise un bonus puis met à jour la grille de jeu.
 
 \begin{DoxyPrecond}{Précondition}
 S\+\_\+\+BONUS est un bonus 

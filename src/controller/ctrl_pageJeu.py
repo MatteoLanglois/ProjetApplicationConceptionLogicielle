@@ -235,8 +235,6 @@ def cpj_play(event: tk.Event, tkf_page_jeu: tk.Frame):
     * i_grid_y : Ligne de la grille de jeu
     * b_joueur_gagne : Booléen indiquant si le joueur a gagné
     * b_joueur_joue : Booléen indiquant si le joueur a joué
-
-    @Ftodo Vérifier que tout est bon
     """
     global I_NB_JETONS, NPA_GRID, T_UNDO_REDO, B_BONUS_USED, T_REDO
     # On enregistre l'état actuel de la grille

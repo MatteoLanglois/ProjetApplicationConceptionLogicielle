@@ -123,6 +123,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise la fenêtre de jeu. </p>
+<p>Cette fonction initialise la fenêtre principale du jeu. Elle crée la fenêtre, lui donne un titre, un logo, la rend non redimensionnable et renvoie la fenêtre créée.</p>
 <p><b>Variables :</b></p><ul>
 <li>tk_root : Fenêtre principale</li>
 </ul>
@@ -157,6 +158,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise le menu de la fenêtre de jeu. </p>
+<p>Cette fonction initialise le menu de la fenêtre principale du jeu. Elle crée le menu, les sous-menus, les commandes et renvoie le menu créé. Ce menu est affiché dans toutes les fenêtres.</p>
 <p><b>Variables :</b></p><ul>
 <li>tkm_menu_bar : Menu de la fenêtre de jeu</li>
 <li>tkm_menu_partie : sous-menu permettant de gérer la partie</li>
@@ -194,6 +196,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche un message de fin de partie. </p>
+<p>Cette fonction affiche un message de fin de partie. Elle demande à l'utilisateur s'il veut rejouer ou non. Si oui, elle relance une partie sinon elle revient à la page d'accueil. Elle est appelée lorsque la partie est terminée.</p>
 <p><b>Préconditions :</b></p><ul>
 <li>tk_root initialisé</li>
 </ul>
@@ -224,6 +227,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche un message d'information. </p>
+<p>Cette fonction affiche un message d'information. Elle est appelée lorsque l'utilisateur fait une action qui est autorisée. Par exemple, lorsque l'utilisateur change les paramètres du jeu.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">str_message</td><td>Message à afficher </td></tr>
@@ -250,6 +254,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche un message d'avertissement. </p>
+<p>Cette fonction affiche un message d'avertissement. Elle est appelée lorsque l'utilisateur fait une action qui n'est pas autorisée. Par exemple, si l'utilisateur choisit des paramètres qui ne sont pas compatibles avec le jeu.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">str_message</td><td>Message à afficher </td></tr>
@@ -276,16 +281,12 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ferme la fenêtre de jeu. </p>
-<p><b>Préconditions :</b></p><ul>
-<li>tk_root initialisé</li>
-</ul>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tk_win_root</td><td>Fenêtre principale </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Cette fonction ferme la fenêtre principale du jeu.</p>
+<pre class="fragment">**Préconditions :**
+* tk_root initialisé
 
+@param tk_win_root: Fenêtre principale
+</pre> 
 </div>
 </div>
 <a id="a726767b573cad248429575580a825faf"></a>
@@ -305,6 +306,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Supprime un cadre. </p>
+<p>Cette fonction supprime un cadre. Elle est appelée lorsque l'on veut changer de page.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>frame existe </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -333,6 +335,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Met à jour la fenêtre principale. </p>
+<p>Cette fonction met à jour la fenêtre principale. Elle est appelée lorsque l'on veut mettre à jour la fenêtre principale.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">tk_root</td><td>Fenêtre principale </td></tr>

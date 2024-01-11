@@ -1,0 +1,244 @@
+\hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie}{}\doxysection{Référence de l\textquotesingle{}espace de nommage src.\+puissance\+Quatre.\+gestion\+Partie}
+\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie}\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+
+
+Un module qui gère la partie de puissance 4 en ligne de commande.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a42f2cc988c6e4770679ee41338cb9b90}{gp\+\_\+choose\+\_\+bonus}} ()
+\begin{DoxyCompactList}\small\item\em Récupère le bonus choisi par le joueur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a4887c31c02066bdc08dac180d8d52a38}{gp\+\_\+show\+\_\+rules}} ()
+\begin{DoxyCompactList}\small\item\em Affiche les règles du jeu. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a2c9221fc25e78996f3683b31c811f11a}{gp\+\_\+get\+\_\+player\+\_\+choice}} (int i\+\_\+nb\+\_\+colonnes, np.\+array npa\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Récupère le choix du joueur lors de son tour. \end{DoxyCompactList}\item 
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ad9924d90e2191d3bd3af6b4c0c8b99be}{gp\+\_\+handle\+\_\+undo\+\_\+redo}} (bool b\+\_\+undo, np.\+array npa\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Méthode permettant au joueur d\textquotesingle{}annuler ou de refaire son dernier coup. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}{gp\+\_\+use\+\_\+bonus}} (str s\+\_\+bonus, np.\+array npa\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Méthode permettant au joueur d\textquotesingle{}utiliser son bonus. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ac3d6dcae1a72fd90acd662feaa074007}{gp\+\_\+handle\+\_\+player\+\_\+turn}} (np.\+array npa\+\_\+grille, str s\+\_\+bonus)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de gérer le tour du joueur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ae4acc672f179f6743db825d25a89bb99}{gp\+\_\+handle\+\_\+bot\+\_\+turn}} (np.\+array npa\+\_\+grille, str s\+\_\+bonus, int i\+\_\+nb\+\_\+jeton\+\_\+victoire)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de gérer le tour du bot. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a89cefc02a3c31d4556fa77770daa6bed}{gp\+\_\+handle\+\_\+victory}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne\+\_\+joueur, int i\+\_\+joueur, int i\+\_\+colonne\+\_\+joueur, int i\+\_\+nb\+\_\+jeton\+\_\+victoire)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de gérer la victoire d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a55a50f97978a4774714ab8d68ec0b4e1}{gp\+\_\+gestion\+\_\+partie}} (int i\+\_\+nb\+\_\+lignes=6, int i\+\_\+nb\+\_\+colonnes=7, int i\+\_\+nb\+\_\+jeton\+\_\+victoire=4)
+\begin{DoxyCompactList}\small\item\em Gère le déroulement d\textquotesingle{}une partie de puissance 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Un module qui gère la partie de puissance 4 en ligne de commande. 
+
+Ce module contient les fonctions permettant de gérer la partie en ligne de commande. 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a42f2cc988c6e4770679ee41338cb9b90}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a42f2cc988c6e4770679ee41338cb9b90}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_choose\_bonus@{gp\_choose\_bonus}}
+\index{gp\_choose\_bonus@{gp\_choose\_bonus}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_choose\_bonus()}{gp\_choose\_bonus()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+choose\+\_\+bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère le bonus choisi par le joueur. 
+
+\begin{DoxyReturn}{Renvoie}
+Le bonus choisi par le joueur
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item ts\+\_\+bonuses \+: Liste, contient les fonctions des bonus
+\item i\+\_\+bonus \+: Entier, le bonus choisi par le joueur 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a55a50f97978a4774714ab8d68ec0b4e1}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a55a50f97978a4774714ab8d68ec0b4e1}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_gestion\_partie@{gp\_gestion\_partie}}
+\index{gp\_gestion\_partie@{gp\_gestion\_partie}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_gestion\_partie()}{gp\_gestion\_partie()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+gestion\+\_\+partie (\begin{DoxyParamCaption}\item[{int }]{i\+\_\+nb\+\_\+lignes = {\ttfamily 6},  }\item[{int }]{i\+\_\+nb\+\_\+colonnes = {\ttfamily 7},  }\item[{int }]{i\+\_\+nb\+\_\+jeton\+\_\+victoire = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+
+
+Gère le déroulement d\textquotesingle{}une partie de puissance 4. 
+
+Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en ligne de commande.
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item b\+\_\+victoire \+: Booléen, True si un joueur a gagné, False sinon
+\item b\+\_\+bonus\+\_\+utilise \+: Booléen, True si le joueur a utilisé son bonus, False sinon
+\item t\+\_\+undo\+\_\+redo \+: Liste, contient les grilles pour l\textquotesingle{}undo et le redo
+\item npa\+\_\+grille \+: np.\+array, la grille de jeu
+\item i\+\_\+colonne\+\_\+joueur \+: Entier, la colonne où le joueur veut jouer
+\item i\+\_\+ligne\+\_\+joueur \+: Entier, la ligne où le joueur veut jouer
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+nb\+\_\+lignes} & Taille de la grille en lignes \\
+\hline
+{\em i\+\_\+nb\+\_\+colonnes} & Taille de la grille en colonnes \\
+\hline
+{\em i\+\_\+nb\+\_\+jeton\+\_\+victoire} & Nombre de jetons à aligner pour gagner \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a2c9221fc25e78996f3683b31c811f11a}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a2c9221fc25e78996f3683b31c811f11a}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_get\_player\_choice@{gp\_get\_player\_choice}}
+\index{gp\_get\_player\_choice@{gp\_get\_player\_choice}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_get\_player\_choice()}{gp\_get\_player\_choice()}}
+{\footnotesize\ttfamily  str src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+get\+\_\+player\+\_\+choice (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+nb\+\_\+colonnes,  }\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Récupère le choix du joueur lors de son tour. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+nb\+\_\+colonnes} & Nombre de colonnes de la grille \\
+\hline
+{\em npa\+\_\+grille} & Grille de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Précondition}
+i\+\_\+nb\+\_\+colonnes $>$ 0 
+
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Renvoie}
+Le choix du joueur 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Le choix du joueur récupéré
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+colonne\+\_\+joueur \+: Entier, la colonne où le joueur veut jouer
+\item s\+\_\+colonne\+\_\+joueur \+: Chaine de caractères, le choix du joueur 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ae4acc672f179f6743db825d25a89bb99}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ae4acc672f179f6743db825d25a89bb99}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_handle\_bot\_turn@{gp\_handle\_bot\_turn}}
+\index{gp\_handle\_bot\_turn@{gp\_handle\_bot\_turn}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_handle\_bot\_turn()}{gp\_handle\_bot\_turn()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+handle\+\_\+bot\+\_\+turn (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille,  }\item[{str}]{s\+\_\+bonus,  }\item[{int}]{i\+\_\+nb\+\_\+jeton\+\_\+victoire }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de gérer le tour du bot. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
+\hline
+{\em s\+\_\+bonus} & str, le nom du bonus \\
+\hline
+{\em i\+\_\+nb\+\_\+jeton\+\_\+victoire} & int, le nombre de jetons à aligner pour gagner\\
+\hline
+\end{DoxyParams}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item npa\+\_\+grille \+: np.\+array, la grille de jeu
+\item s\+\_\+bonus \+: str, le nom du bonus choisi par le joueur
+\item i\+\_\+colonne\+\_\+joueur \+: Entier, la colonne où le joueur veut jouer
+\item i\+\_\+ligne\+\_\+joueur \+: Entier, la ligne où le joueur veut jouer 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ac3d6dcae1a72fd90acd662feaa074007}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ac3d6dcae1a72fd90acd662feaa074007}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_handle\_player\_turn@{gp\_handle\_player\_turn}}
+\index{gp\_handle\_player\_turn@{gp\_handle\_player\_turn}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_handle\_player\_turn()}{gp\_handle\_player\_turn()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+handle\+\_\+player\+\_\+turn (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille,  }\item[{str}]{s\+\_\+bonus }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de gérer le tour du joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
+\hline
+{\em s\+\_\+bonus} & str, le nom du bonus \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\+: np.\+array, la grille de jeu modifiée
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item npa\+\_\+grille \+: np.\+array, la grille de jeu
+\item s\+\_\+bonus \+: str, le nom du bonus choisi par le joueur 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ad9924d90e2191d3bd3af6b4c0c8b99be}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ad9924d90e2191d3bd3af6b4c0c8b99be}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_handle\_undo\_redo@{gp\_handle\_undo\_redo}}
+\index{gp\_handle\_undo\_redo@{gp\_handle\_undo\_redo}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_handle\_undo\_redo()}{gp\_handle\_undo\_redo()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+handle\+\_\+undo\+\_\+redo (\begin{DoxyParamCaption}\item[{bool}]{b\+\_\+undo,  }\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant au joueur d\textquotesingle{}annuler ou de refaire son dernier coup. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em b\+\_\+undo} & booléen indiquant si c\textquotesingle{}est un undo ou un redo (True pour undo, False pour redo) \\
+\hline
+{\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\+: np.\+array, la grille de jeu modifiée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a89cefc02a3c31d4556fa77770daa6bed}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a89cefc02a3c31d4556fa77770daa6bed}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_handle\_victory@{gp\_handle\_victory}}
+\index{gp\_handle\_victory@{gp\_handle\_victory}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_handle\_victory()}{gp\_handle\_victory()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+handle\+\_\+victory (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille,  }\item[{int}]{i\+\_\+ligne\+\_\+joueur,  }\item[{int}]{i\+\_\+joueur,  }\item[{int}]{i\+\_\+colonne\+\_\+joueur,  }\item[{int}]{i\+\_\+nb\+\_\+jeton\+\_\+victoire }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de gérer la victoire d\textquotesingle{}un joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
+\hline
+{\em i\+\_\+ligne\+\_\+joueur} & Entier, la ligne où le joueur veut jouer \\
+\hline
+{\em i\+\_\+joueur} & Entier, le numéro du joueur \\
+\hline
+{\em i\+\_\+colonne\+\_\+joueur} & Entier, la colonne où le joueur veut jouer \\
+\hline
+{\em i\+\_\+nb\+\_\+jeton\+\_\+victoire} & Entier, le nombre de jetons à aligner pour gagner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\+: Booléen, True si un joueur a gagné, False sinon
+\end{DoxyReturn}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item b\+\_\+victoire \+: Booléen, True si un joueur a gagné, False sinon 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a4887c31c02066bdc08dac180d8d52a38}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a4887c31c02066bdc08dac180d8d52a38}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_show\_rules@{gp\_show\_rules}}
+\index{gp\_show\_rules@{gp\_show\_rules}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_show\_rules()}{gp\_show\_rules()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+show\+\_\+rules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Affiche les règles du jeu. 
+
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_use\_bonus@{gp\_use\_bonus}}
+\index{gp\_use\_bonus@{gp\_use\_bonus}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_use\_bonus()}{gp\_use\_bonus()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+use\+\_\+bonus (\begin{DoxyParamCaption}\item[{str}]{s\+\_\+bonus,  }\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant au joueur d\textquotesingle{}utiliser son bonus. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+bonus} & str, le nom du bonus \\
+\hline
+{\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\+: np.\+array, la grille de jeu modifiée 
+\end{DoxyReturn}

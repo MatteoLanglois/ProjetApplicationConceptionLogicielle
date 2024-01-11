@@ -32,6 +32,8 @@ Ce module contient les fonctions de gestion des couleurs. Notamment la conversio
 
 Vérifie si deux couleurs sont trop proches. 
 
+Cette fonction vérifie si deux couleurs sont trop proches. Elle utilise la fonction cu\+\_\+rgb\+\_\+distance pour calculer la distance entre les deux couleurs. Si la distance est inférieure à 50, les couleurs sont trop proches.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em color1} & Couleur 1 au format hexadécimal \\
@@ -52,6 +54,8 @@ True si les couleurs sont trop proches, False sinon
 
 Convertit une couleur hexadécimale en RGB. 
 
+Cette fonction convertit une couleur hexadécimale en RGB.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em s\+\_\+color} & Couleur hexadécimale \\
@@ -69,6 +73,8 @@ Couleur RGB
 
 
 Calcule la distance entre deux couleurs RGB. 
+
+Cette fonction calcule la distance entre deux couleurs RGB. Elle utilise la formule de la distance euclidienne.
 
 
 \begin{DoxyParams}{Paramètres}

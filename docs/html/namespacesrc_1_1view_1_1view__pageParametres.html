@@ -160,6 +160,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ouvre un sélecteur de couleur. </p>
+<p>Cette fonction ouvre un sélecteur de couleur. Elle est appelée lorsque l'utilisateur clique sur le bouton pour choisir la couleur.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>s_element est soit "joueur", "bot" ou "grille" </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s_element</td><td>L'élément dont on veut changer la couleur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section post"><dt>Postcondition</dt><dd>La couleur de l'élément est modifiée </dd></dl>
 
 </div>
 </div>
@@ -179,6 +188,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant la couleur des jetons du bot. </p>
+<p>Cette fonction retourne la couleur des jetons du bot. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_BOT initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La couleur des jetons du bot</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -203,6 +213,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant la difficulté sélectionnée. </p>
+<p>Cette fonction retourne la difficulté sélectionnée par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKS_SCALE initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La difficulté sélectionnée</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -227,6 +238,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant la couleur de la grille. </p>
+<p>Cette fonction retourne la couleur de la grille. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_GRID initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La couleur de la grille</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -251,6 +263,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant la couleur des jetons du joueur. </p>
+<p>Cette fonction retourne la couleur des jetons du joueur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_JOUEUR initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La couleur des jetons du joueur</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -275,6 +288,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant le nombre de colonnes sélectionné </p>
+<p>Cette fonction retourne le nombre de colonnes sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer"</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_COLUMNS initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de colonnes sélectionné</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -299,6 +313,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant le nombre de jetons requis sélectionné </p>
+<p>Cette fonction retourne le nombre de jetons requis sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_NB_JETONS initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de jetons requis sélectionné</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -323,6 +338,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur retournant le nombre de lignes sélectionné </p>
+<p>Cette fonction retourne le nombre de lignes sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Enregistrer"</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_ROWS initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes sélectionné</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -348,6 +364,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction initialisant la page des paramètres. </p>
+<p>Cette fonction initialise la page des paramètres. Elle crée un cadre et affiche le menu sur la fenêtre. Elle initialise aussi les paramètres de jeu et de personnalisation.</p>
 <p><b>Variables :</b></p><ul>
 <li>tkf_page_parameter : Frame de la page des paramètres</li>
 </ul>
@@ -379,6 +396,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction initialisant la partie personnalisation des paramètres. </p>
+<p>Cette fonction initialise la partie personnalisation des paramètres. Elle crée des labels pour indiquer les choix de couleurs et des boutons pour ouvrir un sélecteur de couleur. Elle initialise aussi les couleurs par défaut.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKF_PAGE_PARAMETER initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>La partie personnalisation des paramètres est initialisée </dd>
 <dd>
@@ -413,6 +431,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Fonction initialisant la partie paramètres du jeu. </p>
+<p>Cette fonction initialise la partie paramètres du jeu. Elle crée des labels pour indiquer les choix de paramètres et des spinbox pour choisir les paramètres. Elle initialise aussi les paramètres par défaut.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKF_PAGE_PARAMETER initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>La partie paramètres du jeu est initialisée</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -451,6 +470,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise les paramètres de personnalisation. </p>
+<p>Cette fonction réinitialise les paramètres de personnalisation. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser". </p>
 
 </div>
 </div>
@@ -470,6 +490,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise les paramètres du jeu. </p>
+<p>Cette fonction réinitialise les paramètres du jeu. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser". </p>
 
 </div>
 </div>
@@ -490,6 +511,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour la couleur des jetons du bot. </p>
+<p>Cette fonction modifie la couleur des jetons du bot. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_BOT initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -523,6 +545,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour la difficulté </p>
+<p>Cette fonction modifie la difficulté sélectionnée par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKS_SCALE initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -555,6 +578,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour la couleur de la grille. </p>
+<p>Cette fonction modifie la couleur de la grille. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_GRID initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -588,6 +612,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour la couleur des jetons du joueur. </p>
+<p>Cette fonction modifie la couleur des jetons du joueur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TIS_CUSTOM_COLOR_JOUEUR initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -621,6 +646,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour le nombre de colonnes. </p>
+<p>Cette fonction modifie le nombre de colonnes sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_COLUMNS initialisé* </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -653,6 +679,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour le nombre de jetons requis. </p>
+<p>Cette fonction modifie le nombre de jetons requis sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_NB_JETONS initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -685,6 +712,7 @@ TKB_PICKER_JOUEUR, TKB_PICKER_BOT et TKB_PICKER_GRID sont initialisés</dd></dl>
 </div><div class="memdoc">
 
 <p>Mutateur pour le nombre de lignes. </p>
+<p>Cette fonction modifie le nombre de lignes sélectionné par l'utilisateur. Elle est appelée lorsque l'utilisateur clique sur le bouton "Réinitialiser".</p>
 <dl class="section pre"><dt>Précondition</dt><dd>STV_ROWS initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">

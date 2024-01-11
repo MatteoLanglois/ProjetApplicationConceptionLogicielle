@@ -124,6 +124,10 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ouvre un sélecteur de couleur. </p>
+<p>Cette fonction ouvre un sélecteur de couleur pour l'élément passé en paramètre. L'élément peut être le joueur, le bot ou la grille.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
+<dd>
+view_pp initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">s_element</td><td>Élément à colorer (joueur, bot ou grille) </td></tr>
@@ -149,6 +153,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Charge les paramètres de personnalisation. </p>
+<p>Cette fonction charge les paramètres de personnalisation sauvegardés dans un fichier texte. Elle récupère la couleur des jetons du joueur, la couleur des jetons du bot et la couleur de la grille. Si le fichier n'existe pas, les paramètres par défaut sont retournés.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>res/custom.txt existant </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>st_color_joueur: Couleur des jetons du joueur </dd>
 <dd>
@@ -179,6 +184,10 @@ st_color_grid: Couleur de la grille</dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise les paramètres de personnalisation. </p>
+<p>Cette fonction réinitialise les paramètres de personnalisation par défaut.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
+<dd>
+view_pp initialisé </dd></dl>
 
 </div>
 </div>
@@ -198,6 +207,7 @@ st_color_grid: Couleur de la grille</dd></dl>
 </div><div class="memdoc">
 
 <p>Sauvegarde des paramètres de personnalisation. </p>
+<p>Cette fonction sauvegarde les paramètres de personnalisation dans un fichier texte. Si les paramètres ne sont pas valides, un message d'erreur est affiché. Les paramètres sont valides si deux couleurs ne sont pas trop proches. Deux couleurs sont trop proches si la différence entre les composantes rouges, vertes et bleues est inférieure à 50.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 res/custom.txt existant </dd></dl>
@@ -229,6 +239,7 @@ res/custom.txt existant </dd></dl>
 </div><div class="memdoc">
 
 <p>Initialise la page des paramètres. </p>
+<p>Cette fonction initialise la page des paramètres en chargeant les paramètres sauvegardés et en les affichant.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -266,6 +277,7 @@ res/custom.txt existant </dd></dl>
 </div><div class="memdoc">
 
 <p>Charge les paramètres. </p>
+<p>Cette fonction charge les paramètres sauvegardés dans un fichier texte. Elle récupère le nombre de lignes, le nombre de colonnes, le nombre de jetons à aligner et la difficulté du bot. Si le fichier n'existe pas, les paramètres par défaut sont retournés.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>res/settings.txt existant </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>i_rows: Nombre de lignes de la grille </dd>
 <dd>
@@ -299,6 +311,10 @@ i_difficulty: Difficulté du bot</dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise les paramètres. </p>
+<p>Cette fonction réinitialise les paramètres par défaut.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
+<dd>
+view_pp initialisé </dd></dl>
 
 </div>
 </div>
@@ -318,6 +334,7 @@ i_difficulty: Difficulté du bot</dd></dl>
 </div><div class="memdoc">
 
 <p>Sauvegarde les paramètres. </p>
+<p>Cette fonction sauvegarde les paramètres dans un fichier texte. Si les paramètres ne sont pas valides, un message d'erreur est affiché. Les paramètres sont valides si le nombre de jetons à aligner est inférieur ou égal au nombre de lignes ou au nombre de colonnes.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 res/settings.txt existant </dd></dl>

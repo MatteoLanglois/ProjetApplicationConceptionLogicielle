@@ -66,6 +66,19 @@ La vue de la page des paramètres permet de gérer l\textquotesingle{}affichage 
 
 Ouvre un sélecteur de couleur. 
 
+Cette fonction ouvre un sélecteur de couleur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton pour choisir la couleur.
+
+\begin{DoxyPrecond}{Précondition}
+s\+\_\+element est soit \char`\"{}joueur\char`\"{}, \char`\"{}bot\char`\"{} ou \char`\"{}grille\char`\"{} 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+\_\+element} & L\textquotesingle{}élément dont on veut changer la couleur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+La couleur de l\textquotesingle{}élément est modifiée 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageParametres_abcea9bce2636ae49868940ed3a798d64}\label{namespacesrc_1_1view_1_1view__pageParametres_abcea9bce2636ae49868940ed3a798d64}} 
 \index{src.view.view\_pageParametres@{src.view.view\_pageParametres}!vpp\_get\_bot\_color@{vpp\_get\_bot\_color}}
 \index{vpp\_get\_bot\_color@{vpp\_get\_bot\_color}!src.view.view\_pageParametres@{src.view.view\_pageParametres}}
@@ -75,6 +88,8 @@ Ouvre un sélecteur de couleur.
 
 
 Accesseur retournant la couleur des jetons du bot. 
+
+Cette fonction retourne la couleur des jetons du bot. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}.
 
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+BOT initialisé 
@@ -95,6 +110,8 @@ La couleur des jetons du bot
 
 Accesseur retournant la difficulté sélectionnée. 
 
+Cette fonction retourne la difficulté sélectionnée par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 TKS\+\_\+\+SCALE initialisé 
 \end{DoxyPrecond}
@@ -113,6 +130,8 @@ La difficulté sélectionnée
 
 
 Accesseur retournant la couleur de la grille. 
+
+Cette fonction retourne la couleur de la grille. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}.
 
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+GRID initialisé 
@@ -133,6 +152,8 @@ La couleur de la grille
 
 Accesseur retournant la couleur des jetons du joueur. 
 
+Cette fonction retourne la couleur des jetons du joueur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+JOUEUR initialisé 
 \end{DoxyPrecond}
@@ -151,6 +172,8 @@ La couleur des jetons du joueur
 
 
 Accesseur retournant le nombre de colonnes sélectionné 
+
+Cette fonction retourne le nombre de colonnes sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}
 
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+COLUMNS initialisé 
@@ -171,6 +194,8 @@ Le nombre de colonnes sélectionné
 
 Accesseur retournant le nombre de jetons requis sélectionné 
 
+Cette fonction retourne le nombre de jetons requis sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+NB\+\_\+\+JETONS initialisé 
 \end{DoxyPrecond}
@@ -190,6 +215,8 @@ Le nombre de jetons requis sélectionné
 
 Accesseur retournant le nombre de lignes sélectionné 
 
+Cette fonction retourne le nombre de lignes sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Enregistrer\char`\"{}
+
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+ROWS initialisé 
 \end{DoxyPrecond}
@@ -208,6 +235,8 @@ Le nombre de lignes sélectionné
 
 
 Fonction initialisant la page des paramètres. 
+
+Cette fonction initialise la page des paramètres. Elle crée un cadre et affiche le menu sur la fenêtre. Elle initialise aussi les paramètres de jeu et de personnalisation.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
@@ -233,6 +262,8 @@ Fonction initialisant la page des paramètres.
 
 
 Fonction initialisant la partie personnalisation des paramètres. 
+
+Cette fonction initialise la partie personnalisation des paramètres. Elle crée des labels pour indiquer les choix de couleurs et des boutons pour ouvrir un sélecteur de couleur. Elle initialise aussi les couleurs par défaut.
 
 \begin{DoxyPrecond}{Précondition}
 TKF\+\_\+\+PAGE\+\_\+\+PARAMETER initialisé 
@@ -262,6 +293,8 @@ TKB\+\_\+\+PICKER\+\_\+\+JOUEUR, TKB\+\_\+\+PICKER\+\_\+\+BOT et TKB\+\_\+\+PICK
 
 
 Fonction initialisant la partie paramètres du jeu. 
+
+Cette fonction initialise la partie paramètres du jeu. Elle crée des labels pour indiquer les choix de paramètres et des spinbox pour choisir les paramètres. Elle initialise aussi les paramètres par défaut.
 
 \begin{DoxyPrecond}{Précondition}
 TKF\+\_\+\+PAGE\+\_\+\+PARAMETER initialisé 
@@ -296,7 +329,7 @@ La partie paramètres du jeu est initialisée
 
 Réinitialise les paramètres de personnalisation. 
 
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageParametres_a78b8c153b629b14a0313c1267680047e}\label{namespacesrc_1_1view_1_1view__pageParametres_a78b8c153b629b14a0313c1267680047e}} 
+Cette fonction réinitialise les paramètres de personnalisation. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}. \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageParametres_a78b8c153b629b14a0313c1267680047e}\label{namespacesrc_1_1view_1_1view__pageParametres_a78b8c153b629b14a0313c1267680047e}} 
 \index{src.view.view\_pageParametres@{src.view.view\_pageParametres}!vpp\_reset\_settings@{vpp\_reset\_settings}}
 \index{vpp\_reset\_settings@{vpp\_reset\_settings}!src.view.view\_pageParametres@{src.view.view\_pageParametres}}
 \doxysubsubsection{\texorpdfstring{vpp\_reset\_settings()}{vpp\_reset\_settings()}}
@@ -306,7 +339,7 @@ Réinitialise les paramètres de personnalisation.
 
 Réinitialise les paramètres du jeu. 
 
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageParametres_aa39cbcf76d29408a5883a7d305399f7f}\label{namespacesrc_1_1view_1_1view__pageParametres_aa39cbcf76d29408a5883a7d305399f7f}} 
+Cette fonction réinitialise les paramètres du jeu. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}. \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageParametres_aa39cbcf76d29408a5883a7d305399f7f}\label{namespacesrc_1_1view_1_1view__pageParametres_aa39cbcf76d29408a5883a7d305399f7f}} 
 \index{src.view.view\_pageParametres@{src.view.view\_pageParametres}!vpp\_set\_bot\_color@{vpp\_set\_bot\_color}}
 \index{vpp\_set\_bot\_color@{vpp\_set\_bot\_color}!src.view.view\_pageParametres@{src.view.view\_pageParametres}}
 \doxysubsubsection{\texorpdfstring{vpp\_set\_bot\_color()}{vpp\_set\_bot\_color()}}
@@ -315,6 +348,8 @@ Réinitialise les paramètres du jeu.
 
 
 Mutateur pour la couleur des jetons du bot. 
+
+Cette fonction modifie la couleur des jetons du bot. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
 
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+BOT initialisé 
@@ -342,6 +377,8 @@ TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+BOT est modifié
 
 Mutateur pour la difficulté 
 
+Cette fonction modifie la difficulté sélectionnée par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 TKS\+\_\+\+SCALE initialisé 
 \end{DoxyPrecond}
@@ -366,6 +403,8 @@ TKS\+\_\+\+SCALE est modifié
 
 
 Mutateur pour la couleur de la grille. 
+
+Cette fonction modifie la couleur de la grille. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
 
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+GRID initialisé 
@@ -393,6 +432,8 @@ TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+GRID est modifié
 
 Mutateur pour la couleur des jetons du joueur. 
 
+Cette fonction modifie la couleur des jetons du joueur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+JOUEUR initialisé 
 \end{DoxyPrecond}
@@ -419,6 +460,8 @@ TIS\+\_\+\+CUSTOM\+\_\+\+COLOR\+\_\+\+JOUEUR est modifié
 
 Mutateur pour le nombre de colonnes. 
 
+Cette fonction modifie le nombre de colonnes sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+COLUMNS initialisé$\ast$ 
 \end{DoxyPrecond}
@@ -444,6 +487,8 @@ STV\+\_\+\+COLUMNS est modifié
 
 Mutateur pour le nombre de jetons requis. 
 
+Cette fonction modifie le nombre de jetons requis sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
+
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+NB\+\_\+\+JETONS initialisé 
 \end{DoxyPrecond}
@@ -468,6 +513,8 @@ STV\+\_\+\+NB\+\_\+\+JETONS est modifié
 
 
 Mutateur pour le nombre de lignes. 
+
+Cette fonction modifie le nombre de lignes sélectionné par l\textquotesingle{}utilisateur. Elle est appelée lorsque l\textquotesingle{}utilisateur clique sur le bouton \char`\"{}\+Réinitialiser\char`\"{}.
 
 \begin{DoxyPrecond}{Précondition}
 STV\+\_\+\+ROWS initialisé 

@@ -3,7 +3,7 @@ var searchData=
   ['cm_5fended_5fgame_5',['cm_ended_game',['../namespacesrc_1_1controller_1_1ctrl__main.html#a54688bd9c133c30482bfd04771376202',1,'src::controller::ctrl_main']]],
   ['cm_5finfo_6',['cm_info',['../namespacesrc_1_1controller_1_1ctrl__main.html#a3ae3b84a620ae0f55c98d8d89b3c3809',1,'src::controller::ctrl_main']]],
   ['cm_5finit_7',['cm_init',['../namespacesrc_1_1controller_1_1ctrl__main.html#ad4089499e6b14761718f8d364351884a',1,'src::controller::ctrl_main']]],
-  ['cm_5fmenu_8',['cm_menu',['../namespacesrc_1_1controller_1_1ctrl__main.html#ae4fdb05a82abbae8eec962cc61529362',1,'src::controller::ctrl_main']]],
+  ['cm_5fmenu_8',['cm_menu',['../namespacesrc_1_1controller_1_1ctrl__main.html#a61fd0465a5dbb149125d2f32ef9e4472',1,'src::controller::ctrl_main']]],
   ['cm_5fpage_5faccueil_9',['cm_page_accueil',['../namespacesrc_1_1controller_1_1ctrl__main.html#a8fdce8d8dcf92ddee23da3a5e22c705d',1,'src::controller::ctrl_main']]],
   ['cm_5fpage_5fbonus_10',['cm_page_bonus',['../namespacesrc_1_1controller_1_1ctrl__main.html#a3d09afe52ac4275294ac2b930d47112a',1,'src::controller::ctrl_main']]],
   ['cm_5fpage_5fparameters_11',['cm_page_parameters',['../namespacesrc_1_1controller_1_1ctrl__main.html#a0cd0f0a0ac3edbade38eaa77c6cc7e95',1,'src::controller::ctrl_main']]],

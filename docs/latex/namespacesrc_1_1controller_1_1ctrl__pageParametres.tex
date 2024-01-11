@@ -42,6 +42,13 @@ Contient les fonctions permettant de gérer la page des paramètres
 
 Ouvre un sélecteur de couleur. 
 
+Cette fonction ouvre un sélecteur de couleur pour l\textquotesingle{}élément passé en paramètre. L\textquotesingle{}élément peut être le joueur, le bot ou la grille.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+view\+\_\+pp initialisé 
+\end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
 {\em s\+\_\+element} & Élément à colorer (joueur, bot ou grille) \\
@@ -56,6 +63,8 @@ Ouvre un sélecteur de couleur.
 
 
 Charge les paramètres de personnalisation. 
+
+Cette fonction charge les paramètres de personnalisation sauvegardés dans un fichier texte. Elle récupère la couleur des jetons du joueur, la couleur des jetons du bot et la couleur de la grille. Si le fichier n\textquotesingle{}existe pas, les paramètres par défaut sont retournés.
 
 \begin{DoxyPrecond}{Précondition}
 res/custom.\+txt existant 
@@ -82,6 +91,13 @@ st\+\_\+color\+\_\+grid\+: Couleur de la grille
 
 Réinitialise les paramètres de personnalisation. 
 
+Cette fonction réinitialise les paramètres de personnalisation par défaut.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+view\+\_\+pp initialisé 
+\end{DoxyPrecond}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a66914d9cb27ee0aa433d0e5bc7f7fca9}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a66914d9cb27ee0aa433d0e5bc7f7fca9}} 
 \index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!cpp\_custom\_save@{cpp\_custom\_save}}
 \index{cpp\_custom\_save@{cpp\_custom\_save}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
@@ -91,6 +107,8 @@ Réinitialise les paramètres de personnalisation.
 
 
 Sauvegarde des paramètres de personnalisation. 
+
+Cette fonction sauvegarde les paramètres de personnalisation dans un fichier texte. Si les paramètres ne sont pas valides, un message d\textquotesingle{}erreur est affiché. Les paramètres sont valides si deux couleurs ne sont pas trop proches. Deux couleurs sont trop proches si la différence entre les composantes rouges, vertes et bleues est inférieure à 50.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -116,6 +134,8 @@ paramètres de personnalisation sauvegardés ou str\+\_\+message d\textquotesing
 
 
 Initialise la page des paramètres. 
+
+Cette fonction initialise la page des paramètres en chargeant les paramètres sauvegardés et en les affichant.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -148,6 +168,8 @@ page des paramètres initialisée
 
 Charge les paramètres. 
 
+Cette fonction charge les paramètres sauvegardés dans un fichier texte. Elle récupère le nombre de lignes, le nombre de colonnes, le nombre de jetons à aligner et la difficulté du bot. Si le fichier n\textquotesingle{}existe pas, les paramètres par défaut sont retournés.
+
 \begin{DoxyPrecond}{Précondition}
 res/settings.\+txt existant 
 \end{DoxyPrecond}
@@ -176,6 +198,13 @@ i\+\_\+difficulty\+: Difficulté du bot
 
 Réinitialise les paramètres. 
 
+Cette fonction réinitialise les paramètres par défaut.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+
+view\+\_\+pp initialisé 
+\end{DoxyPrecond}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageParametres_a7b20d31c8617796ebddd1f49f294af13}\label{namespacesrc_1_1controller_1_1ctrl__pageParametres_a7b20d31c8617796ebddd1f49f294af13}} 
 \index{src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}!cpp\_settings\_save@{cpp\_settings\_save}}
 \index{cpp\_settings\_save@{cpp\_settings\_save}!src.controller.ctrl\_pageParametres@{src.controller.ctrl\_pageParametres}}
@@ -185,6 +214,8 @@ Réinitialise les paramètres.
 
 
 Sauvegarde les paramètres. 
+
+Cette fonction sauvegarde les paramètres dans un fichier texte. Si les paramètres ne sont pas valides, un message d\textquotesingle{}erreur est affiché. Les paramètres sont valides si le nombre de jetons à aligner est inférieur ou égal au nombre de lignes ou au nombre de colonnes.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 

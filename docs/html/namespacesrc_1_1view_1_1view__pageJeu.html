@@ -91,7 +91,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a07e89df868628c69908c7cb71ec1525c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un jeton dans une cellule.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#a07e89df868628c69908c7cb71ec1525c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a07e89df868628c69908c7cb71ec1525c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18eb1e225804aceaf9b20ee09352b2c"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aa18eb1e225804aceaf9b20ee09352b2c">vpj_get_grid_cell</a> (int i_x, int i_y)</td></tr>
-<tr class="memdesc:aa18eb1e225804aceaf9b20ee09352b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#aa18eb1e225804aceaf9b20ee09352b2c">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:aa18eb1e225804aceaf9b20ee09352b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les coordonnées dans la grille de la cellule cliquée.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#aa18eb1e225804aceaf9b20ee09352b2c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa18eb1e225804aceaf9b20ee09352b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200675c1948e4b941a19621dec899fc0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a200675c1948e4b941a19621dec899fc0">vpj_disable_bonus</a> ()</td></tr>
 <tr class="memdesc:a200675c1948e4b941a19621dec899fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désactive le bouton bonus.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#a200675c1948e4b941a19621dec899fc0">Plus de détails...</a><br /></td></tr>
@@ -123,6 +123,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Détruit la page de jeu. </p>
+<p>Cette fonction détruit la page de jeu. Elle efface le cadre et le supprime.</p>
 <p><b>Variables :</b></p><ul>
 <li>tkf_page_jeu : Frame de la page de jeu</li>
 </ul>
@@ -146,6 +147,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Désactive le bouton bonus. </p>
+<p>Cette fonction désactive le bouton bonus et change son relief. Elle est utilisée par le contrôleur de la page de jeu pour désactiver le bouton.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKS_BONUS initialisé </dd></dl>
 
 </div>
@@ -177,6 +179,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Dessine la grille de jeu. </p>
+<p>Cette fonction dessine la grille de jeu. Elle prend en paramètre le nombre de lignes et de colonnes de la grille. Elle dessine la grille dans le canvas.</p>
 <p><b>Variables :</b></p><ul>
 <li>tkc_grid : Canvas de la page de jeu</li>
 <li>i_canvas_width : Largeur du canvas</li>
@@ -212,6 +215,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur de la frame de la page de jeu. </p>
+<p>Cette fonction renvoie la frame de la page de jeu. Elle est utilisée par le contrôleur principal pour afficher la page de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>TKF_PAGE_JEU initialisé </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>: Frame de la page de jeu</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -246,7 +250,8 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Récupère les coordonnées dans la grille de la cellule cliquée Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas. </p>
+<p>Récupère les coordonnées dans la grille de la cellule cliquée. </p>
+<p>Récupère les coordonnées dans la grille de la cellule cliquée en fonction des coordonnées du clic dans le canvas.</p>
 <p><b>Variables :</b></p><ul>
 <li>i_canvas_width : Largeur du canvas</li>
 <li>i_canvas_height : Hauteur du canvas</li>
@@ -289,6 +294,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise la page de jeu. </p>
+<p>Cette fonction initialise la page de jeu. Elle crée un cadre, un canvas pour afficher la grille, un bouton pour annuler le dernier coup, un bouton pour refaire le dernier coup, un bouton pour utiliser un bonus et un bouton pour quitter la partie. Elle affiche aussi le menu sur la fenêtre.</p>
 <p><b>Variables :</b></p><ul>
 <li>tkf_page_jeu : Frame de la page de jeu</li>
 <li>tkc_grid : Canvas de la page de jeu</li>
@@ -329,6 +335,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie le texte du label d'information. </p>
+<p>Cette fonction modifie le texte du label d'information. Elle prend en paramètre le texte à afficher dans le label d'information. Elle affiche le texte dans le label d'information.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">st_info</td><td>Texte à afficher dans le label d'information </td></tr>
@@ -371,6 +378,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Dessine un jeton dans une cellule. </p>
+<p>Cette fonction dessine un jeton dans une cellule. Elle prend en paramètre la ligne et la colonne de la cellule où l'on va dessiner le jeton et la couleur du jeton. Elle dessine le jeton dans la cellule.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>Ligne de la cellule où l'on va dessiner le jeton </td></tr>

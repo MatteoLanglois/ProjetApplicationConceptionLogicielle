@@ -133,6 +133,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fait jouer le bot. </p>
+<p>Cette fonction fait jouer le bot puis met à jour la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tkf_page_jeu initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -176,6 +177,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Dessine la grille de jeu. </p>
+<p>Cette fonction appelle la fonction de la vue permettant de dessiner la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>i_nb_rows &gt; 0 </dd>
 <dd>
 i_nb_columns &gt; 0 </dd></dl>
@@ -207,6 +209,7 @@ i_nb_columns &gt; 0 </dd></dl>
 </div><div class="memdoc">
 
 <p>Affiche le joueur qui doit jouer. </p>
+<p>Cette fonction affiche le joueur qui doit jouer.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">b_is_player</td><td>: Booléen indiquant si c'est au joueur de jouer </td></tr>
@@ -237,6 +240,7 @@ i_nb_columns &gt; 0 </dd></dl>
 </div><div class="memdoc">
 
 <p>Affiche la page de jeu. </p>
+<p>Cette fonction affiche la page de jeu et initialise la grille de jeu. Elle récupère également les paramètres de la partie. Elle initialise également les variables globales.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>page de jeu affichée</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -282,6 +286,7 @@ i_nb_columns &gt; 0 </dd></dl>
 </div><div class="memdoc">
 
 <p>Joue un coup dans la grille de jeu. </p>
+<p>Cette fonction joue un coup dans la grille de jeu et met à jour la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>event est un évènement de la souris </dd>
 <dd>
 tkf_page_jeu initialisé </dd></dl>
@@ -297,9 +302,8 @@ tkf_page_jeu initialisé </dd></dl>
 <li>i_grid_x : Colonne de la grille de jeu</li>
 <li>i_grid_y : Ligne de la grille de jeu</li>
 <li>b_joueur_gagne : Booléen indiquant si le joueur a gagné</li>
-<li>b_joueur_joue : Booléen indiquant si le joueur a joué</li>
+<li>b_joueur_joue : Booléen indiquant si le joueur a joué </li>
 </ul>
-<p>@Ftodo Vérifier que tout est bon </p>
 
 </div>
 </div>
@@ -336,6 +340,7 @@ tkf_page_jeu initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Place un jeton dans la grille de jeu. </p>
+<p>Cette fonction appelle la fonction de la vue permettant de placer un jeton dans la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>i_row &gt;= 0 </dd>
 <dd>
 i_cols &gt;= 0 </dd>
@@ -373,6 +378,7 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Quitte la partie. </p>
+<p>Cette fonction détruit la page de jeu et ferme la fenêtre principale.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>page de jeu détruite </dd></dl>
 
@@ -394,6 +400,9 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Refait le dernier coup. </p>
+<p>Cette fonction refait le dernier coup annulé et met à jour la grille de jeu.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>dernier coup refait </dd></dl>
 
 </div>
 </div>
@@ -413,6 +422,9 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Annule le dernier coup. </p>
+<p>Cette fonction annule le dernier coup joué et met à jour la grille de jeu.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>dernier coup annulé </dd></dl>
 
 </div>
 </div>
@@ -432,6 +444,7 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Réinitialise la grille de jeu. </p>
+<p>Cette fonction réinitialise la grille de jeu puis met à jour la grille de jeu. Elle permet de mettre à jour la grille de jeu après un undo ou un redo.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>NPA_GRID initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Grille de jeu mise à jour</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -461,6 +474,7 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 </div><div class="memdoc">
 
 <p>Utilise un bonus puis met à jour la grille de jeu. </p>
+<p>Cette fonction utilise un bonus puis met à jour la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>S_BONUS est un bonus </dd>
 <dd>
 NPA_GRID est une grille de jeu </dd></dl>

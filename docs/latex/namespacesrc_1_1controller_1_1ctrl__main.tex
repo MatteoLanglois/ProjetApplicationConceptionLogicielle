@@ -12,7 +12,7 @@ def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ad4089499e6b147617
 \begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_aadb66adbf5dae2be4c63626e3e1a4b85}{cm\+\_\+quit}} (tk.\+Tk tk\+\_\+root)
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre de jeu. \end{DoxyCompactList}\item 
-tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}{cm\+\_\+menu}} (tk.\+Frame tk\+\_\+old\+\_\+frame, bool b\+\_\+in\+\_\+game)
+tk.\+Menu \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a61fd0465a5dbb149125d2f32ef9e4472}{cm\+\_\+menu}} (tk.\+Frame tk\+\_\+frame, bool b\+\_\+in\+\_\+game)
 \begin{DoxyCompactList}\small\item\em Crée le menu de la fenêtre. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__main_a8eaca19ef0fa1b79357877a458c23f2e}{cm\+\_\+page\+\_\+play}} (tk.\+Tk tk\+\_\+root, tk.\+Frame tkf\+\_\+old\+\_\+frame)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de passer à la fenêtre de jeu. \end{DoxyCompactList}\item 
@@ -48,6 +48,8 @@ Ce module gère la fenêtre principale du jeu et les transitions entre les diff�
 
 Fonction permettant de passer à la fenêtre de fin de partie. 
 
+Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d\textquotesingle{}initialisation de la page de fin de partie. Elle permet de passer à la fenêtre de fin de partie.
+
 \begin{DoxyPrecond}{Précondition}
 tkf\+\_\+old\+\_\+frame initialisé 
 \end{DoxyPrecond}
@@ -68,6 +70,8 @@ tkf\+\_\+old\+\_\+frame initialisé
 
 Affiche un message d\textquotesingle{}information. 
 
+Cette fonction appelle la fonction d\textquotesingle{}affichage d\textquotesingle{}un message d\textquotesingle{}information.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em str\+\_\+message} & Message à afficher \\
@@ -83,6 +87,8 @@ Affiche un message d\textquotesingle{}information.
 
 Initialise la fenêtre de jeu. 
 
+Cette fonction initialise la fenêtre de jeu et lance la boucle principale.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 \end{DoxyPrecond}
@@ -92,22 +98,24 @@ boucle principale lancée
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
 \item tk\+\_\+root \+: Fenêtre principale 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}\label{namespacesrc_1_1controller_1_1ctrl__main_ae4fdb05a82abbae8eec962cc61529362}} 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__main_a61fd0465a5dbb149125d2f32ef9e4472}\label{namespacesrc_1_1controller_1_1ctrl__main_a61fd0465a5dbb149125d2f32ef9e4472}} 
 \index{src.controller.ctrl\_main@{src.controller.ctrl\_main}!cm\_menu@{cm\_menu}}
 \index{cm\_menu@{cm\_menu}!src.controller.ctrl\_main@{src.controller.ctrl\_main}}
 \doxysubsubsection{\texorpdfstring{cm\_menu()}{cm\_menu()}}
-{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+old\+\_\+frame,  }\item[{bool}]{b\+\_\+in\+\_\+game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  tk.\+Menu src.\+controller.\+ctrl\+\_\+main.\+cm\+\_\+menu (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tk\+\_\+frame,  }\item[{bool}]{b\+\_\+in\+\_\+game }\end{DoxyParamCaption})}
 
 
 
 Crée le menu de la fenêtre. 
+
+Cette fonction appelle la fonction de création du menu de la fenêtre. Elle renvoie le menu créé. Elle prend en paramètre le cadre de la dernière fenêtre et un booléen indiquant si le joueur est en jeu ou non.
 
 \begin{DoxyPrecond}{Précondition}
 tkf\+\_\+old\+\_\+frame initialisé 
 \end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
-{\em tk\+\_\+old\+\_\+frame} & Le cadre de la dernière fenêtre \\
+{\em tk\+\_\+frame} & Le cadre de la dernière fenêtre \\
 \hline
 {\em b\+\_\+in\+\_\+game} & Booléen indiquant si le joueur est en jeu ou non \\
 \hline
@@ -127,6 +135,8 @@ Menu créé
 
 
 Fonction permettant de passer à la fenêtre d\textquotesingle{}accueil. 
+
+Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d\textquotesingle{}initialisation de la page d\textquotesingle{}accueil. Elle permet de passer à la fenêtre d\textquotesingle{}accueil.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -155,6 +165,8 @@ fenêtre d\textquotesingle{}accueil initialisée
 
 Fonction permettant de passer à la fenêtre de jeu. 
 
+Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d\textquotesingle{}initialisation de la page de jeu. Elle permet de passer à la fenêtre de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 
@@ -181,6 +193,8 @@ fenêtre de jeu initialisée
 
 
 Fonction permettant de passer à la fenêtre de paramètres. 
+
+Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d\textquotesingle{}initialisation de la page de paramètres. Elle permet de passer à la fenêtre de paramètres.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -209,6 +223,8 @@ fenêtre de paramètres initialisée
 
 Fonction permettant de passer à la fenêtre de jeu. 
 
+Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d\textquotesingle{}initialisation de la page de jeu. Elle permet de passer à la fenêtre de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 
@@ -236,6 +252,8 @@ fenêtre de jeu initialisée
 
 Ferme la fenêtre de jeu. 
 
+Cette fonction appelle la fonction de fermeture de la fenêtre de jeu.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 \end{DoxyPrecond}
@@ -254,6 +272,8 @@ tk\+\_\+root initialisé
 
 Met à jour la fenêtre. 
 
+Cette fonction appelle la fonction de mise à jour de la fenêtre principale.
+
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
 \end{DoxyPrecond}
@@ -271,6 +291,8 @@ tk\+\_\+root initialisé
 
 
 Affiche un message d\textquotesingle{}avertissement. 
+
+Cette fonction appelle la fonction d\textquotesingle{}affichage d\textquotesingle{}un message d\textquotesingle{}avertissement.
 
 
 \begin{DoxyParams}{Paramètres}

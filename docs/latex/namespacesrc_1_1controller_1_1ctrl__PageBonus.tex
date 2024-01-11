@@ -15,7 +15,7 @@ list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__Pag
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a37db4dbfdab85bd08b5117b3e0eb1b97}{cpb\+\_\+valider\+\_\+bonus}} ()
 \begin{DoxyCompactList}\small\item\em Récupère les bonus sélectionnés par le joueur. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a09463a6299c903d6078dd4c2b57cfcda}{cpb\+\_\+show\+\_\+bonus\+\_\+description}} (str s\+\_\+bonus)
-\begin{DoxyCompactList}\small\item\em Affiche la description du bonus sélectionné \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Affiche la description du bonus sélectionné. \end{DoxyCompactList}\item 
 str \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}{cpb\+\_\+get\+\_\+chosen\+\_\+bonus}} ()
 \begin{DoxyCompactList}\small\item\em Accesseur du bonus choisi par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -36,6 +36,11 @@ Ce module contient les fonctions permettant de gérer la page de choix du bonus.
 
 Récupère les bonus disponibles. 
 
+Cette fonction récupère les bonus disponibles et les formate pour l\textquotesingle{}affichage.
+
+\begin{DoxyReturn}{Renvoie}
+\+: Liste des bonus disponibles 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}\label{namespacesrc_1_1controller_1_1ctrl__PageBonus_a4f3496b3f6be69421ac5c46e8ec01686}} 
 \index{src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}!cpb\_get\_chosen\_bonus@{cpb\_get\_chosen\_bonus}}
 \index{cpb\_get\_chosen\_bonus@{cpb\_get\_chosen\_bonus}!src.controller.ctrl\_PageBonus@{src.controller.ctrl\_PageBonus}}
@@ -45,6 +50,8 @@ Récupère les bonus disponibles.
 
 
 Accesseur du bonus choisi par l\textquotesingle{}utilisateur. 
+
+Cette fonction retourne le bonus choisi par l\textquotesingle{}utilisateur.
 
 \begin{DoxyPrecond}{Précondition}
 S\+\_\+\+BONUS non nul 
@@ -64,6 +71,8 @@ S\+\_\+\+BONUS non nul
 
 
 Initialise la page de choix du bonus. 
+
+Cette fonction initialise la page de choix du bonus en affichant la fenêtre principale et en initialisant la page de choix du bonus.
 
 \begin{DoxyPrecond}{Précondition}
 tk\+\_\+root initialisé 
@@ -88,7 +97,9 @@ page de choix du bonus initialisée
 
 
 
-Affiche la description du bonus sélectionné 
+Affiche la description du bonus sélectionné. 
+
+Cette fonction affiche la description du bonus sélectionné. Pour cela, elle récupère la description du bonus et l\textquotesingle{}affiche.
 
 \begin{DoxyPrecond}{Précondition}
 s\+\_\+bonus non vide 
@@ -113,6 +124,8 @@ Description du bonus affichée
 
 
 Récupère les bonus sélectionnés par le joueur. 
+
+Cette fonction récupère les bonus sélectionnés par le joueur et passe à la fenêtre de jeu.
 
 \begin{DoxyPrecond}{Précondition}
 fenêtre de choix du bonus affichée 

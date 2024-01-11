@@ -88,7 +88,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a37db4dbfdab85bd08b5117b3e0eb1b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les bonus sélectionnés par le joueur.  <a href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a37db4dbfdab85bd08b5117b3e0eb1b97">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37db4dbfdab85bd08b5117b3e0eb1b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09463a6299c903d6078dd4c2b57cfcda"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a09463a6299c903d6078dd4c2b57cfcda">cpb_show_bonus_description</a> (str s_bonus)</td></tr>
-<tr class="memdesc:a09463a6299c903d6078dd4c2b57cfcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la description du bonus sélectionné  <a href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a09463a6299c903d6078dd4c2b57cfcda">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a09463a6299c903d6078dd4c2b57cfcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la description du bonus sélectionné.  <a href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a09463a6299c903d6078dd4c2b57cfcda">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a09463a6299c903d6078dd4c2b57cfcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f3496b3f6be69421ac5c46e8ec01686"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a4f3496b3f6be69421ac5c46e8ec01686">cpb_get_chosen_bonus</a> ()</td></tr>
 <tr class="memdesc:a4f3496b3f6be69421ac5c46e8ec01686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du bonus choisi par l'utilisateur.  <a href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a4f3496b3f6be69421ac5c46e8ec01686">Plus de détails...</a><br /></td></tr>
@@ -114,6 +114,8 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Récupère les bonus disponibles. </p>
+<p>Cette fonction récupère les bonus disponibles et les formate pour l'affichage.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>: Liste des bonus disponibles </dd></dl>
 
 </div>
 </div>
@@ -133,6 +135,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesseur du bonus choisi par l'utilisateur. </p>
+<p>Cette fonction retourne le bonus choisi par l'utilisateur.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>S_BONUS non nul </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>: Bonus choisi par l'utilisateur</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -158,6 +161,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise la page de choix du bonus. </p>
+<p>Cette fonction initialise la page de choix du bonus en affichant la fenêtre principale et en initialisant la page de choix du bonus.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -189,7 +193,8 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Affiche la description du bonus sélectionné </p>
+<p>Affiche la description du bonus sélectionné. </p>
+<p>Cette fonction affiche la description du bonus sélectionné. Pour cela, elle récupère la description du bonus et l'affiche.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>s_bonus non vide </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -220,6 +225,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Récupère les bonus sélectionnés par le joueur. </p>
+<p>Cette fonction récupère les bonus sélectionnés par le joueur et passe à la fenêtre de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>fenêtre de choix du bonus affichée </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Choix du bonus enregistré</dd></dl>
 <p><b>Variables :</b></p><ul>

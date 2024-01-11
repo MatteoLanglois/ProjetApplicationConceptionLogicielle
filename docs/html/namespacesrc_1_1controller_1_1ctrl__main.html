@@ -84,9 +84,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aadb66adbf5dae2be4c63626e3e1a4b85"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#aadb66adbf5dae2be4c63626e3e1a4b85">cm_quit</a> (tk.Tk tk_root)</td></tr>
 <tr class="memdesc:aadb66adbf5dae2be4c63626e3e1a4b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme la fenêtre de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#aadb66adbf5dae2be4c63626e3e1a4b85">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aadb66adbf5dae2be4c63626e3e1a4b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4fdb05a82abbae8eec962cc61529362"><td class="memItemLeft" align="right" valign="top">tk.Menu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ae4fdb05a82abbae8eec962cc61529362">cm_menu</a> (tk.Frame tk_old_frame, bool b_in_game)</td></tr>
-<tr class="memdesc:ae4fdb05a82abbae8eec962cc61529362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le menu de la fenêtre.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#ae4fdb05a82abbae8eec962cc61529362">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae4fdb05a82abbae8eec962cc61529362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61fd0465a5dbb149125d2f32ef9e4472"><td class="memItemLeft" align="right" valign="top">tk.Menu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a61fd0465a5dbb149125d2f32ef9e4472">cm_menu</a> (tk.Frame tk_frame, bool b_in_game)</td></tr>
+<tr class="memdesc:a61fd0465a5dbb149125d2f32ef9e4472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le menu de la fenêtre.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#a61fd0465a5dbb149125d2f32ef9e4472">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a61fd0465a5dbb149125d2f32ef9e4472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eaca19ef0fa1b79357877a458c23f2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a8eaca19ef0fa1b79357877a458c23f2e">cm_page_play</a> (tk.Tk tk_root, tk.Frame tkf_old_frame)</td></tr>
 <tr class="memdesc:a8eaca19ef0fa1b79357877a458c23f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de passer à la fenêtre de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__main.html#a8eaca19ef0fa1b79357877a458c23f2e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8eaca19ef0fa1b79357877a458c23f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +143,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction permettant de passer à la fenêtre de fin de partie. </p>
+<p>Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d'initialisation de la page de fin de partie. Elle permet de passer à la fenêtre de fin de partie.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tkf_old_frame initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -171,6 +172,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche un message d'information. </p>
+<p>Cette fonction appelle la fonction d'affichage d'un message d'information.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">str_message</td><td>Message à afficher </td></tr>
@@ -196,6 +198,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise la fenêtre de jeu. </p>
+<p>Cette fonction initialise la fenêtre de jeu et lance la boucle principale.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>boucle principale lancée</dd></dl>
 <p><b>Variables :</b></p><ul>
@@ -204,8 +207,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae4fdb05a82abbae8eec962cc61529362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4fdb05a82abbae8eec962cc61529362">&#9670;&nbsp;</a></span>cm_menu()</h2>
+<a id="a61fd0465a5dbb149125d2f32ef9e4472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61fd0465a5dbb149125d2f32ef9e4472">&#9670;&nbsp;</a></span>cm_menu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +217,7 @@ Fonctions</h2></td></tr>
           <td class="memname"> tk.Menu src.controller.ctrl_main.cm_menu </td>
           <td>(</td>
           <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tk_old_frame</em>, </td>
+          <td class="paramname"><em>tk_frame</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -231,10 +234,11 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Crée le menu de la fenêtre. </p>
+<p>Cette fonction appelle la fonction de création du menu de la fenêtre. Elle renvoie le menu créé. Elle prend en paramètre le cadre de la dernière fenêtre et un booléen indiquant si le joueur est en jeu ou non.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tkf_old_frame initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tk_old_frame</td><td>Le cadre de la dernière fenêtre </td></tr>
+    <tr><td class="paramname">tk_frame</td><td>Le cadre de la dernière fenêtre </td></tr>
     <tr><td class="paramname">b_in_game</td><td>Booléen indiquant si le joueur est en jeu ou non </td></tr>
   </table>
   </dd>
@@ -271,6 +275,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction permettant de passer à la fenêtre d'accueil. </p>
+<p>Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d'initialisation de la page d'accueil. Elle permet de passer à la fenêtre d'accueil.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 tkf_old_frame initialisé </dd></dl>
@@ -314,6 +319,7 @@ fenêtre d'accueil initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Fonction permettant de passer à la fenêtre de jeu. </p>
+<p>Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d'initialisation de la page de jeu. Elle permet de passer à la fenêtre de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 tkf_old_frame initialisé </dd></dl>
@@ -357,6 +363,7 @@ fenêtre de jeu initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Fonction permettant de passer à la fenêtre de paramètres. </p>
+<p>Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d'initialisation de la page de paramètres. Elle permet de passer à la fenêtre de paramètres.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 tkf_old_frame initialisé </dd></dl>
@@ -400,6 +407,7 @@ fenêtre de paramètres initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Fonction permettant de passer à la fenêtre de jeu. </p>
+<p>Cette fonction appelle la fonction de suppression du cadre de la dernière fenêtre et la fonction d'initialisation de la page de jeu. Elle permet de passer à la fenêtre de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd>
 <dd>
 tkf_old_frame initialisé </dd></dl>
@@ -433,6 +441,7 @@ fenêtre de jeu initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Ferme la fenêtre de jeu. </p>
+<p>Cette fonction appelle la fonction de fermeture de la fenêtre de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -460,6 +469,7 @@ fenêtre de jeu initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Met à jour la fenêtre. </p>
+<p>Cette fonction appelle la fonction de mise à jour de la fenêtre principale.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -487,6 +497,7 @@ fenêtre de jeu initialisée </dd></dl>
 </div><div class="memdoc">
 
 <p>Affiche un message d'avertissement. </p>
+<p>Cette fonction appelle la fonction d'affichage d'un message d'avertissement.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">str_message</td><td>Message à afficher </td></tr>

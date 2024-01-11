@@ -42,6 +42,8 @@ Ce module permet de facilement avoir le menu sur toutes les fenêtres. De quitte
 
 Initialise la fenêtre de jeu. 
 
+Cette fonction initialise la fenêtre principale du jeu. Elle crée la fenêtre, lui donne un titre, un logo, la rend non redimensionnable et renvoie la fenêtre créée.
+
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
 \item tk\+\_\+root \+: Fenêtre principale
@@ -59,6 +61,8 @@ Fenêtre principale
 
 
 Initialise le menu de la fenêtre de jeu. 
+
+Cette fonction initialise le menu de la fenêtre principale du jeu. Elle crée le menu, les sous-\/menus, les commandes et renvoie le menu créé. Ce menu est affiché dans toutes les fenêtres.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
@@ -80,6 +84,8 @@ Menu de la fenêtre de jeu
 
 
 Affiche un message de fin de partie. 
+
+Cette fonction affiche un message de fin de partie. Elle demande à l\textquotesingle{}utilisateur s\textquotesingle{}il veut rejouer ou non. Si oui, elle relance une partie sinon elle revient à la page d\textquotesingle{}accueil. Elle est appelée lorsque la partie est terminée.
 
 {\bfseries{Préconditions \+:}}
 \begin{DoxyItemize}
@@ -103,6 +109,8 @@ Affiche un message de fin de partie.
 
 Affiche un message d\textquotesingle{}information. 
 
+Cette fonction affiche un message d\textquotesingle{}information. Elle est appelée lorsque l\textquotesingle{}utilisateur fait une action qui est autorisée. Par exemple, lorsque l\textquotesingle{}utilisateur change les paramètres du jeu.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em str\+\_\+message} & Message à afficher \\
@@ -117,6 +125,8 @@ Affiche un message d\textquotesingle{}information.
 
 
 Affiche un message d\textquotesingle{}avertissement. 
+
+Cette fonction affiche un message d\textquotesingle{}avertissement. Elle est appelée lorsque l\textquotesingle{}utilisateur fait une action qui n\textquotesingle{}est pas autorisée. Par exemple, si l\textquotesingle{}utilisateur choisit des paramètres qui ne sont pas compatibles avec le jeu.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -133,17 +143,14 @@ Affiche un message d\textquotesingle{}avertissement.
 
 Ferme la fenêtre de jeu. 
 
-{\bfseries{Préconditions \+:}}
-\begin{DoxyItemize}
-\item tk\+\_\+root initialisé
-\end{DoxyItemize}
+Cette fonction ferme la fenêtre principale du jeu.
 
+\begin{DoxyVerb}**Préconditions :**
+* tk_root initialisé
 
-\begin{DoxyParams}{Paramètres}
-{\em tk\+\_\+win\+\_\+root} & Fenêtre principale \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}\label{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}} 
+@param tk_win_root: Fenêtre principale
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}\label{namespacesrc_1_1view_1_1view__main_a726767b573cad248429575580a825faf}} 
 \index{src.view.view\_main@{src.view.view\_main}!vm\_remove\_frame@{vm\_remove\_frame}}
 \index{vm\_remove\_frame@{vm\_remove\_frame}!src.view.view\_main@{src.view.view\_main}}
 \doxysubsubsection{\texorpdfstring{vm\_remove\_frame()}{vm\_remove\_frame()}}
@@ -152,6 +159,8 @@ Ferme la fenêtre de jeu.
 
 
 Supprime un cadre. 
+
+Cette fonction supprime un cadre. Elle est appelée lorsque l\textquotesingle{}on veut changer de page.
 
 \begin{DoxyPrecond}{Précondition}
 frame existe 
@@ -173,6 +182,8 @@ frame n\textquotesingle{}existe plus
 
 
 Met à jour la fenêtre principale. 
+
+Cette fonction met à jour la fenêtre principale. Elle est appelée lorsque l\textquotesingle{}on veut mettre à jour la fenêtre principale.
 
 
 \begin{DoxyParams}{Paramètres}
