@@ -123,24 +123,27 @@ def pq_apply_gravity(npa_grille: np.array) -> np.array:
     * i_nb_colonne : Nombre de colonnes de la grille
     * i_boucle_colonne : Compteur de boucle pour les colonnes de la grille
     * i_boucle_ligne : Compteur de boucle pour les lignes de la grille
-    * i_boucle_ligne_2 : Compteur de boucle pour les lignes de la grille
+    * i_compt : Compteur de sécurité
 
     """
-    #On définit le nombre de ligne et de colonne de la grille
+    # On définit le nombre de ligne et de colonne de la grille
     i_nb_ligne, i_nb_colonne = npa_grille.shape
-    #Pour chaque colonne de la grille
-    for i in range(i_nb_colonne):
-        #On initialise le compteur de sécurité à 0
-        compt = 0
-        #Tant que la première ligne de la colonne est vide et que le compteur est inférieur au nombre de ligne - 1
-        while npa_grille[i_nb_ligne-1][i] == 0 and compt < i_nb_ligne -1:
-            #Pour chaque ligne de la colonne
-            for j in range(i_nb_ligne-1,0, -1):
-                #On décale la ligne d'un cran vers le bas
-                npa_grille[j][i] = npa_grille[j - 1][i]
-                #On remplit la ligne copié de la colonne avec un 0
-                npa_grille[j-1][i] = 0
-            #On incrémente le compteur de sécurité
-            compt += 1
-    #On retourne la grille
+    # Pour chaque colonne de la grille
+    for i_boucle_colonne in range(i_nb_colonne):
+        # On initialise le compteur de sécurité à 0
+        i_compt = 0
+        # Tant que la première ligne de la colonne est vide et que le compteur
+        # est inférieur au nombre de ligne - 1
+        while (npa_grille[i_nb_ligne - 1][i_boucle_colonne] == 0
+               and i_compt < i_nb_ligne - 1):
+            # Pour chaque ligne de la colonne
+            for i_boucle_ligne in range(i_nb_ligne - 1, 0, -1):
+                # On décale la ligne d'un cran vers le bas
+                npa_grille[i_boucle_ligne][i_boucle_colonne] = (
+                    npa_grille)[i_boucle_ligne - 1][i_boucle_colonne]
+                # On remplit la ligne copié de la colonne avec un 0
+                npa_grille[i_boucle_ligne - 1][i_boucle_colonne] = 0
+            # On incrémente le compteur de sécurité
+            i_compt += 1
+    # On retourne la grille
     return npa_grille
