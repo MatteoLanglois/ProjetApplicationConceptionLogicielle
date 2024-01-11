@@ -44,14 +44,6 @@ def tg_init_grille():
                 "pq_init_grille non fonctionnel"
 
 
-def tg_reset_grille():
-    """! Teste la fonction pq_reset_grille
-
-    @todo A tester
-    """
-    pass
-
-
 def tg_test_all():
     """! Lance tous les tests
     """
