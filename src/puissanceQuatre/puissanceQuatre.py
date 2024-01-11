@@ -104,7 +104,6 @@ def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
               iColonne=0,
               isFirst=False, tour=0, isthebonus = False) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
-    @todo Optimiser
     """
     # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
     if tour < 2:
