@@ -10,8 +10,11 @@ if errorlevel 1 (
 REM On vérifie qu'il y a bien venv d'installé
 python -c "import venv" >nul 2>&1
 if errorlevel 1 (
-    echo Le module venv n'est pas disponible.
-    exit /b
+    python -m pip install virtualenv
+    if errorlevel 1 (
+        echo Une erreur s'est produite lors de l'installation de venv.
+        exit /b
+    )
 )
 
 
@@ -41,4 +44,4 @@ REM On installe les dépendances
 pip install -r requirements.txt
 
 REM On lance le programme
-python src/main.py
+python main.py
