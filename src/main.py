@@ -17,7 +17,7 @@ Ce programme utilise les modules externes suivants :
 @details Ce module permet de lancer le jeu.
 """
 
-import src.controller.ctrl_main as ctrl_m
+import controller.ctrl_main as ctrl_m
 
 
 def main():

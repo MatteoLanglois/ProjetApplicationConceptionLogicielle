@@ -4,9 +4,42 @@ Lors de ce projet, nous devons réaliser un puissance 4. Cependant, ce puissance
 
 De plus, le joueur aura des bonus permettant de renverser la partie ou de se donner un avantage, par exemple, il pourra avoir une bombe pour supprimer une ligne ou une colonne, ou alors retourner la grille. Nous allons aussi apporter de la personnalisation au joueur, il pourra changer la couleur des jetons et de la grille.
 
-Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ainsi que la réalisation de l’interface graphique. Ces trois parties sont essentielles à ce projet. \DoxyHorRuler{0}
- \hypertarget{index_autotoc_md1}{}\doxysection{Fonctionnalités}\label{index_autotoc_md1}
-\hypertarget{index_autotoc_md2}{}\doxysubsection{Algorithmie}\label{index_autotoc_md2}
+Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ainsi que la réalisation de l’interface graphique. Ces trois parties sont essentielles à ce projet.\hypertarget{index_autotoc_md1}{}\doxysection{Modules externes utilisés \+:}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \href{numpy.org}{\texttt{ Numpy}}
+\item \href{https://docs.python.org/3/library/inspect.html}{\texttt{ Inspect}}
+\item \href{https://docs.python.org/3/library/tkinter.html}{\texttt{ Tkinter}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git}
+
+\end{DoxyCode}
+
+\item Ensuite, il faut se placer dans le dossier du jeu \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd projetApplicationConceptionLogicielle}
+
+\end{DoxyCode}
+
+\item Enfin, il faut installer les modules externes utilisés \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip3 install -\/r requirements.txt}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Lancement}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Pour lancer le jeu, il suffit de lancer le fichier {\ttfamily src/main.\+py} avec python3.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{index_autotoc_md4}{}\doxysection{Fonctionnalités}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{Algorithmie}\label{index_autotoc_md5}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Vérification de la victoire
@@ -15,7 +48,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Ajout de pièce
 \item \mbox{[}x\mbox{]} Algorithme de gestion de partie en ligne de commande
 \item \mbox{[}x\mbox{]} Implémentation du undo/redo
-\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{Interface graphique}\label{index_autotoc_md3}
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{Interface graphique}\label{index_autotoc_md6}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Page d\textquotesingle{}accueil
@@ -29,7 +62,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[} \mbox{]} Affichage de l\textquotesingle{}aide
 \item \mbox{[}x\mbox{]} Affichage du tour du joueur
 \item \mbox{[} \mbox{]} Interface responsive
-\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{Personnalisation}\label{index_autotoc_md4}
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Personnalisation}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Personnalisation des jetons
@@ -37,7 +70,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Personnalisation de la taille de la grille
 \item \mbox{[}x\mbox{]} Personnalisation du nombre de jetons à aligner pour gagner
 \item \mbox{[}x\mbox{]} Personnalisation de la difficulté de l\textquotesingle{}IA
-\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysubsection{Bonus}\label{index_autotoc_md5}
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Bonus}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Utilisation des bonus en ligne de commande

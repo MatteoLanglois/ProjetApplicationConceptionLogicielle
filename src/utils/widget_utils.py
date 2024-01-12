@@ -1,12 +1,8 @@
 """! @brief Un programme qui joue au jeu puissance 4++.
 
-@mainpage Projet Puissance 4++
-
-@section description_main Description
 Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
 un nombre de pions à aligner variable, des bonus et un undo.
 
-@section import_section Importations
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
@@ -26,7 +22,7 @@ def wu_get_screen_size(tkf_frame: tk.Frame) -> (int, int):
     Cette fonction récupère la taille de l'écran et la renvoie sous la forme
     d'un tuple (largeur, hauteur).
 
-    @param tkf_frame: Frame tkinte
+    @param tkf_frame: Frame tkinter
     @pre Le cadre doit être initialisé
     @return Tuple (largeur, hauteur)
     """
@@ -37,7 +33,7 @@ def wu_get_screen_size(tkf_frame: tk.Frame) -> (int, int):
 def wu_get_grid_size(tkf_frame: tk.Frame) -> (int, int):
     """! Récupère la taille de la grille
 
-    Cette fonction récupère la taille de la grille et la renvoie sous la forme
+    Cette fonction calcule la taille de la grille et la renvoie sous la forme
     d'un tuple (largeur, hauteur).
 
     @param tkf_frame: Frame tkinte
@@ -71,7 +67,7 @@ def wu_get_grid_size(tkf_frame: tk.Frame) -> (int, int):
 def wu_get_font_size(tkf_frame: tk.Frame, b_title: bool) -> int:
     """! Récupère la taille de la police
 
-    Cette fonction récupère la taille de la police et la renvoie.
+    Cette fonction calcule la taille de la police et la renvoie.
 
     @pre Le cadre doit être initialisé
     @param tkf_frame: Frame tkinter

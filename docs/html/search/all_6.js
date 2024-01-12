@@ -20,5 +20,6 @@ var searchData=
   ['view_5fpageaccueil_96',['view_pageAccueil',['../namespacesrc_1_1view_1_1view__pageAccueil.html',1,'src::view']]],
   ['view_5fpagebonus_97',['view_pageBonus',['../namespacesrc_1_1view_1_1view__pageBonus.html',1,'src::view']]],
   ['view_5fpagejeu_98',['view_pageJeu',['../namespacesrc_1_1view_1_1view__pageJeu.html',1,'src::view']]],
-  ['view_5fpageparametres_99',['view_pageParametres',['../namespacesrc_1_1view_1_1view__pageParametres.html',1,'src::view']]]
+  ['view_5fpageparametres_99',['view_pageParametres',['../namespacesrc_1_1view_1_1view__pageParametres.html',1,'src::view']]],
+  ['widget_5futils_100',['widget_utils',['../namespacesrc_1_1utils_1_1widget__utils.html',1,'src::utils']]]
 ];

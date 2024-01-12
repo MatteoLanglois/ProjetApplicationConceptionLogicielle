@@ -1,4 +1,4 @@
-# ProjetApplicationConceptionLogicielle
+## ProjetApplicationConceptionLogicielle
 Lors de ce projet, nous devons réaliser un puissance 4. Cependant, ce puissance 
 4 sera amélioré, les joueurs pourront changer la taille de la grille et le 
 nombre de jetons requis pour gagner.
@@ -12,9 +12,32 @@ la couleur des jetons et de la grille.
 Ce projet se divise en trois parties : l’algorithmie, le génie logiciel ainsi 
 que la réalisation de l’interface graphique. Ces trois parties sont essentielles
 à ce projet.
+
+## Modules externes utilisés :
+* [Numpy](numpy.org)
+* [Inspect](https://docs.python.org/3/library/inspect.html)
+* [Tkinter](https://docs.python.org/3/library/tkinter.html)
+
+## Installation
+* Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante :
+```bash
+git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git
+```
+* Ensuite, il faut se placer dans le dossier du jeu :
+```bash
+cd projetApplicationConceptionLogicielle
+```
+* Enfin, il faut installer les modules externes utilisés :
+```bash
+pip3 install -r requirements.txt
+```
+
+## Lancement
+* Pour lancer le jeu, il suffit de lancer le fichier `src/main.py` avec python3.
+
 _____________________
-# Fonctionnalités
-## Algorithmie
+## Fonctionnalités
+### Algorithmie
 - [x] Vérification de la victoire
 - [x] Vérification de la jouabilité
 - [x] Algorithme MinMax
@@ -22,7 +45,7 @@ _____________________
 - [x] Algorithme de gestion de partie en ligne de commande
 - [x] Implémentation du undo/redo
 
-## Interface graphique
+### Interface graphique
 - [x] Page d'accueil
 - [x] Page de paramètres
 - [x] Sauvegarde des paramètres
@@ -33,16 +56,16 @@ _____________________
 - [x] Affichage de la victoire/Défaite
 - [ ] Affichage de l'aide
 - [x] Affichage du tour du joueur
-- [ ] Interface responsive
+- [x] Interface responsive
 
-## Personnalisation
+### Personnalisation
 - [x] Personnalisation des jetons
 - [x] Personnalisation de la couleur de la grille
 - [x] Personnalisation de la taille de la grille
 - [x] Personnalisation du nombre de jetons à aligner pour gagner
 - [x] Personnalisation de la difficulté de l'IA
 
-## Bonus
+### Bonus
 - [x] Utilisation des bonus en ligne de commande
 - [x] Utilisation des bonus dans la fenêtre
 - [x] Bonus d'inversion de la grille

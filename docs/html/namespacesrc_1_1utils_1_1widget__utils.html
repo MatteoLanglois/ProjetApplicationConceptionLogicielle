@@ -73,42 +73,81 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Ce module contient les fonctions utiles pour créer les widgets tkinter.  
+<p>Un programme qui joue au jeu puissance 4++.  
 <a href="namespacesrc_1_1utils_1_1widget__utils.html#details">Plus de détails...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a67ab7edebb461209fa8ca158ad9d1dd1"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a67ab7edebb461209fa8ca158ad9d1dd1">wu_i_get_font</a> ()</td></tr>
-<tr class="memdesc:a67ab7edebb461209fa8ca158ad9d1dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui retourne la police de caractères utilisée pour les widgets.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a67ab7edebb461209fa8ca158ad9d1dd1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a67ab7edebb461209fa8ca158ad9d1dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1289db30448e03ed042e89bcff23040"><td class="memItemLeft" align="right" valign="top">tk.Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#ae1289db30448e03ed042e89bcff23040">wu_tkb_init_button</a> (tk.Frame tkf_frame, str s_text)</td></tr>
-<tr class="memdesc:ae1289db30448e03ed042e89bcff23040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise un bouton.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#ae1289db30448e03ed042e89bcff23040">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae1289db30448e03ed042e89bcff23040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80762af4f99ff2625725ba55adc716d9"><td class="memItemLeft" align="right" valign="top">tk.Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a80762af4f99ff2625725ba55adc716d9">wu_tkl_init_label</a> (tk.Frame tkf_frame, str s_text)</td></tr>
-<tr class="separator:a80762af4f99ff2625725ba55adc716d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa41bcf649d49cc8af3de44f26368336c"><td class="memItemLeft" align="right" valign="top">tk.Spinbox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#aa41bcf649d49cc8af3de44f26368336c">wu_tksb_init_spinbox</a> (tk.Frame tkf_frame, int i_from, int i_to)</td></tr>
-<tr class="separator:aa41bcf649d49cc8af3de44f26368336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa594448a6d8ff19277b9d592b3ab2711"><td class="memItemLeft" align="right" valign="top">tk.Scale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#aa594448a6d8ff19277b9d592b3ab2711">wu_tks_init_scale</a> (tk.Frame tkf_frame, int i_from, int i_to, str s_orient)</td></tr>
-<tr class="separator:aa594448a6d8ff19277b9d592b3ab2711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36df946620c8793a34009c78bb649c87"><td class="memItemLeft" align="right" valign="top">tk.Canvas&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a36df946620c8793a34009c78bb649c87">wu_tkc_init_canvas</a> (tk.Frame tkf_frame, str s_grid_color, float f_ratio)</td></tr>
-<tr class="memdesc:a36df946620c8793a34009c78bb649c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise un canvas.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a36df946620c8793a34009c78bb649c87">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a36df946620c8793a34009c78bb649c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44688a2303b2da49415c96edf02770e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a44688a2303b2da49415c96edf02770e6">update_widgets</a> (tk.Frame tkf_frame)</td></tr>
-<tr class="memdesc:a44688a2303b2da49415c96edf02770e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui met à jour les widgets d'un cadre.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a44688a2303b2da49415c96edf02770e6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a44688a2303b2da49415c96edf02770e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a3d7633e2b51753081b1b800ad7ad7"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a54a3d7633e2b51753081b1b800ad7ad7">wu_get_screen_size</a> (tk.Frame tkf_frame)</td></tr>
+<tr class="memdesc:a54a3d7633e2b51753081b1b800ad7ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la taille de l'écran.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a54a3d7633e2b51753081b1b800ad7ad7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a54a3d7633e2b51753081b1b800ad7ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade716c55da64db8772861e33fcb9e055"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#ade716c55da64db8772861e33fcb9e055">wu_get_grid_size</a> (tk.Frame tkf_frame)</td></tr>
+<tr class="memdesc:ade716c55da64db8772861e33fcb9e055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la taille de la grille.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#ade716c55da64db8772861e33fcb9e055">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ade716c55da64db8772861e33fcb9e055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7576f56a08e301f20e68433a4445f4c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">wu_get_font_size</a> (tk.Frame tkf_frame, bool b_title)</td></tr>
+<tr class="memdesc:a7576f56a08e301f20e68433a4445f4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la taille de la police.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7576f56a08e301f20e68433a4445f4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Ce module contient les fonctions utiles pour créer les widgets tkinter. </p>
-<p>Ce module contient les fonctions utilitaires relatives aux widgets tkinter. Il permet d'assurer une uniformité et une meilleure mise à l'échelle des widgets. </p>
+<div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
+<p>Ce module contient les fonctions relatives aux widgets.</p>
+<p>Ce programme est un jeu de puissance 4++ avec une grille de taille variable, un nombre de pions à aligner variable, des bonus et un undo.</p>
+<p>Ce programme utilise les modules externes suivants :</p><ul>
+<li>tkinter</li>
+<li>numpy</li>
+<li><p class="startli">inspect</p>
+<p class="startli">Ce module contient les fonctions de gestion des widgets. Il permet de gérer la taille de la fenêtre en fonction de la résolution de l'écran. </p>
+</li>
+</ul>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a44688a2303b2da49415c96edf02770e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44688a2303b2da49415c96edf02770e6">&#9670;&nbsp;</a></span>update_widgets()</h2>
+<a id="a7576f56a08e301f20e68433a4445f4c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7576f56a08e301f20e68433a4445f4c4">&#9670;&nbsp;</a></span>wu_get_font_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def src.utils.widget_utils.update_widgets </td>
+          <td class="memname"> int src.utils.widget_utils.wu_get_font_size </td>
+          <td>(</td>
+          <td class="paramtype">tk.Frame&#160;</td>
+          <td class="paramname"><em>tkf_frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b_title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la taille de la police. </p>
+<p>Cette fonction calcule la taille de la police et la renvoie.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>Le cadre doit être initialisé </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tkf_frame</td><td>Frame tkinter </td></tr>
+    <tr><td class="paramname">b_title</td><td>True si la police est pour un titre, False sinon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Taille de la police </dd></dl>
+
+</div>
+</div>
+<a id="ade716c55da64db8772861e33fcb9e055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade716c55da64db8772861e33fcb9e055">&#9670;&nbsp;</a></span>wu_get_grid_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> (int, int) src.utils.widget_utils.wu_get_grid_size </td>
           <td>(</td>
           <td class="paramtype">tk.Frame&#160;</td>
           <td class="paramname"><em>tkf_frame</em></td><td>)</td>
@@ -117,227 +156,45 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction qui met à jour les widgets d'un cadre. </p>
-<dl class="section pre"><dt>Précondition</dt><dd>tkf_frame initialisé </dd></dl>
+<p>Récupère la taille de la grille. </p>
+<p>Cette fonction calcule la taille de la grille et la renvoie sous la forme d'un tuple (largeur, hauteur).</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tkf_frame</td><td>Le cadre dans lequel les widgets seront mis à jour. </td></tr>
+    <tr><td class="paramname">tkf_frame</td><td>Frame tkinte </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Mettre à jour les widgets. </dd></dl>
+<dl class="section pre"><dt>Précondition</dt><dd>Le cadre doit être initialisé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Tuple (largeur, hauteur) </dd></dl>
 
 </div>
 </div>
-<a id="a67ab7edebb461209fa8ca158ad9d1dd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67ab7edebb461209fa8ca158ad9d1dd1">&#9670;&nbsp;</a></span>wu_i_get_font()</h2>
+<a id="a54a3d7633e2b51753081b1b800ad7ad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54a3d7633e2b51753081b1b800ad7ad7">&#9670;&nbsp;</a></span>wu_get_screen_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> str src.utils.widget_utils.wu_i_get_font </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui retourne la police de caractères utilisée pour les widgets. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>: La taille de la police en fonction de la taille de l'interface. </dd></dl>
-
-</div>
-</div>
-<a id="ae1289db30448e03ed042e89bcff23040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1289db30448e03ed042e89bcff23040">&#9670;&nbsp;</a></span>wu_tkb_init_button()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> tk.Button src.utils.widget_utils.wu_tkb_init_button </td>
+          <td class="memname"> (int, int) src.utils.widget_utils.wu_get_screen_size </td>
           <td>(</td>
           <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tkf_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>tkf_frame</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">str&#160;</td>
-          <td class="paramname"><em>s_text</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction qui initialise un bouton. </p>
-<dl class="section pre"><dt>Précondition</dt><dd>tkf_frame initialisé </dd></dl>
+<p>Récupère la taille de l'écran. </p>
+<p>Cette fonction récupère la taille de l'écran et la renvoie sous la forme d'un tuple (largeur, hauteur).</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tkf_frame</td><td>Le cadre dans lequel le bouton sera affiché. </td></tr>
-    <tr><td class="paramname">s_text</td><td>Le texte du bouton. </td></tr>
+    <tr><td class="paramname">tkf_frame</td><td>Frame tkinter </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>: Le bouton initialisé. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Afficher le bouton. </dd></dl>
-
-</div>
-</div>
-<a id="a36df946620c8793a34009c78bb649c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36df946620c8793a34009c78bb649c87">&#9670;&nbsp;</a></span>wu_tkc_init_canvas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> tk.Canvas src.utils.widget_utils.wu_tkc_init_canvas </td>
-          <td>(</td>
-          <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tkf_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">str&#160;</td>
-          <td class="paramname"><em>s_grid_color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>f_ratio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui initialise un canvas. </p>
-<dl class="section pre"><dt>Précondition</dt><dd>tkf_frame initialisé </dd></dl>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tkf_frame</td><td>Le cadre dans lequel le canvas sera affiché. </td></tr>
-    <tr><td class="paramname">s_grid_color</td><td>La couleur de la grille. </td></tr>
-    <tr><td class="paramname">f_ratio</td><td>Le ratio de la grille. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>: Le canvas initialisé. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Afficher le canvas.</dd></dl>
-<p><b>Variables :</b></p><ul>
-<li>tkc_canvas : Le canvas à initialiser. </li>
-</ul>
-
-</div>
-</div>
-<a id="a80762af4f99ff2625725ba55adc716d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80762af4f99ff2625725ba55adc716d9">&#9670;&nbsp;</a></span>wu_tkl_init_label()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> tk.Label src.utils.widget_utils.wu_tkl_init_label </td>
-          <td>(</td>
-          <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tkf_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">str&#160;</td>
-          <td class="paramname"><em>s_text</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa594448a6d8ff19277b9d592b3ab2711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa594448a6d8ff19277b9d592b3ab2711">&#9670;&nbsp;</a></span>wu_tks_init_scale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> tk.Scale src.utils.widget_utils.wu_tks_init_scale </td>
-          <td>(</td>
-          <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tkf_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_from</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_to</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">str&#160;</td>
-          <td class="paramname"><em>s_orient</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa41bcf649d49cc8af3de44f26368336c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa41bcf649d49cc8af3de44f26368336c">&#9670;&nbsp;</a></span>wu_tksb_init_spinbox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> tk.Spinbox src.utils.widget_utils.wu_tksb_init_spinbox </td>
-          <td>(</td>
-          <td class="paramtype">tk.Frame&#160;</td>
-          <td class="paramname"><em>tkf_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_from</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i_to</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<dl class="section pre"><dt>Précondition</dt><dd>Le cadre doit être initialisé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Tuple (largeur, hauteur) </dd></dl>
 
 </div>
 </div>

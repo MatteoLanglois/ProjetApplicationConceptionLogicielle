@@ -127,77 +127,83 @@
 \contentsline {subsubsection}{\numberline {5.16.2.1}cu\_colors\_too\_close()}{41}{subsubsection.5.16.2.1}%
 \contentsline {subsubsection}{\numberline {5.16.2.2}cu\_hex\_to\_rgb()}{41}{subsubsection.5.16.2.2}%
 \contentsline {subsubsection}{\numberline {5.16.2.3}cu\_rgb\_distance()}{41}{subsubsection.5.16.2.3}%
-\contentsline {section}{\numberline {5.17}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view}{42}{section.5.17}%
-\contentsline {section}{\numberline {5.18}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main}{42}{section.5.18}%
-\contentsline {subsection}{\numberline {5.18.1}Description détaillée}{42}{subsection.5.18.1}%
-\contentsline {subsection}{\numberline {5.18.2}Documentation des fonctions}{42}{subsection.5.18.2}%
-\contentsline {subsubsection}{\numberline {5.18.2.1}vm\_init()}{42}{subsubsection.5.18.2.1}%
-\contentsline {subsubsection}{\numberline {5.18.2.2}vm\_menu()}{43}{subsubsection.5.18.2.2}%
-\contentsline {subsubsection}{\numberline {5.18.2.3}vm\_message\_game\_ended()}{43}{subsubsection.5.18.2.3}%
-\contentsline {subsubsection}{\numberline {5.18.2.4}vm\_message\_info()}{43}{subsubsection.5.18.2.4}%
-\contentsline {subsubsection}{\numberline {5.18.2.5}vm\_message\_warning()}{43}{subsubsection.5.18.2.5}%
-\contentsline {subsubsection}{\numberline {5.18.2.6}vm\_quit()}{44}{subsubsection.5.18.2.6}%
-\contentsline {subsubsection}{\numberline {5.18.2.7}vm\_remove\_frame()}{44}{subsubsection.5.18.2.7}%
-\contentsline {subsubsection}{\numberline {5.18.2.8}vm\_update()}{44}{subsubsection.5.18.2.8}%
-\contentsline {section}{\numberline {5.19}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accueil}{45}{section.5.19}%
-\contentsline {subsection}{\numberline {5.19.1}Description détaillée}{45}{subsection.5.19.1}%
-\contentsline {subsection}{\numberline {5.19.2}Documentation des fonctions}{45}{subsection.5.19.2}%
-\contentsline {subsubsection}{\numberline {5.19.2.1}vpa\_destroy()}{45}{subsubsection.5.19.2.1}%
-\contentsline {subsubsection}{\numberline {5.19.2.2}vpa\_init()}{45}{subsubsection.5.19.2.2}%
-\contentsline {section}{\numberline {5.20}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bonus}{45}{section.5.20}%
+\contentsline {section}{\numberline {5.17}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}widget\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils}{42}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Description détaillée}{42}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Documentation des fonctions}{42}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}wu\_get\_font\_size()}{42}{subsubsection.5.17.2.1}%
+\contentsline {subsubsection}{\numberline {5.17.2.2}wu\_get\_grid\_size()}{42}{subsubsection.5.17.2.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.3}wu\_get\_screen\_size()}{43}{subsubsection.5.17.2.3}%
+\contentsline {section}{\numberline {5.18}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view}{43}{section.5.18}%
+\contentsline {section}{\numberline {5.19}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main}{43}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Description détaillée}{44}{subsection.5.19.1}%
+\contentsline {subsection}{\numberline {5.19.2}Documentation des fonctions}{44}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}vm\_init()}{44}{subsubsection.5.19.2.1}%
+\contentsline {subsubsection}{\numberline {5.19.2.2}vm\_menu()}{44}{subsubsection.5.19.2.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.3}vm\_message\_game\_ended()}{44}{subsubsection.5.19.2.3}%
+\contentsline {subsubsection}{\numberline {5.19.2.4}vm\_message\_info()}{45}{subsubsection.5.19.2.4}%
+\contentsline {subsubsection}{\numberline {5.19.2.5}vm\_message\_warning()}{45}{subsubsection.5.19.2.5}%
+\contentsline {subsubsection}{\numberline {5.19.2.6}vm\_quit()}{45}{subsubsection.5.19.2.6}%
+\contentsline {subsubsection}{\numberline {5.19.2.7}vm\_remove\_frame()}{45}{subsubsection.5.19.2.7}%
+\contentsline {subsubsection}{\numberline {5.19.2.8}vm\_update()}{46}{subsubsection.5.19.2.8}%
+\contentsline {section}{\numberline {5.20}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accueil}{46}{section.5.20}%
 \contentsline {subsection}{\numberline {5.20.1}Description détaillée}{46}{subsection.5.20.1}%
 \contentsline {subsection}{\numberline {5.20.2}Documentation des fonctions}{46}{subsection.5.20.2}%
-\contentsline {subsubsection}{\numberline {5.20.2.1}vpb\_get\_bonus()}{46}{subsubsection.5.20.2.1}%
-\contentsline {subsubsection}{\numberline {5.20.2.2}vpb\_get\_frame()}{46}{subsubsection.5.20.2.2}%
-\contentsline {subsubsection}{\numberline {5.20.2.3}vpb\_init()}{46}{subsubsection.5.20.2.3}%
-\contentsline {subsubsection}{\numberline {5.20.2.4}vpb\_show\_bonus\_description()}{47}{subsubsection.5.20.2.4}%
-\contentsline {section}{\numberline {5.21}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jeu}{47}{section.5.21}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}vpa\_destroy()}{46}{subsubsection.5.20.2.1}%
+\contentsline {subsubsection}{\numberline {5.20.2.2}vpa\_init()}{46}{subsubsection.5.20.2.2}%
+\contentsline {section}{\numberline {5.21}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bonus}{48}{section.5.21}%
 \contentsline {subsection}{\numberline {5.21.1}Description détaillée}{48}{subsection.5.21.1}%
 \contentsline {subsection}{\numberline {5.21.2}Documentation des fonctions}{48}{subsection.5.21.2}%
-\contentsline {subsubsection}{\numberline {5.21.2.1}vpj\_destroy()}{48}{subsubsection.5.21.2.1}%
-\contentsline {subsubsection}{\numberline {5.21.2.2}vpj\_disable\_bonus()}{48}{subsubsection.5.21.2.2}%
-\contentsline {subsubsection}{\numberline {5.21.2.3}vpj\_draw\_grid()}{48}{subsubsection.5.21.2.3}%
-\contentsline {subsubsection}{\numberline {5.21.2.4}vpj\_get\_frame()}{49}{subsubsection.5.21.2.4}%
-\contentsline {subsubsection}{\numberline {5.21.2.5}vpj\_get\_grid\_cell()}{49}{subsubsection.5.21.2.5}%
-\contentsline {subsubsection}{\numberline {5.21.2.6}vpj\_init\_page\_jeu()}{49}{subsubsection.5.21.2.6}%
-\contentsline {subsubsection}{\numberline {5.21.2.7}vpj\_set\_info()}{50}{subsubsection.5.21.2.7}%
-\contentsline {subsubsection}{\numberline {5.21.2.8}vpj\_show\_coin()}{50}{subsubsection.5.21.2.8}%
-\contentsline {section}{\numberline {5.22}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parametres}{50}{section.5.22}%
-\contentsline {subsection}{\numberline {5.22.1}Description détaillée}{51}{subsection.5.22.1}%
-\contentsline {subsection}{\numberline {5.22.2}Documentation des fonctions}{51}{subsection.5.22.2}%
-\contentsline {subsubsection}{\numberline {5.22.2.1}vpp\_askcolor()}{51}{subsubsection.5.22.2.1}%
-\contentsline {subsubsection}{\numberline {5.22.2.2}vpp\_get\_bot\_color()}{51}{subsubsection.5.22.2.2}%
-\contentsline {subsubsection}{\numberline {5.22.2.3}vpp\_get\_difficulty()}{52}{subsubsection.5.22.2.3}%
-\contentsline {subsubsection}{\numberline {5.22.2.4}vpp\_get\_grid\_color()}{52}{subsubsection.5.22.2.4}%
-\contentsline {subsubsection}{\numberline {5.22.2.5}vpp\_get\_joueur\_color()}{52}{subsubsection.5.22.2.5}%
-\contentsline {subsubsection}{\numberline {5.22.2.6}vpp\_get\_nb\_columns()}{53}{subsubsection.5.22.2.6}%
-\contentsline {subsubsection}{\numberline {5.22.2.7}vpp\_get\_nb\_jetons()}{53}{subsubsection.5.22.2.7}%
-\contentsline {subsubsection}{\numberline {5.22.2.8}vpp\_get\_nb\_rows()}{53}{subsubsection.5.22.2.8}%
-\contentsline {subsubsection}{\numberline {5.22.2.9}vpp\_init()}{53}{subsubsection.5.22.2.9}%
-\contentsline {subsubsection}{\numberline {5.22.2.10}vpp\_init\_custom()}{54}{subsubsection.5.22.2.10}%
-\contentsline {subsubsection}{\numberline {5.22.2.11}vpp\_init\_settings()}{54}{subsubsection.5.22.2.11}%
-\contentsline {subsubsection}{\numberline {5.22.2.12}vpp\_reset\_customs()}{55}{subsubsection.5.22.2.12}%
-\contentsline {subsubsection}{\numberline {5.22.2.13}vpp\_reset\_settings()}{55}{subsubsection.5.22.2.13}%
-\contentsline {subsubsection}{\numberline {5.22.2.14}vpp\_set\_bot\_color()}{55}{subsubsection.5.22.2.14}%
-\contentsline {subsubsection}{\numberline {5.22.2.15}vpp\_set\_difficulty()}{55}{subsubsection.5.22.2.15}%
-\contentsline {subsubsection}{\numberline {5.22.2.16}vpp\_set\_grid\_color()}{56}{subsubsection.5.22.2.16}%
-\contentsline {subsubsection}{\numberline {5.22.2.17}vpp\_set\_joueur\_color()}{56}{subsubsection.5.22.2.17}%
-\contentsline {subsubsection}{\numberline {5.22.2.18}vpp\_set\_nb\_columns()}{56}{subsubsection.5.22.2.18}%
-\contentsline {subsubsection}{\numberline {5.22.2.19}vpp\_set\_nb\_jetons()}{57}{subsubsection.5.22.2.19}%
-\contentsline {subsubsection}{\numberline {5.22.2.20}vpp\_set\_nb\_rows()}{57}{subsubsection.5.22.2.20}%
-\contentsline {section}{\numberline {5.23}Référence de l\textquotesingle {}espace de nommage tests}{58}{section.5.23}%
-\contentsline {section}{\numberline {5.24}Référence de l\textquotesingle {}espace de nommage tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grid}{58}{section.5.24}%
-\contentsline {subsection}{\numberline {5.24.1}Description détaillée}{58}{subsection.5.24.1}%
-\contentsline {subsection}{\numberline {5.24.2}Documentation des fonctions}{58}{subsection.5.24.2}%
-\contentsline {subsubsection}{\numberline {5.24.2.1}tg\_init\_grille()}{58}{subsubsection.5.24.2.1}%
-\contentsline {subsubsection}{\numberline {5.24.2.2}tg\_test\_all()}{58}{subsubsection.5.24.2.2}%
-\contentsline {section}{\numberline {5.25}Référence de l\textquotesingle {}espace de nommage tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}puissance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Quatre}{58}{section.5.25}%
-\contentsline {subsection}{\numberline {5.25.1}Description détaillée}{59}{subsection.5.25.1}%
-\contentsline {subsection}{\numberline {5.25.2}Documentation des fonctions}{59}{subsection.5.25.2}%
-\contentsline {subsubsection}{\numberline {5.25.2.1}tp\_ajout\_piece()}{59}{subsubsection.5.25.2.1}%
-\contentsline {subsubsection}{\numberline {5.25.2.2}tp\_test\_all()}{59}{subsubsection.5.25.2.2}%
-\contentsline {subsubsection}{\numberline {5.25.2.3}tp\_verif\_colonne()}{59}{subsubsection.5.25.2.3}%
-\contentsline {subsubsection}{\numberline {5.25.2.4}tp\_victoire\_colonne()}{60}{subsubsection.5.25.2.4}%
-\contentsline {subsubsection}{\numberline {5.25.2.5}tp\_victoire\_diago()}{60}{subsubsection.5.25.2.5}%
-\contentsline {subsubsection}{\numberline {5.25.2.6}tp\_victoire\_ligne()}{60}{subsubsection.5.25.2.6}%
-\contentsline {chapter}{Index}{61}{section*.26}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}vpb\_get\_bonus()}{48}{subsubsection.5.21.2.1}%
+\contentsline {subsubsection}{\numberline {5.21.2.2}vpb\_get\_frame()}{48}{subsubsection.5.21.2.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.3}vpb\_init()}{49}{subsubsection.5.21.2.3}%
+\contentsline {subsubsection}{\numberline {5.21.2.4}vpb\_show\_bonus\_description()}{49}{subsubsection.5.21.2.4}%
+\contentsline {section}{\numberline {5.22}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jeu}{49}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Description détaillée}{50}{subsection.5.22.1}%
+\contentsline {subsection}{\numberline {5.22.2}Documentation des fonctions}{50}{subsection.5.22.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.1}vpj\_destroy()}{50}{subsubsection.5.22.2.1}%
+\contentsline {subsubsection}{\numberline {5.22.2.2}vpj\_disable\_bonus()}{50}{subsubsection.5.22.2.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.3}vpj\_draw\_grid()}{50}{subsubsection.5.22.2.3}%
+\contentsline {subsubsection}{\numberline {5.22.2.4}vpj\_get\_frame()}{51}{subsubsection.5.22.2.4}%
+\contentsline {subsubsection}{\numberline {5.22.2.5}vpj\_get\_grid\_cell()}{51}{subsubsection.5.22.2.5}%
+\contentsline {subsubsection}{\numberline {5.22.2.6}vpj\_init\_page\_jeu()}{51}{subsubsection.5.22.2.6}%
+\contentsline {subsubsection}{\numberline {5.22.2.7}vpj\_set\_info()}{52}{subsubsection.5.22.2.7}%
+\contentsline {subsubsection}{\numberline {5.22.2.8}vpj\_show\_coin()}{52}{subsubsection.5.22.2.8}%
+\contentsline {section}{\numberline {5.23}Référence de l\textquotesingle {}espace de nommage src.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}view\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parametres}{53}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Description détaillée}{53}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Documentation des fonctions}{53}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}vpp\_askcolor()}{53}{subsubsection.5.23.2.1}%
+\contentsline {subsubsection}{\numberline {5.23.2.2}vpp\_get\_bot\_color()}{54}{subsubsection.5.23.2.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.3}vpp\_get\_difficulty()}{54}{subsubsection.5.23.2.3}%
+\contentsline {subsubsection}{\numberline {5.23.2.4}vpp\_get\_grid\_color()}{54}{subsubsection.5.23.2.4}%
+\contentsline {subsubsection}{\numberline {5.23.2.5}vpp\_get\_joueur\_color()}{55}{subsubsection.5.23.2.5}%
+\contentsline {subsubsection}{\numberline {5.23.2.6}vpp\_get\_nb\_columns()}{55}{subsubsection.5.23.2.6}%
+\contentsline {subsubsection}{\numberline {5.23.2.7}vpp\_get\_nb\_jetons()}{55}{subsubsection.5.23.2.7}%
+\contentsline {subsubsection}{\numberline {5.23.2.8}vpp\_get\_nb\_rows()}{55}{subsubsection.5.23.2.8}%
+\contentsline {subsubsection}{\numberline {5.23.2.9}vpp\_init()}{56}{subsubsection.5.23.2.9}%
+\contentsline {subsubsection}{\numberline {5.23.2.10}vpp\_init\_custom()}{56}{subsubsection.5.23.2.10}%
+\contentsline {subsubsection}{\numberline {5.23.2.11}vpp\_init\_settings()}{56}{subsubsection.5.23.2.11}%
+\contentsline {subsubsection}{\numberline {5.23.2.12}vpp\_reset\_customs()}{57}{subsubsection.5.23.2.12}%
+\contentsline {subsubsection}{\numberline {5.23.2.13}vpp\_reset\_settings()}{57}{subsubsection.5.23.2.13}%
+\contentsline {subsubsection}{\numberline {5.23.2.14}vpp\_set\_bot\_color()}{57}{subsubsection.5.23.2.14}%
+\contentsline {subsubsection}{\numberline {5.23.2.15}vpp\_set\_difficulty()}{58}{subsubsection.5.23.2.15}%
+\contentsline {subsubsection}{\numberline {5.23.2.16}vpp\_set\_grid\_color()}{58}{subsubsection.5.23.2.16}%
+\contentsline {subsubsection}{\numberline {5.23.2.17}vpp\_set\_joueur\_color()}{58}{subsubsection.5.23.2.17}%
+\contentsline {subsubsection}{\numberline {5.23.2.18}vpp\_set\_nb\_columns()}{59}{subsubsection.5.23.2.18}%
+\contentsline {subsubsection}{\numberline {5.23.2.19}vpp\_set\_nb\_jetons()}{59}{subsubsection.5.23.2.19}%
+\contentsline {subsubsection}{\numberline {5.23.2.20}vpp\_set\_nb\_rows()}{60}{subsubsection.5.23.2.20}%
+\contentsline {section}{\numberline {5.24}Référence de l\textquotesingle {}espace de nommage tests}{60}{section.5.24}%
+\contentsline {section}{\numberline {5.25}Référence de l\textquotesingle {}espace de nommage tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grid}{60}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Description détaillée}{60}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Documentation des fonctions}{60}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}tg\_init\_grille()}{61}{subsubsection.5.25.2.1}%
+\contentsline {subsubsection}{\numberline {5.25.2.2}tg\_test\_all()}{61}{subsubsection.5.25.2.2}%
+\contentsline {section}{\numberline {5.26}Référence de l\textquotesingle {}espace de nommage tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}puissance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Quatre}{61}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Description détaillée}{61}{subsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.26.2}Documentation des fonctions}{61}{subsection.5.26.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.1}tp\_ajout\_piece()}{61}{subsubsection.5.26.2.1}%
+\contentsline {subsubsection}{\numberline {5.26.2.2}tp\_test\_all()}{62}{subsubsection.5.26.2.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.3}tp\_verif\_colonne()}{62}{subsubsection.5.26.2.3}%
+\contentsline {subsubsection}{\numberline {5.26.2.4}tp\_victoire\_colonne()}{62}{subsubsection.5.26.2.4}%
+\contentsline {subsubsection}{\numberline {5.26.2.5}tp\_victoire\_diago()}{62}{subsubsection.5.26.2.5}%
+\contentsline {subsubsection}{\numberline {5.26.2.6}tp\_victoire\_ligne()}{62}{subsubsection.5.26.2.6}%
+\contentsline {chapter}{Index}{65}{section*.27}%

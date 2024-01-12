@@ -2,140 +2,105 @@
 \label{namespacesrc_1_1utils_1_1widget__utils}\index{src.utils.widget\_utils@{src.utils.widget\_utils}}
 
 
-Ce module contient les fonctions utiles pour créer les widgets tkinter.  
+Un programme qui joue au jeu puissance 4++.  
 
 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a67ab7edebb461209fa8ca158ad9d1dd1}{wu\+\_\+i\+\_\+get\+\_\+font}} ()
-\begin{DoxyCompactList}\small\item\em Fonction qui retourne la police de caractères utilisée pour les widgets. \end{DoxyCompactList}\item 
-tk.\+Button \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_ae1289db30448e03ed042e89bcff23040}{wu\+\_\+tkb\+\_\+init\+\_\+button}} (tk.\+Frame tkf\+\_\+frame, str s\+\_\+text)
-\begin{DoxyCompactList}\small\item\em Fonction qui initialise un bouton. \end{DoxyCompactList}\item 
-tk.\+Label \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a80762af4f99ff2625725ba55adc716d9}{wu\+\_\+tkl\+\_\+init\+\_\+label}} (tk.\+Frame tkf\+\_\+frame, str s\+\_\+text)
-\item 
-tk.\+Spinbox \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_aa41bcf649d49cc8af3de44f26368336c}{wu\+\_\+tksb\+\_\+init\+\_\+spinbox}} (tk.\+Frame tkf\+\_\+frame, int i\+\_\+from, int i\+\_\+to)
-\item 
-tk.\+Scale \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_aa594448a6d8ff19277b9d592b3ab2711}{wu\+\_\+tks\+\_\+init\+\_\+scale}} (tk.\+Frame tkf\+\_\+frame, int i\+\_\+from, int i\+\_\+to, str s\+\_\+orient)
-\item 
-tk.\+Canvas \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a36df946620c8793a34009c78bb649c87}{wu\+\_\+tkc\+\_\+init\+\_\+canvas}} (tk.\+Frame tkf\+\_\+frame, str s\+\_\+grid\+\_\+color, float f\+\_\+ratio)
-\begin{DoxyCompactList}\small\item\em Fonction qui initialise un canvas. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a44688a2303b2da49415c96edf02770e6}{update\+\_\+widgets}} (tk.\+Frame tkf\+\_\+frame)
-\begin{DoxyCompactList}\small\item\em Fonction qui met à jour les widgets d\textquotesingle{}un cadre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+(int, int) \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a54a3d7633e2b51753081b1b800ad7ad7}{wu\+\_\+get\+\_\+screen\+\_\+size}} (tk.\+Frame tkf\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Récupère la taille de l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+(int, int) \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_ade716c55da64db8772861e33fcb9e055}{wu\+\_\+get\+\_\+grid\+\_\+size}} (tk.\+Frame tkf\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Récupère la taille de la grille. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a7576f56a08e301f20e68433a4445f4c4}{wu\+\_\+get\+\_\+font\+\_\+size}} (tk.\+Frame tkf\+\_\+frame, bool b\+\_\+title)
+\begin{DoxyCompactList}\small\item\em Récupère la taille de la police. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Ce module contient les fonctions utiles pour créer les widgets tkinter. 
+Un programme qui joue au jeu puissance 4++. 
 
-Ce module contient les fonctions utilitaires relatives aux widgets tkinter. Il permet d\textquotesingle{}assurer une uniformité et une meilleure mise à l\textquotesingle{}échelle des widgets. 
+Ce module contient les fonctions relatives aux widgets.
+
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable, un nombre de pions à aligner variable, des bonus et un undo.
+
+Ce programme utilise les modules externes suivants \+:
+\begin{DoxyItemize}
+\item tkinter
+\item numpy
+\item inspect
+
+Ce module contient les fonctions de gestion des widgets. Il permet de gérer la taille de la fenêtre en fonction de la résolution de l\textquotesingle{}écran. 
+\end{DoxyItemize}
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a44688a2303b2da49415c96edf02770e6}\label{namespacesrc_1_1utils_1_1widget__utils_a44688a2303b2da49415c96edf02770e6}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!update\_widgets@{update\_widgets}}
-\index{update\_widgets@{update\_widgets}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{update\_widgets()}{update\_widgets()}}
-{\footnotesize\ttfamily def src.\+utils.\+widget\+\_\+utils.\+update\+\_\+widgets (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a7576f56a08e301f20e68433a4445f4c4}\label{namespacesrc_1_1utils_1_1widget__utils_a7576f56a08e301f20e68433a4445f4c4}} 
+\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_get\_font\_size@{wu\_get\_font\_size}}
+\index{wu\_get\_font\_size@{wu\_get\_font\_size}!src.utils.widget\_utils@{src.utils.widget\_utils}}
+\doxysubsubsection{\texorpdfstring{wu\_get\_font\_size()}{wu\_get\_font\_size()}}
+{\footnotesize\ttfamily  int src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+get\+\_\+font\+\_\+size (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{bool}]{b\+\_\+title }\end{DoxyParamCaption})}
 
 
 
-Fonction qui met à jour les widgets d\textquotesingle{}un cadre. 
+Récupère la taille de la police. 
+
+Cette fonction calcule la taille de la police et la renvoie.
 
 \begin{DoxyPrecond}{Précondition}
-tkf\+\_\+frame initialisé 
+Le cadre doit être initialisé 
 \end{DoxyPrecond}
 
 \begin{DoxyParams}{Paramètres}
-{\em tkf\+\_\+frame} & Le cadre dans lequel les widgets seront mis à jour. \\
+{\em tkf\+\_\+frame} & Frame tkinter \\
+\hline
+{\em b\+\_\+title} & True si la police est pour un titre, False sinon \\
 \hline
 \end{DoxyParams}
-\begin{DoxyPostcond}{Postcondition}
-Mettre à jour les widgets. 
-\end{DoxyPostcond}
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a67ab7edebb461209fa8ca158ad9d1dd1}\label{namespacesrc_1_1utils_1_1widget__utils_a67ab7edebb461209fa8ca158ad9d1dd1}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_i\_get\_font@{wu\_i\_get\_font}}
-\index{wu\_i\_get\_font@{wu\_i\_get\_font}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_i\_get\_font()}{wu\_i\_get\_font()}}
-{\footnotesize\ttfamily  str src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+i\+\_\+get\+\_\+font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Fonction qui retourne la police de caractères utilisée pour les widgets. 
-
 \begin{DoxyReturn}{Renvoie}
-\+: La taille de la police en fonction de la taille de l\textquotesingle{}interface. 
+Taille de la police 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_ae1289db30448e03ed042e89bcff23040}\label{namespacesrc_1_1utils_1_1widget__utils_ae1289db30448e03ed042e89bcff23040}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_tkb\_init\_button@{wu\_tkb\_init\_button}}
-\index{wu\_tkb\_init\_button@{wu\_tkb\_init\_button}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_tkb\_init\_button()}{wu\_tkb\_init\_button()}}
-{\footnotesize\ttfamily  tk.\+Button src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+tkb\+\_\+init\+\_\+button (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{str}]{s\+\_\+text }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_ade716c55da64db8772861e33fcb9e055}\label{namespacesrc_1_1utils_1_1widget__utils_ade716c55da64db8772861e33fcb9e055}} 
+\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_get\_grid\_size@{wu\_get\_grid\_size}}
+\index{wu\_get\_grid\_size@{wu\_get\_grid\_size}!src.utils.widget\_utils@{src.utils.widget\_utils}}
+\doxysubsubsection{\texorpdfstring{wu\_get\_grid\_size()}{wu\_get\_grid\_size()}}
+{\footnotesize\ttfamily  (int, int) src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+get\+\_\+grid\+\_\+size (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
-Fonction qui initialise un bouton. 
+Récupère la taille de la grille. 
 
-\begin{DoxyPrecond}{Précondition}
-tkf\+\_\+frame initialisé 
-\end{DoxyPrecond}
+Cette fonction calcule la taille de la grille et la renvoie sous la forme d\textquotesingle{}un tuple (largeur, hauteur).
+
 
 \begin{DoxyParams}{Paramètres}
-{\em tkf\+\_\+frame} & Le cadre dans lequel le bouton sera affiché. \\
-\hline
-{\em s\+\_\+text} & Le texte du bouton. \\
+{\em tkf\+\_\+frame} & Frame tkinte \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-\+: Le bouton initialisé. 
-\end{DoxyReturn}
-\begin{DoxyPostcond}{Postcondition}
-Afficher le bouton. 
-\end{DoxyPostcond}
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a36df946620c8793a34009c78bb649c87}\label{namespacesrc_1_1utils_1_1widget__utils_a36df946620c8793a34009c78bb649c87}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_tkc\_init\_canvas@{wu\_tkc\_init\_canvas}}
-\index{wu\_tkc\_init\_canvas@{wu\_tkc\_init\_canvas}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_tkc\_init\_canvas()}{wu\_tkc\_init\_canvas()}}
-{\footnotesize\ttfamily  tk.\+Canvas src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+tkc\+\_\+init\+\_\+canvas (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{str}]{s\+\_\+grid\+\_\+color,  }\item[{float}]{f\+\_\+ratio }\end{DoxyParamCaption})}
-
-
-
-Fonction qui initialise un canvas. 
-
 \begin{DoxyPrecond}{Précondition}
-tkf\+\_\+frame initialisé 
+Le cadre doit être initialisé 
 \end{DoxyPrecond}
+\begin{DoxyReturn}{Renvoie}
+Tuple (largeur, hauteur) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a54a3d7633e2b51753081b1b800ad7ad7}\label{namespacesrc_1_1utils_1_1widget__utils_a54a3d7633e2b51753081b1b800ad7ad7}} 
+\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_get\_screen\_size@{wu\_get\_screen\_size}}
+\index{wu\_get\_screen\_size@{wu\_get\_screen\_size}!src.utils.widget\_utils@{src.utils.widget\_utils}}
+\doxysubsubsection{\texorpdfstring{wu\_get\_screen\_size()}{wu\_get\_screen\_size()}}
+{\footnotesize\ttfamily  (int, int) src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+get\+\_\+screen\+\_\+size (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+Récupère la taille de l\textquotesingle{}écran. 
+
+Cette fonction récupère la taille de l\textquotesingle{}écran et la renvoie sous la forme d\textquotesingle{}un tuple (largeur, hauteur).
+
 
 \begin{DoxyParams}{Paramètres}
-{\em tkf\+\_\+frame} & Le cadre dans lequel le canvas sera affiché. \\
-\hline
-{\em s\+\_\+grid\+\_\+color} & La couleur de la grille. \\
-\hline
-{\em f\+\_\+ratio} & Le ratio de la grille. \\
+{\em tkf\+\_\+frame} & Frame tkinter \\
 \hline
 \end{DoxyParams}
+\begin{DoxyPrecond}{Précondition}
+Le cadre doit être initialisé 
+\end{DoxyPrecond}
 \begin{DoxyReturn}{Renvoie}
-\+: Le canvas initialisé. 
+Tuple (largeur, hauteur) 
 \end{DoxyReturn}
-\begin{DoxyPostcond}{Postcondition}
-Afficher le canvas.
-\end{DoxyPostcond}
-{\bfseries{Variables \+:}}
-\begin{DoxyItemize}
-\item tkc\+\_\+canvas \+: Le canvas à initialiser. 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a80762af4f99ff2625725ba55adc716d9}\label{namespacesrc_1_1utils_1_1widget__utils_a80762af4f99ff2625725ba55adc716d9}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_tkl\_init\_label@{wu\_tkl\_init\_label}}
-\index{wu\_tkl\_init\_label@{wu\_tkl\_init\_label}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_tkl\_init\_label()}{wu\_tkl\_init\_label()}}
-{\footnotesize\ttfamily  tk.\+Label src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+tkl\+\_\+init\+\_\+label (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{str}]{s\+\_\+text }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_aa594448a6d8ff19277b9d592b3ab2711}\label{namespacesrc_1_1utils_1_1widget__utils_aa594448a6d8ff19277b9d592b3ab2711}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_tks\_init\_scale@{wu\_tks\_init\_scale}}
-\index{wu\_tks\_init\_scale@{wu\_tks\_init\_scale}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_tks\_init\_scale()}{wu\_tks\_init\_scale()}}
-{\footnotesize\ttfamily  tk.\+Scale src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+tks\+\_\+init\+\_\+scale (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{int}]{i\+\_\+from,  }\item[{int}]{i\+\_\+to,  }\item[{str}]{s\+\_\+orient }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_aa41bcf649d49cc8af3de44f26368336c}\label{namespacesrc_1_1utils_1_1widget__utils_aa41bcf649d49cc8af3de44f26368336c}} 
-\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_tksb\_init\_spinbox@{wu\_tksb\_init\_spinbox}}
-\index{wu\_tksb\_init\_spinbox@{wu\_tksb\_init\_spinbox}!src.utils.widget\_utils@{src.utils.widget\_utils}}
-\doxysubsubsection{\texorpdfstring{wu\_tksb\_init\_spinbox()}{wu\_tksb\_init\_spinbox()}}
-{\footnotesize\ttfamily  tk.\+Spinbox src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+tksb\+\_\+init\+\_\+spinbox (\begin{DoxyParamCaption}\item[{tk.\+Frame}]{tkf\+\_\+frame,  }\item[{int}]{i\+\_\+from,  }\item[{int}]{i\+\_\+to }\end{DoxyParamCaption})}
-
