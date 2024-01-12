@@ -43,5 +43,13 @@ python -m pip install --upgrade pip
 REM On installe les dépendances
 pip install -r requirements.txt
 
-REM On lance le programme
-python main.py
+REM On demande à l'utilisateur s'il veut lancer le jeu en ligne de commande ou avec l'interface graphique
+set /p UserInput=Voulez-vous lancer le jeu en ligne de commande (C) ou avec l'interface graphique (G) ?
+
+if /I "%UserInput%"=="C" (
+    REM On lance le jeu en ligne de commande
+    python main.py -cli
+) else if /I "%UserInput%"=="G" (
+    REM On lance le jeu avec l'interface graphique
+    python main.py -gui
+)

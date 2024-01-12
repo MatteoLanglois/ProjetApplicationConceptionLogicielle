@@ -14,9 +14,10 @@ que la réalisation de l’interface graphique. Ces trois parties sont essentiel
 à ce projet.
 
 ## Modules externes utilisés :
-* [Numpy](numpy.org)
+* [Numpy](https://numpy.org)
 * [Inspect](https://docs.python.org/3/library/inspect.html)
 * [Tkinter](https://docs.python.org/3/library/tkinter.html)
+* [argparse](https://docs.python.org/3/library/argparse.html)
 
 ## Installation
 * Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante :
@@ -32,8 +33,15 @@ cd projetApplicationConceptionLogicielle
 pip3 install -r requirements.txt
 ```
 
+## Installation bis
+* Après avoir cloné le dépôt git et vous être placé dans le dossier du jeu, il est possible 
+d'exécuter le fichier install.bat (si vous êtes sous windows) ou install.sh (si vous êtes sous linux)
+* Ce fichier va installer les modules externes utilisés et lancer le jeu.
+
 ## Lancement
-* Pour lancer le jeu, il suffit de lancer le fichier `src/main.py` avec python3.
+* Pour lancer le jeu, il suffit de lancer le fichier `main.py` avec python3.
+* Si vous lancez le jeu avec l'argument '--cli', le jeu se lancera en ligne de commande.
+* Si vous lancez le jeu sans argument, le jeu se lancera avec l'interface graphique.
 
 _____________________
 ## Fonctionnalités

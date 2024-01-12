@@ -316,6 +316,15 @@ def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     return
 
 
+def gp_start_game():
+    """! Lance une partie normale en ligne de commande
+
+    Cette fonction lance une partie normale en ligne de commande avec une grille
+    de 6 lignes, 7 colonnes et 4 jetons à aligner pour gagner.
+    """
+    gp_gestion_partie(6, 7, 4)
+
+
 # Si on exécute ce fichier
 if __name__ == '__main__':
     # Lance une partie normale en ligne de commande
