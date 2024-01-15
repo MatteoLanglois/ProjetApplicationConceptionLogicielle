@@ -38,7 +38,7 @@ def main():
     # On crée un parser d'arguments
     parser = argparse.ArgumentParser(description='Lance le jeu Puissance 4++.')
     # On crée un groupe d'arguments mutuellement exclusifs
-    group = parser.add_mutually_exclusive_group(required=True)
+    group = parser.add_mutually_exclusive_group()
     # On ajoute le paramètre gui au groupe
     group.add_argument('-gui', action='store_true',
                        help='Lance le jeu avec l\'interface graphique')

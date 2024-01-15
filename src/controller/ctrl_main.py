@@ -45,7 +45,7 @@ def cm_init():
     # Initialisation de la page d'accueil
     ctrl_pa.cpa_init(tk_root)
     # Boucle principale
-    tk.mainloop()
+    tk_root.mainloop()
 
 
 def cm_quit(tk_root: tk.Tk):
