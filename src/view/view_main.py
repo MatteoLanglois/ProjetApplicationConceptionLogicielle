@@ -16,10 +16,13 @@ des messages d'information ou d'avertissement.
 """
 # Importation de tkinter
 import tkinter as tk
+from tkinter import font
 # Importation de tkinter.messagebox pour les messages
 from tkinter.messagebox import showinfo, askyesno, showwarning
 # Importation de ctrl_main pour les fonctions de contrôle
 from src.controller import ctrl_main as ctrl_m
+# Importation de widget_utils pour les fonctions de gestion des widgets
+from src.utils import widget_utils as wu
 
 # Variables globales ##########################
 # Fenêtre principale
@@ -47,6 +50,9 @@ def vm_init() -> tk.Tk:
     TK_ROOT.iconbitmap("res/LogoP4++.ico")
     # Désactive le redimensionnement de la fenêtre
     TK_ROOT.resizable(width=False, height=False)
+
+    tkfo_default_font = font.Font(name="TkDefaultFont", exists=True)
+    tkfo_default_font.configure(size=16)
     # Renvoie de la fenêtre créée
     return TK_ROOT
 
