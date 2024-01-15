@@ -38,6 +38,7 @@ def vm_init() -> tk.Tk:
 
     **Variables :**
     * tk_root : Fenêtre principale
+    * tkfo_default_font : Police par défaut
 
     @return Fenêtre principale
     """
@@ -50,8 +51,9 @@ def vm_init() -> tk.Tk:
     TK_ROOT.iconbitmap("res/LogoP4++.ico")
     # Désactive le redimensionnement de la fenêtre
     TK_ROOT.resizable(width=False, height=False)
-
+    # Récupère la police par défaut
     tkfo_default_font = font.Font(name="TkDefaultFont", exists=True)
+    # Change la taille de la police par défaut
     tkfo_default_font.configure(size=16)
     # Renvoie de la fenêtre créée
     return TK_ROOT
