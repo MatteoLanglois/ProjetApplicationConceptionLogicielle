@@ -96,97 +96,98 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
     return ti_coords
 
 
-def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
-              iColonne=0,
-              isFirst=False, tour=0, isthebonus = False) -> (int, float):
+def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
+              i_colonne=0,
+              b_is_first=False, i_tour=0, b_is_the_bonus=False) -> float:
     """! Méthode implémentant l'algorithme minmax
     """
     # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
-    if tour < 2:
+    if i_tour < 2:
         # Si le joueur est le joueur humain
-        if iJoueur == 1:
+        if i_joueur == 1:
             # Si on joue un bonus
-            if iColonne == -1:
+            if i_colonne == -1:
                 # On importe le module du bonus
                 m_module = __import__("src.puissanceQuatre.bonus",
                                       fromlist=["bonus"])
                 # On récupère la fonction du bonus
                 f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(s_bonus))
                 # On applique le bonus à la grille
-                npaGrilleCopy = f_bonus(npaGrilleCopy.copy())
+                npa_grille_copy = f_bonus(npa_grille_copy.copy())
                 # On indique que le bonus a été utilisé
                 b_bonus_used = True
             # Sinon
             else:
                 # On joue le jeton dans la colonne
-                ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
                 # Si le joueur a gagné
-                if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
+                if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
                                i_nb_victoire):
                     # On retourne 10
-                    if isthebonus:
+                    if b_is_the_bonus:
                         return -10
                     else:
                         return 10
             # Si la partie est finie
-            if pq_partie_finie(npaGrilleCopy, False):
+            if pq_partie_finie(npa_grille_copy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
         # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du
         # premier appel
-        elif iJoueur == 2 and not isFirst:
+        elif i_joueur == 2 and not b_is_first:
             # On joue le jeton dans la colonne
-            ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
+            i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
             # Si l'ordinateur a gagné
-            if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
+            if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
                            i_nb_victoire):
                 # On retourne 10 si c'est le bonus, -10 sinon
-                return 10 if isthebonus else -10
+                return 10 if b_is_the_bonus else -10
             # Si la partie est finie
-            elif pq_partie_finie(npaGrilleCopy, False):
+            elif pq_partie_finie(npa_grille_copy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
         # On change de joueur
-        iJoueur = 2 if iJoueur == 1 else 1
+        i_joueur = 2 if i_joueur == 1 else 1
         # On crée la liste qui contiendra les résultats
-        result = []
+        ti_result = []
         # Pour chaque colonne de la grille
-        for i in range(npaGrilleCopy.shape[1]):
+        for i in range(npa_grille_copy.shape[1]):
             # Si on peut jouer dans la colonne
-            if pq_verif_colonne(i, npaGrilleCopy):
+            if pq_verif_colonne(i, npa_grille_copy):
                 # On ajoute le résultat de l'appel récursif dans la liste (la
                 # moyenne des coups joués)
-                result.append(
-                    pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire,
+                ti_result.append(
+                    pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire,
                               s_bonus, b_bonus_used, i,
-                              False, tour + 1))
+                              False, i_tour + 1))
             else:
                 # Si on ne peut pas jouer dans la colonne, on renvoie -1
                 # (cela évite mieux ces colonnes)
-                result.append(-1)
+                ti_result.append(-1)
         # Si le bonus n'a pas encore été joué
-        if not b_bonus_used and iJoueur == 1:
+        if not b_bonus_used and i_joueur == 1:
             # On enregistre aussi l'appel qui joue le bonus
-            result.append(
-                pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
-                          False, -1, False, tour + 1))
+            ti_result.append(
+                pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire,
+                          s_bonus,
+                          False, -1, False, i_tour + 1))
         # Si c'est le premier appel
-        if iJoueur == 1 and isFirst:
+        if i_joueur == 1 and b_is_first:
             # On récupère l'indice du maximum
-            max_index = result.index(max(result))
+            i_max_index = ti_result.index(max(ti_result))
             # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
             # ne l'est pas
-            while (max_index >= npaGrilleCopy.shape[1]
-                   or not pq_verif_colonne(max_index, npaGrilleCopy)):
+            while (i_max_index >= npa_grille_copy.shape[1]
+                   or not pq_verif_colonne(i_max_index, npa_grille_copy)):
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 # On met le meilleur coup à -100 pour ne pas le reprendre
-                result[max_index] = -100
+                ti_result[i_max_index] = -100
                 # On récupère le nouvel indice du maximum
-                max_index = result.index(max(result))
+                i_max_index = ti_result.index(max(ti_result))
             # On renvoie la colonne à jouer
-            return max_index
+            return i_max_index
         # Sinon on renvoit la moyenne des scores des coups joués
-        return float(sum(result) / len(result))
+        return float(sum(ti_result) / len(ti_result))
     else:
         # Si on a dépassé le nombre de tours, on renvoie 0
         return 0

@@ -80,3 +80,32 @@ _____________________
 - [x] Bonus de suppression de ligne pleine
 - [x] Bonus d'aide avec MinMax
 - [x] Bonus de retournement de la grille
+
+_____________________
+## Expliquation du code
+### Documentation
+* La documentation du code se trouve dans le dossier `docs` à la racine du projet.
+* Elle peut être générée avec Doxygen, le fichier de configuration doxyFile se trouve à la racine du projet.
+* Pour générer la documentation, il suffit de lancer la commande suivante :
+```bash
+doxygen doxyFile
+```
+
+### Convention de nommage
+* Les variables et fonctions sont nommées en snake_case.
+* Les fonctions commencent par un acronyme désignant le fichier et le module dans lequel elles se trouvent.
+* Les noms de variables commencent par leur type :
+  * `b_` pour les booléens
+  * `i_` pour les entiers
+  * `f_` pour les flottants
+  * `s_` pour les chaînes de caractères
+  * `t_` pour les listes
+  * `t_` pour les tuples
+  * `npa_` pour les tableaux numpy
+  * `tkl_` pour les labels tkinter
+  * `tkb_` pour les boutons tkinter
+  * `tkc_` pour les canvas tkinter
+  * `tksb_` pour les spinbox tkinter
+  * `tkf_` pour les frames tkinter
+  * `tks_` pour les scales tkinter
+  * `tksv_` pour les stringvar tkinter
