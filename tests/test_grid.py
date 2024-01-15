@@ -21,12 +21,12 @@ def tg_init_grille():
     """! Teste la fonction pq_init_grille
 
     **Variables :**
-        - *liste_tailles* : liste des tailles de grille à tester
+        - *liste_tailles* : liste des tailles de npa_grille à tester
         - *i_boucle* : variable de boucle
         - *i_boucle_2* : variable de boucle
-        - *grille* : grille de jeu
+        - *npa_grille* : npa_grille de jeu
 
-    @test Vérifie que la grille est bien initialisée avec des 0 partout avec
+    @test Vérifie que la npa_grille est bien initialisée avec des 0 partout avec
     la bonne taille
     @test Vérifie que toutes les combinaisons de 2 nombres de la liste
     *liste_tailles* sont testées
@@ -35,8 +35,8 @@ def tg_init_grille():
     liste_tailles = [2, 5, 7, 100]
     for i_boucle in liste_tailles:
         for i_boucle_2 in liste_tailles:
-            grille = gr.pq_init_grille(i_boucle, i_boucle_2)
-            assert np.array_equal(grille, np.zeros((i_boucle, i_boucle_2))), \
+            npa_grille = gr.pq_init_grille(i_boucle, i_boucle_2)
+            assert np.array_equal(npa_grille, np.zeros((i_boucle, i_boucle_2))), \
                 "pq_init_grille non fonctionnel"
 
 
@@ -44,7 +44,6 @@ def tg_test_all():
     """! Lance tous les tests
     """
     tg_init_grille()
-    tg_reset_grille()
 
 
 if __name__ == "__main__":
