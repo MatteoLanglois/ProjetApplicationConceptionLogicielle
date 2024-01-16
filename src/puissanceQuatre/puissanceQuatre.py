@@ -1,12 +1,8 @@
 """! @brief Un programme qui joue au jeu puissance 4++.
 
-@mainpage Projet Puissance 4++
-
-@section description_main Description
 Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
 un nombre de pions à aligner variable, des bonus et un undo.
 
-@section import_section Importations
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
@@ -104,7 +100,7 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
 
 def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
               i_colonne=0,
-              b_is_first=False, i_tour=0, b_is_the_bonus = False) -> float:
+              b_is_first=False, i_tour=0, b_is_the_bonus=False) -> float:
     """! Méthode implémentant l'algorithme minmax
 
     Cette méthode permet de jouer un coup en utilisant l'algorithme minmax.
@@ -132,7 +128,8 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
     @param s_bonus: Le bonus à jouer
     @param b_bonus_used: Un booléen indiquant si le bonus a déjà été joué
     @param i_colonne: La colonne où jouer le bonus
-    @param b_is_first: Un booléen indiquant si c'est le premier appel de la méthode
+    @param b_is_first: Un booléen indiquant si c'est le premier appel de la
+    méthode
     @param i_tour: Le nombre de tours effectués
     @param b_is_the_bonus: Un booléen indiquant si le bonus est utilisé ou non
 
@@ -156,7 +153,8 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
             # Sinon
             else:
                 # On joue le jeton dans la colonne
-                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
+                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne,
+                                            i_joueur)
                 # Si le joueur a gagné
                 if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
                                i_nb_victoire):
@@ -211,8 +209,8 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
         if not b_bonus_used and i_joueur == 1:
             # On enregistre aussi l'appel qui joue le bonus
             tf_result.append(
-                pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire, s_bonus,
-                          False, -1, False, i_tour + 1))
+                pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire,
+                          s_bonus, False, -1, False, i_tour + 1))
         # Si c'est le premier appel
         if i_joueur == 1 and b_is_first:
             # On retourne l'indice de la meilleure moyenne coup à jouer
@@ -221,7 +219,8 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
             i_max_index = tf_result.index(i_maximum)
             # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
             # ne l'est pas
-            while i_max_index >= npa_grille_copy.shape[1] or not pq_verif_colonne(i_max_index, npa_grille_copy):
+            while (i_max_index >= npa_grille_copy.shape[1]
+                   or not pq_verif_colonne(i_max_index, npa_grille_copy)):
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 # On met le meilleur coup à -100 pour ne pas le reprendre
                 tf_result[i_max_index] = -100

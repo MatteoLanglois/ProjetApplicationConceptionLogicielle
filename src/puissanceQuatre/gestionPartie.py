@@ -26,8 +26,8 @@ global B_BONUS_USED
 def gp_choose_bonus():
     """! Récupère le bonus choisi par le joueur
 
-    Cette fonction permet de récupérer le bonus que le joueur a choisi avant le début
-    de la partie. Elle renvoie le bonus choisi.
+    Cette fonction permet de récupérer le bonus que le joueur a choisi avant le
+    début de la partie. Elle renvoie le bonus choisi.
 
     @return Le bonus choisi par le joueur
 
@@ -106,10 +106,10 @@ def gp_handle_undo_redo(b_undo: bool, npa_grille: np.array) -> np.array:
 
     Cette fonction permet au joueur d'annuler ou de refaire son dernier coup.
 
-    @param b_undo: booléen indiquant si c'est un undo ou un redo (True pour
+    @param b_undo: Booléen indiquant si c'est un undo ou un redo (True pour
         undo, False pour redo)
-    @param npa_grille: np.array, la grille de jeu
-    @return: np.array, la grille de jeu modifiée
+    @param npa_grille: np.array, La grille de jeu
+    @return: np.array, La grille de jeu modifiée
     """
     global T_UNDO_REDO, T_REDO
     # Si c'est un undo
@@ -225,15 +225,13 @@ def gp_handle_bot_turn(npa_grille: np.array, s_bonus: str,
     * i_ligne_joueur : Entier, la ligne où le joueur veut jouer
     """
     # Choix de la colonne où le bot va jouer
-    i_colonne_joueur = pq.pq_minmax(i_joueur=1,
-                                    npa_grille_copy=
-                                    npa_grille.copy(),
-                                    i_nb_victoire=
-                                    i_nb_jeton_victoire,
-                                    b_is_first=True,
-                                    i_tour=0,
-                                    s_bonus=s_bonus,
-                                    b_bonus_used=B_BONUS_USED)
+    i_colonne_joueur = int(pq.pq_minmax(i_joueur=1,
+                                        npa_grille_copy=npa_grille.copy(),
+                                        i_nb_victoire=i_nb_jeton_victoire,
+                                        b_is_first=True,
+                                        i_tour=0,
+                                        s_bonus=s_bonus,
+                                        b_bonus_used=B_BONUS_USED))
     # Pose du jeton et récupération de la ligne où le jeton a été posé
     i_ligne_joueur, _ = pq.pq_ajout_piece(npa_grille, i_colonne_joueur,
                                           2)
@@ -308,8 +306,6 @@ def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     i_colonne_joueur = 0
     # Initialisation de la ligne où le joueur veut jouer
     i_ligne_joueur = 0
-    # Initialisation d'un booléen pour savoir si le joueur a joué
-    b_is_play = False
     # Appel de la fonction de choix du bonus
     s_bonus = gp_choose_bonus()
     # Affichage des règles du jeu

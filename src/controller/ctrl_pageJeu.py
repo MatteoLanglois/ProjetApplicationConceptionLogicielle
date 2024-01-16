@@ -12,7 +12,6 @@ Ce programme utilise les modules externes suivants :
 @brief Un module qui gère la page de jeu
 @details Ce module contient les fonctions permettant de gérer la page de jeu.
 """
-import time
 # Importation de tkinter
 import tkinter as tk
 # Importation de numpy
@@ -66,7 +65,7 @@ def cpj_init(tk_win_root: tk.Tk):
     """! Affiche la page de jeu
 
     Cette fonction affiche la page de jeu et initialise la grille de jeu. Elle
-    récupère également les paramètres de la partie. Elle initialise également
+    récupère également les paramètres de la partie. Elle initialise aussi
     les variables globales.
 
     @pre tk_root initialisé
@@ -341,13 +340,13 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     global I_NB_JETONS, I_DIFFICULTY
     if not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED):
         # On utilise l'algorithme min max pour choisir le prochain coup du bot
-        i_grid_x = ps4.pq_minmax(i_joueur=2,
-                                 npa_grille_copy=np.copy(NPA_GRID),
-                                 s_bonus=S_BONUS,
-                                 b_bonus_used=B_BONUS_USED,
-                                 b_is_first=True,
-                                 i_tour=-I_DIFFICULTY,
-                                 i_nb_victoire=I_NB_JETONS)
+        i_grid_x = int(ps4.pq_minmax(i_joueur=2,
+                                     npa_grille_copy=np.copy(NPA_GRID),
+                                     s_bonus=S_BONUS,
+                                     b_bonus_used=B_BONUS_USED,
+                                     b_is_first=True,
+                                     i_tour=-I_DIFFICULTY,
+                                     i_nb_victoire=I_NB_JETONS))
         # On pose le pion et on récupère les coordonnées de là où il a été posé
         i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                                 i_colonne=i_grid_x, i_joueur=2)
