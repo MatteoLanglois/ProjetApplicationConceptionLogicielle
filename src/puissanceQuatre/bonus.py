@@ -183,22 +183,3 @@ def p4b_random_placement(npa_grid: np.array) -> np.array:
     ps4.pq_ajout_piece(npa_grid, i_col, 1)
     # On retourne la grille
     return npa_grid
-
-
-def p4b_random_bonus(npa_grid: np.array) -> np.array:
-    """! Bonus permettant de choisir un bonus aléatoirement
-
-    @pre npa_grid initialisé
-    @param npa_grid: Grille de jeu
-    @return npa_grid : Grille retournée
-    """
-    # On récupère les bonus :
-    ts_bonus = bu.bu_get_bonuses()
-    # On récupère un bonus aléatoire
-    s_bonus = ts_bonus[np.random.randint(0, len(ts_bonus))]
-    # On récupère la fonction du bonus
-    f_bonus = getattr(bu, s_bonus[1])
-    # On applique le bonus
-    npa_grid = f_bonus(npa_grid)
-    # On retourne la grille
-    return npa_grid
