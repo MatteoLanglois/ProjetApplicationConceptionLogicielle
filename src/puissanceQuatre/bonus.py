@@ -85,7 +85,7 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
         # Pour chaque case de cette ligne
         for i_col in range(i_nb_cols):
             # Si une des cases est vide
-            if npa_grid[i_nb_rows, i_nb_cols] == 0:
+            if npa_grid[i_row, i_col] == 0:
                 # La ligne ne peut pas être pleine
                 b_full = False
         # Si la ligne peut être pleine
@@ -100,6 +100,8 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
                 for i_col in range(i_nb_cols):
                     # Redescendre les pions
                     npa_grid[i_row2, i_col] = npa_grid[i_row2 + 1, i_col]
+    #Application de la gravité
+    npa_grid = gr.pq_apply_gravity(npa_grid)
     # Renvoyer la grille
     return npa_grid
 
