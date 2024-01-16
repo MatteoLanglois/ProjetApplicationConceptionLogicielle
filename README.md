@@ -20,7 +20,8 @@ que la réalisation de l’interface graphique. Ces trois parties sont essentiel
 * [argparse](https://docs.python.org/3/library/argparse.html)
 
 ## Installation
-* Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante :
+* Pour installer le jeu, il suffit de cloner le dépôt git avec la commande 
+* suivante :
 ```bash
 git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git
 ```
@@ -34,14 +35,18 @@ pip3 install -r requirements.txt
 ```
 
 ## Installation bis
-* Après avoir cloné le dépôt git et vous être placé dans le dossier du jeu, il est possible 
-d'exécuter le fichier install.bat (si vous êtes sous windows) ou install.sh (si vous êtes sous linux)
+* Après avoir cloné le dépôt git et vous être placé dans le dossier du jeu, il 
+est possible 
+d'exécuter le fichier install.bat (si vous êtes sous windows) ou install.sh (si 
+vous êtes sous linux)
 * Ce fichier va installer les modules externes utilisés et lancer le jeu.
 
 ## Lancement
 * Pour lancer le jeu, il suffit de lancer le fichier `main.py` avec python3.
-* Si vous lancez le jeu avec l'argument '--cli', le jeu se lancera en ligne de commande.
-* Si vous lancez le jeu sans argument, le jeu se lancera avec l'interface graphique.
+* Si vous lancez le jeu avec l'argument '--cli', le jeu se lancera en ligne de 
+commande.
+* Si vous lancez le jeu sans argument, le jeu se lancera avec l'interface 
+graphique.
 
 _____________________
 ## Fonctionnalités
@@ -62,9 +67,13 @@ _____________________
 - [x] Affichage des jetons
 - [x] Utilisation des bonus
 - [x] Affichage de la victoire/Défaite
-- [ ] Affichage de l'aide
 - [x] Affichage du tour du joueur
-- [x] Interface responsive
+- [x] Taille de l'interface qui s'adapte en fonction de la résolution de l'écran
+- [ ] Affichage de conseils
+- [ ] Changer la taille la police des menus
+- [ ] Interface agréable en plein écran
+- [ ] Feedback lors de l'utilisation du bonus
+- [ ] Interface responsive
 
 ### Personnalisation
 - [x] Personnalisation des jetons
@@ -80,12 +89,15 @@ _____________________
 - [x] Bonus de suppression de ligne pleine
 - [x] Bonus d'aide avec MinMax
 - [x] Bonus de retournement de la grille
+- [ ] Récupération du bonus après l'undo
 
 _____________________
 ## Expliquation du code
 ### Documentation
-* La documentation du code se trouve dans le dossier `docs` à la racine du projet.
-* Elle peut être générée avec Doxygen, le fichier de configuration doxyFile se trouve à la racine du projet.
+* La documentation du code se trouve dans le dossier `docs` à la racine du 
+projet.
+* Elle peut être générée avec Doxygen, le fichier de configuration doxyFile se 
+trouve à la racine du projet.
 * Pour générer la documentation, il suffit de lancer la commande suivante :
 ```bash
 doxygen doxyFile
@@ -93,7 +105,8 @@ doxygen doxyFile
 
 ### Convention de nommage
 * Les variables et fonctions sont nommées en snake_case.
-* Les fonctions commencent par un acronyme désignant le fichier et le module dans lequel elles se trouvent.
+* Les fonctions commencent par un acronyme désignant le fichier et le module 
+dans lequel elles se trouvent.
 * Les noms de variables commencent par leur type :
   * `b_` pour les booléens
   * `i_` pour les entiers
@@ -109,3 +122,10 @@ doxygen doxyFile
   * `tkf_` pour les frames tkinter
   * `tks_` pour les scales tkinter
   * `tksv_` pour les stringvar tkinter
+
+### Améliorations du code envisagées
+* Utilisation de l'orienté objet pour éviter les variables globales
+* Réutilisation des fonctions de src.puissanceQuatre.gestionPartie.py dans 
+src.controller.ctrl_pageJeu.py
+* Amélioration de l'interface pour la rendre moins ennuyante
+* Amélioration de l'interface via le responsive
