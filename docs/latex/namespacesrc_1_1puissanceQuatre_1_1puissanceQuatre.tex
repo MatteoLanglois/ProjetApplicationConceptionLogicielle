@@ -2,7 +2,7 @@
 \label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre}\index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 
 
-Ce module contient l\textquotesingle{}implémentation des règles du puissance 4.  
+Un programme qui joue au jeu puissance 4++.  
 
 
 \doxysubsection*{Fonctions}
@@ -31,9 +31,21 @@ bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a43c21a
 
 
 \doxysubsection{Description détaillée}
-Ce module contient l\textquotesingle{}implémentation des règles du puissance 4. 
+Un programme qui joue au jeu puissance 4++. 
+
+Ce module contient l\textquotesingle{}implémentation des règles du puissance 4.
+
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable, un nombre de pions à aligner variable, des bonus et un undo.
+
+Ce programme utilise les modules externes suivants \+:
+\begin{DoxyItemize}
+\item tkinter
+\item numpy
+\item inspect
+\item inspect
 
 Ce module contient la gestion de la structure du puissance 4 et la gestion du jeu. 
+\end{DoxyItemize}
 
 \doxysubsection{Documentation des fonctions}
 \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}} 
@@ -190,7 +202,7 @@ La grille du puissance 4 après le redo
 \end{DoxyReturn}
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
-\item npa \+: np.\+array, la grille du puissance 4 au coup annulé 
+\item npa\+\_\+grille \+: np.\+array, la grille du puissance 4 au coup annulé 
 \end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a1b4eb42574730ac4cf337f9c6dac9f50}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_undo@{pq\_undo}}
 \index{pq\_undo@{pq\_undo}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
@@ -215,7 +227,7 @@ La grille du puissance 4 après l\textquotesingle{}undo
 \end{DoxyReturn}
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
-\item npa \+: np.\+array, la grille du puissance 4 au coup précédent 
+\item npa\+\_\+grille \+: np.\+array, la grille du puissance 4 au coup précédent 
 \end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_verif\_colonne@{pq\_verif\_colonne}}
 \index{pq\_verif\_colonne@{pq\_verif\_colonne}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}

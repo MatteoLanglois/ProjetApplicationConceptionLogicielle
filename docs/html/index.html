@@ -75,12 +75,13 @@ Modules externes utilisés :</h1>
 <li><a href="https://numpy.org">Numpy</a></li>
 <li><a href="https://docs.python.org/3/library/inspect.html">Inspect</a></li>
 <li><a href="https://docs.python.org/3/library/tkinter.html">Tkinter</a></li>
-<li><a href="https://docs.python.org/3/library/argparse.html">argparse</a></li>
+<li><a href="https://docs.python.org/3/library/argparse.html">Argparse</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Installation</h1>
 <ul>
-<li>Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante : <div class="fragment"><div class="line">git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git</div>
+<li>Pour installer le jeu, il suffit de cloner le dépôt git avec la commande</li>
+<li>suivante : <div class="fragment"><div class="line">git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git</div>
 </div><!-- fragment --></li>
 <li>Ensuite, il faut se placer dans le dossier du jeu : <div class="fragment"><div class="line">cd projetApplicationConceptionLogicielle</div>
 </div><!-- fragment --></li>
@@ -112,6 +113,7 @@ Algorithmie</h2>
 <li>[x] Ajout de pièce</li>
 <li>[x] Algorithme de gestion de partie en ligne de commande</li>
 <li>[x] Implémentation du undo/redo</li>
+<li>[x] Gestion d'une partie en ligne commande</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Interface graphique</h2>
@@ -124,9 +126,13 @@ Interface graphique</h2>
 <li>[x] Affichage des jetons</li>
 <li>[x] Utilisation des bonus</li>
 <li>[x] Affichage de la victoire/Défaite</li>
-<li>[ ] Affichage de l'aide</li>
 <li>[x] Affichage du tour du joueur</li>
-<li>[x] Interface responsive</li>
+<li>[x] Taille de l'interface qui s'adapte en fonction de la résolution de l'écran</li>
+<li>[ ] Affichage de conseils</li>
+<li>[ ] Changer la taille la police des menus</li>
+<li>[ ] Interface agréable en plein écran</li>
+<li>[ ] Feedback lors de l'utilisation du bonus</li>
+<li>[ ] Interface responsive</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Personnalisation</h2>
@@ -146,10 +152,11 @@ Bonus</h2>
 <li>[x] Bonus de suppression de ligne pleine</li>
 <li>[x] Bonus d'aide avec MinMax</li>
 <li>[x] Bonus de retournement de la grille</li>
+<li>[ ] Récupération du bonus après l'undo</li>
 </ul>
 <hr  />
  <h1><a class="anchor" id="autotoc_md10"></a>
-Expliquation du code</h1>
+Explication du code</h1>
 <h2><a class="anchor" id="autotoc_md11"></a>
 Documentation</h2>
 <ul>
@@ -177,9 +184,18 @@ Convention de nommage</h2>
 <li><code>tksb_</code> pour les spinbox tkinter</li>
 <li><code>tkf_</code> pour les frames tkinter</li>
 <li><code>tks_</code> pour les scales tkinter</li>
-<li><code>tksv_</code> pour les stringvar tkinter </li>
+<li><code>tksv_</code> pour les stringvar tkinter</li>
 </ul>
 </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Améliorations du code envisagées</h2>
+<ul>
+<li>Utilisation de l'orienté objet pour éviter les variables globales.</li>
+<li>Réutilisation des fonctions de src.puissanceQuatre.gestionPartie.py dans src.controller.ctrl_pageJeu.py.</li>
+<li>Amélioration de l'interface pour la rendre moins ennuyante.</li>
+<li>Amélioration de l'interface via le responsive.</li>
+<li>Utilisation d'une classe pour sauvegarder l'état de la partie. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

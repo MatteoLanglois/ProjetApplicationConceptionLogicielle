@@ -960,6 +960,16 @@ EXCLUDE                = */venv/* \
                          venv/* \
                          venv/Lib \
                          __init__.py \
+                         __init__.pyc \
+                          __pycache__ \
+                          _internal \
+                          _internal/* \
+                          _vendor \
+                          _vendor/* \
+                          ProjetApplicationConceptionLogicielle/venv/* \
+                          ProjetApplicationConceptionLogicielle/venv \
+                          ProjetApplicationConceptionLogicielle/venv/Lib \
+                          ProjetApplicationConceptionLogicielle/venv/Lib/* \
 
 
 

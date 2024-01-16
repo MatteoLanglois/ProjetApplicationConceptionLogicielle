@@ -15,7 +15,8 @@ Ce programme utilise les modules externes suivants :
 
 @package src.main
 @brief Programme principal du jeu
-@details Ce module permet de lancer le jeu.
+@details Ce module permet de lancer le jeu. Il contient un parser d'arguments
+qui permet de lancer le jeu en ligne de commande ou avec l'interface graphique.
 """
 import src.puissanceQuatre.gestionPartie as gp
 import src.controller.ctrl_main as ctrl_m

@@ -10,11 +10,12 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \href{https://numpy.org}{\texttt{ Numpy}}
 \item \href{https://docs.python.org/3/library/inspect.html}{\texttt{ Inspect}}
 \item \href{https://docs.python.org/3/library/tkinter.html}{\texttt{ Tkinter}}
-\item \href{https://docs.python.org/3/library/argparse.html}{\texttt{ argparse}}
+\item \href{https://docs.python.org/3/library/argparse.html}{\texttt{ Argparse}}
 \end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
-\item Pour installer le jeu, il suffit de cloner le dépôt git avec la commande suivante \+: 
+\item Pour installer le jeu, il suffit de cloner le dépôt git avec la commande
+\item suivante \+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{git clone https://github.com/matteolanglois/projetApplicationConceptionLogicielle.git}
 
@@ -56,6 +57,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Ajout de pièce
 \item \mbox{[}x\mbox{]} Algorithme de gestion de partie en ligne de commande
 \item \mbox{[}x\mbox{]} Implémentation du undo/redo
+\item \mbox{[}x\mbox{]} Gestion d\textquotesingle{}une partie en ligne commande
 \end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Interface graphique}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
@@ -67,9 +69,13 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Affichage des jetons
 \item \mbox{[}x\mbox{]} Utilisation des bonus
 \item \mbox{[}x\mbox{]} Affichage de la victoire/\+Défaite
-\item \mbox{[} \mbox{]} Affichage de l\textquotesingle{}aide
 \item \mbox{[}x\mbox{]} Affichage du tour du joueur
-\item \mbox{[}x\mbox{]} Interface responsive
+\item \mbox{[}x\mbox{]} Taille de l\textquotesingle{}interface qui s\textquotesingle{}adapte en fonction de la résolution de l\textquotesingle{}écran
+\item \mbox{[} \mbox{]} Affichage de conseils
+\item \mbox{[} \mbox{]} Changer la taille la police des menus
+\item \mbox{[} \mbox{]} Interface agréable en plein écran
+\item \mbox{[} \mbox{]} Feedback lors de l\textquotesingle{}utilisation du bonus
+\item \mbox{[} \mbox{]} Interface responsive
 \end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Personnalisation}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
@@ -87,10 +93,11 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Bonus de suppression de ligne pleine
 \item \mbox{[}x\mbox{]} Bonus d\textquotesingle{}aide avec Min\+Max
 \item \mbox{[}x\mbox{]} Bonus de retournement de la grille
+\item \mbox{[} \mbox{]} Récupération du bonus après l\textquotesingle{}undo
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
- \hypertarget{index_autotoc_md10}{}\doxysection{Expliquation du code}\label{index_autotoc_md10}
+ \hypertarget{index_autotoc_md10}{}\doxysection{Explication du code}\label{index_autotoc_md10}
 \hypertarget{index_autotoc_md11}{}\doxysubsection{Documentation}\label{index_autotoc_md11}
 
 \begin{DoxyItemize}
@@ -122,6 +129,14 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item {\ttfamily tksb\+\_\+} pour les spinbox tkinter
 \item {\ttfamily tkf\+\_\+} pour les frames tkinter
 \item {\ttfamily tks\+\_\+} pour les scales tkinter
-\item {\ttfamily tksv\+\_\+} pour les stringvar tkinter 
+\item {\ttfamily tksv\+\_\+} pour les stringvar tkinter
 \end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysubsection{Améliorations du code envisagées}\label{index_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Utilisation de l\textquotesingle{}orienté objet pour éviter les variables globales.
+\item Réutilisation des fonctions de src.\+puissance\+Quatre.\+gestion\+Partie.\+py dans src.\+controller.\+ctrl\+\_\+page\+Jeu.\+py.
+\item Amélioration de l\textquotesingle{}interface pour la rendre moins ennuyante.
+\item Amélioration de l\textquotesingle{}interface via le responsive.
+\item Utilisation d\textquotesingle{}une classe pour sauvegarder l\textquotesingle{}état de la partie. 
 \end{DoxyItemize}

@@ -17,7 +17,7 @@ que la réalisation de l’interface graphique. Ces trois parties sont essentiel
 * [Numpy](https://numpy.org)
 * [Inspect](https://docs.python.org/3/library/inspect.html)
 * [Tkinter](https://docs.python.org/3/library/tkinter.html)
-* [argparse](https://docs.python.org/3/library/argparse.html)
+* [Argparse](https://docs.python.org/3/library/argparse.html)
 
 ## Installation
 * Pour installer le jeu, il suffit de cloner le dépôt git avec la commande 
@@ -57,6 +57,7 @@ _____________________
 - [x] Ajout de pièce
 - [x] Algorithme de gestion de partie en ligne de commande
 - [x] Implémentation du undo/redo
+- [x] Gestion d'une partie en ligne commande
 
 ### Interface graphique
 - [x] Page d'accueil
