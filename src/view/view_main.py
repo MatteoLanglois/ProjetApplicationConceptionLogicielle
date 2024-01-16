@@ -201,4 +201,3 @@ def vm_update(tk_root: tk.Tk):
     """
     # Met à jour la fenêtre principale
     tk_root.update_idletasks()
-

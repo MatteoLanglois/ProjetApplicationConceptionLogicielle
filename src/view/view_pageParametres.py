@@ -295,15 +295,13 @@ def vpp_init_settings():
     # Initialisation d'un bouton pour enregistrer les paramètres
     tkb_save = tk.Button(TKF_PAGE_PARAMETER, text="Enregistrer",
                          font=("Helvetica", i_font_size),
-                         command=
-                         lambda: ctrl_pp.cpp_settings_save())
+                         command=lambda: ctrl_pp.cpp_settings_save())
     # Affichage du bouton
     tkb_save.grid(row=5, column=1, pady=20)
     # Initialisation d'un bouton pour réinitialiser les paramètres
     tkb_reset = tk.Button(TKF_PAGE_PARAMETER, text="Réinitialiser",
                           font=("Helvetica", i_font_size),
-                          command=
-                          lambda: ctrl_pp.cpp_settings_reset())
+                          command=lambda: ctrl_pp.cpp_settings_reset())
     # Affichage du bouton
     tkb_reset.grid(row=5, column=2)
 
