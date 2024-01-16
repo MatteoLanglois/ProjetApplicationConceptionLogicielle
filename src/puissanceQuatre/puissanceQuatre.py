@@ -422,17 +422,26 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
     # Initialisation du tableau des directions à vérifier
     tti_directions = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
 
+    # Pour chaque direction à vérifier
     for i_dx, i_dy in tti_directions:
         i_compteur = 0
+        # Pour chaque position dans la plage de victoire
         for d in range(-i_nb_victoire + 1, i_nb_victoire):
             x, y = i_ligne + d * i_dx, i_colonne + d * i_dy
+            # Si la position est dans la grille et contient le jeton du joueur
             if 0 <= x < i_nb_lignes and 0 <= y < i_nb_colonnes and \
                     npa_grille[x][y] == i_joueur:
+                # Incrémente le compteur
                 i_compteur += 1
+                # Si le compteur atteint le nombre de jetons
+                # nécessaire pour la victoire
                 if i_compteur >= i_nb_victoire:
+                    # Retourne True (le joueur a gagné)
                     return True
             else:
+                # Réinitialise le compteur
                 i_compteur = 0
+    # Si aucune victoire n'a été trouvée, retourne False
     return False
 
 
@@ -448,14 +457,14 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     @return La grille du puissance 4 après l'undo
 
     **Variables :**
-    * npa : np.array, la grille du puissance 4 au coup précédent
+    * npa_grille : np.array, la grille du puissance 4 au coup précédent
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if len(t_undo_redo) > 0:
-        npa = t_undo_redo.pop()
-        return npa
-    else:
-        print("Impossible")
+        # On récupère la dernière grille
+        npa_grille = t_undo_redo.pop()
+        # On retourne la grille
+        return npa_grille
     # On retourne la grille
     return npa_grille
 
@@ -472,13 +481,14 @@ def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
     @return La grille du puissance 4 après le redo
 
     **Variables :**
-    * npa : np.array, la grille du puissance 4 au coup annulé
+    * npa_grille : np.array, la grille du puissance 4 au coup annulé
     """
     # Si la liste contenant les grilles pour l'undo et le redo n'est pas vide
     if t_redo:
         # On récupère la dernière grille
-        npa = t_redo.pop()
-        return npa
+        npa_grille = t_redo.pop()
+        # On retourne la grille
+        return npa_grille
     # On retourne la grille
     return npa_grille
 
