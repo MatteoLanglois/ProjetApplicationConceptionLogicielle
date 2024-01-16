@@ -20,8 +20,6 @@ la gestion du jeu.
 """
 # Importation de numpy
 import numpy as np
-# Importation de la grille
-from src.puissanceQuatre import grid as gr
 # Importation des bonus
 from src.utils import bonus_utils as bu
 
@@ -106,7 +104,7 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
 
 def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
               i_colonne=0,
-              b_is_first=False, i_tour=0, b_is_the_bonus = False) -> (int, float):
+              b_is_first=False, i_tour=0, b_is_the_bonus = False) -> float:
     """! Méthode implémentant l'algorithme minmax
 
     Cette méthode permet de jouer un coup en utilisant l'algorithme minmax.
@@ -139,8 +137,6 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
     @param b_is_the_bonus: Un booléen indiquant si le bonus est utilisé ou non
 
     @return La colonne où jouer le jeton
-
-    @todo Optimiser
     """
     # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
     if i_tour < 2:
@@ -208,7 +204,8 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
                               s_bonus, b_bonus_used, i,
                               False, i_tour + 1))
             else:
-                # Si on ne peut pas jouer dans la colonne, on renvoie -1 (cela évite mieux ces colonnes)
+                # Si on ne peut pas jouer dans la colonne, on renvoie -1
+                # (cela évite mieux ces colonnes)
                 tf_result.append(-1)
         # Si le bonus n'a pas encore été joué
         if not b_bonus_used and i_joueur == 1:
@@ -233,7 +230,7 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
                 i_max_index = tf_result.index(i_maximum)
             # On renvoie la colonne à jouer
             return i_max_index
-        # Sinon on renvoit la moyenne des scores des coups joués
+        # Sinon on renvoie la moyenne des scores des coups joués
         return float(float(sum(tf_result)) / float(len(tf_result)))
     else:
         # Si on a dépassé le nombre de tours, on renvoie 0

@@ -54,7 +54,7 @@ def vm_init() -> tk.Tk:
     # Récupère la police par défaut
     tkfo_default_font = font.Font(name="TkDefaultFont", exists=True)
     # Change la taille de la police par défaut
-    tkfo_default_font.configure(size=16)
+    tkfo_default_font.configure(size=wu.wu_get_font_size_window(TK_ROOT, False))
     # Renvoie de la fenêtre créée
     return TK_ROOT
 

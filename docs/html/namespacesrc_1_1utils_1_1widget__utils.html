@@ -87,6 +87,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a7576f56a08e301f20e68433a4445f4c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">wu_get_font_size</a> (tk.Frame tkf_frame, bool b_title)</td></tr>
 <tr class="memdesc:a7576f56a08e301f20e68433a4445f4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la taille de la police.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7576f56a08e301f20e68433a4445f4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b0ef78c2172546a0b08d78254fdfab8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a0b0ef78c2172546a0b08d78254fdfab8">wu_get_font_size_window</a> (tk.Tk tk_window, bool b_title)</td></tr>
+<tr class="memdesc:a0b0ef78c2172546a0b08d78254fdfab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la taille de la police en fonction de la fenêtre.  <a href="namespacesrc_1_1utils_1_1widget__utils.html#a0b0ef78c2172546a0b08d78254fdfab8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0b0ef78c2172546a0b08d78254fdfab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
@@ -132,6 +135,46 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">tkf_frame</td><td>Frame tkinter </td></tr>
+    <tr><td class="paramname">b_title</td><td>True si la police est pour un titre, False sinon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Taille de la police </dd></dl>
+
+</div>
+</div>
+<a id="a0b0ef78c2172546a0b08d78254fdfab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b0ef78c2172546a0b08d78254fdfab8">&#9670;&nbsp;</a></span>wu_get_font_size_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> int src.utils.widget_utils.wu_get_font_size_window </td>
+          <td>(</td>
+          <td class="paramtype">tk.Tk&#160;</td>
+          <td class="paramname"><em>tk_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b_title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la taille de la police en fonction de la fenêtre. </p>
+<p>Cette fonction calcule la taille de la police et la renvoie. Elle prend en paramètre la fenêtre principale.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>Le cadre doit être initialisé </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tk_window</td><td>Fenêtre principale </td></tr>
     <tr><td class="paramname">b_title</td><td>True si la police est pour un titre, False sinon </td></tr>
   </table>
   </dd>

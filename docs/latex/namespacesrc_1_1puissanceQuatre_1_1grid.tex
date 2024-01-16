@@ -15,7 +15,7 @@ np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9c75b8d9afc
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}{pq\+\_\+print\+\_\+grille}} (np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\item 
 np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}{pq\+\_\+apply\+\_\+gravity}} (np.\+array npa\+\_\+grille)
-\begin{DoxyCompactList}\small\item\em Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Applique la gravité sur la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -43,7 +43,9 @@ Ce module contient les fonctions de gestion de la grille de jeu. Notamment l\tex
 
 
 
-Applique la gravité sur la grille, cela permet de faire tomber les jetons dans la grille. 
+Applique la gravité sur la grille. 
+
+Cette méthode permet d\textquotesingle{}appliquer la gravité sur la grille de jeu. Elle prend en paramètre la grille à modifier et renvoie la grille modifiée.
 
 \begin{DoxyPrecond}{Précondition}
 npa\+\_\+grille initialisé 
@@ -75,6 +77,8 @@ il n\textquotesingle{}y a pas de 0 sous un 1 ou un 2
 
 L\textquotesingle{}initiateur de la grille. 
 
+Cette méthode permet d\textquotesingle{}initialiser la grille de jeu. Elle prend en paramètre le nombre de lignes et de colonnes de la grille et renvoie la grille initialisée.
+
 \begin{DoxyPrecond}{Précondition}
 i\+\_\+max\+\_\+ligne $>$ 1 et i\+\_\+max\+\_\+colonne $>$ 1 
 \end{DoxyPrecond}
@@ -104,6 +108,8 @@ La grille créée
 
 Affiche la grille. 
 
+Cette méthode permet d\textquotesingle{}afficher la grille de jeu. Elle prend en paramètre la grille à afficher.
+
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
 \item char\+\_\+joueur \+: Le caractère du jeton du joueur
@@ -129,6 +135,8 @@ Affiche la grille.
 
 
 Réinitialise la grille. 
+
+Cette méthode permet de réinitialiser la grille de jeu. Elle prend en paramètre la grille à réinitialiser et renvoie la grille réinitialisée.
 
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}

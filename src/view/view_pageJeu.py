@@ -199,31 +199,31 @@ def vpj_draw_grid(rows: int, columns: int):
             TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill="white")
 
 
-def vpj_show_coin(row: int, column: int, color: str):
+def vpj_show_coin(i_row: int, i_column: int, color: str):
     """! Dessine un jeton dans une cellule
 
     Cette fonction dessine un jeton dans une cellule. Elle prend en paramètre
     la ligne et la colonne de la cellule où l'on va dessiner le jeton et la
     couleur du jeton. Elle dessine le jeton dans la cellule.
 
-    @param row: Ligne de la cellule où l'on va dessiner le jeton
-    @param column: Colonne de la cellule où l'on va dessiner le jeton
+    @param i_row: Ligne de la cellule où l'on va dessiner le jeton
+    @param i_column: Colonne de la cellule où l'on va dessiner le jeton
     @param color: Couleur du jeton
     """
     global I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
 
     # On définit la largeur d'une cellule en fonction de la taille du canvas
     # et du nombre de colonnes dans la grille
-    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
+    i_cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
     # On définit la hauteur d'une cellule en fonction de la taille du canvas
     # et du nombre de lignes dans la grille
-    cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
+    i_cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
 
     # On calcule les coordonnées du point supérieur gauche de la cellule
-    ti_upper_left = (column * cell_width + 5, row * cell_height + 5)
+    ti_upper_left = (i_column * i_cell_width + 5, i_row * i_cell_height + 5)
     # On calcule les coordonnées du point inférieur droit de la cellule
-    ti_lower_right = (column * cell_width + cell_width - 5,
-                      row * cell_height + cell_height - 5)
+    ti_lower_right = (i_column * i_cell_width + i_cell_width - 5,
+                      i_row * i_cell_height + i_cell_height - 5)
 
     # On dessine le jeton
     TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill=color)

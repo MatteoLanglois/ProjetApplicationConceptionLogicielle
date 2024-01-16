@@ -8,5 +8,6 @@ var searchData=
   ['gp_5fhandle_5fundo_5fredo_50',['gp_handle_undo_redo',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ad9924d90e2191d3bd3af6b4c0c8b99be',1,'src::puissanceQuatre::gestionPartie']]],
   ['gp_5fhandle_5fvictory_51',['gp_handle_victory',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a89cefc02a3c31d4556fa77770daa6bed',1,'src::puissanceQuatre::gestionPartie']]],
   ['gp_5fshow_5frules_52',['gp_show_rules',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4887c31c02066bdc08dac180d8d52a38',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fuse_5fbonus_53',['gp_use_bonus',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a297578efc5c2beb75e2e5e18927f17f5',1,'src::puissanceQuatre::gestionPartie']]]
+  ['gp_5fstart_5fgame_53',['gp_start_game',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a0c2f0e73f54278bb91fae166f0adebe3',1,'src::puissanceQuatre::gestionPartie']]],
+  ['gp_5fuse_5fbonus_54',['gp_use_bonus',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a297578efc5c2beb75e2e5e18927f17f5',1,'src::puissanceQuatre::gestionPartie']]]
 ];

@@ -1,24 +1,11 @@
 var searchData=
 [
-  ['p4b_5fflip_5fgrid_237',['p4b_flip_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5finvert_5fgrid_238',['p4b_invert_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5fno_5fbonus_239',['p4b_no_bonus',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a701d695636d49d7658d9877df3326efe',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5frandom_5fbonus_240',['p4b_random_bonus',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a48acd2e33cb46603b9ca620ca6a8ab62',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5frandom_5fplacement_241',['p4b_random_placement',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#aa70f2715fdecaebaa86f7255cd1be4d5',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5fremove_5ffull_5fline_242',['p4b_remove_full_line',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f',1,'src::puissanceQuatre::bonus']]],
-  ['p4b_5fuse_5fmin_5fmax_243',['p4b_use_min_max',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459',1,'src::puissanceQuatre::bonus']]],
-  ['pq_5fajout_5fpiece_244',['pq_ajout_piece',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fapply_5fgravity_245',['pq_apply_gravity',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a9ea18179c00172ad478307e9a17a24d7',1,'src::puissanceQuatre::grid']]],
-  ['pq_5finit_5fgrille_246',['pq_init_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a81ed1760743ce62de2b07ed56f1f13af',1,'src::puissanceQuatre::grid']]],
-  ['pq_5fminmax_247',['pq_minmax',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a9dbc2c483ae89fa3dad8833cc3845e2b',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fpartie_5ffinie_248',['pq_partie_finie',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fprint_5fgrille_249',['pq_print_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a5b8192e1a86f93d2caf77550d37f9a62',1,'src::puissanceQuatre::grid']]],
-  ['pq_5fredo_250',['pq_redo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a06bdaec03582d0146e06983760361992',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5freset_5fgrille_251',['pq_reset_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a9c75b8d9afc2678075985ab3420d61e0',1,'src::puissanceQuatre::grid']]],
-  ['pq_5fundo_252',['pq_undo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a1b4eb42574730ac4cf337f9c6dac9f50',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fverif_5fcolonne_253',['pq_verif_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fvictoire_254',['pq_victoire',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fvictoire_5fcolonne_255',['pq_victoire_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a662f22c97ca3b952383ae42f8bca4cad',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fvictoire_5fdiago_256',['pq_victoire_diago',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a2f76c9e9fd0ced658f382d854abdefea',1,'src::puissanceQuatre::puissanceQuatre']]],
-  ['pq_5fvictoire_5fligne_257',['pq_victoire_ligne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b',1,'src::puissanceQuatre::puissanceQuatre']]]
+  ['tg_5finit_5fgrille_257',['tg_init_grille',['../namespacetests_1_1test__grid.html#abd1e217c51c4ec2bb4d911605484016c',1,'tests::test_grid']]],
+  ['tg_5ftest_5fall_258',['tg_test_all',['../namespacetests_1_1test__grid.html#abf69f5081480eb7fd3a2a89fc425baa6',1,'tests::test_grid']]],
+  ['tp_5fajout_5fpiece_259',['tp_ajout_piece',['../namespacetests_1_1test__puissanceQuatre.html#a50ee15df29277e36dd8c7b091e6e6839',1,'tests::test_puissanceQuatre']]],
+  ['tp_5ftest_5fall_260',['tp_test_all',['../namespacetests_1_1test__puissanceQuatre.html#a556aebc26980d14ace085502929938a9',1,'tests::test_puissanceQuatre']]],
+  ['tp_5fverif_5fcolonne_261',['tp_verif_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a3d1cea88a0c0ecf7a46333b4d98a0065',1,'tests::test_puissanceQuatre']]],
+  ['tp_5fvictoire_5fcolonne_262',['tp_victoire_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a6b60c67d64944868f7f29f4ecd75dff0',1,'tests::test_puissanceQuatre']]],
+  ['tp_5fvictoire_5fdiago_263',['tp_victoire_diago',['../namespacetests_1_1test__puissanceQuatre.html#afca80042370ade9eff4620f6f8ffd306',1,'tests::test_puissanceQuatre']]],
+  ['tp_5fvictoire_5fligne_264',['tp_victoire_ligne',['../namespacetests_1_1test__puissanceQuatre.html#a35ef85b234ed41628b728d3daeda6d29',1,'tests::test_puissanceQuatre']]]
 ];

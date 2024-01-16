@@ -61,7 +61,7 @@ def wu_get_grid_size(tkf_frame: tk.Frame) -> (int, int):
         i_width_grid = 400
     # On retourne la largeur et la hauteur de la grille, la hauteur de la
     # grille est de 6/7 de la largeur
-    return i_width_grid, i_width_grid * 6/7
+    return i_width_grid, i_width_grid * 6 / 7
 
 
 def wu_get_font_size(tkf_frame: tk.Frame, b_title: bool) -> int:
@@ -76,6 +76,44 @@ def wu_get_font_size(tkf_frame: tk.Frame, b_title: bool) -> int:
     """
     # Récupère la taille de l'écran
     i_width_screen, i_height_screen = wu_get_screen_size(tkf_frame)
+
+    # Si l'écran est en HD ou Full HD
+    if i_width_screen <= 1920:
+        # La taille de la police est de 10
+        i_font_size = 14
+    # Si l'écran est en 2K
+    elif i_width_screen <= 2560:
+        # La taille de la police est de 15
+        i_font_size = 16
+    # Si l'écran est en 4K
+    elif i_width_screen <= 3840:
+        i_font_size = 20
+    # Sinon
+    else:
+        # La taille de la police est de 10
+        i_font_size = 14
+    # Si la police est pour un titre
+    if b_title:
+        # On ajoute 10 à la taille de la police
+        i_font_size += 5
+    # On retourne la taille de la police
+    return i_font_size
+
+
+def wu_get_font_size_window(tk_window: tk.Tk, b_title: bool) -> int:
+    """! Récupère la taille de la police en fonction de la fenêtre
+
+    Cette fonction calcule la taille de la police et la renvoie. Elle prend en
+    paramètre la fenêtre principale.
+
+    @pre Le cadre doit être initialisé
+    @param tk_window: Fenêtre principale
+    @param b_title: True si la police est pour un titre, False sinon
+    @return Taille de la police
+    """
+    # Récupère la taille de l'écran
+    i_width_screen, i_height_screen = (tk_window.winfo_screenwidth(),
+                                       tk_window.winfo_screenheight())
 
     # Si l'écran est en HD ou Full HD
     if i_width_screen <= 1920:

@@ -105,6 +105,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a55a50f97978a4774714ab8d68ec0b4e1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a55a50f97978a4774714ab8d68ec0b4e1">gp_gestion_partie</a> (int i_nb_lignes=6, int i_nb_colonnes=7, int i_nb_jeton_victoire=4)</td></tr>
 <tr class="memdesc:a55a50f97978a4774714ab8d68ec0b4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le déroulement d'une partie de puissance 4.  <a href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a55a50f97978a4774714ab8d68ec0b4e1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a55a50f97978a4774714ab8d68ec0b4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2f0e73f54278bb91fae166f0adebe3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a0c2f0e73f54278bb91fae166f0adebe3">gp_start_game</a> ()</td></tr>
+<tr class="memdesc:a0c2f0e73f54278bb91fae166f0adebe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance une partie normale en ligne de commande.  <a href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a0c2f0e73f54278bb91fae166f0adebe3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0c2f0e73f54278bb91fae166f0adebe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
@@ -134,6 +137,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Récupère le bonus choisi par le joueur. </p>
+<p>Cette fonction permet de récupérer le bonus que le joueur a choisi avant le début de la partie. Elle renvoie le bonus choisi.</p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le bonus choisi par le joueur</dd></dl>
 <p><b>Variables :</b></p><ul>
 <li>ts_bonuses : Liste, contient les fonctions des bonus</li>
@@ -175,6 +179,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gère le déroulement d'une partie de puissance 4. </p>
+<p>Cette fonction gère l'entièreté du déroulement d'une partie de puissance 4. Elle prend en paramètre la taille de la grille en lignes, la taille de la grille en colonnes et le nombre de jetons à aligner pour gagner.</p>
 <p>Méthode gérant le déroulement d'une partie de puissance 4 en ligne de commande.</p>
 <p><b>Variables :</b></p><ul>
 <li>b_victoire : Booléen, True si un joueur a gagné, False sinon</li>
@@ -222,6 +227,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Récupère le choix du joueur lors de son tour. </p>
+<p>Cette fonction permet de récupérer le choix du joueur lors de son tour. Elle renvoie le choix du joueur.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">i_nb_colonnes</td><td>Nombre de colonnes de la grille </td></tr>
@@ -274,6 +280,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant de gérer le tour du bot. </p>
+<p>Cette fonction permet de gérer le tour du bot. Elle renvoie la grille modifiée.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">npa_grille</td><td>np.array, la grille de jeu </td></tr>
@@ -318,6 +325,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant de gérer le tour du joueur. </p>
+<p>Cette fonction permet de gérer le tour du joueur. Elle renvoie la grille modifiée.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">npa_grille</td><td>np.array, la grille de jeu </td></tr>
@@ -360,6 +368,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant au joueur d'annuler ou de refaire son dernier coup. </p>
+<p>Cette fonction permet au joueur d'annuler ou de refaire son dernier coup.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">b_undo</td><td>booléen indiquant si c'est un undo ou un redo (True pour undo, False pour redo) </td></tr>
@@ -416,6 +425,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant de gérer la victoire d'un joueur. </p>
+<p>Cette fonction permet de gérer la victoire d'un joueur. Elle renvoie un booléen indiquant si un joueur a gagné ou non.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">npa_grille</td><td>np.array, la grille de jeu </td></tr>
@@ -449,6 +459,28 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Affiche les règles du jeu. </p>
+<p>Cette fonction permet d'afficher les règles dans la console python. </p>
+
+</div>
+</div>
+<a id="a0c2f0e73f54278bb91fae166f0adebe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2f0e73f54278bb91fae166f0adebe3">&#9670;&nbsp;</a></span>gp_start_game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.puissanceQuatre.gestionPartie.gp_start_game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lance une partie normale en ligne de commande. </p>
+<p>Cette fonction démarre une partie de puissance 4 dans la console python.</p>
+<p>Cette fonction lance une partie normale en ligne de commande avec une grille de 6 lignes, 7 colonnes et 4 jetons à aligner pour gagner. </p>
 
 </div>
 </div>
@@ -479,6 +511,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant au joueur d'utiliser son bonus. </p>
+<p>Cette fonction permet au joueur d'utiliser son bonus. Elle renvoie la grille modifiée.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">s_bonus</td><td>str, le nom du bonus </td></tr>

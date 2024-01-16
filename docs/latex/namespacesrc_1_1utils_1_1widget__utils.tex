@@ -13,7 +13,9 @@ Un programme qui joue au jeu puissance 4++.
 (int, int) \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_ade716c55da64db8772861e33fcb9e055}{wu\+\_\+get\+\_\+grid\+\_\+size}} (tk.\+Frame tkf\+\_\+frame)
 \begin{DoxyCompactList}\small\item\em Récupère la taille de la grille. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a7576f56a08e301f20e68433a4445f4c4}{wu\+\_\+get\+\_\+font\+\_\+size}} (tk.\+Frame tkf\+\_\+frame, bool b\+\_\+title)
-\begin{DoxyCompactList}\small\item\em Récupère la taille de la police. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Récupère la taille de la police. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacesrc_1_1utils_1_1widget__utils_a0b0ef78c2172546a0b08d78254fdfab8}{wu\+\_\+get\+\_\+font\+\_\+size\+\_\+window}} (tk.\+Tk tk\+\_\+window, bool b\+\_\+title)
+\begin{DoxyCompactList}\small\item\em Récupère la taille de la police en fonction de la fenêtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -51,6 +53,31 @@ Le cadre doit être initialisé
 
 \begin{DoxyParams}{Paramètres}
 {\em tkf\+\_\+frame} & Frame tkinter \\
+\hline
+{\em b\+\_\+title} & True si la police est pour un titre, False sinon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Taille de la police 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1widget__utils_a0b0ef78c2172546a0b08d78254fdfab8}\label{namespacesrc_1_1utils_1_1widget__utils_a0b0ef78c2172546a0b08d78254fdfab8}} 
+\index{src.utils.widget\_utils@{src.utils.widget\_utils}!wu\_get\_font\_size\_window@{wu\_get\_font\_size\_window}}
+\index{wu\_get\_font\_size\_window@{wu\_get\_font\_size\_window}!src.utils.widget\_utils@{src.utils.widget\_utils}}
+\doxysubsubsection{\texorpdfstring{wu\_get\_font\_size\_window()}{wu\_get\_font\_size\_window()}}
+{\footnotesize\ttfamily  int src.\+utils.\+widget\+\_\+utils.\+wu\+\_\+get\+\_\+font\+\_\+size\+\_\+window (\begin{DoxyParamCaption}\item[{tk.\+Tk}]{tk\+\_\+window,  }\item[{bool}]{b\+\_\+title }\end{DoxyParamCaption})}
+
+
+
+Récupère la taille de la police en fonction de la fenêtre. 
+
+Cette fonction calcule la taille de la police et la renvoie. Elle prend en paramètre la fenêtre principale.
+
+\begin{DoxyPrecond}{Précondition}
+Le cadre doit être initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em tk\+\_\+window} & Fenêtre principale \\
 \hline
 {\em b\+\_\+title} & True si la police est pour un titre, False sinon \\
 \hline

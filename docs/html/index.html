@@ -72,9 +72,10 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 Modules externes utilisés :</h1>
 <ul>
-<li><a href="numpy.org">Numpy</a></li>
+<li><a href="https://numpy.org">Numpy</a></li>
 <li><a href="https://docs.python.org/3/library/inspect.html">Inspect</a></li>
 <li><a href="https://docs.python.org/3/library/tkinter.html">Tkinter</a></li>
+<li><a href="https://docs.python.org/3/library/argparse.html">argparse</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Installation</h1>
@@ -87,14 +88,22 @@ Installation</h1>
 </div><!-- fragment --></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
+Installation bis</h1>
+<ul>
+<li>Après avoir cloné le dépôt git et vous être placé dans le dossier du jeu, il est possible d'exécuter le fichier install.bat (si vous êtes sous windows) ou install.sh (si vous êtes sous linux)</li>
+<li>Ce fichier va installer les modules externes utilisés et lancer le jeu.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Lancement</h1>
 <ul>
-<li>Pour lancer le jeu, il suffit de lancer le fichier <code>src/main.py</code> avec python3.</li>
+<li>Pour lancer le jeu, il suffit de lancer le fichier <code>main.py</code> avec python3.</li>
+<li>Si vous lancez le jeu avec l'argument '&ndash;cli', le jeu se lancera en ligne de commande.</li>
+<li>Si vous lancez le jeu sans argument, le jeu se lancera avec l'interface graphique.</li>
 </ul>
 <hr  />
- <h1><a class="anchor" id="autotoc_md4"></a>
+ <h1><a class="anchor" id="autotoc_md5"></a>
 Fonctionnalités</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Algorithmie</h2>
 <ul>
 <li>[x] Vérification de la victoire</li>
@@ -104,7 +113,7 @@ Algorithmie</h2>
 <li>[x] Algorithme de gestion de partie en ligne de commande</li>
 <li>[x] Implémentation du undo/redo</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Interface graphique</h2>
 <ul>
 <li>[x] Page d'accueil</li>
@@ -117,9 +126,9 @@ Interface graphique</h2>
 <li>[x] Affichage de la victoire/Défaite</li>
 <li>[ ] Affichage de l'aide</li>
 <li>[x] Affichage du tour du joueur</li>
-<li>[ ] Interface responsive</li>
+<li>[x] Interface responsive</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Personnalisation</h2>
 <ul>
 <li>[x] Personnalisation des jetons</li>
@@ -128,7 +137,7 @@ Personnalisation</h2>
 <li>[x] Personnalisation du nombre de jetons à aligner pour gagner</li>
 <li>[x] Personnalisation de la difficulté de l'IA</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Bonus</h2>
 <ul>
 <li>[x] Utilisation des bonus en ligne de commande</li>
@@ -136,7 +145,41 @@ Bonus</h2>
 <li>[x] Bonus d'inversion de la grille</li>
 <li>[x] Bonus de suppression de ligne pleine</li>
 <li>[x] Bonus d'aide avec MinMax</li>
-<li>[x] Bonus de retournement de la grille </li>
+<li>[x] Bonus de retournement de la grille</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md10"></a>
+Expliquation du code</h1>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Documentation</h2>
+<ul>
+<li>La documentation du code se trouve dans le dossier <code>docs</code> à la racine du projet.</li>
+<li>Elle peut être générée avec Doxygen, le fichier de configuration doxyFile se trouve à la racine du projet.</li>
+<li>Pour générer la documentation, il suffit de lancer la commande suivante : <div class="fragment"><div class="line">doxygen doxyFile</div>
+</div><!-- fragment --></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Convention de nommage</h2>
+<ul>
+<li>Les variables et fonctions sont nommées en snake_case.</li>
+<li>Les fonctions commencent par un acronyme désignant le fichier et le module dans lequel elles se trouvent.</li>
+<li>Les noms de variables commencent par leur type :<ul>
+<li><code>b_</code> pour les booléens</li>
+<li><code>i_</code> pour les entiers</li>
+<li><code>f_</code> pour les flottants</li>
+<li><code>s_</code> pour les chaînes de caractères</li>
+<li><code>t_</code> pour les listes</li>
+<li><code>t_</code> pour les tuples</li>
+<li><code>npa_</code> pour les tableaux numpy</li>
+<li><code>tkl_</code> pour les labels tkinter</li>
+<li><code>tkb_</code> pour les boutons tkinter</li>
+<li><code>tkc_</code> pour les canvas tkinter</li>
+<li><code>tksb_</code> pour les spinbox tkinter</li>
+<li><code>tkf_</code> pour les frames tkinter</li>
+<li><code>tks_</code> pour les scales tkinter</li>
+<li><code>tksv_</code> pour les stringvar tkinter </li>
+</ul>
+</li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

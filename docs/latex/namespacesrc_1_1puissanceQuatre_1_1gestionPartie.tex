@@ -25,7 +25,9 @@ def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_ae4acc672f
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a89cefc02a3c31d4556fa77770daa6bed}{gp\+\_\+handle\+\_\+victory}} (np.\+array npa\+\_\+grille, int i\+\_\+ligne\+\_\+joueur, int i\+\_\+joueur, int i\+\_\+colonne\+\_\+joueur, int i\+\_\+nb\+\_\+jeton\+\_\+victoire)
 \begin{DoxyCompactList}\small\item\em Méthode permettant de gérer la victoire d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a55a50f97978a4774714ab8d68ec0b4e1}{gp\+\_\+gestion\+\_\+partie}} (int i\+\_\+nb\+\_\+lignes=6, int i\+\_\+nb\+\_\+colonnes=7, int i\+\_\+nb\+\_\+jeton\+\_\+victoire=4)
-\begin{DoxyCompactList}\small\item\em Gère le déroulement d\textquotesingle{}une partie de puissance 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gère le déroulement d\textquotesingle{}une partie de puissance 4. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a0c2f0e73f54278bb91fae166f0adebe3}{gp\+\_\+start\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Lance une partie normale en ligne de commande. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -55,6 +57,8 @@ Ce module contient les fonctions permettant de gérer la partie en ligne de comm
 
 Récupère le bonus choisi par le joueur. 
 
+Cette fonction permet de récupérer le bonus que le joueur a choisi avant le début de la partie. Elle renvoie le bonus choisi.
+
 \begin{DoxyReturn}{Renvoie}
 Le bonus choisi par le joueur
 \end{DoxyReturn}
@@ -71,6 +75,8 @@ Le bonus choisi par le joueur
 
 
 Gère le déroulement d\textquotesingle{}une partie de puissance 4. 
+
+Cette fonction gère l\textquotesingle{}entièreté du déroulement d\textquotesingle{}une partie de puissance 4. Elle prend en paramètre la taille de la grille en lignes, la taille de la grille en colonnes et le nombre de jetons à aligner pour gagner.
 
 Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en ligne de commande.
 
@@ -102,6 +108,8 @@ Méthode gérant le déroulement d\textquotesingle{}une partie de puissance 4 en
 
 
 Récupère le choix du joueur lors de son tour. 
+
+Cette fonction permet de récupérer le choix du joueur lors de son tour. Elle renvoie le choix du joueur.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -135,6 +143,8 @@ Le choix du joueur récupéré
 
 Méthode permettant de gérer le tour du bot. 
 
+Cette fonction permet de gérer le tour du bot. Elle renvoie la grille modifiée.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
@@ -160,6 +170,8 @@ Méthode permettant de gérer le tour du bot.
 
 Méthode permettant de gérer le tour du joueur. 
 
+Cette fonction permet de gérer le tour du joueur. Elle renvoie la grille modifiée.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em npa\+\_\+grille} & np.\+array, la grille de jeu \\
@@ -184,6 +196,8 @@ Méthode permettant de gérer le tour du joueur.
 
 Méthode permettant au joueur d\textquotesingle{}annuler ou de refaire son dernier coup. 
 
+Cette fonction permet au joueur d\textquotesingle{}annuler ou de refaire son dernier coup.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em b\+\_\+undo} & booléen indiquant si c\textquotesingle{}est un undo ou un redo (True pour undo, False pour redo) \\
@@ -203,6 +217,8 @@ Méthode permettant au joueur d\textquotesingle{}annuler ou de refaire son derni
 
 
 Méthode permettant de gérer la victoire d\textquotesingle{}un joueur. 
+
+Cette fonction permet de gérer la victoire d\textquotesingle{}un joueur. Elle renvoie un booléen indiquant si un joueur a gagné ou non.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -233,7 +249,19 @@ Méthode permettant de gérer la victoire d\textquotesingle{}un joueur.
 
 Affiche les règles du jeu. 
 
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}} 
+Cette fonction permet d\textquotesingle{}afficher les règles dans la console python. \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a0c2f0e73f54278bb91fae166f0adebe3}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a0c2f0e73f54278bb91fae166f0adebe3}} 
+\index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_start\_game@{gp\_start\_game}}
+\index{gp\_start\_game@{gp\_start\_game}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
+\doxysubsubsection{\texorpdfstring{gp\_start\_game()}{gp\_start\_game()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+gestion\+Partie.\+gp\+\_\+start\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lance une partie normale en ligne de commande. 
+
+Cette fonction démarre une partie de puissance 4 dans la console python.
+
+Cette fonction lance une partie normale en ligne de commande avec une grille de 6 lignes, 7 colonnes et 4 jetons à aligner pour gagner. \mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}\label{namespacesrc_1_1puissanceQuatre_1_1gestionPartie_a297578efc5c2beb75e2e5e18927f17f5}} 
 \index{src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}!gp\_use\_bonus@{gp\_use\_bonus}}
 \index{gp\_use\_bonus@{gp\_use\_bonus}!src.puissanceQuatre.gestionPartie@{src.puissanceQuatre.gestionPartie}}
 \doxysubsubsection{\texorpdfstring{gp\_use\_bonus()}{gp\_use\_bonus()}}
@@ -242,6 +270,8 @@ Affiche les règles du jeu.
 
 
 Méthode permettant au joueur d\textquotesingle{}utiliser son bonus. 
+
+Cette fonction permet au joueur d\textquotesingle{}utiliser son bonus. Elle renvoie la grille modifiée.
 
 
 \begin{DoxyParams}{Paramètres}

@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Un programme qui joue au jeu puissance 4++.  
+<p>Ce module contient l'implémentation des règles du puissance 4.  
 <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#details">Plus de détails...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -84,9 +84,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">pq_ajout_piece</a> (np.array npa_grille, int i_colonne, int i_joueur)</td></tr>
 <tr class="memdesc:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">La méthode qui gère le placement de jetons.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="memItemLeft" align="right" valign="top">(int, float)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a9dbc2c483ae89fa3dad8833cc3845e2b">pq_minmax</a> (iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used, iColonne=0, isFirst=False, tour=0, isthebonus=False)</td></tr>
-<tr class="memdesc:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode implémentant l'algorithme minmax.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a9dbc2c483ae89fa3dad8833cc3845e2b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9dbc2c483ae89fa3dad8833cc3845e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e0776ccc28cc6ea375e5231a9b9387a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a">pq_minmax</a> (i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used, i_colonne=0, b_is_first=False, i_tour=0, b_is_the_bonus=False)</td></tr>
+<tr class="memdesc:a8e0776ccc28cc6ea375e5231a9b9387a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode implémentant l'algorithme minmax.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8e0776ccc28cc6ea375e5231a9b9387a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac684727bae3bfbadc62404364e4511b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8">pq_victoire</a> (np.array npa_grille, int i_ligne, int i_colonne, int i_joueur, int i_nb_victoire)</td></tr>
 <tr class="separator:ac684727bae3bfbadc62404364e4511b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13c5a20d8aa478adda10bc609f1fc1b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b">pq_victoire_ligne</a> (np.array npa_grille, int i_ligne, int i_colonne, int i_joueur, int i_nb_victoire)</td></tr>
@@ -109,17 +109,8 @@ Fonctions</h2></td></tr>
 <tr class="separator:a43c21a259daf90f3409ef02cf8a7ddd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
-<p>Ce module contient l'implémentation des règles du puissance 4.</p>
-<p>Ce programme est un jeu de puissance 4++ avec une grille de taille variable, un nombre de pions à aligner variable, des bonus et un undo.</p>
-<p>Ce programme utilise les modules externes suivants :</p><ul>
-<li>tkinter</li>
-<li>numpy</li>
-<li>inspect</li>
-<li><p class="startli">inspect</p>
-<p class="startli">Ce module contient la gestion de la structure du puissance 4 et la gestion du jeu. </p>
-</li>
-</ul>
+<div class="textblock"><p>Ce module contient l'implémentation des règles du puissance 4. </p>
+<p>Ce module contient la gestion de la structure du puissance 4 et la gestion du jeu. </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
 <a id="a0d16eac42f24323fdda7fbff6a0cbcf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d16eac42f24323fdda7fbff6a0cbcf2">&#9670;&nbsp;</a></span>pq_ajout_piece()</h2>
@@ -154,6 +145,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>La méthode qui gère le placement de jetons. </p>
+<p>Cette méthode permet d'ajouter une pièce dans la colonne indiquée. Elle vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie les coordonnées du nouveau jeton.</p>
 <p>Cette méthode permet de placer un jeton dans une colonne donnée. Elle vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie les coordonnées du nouveau jeton.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne &lt;= npa_grille.shape[0] </dd>
 <dd>
@@ -176,23 +168,23 @@ npa_grille initialisé </dd></dl>
 
 </div>
 </div>
-<a id="a9dbc2c483ae89fa3dad8833cc3845e2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dbc2c483ae89fa3dad8833cc3845e2b">&#9670;&nbsp;</a></span>pq_minmax()</h2>
+<a id="a8e0776ccc28cc6ea375e5231a9b9387a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e0776ccc28cc6ea375e5231a9b9387a">&#9670;&nbsp;</a></span>pq_minmax()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> (int, float) src.puissanceQuatre.puissanceQuatre.pq_minmax </td>
+          <td class="memname"> float src.puissanceQuatre.puissanceQuatre.pq_minmax </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>iJoueur</em>, </td>
+          <td class="paramname"><em>i_joueur</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>npaGrilleCopy</em>, </td>
+          <td class="paramname"><em>npa_grille_copy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -216,25 +208,25 @@ npa_grille initialisé </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>iColonne</em> = <code>0</code>, </td>
+          <td class="paramname"><em>i_colonne</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>isFirst</em> = <code>False</code>, </td>
+          <td class="paramname"><em>b_is_first</em> = <code>False</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>tour</em> = <code>0</code>, </td>
+          <td class="paramname"><em>i_tour</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>isthebonus</em> = <code>False</code>&#160;</td>
+          <td class="paramname"><em>b_is_the_bonus</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,6 +237,35 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode implémentant l'algorithme minmax. </p>
+<p>Cette méthode permet de jouer un coup en utilisant l'algorithme minmax. Elle prend en paramètre le joueur qui joue, la grille de jeu, le nombre de jetons à aligner pour gagner, le bonus à jouer, un booléen indiquant si le bonus a déjà été joué, la colonne où jouer le bonus, un booléen indiquant si c'est le premier appel de la méthode, le nombre de tours effectués et un booléen indiquant si le bonus est utilisé ou non.</p>
+<p><b>Variables :</b></p><ul>
+<li>m_module : Module, Le module du bonus</li>
+<li>f_bonus : Fonction, La fonction du bonus</li>
+<li>tf_result : Liste, La liste contenant les résultats</li>
+<li>i_maximum : Entier, Le i_maximum de la liste</li>
+<li>i_max_index : Entier, L'indice du i_maximum de la liste</li>
+<li>ligne : Entier, La ligne où le jeton a été posé</li>
+</ul>
+<dl class="section pre"><dt>Précondition</dt><dd>npa_grille initialisé </dd>
+<dd>
+1 &lt;= i_joueur &lt;= 2 </dd>
+<dd>
+0 &lt;= i_colonne &lt;= npa_grille.shape[0]</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_joueur</td><td>Le joueur qui joue (1 pour le joueur, 2 pour le bot) </td></tr>
+    <tr><td class="paramname">npa_grille_copy</td><td>La grille du puissance 4 </td></tr>
+    <tr><td class="paramname">i_nb_victoire</td><td>Le nombre de jetons à aligner pour gagner </td></tr>
+    <tr><td class="paramname">s_bonus</td><td>Le bonus à jouer </td></tr>
+    <tr><td class="paramname">b_bonus_used</td><td>Un booléen indiquant si le bonus a déjà été joué </td></tr>
+    <tr><td class="paramname">i_colonne</td><td>La colonne où jouer le bonus </td></tr>
+    <tr><td class="paramname">b_is_first</td><td>Un booléen indiquant si c'est le premier appel de la méthode </td></tr>
+    <tr><td class="paramname">i_tour</td><td>Le nombre de tours effectués </td></tr>
+    <tr><td class="paramname">b_is_the_bonus</td><td>Un booléen indiquant si le bonus est utilisé ou non</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La colonne où jouer le jeton </dd></dl>
 
 </div>
 </div>
@@ -326,6 +347,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant de revenir en avant dans le jeu. </p>
+<p>Cette méthode permet de revenir en avant dans le jeu. Elle prend en paramètre la grille du puissance 4 et la liste contenant les grilles pour l'undo et le redo. Elle renvoie la grille du puissance 4 après le redo.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">npa_grille</td><td>La grille du puissance 4 </td></tr>
@@ -367,6 +389,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Méthode permettant de revenir en arrière dans le jeu. </p>
+<p>Cette méthode permet de revenir en arrière dans le jeu. Elle prend en paramètre la grille du puissance 4 et la liste contenant les grilles pour l'undo et le redo. Elle renvoie la grille du puissance 4 après l'undo.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">npa_grille</td><td>La grille du puissance 4 </td></tr>
@@ -473,6 +496,11 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 <pre class="fragment">: Méthode appelant les trois vérifications de victoire.
 
+Cette méthode permet de vérifier si le joueur a gagné ou non. Elle prend en
+paramètre la grille de jeu, la ligne et la colonne où le jeton a été posé,
+le joueur qui a joué et le nombre de jetons à aligner pour gagner. Elle
+renvoie un booléen indiquant si le joueur a gagné ou non.
+
 @param npa_grille: La grille du puissance 4
 @param i_ligne: La ligne où le jeton a été posé
 @param i_colonne: La colonne où le jeton a été posé
@@ -528,6 +556,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Verification de la victoire sur une colonne. </p>
+<p>Cette méthode permet de vérifier si le joueur a gagné sur la colonne où il a joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne où le jeton a été posé, le joueur qui a joué et le nombre de jetons à aligner pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné ou non.</p>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>i_nb_lignes : Entier, Nombre de lignes dans la grille</li>
@@ -597,6 +626,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Verification de la victoire sur les diagonales. </p>
+<p>Cette méthode permet de vérifier si le joueur a gagné sur les diagonales où il a joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne où le jeton a été posé, le joueur qui a joué et le nombre de jetons à aligner pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné ou non.</p>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>i_nb_lignes : Entier, Nombre de lignes dans la grille</li>
@@ -669,6 +699,7 @@ npa_grille initialisé </dd></dl>
 </div><div class="memdoc">
 
 <p>Verification de la victoire sur la ligne. </p>
+<p>Cette méthode permet de vérifier si le joueur a gagné sur la ligne où il a joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne où le jeton a été posé, le joueur qui a joué et le nombre de jetons à aligner pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné ou non.</p>
 <p><b>Variables :</b></p><ul>
 <li>i_compteur : Entier, Le nombre de jetons du joueur dans la ligne</li>
 <li>b_vu : Booléen, ajouter explication</li>

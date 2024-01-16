@@ -7,9 +7,10 @@ De plus, le joueur aura des bonus permettant de renverser la partie ou de se don
 Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ainsi que la réalisation de l’interface graphique. Ces trois parties sont essentielles à ce projet.\hypertarget{index_autotoc_md1}{}\doxysection{Modules externes utilisés \+:}\label{index_autotoc_md1}
 
 \begin{DoxyItemize}
-\item \href{numpy.org}{\texttt{ Numpy}}
+\item \href{https://numpy.org}{\texttt{ Numpy}}
 \item \href{https://docs.python.org/3/library/inspect.html}{\texttt{ Inspect}}
 \item \href{https://docs.python.org/3/library/tkinter.html}{\texttt{ Tkinter}}
+\item \href{https://docs.python.org/3/library/argparse.html}{\texttt{ argparse}}
 \end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
@@ -31,15 +32,22 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 
 \end{DoxyCode}
 
-\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Lancement}\label{index_autotoc_md3}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Installation bis}\label{index_autotoc_md3}
 
 \begin{DoxyItemize}
-\item Pour lancer le jeu, il suffit de lancer le fichier {\ttfamily src/main.\+py} avec python3.
+\item Après avoir cloné le dépôt git et vous être placé dans le dossier du jeu, il est possible d\textquotesingle{}exécuter le fichier install.\+bat (si vous êtes sous windows) ou install.\+sh (si vous êtes sous linux)
+\item Ce fichier va installer les modules externes utilisés et lancer le jeu.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{Lancement}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Pour lancer le jeu, il suffit de lancer le fichier {\ttfamily main.\+py} avec python3.
+\item Si vous lancez le jeu avec l\textquotesingle{}argument \textquotesingle{}--cli\textquotesingle{}, le jeu se lancera en ligne de commande.
+\item Si vous lancez le jeu sans argument, le jeu se lancera avec l\textquotesingle{}interface graphique.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
- \hypertarget{index_autotoc_md4}{}\doxysection{Fonctionnalités}\label{index_autotoc_md4}
-\hypertarget{index_autotoc_md5}{}\doxysubsection{Algorithmie}\label{index_autotoc_md5}
+ \hypertarget{index_autotoc_md5}{}\doxysection{Fonctionnalités}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{Algorithmie}\label{index_autotoc_md6}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Vérification de la victoire
@@ -48,7 +56,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Ajout de pièce
 \item \mbox{[}x\mbox{]} Algorithme de gestion de partie en ligne de commande
 \item \mbox{[}x\mbox{]} Implémentation du undo/redo
-\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{Interface graphique}\label{index_autotoc_md6}
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Interface graphique}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Page d\textquotesingle{}accueil
@@ -61,8 +69,8 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Affichage de la victoire/\+Défaite
 \item \mbox{[} \mbox{]} Affichage de l\textquotesingle{}aide
 \item \mbox{[}x\mbox{]} Affichage du tour du joueur
-\item \mbox{[} \mbox{]} Interface responsive
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Personnalisation}\label{index_autotoc_md7}
+\item \mbox{[}x\mbox{]} Interface responsive
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Personnalisation}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Personnalisation des jetons
@@ -70,7 +78,7 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Personnalisation de la taille de la grille
 \item \mbox{[}x\mbox{]} Personnalisation du nombre de jetons à aligner pour gagner
 \item \mbox{[}x\mbox{]} Personnalisation de la difficulté de l\textquotesingle{}IA
-\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Bonus}\label{index_autotoc_md8}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{Bonus}\label{index_autotoc_md9}
 
 \begin{DoxyItemize}
 \item \mbox{[}x\mbox{]} Utilisation des bonus en ligne de commande
@@ -78,5 +86,42 @@ Ce projet se divise en trois parties \+: l’algorithmie, le génie logiciel ain
 \item \mbox{[}x\mbox{]} Bonus d\textquotesingle{}inversion de la grille
 \item \mbox{[}x\mbox{]} Bonus de suppression de ligne pleine
 \item \mbox{[}x\mbox{]} Bonus d\textquotesingle{}aide avec Min\+Max
-\item \mbox{[}x\mbox{]} Bonus de retournement de la grille 
+\item \mbox{[}x\mbox{]} Bonus de retournement de la grille
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{index_autotoc_md10}{}\doxysection{Expliquation du code}\label{index_autotoc_md10}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{Documentation}\label{index_autotoc_md11}
+
+\begin{DoxyItemize}
+\item La documentation du code se trouve dans le dossier {\ttfamily docs} à la racine du projet.
+\item Elle peut être générée avec Doxygen, le fichier de configuration doxy\+File se trouve à la racine du projet.
+\item Pour générer la documentation, il suffit de lancer la commande suivante \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen doxyFile}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysubsection{Convention de nommage}\label{index_autotoc_md12}
+
+\begin{DoxyItemize}
+\item Les variables et fonctions sont nommées en snake\+\_\+case.
+\item Les fonctions commencent par un acronyme désignant le fichier et le module dans lequel elles se trouvent.
+\item Les noms de variables commencent par leur type \+:
+\begin{DoxyItemize}
+\item {\ttfamily b\+\_\+} pour les booléens
+\item {\ttfamily i\+\_\+} pour les entiers
+\item {\ttfamily f\+\_\+} pour les flottants
+\item {\ttfamily s\+\_\+} pour les chaînes de caractères
+\item {\ttfamily t\+\_\+} pour les listes
+\item {\ttfamily t\+\_\+} pour les tuples
+\item {\ttfamily npa\+\_\+} pour les tableaux numpy
+\item {\ttfamily tkl\+\_\+} pour les labels tkinter
+\item {\ttfamily tkb\+\_\+} pour les boutons tkinter
+\item {\ttfamily tkc\+\_\+} pour les canvas tkinter
+\item {\ttfamily tksb\+\_\+} pour les spinbox tkinter
+\item {\ttfamily tkf\+\_\+} pour les frames tkinter
+\item {\ttfamily tks\+\_\+} pour les scales tkinter
+\item {\ttfamily tksv\+\_\+} pour les stringvar tkinter 
+\end{DoxyItemize}
 \end{DoxyItemize}
