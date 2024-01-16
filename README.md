@@ -92,7 +92,7 @@ _____________________
 - [ ] Récupération du bonus après l'undo
 
 _____________________
-## Expliquation du code
+## Explication du code
 ### Documentation
 * La documentation du code se trouve dans le dossier `docs` à la racine du 
 projet.
@@ -124,8 +124,9 @@ dans lequel elles se trouvent.
   * `tksv_` pour les stringvar tkinter
 
 ### Améliorations du code envisagées
-* Utilisation de l'orienté objet pour éviter les variables globales
+* Utilisation de l'orienté objet pour éviter les variables globales.
 * Réutilisation des fonctions de src.puissanceQuatre.gestionPartie.py dans 
-src.controller.ctrl_pageJeu.py
-* Amélioration de l'interface pour la rendre moins ennuyante
-* Amélioration de l'interface via le responsive
+src.controller.ctrl_pageJeu.py.
+* Amélioration de l'interface pour la rendre moins ennuyante.
+* Amélioration de l'interface via le responsive.
+* Utilisation d'une classe pour sauvegarder l'état de la partie.
