@@ -26,6 +26,9 @@ global B_BONUS_USED
 def gp_choose_bonus():
     """! Récupère le bonus choisi par le joueur
 
+    Cette fonction permet de récupérer le bonus que le joueur a choisi avant le début
+    de la partie. Elle renvoie le bonus choisi.
+
     @return Le bonus choisi par le joueur
 
     **Variables :**
@@ -43,6 +46,8 @@ def gp_choose_bonus():
 
 def gp_show_rules():
     """! Affiche les règles du jeu
+
+    Cette fonction permet d'afficher les règles dans la console python.
     """
     # Affichage des règles du jeu
     print("Bienvenue dans le puissance 4 !\n"
@@ -56,6 +61,9 @@ def gp_show_rules():
 
 def gp_get_player_choice(i_nb_colonnes: int, npa_grille: np.array) -> str:
     """! Récupère le choix du joueur lors de son tour
+
+    Cette fonction permet de récupérer le choix du joueur lors de son tour. Elle
+    renvoie le choix du joueur.
 
     @param i_nb_colonnes: Nombre de colonnes de la grille
     @param npa_grille: Grille de jeu
@@ -96,6 +104,8 @@ def gp_get_player_choice(i_nb_colonnes: int, npa_grille: np.array) -> str:
 def gp_handle_undo_redo(b_undo: bool, npa_grille: np.array) -> np.array:
     """! Méthode permettant au joueur d'annuler ou de refaire son dernier coup
 
+    Cette fonction permet au joueur d'annuler ou de refaire son dernier coup.
+
     @param b_undo: booléen indiquant si c'est un undo ou un redo (True pour
         undo, False pour redo)
     @param npa_grille: np.array, la grille de jeu
@@ -131,6 +141,9 @@ def gp_handle_undo_redo(b_undo: bool, npa_grille: np.array) -> np.array:
 def gp_use_bonus(s_bonus: str, npa_grille: np.array):
     """! Méthode permettant au joueur d'utiliser son bonus
 
+    Cette fonction permet au joueur d'utiliser son bonus. Elle renvoie la grille
+    modifiée.
+
     @param s_bonus: str, le nom du bonus
     @param npa_grille: np.array, la grille de jeu
     @return: np.array, la grille de jeu modifiée
@@ -153,6 +166,9 @@ def gp_use_bonus(s_bonus: str, npa_grille: np.array):
 
 def gp_handle_player_turn(npa_grille: np.array, s_bonus: str):
     """! Méthode permettant de gérer le tour du joueur
+
+    Cette fonction permet de gérer le tour du joueur. Elle renvoie la grille
+    modifiée.
 
     @param npa_grille: np.array, la grille de jeu
     @param s_bonus: str, le nom du bonus
@@ -195,6 +211,9 @@ def gp_handle_bot_turn(npa_grille: np.array, s_bonus: str,
                        i_nb_jeton_victoire: int):
     """! Méthode permettant de gérer le tour du bot
 
+    Cette fonction permet de gérer le tour du bot. Elle renvoie la grille
+    modifiée.
+
     @param npa_grille: np.array, la grille de jeu
     @param s_bonus: str, le nom du bonus
     @param i_nb_jeton_victoire: int, le nombre de jetons à aligner pour gagner
@@ -225,6 +244,9 @@ def gp_handle_victory(npa_grille: np.array, i_ligne_joueur: int, i_joueur: int,
                       i_colonne_joueur: int, i_nb_jeton_victoire: int):
     """! Méthode permettant de gérer la victoire d'un joueur
 
+    Cette fonction permet de gérer la victoire d'un joueur. Elle renvoie un
+    booléen indiquant si un joueur a gagné ou non.
+
     @param npa_grille: np.array, la grille de jeu
     @param i_ligne_joueur: Entier, la ligne où le joueur veut jouer
     @param i_joueur: Entier, le numéro du joueur
@@ -251,6 +273,10 @@ def gp_handle_victory(npa_grille: np.array, i_ligne_joueur: int, i_joueur: int,
 def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
                       i_nb_jeton_victoire: int = 4):
     """! Gère le déroulement d'une partie de puissance 4
+
+    Cette fonction gère l'entièreté du déroulement d'une partie de puissance 4.
+    Elle prend en paramètre la taille de la grille en lignes, la taille de la
+    grille en colonnes et le nombre de jetons à aligner pour gagner.
 
     Méthode gérant le déroulement d'une partie de puissance 4 en ligne de
     commande.
@@ -318,6 +344,9 @@ def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
 
 def gp_start_game():
     """! Lance une partie normale en ligne de commande
+
+    Cette fonction démarre une partie de puissance 4 dans la console
+    python.
 
     Cette fonction lance une partie normale en ligne de commande avec une grille
     de 6 lignes, 7 colonnes et 4 jetons à aligner pour gagner.

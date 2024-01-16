@@ -20,6 +20,10 @@ import numpy as np
 def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     """! L'initiateur de la grille
 
+    Cette méthode permet d'initialiser la grille de jeu. Elle prend en
+    paramètre le nombre de lignes et de colonnes de la grille et renvoie la
+    grille initialisée.
+
     @pre i_max_ligne > 1 et i_max_colonne > 1
     @param i_max_ligne: Le nombre de lignes de la grille
     @param i_max_colonne: Le nombre de colonnes de la grille
@@ -41,6 +45,9 @@ def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
 
 def pq_reset_grille(npa_grille: np.array) -> np.array:
     """! Réinitialise la grille
+
+    Cette méthode permet de réinitialiser la grille de jeu. Elle prend en
+    paramètre la grille à réinitialiser et renvoie la grille réinitialisée.
 
     **Variables :**
     * i_boucle : Entier
@@ -67,6 +74,9 @@ def pq_reset_grille(npa_grille: np.array) -> np.array:
 
 def pq_print_grille(npa_grille: np.array):
     """! Affiche la grille
+
+    Cette méthode permet d'afficher la grille de jeu. Elle prend en paramètre
+    la grille à afficher.
 
     **Variables :**
     * char_joueur : Le caractère du jeton du joueur
@@ -106,8 +116,10 @@ def pq_print_grille(npa_grille: np.array):
 
 
 def pq_apply_gravity(npa_grille: np.array) -> np.array:
-    """! Applique la gravité sur la grille, cela permet de faire tomber les
-    jetons dans la grille.
+    """! Applique la gravité sur la grille
+
+    Cette méthode permet d'appliquer la gravité sur la grille de jeu. Elle prend
+    en paramètre la grille à modifier et renvoie la grille modifiée.
 
     @pre npa_grille initialisé
     @param npa_grille: La grille à modifier

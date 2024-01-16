@@ -1,8 +1,12 @@
 """! @brief Un programme qui joue au jeu puissance 4++.
 
+@mainpage Projet Puissance 4++
+
+@section description_main Description
 Ce programme est un jeu de puissance 4++ avec une grille de taille variable,
 un nombre de pions à aligner variable, des bonus et un undo.
 
+@section import_section Importations
 Ce programme utilise les modules externes suivants :
 - tkinter
 - numpy
@@ -58,6 +62,10 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
                    i_joueur: int) -> (int, int):
     """! La méthode qui gère le placement de jetons
 
+    Cette méthode permet d'ajouter une pièce dans la colonne indiquée. Elle
+    vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie
+    les coordonnées du nouveau jeton.
+
     Cette méthode permet de placer un jeton dans une colonne donnée. Elle
     vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie
     les coordonnées du nouveau jeton.
@@ -96,98 +104,137 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
     return ti_coords
 
 
-def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
-              i_colonne=0,
-              b_is_first=False, i_tour=0, b_is_the_bonus=False) -> float:
+def pq_minmax(iJoueur, npaGrilleCopy, i_nb_victoire, s_bonus, b_bonus_used,
+              iColonne=0,
+              isFirst=False, tour=0, isthebonus = False) -> (int, float):
     """! Méthode implémentant l'algorithme minmax
+
+    Cette méthode permet de jouer un coup en utilisant l'algorithme minmax.
+    Elle prend en paramètre le joueur qui joue, la grille de jeu, le nombre de
+    jetons à aligner pour gagner, le bonus à jouer, un booléen indiquant si le
+    bonus a déjà été joué, la colonne où jouer le bonus, un booléen indiquant
+    si c'est le premier appel de la méthode, le nombre de tours effectués et un
+    booléen indiquant si le bonus est utilisé ou non.
+
+    **Variables :**
+    * m_module : Module, Le module du bonus
+    * f_bonus : Fonction, La fonction du bonus
+    * result : Liste, La liste contenant les résultats
+    * maximum : Entier, Le maximum de la liste
+    * max_index : Entier, L'indice du maximum de la liste
+    * ligne : Entier, La ligne où le jeton a été posé
+
+    @pre npa_grille initialisé
+    @pre 1 <= i_joueur <= 2
+    @pre 0 <= i_colonne <= npa_grille.shape[0]
+
+    @param iJoueur: Le joueur qui joue (1 pour le joueur, 2 pour le bot)
+    @param npaGrilleCopy: La grille du puissance 4
+    @param i_nb_victoire: Le nombre de jetons à aligner pour gagner
+    @param s_bonus: Le bonus à jouer
+    @param b_bonus_used: Un booléen indiquant si le bonus a déjà été joué
+    @param iColonne: La colonne où jouer le bonus
+    @param isFirst: Un booléen indiquant si c'est le premier appel de la méthode
+    @param tour: Le nombre de tours effectués
+    @param isthebonus: Un booléen indiquant si le bonus est utilisé ou non
+
+    @return La colonne où jouer le jeton
+
+    @todo Optimiser
     """
     # Pour éviter de faire trop de calculs, on limite le nombre de tours à 5
-    if i_tour < 2:
+    if tour < 2:
         # Si le joueur est le joueur humain
-        if i_joueur == 1:
+        if iJoueur == 1:
             # Si on joue un bonus
-            if i_colonne == -1:
+            if iColonne == -1:
                 # On importe le module du bonus
                 m_module = __import__("src.puissanceQuatre.bonus",
                                       fromlist=["bonus"])
                 # On récupère la fonction du bonus
                 f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(s_bonus))
                 # On applique le bonus à la grille
-                npa_grille_copy = f_bonus(npa_grille_copy.copy())
+                npaGrilleCopy = f_bonus(npaGrilleCopy.copy())
                 # On indique que le bonus a été utilisé
                 b_bonus_used = True
             # Sinon
             else:
                 # On joue le jeton dans la colonne
-                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
+                ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
                 # Si le joueur a gagné
-                if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
+                if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
                                i_nb_victoire):
                     # On retourne 10
-                    if b_is_the_bonus:
+                    if isthebonus:
                         return -10
                     else:
                         return 10
             # Si la partie est finie
-            if pq_partie_finie(npa_grille_copy, False):
+            if pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
         # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du
         # premier appel
-        elif i_joueur == 2 and not b_is_first:
+        elif iJoueur == 2 and not isFirst:
             # On joue le jeton dans la colonne
-            i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
+            ligne, _ = pq_ajout_piece(npaGrilleCopy, iColonne, iJoueur)
             # Si l'ordinateur a gagné
-            if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
+            if pq_victoire(npaGrilleCopy, ligne, iColonne, iJoueur,
                            i_nb_victoire):
-                # On retourne 10 si c'est le bonus, -10 sinon
-                return 10 if b_is_the_bonus else -10
+                # On retourne -10
+                if isthebonus:
+                    return 10
+                else:
+                    return -10
             # Si la partie est finie
-            elif pq_partie_finie(npa_grille_copy, False):
+            elif pq_partie_finie(npaGrilleCopy, False):
                 # On retourne 0, indiquant un chemin neutre
                 return 0
         # On change de joueur
-        i_joueur = 2 if i_joueur == 1 else 1
+        if iJoueur == 1:
+            iJoueur = 2
+        else:
+            iJoueur = 1
         # On crée la liste qui contiendra les résultats
-        ti_result = []
+        result = []
         # Pour chaque colonne de la grille
-        for i in range(npa_grille_copy.shape[1]):
+        for i in range(npaGrilleCopy.shape[1]):
             # Si on peut jouer dans la colonne
-            if pq_verif_colonne(i, npa_grille_copy):
+            if pq_verif_colonne(i, npaGrilleCopy):
                 # On ajoute le résultat de l'appel récursif dans la liste (la
                 # moyenne des coups joués)
-                ti_result.append(
-                    pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire,
+                result.append(
+                    pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire,
                               s_bonus, b_bonus_used, i,
-                              False, i_tour + 1))
+                              False, tour + 1))
             else:
-                # Si on ne peut pas jouer dans la colonne, on renvoie -1
-                # (cela évite mieux ces colonnes)
-                ti_result.append(-1)
+                # Si on ne peut pas jouer dans la colonne, on renvoie -1 (cela évite mieux ces colonnes)
+                result.append(-1)
         # Si le bonus n'a pas encore été joué
-        if not b_bonus_used and i_joueur == 1:
+        if not b_bonus_used and iJoueur == 1:
             # On enregistre aussi l'appel qui joue le bonus
-            ti_result.append(
-                pq_minmax(i_joueur, npa_grille_copy.copy(), i_nb_victoire,
-                          s_bonus,
-                          False, -1, False, i_tour + 1))
+            result.append(
+                pq_minmax(iJoueur, npaGrilleCopy.copy(), i_nb_victoire, s_bonus,
+                          False, -1, False, tour + 1))
         # Si c'est le premier appel
-        if i_joueur == 1 and b_is_first:
+        if iJoueur == 1 and isFirst:
+            # On retourne l'indice de la meilleure moyenne coup à jouer
+            maximum = max(result)
             # On récupère l'indice du maximum
-            i_max_index = ti_result.index(max(ti_result))
+            max_index = result.index(maximum)
             # Pour éviter de jouer dans une colonne pleine, on vérifie qu'elle
             # ne l'est pas
-            while (i_max_index >= npa_grille_copy.shape[1]
-                   or not pq_verif_colonne(i_max_index, npa_grille_copy)):
+            while max_index >= npaGrilleCopy.shape[1] or not pq_verif_colonne(max_index, npaGrilleCopy):
                 # Si c'est le cas, on va prendre le deuxième meilleur coup
                 # On met le meilleur coup à -100 pour ne pas le reprendre
-                ti_result[i_max_index] = -100
+                result[max_index] = -100
+                maximum = max(result)
                 # On récupère le nouvel indice du maximum
-                i_max_index = ti_result.index(max(ti_result))
+                max_index = result.index(maximum)
             # On renvoie la colonne à jouer
-            return i_max_index
+            return max_index
         # Sinon on renvoit la moyenne des scores des coups joués
-        return float(sum(ti_result) / len(ti_result))
+        return float(float(sum(result)) / float(len(result)))
     else:
         # Si on a dépassé le nombre de tours, on renvoie 0
         return 0
@@ -196,6 +243,11 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
 def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
                 i_joueur: int, i_nb_victoire: int) -> bool:
     """: Méthode appelant les trois vérifications de victoire.
+
+    Cette méthode permet de vérifier si le joueur a gagné ou non. Elle prend en
+    paramètre la grille de jeu, la ligne et la colonne où le jeton a été posé,
+    le joueur qui a joué et le nombre de jetons à aligner pour gagner. Elle
+    renvoie un booléen indiquant si le joueur a gagné ou non.
 
     @param npa_grille: La grille du puissance 4
     @param i_ligne: La ligne où le jeton a été posé
@@ -218,6 +270,11 @@ def pq_victoire(npa_grille: np.array, i_ligne: int, i_colonne: int,
 def pq_victoire_ligne(npa_grille: np.array, i_ligne: int, i_colonne: int,
                       i_joueur: int, i_nb_victoire: int) -> bool:
     """! Verification de la victoire sur la ligne
+
+    Cette méthode permet de vérifier si le joueur a gagné sur la ligne où il a
+    joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne où
+    le jeton a été posé, le joueur qui a joué et le nombre de jetons à aligner
+    pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné ou non.
 
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
@@ -292,6 +349,11 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
                         i_joueur: int, i_nb_victoire: int) -> bool:
     """! Verification de la victoire sur une colonne
 
+    Cette méthode permet de vérifier si le joueur a gagné sur la colonne où il
+    a joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne où
+    le jeton a été posé, le joueur qui a joué et le nombre de jetons à aligner
+    pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné ou non.
+
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
     * i_nb_lignes : Entier, Nombre de lignes dans la grille
@@ -332,6 +394,12 @@ def pq_victoire_colonne(npa_grille: np.array, i_ligne: int, i_colonne: int,
 def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
                       i_joueur: int, i_nb_victoire: int) -> bool:
     """! Verification de la victoire sur les diagonales
+
+    Cette méthode permet de vérifier si le joueur a gagné sur les diagonales où
+    il a joué. Elle prend en paramètre la grille de jeu, la ligne et la colonne
+    où le jeton a été posé, le joueur qui a joué et le nombre de jetons à
+    aligner pour gagner. Elle renvoie un booléen indiquant si le joueur a gagné
+    ou non.
 
     **Variables :**
     * i_compteur : Entier, Le nombre de jetons du joueur dans la ligne
@@ -375,6 +443,10 @@ def pq_victoire_diago(npa_grille: np.array, i_ligne: int, i_colonne: int,
 def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
     """! Méthode permettant de revenir en arrière dans le jeu
 
+    Cette méthode permet de revenir en arrière dans le jeu. Elle prend en
+    paramètre la grille du puissance 4 et la liste contenant les grilles pour
+    l'undo et le redo. Elle renvoie la grille du puissance 4 après l'undo.
+
     @param npa_grille: La grille du puissance 4
     @param t_undo_redo: La liste contenant les grilles pour l'undo et le redo
     @return La grille du puissance 4 après l'undo
@@ -394,6 +466,10 @@ def pq_undo(npa_grille: np.array, t_undo_redo: list) -> np.array:
 
 def pq_redo(npa_grille: np.array, t_redo: list) -> np.array:
     """! Méthode permettant de revenir en avant dans le jeu
+
+    Cette méthode permet de revenir en avant dans le jeu. Elle prend en
+    paramètre la grille du puissance 4 et la liste contenant les grilles pour
+    l'undo et le redo. Elle renvoie la grille du puissance 4 après le redo.
 
     @param npa_grille: La grille du puissance 4
     @param t_redo: La liste contenant les grilles pour l'undo et le redo
