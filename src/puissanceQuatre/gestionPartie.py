@@ -225,15 +225,15 @@ def gp_handle_bot_turn(npa_grille: np.array, s_bonus: str,
     * i_ligne_joueur : Entier, la ligne où le joueur veut jouer
     """
     # Choix de la colonne où le bot va jouer
-    i_colonne_joueur = pq.pq_minmax(i_joueur=1,
-                                    npa_grille_copy=
-                                    npa_grille.copy(),
-                                    i_nb_victoire=
-                                    i_nb_jeton_victoire,
-                                    b_is_first=True,
-                                    i_tour=0,
-                                    s_bonus=s_bonus,
-                                    b_bonus_used=B_BONUS_USED)
+    i_colonne_joueur = int(pq.pq_minmax(i_joueur=1,
+                                        npa_grille_copy=
+                                        npa_grille.copy(),
+                                        i_nb_victoire=
+                                        i_nb_jeton_victoire,
+                                        b_is_first=True,
+                                        i_tour=0,
+                                        s_bonus=s_bonus,
+                                        b_bonus_used=B_BONUS_USED))
     # Pose du jeton et récupération de la ligne où le jeton a été posé
     i_ligne_joueur, _ = pq.pq_ajout_piece(npa_grille, i_colonne_joueur,
                                           2)
