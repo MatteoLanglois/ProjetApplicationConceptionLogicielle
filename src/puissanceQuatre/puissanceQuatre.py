@@ -52,6 +52,34 @@ def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
     return b_resultat
 
 
+def pq_find_hole(i_colonne: int, npa_grille: np.array) -> int:
+    """! Trouve la première case vide dans une colonne
+
+    Cette fonction permet de trouver la première case vide dans une colonne
+    donnée. Elle vérifie si la colonne est valide et si elle n'est pas pleine.
+    Elle renvoie un entier indiquant la première case vide dans cette colonne.
+
+    **Variables :**
+    * i_max_ligne **Entier** : Nombre de lignes dans la grille
+    * i_boucle **Entier** : Compteur de boucle
+
+    @pre 0 < i_colonne <= npa_grille.shape[0]
+    @pre npa_grille initialisé
+    @param i_colonne: La colonne où on souhaite poser un jeton
+    @param npa_grille: La grille de jeu
+    """
+    # Si on peut jouer dans la colonne
+    if pq_verif_colonne(i_colonne, npa_grille):
+        # Récupération de la taille de la grille
+        i_max_ligne, _ = npa_grille.shape
+        # Pour chaque ligne de la grille
+        for i_boucle in range(i_max_ligne - 1, 0, -1):
+            # Si la case est vide
+            if npa_grille[i_boucle][i_colonne] == 0:
+                # On retourne la ligne
+                return i_boucle
+
+
 def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
                    i_joueur: int) -> (int, int):
     """! La méthode qui gère le placement de jetons
@@ -73,12 +101,12 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
     @return Les coordonnées du nouveau jeton
 
     **Variables :**
-    * i_boucle **Entier** : Compteur de boucle
+    * i_line **Entier** : Compteur de boucle
     * i_max_ligne **Entier** : Nombre de lignes dans la grille
     * ti_coords **Tuple d'entiers** : Coordonnées du nouveau jeton
     """
     # Initialise le compteur de boucle
-    i_boucle = 0
+    i_line = 0
     # Récupère la taille de la grille
     i_max_ligne, _ = npa_grille.shape
     # Initialisation des coordonnées du nouveau jeton
@@ -86,14 +114,12 @@ def pq_ajout_piece(npa_grille: np.array, i_colonne: int,
 
     # Si on peut jouer dans la colonne
     if pq_verif_colonne(i_colonne, npa_grille):
-        # Tant que la case de la grille de notre colonne est vide
-        while i_boucle < i_max_ligne and npa_grille[i_boucle][i_colonne] == 0:
-            # Augmenter le compteur de boucle
-            i_boucle += 1
+        # On récupère la première case vide dans la colonne
+        i_line = pq_find_hole(i_colonne, npa_grille)
         # Ajouter le jeton du joueur dans la dernière case vide
-        npa_grille[i_boucle - 1][i_colonne] = i_joueur
+        npa_grille[i_line][i_colonne] = i_joueur
         # Retourner un tuple des coordonnées du nouveau jeton
-        ti_coords = (i_boucle - 1, i_colonne)
+        ti_coords = (i_line, i_colonne)
     # Retourner les coordonnées du nouveau jeton
     return ti_coords
 

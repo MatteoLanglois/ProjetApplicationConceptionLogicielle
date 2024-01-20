@@ -39,6 +39,8 @@ global I_NB_COLUMNS
 global TKB_BONUS
 # Label pour afficher des informations
 global TKL_INFO
+# Couleur de la grille
+global ST_COLOR_GRID
 
 
 def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
@@ -68,8 +70,10 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # On définit en global les variables tkf_page_jeu, tkc_grid,
     # i_canvas_width, i_canvas_height
     global TKF_PAGE_JEU, TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, TKB_BONUS
-    global TKL_INFO
+    global TKL_INFO, ST_COLOR_GRID
 
+    # On définit la variable globale st_color_grid
+    ST_COLOR_GRID = st_color_grid
     # Création du cadre permettant l'affichage de la page du jeu
     TKF_PAGE_JEU = tk.Frame(tk_root, height=500, width=430, padx=20, pady=20)
     # Affichage du cadre
@@ -98,6 +102,9 @@ def vpj_init_page_jeu(tk_root: tk.Tk, st_color_grid: str):
     # ctrl_pj.ctrl_page_jeu_play(event)
     TKC_GRID.bind('<Button-1>',
                   lambda event: ctrl_pj.cpj_play(event, TKF_PAGE_JEU))
+    # Ajout d'un deuxième event : lorsque l'on bouge la souris sur le canvas
+    # cela appellera la fonction ctrl_pj.ctrl_page_jeu_hover(event)
+    TKC_GRID.bind('<Motion>', lambda event: ctrl_pj.cpj_hover(event))
 
     # Création d'un bouton pour annuler le dernier coup
     tkB_undo = tk.Button(TKF_PAGE_JEU, text="Undo", font=("Helvetica",
@@ -300,3 +307,60 @@ def vpj_set_info(st_info: str):
     """
     global TKL_INFO
     TKL_INFO.config(text=st_info)
+
+
+def vpj_show_hover(i_x: int, i_y: int, s_color: str):
+    """! Affiche le jeton qui sera joué
+
+    Cette fonction affiche le jeton qui sera joué. Elle prend en paramètre les
+    coordonnées de la cellule survolée.
+
+    @param i_x: Coordonnée x de la cellule survolée
+    @param i_y: Coordonnée y de la cellule survolée
+    @param s_color: La couleur du jeton avec une teinte réduite
+    """
+    global TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
+    # On définit la largeur d'une cellule en fonction de la taille du canvas
+    # et du nombre de colonnes dans la grille
+    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
+    # On définit la hauteur d'une cellule en fonction de la taille du canvas
+    # et du nombre de lignes dans la grille
+    cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
+
+    # On calcule les coordonnées du point supérieur gauche de la cellule
+    ti_upper_left = (i_x * cell_width + 5, i_y * cell_height + 5)
+    # On calcule les coordonnées du point inférieur droit de la cellule
+    ti_lower_right = (i_x * cell_width + cell_width - 5,
+                      i_y * cell_height + cell_height - 5)
+    # On dessine le jeton
+    TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill=s_color)
+    # On met à jour la fenêtre
+    ctrl_pj.cpj_update()
+
+
+def vpj_reset_hover(i_x: int, i_y: int):
+    """! Supprime le jeton qui sera joué
+
+    Cette fonction supprime le jeton qui sera joué. Elle prend en paramètre les
+    coordonnées de la cellule survolée.
+
+    @param i_x: Coordonnée x de la cellule survolée
+    @param i_y: Coordonnée y de la cellule survolée
+    """
+    global TKC_GRID, I_CANVAS_WIDTH, I_CANVAS_HEIGHT, I_NB_ROWS, I_NB_COLUMNS
+    # On définit la largeur d'une cellule en fonction de la taille du canvas
+    # et du nombre de colonnes dans la grille
+    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
+    # On définit la hauteur d'une cellule en fonction de la taille du canvas
+    # et du nombre de lignes dans la grille
+    cell_height = I_CANVAS_HEIGHT / I_NB_ROWS
+
+    # On calcule les coordonnées du point supérieur gauche de la cellule
+    ti_upper_left = (i_x * cell_width + 5, i_y * cell_height + 5)
+    # On calcule les coordonnées du point inférieur droit de la cellule
+    ti_lower_right = (i_x * cell_width + cell_width - 5,
+                      i_y * cell_height + cell_height - 5)
+    # On supprime le jeton
+    TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill="white")
+    # On met à jour la fenêtre
+    ctrl_pj.cpj_update()

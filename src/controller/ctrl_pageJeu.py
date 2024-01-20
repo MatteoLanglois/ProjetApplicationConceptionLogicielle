@@ -16,6 +16,8 @@ Ce programme utilise les modules externes suivants :
 import tkinter as tk
 # Importation de numpy
 import numpy as np
+# Importation de typing pour le typage des variables
+from typing import Tuple, List, Callable
 # Importation du controller de la page d'accueil afin d'initialiser la fenêtre
 from src.view import view_pageJeu as view_pj
 # Importation du controller de la page de paramètres afin d'initialiser la
@@ -31,8 +33,10 @@ from src.controller import ctrl_PageBonus as ctrl_pb
 from src.puissanceQuatre import puissanceQuatre as ps4
 # Importation du modèle de la grille de jeu
 from src.puissanceQuatre import grid as gr
-# Importation du modèle des bonus
+# Importation des fonctions utilitaires des bonus
 from src.utils import bonus_utils as bu
+# Importation des fonctions utilitaires des couleurs
+from src.utils import colors_utils as cu
 
 # Variables globales ##########################
 # Grille de jeu
@@ -59,6 +63,8 @@ global I_NB_COLS
 global S_BONUS
 # Bonus utilisé
 global B_BONUS_USED
+# Dernière case survolée
+global TI_LAST_HOVERED_CELL
 
 
 def cpj_init(tk_win_root: tk.Tk):
@@ -86,7 +92,7 @@ def cpj_init(tk_win_root: tk.Tk):
     """
     global T_UNDO_REDO, T_REDO, I_NB_JETONS, ST_COLOR_JOUEUR, ST_COLOR_BOT, \
         I_DIFFICULTY, I_NB_ROWS, I_NB_COLS, NPA_GRID, TK_ROOT, B_BONUS_USED, \
-        S_BONUS
+        S_BONUS, TI_LAST_HOVERED_CELL
 
     # On enregistre la fenêtre principale
     TK_ROOT = tk_win_root
@@ -95,6 +101,9 @@ def cpj_init(tk_win_root: tk.Tk):
     B_BONUS_USED = False
     # On récupère le Bonus choisit
     S_BONUS = ctrl_pb.cpb_get_chosen_bonus()
+
+    # On réinitialise la dernière case survolée
+    TI_LAST_HOVERED_CELL = [-1, -1]
 
     # Initialisation de la liste pour revenir en arrière
     T_UNDO_REDO = []
@@ -416,3 +425,86 @@ def cpj_info_turn(b_is_player: bool):
     else:
         # Afficher le bot qui doit jouer
         view_pj.vpj_set_info("C'est au bot de jouer")
+
+
+def cpj_update_coin():
+    """! Réaffiche les jetons de la grille de jeu
+
+    Cette fonction affiche à nouveau les jetons de la grille de jeu.
+
+    **Variables :**
+    * i_nb_rows : Nombre de lignes de la grille de jeu
+    * i_nb_cols : Nombre de colonnes de la grille de jeu
+    * i_boucle_row : Ligne de la grille de jeu
+    * i_boucle_col : Colonne de la grille de jeu
+
+    @pre tk_root initialisé
+    @post Jetons actualisés
+    """
+    global TK_ROOT
+
+    # Récupération de la taille de la grille
+    i_nb_rows, i_nb_cols = NPA_GRID.shape
+
+    # Pour chaque ligne de la grille
+    for i_boucle_row in range(i_nb_rows):
+        # Pour chaque colonne de la ligne
+        for i_boucle_col in range(i_nb_cols):
+            # S'il y a un jeton à la position I_ROWS, I_COLS
+            if (NPA_GRID[i_boucle_row, i_boucle_col] == 1
+                    or NPA_GRID[i_boucle_row, i_boucle_col] == 2):
+                # Afficher le pion à cette position
+                cpj_put_coin(i_boucle_row, i_boucle_col,
+                             NPA_GRID[i_boucle_row, i_boucle_col])
+
+
+def cpj_hover(event: tk.Event):
+    """! Affiche le jeton qui sera posé
+
+    Cette fonction affiche le jeton qui sera posé lorsque la souris est sur la
+    grille de jeu.
+
+    @pre event est un évènement de la souris
+    @param event: Évènement de la souris sur la grille de jeu
+    @post Affichage du jeton qui sera posé
+
+    **Variables :**
+    * i_grid_x : Colonne de la grille de jeu
+    * i_grid_y : Ligne de la grille de jeu
+    """
+    global ST_COLOR_JOUEUR, TI_LAST_HOVERED_CELL, NPA_GRID, I_NB_ROWS, \
+        I_NB_COLS
+    # On réduit la teinte de la couleur des jetons du joueur
+    s_reduced_color = cu.cu_reduce_hue(ST_COLOR_JOUEUR)
+    # Récupérer la position de la cellule sur laquelle on a cliquée
+    i_grid_x, i_grid_y = view_pj.vpj_get_grid_cell(event.x, event.y)
+    # Si la position est dans la grille
+    if 0 <= i_grid_x < I_NB_COLS and 0 <= i_grid_y < I_NB_ROWS:
+        # On calcule là où le jeton sera posé en fonction de la colonne
+        i_grid_y = ps4.pq_find_hole(i_grid_x, NPA_GRID)
+
+        # Si la dernière case survolée est différente de la case survolée
+        if TI_LAST_HOVERED_CELL != (i_grid_x, i_grid_y) or TI_LAST_HOVERED_CELL \
+                == (-1, -1):
+            # On réinitialise la dernière case survolée
+            view_pj.vpj_reset_hover(TI_LAST_HOVERED_CELL[0],
+                                    TI_LAST_HOVERED_CELL[1])
+            # On enregistre la dernière case survolée
+            TI_LAST_HOVERED_CELL = (i_grid_x, i_grid_y)
+            # Afficher le jeton qui sera posé
+            view_pj.vpj_show_hover(i_grid_x, i_grid_y, s_reduced_color)
+            # On met à jour les jetons
+            cpj_update_coin()
+
+
+
+def cpj_update():
+    """! Actualise l'interface
+
+    Cette fonction actualise l'interface.
+
+    @pre tk_root initialisé
+    @post Interface actualisée
+    """
+    global TK_ROOT
+    ctrl_m.cm_update(TK_ROOT)
