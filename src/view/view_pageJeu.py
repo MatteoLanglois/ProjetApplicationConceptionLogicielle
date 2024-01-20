@@ -432,12 +432,6 @@ def vpj_bot_turn(i_line: int, i_column: int, s_color: str):
     # On attend 0.5 seconde
     TKC_GRID.after(200)
     # On supprime la colonne
-    TKC_GRID.create_rectangle((i_column * cell_width, 0),
-                              ((i_column + 1) * cell_width, I_CANVAS_HEIGHT),
-                              fill=ST_COLOR_GRID, outline=ST_COLOR_GRID)
-    # Pour tous les jetons au-dessus de la ligne où le bot va jouer
-    for i_rows in range(i_line):
-        # On dessine le rond blanc
-        vpj_show_coin(i_rows, i_column, "white")
+    ctrl_pj.cpj_update_grid()
     # On met à jour la fenêtre
     ctrl_pj.cpj_update()
