@@ -102,6 +102,18 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a817d4dee00b53adbe1546300e6f48c5c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a817d4dee00b53adbe1546300e6f48c5c">vpj_set_info</a> (str st_info)</td></tr>
 <tr class="memdesc:a817d4dee00b53adbe1546300e6f48c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le texte du label d'information.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#a817d4dee00b53adbe1546300e6f48c5c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a817d4dee00b53adbe1546300e6f48c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dcdd844a8ec6cd893549f47d3de67c1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a6dcdd844a8ec6cd893549f47d3de67c1">vpj_show_hover</a> (int i_x, int i_y, str s_color)</td></tr>
+<tr class="memdesc:a6dcdd844a8ec6cd893549f47d3de67c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le jeton qui sera joué  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#a6dcdd844a8ec6cd893549f47d3de67c1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6dcdd844a8ec6cd893549f47d3de67c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c42a66d7b3e4ea7b855242958f35faa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a8c42a66d7b3e4ea7b855242958f35faa">vpj_reset_hover</a> (int i_x, int i_y)</td></tr>
+<tr class="memdesc:a8c42a66d7b3e4ea7b855242958f35faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le jeton qui sera joué  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#a8c42a66d7b3e4ea7b855242958f35faa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8c42a66d7b3e4ea7b855242958f35faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81202a33309b28df706a2d5d8aa9996"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#ae81202a33309b28df706a2d5d8aa9996">vpj_bonus_activation</a> ()</td></tr>
+<tr class="memdesc:ae81202a33309b28df706a2d5d8aa9996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui fait clignoter la grille pour indiquer que le bonus est activé  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#ae81202a33309b28df706a2d5d8aa9996">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae81202a33309b28df706a2d5d8aa9996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7dd6ce5f05ed66c18522b68289ee8ab"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#ab7dd6ce5f05ed66c18522b68289ee8ab">vpj_bot_turn</a> (int i_line, int i_column, str s_color)</td></tr>
+<tr class="memdesc:ab7dd6ce5f05ed66c18522b68289ee8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui change la couleur de la colonne dans laquelle le bot va jouer.  <a href="namespacesrc_1_1view_1_1view__pageJeu.html#ab7dd6ce5f05ed66c18522b68289ee8ab">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab7dd6ce5f05ed66c18522b68289ee8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
@@ -115,6 +127,80 @@ Fonctions</h2></td></tr>
 </li>
 </ul>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ae81202a33309b28df706a2d5d8aa9996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81202a33309b28df706a2d5d8aa9996">&#9670;&nbsp;</a></span>vpj_bonus_activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.view.view_pageJeu.vpj_bonus_activation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui fait clignoter la grille pour indiquer que le bonus est activé </p>
+<p>Cette fonction fait clignoter la grille pour indiquer que le bonus est activé. Elle est appelée par le contrôleur de la page de jeu.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>TKC_GRID initialisé</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>TKC_GRID : Canvas de la page de jeu</li>
+<li>ST_COLOR_GRID : Couleur de la grille au format hexadécimal </li>
+</ul>
+
+</div>
+</div>
+<a id="ab7dd6ce5f05ed66c18522b68289ee8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dd6ce5f05ed66c18522b68289ee8ab">&#9670;&nbsp;</a></span>vpj_bot_turn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.view.view_pageJeu.vpj_bot_turn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>s_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui change la couleur de la colonne dans laquelle le bot va jouer. </p>
+<p>Fonction qui change la couleur de la colonne dans laquelle le bot va jouer. Elle est appelée par le contrôleur de la page de jeu. Elle permet de visualiser la colonne dans laquelle le bot va jouer.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>TKC_GRID initialisé </dd>
+<dd>
+I_NB_COLUMNS initialisé </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_line</td><td>Ligne dans laquelle le bot va jouer </td></tr>
+    <tr><td class="paramname">i_column</td><td>Colonne dans laquelle le bot va jouer </td></tr>
+    <tr><td class="paramname">s_color</td><td>Couleur du bot au format hexadécimal</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Variables :</b> </p>
+
+</div>
+</div>
 <a id="aba56a0358fac83aeeed378578565bf65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba56a0358fac83aeeed378578565bf65">&#9670;&nbsp;</a></span>vpj_destroy()</h2>
 
@@ -326,6 +412,44 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8c42a66d7b3e4ea7b855242958f35faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c42a66d7b3e4ea7b855242958f35faa">&#9670;&nbsp;</a></span>vpj_reset_hover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.view.view_pageJeu.vpj_reset_hover </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime le jeton qui sera joué </p>
+<p>Cette fonction supprime le jeton qui sera joué. Elle prend en paramètre les coordonnées de la cellule survolée.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_x</td><td>Coordonnée x de la cellule survolée </td></tr>
+    <tr><td class="paramname">i_y</td><td>Coordonnée y de la cellule survolée </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a817d4dee00b53adbe1546300e6f48c5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a817d4dee00b53adbe1546300e6f48c5c">&#9670;&nbsp;</a></span>vpj_set_info()</h2>
 
@@ -392,6 +516,51 @@ Fonctions</h2></td></tr>
     <tr><td class="paramname">i_row</td><td>Ligne de la cellule où l'on va dessiner le jeton </td></tr>
     <tr><td class="paramname">i_column</td><td>Colonne de la cellule où l'on va dessiner le jeton </td></tr>
     <tr><td class="paramname">color</td><td>Couleur du jeton </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6dcdd844a8ec6cd893549f47d3de67c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcdd844a8ec6cd893549f47d3de67c1">&#9670;&nbsp;</a></span>vpj_show_hover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.view.view_pageJeu.vpj_show_hover </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>s_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche le jeton qui sera joué </p>
+<p>Cette fonction affiche le jeton qui sera joué. Elle prend en paramètre les coordonnées de la cellule survolée.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_x</td><td>Coordonnée x de la cellule survolée </td></tr>
+    <tr><td class="paramname">i_y</td><td>Coordonnée y de la cellule survolée </td></tr>
+    <tr><td class="paramname">s_color</td><td>La couleur du jeton avec une teinte réduite </td></tr>
   </table>
   </dd>
 </dl>

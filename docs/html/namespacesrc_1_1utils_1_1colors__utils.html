@@ -81,12 +81,18 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aff7eee88e24302eb29145e855777ced6"><td class="memItemLeft" align="right" valign="top">(int, int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aff7eee88e24302eb29145e855777ced6">cu_hex_to_rgb</a> (str s_color)</td></tr>
 <tr class="memdesc:aff7eee88e24302eb29145e855777ced6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une couleur hexadécimale en RGB.  <a href="namespacesrc_1_1utils_1_1colors__utils.html#aff7eee88e24302eb29145e855777ced6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aff7eee88e24302eb29145e855777ced6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac192ed293f57672fd6dd1dc72e934b6d"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ac192ed293f57672fd6dd1dc72e934b6d">cu_rgb_to_hex</a> ((int, int, int) rgb)</td></tr>
+<tr class="memdesc:ac192ed293f57672fd6dd1dc72e934b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une couleur RGB en hexadécimal.  <a href="namespacesrc_1_1utils_1_1colors__utils.html#ac192ed293f57672fd6dd1dc72e934b6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac192ed293f57672fd6dd1dc72e934b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae837cf3d4fe1d34a89570faa533ce262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ae837cf3d4fe1d34a89570faa533ce262">cu_rgb_distance</a> ((int, int, int) rgb1,(int, int, int) rgb2)</td></tr>
 <tr class="memdesc:ae837cf3d4fe1d34a89570faa533ce262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la distance entre deux couleurs RGB.  <a href="namespacesrc_1_1utils_1_1colors__utils.html#ae837cf3d4fe1d34a89570faa533ce262">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae837cf3d4fe1d34a89570faa533ce262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea89fda63d253c8d3c7444d3038fd0e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aea89fda63d253c8d3c7444d3038fd0e8">cu_colors_too_close</a> (str color1, str color2)</td></tr>
 <tr class="memdesc:aea89fda63d253c8d3c7444d3038fd0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si deux couleurs sont trop proches.  <a href="namespacesrc_1_1utils_1_1colors__utils.html#aea89fda63d253c8d3c7444d3038fd0e8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aea89fda63d253c8d3c7444d3038fd0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad084cedc6f1df119151c2f6b2d96e9"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#a7ad084cedc6f1df119151c2f6b2d96e9">cu_reduce_hue</a> (str i_hue)</td></tr>
+<tr class="memdesc:a7ad084cedc6f1df119151c2f6b2d96e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réduit la teinte d'une couleur.  <a href="namespacesrc_1_1utils_1_1colors__utils.html#a7ad084cedc6f1df119151c2f6b2d96e9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ad084cedc6f1df119151c2f6b2d96e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
@@ -167,6 +173,34 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7ad084cedc6f1df119151c2f6b2d96e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad084cedc6f1df119151c2f6b2d96e9">&#9670;&nbsp;</a></span>cu_reduce_hue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str src.utils.colors_utils.cu_reduce_hue </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>i_hue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réduit la teinte d'une couleur. </p>
+<p>Cette fonction réduit la teinte d'une couleur.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_hue</td><td>Teinte de la couleur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Teinte de la couleur réduite </dd></dl>
+
+</div>
+</div>
 <a id="ae837cf3d4fe1d34a89570faa533ce262"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae837cf3d4fe1d34a89570faa533ce262">&#9670;&nbsp;</a></span>cu_rgb_distance()</h2>
 
@@ -203,6 +237,34 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Distance entre les deux couleurs </dd></dl>
+
+</div>
+</div>
+<a id="ac192ed293f57672fd6dd1dc72e934b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac192ed293f57672fd6dd1dc72e934b6d">&#9670;&nbsp;</a></span>cu_rgb_to_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str src.utils.colors_utils.cu_rgb_to_hex </td>
+          <td>(</td>
+          <td class="paramtype">(int, int, int)&#160;</td>
+          <td class="paramname"><em>rgb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convertit une couleur RGB en hexadécimal. </p>
+<p>Cette fonction convertit une couleur RGB en hexadécimal.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Couleur RGB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Couleur hexadécimale </dd></dl>
 
 </div>
 </div>

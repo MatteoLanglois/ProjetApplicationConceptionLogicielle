@@ -35,7 +35,7 @@ def tp_verif_colonne():
     remplie
     @test Vérifie que la fonction renvoie False si la npa_grille est pleine
     """
-    npa_grille = gr.pq_init_grille(6, 7)
+    npa_grille = gr.gr_init_grille(6, 7)
     # Cas où la npa_grille est vide
     for i_boucle in range(0, 6):
         assert ps4.pq_verif_colonne(i_boucle, npa_grille), \
@@ -87,7 +87,7 @@ def tp_ajout_piece():
     @test Vérifie que la fonction ne renvoie pas de coordonnées quand on ne
     peut pas ajouter de pièce
     """
-    npa_grille = gr.pq_init_grille(6, 7)
+    npa_grille = gr.gr_init_grille(6, 7)
     # Cas où une seule pièce est ajoutée par le joueur
     ti_coords = ps4.pq_ajout_piece(npa_grille, 0, 1)
     assert npa_grille[ti_coords] == 1 and ti_coords == (5, 0), \
@@ -126,7 +126,7 @@ def tp_victoire_ligne():
     @test Vérifie que la fonction renvoie True si le bot gagne
     @test Vérifie que la fonction renvoie False si personne ne gagne
     """
-    npa_grille = gr.pq_init_grille(6, 7)
+    npa_grille = gr.gr_init_grille(6, 7)
     ti_coords = (0, 0)
 
     # Cas où le joueur gagne
@@ -137,7 +137,7 @@ def tp_victoire_ligne():
         "pq_victoire_ligne non fonctionnel dans le cas où le joueur gagne"
 
     # Cas où le bot gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 4):
         ti_coords = ps4.pq_ajout_piece(npa_grille, i_boucle, 2)
     assert ps4.pq_victoire_ligne(npa_grille, ti_coords[0], ti_coords[1],
@@ -145,7 +145,7 @@ def tp_victoire_ligne():
         "pq_victoire_ligne non fonctionnel dans le cas où le bot gagne"
 
     # Cas où personne ne gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 3):
         ti_coords = ps4.pq_ajout_piece(npa_grille, i_boucle, 2)
     assert not ps4.pq_victoire_ligne(npa_grille, ti_coords[0], ti_coords[1],
@@ -165,7 +165,7 @@ def tp_victoire_colonne():
     @test Vérifie que la fonction renvoie True si le bot gagne
     @test Vérifie que la fonction renvoie False si personne ne gagne
     """
-    npa_grille = gr.pq_init_grille(6, 7)
+    npa_grille = gr.gr_init_grille(6, 7)
     ti_coords = (0, 0)
     # Cas où le joueur gagne
     for i_boucle in range(0, 4):
@@ -175,14 +175,14 @@ def tp_victoire_colonne():
         "pq_victoire_colonne non fonctionnel dans le cas où le joueur gagne"
 
     # Cas où le bot gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 4):
         ti_coords = ps4.pq_ajout_piece(npa_grille, 0, 2)
     assert ps4.pq_victoire_colonne(npa_grille, ti_coords[0], ti_coords[1], 2, 4), \
         "pq_victoire_colonne non fonctionnel dans le cas où le bot gagne"
 
     # Cas où personne ne gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 3):
         ti_coords = ps4.pq_ajout_piece(npa_grille, 0, 2)
     assert not ps4.pq_victoire_colonne(npa_grille, ti_coords[0], ti_coords[1], 2,
@@ -203,7 +203,7 @@ def tp_victoire_diago():
     @test Vérifie que la fonction renvoie True si le bot gagne
     @test Vérifie que la fonction renvoie False si personne ne gagne
     """
-    npa_grille = gr.pq_init_grille(6, 7)
+    npa_grille = gr.gr_init_grille(6, 7)
     ti_coords = (0, 0)
     # Cas où le joueur gagne
     for i_boucle in range(0, 4):
@@ -215,7 +215,7 @@ def tp_victoire_diago():
         "pq_victoire_diagonale non fonctionnel dans le cas où le joueur gagne"
 
     # Cas où le bot gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 4):
         for i_boucle2 in range(0, i_boucle):
             ps4.pq_ajout_piece(npa_grille, i_boucle, 1)
@@ -225,7 +225,7 @@ def tp_victoire_diago():
         "pq_victoire_diagonale non fonctionnel dans le cas où le bot gagne"
 
     # Cas où personne ne gagne
-    gr.pq_reset_grille(npa_grille)
+    gr.gr_reset_grille(npa_grille)
     for i_boucle in range(0, 3):
         for i_boucle2 in range(0, i_boucle):
             ps4.pq_ajout_piece(npa_grille, i_boucle, 1)

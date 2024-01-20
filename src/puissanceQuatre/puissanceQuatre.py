@@ -18,6 +18,7 @@ la gestion du jeu.
 import numpy as np
 # Importation des bonus
 from src.utils import bonus_utils as bu
+from src.puissanceQuatre import grid as gr
 
 
 def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
@@ -47,7 +48,6 @@ def pq_verif_colonne(i_colonne: int, npa_grille: np.array) -> bool:
     for i_boucle in range(i_max_ligne):
         # b_resultat reçoit Vrai si la case est bien vide
         b_resultat = b_resultat or (npa_grille[i_boucle][i_colonne] == 0)
-
     # Retourner le résultat
     return b_resultat
 
@@ -178,17 +178,18 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
                 b_bonus_used = True
             # Sinon
             else:
-                # On joue le jeton dans la colonne
-                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne,
-                                            i_joueur)
-                # Si le joueur a gagné
-                if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
-                               i_nb_victoire):
-                    # On retourne 10
-                    if b_is_the_bonus:
-                        return -10
-                    else:
-                        return 10
+                if pq_verif_colonne(i_colonne, npa_grille_copy):
+                    # On joue le jeton dans la colonne
+                    i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne,
+                                                i_joueur)
+                    # Si on peut bien poser un jeton dans la ligne
+                    if i_ligne is not None:
+                        # Si le joueur a gagné
+                        if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
+                                       i_nb_victoire):
+                            # On retourne -10 si b_is_the_bonus, 10 sinon
+                            return -10 if b_is_the_bonus else 10
+                    return -10
             # Si la partie est finie
             if pq_partie_finie(npa_grille_copy, False):
                 # On retourne 0, indiquant un chemin neutre
@@ -196,16 +197,17 @@ def pq_minmax(i_joueur, npa_grille_copy, i_nb_victoire, s_bonus, b_bonus_used,
         # Sinon si c'est à l'ordinateur de jouer, et qu'il ne s'agit pas du
         # premier appel
         elif i_joueur == 2 and not b_is_first:
-            # On joue le jeton dans la colonne
-            i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
-            # Si l'ordinateur a gagné
-            if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
-                           i_nb_victoire):
-                # On retourne -10
-                if b_is_the_bonus:
-                    return 10
-                else:
-                    return -10
+            if pq_verif_colonne(i_colonne, npa_grille_copy):
+                # On joue le jeton dans la colonne
+                i_ligne, _ = pq_ajout_piece(npa_grille_copy, i_colonne, i_joueur)
+                # Si l'ordinateur a gagné
+                if pq_victoire(npa_grille_copy, i_ligne, i_colonne, i_joueur,
+                               i_nb_victoire):
+                    # On retourne -10
+                    if b_is_the_bonus:
+                        return 10
+                    else:
+                        return -10
             # Si la partie est finie
             elif pq_partie_finie(npa_grille_copy, False):
                 # On retourne 0, indiquant un chemin neutre

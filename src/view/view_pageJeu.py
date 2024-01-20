@@ -364,3 +364,80 @@ def vpj_reset_hover(i_x: int, i_y: int):
     TKC_GRID.create_oval((ti_upper_left, ti_lower_right), fill="white")
     # On met à jour la fenêtre
     ctrl_pj.cpj_update()
+
+
+def vpj_bonus_activation():
+    """! Fonction qui fait clignoter la grille pour indiquer que le bonus est
+    activé
+
+    Cette fonction fait clignoter la grille pour indiquer que le bonus est
+    activé. Elle est appelée par le contrôleur de la page de jeu.
+
+    @pre TKC_GRID initialisé
+
+    **Variables :**
+    * TKC_GRID : Canvas de la page de jeu
+    * ST_COLOR_GRID : Couleur de la grille au format hexadécimal
+    """
+    global TKC_GRID, ST_COLOR_GRID
+    for _ in range(3):
+        # On fait clignoter la grille
+        TKC_GRID.config(bg="red")
+        # On met à jour la fenêtre
+        ctrl_pj.cpj_update()
+        # On attend 0.1 seconde
+        TKC_GRID.after(100)
+        # On remet la couleur de la grille
+        TKC_GRID.config(bg=ST_COLOR_GRID)
+        # On met à jour la fenêtre
+        ctrl_pj.cpj_update()
+        # On attend 0.1 seconde
+        TKC_GRID.after(100)
+
+    return
+
+
+def vpj_bot_turn(i_line: int, i_column: int, s_color: str):
+    """! Fonction qui change la couleur de la colonne dans laquelle le bot va
+    jouer
+
+    Fonction qui change la couleur de la colonne dans laquelle le bot va jouer.
+    Elle est appelée par le contrôleur de la page de jeu. Elle permet de
+    visualiser la colonne dans laquelle le bot va jouer.
+
+    @pre TKC_GRID initialisé
+    @pre I_NB_COLUMNS initialisé
+    @param i_line: Ligne dans laquelle le bot va jouer
+    @param i_column: Colonne dans laquelle le bot va jouer
+    @param s_color: Couleur du bot au format hexadécimal
+
+    **Variables :**
+
+    """
+    global TKC_GRID, I_NB_COLUMNS, ST_COLOR_GRID
+    # On définit la largeur d'une cellule en fonction de la taille du canvas
+    # et du nombre de colonnes dans la grille
+    cell_width = I_CANVAS_WIDTH / I_NB_COLUMNS
+    # On dessine la colonne en rouge
+    TKC_GRID.create_rectangle((i_column * cell_width, 0),
+                              ((i_column + 1) * cell_width, I_CANVAS_HEIGHT),
+                              fill=s_color, outline=s_color)
+    # Pour tous les jetons au-dessus de la ligne où le bot va jouer
+    for i_rows in range(i_line + 1):
+        # On dessine le rond blanc
+        vpj_show_coin(i_rows, i_column, "white")
+
+    # On met à jour la fenêtre
+    ctrl_pj.cpj_update()
+    # On attend 0.5 seconde
+    TKC_GRID.after(200)
+    # On supprime la colonne
+    TKC_GRID.create_rectangle((i_column * cell_width, 0),
+                              ((i_column + 1) * cell_width, I_CANVAS_HEIGHT),
+                              fill=ST_COLOR_GRID, outline=ST_COLOR_GRID)
+    # Pour tous les jetons au-dessus de la ligne où le bot va jouer
+    for i_rows in range(i_line):
+        # On dessine le rond blanc
+        vpj_show_coin(i_rows, i_column, "white")
+    # On met à jour la fenêtre
+    ctrl_pj.cpj_update()

@@ -35,7 +35,7 @@ def tg_init_grille():
     liste_tailles = [2, 5, 7, 100]
     for i_boucle in liste_tailles:
         for i_boucle_2 in liste_tailles:
-            npa_grille = gr.pq_init_grille(i_boucle, i_boucle_2)
+            npa_grille = gr.gr_init_grille(i_boucle, i_boucle_2)
             assert np.array_equal(npa_grille, np.zeros((i_boucle, i_boucle_2))), \
                 "pq_init_grille non fonctionnel"
 

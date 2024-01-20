@@ -101,7 +101,7 @@ def p4b_remove_full_line(npa_grid: np.array) -> np.array:
                     # Redescendre les pions
                     npa_grid[i_row2, i_col] = npa_grid[i_row2 + 1, i_col]
     #Application de la gravité
-    npa_grid = gr.pq_apply_gravity(npa_grid)
+    npa_grid = gr.gr_apply_gravity(npa_grid)
     # Renvoyer la grille
     return npa_grid
 
@@ -163,7 +163,7 @@ def p4b_flip_grid(npa_grid: np.array) -> np.array:
     # On retourne la grille
     npa_grid = np.flip(npa_grid.copy(), 0)
     # On applique la gravité
-    npa_grid = gr.pq_apply_gravity(npa_grid)
+    npa_grid = gr.gr_apply_gravity(npa_grid)
     # On retourne la grille
     return npa_grid
 

@@ -23,7 +23,15 @@ def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a200675c1948e4b941a19
 tk.\+Frame \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a7a6943df6975a6283f8f331171537eef}{vpj\+\_\+get\+\_\+frame}} ()
 \begin{DoxyCompactList}\small\item\em Accesseur de la frame de la page de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a817d4dee00b53adbe1546300e6f48c5c}{vpj\+\_\+set\+\_\+info}} (str st\+\_\+info)
-\begin{DoxyCompactList}\small\item\em Modifie le texte du label d\textquotesingle{}information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Modifie le texte du label d\textquotesingle{}information. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a6dcdd844a8ec6cd893549f47d3de67c1}{vpj\+\_\+show\+\_\+hover}} (int i\+\_\+x, int i\+\_\+y, str s\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Affiche le jeton qui sera joué \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_a8c42a66d7b3e4ea7b855242958f35faa}{vpj\+\_\+reset\+\_\+hover}} (int i\+\_\+x, int i\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Supprime le jeton qui sera joué \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_ae81202a33309b28df706a2d5d8aa9996}{vpj\+\_\+bonus\+\_\+activation}} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui fait clignoter la grille pour indiquer que le bonus est activé \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1view_1_1view__pageJeu_ab7dd6ce5f05ed66c18522b68289ee8ab}{vpj\+\_\+bot\+\_\+turn}} (int i\+\_\+line, int i\+\_\+column, str s\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Fonction qui change la couleur de la colonne dans laquelle le bot va jouer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -43,7 +51,52 @@ Ce module contient les fonctions permettant de gérer la vue de la page de jeu.
 \end{DoxyItemize}
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}\label{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}} 
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_ae81202a33309b28df706a2d5d8aa9996}\label{namespacesrc_1_1view_1_1view__pageJeu_ae81202a33309b28df706a2d5d8aa9996}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_bonus\_activation@{vpj\_bonus\_activation}}
+\index{vpj\_bonus\_activation@{vpj\_bonus\_activation}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_bonus\_activation()}{vpj\_bonus\_activation()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+bonus\+\_\+activation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui fait clignoter la grille pour indiquer que le bonus est activé 
+
+Cette fonction fait clignoter la grille pour indiquer que le bonus est activé. Elle est appelée par le contrôleur de la page de jeu.
+
+\begin{DoxyPrecond}{Précondition}
+TKC\+\_\+\+GRID initialisé
+\end{DoxyPrecond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item TKC\+\_\+\+GRID \+: Canvas de la page de jeu
+\item ST\+\_\+\+COLOR\+\_\+\+GRID \+: Couleur de la grille au format hexadécimal 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_ab7dd6ce5f05ed66c18522b68289ee8ab}\label{namespacesrc_1_1view_1_1view__pageJeu_ab7dd6ce5f05ed66c18522b68289ee8ab}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_bot\_turn@{vpj\_bot\_turn}}
+\index{vpj\_bot\_turn@{vpj\_bot\_turn}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_bot\_turn()}{vpj\_bot\_turn()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+bot\+\_\+turn (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+line,  }\item[{int}]{i\+\_\+column,  }\item[{str}]{s\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Fonction qui change la couleur de la colonne dans laquelle le bot va jouer. 
+
+Fonction qui change la couleur de la colonne dans laquelle le bot va jouer. Elle est appelée par le contrôleur de la page de jeu. Elle permet de visualiser la colonne dans laquelle le bot va jouer.
+
+\begin{DoxyPrecond}{Précondition}
+TKC\+\_\+\+GRID initialisé 
+
+I\+\_\+\+NB\+\_\+\+COLUMNS initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+line} & Ligne dans laquelle le bot va jouer \\
+\hline
+{\em i\+\_\+column} & Colonne dans laquelle le bot va jouer \\
+\hline
+{\em s\+\_\+color} & Couleur du bot au format hexadécimal\\
+\hline
+\end{DoxyParams}
+{\bfseries{Variables \+:}} \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}\label{namespacesrc_1_1view_1_1view__pageJeu_aba56a0358fac83aeeed378578565bf65}} 
 \index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_destroy@{vpj\_destroy}}
 \index{vpj\_destroy@{vpj\_destroy}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{vpj\_destroy()}{vpj\_destroy()}}
@@ -193,6 +246,25 @@ Cette fonction initialise la page de jeu. Elle crée un cadre, un canvas pour af
 {\em st\+\_\+color\+\_\+grid} & Couleur de la grille au format hexadécimal \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a8c42a66d7b3e4ea7b855242958f35faa}\label{namespacesrc_1_1view_1_1view__pageJeu_a8c42a66d7b3e4ea7b855242958f35faa}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_reset\_hover@{vpj\_reset\_hover}}
+\index{vpj\_reset\_hover@{vpj\_reset\_hover}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_reset\_hover()}{vpj\_reset\_hover()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+reset\+\_\+hover (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+x,  }\item[{int}]{i\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Supprime le jeton qui sera joué 
+
+Cette fonction supprime le jeton qui sera joué. Elle prend en paramètre les coordonnées de la cellule survolée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+x} & Coordonnée x de la cellule survolée \\
+\hline
+{\em i\+\_\+y} & Coordonnée y de la cellule survolée \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a817d4dee00b53adbe1546300e6f48c5c}\label{namespacesrc_1_1view_1_1view__pageJeu_a817d4dee00b53adbe1546300e6f48c5c}} 
 \index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_set\_info@{vpj\_set\_info}}
 \index{vpj\_set\_info@{vpj\_set\_info}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
@@ -229,5 +301,26 @@ Cette fonction dessine un jeton dans une cellule. Elle prend en paramètre la li
 {\em i\+\_\+column} & Colonne de la cellule où l\textquotesingle{}on va dessiner le jeton \\
 \hline
 {\em color} & Couleur du jeton \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1view_1_1view__pageJeu_a6dcdd844a8ec6cd893549f47d3de67c1}\label{namespacesrc_1_1view_1_1view__pageJeu_a6dcdd844a8ec6cd893549f47d3de67c1}} 
+\index{src.view.view\_pageJeu@{src.view.view\_pageJeu}!vpj\_show\_hover@{vpj\_show\_hover}}
+\index{vpj\_show\_hover@{vpj\_show\_hover}!src.view.view\_pageJeu@{src.view.view\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{vpj\_show\_hover()}{vpj\_show\_hover()}}
+{\footnotesize\ttfamily def src.\+view.\+view\+\_\+page\+Jeu.\+vpj\+\_\+show\+\_\+hover (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+x,  }\item[{int}]{i\+\_\+y,  }\item[{str}]{s\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Affiche le jeton qui sera joué 
+
+Cette fonction affiche le jeton qui sera joué. Elle prend en paramètre les coordonnées de la cellule survolée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+x} & Coordonnée x de la cellule survolée \\
+\hline
+{\em i\+\_\+y} & Coordonnée y de la cellule survolée \\
+\hline
+{\em s\+\_\+color} & La couleur du jeton avec une teinte réduite \\
 \hline
 \end{DoxyParams}

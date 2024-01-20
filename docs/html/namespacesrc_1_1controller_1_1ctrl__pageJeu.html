@@ -111,6 +111,15 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a9b24be9078b1c7e614d53bfda036587f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a9b24be9078b1c7e614d53bfda036587f">cpj_info_turn</a> (bool b_is_player)</td></tr>
 <tr class="memdesc:a9b24be9078b1c7e614d53bfda036587f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le joueur qui doit jouer.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a9b24be9078b1c7e614d53bfda036587f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9b24be9078b1c7e614d53bfda036587f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa44bf9c2e10d25ff9e39ac5e0dc5726"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#afa44bf9c2e10d25ff9e39ac5e0dc5726">cpj_update_coin</a> ()</td></tr>
+<tr class="memdesc:afa44bf9c2e10d25ff9e39ac5e0dc5726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réaffiche les jetons de la grille de jeu.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#afa44bf9c2e10d25ff9e39ac5e0dc5726">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afa44bf9c2e10d25ff9e39ac5e0dc5726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c55e41a86c25e68af7e46b69ca7fbd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac2c55e41a86c25e68af7e46b69ca7fbd">cpj_hover</a> (tk.Event event)</td></tr>
+<tr class="memdesc:ac2c55e41a86c25e68af7e46b69ca7fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le jeton qui sera posé  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac2c55e41a86c25e68af7e46b69ca7fbd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac2c55e41a86c25e68af7e46b69ca7fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526e2cc7f8308a8a2c1da0c5730947af"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a526e2cc7f8308a8a2c1da0c5730947af">cpj_update</a> ()</td></tr>
+<tr class="memdesc:a526e2cc7f8308a8a2c1da0c5730947af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualise l'interface.  <a href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a526e2cc7f8308a8a2c1da0c5730947af">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a526e2cc7f8308a8a2c1da0c5730947af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un programme qui joue au jeu puissance 4++. </p>
@@ -152,8 +161,9 @@ Fonctions</h2></td></tr>
 <p><b>Variables :</b></p><ul>
 <li>I_NB_JETONS : Nombre de jetons à aligner pour gagner</li>
 <li>I_DIFFICULTY : Difficulté du bot</li>
-<li>i_grid_x : Colonne de la grille de jeu</li>
-<li>i_grid_y : Ligne de la grille de jeu </li>
+<li>ST_COLOR_BOT : Couleur des jetons du bot</li>
+<li>i_column : Colonne de la grille de jeu</li>
+<li>i_line : Ligne de la grille de jeu </li>
 </ul>
 
 </div>
@@ -197,6 +207,39 @@ i_nb_columns &gt; 0 </dd></dl>
   </dd>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>grille de jeu dessinée </dd></dl>
+
+</div>
+</div>
+<a id="ac2c55e41a86c25e68af7e46b69ca7fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c55e41a86c25e68af7e46b69ca7fbd">&#9670;&nbsp;</a></span>cpj_hover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_pageJeu.cpj_hover </td>
+          <td>(</td>
+          <td class="paramtype">tk.Event&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche le jeton qui sera posé </p>
+<p>Cette fonction affiche le jeton qui sera posé lorsque la souris est sur la grille de jeu.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>event est un évènement de la souris </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Évènement de la souris sur la grille de jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Affichage du jeton qui sera posé</dd></dl>
+<p><b>Variables :</b></p><ul>
+<li>i_grid_x : Colonne de la grille de jeu</li>
+<li>i_grid_y : Ligne de la grille de jeu </li>
+</ul>
 
 </div>
 </div>
@@ -433,6 +476,56 @@ i_joueur &gt;= 1 et i_joueur &lt;= 2 </dd></dl>
 <p>Cette fonction annule le dernier coup joué et met à jour la grille de jeu.</p>
 <dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>dernier coup annulé </dd></dl>
+
+</div>
+</div>
+<a id="a526e2cc7f8308a8a2c1da0c5730947af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526e2cc7f8308a8a2c1da0c5730947af">&#9670;&nbsp;</a></span>cpj_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_pageJeu.cpj_update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualise l'interface. </p>
+<p>Cette fonction actualise l'interface.</p>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Interface actualisée </dd></dl>
+
+</div>
+</div>
+<a id="afa44bf9c2e10d25ff9e39ac5e0dc5726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa44bf9c2e10d25ff9e39ac5e0dc5726">&#9670;&nbsp;</a></span>cpj_update_coin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.controller.ctrl_pageJeu.cpj_update_coin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réaffiche les jetons de la grille de jeu. </p>
+<p>Cette fonction affiche à nouveau les jetons de la grille de jeu.</p>
+<p><b>Variables :</b></p><ul>
+<li>i_nb_rows : Nombre de lignes de la grille de jeu</li>
+<li>i_nb_cols : Nombre de colonnes de la grille de jeu</li>
+<li>i_boucle_row : Ligne de la grille de jeu</li>
+<li>i_boucle_col : Colonne de la grille de jeu</li>
+</ul>
+<dl class="section pre"><dt>Précondition</dt><dd>tk_root initialisé </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Jetons actualisés </dd></dl>
 
 </div>
 </div>

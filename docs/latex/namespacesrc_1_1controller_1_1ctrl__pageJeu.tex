@@ -29,7 +29,13 @@ def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ae47c3cc3246368
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}{cpj\+\_\+update\+\_\+grid}} ()
 \begin{DoxyCompactList}\small\item\em Réinitialise la grille de jeu. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}{cpj\+\_\+info\+\_\+turn}} (bool b\+\_\+is\+\_\+player)
-\begin{DoxyCompactList}\small\item\em Affiche le joueur qui doit jouer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche le joueur qui doit jouer. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_afa44bf9c2e10d25ff9e39ac5e0dc5726}{cpj\+\_\+update\+\_\+coin}} ()
+\begin{DoxyCompactList}\small\item\em Réaffiche les jetons de la grille de jeu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_ac2c55e41a86c25e68af7e46b69ca7fbd}{cpj\+\_\+hover}} (tk.\+Event event)
+\begin{DoxyCompactList}\small\item\em Affiche le jeton qui sera posé \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesrc_1_1controller_1_1ctrl__pageJeu_a526e2cc7f8308a8a2c1da0c5730947af}{cpj\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Actualise l\textquotesingle{}interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -73,8 +79,9 @@ tkf\+\_\+page\+\_\+jeu initialisé
 \begin{DoxyItemize}
 \item I\+\_\+\+NB\+\_\+\+JETONS \+: Nombre de jetons à aligner pour gagner
 \item I\+\_\+\+DIFFICULTY \+: Difficulté du bot
-\item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
-\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu 
+\item ST\+\_\+\+COLOR\+\_\+\+BOT \+: Couleur des jetons du bot
+\item i\+\_\+column \+: Colonne de la grille de jeu
+\item i\+\_\+line \+: Ligne de la grille de jeu 
 \end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_aabe0a49b2f1118bb3e5c60c17e5dece3}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_draw\_grid@{cpj\_draw\_grid}}
 \index{cpj\_draw\_grid@{cpj\_draw\_grid}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
@@ -102,7 +109,34 @@ i\+\_\+nb\+\_\+columns $>$ 0
 \begin{DoxyPostcond}{Postcondition}
 grille de jeu dessinée 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}} 
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_ac2c55e41a86c25e68af7e46b69ca7fbd}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_ac2c55e41a86c25e68af7e46b69ca7fbd}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_hover@{cpj\_hover}}
+\index{cpj\_hover@{cpj\_hover}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_hover()}{cpj\_hover()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+hover (\begin{DoxyParamCaption}\item[{tk.\+Event}]{event }\end{DoxyParamCaption})}
+
+
+
+Affiche le jeton qui sera posé 
+
+Cette fonction affiche le jeton qui sera posé lorsque la souris est sur la grille de jeu.
+
+\begin{DoxyPrecond}{Précondition}
+event est un évènement de la souris 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & Évènement de la souris sur la grille de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Affichage du jeton qui sera posé
+\end{DoxyPostcond}
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+grid\+\_\+x \+: Colonne de la grille de jeu
+\item i\+\_\+grid\+\_\+y \+: Ligne de la grille de jeu 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a9b24be9078b1c7e614d53bfda036587f}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_info\_turn@{cpj\_info\_turn}}
 \index{cpj\_info\_turn@{cpj\_info\_turn}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
 \doxysubsubsection{\texorpdfstring{cpj\_info\_turn()}{cpj\_info\_turn()}}
@@ -275,6 +309,50 @@ tk\+\_\+root initialisé
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 dernier coup annulé 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a526e2cc7f8308a8a2c1da0c5730947af}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a526e2cc7f8308a8a2c1da0c5730947af}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_update@{cpj\_update}}
+\index{cpj\_update@{cpj\_update}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_update()}{cpj\_update()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualise l\textquotesingle{}interface. 
+
+Cette fonction actualise l\textquotesingle{}interface.
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Interface actualisée 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_afa44bf9c2e10d25ff9e39ac5e0dc5726}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_afa44bf9c2e10d25ff9e39ac5e0dc5726}} 
+\index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_update\_coin@{cpj\_update\_coin}}
+\index{cpj\_update\_coin@{cpj\_update\_coin}!src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}}
+\doxysubsubsection{\texorpdfstring{cpj\_update\_coin()}{cpj\_update\_coin()}}
+{\footnotesize\ttfamily def src.\+controller.\+ctrl\+\_\+page\+Jeu.\+cpj\+\_\+update\+\_\+coin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Réaffiche les jetons de la grille de jeu. 
+
+Cette fonction affiche à nouveau les jetons de la grille de jeu.
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+nb\+\_\+rows \+: Nombre de lignes de la grille de jeu
+\item i\+\_\+nb\+\_\+cols \+: Nombre de colonnes de la grille de jeu
+\item i\+\_\+boucle\+\_\+row \+: Ligne de la grille de jeu
+\item i\+\_\+boucle\+\_\+col \+: Colonne de la grille de jeu
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Précondition}
+tk\+\_\+root initialisé 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Jetons actualisés 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}\label{namespacesrc_1_1controller_1_1ctrl__pageJeu_a81868138c404cf6214153a7fa1aac7e5}} 
 \index{src.controller.ctrl\_pageJeu@{src.controller.ctrl\_pageJeu}!cpj\_update\_grid@{cpj\_update\_grid}}

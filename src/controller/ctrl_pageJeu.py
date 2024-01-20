@@ -120,7 +120,7 @@ def cpj_init(tk_win_root: tk.Tk):
     # Afficher la page de jeu
     view_pj.vpj_init_page_jeu(TK_ROOT, st_color_grid)
     # Initialisation de la grille de jeu
-    NPA_GRID = gr.pq_init_grille(I_NB_ROWS, I_NB_COLS)
+    NPA_GRID = gr.gr_init_grille(I_NB_ROWS, I_NB_COLS)
     # Dessin de la grille de jeu
     cpj_draw_grid(I_NB_ROWS, I_NB_COLS)
     # On indique que c'est au joueur de jouer
@@ -320,6 +320,8 @@ def cpj_use_bonus(tkf_page_jeu: tk.Frame):
         f_bonus = getattr(m_module, bu.bu_unformat_bonus_name(S_BONUS))
         # On applique le bonus à la grille
         NPA_GRID = f_bonus(NPA_GRID.copy())
+        # On fait clignoter la grille
+        view_pj.vpj_bonus_activation()
         # On met à jour la grille
         cpj_update_grid()
         # On désactive le bouton du bonus
@@ -343,13 +345,14 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
     **Variables :**
     * I_NB_JETONS : Nombre de jetons à aligner pour gagner
     * I_DIFFICULTY : Difficulté du bot
-    * i_grid_x : Colonne de la grille de jeu
-    * i_grid_y : Ligne de la grille de jeu
+    * ST_COLOR_BOT : Couleur des jetons du bot
+    * i_column : Colonne de la grille de jeu
+    * i_line : Ligne de la grille de jeu
     """
-    global I_NB_JETONS, I_DIFFICULTY
+    global I_NB_JETONS, I_DIFFICULTY, ST_COLOR_BOT
     if not ps4.pq_partie_finie(NPA_GRID, B_BONUS_USED):
         # On utilise l'algorithme min max pour choisir le prochain coup du bot
-        i_grid_x = int(ps4.pq_minmax(i_joueur=2,
+        i_column = int(ps4.pq_minmax(i_joueur=2,
                                      npa_grille_copy=np.copy(NPA_GRID),
                                      s_bonus=S_BONUS,
                                      b_bonus_used=B_BONUS_USED,
@@ -357,12 +360,14 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
                                      i_tour=-I_DIFFICULTY,
                                      i_nb_victoire=I_NB_JETONS))
         # On pose le pion et on récupère les coordonnées de là où il a été posé
-        i_grid_x, i_grid_y = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
-                                                i_colonne=i_grid_x, i_joueur=2)
+        i_line, i_column = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
+                                              i_colonne=i_column, i_joueur=2)
+        # On affiche la colonne où le bot joue
+        view_pj.vpj_bot_turn(i_line, i_column, ST_COLOR_BOT)
         # On affiche le pion posé
-        cpj_put_coin(i_grid_x, i_grid_y, 2)
+        cpj_put_coin(i_line, i_column, 2)
         # Si le bot a gagné
-        if ps4.pq_victoire(NPA_GRID, i_grid_x, i_grid_y, 2, I_NB_JETONS):
+        if ps4.pq_victoire(NPA_GRID, i_column, i_line, 2, I_NB_JETONS):
             # On affiche la fenêtre de victoire indiquant que le bot a gagné
             ctrl_m.cm_ended_game("Le joueur 2 a gagné",
                                  tkf_old_frame=tkf_page_jeu)
@@ -478,14 +483,17 @@ def cpj_hover(event: tk.Event):
     s_reduced_color = cu.cu_reduce_hue(ST_COLOR_JOUEUR)
     # Récupérer la position de la cellule sur laquelle on a cliquée
     i_grid_x, i_grid_y = view_pj.vpj_get_grid_cell(event.x, event.y)
-    # Si la position est dans la grille
+    # On vérifie que la case est bien dans la grille :
     if 0 <= i_grid_x < I_NB_COLS and 0 <= i_grid_y < I_NB_ROWS:
         # On calcule là où le jeton sera posé en fonction de la colonne
         i_grid_y = ps4.pq_find_hole(i_grid_x, NPA_GRID)
 
         # Si la dernière case survolée est différente de la case survolée
-        if TI_LAST_HOVERED_CELL != (i_grid_x, i_grid_y) or TI_LAST_HOVERED_CELL \
-                == (-1, -1):
+        if (TI_LAST_HOVERED_CELL != (i_grid_x, i_grid_y)
+                or TI_LAST_HOVERED_CELL == (-1, -1)
+                or None not in TI_LAST_HOVERED_CELL)\
+                or i_grid_y is not None\
+                or i_grid_x is not None:
             # On réinitialise la dernière case survolée
             view_pj.vpj_reset_hover(TI_LAST_HOVERED_CELL[0],
                                     TI_LAST_HOVERED_CELL[1])
@@ -495,7 +503,6 @@ def cpj_hover(event: tk.Event):
             view_pj.vpj_show_hover(i_grid_x, i_grid_y, s_reduced_color)
             # On met à jour les jetons
             cpj_update_coin()
-
 
 
 def cpj_update():

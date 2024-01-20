@@ -81,6 +81,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:af19be5e310e9f1158c585b014264aa08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08">pq_verif_colonne</a> (int i_colonne, np.array npa_grille)</td></tr>
 <tr class="memdesc:af19be5e310e9f1158c585b014264aa08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si on peut poser un jeton dans cette colonne.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af19be5e310e9f1158c585b014264aa08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a950aa9633e9676b64e28a4f98bb7cc3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a">pq_find_hole</a> (int i_colonne, np.array npa_grille)</td></tr>
+<tr class="memdesc:a950aa9633e9676b64e28a4f98bb7cc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trouve la première case vide dans une colonne.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a950aa9633e9676b64e28a4f98bb7cc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memItemLeft" align="right" valign="top">(int, int)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">pq_ajout_piece</a> (np.array npa_grille, int i_colonne, int i_joueur)</td></tr>
 <tr class="memdesc:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">La méthode qui gère le placement de jetons.  <a href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0d16eac42f24323fdda7fbff6a0cbcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,10 +173,55 @@ npa_grille initialisé </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>npa_grille contient un nouvel entier </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Les coordonnées du nouveau jeton</dd></dl>
 <p><b>Variables :</b></p><ul>
-<li>i_boucle <b>Entier</b> : Compteur de boucle</li>
+<li>i_line <b>Entier</b> : Compteur de boucle</li>
 <li>i_max_ligne <b>Entier</b> : Nombre de lignes dans la grille</li>
 <li>ti_coords <b>Tuple d'entiers</b> : Coordonnées du nouveau jeton </li>
 </ul>
+
+</div>
+</div>
+<a id="a950aa9633e9676b64e28a4f98bb7cc3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a950aa9633e9676b64e28a4f98bb7cc3a">&#9670;&nbsp;</a></span>pq_find_hole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> int src.puissanceQuatre.puissanceQuatre.pq_find_hole </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_colonne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">np.array&#160;</td>
+          <td class="paramname"><em>npa_grille</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trouve la première case vide dans une colonne. </p>
+<p>Cette fonction permet de trouver la première case vide dans une colonne donnée. Elle vérifie si la colonne est valide et si elle n'est pas pleine. Elle renvoie un entier indiquant la première case vide dans cette colonne.</p>
+<p><b>Variables :</b></p><ul>
+<li>i_max_ligne <b>Entier</b> : Nombre de lignes dans la grille</li>
+<li>i_boucle <b>Entier</b> : Compteur de boucle</li>
+</ul>
+<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; i_colonne &lt;= npa_grille.shape[0] </dd>
+<dd>
+npa_grille initialisé </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_colonne</td><td>La colonne où on souhaite poser un jeton </td></tr>
+    <tr><td class="paramname">npa_grille</td><td>La grille de jeu </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

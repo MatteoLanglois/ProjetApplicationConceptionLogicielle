@@ -121,7 +121,7 @@ def gp_handle_undo_redo(b_undo: bool, npa_grille: np.array) -> np.array:
         # On affiche undo
         print("Undo !")
         # On affiche la grille
-        gr.pq_print_grille(npa_grille)
+        gr.gr_print_grille(npa_grille)
         # On ajoute la grille actuelle à la liste pour l'undo
         T_UNDO_REDO.append(npa_grille)
     # Sinon
@@ -133,7 +133,7 @@ def gp_handle_undo_redo(b_undo: bool, npa_grille: np.array) -> np.array:
         # On affiche redo
         print("Redo !")
         # On affiche la grille
-        gr.pq_print_grille(npa_grille)
+        gr.gr_print_grille(npa_grille)
     # On retourne la grille
     return npa_grille
 
@@ -260,7 +260,7 @@ def gp_handle_victory(npa_grille: np.array, i_ligne_joueur: int, i_joueur: int,
     if (pq.pq_victoire(npa_grille, i_ligne_joueur, i_colonne_joueur,
                        i_joueur, i_nb_jeton_victoire)):
         # Affichage de la grille
-        gr.pq_print_grille(npa_grille)
+        gr.gr_print_grille(npa_grille)
         # Affichage du message de victoire
         print(f"Le joueur {i_joueur} a gagné !")
         # Passage du booléen de victoire à vrai
@@ -301,7 +301,7 @@ def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     T_UNDO_REDO = []
     T_REDO = []
     # Initialisation de la grille de jeu
-    npa_grille = gr.pq_init_grille(i_nb_lignes, i_nb_colonnes)
+    npa_grille = gr.gr_init_grille(i_nb_lignes, i_nb_colonnes)
     # Initialisation de la colonne où le joueur veut jouer
     i_colonne_joueur = 0
     # Initialisation de la ligne où le joueur veut jouer
@@ -315,7 +315,7 @@ def gp_gestion_partie(i_nb_lignes: int = 6, i_nb_colonnes: int = 7,
     while not pq.pq_partie_finie(npa_grille,
                                  B_BONUS_USED) and not b_victoire:
         # Affichage de la grille
-        gr.pq_print_grille(npa_grille)
+        gr.gr_print_grille(npa_grille)
         # Tant que la colonne n'est pas valide
         T_REDO = []
 

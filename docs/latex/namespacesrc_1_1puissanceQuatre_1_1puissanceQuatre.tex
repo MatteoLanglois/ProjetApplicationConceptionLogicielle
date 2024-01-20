@@ -10,6 +10,8 @@ Un programme qui joue au jeu puissance 4++.
 \item 
 bool \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_af19be5e310e9f1158c585b014264aa08}{pq\+\_\+verif\+\_\+colonne}} (int i\+\_\+colonne, np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Vérifie si on peut poser un jeton dans cette colonne. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a950aa9633e9676b64e28a4f98bb7cc3a}{pq\+\_\+find\+\_\+hole}} (int i\+\_\+colonne, np.\+array npa\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Trouve la première case vide dans une colonne. \end{DoxyCompactList}\item 
 (int, int) \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a0d16eac42f24323fdda7fbff6a0cbcf2}{pq\+\_\+ajout\+\_\+piece}} (np.\+array npa\+\_\+grille, int i\+\_\+colonne, int i\+\_\+joueur)
 \begin{DoxyCompactList}\small\item\em La méthode qui gère le placement de jetons. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a8e0776ccc28cc6ea375e5231a9b9387a}{pq\+\_\+minmax}} (i\+\_\+joueur, npa\+\_\+grille\+\_\+copy, i\+\_\+nb\+\_\+victoire, s\+\_\+bonus, b\+\_\+bonus\+\_\+used, i\+\_\+colonne=0, b\+\_\+is\+\_\+first=False, i\+\_\+tour=0, b\+\_\+is\+\_\+the\+\_\+bonus=False)
@@ -84,10 +86,40 @@ Les coordonnées du nouveau jeton
 \end{DoxyReturn}
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
-\item i\+\_\+boucle {\bfseries{Entier}} \+: Compteur de boucle
+\item i\+\_\+line {\bfseries{Entier}} \+: Compteur de boucle
 \item i\+\_\+max\+\_\+ligne {\bfseries{Entier}} \+: Nombre de lignes dans la grille
 \item ti\+\_\+coords {\bfseries{Tuple d\textquotesingle{}entiers}} \+: Coordonnées du nouveau jeton 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a8e0776ccc28cc6ea375e5231a9b9387a}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a8e0776ccc28cc6ea375e5231a9b9387a}} 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a950aa9633e9676b64e28a4f98bb7cc3a}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a950aa9633e9676b64e28a4f98bb7cc3a}} 
+\index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_find\_hole@{pq\_find\_hole}}
+\index{pq\_find\_hole@{pq\_find\_hole}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
+\doxysubsubsection{\texorpdfstring{pq\_find\_hole()}{pq\_find\_hole()}}
+{\footnotesize\ttfamily  int src.\+puissance\+Quatre.\+puissance\+Quatre.\+pq\+\_\+find\+\_\+hole (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+colonne,  }\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Trouve la première case vide dans une colonne. 
+
+Cette fonction permet de trouver la première case vide dans une colonne donnée. Elle vérifie si la colonne est valide et si elle n\textquotesingle{}est pas pleine. Elle renvoie un entier indiquant la première case vide dans cette colonne.
+
+{\bfseries{Variables \+:}}
+\begin{DoxyItemize}
+\item i\+\_\+max\+\_\+ligne {\bfseries{Entier}} \+: Nombre de lignes dans la grille
+\item i\+\_\+boucle {\bfseries{Entier}} \+: Compteur de boucle
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Précondition}
+0 $<$ i\+\_\+colonne $<$= npa\+\_\+grille.\+shape\mbox{[}0\mbox{]} 
+
+npa\+\_\+grille initialisé 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+colonne} & La colonne où on souhaite poser un jeton \\
+\hline
+{\em npa\+\_\+grille} & La grille de jeu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a8e0776ccc28cc6ea375e5231a9b9387a}\label{namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre_a8e0776ccc28cc6ea375e5231a9b9387a}} 
 \index{src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}!pq\_minmax@{pq\_minmax}}
 \index{pq\_minmax@{pq\_minmax}!src.puissanceQuatre.puissanceQuatre@{src.puissanceQuatre.puissanceQuatre}}
 \doxysubsubsection{\texorpdfstring{pq\_minmax()}{pq\_minmax()}}

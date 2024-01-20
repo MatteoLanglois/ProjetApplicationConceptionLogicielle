@@ -17,7 +17,7 @@ réinitialisation de la grille.
 import numpy as np
 
 
-def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
+def gr_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     """! L'initiateur de la grille
 
     Cette méthode permet d'initialiser la grille de jeu. Elle prend en
@@ -43,7 +43,7 @@ def pq_init_grille(i_max_ligne: int, i_max_colonne: int) -> np.array:
     return npa_grille
 
 
-def pq_reset_grille(npa_grille: np.array) -> np.array:
+def gr_reset_grille(npa_grille: np.array) -> np.array:
     """! Réinitialise la grille
 
     Cette méthode permet de réinitialiser la grille de jeu. Elle prend en
@@ -72,7 +72,7 @@ def pq_reset_grille(npa_grille: np.array) -> np.array:
     return npa_grille
 
 
-def pq_print_grille(npa_grille: np.array):
+def gr_print_grille(npa_grille: np.array):
     """! Affiche la grille
 
     Cette méthode permet d'afficher la grille de jeu. Elle prend en paramètre
@@ -115,7 +115,7 @@ def pq_print_grille(npa_grille: np.array):
         print("|\n" + (2 * i_max_colonne + 1) * "-")
 
 
-def pq_apply_gravity(npa_grille: np.array) -> np.array:
+def gr_apply_gravity(npa_grille: np.array) -> np.array:
     """! Applique la gravité sur la grille
 
     Cette méthode permet d'appliquer la gravité sur la grille de jeu. Elle prend

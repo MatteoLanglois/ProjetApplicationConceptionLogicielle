@@ -8,13 +8,13 @@ Un programme qui joue au jeu puissance 4++.
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}{pq\+\_\+init\+\_\+grille}} (int i\+\_\+max\+\_\+ligne, int i\+\_\+max\+\_\+colonne)
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_ad9f577ccf1afd57f6455856e082f92b8}{gr\+\_\+init\+\_\+grille}} (int i\+\_\+max\+\_\+ligne, int i\+\_\+max\+\_\+colonne)
 \begin{DoxyCompactList}\small\item\em L\textquotesingle{}initiateur de la grille. \end{DoxyCompactList}\item 
-np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9c75b8d9afc2678075985ab3420d61e0}{pq\+\_\+reset\+\_\+grille}} (np.\+array npa\+\_\+grille)
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a7bbfa41cba7fd4b85137eb6e19514712}{gr\+\_\+reset\+\_\+grille}} (np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Réinitialise la grille. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}{pq\+\_\+print\+\_\+grille}} (np.\+array npa\+\_\+grille)
+def \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a0a77c79499fe3b65c1ecbef958971d3d}{gr\+\_\+print\+\_\+grille}} (np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\item 
-np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}{pq\+\_\+apply\+\_\+gravity}} (np.\+array npa\+\_\+grille)
+np.\+array \mbox{\hyperlink{namespacesrc_1_1puissanceQuatre_1_1grid_abb828106767e96183e55c5014c0f0005}{gr\+\_\+apply\+\_\+gravity}} (np.\+array npa\+\_\+grille)
 \begin{DoxyCompactList}\small\item\em Applique la gravité sur la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -35,11 +35,11 @@ Ce module contient les fonctions de gestion de la grille de jeu. Notamment l\tex
 \end{DoxyItemize}
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a9ea18179c00172ad478307e9a17a24d7}} 
-\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_apply\_gravity@{pq\_apply\_gravity}}
-\index{pq\_apply\_gravity@{pq\_apply\_gravity}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
-\doxysubsubsection{\texorpdfstring{pq\_apply\_gravity()}{pq\_apply\_gravity()}}
-{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+pq\+\_\+apply\+\_\+gravity (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_abb828106767e96183e55c5014c0f0005}\label{namespacesrc_1_1puissanceQuatre_1_1grid_abb828106767e96183e55c5014c0f0005}} 
+\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!gr\_apply\_gravity@{gr\_apply\_gravity}}
+\index{gr\_apply\_gravity@{gr\_apply\_gravity}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
+\doxysubsubsection{\texorpdfstring{gr\_apply\_gravity()}{gr\_apply\_gravity()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+gr\+\_\+apply\+\_\+gravity (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
 
 
 
@@ -67,11 +67,11 @@ il n\textquotesingle{}y a pas de 0 sous un 1 ou un 2
 \item i\+\_\+boucle\+\_\+colonne \+: Compteur de boucle pour les colonnes de la grille
 \item i\+\_\+boucle\+\_\+ligne \+: Compteur de boucle pour les lignes de la grille
 \item i\+\_\+compt \+: Compteur de sécurité 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a81ed1760743ce62de2b07ed56f1f13af}} 
-\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_init\_grille@{pq\_init\_grille}}
-\index{pq\_init\_grille@{pq\_init\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
-\doxysubsubsection{\texorpdfstring{pq\_init\_grille()}{pq\_init\_grille()}}
-{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+pq\+\_\+init\+\_\+grille (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+max\+\_\+ligne,  }\item[{int}]{i\+\_\+max\+\_\+colonne }\end{DoxyParamCaption})}
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_ad9f577ccf1afd57f6455856e082f92b8}\label{namespacesrc_1_1puissanceQuatre_1_1grid_ad9f577ccf1afd57f6455856e082f92b8}} 
+\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!gr\_init\_grille@{gr\_init\_grille}}
+\index{gr\_init\_grille@{gr\_init\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
+\doxysubsubsection{\texorpdfstring{gr\_init\_grille()}{gr\_init\_grille()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+gr\+\_\+init\+\_\+grille (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+max\+\_\+ligne,  }\item[{int}]{i\+\_\+max\+\_\+colonne }\end{DoxyParamCaption})}
 
 
 
@@ -98,11 +98,11 @@ La grille créée
 {\bfseries{Variables \+:}}
 \begin{DoxyItemize}
 \item npa\+\_\+grille \+: np.\+array 
-\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a5b8192e1a86f93d2caf77550d37f9a62}} 
-\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_print\_grille@{pq\_print\_grille}}
-\index{pq\_print\_grille@{pq\_print\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
-\doxysubsubsection{\texorpdfstring{pq\_print\_grille()}{pq\_print\_grille()}}
-{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+grid.\+pq\+\_\+print\+\_\+grille (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+\end{DoxyItemize}\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a0a77c79499fe3b65c1ecbef958971d3d}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a0a77c79499fe3b65c1ecbef958971d3d}} 
+\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!gr\_print\_grille@{gr\_print\_grille}}
+\index{gr\_print\_grille@{gr\_print\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
+\doxysubsubsection{\texorpdfstring{gr\_print\_grille()}{gr\_print\_grille()}}
+{\footnotesize\ttfamily def src.\+puissance\+Quatre.\+grid.\+gr\+\_\+print\+\_\+grille (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
 
 
 
@@ -126,11 +126,11 @@ Cette méthode permet d\textquotesingle{}afficher la grille de jeu. Elle prend e
 {\em npa\+\_\+grille} & La grille à afficher \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a9c75b8d9afc2678075985ab3420d61e0}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a9c75b8d9afc2678075985ab3420d61e0}} 
-\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!pq\_reset\_grille@{pq\_reset\_grille}}
-\index{pq\_reset\_grille@{pq\_reset\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
-\doxysubsubsection{\texorpdfstring{pq\_reset\_grille()}{pq\_reset\_grille()}}
-{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+pq\+\_\+reset\+\_\+grille (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacesrc_1_1puissanceQuatre_1_1grid_a7bbfa41cba7fd4b85137eb6e19514712}\label{namespacesrc_1_1puissanceQuatre_1_1grid_a7bbfa41cba7fd4b85137eb6e19514712}} 
+\index{src.puissanceQuatre.grid@{src.puissanceQuatre.grid}!gr\_reset\_grille@{gr\_reset\_grille}}
+\index{gr\_reset\_grille@{gr\_reset\_grille}!src.puissanceQuatre.grid@{src.puissanceQuatre.grid}}
+\doxysubsubsection{\texorpdfstring{gr\_reset\_grille()}{gr\_reset\_grille()}}
+{\footnotesize\ttfamily  np.\+array src.\+puissance\+Quatre.\+grid.\+gr\+\_\+reset\+\_\+grille (\begin{DoxyParamCaption}\item[{np.\+array}]{npa\+\_\+grille }\end{DoxyParamCaption})}
 
 
 

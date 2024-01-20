@@ -10,10 +10,14 @@ Un programme qui joue au jeu puissance 4++.
 \item 
 (int, int, int) \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_aff7eee88e24302eb29145e855777ced6}{cu\+\_\+hex\+\_\+to\+\_\+rgb}} (str s\+\_\+color)
 \begin{DoxyCompactList}\small\item\em Convertit une couleur hexadécimale en RGB. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_ac192ed293f57672fd6dd1dc72e934b6d}{cu\+\_\+rgb\+\_\+to\+\_\+hex}} ((int, int, int) rgb)
+\begin{DoxyCompactList}\small\item\em Convertit une couleur RGB en hexadécimal. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_ae837cf3d4fe1d34a89570faa533ce262}{cu\+\_\+rgb\+\_\+distance}} ((int, int, int) rgb1,(int, int, int) rgb2)
 \begin{DoxyCompactList}\small\item\em Calcule la distance entre deux couleurs RGB. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_aea89fda63d253c8d3c7444d3038fd0e8}{cu\+\_\+colors\+\_\+too\+\_\+close}} (str color1, str color2)
-\begin{DoxyCompactList}\small\item\em Vérifie si deux couleurs sont trop proches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vérifie si deux couleurs sont trop proches. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacesrc_1_1utils_1_1colors__utils_a7ad084cedc6f1df119151c2f6b2d96e9}{cu\+\_\+reduce\+\_\+hue}} (str i\+\_\+hue)
+\begin{DoxyCompactList}\small\item\em Réduit la teinte d\textquotesingle{}une couleur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -75,6 +79,26 @@ Cette fonction convertit une couleur hexadécimale en RGB.
 \begin{DoxyReturn}{Renvoie}
 Couleur RGB 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_a7ad084cedc6f1df119151c2f6b2d96e9}\label{namespacesrc_1_1utils_1_1colors__utils_a7ad084cedc6f1df119151c2f6b2d96e9}} 
+\index{src.utils.colors\_utils@{src.utils.colors\_utils}!cu\_reduce\_hue@{cu\_reduce\_hue}}
+\index{cu\_reduce\_hue@{cu\_reduce\_hue}!src.utils.colors\_utils@{src.utils.colors\_utils}}
+\doxysubsubsection{\texorpdfstring{cu\_reduce\_hue()}{cu\_reduce\_hue()}}
+{\footnotesize\ttfamily  str src.\+utils.\+colors\+\_\+utils.\+cu\+\_\+reduce\+\_\+hue (\begin{DoxyParamCaption}\item[{str}]{i\+\_\+hue }\end{DoxyParamCaption})}
+
+
+
+Réduit la teinte d\textquotesingle{}une couleur. 
+
+Cette fonction réduit la teinte d\textquotesingle{}une couleur.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i\+\_\+hue} & Teinte de la couleur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Teinte de la couleur réduite 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_ae837cf3d4fe1d34a89570faa533ce262}\label{namespacesrc_1_1utils_1_1colors__utils_ae837cf3d4fe1d34a89570faa533ce262}} 
 \index{src.utils.colors\_utils@{src.utils.colors\_utils}!cu\_rgb\_distance@{cu\_rgb\_distance}}
 \index{cu\_rgb\_distance@{cu\_rgb\_distance}!src.utils.colors\_utils@{src.utils.colors\_utils}}
@@ -96,4 +120,24 @@ Cette fonction calcule la distance entre deux couleurs RGB. Elle utilise la form
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 Distance entre les deux couleurs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesrc_1_1utils_1_1colors__utils_ac192ed293f57672fd6dd1dc72e934b6d}\label{namespacesrc_1_1utils_1_1colors__utils_ac192ed293f57672fd6dd1dc72e934b6d}} 
+\index{src.utils.colors\_utils@{src.utils.colors\_utils}!cu\_rgb\_to\_hex@{cu\_rgb\_to\_hex}}
+\index{cu\_rgb\_to\_hex@{cu\_rgb\_to\_hex}!src.utils.colors\_utils@{src.utils.colors\_utils}}
+\doxysubsubsection{\texorpdfstring{cu\_rgb\_to\_hex()}{cu\_rgb\_to\_hex()}}
+{\footnotesize\ttfamily  str src.\+utils.\+colors\+\_\+utils.\+cu\+\_\+rgb\+\_\+to\+\_\+hex (\begin{DoxyParamCaption}\item[{(int, int, int)}]{rgb }\end{DoxyParamCaption})}
+
+
+
+Convertit une couleur RGB en hexadécimal. 
+
+Cette fonction convertit une couleur RGB en hexadécimal.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rgb} & Couleur RGB \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Couleur hexadécimale 
 \end{DoxyReturn}
