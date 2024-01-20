@@ -67,17 +67,15 @@ def pq_find_hole(i_colonne: int, npa_grille: np.array) -> int:
     @pre npa_grille initialisé
     @param i_colonne: La colonne où on souhaite poser un jeton
     @param npa_grille: La grille de jeu
+    @post On peut poser un jeton colonne i_boucle
     """
-    # Si on peut jouer dans la colonne
-    if pq_verif_colonne(i_colonne, npa_grille):
-        # Récupération de la taille de la grille
-        i_max_ligne, _ = npa_grille.shape
-        # Pour chaque ligne de la grille
-        for i_boucle in range(i_max_ligne - 1, 0, -1):
-            # Si la case est vide
-            if npa_grille[i_boucle][i_colonne] == 0:
-                # On retourne la ligne
-                return i_boucle
+    # Récupération de la taille de la grille
+    i_max_ligne, _ = npa_grille.shape
+    i_boucle = 0
+    while i_boucle < i_max_ligne and npa_grille[i_boucle][i_colonne] == 0:
+        # Augmenter le compteur de boucle
+        i_boucle += 1
+    return i_boucle - 1
 
 
 def pq_ajout_piece(npa_grille: np.array, i_colonne: int,

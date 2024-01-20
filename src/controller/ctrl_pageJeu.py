@@ -359,12 +359,9 @@ def cpj_bot_play(tkf_page_jeu: tk.Frame):
                                      b_is_first=True,
                                      i_tour=-I_DIFFICULTY,
                                      i_nb_victoire=I_NB_JETONS))
-        print(f"Vérification colonne : {i_column} et "
-              f"{ps4.pq_verif_colonne(i_column, NPA_GRID)}")
         # On pose le pion et on récupère les coordonnées de là où il a été posé
         i_line, i_column = ps4.pq_ajout_piece(npa_grille=NPA_GRID,
                                               i_colonne=i_column, i_joueur=2)
-        print(f"Colonne : {i_column}, Ligne : {i_line}")
         # On affiche la colonne où le bot joue
         view_pj.vpj_bot_turn(i_line, i_column, ST_COLOR_BOT)
         # On affiche le pion posé
