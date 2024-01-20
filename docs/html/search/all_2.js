@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['gp_5fchoose_5fbonus_50',['gp_choose_bonus',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a42f2cc988c6e4770679ee41338cb9b90',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fgestion_5fpartie_51',['gp_gestion_partie',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a55a50f97978a4774714ab8d68ec0b4e1',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fget_5fplayer_5fchoice_52',['gp_get_player_choice',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a2c9221fc25e78996f3683b31c811f11a',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fhandle_5fbot_5fturn_53',['gp_handle_bot_turn',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ae4acc672f179f6743db825d25a89bb99',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fhandle_5fplayer_5fturn_54',['gp_handle_player_turn',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ac3d6dcae1a72fd90acd662feaa074007',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fhandle_5fundo_5fredo_55',['gp_handle_undo_redo',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ad9924d90e2191d3bd3af6b4c0c8b99be',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fhandle_5fvictory_56',['gp_handle_victory',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a89cefc02a3c31d4556fa77770daa6bed',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fshow_5frules_57',['gp_show_rules',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4887c31c02066bdc08dac180d8d52a38',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fstart_5fgame_58',['gp_start_game',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a0c2f0e73f54278bb91fae166f0adebe3',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gp_5fuse_5fbonus_59',['gp_use_bonus',['../namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a297578efc5c2beb75e2e5e18927f17f5',1,'src::puissanceQuatre::gestionPartie']]],
-  ['gr_5fapply_5fgravity_60',['gr_apply_gravity',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#abb828106767e96183e55c5014c0f0005',1,'src::puissanceQuatre::grid']]],
-  ['gr_5finit_5fgrille_61',['gr_init_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#ad9f577ccf1afd57f6455856e082f92b8',1,'src::puissanceQuatre::grid']]],
-  ['gr_5fprint_5fgrille_62',['gr_print_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a0a77c79499fe3b65c1ecbef958971d3d',1,'src::puissanceQuatre::grid']]],
-  ['gr_5freset_5fgrille_63',['gr_reset_grille',['../namespacesrc_1_1puissanceQuatre_1_1grid.html#a7bbfa41cba7fd4b85137eb6e19514712',1,'src::puissanceQuatre::grid']]]
+  ['bis_0',['Installation bis',['../index.html#autotoc_md3',1,'']]],
+  ['bonus_1',['Bonus',['../index.html#autotoc_md9',1,'']]],
+  ['bu_5fformat_5fbonus_5fname_2',['bu_format_bonus_name',['../namespacesrc_1_1utils_1_1bonus__utils.html#aab0b9f992e848b802cd816f02e7fad84',1,'src::utils::bonus_utils']]],
+  ['bu_5fget_5fbonus_5fdescription_3',['bu_get_bonus_description',['../namespacesrc_1_1utils_1_1bonus__utils.html#a19203c3fb97b1d2ee01ec170583929a2',1,'src::utils::bonus_utils']]],
+  ['bu_5fget_5fbonus_5fname_4',['bu_get_bonus_name',['../namespacesrc_1_1utils_1_1bonus__utils.html#a5a716619d8ad9a44e859a69e66494e57',1,'src::utils::bonus_utils']]],
+  ['bu_5fget_5fbonuses_5',['bu_get_bonuses',['../namespacesrc_1_1utils_1_1bonus__utils.html#acfff3be431a3e359c164bf3cce167fff',1,'src::utils::bonus_utils']]],
+  ['bu_5funformat_5fbonus_5fname_6',['bu_unformat_bonus_name',['../namespacesrc_1_1utils_1_1bonus__utils.html#a24e02962d639e6aa1eb1c2bc8cf3a4e9',1,'src::utils::bonus_utils']]]
 ];

@@ -1,0 +1,13 @@
+<map id="src.controller.ctrl_pageJeu.cpj_draw_grid" name="src.controller.ctrl_pageJeu.cpj_draw_grid">
+<area shape="rect" id="Node000001" title="Dessine la grille de jeu." alt="" coords="469,37,644,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a540ec039fb625bf8f192a8b731e2c39f" title="Affiche la page de jeu." alt="" coords="261,5,393,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,46,393,37,394,32,456,41"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3b1f3eaf369683943243d07811fe578f" title="Réinitialise la grille de jeu." alt="" coords="233,69,421,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="456,74,422,79,421,74,455,69"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a992aebf5b78270aa5aad2cd0f03e0568" title="Refait le dernier coup." alt="" coords="25,5,165,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="240,68,165,47,166,42,242,63"/>
+<area shape="rect" id="Node000005" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3dd68421fb8d0edc5ec271c9904cb6cc" title="Annule le dernier coup." alt="" coords="24,69,167,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="219,92,167,92,167,87,219,87"/>
+<area shape="rect" id="Node000006" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6522f20b78261f4f0a9a60b7d9598e7b" title="Utilise un bonus puis met à jour la grille de jeu." alt="" coords="5,133,185,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="242,116,169,136,168,131,240,110"/>
+</map>

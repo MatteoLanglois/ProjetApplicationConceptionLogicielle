@@ -1,0 +1,5 @@
+<map id="src.view.view_pageJeu.vpj_bot_turn" name="src.view.view_pageJeu.vpj_bot_turn">
+<area shape="rect" id="Node000001" title="Fonction qui change la couleur de la colonne dans laquelle le bot va jouer." alt="" coords="5,5,199,45"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1view_1_1view__pageJeu.html#a721f25bc5f03adb5d90966387cc69040" title="Dessine un jeton dans une cellule." alt="" coords="247,5,440,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,23,233,23,233,28,199,28"/>
+</map>

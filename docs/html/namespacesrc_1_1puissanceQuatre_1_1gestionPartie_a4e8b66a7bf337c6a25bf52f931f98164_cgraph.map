@@ -1,0 +1,20 @@
+<map id="src.puissanceQuatre.gestionPartie.gp_gestion_partie" name="src.puissanceQuatre.gestionPartie.gp_gestion_partie">
+<area shape="rect" id="Node000001" title="Gère le déroulement d&#39;une partie de puissance 4." alt="" coords="5,133,212,173"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a7457ad13dd17d42ccf7ab82b8016a2ed" title="Récupère le bonus choisi par le joueur." alt="" coords="262,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,131,190,93,259,55,276,48,278,53,261,60,193,98,138,136"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a51002e3fd99cf2917a42b7e471beefd5" title="Méthode permettant de gérer le tour du bot." alt="" coords="262,69,469,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,131,271,110,272,115,190,136"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a87175ad265e007bc6ee697f4d9539254" title="Méthode permettant de gérer le tour du joueur." alt="" coords="260,133,471,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,151,247,151,247,156,212,156"/>
+<area shape="rect" id="Node000007" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ae5955463d297453ce99b6188e2962570" title="Affiche les règles du jeu." alt="" coords="519,197,725,237"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="195,171,260,183,387,198,505,208,505,213,386,203,260,188,194,176"/>
+<area shape="rect" id="Node000009" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#abbcab5142d713a4647dac37511e5c9a8" title="Méthode permettant de gérer la victoire d&#39;un joueur." alt="" coords="262,248,469,288"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="148,171,261,227,295,241,293,246,259,232,146,176"/>
+<area shape="rect" id="Node000005" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a2c9221fc25e78996f3683b31c811f11a" title="Récupère le choix du joueur lors de son tour." alt="" coords="519,5,725,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="448,131,469,119,484,104,492,88,501,72,517,55,526,49,529,54,520,59,505,75,497,91,489,107,472,123,451,136"/>
+<area shape="rect" id="Node000006" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ad9924d90e2191d3bd3af6b4c0c8b99be" title="Méthode permettant au joueur d&#39;annuler ou de refaire son dernier coup." alt="" coords="519,69,725,109"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="446,131,528,110,529,115,447,136"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="447,171,529,191,528,197,446,176"/>
+<area shape="rect" id="Node000008" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a6840a3ba32bb77e469f305f7c620f8e6" title="Méthode permettant au joueur d&#39;utiliser son bonus." alt="" coords="519,133,725,173"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="471,151,505,151,505,156,471,156"/>
+</map>

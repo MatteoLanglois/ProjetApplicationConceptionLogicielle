@@ -1,0 +1,9 @@
+<map id="src.puissanceQuatre.puissanceQuatre.pq_verif_colonne" name="src.puissanceQuatre.puissanceQuatre.pq_verif_colonne">
+<area shape="rect" id="Node000001" title="Vérifie si on peut poser un jeton dans cette colonne." alt="" coords="547,35,769,75"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2" title="La méthode qui gère le placement de jetons." alt="" coords="276,5,499,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="533,44,499,40,499,35,533,38"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a" title="Méthode implémentant l&#39;algorithme minmax." alt="" coords="5,35,228,75"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="533,60,499,60,276,60,228,59,228,54,276,55,499,55,533,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,42,228,45,228,40,262,36"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="163,23,147,16,117,13,91,15,75,20,69,26,72,33,67,35,64,25,72,16,90,10,117,8,148,11,165,18"/>
+</map>

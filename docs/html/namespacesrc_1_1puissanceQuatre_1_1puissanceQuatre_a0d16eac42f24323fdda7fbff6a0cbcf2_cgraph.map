@@ -1,0 +1,7 @@
+<map id="src.puissanceQuatre.puissanceQuatre.pq_ajout_piece" name="src.puissanceQuatre.puissanceQuatre.pq_ajout_piece">
+<area shape="rect" id="Node000001" title="La méthode qui gère le placement de jetons." alt="" coords="5,37,228,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a" title="Trouve la première case vide dans une colonne." alt="" coords="276,5,499,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,42,262,37,263,43,228,47"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08" title="Vérifie si on peut poser un jeton dans cette colonne." alt="" coords="276,69,499,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,68,263,72,262,77,228,73"/>
+</map>

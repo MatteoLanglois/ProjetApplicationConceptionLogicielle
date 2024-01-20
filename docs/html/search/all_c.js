@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['widget_5futils_2epy_176',['widget_utils.py',['../widget__utils_8py.html',1,'']]],
-  ['wu_5fi_5fget_5ffont_177',['wu_i_get_font',['../namespacesrc_1_1utils_1_1widget__utils.html#a67ab7edebb461209fa8ca158ad9d1dd1',1,'src::utils::widget_utils']]],
-  ['wu_5ftkb_5finit_5fbutton_178',['wu_tkb_init_button',['../namespacesrc_1_1utils_1_1widget__utils.html#ae1289db30448e03ed042e89bcff23040',1,'src::utils::widget_utils']]],
-  ['wu_5ftkc_5finit_5fcanvas_179',['wu_tkc_init_canvas',['../namespacesrc_1_1utils_1_1widget__utils.html#a36df946620c8793a34009c78bb649c87',1,'src::utils::widget_utils']]],
-  ['wu_5ftkl_5finit_5flabel_180',['wu_tkl_init_label',['../namespacesrc_1_1utils_1_1widget__utils.html#a80762af4f99ff2625725ba55adc716d9',1,'src::utils::widget_utils']]],
-  ['wu_5ftks_5finit_5fscale_181',['wu_tks_init_scale',['../namespacesrc_1_1utils_1_1widget__utils.html#aa594448a6d8ff19277b9d592b3ab2711',1,'src::utils::widget_utils']]],
-  ['wu_5ftksb_5finit_5fspinbox_182',['wu_tksb_init_spinbox',['../namespacesrc_1_1utils_1_1widget__utils.html#aa41bcf649d49cc8af3de44f26368336c',1,'src::utils::widget_utils']]]
+  ['p4b_5fflip_5fgrid_0',['p4b_flip_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5finvert_5fgrid_1',['p4b_invert_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fno_5fbonus_2',['p4b_no_bonus',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a701d695636d49d7658d9877df3326efe',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5frandom_5fplacement_3',['p4b_random_placement',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#aa70f2715fdecaebaa86f7255cd1be4d5',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fremove_5ffull_5fline_4',['p4b_remove_full_line',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fuse_5fmin_5fmax_5',['p4b_use_min_max',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459',1,'src::puissanceQuatre::bonus']]],
+  ['personnalisation_6',['Personnalisation',['../index.html#autotoc_md8',1,'']]],
+  ['pq_5fajout_5fpiece_7',['pq_ajout_piece',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5ffind_5fhole_8',['pq_find_hole',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fminmax_9',['pq_minmax',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fpartie_5ffinie_10',['pq_partie_finie',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fredo_11',['pq_redo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a06bdaec03582d0146e06983760361992',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fundo_12',['pq_undo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a1b4eb42574730ac4cf337f9c6dac9f50',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fverif_5fcolonne_13',['pq_verif_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_14',['pq_victoire',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fcolonne_15',['pq_victoire_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a662f22c97ca3b952383ae42f8bca4cad',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fdiago_16',['pq_victoire_diago',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a2f76c9e9fd0ced658f382d854abdefea',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fligne_17',['pq_victoire_ligne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['projetapplicationconceptionlogicielle_18',['ProjetApplicationConceptionLogicielle',['../index.html',1,'']]]
 ];

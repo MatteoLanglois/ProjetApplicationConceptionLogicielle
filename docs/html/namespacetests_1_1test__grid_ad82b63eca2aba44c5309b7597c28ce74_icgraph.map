@@ -1,0 +1,6 @@
+<map id="tests.test_grid.tg_init_grille" name="tests.test_grid.tg_init_grille">
+<area shape="rect" id="Node000001" title="Teste la fonction pq_init_grille." alt="" coords="185,29,317,69"/>
+<area shape="rect" id="Node000002" href="$namespacetests_1_1test__grid.html#a6f0e243b74ebc165625724157877828b" title="Lance tous les tests." alt="" coords="5,29,137,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,52,138,52,138,47,171,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="101,17,91,11,71,8,54,10,44,15,41,21,43,28,37,30,35,20,41,11,53,5,71,3,93,6,104,13"/>
+</map>

@@ -1,0 +1,58 @@
+\doxysection{Référence de l\textquotesingle{}espace de nommage main}
+\hypertarget{namespacemain}{}\label{namespacemain}\index{main@{main}}
+
+
+Un programme qui joue au jeu puissance 4++.  
+
+
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_a3140e9a5b6a71ffbf498198cfc471b88}{main}} ()
+\begin{DoxyCompactList}\small\item\em Fonction principale du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Un programme qui joue au jeu puissance 4++. 
+
+Programme principal du jeu.
+
+Ce programme est un jeu de puissance 4++ avec une grille de taille variable, un nombre de pions à aligner variable, des bonus et un undo.
+
+Ce programme utilise les modules externes suivants \+:
+\begin{DoxyItemize}
+\item tkinter
+\item numpy
+\item inspect
+\item argparse
+
+Ce module permet de lancer le jeu. Il contient un parser d\textquotesingle{}arguments qui permet de lancer le jeu en ligne de commande ou avec l\textquotesingle{}interface graphique. 
+\end{DoxyItemize}
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{namespacemain_a3140e9a5b6a71ffbf498198cfc471b88}\label{namespacemain_a3140e9a5b6a71ffbf498198cfc471b88} 
+\index{main@{main}!main@{main}}
+\index{main@{main}!main@{main}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction principale du jeu. 
+
+{\bfseries{Variables}}
+\begin{DoxyItemize}
+\item {\bfseries{parser}} \+: Parser d\textquotesingle{}arguments
+\item {\bfseries{group}} \+: Groupe d\textquotesingle{}arguments mutuellement exclusifs
+\item {\bfseries{args}} \+: Arguments parsés
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Précondition}
+Lancer le programme avec l\textquotesingle{}argument --gui ou --cli 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Lance le jeu en ligne de commande ou avec l\textquotesingle{}interface graphique 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Renvoie}
+None 
+\end{DoxyReturn}

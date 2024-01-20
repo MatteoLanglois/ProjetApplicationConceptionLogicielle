@@ -1,0 +1,11 @@
+<map id="src.controller.ctrl_pageJeu.cpj_play" name="src.controller.ctrl_pageJeu.cpj_play">
+<area shape="rect" id="Node000001" title="Joue un coup dans la grille de jeu." alt="" coords="5,49,144,89"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#adfe22b506775bc4282ffe2dd1768427c" title="Fait jouer le bot." alt="" coords="192,49,359,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,67,178,67,178,72,144,72"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6c4585487aedfb2339c206fe793fcd78" title="Affiche le joueur qui doit jouer." alt="" coords="407,5,576,45"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="138,47,192,35,296,24,393,21,393,26,296,29,192,40,139,52"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a672fc84221142d0c882ef87bb7ff5764" title="Place un jeton dans la grille de jeu." alt="" coords="408,81,575,121"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="137,87,192,99,296,106,394,105,394,111,296,112,192,104,136,92"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="359,50,393,43,394,48,360,55"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="360,79,395,84,394,90,359,84"/>
+</map>

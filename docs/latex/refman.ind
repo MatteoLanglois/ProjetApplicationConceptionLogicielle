@@ -1,467 +1,478 @@
 \begin{theindex}
 
   \item {bu\_format\_bonus\_name}
-    \subitem {src.utils.bonus\_utils}, \hyperpage{45}
+    \subitem {src.utils.bonus\_utils}, \hyperpage{56}
   \item {bu\_get\_bonus\_description}
-    \subitem {src.utils.bonus\_utils}, \hyperpage{45}
+    \subitem {src.utils.bonus\_utils}, \hyperpage{56}
   \item {bu\_get\_bonus\_name}
-    \subitem {src.utils.bonus\_utils}, \hyperpage{45}
+    \subitem {src.utils.bonus\_utils}, \hyperpage{56}
   \item {bu\_get\_bonuses}
-    \subitem {src.utils.bonus\_utils}, \hyperpage{45}
+    \subitem {src.utils.bonus\_utils}, \hyperpage{56}
   \item {bu\_unformat\_bonus\_name}
-    \subitem {src.utils.bonus\_utils}, \hyperpage{46}
+    \subitem {src.utils.bonus\_utils}, \hyperpage{57}
 
   \indexspace
 
   \item {cm\_ended\_game}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{12}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{13}
   \item {cm\_info}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{12}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{13}
   \item {cm\_init}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{12}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{13}
   \item {cm\_menu}
     \subitem {src.controller.ctrl\_main}, \hyperpage{13}
   \item {cm\_page\_accueil}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{13}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{14}
   \item {cm\_page\_bonus}
     \subitem {src.controller.ctrl\_main}, \hyperpage{14}
   \item {cm\_page\_parameters}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{14}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{15}
   \item {cm\_page\_play}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{14}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{15}
   \item {cm\_quit}
     \subitem {src.controller.ctrl\_main}, \hyperpage{15}
   \item {cm\_update}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{15}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{16}
   \item {cm\_warning}
-    \subitem {src.controller.ctrl\_main}, \hyperpage{15}
+    \subitem {src.controller.ctrl\_main}, \hyperpage{16}
   \item {cpa\_init}
-    \subitem {src.controller.ctrl\_pageAccueil}, \hyperpage{16}
+    \subitem {src.controller.ctrl\_pageAccueil}, \hyperpage{17}
   \item {cpa\_play}
-    \subitem {src.controller.ctrl\_pageAccueil}, \hyperpage{16}
+    \subitem {src.controller.ctrl\_pageAccueil}, \hyperpage{17}
   \item {cpb\_get\_bonuses}
-    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{17}
+    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{18}
   \item {cpb\_get\_chosen\_bonus}
-    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{17}
+    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{18}
   \item {cpb\_init}
     \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{18}
   \item {cpb\_show\_bonus\_description}
-    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{18}
+    \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{19}
   \item {cpb\_valider\_bonus}
     \subitem {src.controller.ctrl\_PageBonus}, \hyperpage{19}
   \item {cpj\_bot\_play}
     \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{20}
   \item {cpj\_draw\_grid}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{20}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{21}
   \item {cpj\_hover}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{20}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{22}
   \item {cpj\_info\_turn}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{21}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{22}
   \item {cpj\_init}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{21}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{23}
   \item {cpj\_play}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{21}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{24}
   \item {cpj\_put\_coin}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{22}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{24}
   \item {cpj\_quit}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{22}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{25}
   \item {cpj\_redo}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{23}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{26}
   \item {cpj\_undo}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{23}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{26}
   \item {cpj\_update}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{23}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{26}
   \item {cpj\_update\_coin}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{23}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{27}
   \item {cpj\_update\_grid}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{24}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{27}
   \item {cpj\_use\_bonus}
-    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{24}
+    \subitem {src.controller.ctrl\_pageJeu}, \hyperpage{28}
   \item {cpp\_askcolor}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{25}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{30}
   \item {cpp\_custom\_load}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{26}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{30}
   \item {cpp\_custom\_reset}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{26}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{31}
   \item {cpp\_custom\_save}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{26}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{31}
   \item {cpp\_init}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{27}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{31}
   \item {cpp\_settings\_load}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{27}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{32}
   \item {cpp\_settings\_reset}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{28}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{33}
   \item {cpp\_settings\_save}
-    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{28}
+    \subitem {src.controller.ctrl\_pageParametres}, \hyperpage{33}
   \item {cu\_colors\_too\_close}
-    \subitem {src.utils.colors\_utils}, \hyperpage{46}
+    \subitem {src.utils.colors\_utils}, \hyperpage{58}
   \item {cu\_hex\_to\_rgb}
-    \subitem {src.utils.colors\_utils}, \hyperpage{47}
+    \subitem {src.utils.colors\_utils}, \hyperpage{58}
   \item {cu\_reduce\_hue}
-    \subitem {src.utils.colors\_utils}, \hyperpage{47}
+    \subitem {src.utils.colors\_utils}, \hyperpage{59}
   \item {cu\_rgb\_distance}
-    \subitem {src.utils.colors\_utils}, \hyperpage{47}
+    \subitem {src.utils.colors\_utils}, \hyperpage{59}
   \item {cu\_rgb\_to\_hex}
-    \subitem {src.utils.colors\_utils}, \hyperpage{48}
+    \subitem {src.utils.colors\_utils}, \hyperpage{60}
 
   \indexspace
 
   \item {gp\_choose\_bonus}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{32}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{37}
   \item {gp\_gestion\_partie}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{32}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{37}
   \item {gp\_get\_player\_choice}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{33}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{38}
   \item {gp\_handle\_bot\_turn}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{33}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{39}
   \item {gp\_handle\_player\_turn}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{34}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{40}
   \item {gp\_handle\_undo\_redo}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{34}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{41}
   \item {gp\_handle\_victory}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{34}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{41}
   \item {gp\_show\_rules}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{35}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{42}
   \item {gp\_start\_game}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{35}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{42}
   \item {gp\_use\_bonus}
-    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{35}
+    \subitem {src.puissanceQuatre.gestionPartie}, \hyperpage{42}
   \item {gr\_apply\_gravity}
-    \subitem {src.puissanceQuatre.grid}, \hyperpage{36}
+    \subitem {src.puissanceQuatre.grid}, \hyperpage{43}
   \item {gr\_init\_grille}
-    \subitem {src.puissanceQuatre.grid}, \hyperpage{36}
+    \subitem {src.puissanceQuatre.grid}, \hyperpage{44}
   \item {gr\_print\_grille}
-    \subitem {src.puissanceQuatre.grid}, \hyperpage{37}
+    \subitem {src.puissanceQuatre.grid}, \hyperpage{44}
   \item {gr\_reset\_grille}
-    \subitem {src.puissanceQuatre.grid}, \hyperpage{37}
+    \subitem {src.puissanceQuatre.grid}, \hyperpage{45}
+
+  \indexspace
+
+  \item {Liste des choses à faire}, \hyperpage{5}
+  \item {Liste des tests}, \hyperpage{7}
+
+  \indexspace
+
+  \item {main}, \hyperpage{11}
+    \subitem {main}, \hyperpage{11}
 
   \indexspace
 
   \item {p4b\_flip\_grid}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{29}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{34}
   \item {p4b\_invert\_grid}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{29}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{35}
   \item {p4b\_no\_bonus}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{30}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{35}
   \item {p4b\_random\_placement}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{30}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{35}
   \item {p4b\_remove\_full\_line}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{30}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{36}
   \item {p4b\_use\_min\_max}
-    \subitem {src.puissanceQuatre.bonus}, \hyperpage{31}
+    \subitem {src.puissanceQuatre.bonus}, \hyperpage{36}
   \item {pq\_ajout\_piece}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{38}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{46}
   \item {pq\_find\_hole}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{39}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{47}
   \item {pq\_minmax}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{39}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{48}
   \item {pq\_partie\_finie}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{40}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{49}
   \item {pq\_redo}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{41}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{50}
   \item {pq\_undo}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{41}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{50}
   \item {pq\_verif\_colonne}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{42}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{51}
   \item {pq\_victoire}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{42}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{51}
   \item {pq\_victoire\_colonne}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{42}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{52}
   \item {pq\_victoire\_diago}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{43}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{53}
   \item {pq\_victoire\_ligne}
-    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{44}
+    \subitem {src.puissanceQuatre.puissanceQuatre}, \hyperpage{54}
+  \item {ProjetApplicationConceptionLogicielle}, \hyperpage{1}
 
   \indexspace
 
-  \item {src}, \hyperpage{11}
-  \item {src.controller}, \hyperpage{11}
-  \item {src.controller.ctrl\_main}, \hyperpage{11}
-    \subitem {cm\_ended\_game}, \hyperpage{12}
-    \subitem {cm\_info}, \hyperpage{12}
-    \subitem {cm\_init}, \hyperpage{12}
+  \item {src}, \hyperpage{12}
+  \item {src.controller}, \hyperpage{12}
+  \item {src.controller.ctrl\_main}, \hyperpage{12}
+    \subitem {cm\_ended\_game}, \hyperpage{13}
+    \subitem {cm\_info}, \hyperpage{13}
+    \subitem {cm\_init}, \hyperpage{13}
     \subitem {cm\_menu}, \hyperpage{13}
-    \subitem {cm\_page\_accueil}, \hyperpage{13}
+    \subitem {cm\_page\_accueil}, \hyperpage{14}
     \subitem {cm\_page\_bonus}, \hyperpage{14}
-    \subitem {cm\_page\_parameters}, \hyperpage{14}
-    \subitem {cm\_page\_play}, \hyperpage{14}
+    \subitem {cm\_page\_parameters}, \hyperpage{15}
+    \subitem {cm\_page\_play}, \hyperpage{15}
     \subitem {cm\_quit}, \hyperpage{15}
-    \subitem {cm\_update}, \hyperpage{15}
-    \subitem {cm\_warning}, \hyperpage{15}
+    \subitem {cm\_update}, \hyperpage{16}
+    \subitem {cm\_warning}, \hyperpage{16}
   \item {src.controller.ctrl\_pageAccueil}, \hyperpage{16}
-    \subitem {cpa\_init}, \hyperpage{16}
-    \subitem {cpa\_play}, \hyperpage{16}
+    \subitem {cpa\_init}, \hyperpage{17}
+    \subitem {cpa\_play}, \hyperpage{17}
   \item {src.controller.ctrl\_PageBonus}, \hyperpage{17}
-    \subitem {cpb\_get\_bonuses}, \hyperpage{17}
-    \subitem {cpb\_get\_chosen\_bonus}, \hyperpage{17}
+    \subitem {cpb\_get\_bonuses}, \hyperpage{18}
+    \subitem {cpb\_get\_chosen\_bonus}, \hyperpage{18}
     \subitem {cpb\_init}, \hyperpage{18}
-    \subitem {cpb\_show\_bonus\_description}, \hyperpage{18}
+    \subitem {cpb\_show\_bonus\_description}, \hyperpage{19}
     \subitem {cpb\_valider\_bonus}, \hyperpage{19}
   \item {src.controller.ctrl\_pageJeu}, \hyperpage{19}
     \subitem {cpj\_bot\_play}, \hyperpage{20}
-    \subitem {cpj\_draw\_grid}, \hyperpage{20}
-    \subitem {cpj\_hover}, \hyperpage{20}
-    \subitem {cpj\_info\_turn}, \hyperpage{21}
-    \subitem {cpj\_init}, \hyperpage{21}
-    \subitem {cpj\_play}, \hyperpage{21}
-    \subitem {cpj\_put\_coin}, \hyperpage{22}
-    \subitem {cpj\_quit}, \hyperpage{22}
-    \subitem {cpj\_redo}, \hyperpage{23}
-    \subitem {cpj\_undo}, \hyperpage{23}
-    \subitem {cpj\_update}, \hyperpage{23}
-    \subitem {cpj\_update\_coin}, \hyperpage{23}
-    \subitem {cpj\_update\_grid}, \hyperpage{24}
-    \subitem {cpj\_use\_bonus}, \hyperpage{24}
-  \item {src.controller.ctrl\_pageParametres}, \hyperpage{25}
-    \subitem {cpp\_askcolor}, \hyperpage{25}
-    \subitem {cpp\_custom\_load}, \hyperpage{26}
-    \subitem {cpp\_custom\_reset}, \hyperpage{26}
-    \subitem {cpp\_custom\_save}, \hyperpage{26}
-    \subitem {cpp\_init}, \hyperpage{27}
-    \subitem {cpp\_settings\_load}, \hyperpage{27}
-    \subitem {cpp\_settings\_reset}, \hyperpage{28}
-    \subitem {cpp\_settings\_save}, \hyperpage{28}
-  \item {src.puissanceQuatre}, \hyperpage{28}
-  \item {src.puissanceQuatre.bonus}, \hyperpage{28}
-    \subitem {p4b\_flip\_grid}, \hyperpage{29}
-    \subitem {p4b\_invert\_grid}, \hyperpage{29}
-    \subitem {p4b\_no\_bonus}, \hyperpage{30}
-    \subitem {p4b\_random\_placement}, \hyperpage{30}
-    \subitem {p4b\_remove\_full\_line}, \hyperpage{30}
-    \subitem {p4b\_use\_min\_max}, \hyperpage{31}
-  \item {src.puissanceQuatre.gestionPartie}, \hyperpage{31}
-    \subitem {gp\_choose\_bonus}, \hyperpage{32}
-    \subitem {gp\_gestion\_partie}, \hyperpage{32}
-    \subitem {gp\_get\_player\_choice}, \hyperpage{33}
-    \subitem {gp\_handle\_bot\_turn}, \hyperpage{33}
-    \subitem {gp\_handle\_player\_turn}, \hyperpage{34}
-    \subitem {gp\_handle\_undo\_redo}, \hyperpage{34}
-    \subitem {gp\_handle\_victory}, \hyperpage{34}
-    \subitem {gp\_show\_rules}, \hyperpage{35}
-    \subitem {gp\_start\_game}, \hyperpage{35}
-    \subitem {gp\_use\_bonus}, \hyperpage{35}
-  \item {src.puissanceQuatre.grid}, \hyperpage{35}
-    \subitem {gr\_apply\_gravity}, \hyperpage{36}
-    \subitem {gr\_init\_grille}, \hyperpage{36}
-    \subitem {gr\_print\_grille}, \hyperpage{37}
-    \subitem {gr\_reset\_grille}, \hyperpage{37}
-  \item {src.puissanceQuatre.puissanceQuatre}, \hyperpage{38}
-    \subitem {pq\_ajout\_piece}, \hyperpage{38}
-    \subitem {pq\_find\_hole}, \hyperpage{39}
-    \subitem {pq\_minmax}, \hyperpage{39}
-    \subitem {pq\_partie\_finie}, \hyperpage{40}
-    \subitem {pq\_redo}, \hyperpage{41}
-    \subitem {pq\_undo}, \hyperpage{41}
-    \subitem {pq\_verif\_colonne}, \hyperpage{42}
-    \subitem {pq\_victoire}, \hyperpage{42}
-    \subitem {pq\_victoire\_colonne}, \hyperpage{42}
-    \subitem {pq\_victoire\_diago}, \hyperpage{43}
-    \subitem {pq\_victoire\_ligne}, \hyperpage{44}
-  \item {src.utils}, \hyperpage{44}
-  \item {src.utils.bonus\_utils}, \hyperpage{44}
-    \subitem {bu\_format\_bonus\_name}, \hyperpage{45}
-    \subitem {bu\_get\_bonus\_description}, \hyperpage{45}
-    \subitem {bu\_get\_bonus\_name}, \hyperpage{45}
-    \subitem {bu\_get\_bonuses}, \hyperpage{45}
-    \subitem {bu\_unformat\_bonus\_name}, \hyperpage{46}
-  \item {src.utils.colors\_utils}, \hyperpage{46}
-    \subitem {cu\_colors\_too\_close}, \hyperpage{46}
-    \subitem {cu\_hex\_to\_rgb}, \hyperpage{47}
-    \subitem {cu\_reduce\_hue}, \hyperpage{47}
-    \subitem {cu\_rgb\_distance}, \hyperpage{47}
-    \subitem {cu\_rgb\_to\_hex}, \hyperpage{48}
-  \item {src.utils.widget\_utils}, \hyperpage{48}
-    \subitem {wu\_get\_font\_size}, \hyperpage{48}
-    \subitem {wu\_get\_font\_size\_window}, \hyperpage{49}
-    \subitem {wu\_get\_grid\_size}, \hyperpage{49}
-    \subitem {wu\_get\_screen\_size}, \hyperpage{49}
-  \item {src.view}, \hyperpage{50}
-  \item {src.view.view\_main}, \hyperpage{50}
-    \subitem {vm\_init}, \hyperpage{51}
-    \subitem {vm\_menu}, \hyperpage{51}
-    \subitem {vm\_message\_game\_ended}, \hyperpage{51}
-    \subitem {vm\_message\_info}, \hyperpage{51}
-    \subitem {vm\_message\_warning}, \hyperpage{52}
-    \subitem {vm\_quit}, \hyperpage{52}
-    \subitem {vm\_remove\_frame}, \hyperpage{52}
-    \subitem {vm\_update}, \hyperpage{53}
-  \item {src.view.view\_pageAccueil}, \hyperpage{53}
-    \subitem {vpa\_destroy}, \hyperpage{53}
-    \subitem {vpa\_init}, \hyperpage{53}
-  \item {src.view.view\_pageBonus}, \hyperpage{54}
-    \subitem {vpb\_get\_bonus}, \hyperpage{54}
-    \subitem {vpb\_get\_frame}, \hyperpage{55}
-    \subitem {vpb\_init}, \hyperpage{55}
-    \subitem {vpb\_show\_bonus\_description}, \hyperpage{55}
-  \item {src.view.view\_pageJeu}, \hyperpage{56}
-    \subitem {vpj\_bonus\_activation}, \hyperpage{56}
-    \subitem {vpj\_bot\_turn}, \hyperpage{57}
-    \subitem {vpj\_destroy}, \hyperpage{57}
-    \subitem {vpj\_disable\_bonus}, \hyperpage{57}
-    \subitem {vpj\_draw\_grid}, \hyperpage{57}
-    \subitem {vpj\_get\_frame}, \hyperpage{58}
-    \subitem {vpj\_get\_grid\_cell}, \hyperpage{58}
-    \subitem {vpj\_init\_page\_jeu}, \hyperpage{59}
-    \subitem {vpj\_reset\_hover}, \hyperpage{59}
-    \subitem {vpj\_set\_info}, \hyperpage{59}
-    \subitem {vpj\_show\_coin}, \hyperpage{60}
-    \subitem {vpj\_show\_hover}, \hyperpage{60}
-  \item {src.view.view\_pageParametres}, \hyperpage{60}
-    \subitem {vpp\_askcolor}, \hyperpage{61}
-    \subitem {vpp\_get\_bot\_color}, \hyperpage{62}
-    \subitem {vpp\_get\_difficulty}, \hyperpage{62}
-    \subitem {vpp\_get\_grid\_color}, \hyperpage{62}
-    \subitem {vpp\_get\_joueur\_color}, \hyperpage{62}
-    \subitem {vpp\_get\_nb\_columns}, \hyperpage{63}
-    \subitem {vpp\_get\_nb\_jetons}, \hyperpage{63}
-    \subitem {vpp\_get\_nb\_rows}, \hyperpage{63}
-    \subitem {vpp\_init}, \hyperpage{63}
-    \subitem {vpp\_init\_custom}, \hyperpage{64}
-    \subitem {vpp\_init\_settings}, \hyperpage{64}
-    \subitem {vpp\_reset\_customs}, \hyperpage{65}
-    \subitem {vpp\_reset\_settings}, \hyperpage{65}
-    \subitem {vpp\_set\_bot\_color}, \hyperpage{65}
-    \subitem {vpp\_set\_difficulty}, \hyperpage{65}
-    \subitem {vpp\_set\_grid\_color}, \hyperpage{66}
-    \subitem {vpp\_set\_joueur\_color}, \hyperpage{66}
-    \subitem {vpp\_set\_nb\_columns}, \hyperpage{67}
-    \subitem {vpp\_set\_nb\_jetons}, \hyperpage{67}
-    \subitem {vpp\_set\_nb\_rows}, \hyperpage{67}
+    \subitem {cpj\_draw\_grid}, \hyperpage{21}
+    \subitem {cpj\_hover}, \hyperpage{22}
+    \subitem {cpj\_info\_turn}, \hyperpage{22}
+    \subitem {cpj\_init}, \hyperpage{23}
+    \subitem {cpj\_play}, \hyperpage{24}
+    \subitem {cpj\_put\_coin}, \hyperpage{24}
+    \subitem {cpj\_quit}, \hyperpage{25}
+    \subitem {cpj\_redo}, \hyperpage{26}
+    \subitem {cpj\_undo}, \hyperpage{26}
+    \subitem {cpj\_update}, \hyperpage{26}
+    \subitem {cpj\_update\_coin}, \hyperpage{27}
+    \subitem {cpj\_update\_grid}, \hyperpage{27}
+    \subitem {cpj\_use\_bonus}, \hyperpage{28}
+  \item {src.controller.ctrl\_pageParametres}, \hyperpage{29}
+    \subitem {cpp\_askcolor}, \hyperpage{30}
+    \subitem {cpp\_custom\_load}, \hyperpage{30}
+    \subitem {cpp\_custom\_reset}, \hyperpage{31}
+    \subitem {cpp\_custom\_save}, \hyperpage{31}
+    \subitem {cpp\_init}, \hyperpage{31}
+    \subitem {cpp\_settings\_load}, \hyperpage{32}
+    \subitem {cpp\_settings\_reset}, \hyperpage{33}
+    \subitem {cpp\_settings\_save}, \hyperpage{33}
+  \item {src.puissanceQuatre}, \hyperpage{33}
+  \item {src.puissanceQuatre.bonus}, \hyperpage{34}
+    \subitem {p4b\_flip\_grid}, \hyperpage{34}
+    \subitem {p4b\_invert\_grid}, \hyperpage{35}
+    \subitem {p4b\_no\_bonus}, \hyperpage{35}
+    \subitem {p4b\_random\_placement}, \hyperpage{35}
+    \subitem {p4b\_remove\_full\_line}, \hyperpage{36}
+    \subitem {p4b\_use\_min\_max}, \hyperpage{36}
+  \item {src.puissanceQuatre.gestionPartie}, \hyperpage{36}
+    \subitem {gp\_choose\_bonus}, \hyperpage{37}
+    \subitem {gp\_gestion\_partie}, \hyperpage{37}
+    \subitem {gp\_get\_player\_choice}, \hyperpage{38}
+    \subitem {gp\_handle\_bot\_turn}, \hyperpage{39}
+    \subitem {gp\_handle\_player\_turn}, \hyperpage{40}
+    \subitem {gp\_handle\_undo\_redo}, \hyperpage{41}
+    \subitem {gp\_handle\_victory}, \hyperpage{41}
+    \subitem {gp\_show\_rules}, \hyperpage{42}
+    \subitem {gp\_start\_game}, \hyperpage{42}
+    \subitem {gp\_use\_bonus}, \hyperpage{42}
+  \item {src.puissanceQuatre.grid}, \hyperpage{43}
+    \subitem {gr\_apply\_gravity}, \hyperpage{43}
+    \subitem {gr\_init\_grille}, \hyperpage{44}
+    \subitem {gr\_print\_grille}, \hyperpage{44}
+    \subitem {gr\_reset\_grille}, \hyperpage{45}
+  \item {src.puissanceQuatre.puissanceQuatre}, \hyperpage{45}
+    \subitem {pq\_ajout\_piece}, \hyperpage{46}
+    \subitem {pq\_find\_hole}, \hyperpage{47}
+    \subitem {pq\_minmax}, \hyperpage{48}
+    \subitem {pq\_partie\_finie}, \hyperpage{49}
+    \subitem {pq\_redo}, \hyperpage{50}
+    \subitem {pq\_undo}, \hyperpage{50}
+    \subitem {pq\_verif\_colonne}, \hyperpage{51}
+    \subitem {pq\_victoire}, \hyperpage{51}
+    \subitem {pq\_victoire\_colonne}, \hyperpage{52}
+    \subitem {pq\_victoire\_diago}, \hyperpage{53}
+    \subitem {pq\_victoire\_ligne}, \hyperpage{54}
+  \item {src.utils}, \hyperpage{55}
+  \item {src.utils.bonus\_utils}, \hyperpage{55}
+    \subitem {bu\_format\_bonus\_name}, \hyperpage{56}
+    \subitem {bu\_get\_bonus\_description}, \hyperpage{56}
+    \subitem {bu\_get\_bonus\_name}, \hyperpage{56}
+    \subitem {bu\_get\_bonuses}, \hyperpage{56}
+    \subitem {bu\_unformat\_bonus\_name}, \hyperpage{57}
+  \item {src.utils.colors\_utils}, \hyperpage{57}
+    \subitem {cu\_colors\_too\_close}, \hyperpage{58}
+    \subitem {cu\_hex\_to\_rgb}, \hyperpage{58}
+    \subitem {cu\_reduce\_hue}, \hyperpage{59}
+    \subitem {cu\_rgb\_distance}, \hyperpage{59}
+    \subitem {cu\_rgb\_to\_hex}, \hyperpage{60}
+  \item {src.utils.widget\_utils}, \hyperpage{60}
+    \subitem {wu\_get\_font\_size}, \hyperpage{61}
+    \subitem {wu\_get\_font\_size\_window}, \hyperpage{61}
+    \subitem {wu\_get\_grid\_size}, \hyperpage{62}
+    \subitem {wu\_get\_screen\_size}, \hyperpage{62}
+  \item {src.view}, \hyperpage{63}
+  \item {src.view.view\_main}, \hyperpage{63}
+    \subitem {vm\_init}, \hyperpage{64}
+    \subitem {vm\_menu}, \hyperpage{64}
+    \subitem {vm\_message\_game\_ended}, \hyperpage{64}
+    \subitem {vm\_message\_info}, \hyperpage{65}
+    \subitem {vm\_message\_warning}, \hyperpage{65}
+    \subitem {vm\_quit}, \hyperpage{65}
+    \subitem {vm\_remove\_frame}, \hyperpage{65}
+    \subitem {vm\_update}, \hyperpage{66}
+  \item {src.view.view\_pageAccueil}, \hyperpage{66}
+    \subitem {vpa\_destroy}, \hyperpage{66}
+    \subitem {vpa\_init}, \hyperpage{66}
+  \item {src.view.view\_pageBonus}, \hyperpage{67}
+    \subitem {vpb\_get\_bonus}, \hyperpage{67}
+    \subitem {vpb\_get\_frame}, \hyperpage{68}
+    \subitem {vpb\_init}, \hyperpage{68}
+    \subitem {vpb\_show\_bonus\_description}, \hyperpage{68}
+  \item {src.view.view\_pageJeu}, \hyperpage{69}
+    \subitem {vpj\_bonus\_activation}, \hyperpage{70}
+    \subitem {vpj\_bot\_turn}, \hyperpage{70}
+    \subitem {vpj\_destroy}, \hyperpage{70}
+    \subitem {vpj\_disable\_bonus}, \hyperpage{71}
+    \subitem {vpj\_draw\_grid}, \hyperpage{71}
+    \subitem {vpj\_get\_frame}, \hyperpage{71}
+    \subitem {vpj\_get\_grid\_cell}, \hyperpage{71}
+    \subitem {vpj\_init\_page\_jeu}, \hyperpage{72}
+    \subitem {vpj\_reset\_hover}, \hyperpage{72}
+    \subitem {vpj\_set\_info}, \hyperpage{73}
+    \subitem {vpj\_show\_coin}, \hyperpage{73}
+    \subitem {vpj\_show\_hover}, \hyperpage{73}
+  \item {src.view.view\_pageParametres}, \hyperpage{74}
+    \subitem {vpp\_askcolor}, \hyperpage{75}
+    \subitem {vpp\_get\_bot\_color}, \hyperpage{75}
+    \subitem {vpp\_get\_difficulty}, \hyperpage{76}
+    \subitem {vpp\_get\_grid\_color}, \hyperpage{76}
+    \subitem {vpp\_get\_joueur\_color}, \hyperpage{76}
+    \subitem {vpp\_get\_nb\_columns}, \hyperpage{76}
+    \subitem {vpp\_get\_nb\_jetons}, \hyperpage{77}
+    \subitem {vpp\_get\_nb\_rows}, \hyperpage{77}
+    \subitem {vpp\_init}, \hyperpage{77}
+    \subitem {vpp\_init\_custom}, \hyperpage{78}
+    \subitem {vpp\_init\_settings}, \hyperpage{78}
+    \subitem {vpp\_reset\_customs}, \hyperpage{79}
+    \subitem {vpp\_reset\_settings}, \hyperpage{80}
+    \subitem {vpp\_set\_bot\_color}, \hyperpage{80}
+    \subitem {vpp\_set\_difficulty}, \hyperpage{81}
+    \subitem {vpp\_set\_grid\_color}, \hyperpage{81}
+    \subitem {vpp\_set\_joueur\_color}, \hyperpage{82}
+    \subitem {vpp\_set\_nb\_columns}, \hyperpage{83}
+    \subitem {vpp\_set\_nb\_jetons}, \hyperpage{83}
+    \subitem {vpp\_set\_nb\_rows}, \hyperpage{84}
 
   \indexspace
 
-  \item {tests}, \hyperpage{68}
-  \item {tests.test\_grid}, \hyperpage{68}
-    \subitem {tg\_init\_grille}, \hyperpage{68}
-    \subitem {tg\_test\_all}, \hyperpage{69}
-  \item {tests.test\_puissanceQuatre}, \hyperpage{69}
-    \subitem {tp\_ajout\_piece}, \hyperpage{69}
-    \subitem {tp\_test\_all}, \hyperpage{70}
-    \subitem {tp\_verif\_colonne}, \hyperpage{70}
-    \subitem {tp\_victoire\_colonne}, \hyperpage{70}
-    \subitem {tp\_victoire\_diago}, \hyperpage{70}
-    \subitem {tp\_victoire\_ligne}, \hyperpage{70}
+  \item {tests}, \hyperpage{85}
+  \item {tests.test\_grid}, \hyperpage{85}
+    \subitem {tg\_init\_grille}, \hyperpage{85}
+    \subitem {tg\_test\_all}, \hyperpage{86}
+  \item {tests.test\_puissanceQuatre}, \hyperpage{86}
+    \subitem {tp\_ajout\_piece}, \hyperpage{87}
+    \subitem {tp\_test\_all}, \hyperpage{87}
+    \subitem {tp\_verif\_colonne}, \hyperpage{88}
+    \subitem {tp\_victoire\_colonne}, \hyperpage{89}
+    \subitem {tp\_victoire\_diago}, \hyperpage{89}
+    \subitem {tp\_victoire\_ligne}, \hyperpage{90}
   \item {tg\_init\_grille}
-    \subitem {tests.test\_grid}, \hyperpage{68}
+    \subitem {tests.test\_grid}, \hyperpage{85}
   \item {tg\_test\_all}
-    \subitem {tests.test\_grid}, \hyperpage{69}
+    \subitem {tests.test\_grid}, \hyperpage{86}
   \item {tp\_ajout\_piece}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{69}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{87}
   \item {tp\_test\_all}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{70}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{87}
   \item {tp\_verif\_colonne}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{70}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{88}
   \item {tp\_victoire\_colonne}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{70}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{89}
   \item {tp\_victoire\_diago}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{70}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{89}
   \item {tp\_victoire\_ligne}
-    \subitem {tests.test\_puissanceQuatre}, \hyperpage{70}
+    \subitem {tests.test\_puissanceQuatre}, \hyperpage{90}
 
   \indexspace
 
   \item {vm\_init}
-    \subitem {src.view.view\_main}, \hyperpage{51}
+    \subitem {src.view.view\_main}, \hyperpage{64}
   \item {vm\_menu}
-    \subitem {src.view.view\_main}, \hyperpage{51}
+    \subitem {src.view.view\_main}, \hyperpage{64}
   \item {vm\_message\_game\_ended}
-    \subitem {src.view.view\_main}, \hyperpage{51}
+    \subitem {src.view.view\_main}, \hyperpage{64}
   \item {vm\_message\_info}
-    \subitem {src.view.view\_main}, \hyperpage{51}
+    \subitem {src.view.view\_main}, \hyperpage{65}
   \item {vm\_message\_warning}
-    \subitem {src.view.view\_main}, \hyperpage{52}
+    \subitem {src.view.view\_main}, \hyperpage{65}
   \item {vm\_quit}
-    \subitem {src.view.view\_main}, \hyperpage{52}
+    \subitem {src.view.view\_main}, \hyperpage{65}
   \item {vm\_remove\_frame}
-    \subitem {src.view.view\_main}, \hyperpage{52}
+    \subitem {src.view.view\_main}, \hyperpage{65}
   \item {vm\_update}
-    \subitem {src.view.view\_main}, \hyperpage{53}
+    \subitem {src.view.view\_main}, \hyperpage{66}
   \item {vpa\_destroy}
-    \subitem {src.view.view\_pageAccueil}, \hyperpage{53}
+    \subitem {src.view.view\_pageAccueil}, \hyperpage{66}
   \item {vpa\_init}
-    \subitem {src.view.view\_pageAccueil}, \hyperpage{53}
+    \subitem {src.view.view\_pageAccueil}, \hyperpage{66}
   \item {vpb\_get\_bonus}
-    \subitem {src.view.view\_pageBonus}, \hyperpage{54}
+    \subitem {src.view.view\_pageBonus}, \hyperpage{67}
   \item {vpb\_get\_frame}
-    \subitem {src.view.view\_pageBonus}, \hyperpage{55}
+    \subitem {src.view.view\_pageBonus}, \hyperpage{68}
   \item {vpb\_init}
-    \subitem {src.view.view\_pageBonus}, \hyperpage{55}
+    \subitem {src.view.view\_pageBonus}, \hyperpage{68}
   \item {vpb\_show\_bonus\_description}
-    \subitem {src.view.view\_pageBonus}, \hyperpage{55}
+    \subitem {src.view.view\_pageBonus}, \hyperpage{68}
   \item {vpj\_bonus\_activation}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{56}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{70}
   \item {vpj\_bot\_turn}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{57}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{70}
   \item {vpj\_destroy}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{57}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{70}
   \item {vpj\_disable\_bonus}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{57}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{71}
   \item {vpj\_draw\_grid}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{57}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{71}
   \item {vpj\_get\_frame}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{58}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{71}
   \item {vpj\_get\_grid\_cell}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{58}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{71}
   \item {vpj\_init\_page\_jeu}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{59}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{72}
   \item {vpj\_reset\_hover}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{59}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{72}
   \item {vpj\_set\_info}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{59}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{73}
   \item {vpj\_show\_coin}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{60}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{73}
   \item {vpj\_show\_hover}
-    \subitem {src.view.view\_pageJeu}, \hyperpage{60}
+    \subitem {src.view.view\_pageJeu}, \hyperpage{73}
   \item {vpp\_askcolor}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{61}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{75}
   \item {vpp\_get\_bot\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{62}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{75}
   \item {vpp\_get\_difficulty}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{62}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{76}
   \item {vpp\_get\_grid\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{62}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{76}
   \item {vpp\_get\_joueur\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{62}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{76}
   \item {vpp\_get\_nb\_columns}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{63}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{76}
   \item {vpp\_get\_nb\_jetons}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{63}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{77}
   \item {vpp\_get\_nb\_rows}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{63}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{77}
   \item {vpp\_init}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{63}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{77}
   \item {vpp\_init\_custom}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{64}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{78}
   \item {vpp\_init\_settings}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{64}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{78}
   \item {vpp\_reset\_customs}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{65}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{79}
   \item {vpp\_reset\_settings}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{65}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{80}
   \item {vpp\_set\_bot\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{65}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{80}
   \item {vpp\_set\_difficulty}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{65}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{81}
   \item {vpp\_set\_grid\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{66}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{81}
   \item {vpp\_set\_joueur\_color}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{66}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{82}
   \item {vpp\_set\_nb\_columns}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{67}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{83}
   \item {vpp\_set\_nb\_jetons}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{67}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{83}
   \item {vpp\_set\_nb\_rows}
-    \subitem {src.view.view\_pageParametres}, \hyperpage{67}
+    \subitem {src.view.view\_pageParametres}, \hyperpage{84}
 
   \indexspace
 
   \item {wu\_get\_font\_size}
-    \subitem {src.utils.widget\_utils}, \hyperpage{48}
+    \subitem {src.utils.widget\_utils}, \hyperpage{61}
   \item {wu\_get\_font\_size\_window}
-    \subitem {src.utils.widget\_utils}, \hyperpage{49}
+    \subitem {src.utils.widget\_utils}, \hyperpage{61}
   \item {wu\_get\_grid\_size}
-    \subitem {src.utils.widget\_utils}, \hyperpage{49}
+    \subitem {src.utils.widget\_utils}, \hyperpage{62}
   \item {wu\_get\_screen\_size}
-    \subitem {src.utils.widget\_utils}, \hyperpage{49}
+    \subitem {src.utils.widget\_utils}, \hyperpage{62}
 
 \end{theindex}

@@ -1,0 +1,11 @@
+<map id="src.view.view_pageParametres.vpp_reset_settings" name="src.view.view_pageParametres.vpp_reset_settings">
+<area shape="rect" id="Node000001" title="Réinitialise les paramètres du jeu." alt="" coords="5,101,256,141"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a6e0f5a65f9cbea40bd0ac046150fbedb" title="Mutateur pour la difficulté" alt="" coords="304,5,555,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,99,303,55,331,46,333,52,305,60,182,104"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a143176e6416225112080e5ba2fb83989" title="Mutateur pour le nombre de colonnes." alt="" coords="304,69,555,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,105,290,102,291,107,257,111"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a367073fe74c5742d9d7d55c5aa62fea1" title="Mutateur pour le nombre de jetons requis." alt="" coords="304,133,555,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,132,291,136,290,141,256,137"/>
+<area shape="rect" id="Node000005" href="$namespacesrc_1_1view_1_1view__pageParametres.html#ad1196ff4826cf21e6d173c1cbd54474f" title="Mutateur pour le nombre de lignes." alt="" coords="304,197,555,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,139,305,183,333,191,331,196,303,188,181,144"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="src.utils.widget_utils.wu_get_screen_size" name="src.utils.widget_utils.wu_get_screen_size">
+<area shape="rect" id="Node000001" title="Récupère la taille de l&#39;écran." alt="" coords="232,37,411,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4" title="Récupère la taille de la police." alt="" coords="5,5,184,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,45,184,41,185,35,219,40"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1utils_1_1widget__utils.html#ade716c55da64db8772861e33fcb9e055" title="Récupère la taille de la grille." alt="" coords="5,69,184,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,75,185,79,184,74,218,69"/>
+</map>

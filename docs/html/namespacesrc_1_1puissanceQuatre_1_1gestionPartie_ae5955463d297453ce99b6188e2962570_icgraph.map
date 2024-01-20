@@ -1,0 +1,10 @@
+<map id="src.puissanceQuatre.gestionPartie.gp_show_rules" name="src.puissanceQuatre.gestionPartie.gp_show_rules">
+<area shape="rect" id="Node000001" title="Affiche les règles du jeu." alt="" coords="773,5,980,45"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4e8b66a7bf337c6a25bf52f931f98164" title="Gère le déroulement d&#39;une partie de puissance 4." alt="" coords="260,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="760,25,725,24,515,24,467,25,467,20,515,19,725,19,760,19"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a87175ad265e007bc6ee697f4d9539254" title="Méthode permettant de gérer le tour du joueur." alt="" coords="515,33,725,73"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="760,41,726,45,725,39,759,35"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#aa466c9df31fc3b2b1d95c718feb5a735" title="Lance une partie normale en ligne de commande." alt="" coords="5,5,212,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,28,212,28,212,23,247,23"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="501,43,467,39,467,34,502,38"/>
+</map>

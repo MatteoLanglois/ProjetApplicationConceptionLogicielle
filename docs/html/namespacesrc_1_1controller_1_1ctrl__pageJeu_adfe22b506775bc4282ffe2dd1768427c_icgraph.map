@@ -1,0 +1,7 @@
+<map id="src.controller.ctrl_pageJeu.cpj_bot_play" name="src.controller.ctrl_pageJeu.cpj_bot_play">
+<area shape="rect" id="Node000001" title="Fait jouer le bot." alt="" coords="233,37,400,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ab02263adc48ce5d29f5428c28ff81f42" title="Joue un coup dans la grille de jeu." alt="" coords="26,5,165,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,46,164,38,165,33,220,41"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6522f20b78261f4f0a9a60b7d9598e7b" title="Utilise un bonus puis met à jour la grille de jeu." alt="" coords="5,69,185,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,74,186,79,185,74,220,69"/>
+</map>

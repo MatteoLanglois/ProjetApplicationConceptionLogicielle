@@ -9,7 +9,7 @@ Ce programme utilise les modules externes suivants :
 - inspect
 - argparse
 
-@package src.main
+@package main
 @brief Programme principal du jeu
 @details Ce module permet de lancer le jeu. Il contient un parser d'arguments
 qui permet de lancer le jeu en ligne de commande ou avec l'interface graphique.

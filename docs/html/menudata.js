@@ -26,12 +26,13 @@ var menudata={children:[
 {text:"Page principale",url:"index.html"},
 {text:"Pages associées",url:"pages.html"},
 {text:"Paquetages",url:"namespaces.html",children:[
-{text:"Paquetages",url:"namespaces.html"},
-{text:"Fonctions de paquetage",url:"namespacemembers.html",children:[
+{text:"Liste des paquetages",url:"namespaces.html"},
+{text:"Membres de paquetage",url:"namespacemembers.html",children:[
 {text:"Tout",url:"namespacemembers.html",children:[
 {text:"b",url:"namespacemembers.html#index_b"},
 {text:"c",url:"namespacemembers.html#index_c"},
 {text:"g",url:"namespacemembers.html#index_g"},
+{text:"m",url:"namespacemembers.html#index_m"},
 {text:"p",url:"namespacemembers.html#index_p"},
 {text:"t",url:"namespacemembers.html#index_t"},
 {text:"v",url:"namespacemembers.html#index_v"},
@@ -40,6 +41,7 @@ var menudata={children:[
 {text:"b",url:"namespacemembers_func.html#index_b"},
 {text:"c",url:"namespacemembers_func.html#index_c"},
 {text:"g",url:"namespacemembers_func.html#index_g"},
+{text:"m",url:"namespacemembers_func.html#index_m"},
 {text:"p",url:"namespacemembers_func.html#index_p"},
 {text:"t",url:"namespacemembers_func.html#index_t"},
 {text:"v",url:"namespacemembers_func.html#index_v"},

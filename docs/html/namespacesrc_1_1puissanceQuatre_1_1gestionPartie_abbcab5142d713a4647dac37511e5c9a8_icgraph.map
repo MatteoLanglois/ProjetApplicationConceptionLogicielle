@@ -1,0 +1,7 @@
+<map id="src.puissanceQuatre.gestionPartie.gp_handle_victory" name="src.puissanceQuatre.gestionPartie.gp_handle_victory">
+<area shape="rect" id="Node000001" title="Méthode permettant de gérer la victoire d&#39;un joueur." alt="" coords="515,5,721,45"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4e8b66a7bf337c6a25bf52f931f98164" title="Gère le déroulement d&#39;une partie de puissance 4." alt="" coords="260,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="501,28,467,28,467,23,501,23"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#aa466c9df31fc3b2b1d95c718feb5a735" title="Lance une partie normale en ligne de commande." alt="" coords="5,5,212,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,28,212,28,212,23,247,23"/>
+</map>

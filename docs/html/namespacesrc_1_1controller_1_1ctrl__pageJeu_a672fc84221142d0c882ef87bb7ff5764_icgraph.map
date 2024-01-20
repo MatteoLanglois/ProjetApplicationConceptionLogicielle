@@ -1,0 +1,21 @@
+<map id="src.controller.ctrl_pageJeu.cpj_put_coin" name="src.controller.ctrl_pageJeu.cpj_put_coin">
+<area shape="rect" id="Node000001" title="Place un jeton dans la grille de jeu." alt="" coords="472,99,639,139"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#adfe22b506775bc4282ffe2dd1768427c" title="Fait jouer le bot." alt="" coords="245,127,412,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,133,412,139,412,134,458,128"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ab02263adc48ce5d29f5428c28ff81f42" title="Joue un coup dans la grille de jeu." alt="" coords="26,69,165,109"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="458,115,165,96,165,91,458,110"/>
+<area shape="rect" id="Node000005" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#aea57256e0fd3b373ce6008c8be52c9aa" title="Réaffiche les jetons de la grille de jeu." alt="" coords="233,9,424,49"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="490,96,380,52,381,47,492,91"/>
+<area shape="rect" id="Node000007" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3b1f3eaf369683943243d07811fe578f" title="Réinitialise la grille de jeu." alt="" coords="235,193,423,233"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="501,147,425,181,388,196,386,191,423,176,499,142"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,126,164,109,165,104,234,121"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6522f20b78261f4f0a9a60b7d9598e7b" title="Utilise un bonus puis met à jour la grille de jeu." alt="" coords="5,133,185,173"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="231,152,185,153,185,148,231,147"/>
+<area shape="rect" id="Node000006" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac79da7d63efb417759acbfb173323615" title="Affiche le jeton qui sera posé" alt="" coords="21,5,169,45"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="219,30,169,29,170,24,219,25"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="236,192,173,176,175,171,237,187"/>
+<area shape="rect" id="Node000008" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a992aebf5b78270aa5aad2cd0f03e0568" title="Refait le dernier coup." alt="" coords="25,261,165,301"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="247,240,165,264,164,259,246,235"/>
+<area shape="rect" id="Node000009" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3dd68421fb8d0edc5ec271c9904cb6cc" title="Annule le dernier coup." alt="" coords="24,197,167,237"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="220,218,167,219,167,213,220,213"/>
+</map>

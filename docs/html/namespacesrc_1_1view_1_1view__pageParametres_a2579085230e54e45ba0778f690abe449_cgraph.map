@@ -1,0 +1,9 @@
+<map id="src.view.view_pageParametres.vpp_askcolor" name="src.view.view_pageParametres.vpp_askcolor">
+<area shape="rect" id="Node000001" title="Ouvre un sélecteur de couleur." alt="" coords="5,69,256,109"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a8038789dcb2ddfabf6e49281a701f71f" title="Mutateur pour la couleur des jetons du bot." alt="" coords="304,5,555,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,67,321,46,323,51,225,72"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a8972fc8e3e06339f306fe537790488a4" title="Mutateur pour la couleur de la grille." alt="" coords="304,69,555,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,87,290,87,290,92,256,92"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1view_1_1view__pageParametres.html#a66c69aa30d25b9833ec0bda3345075f7" title="Mutateur pour la couleur des jetons du joueur." alt="" coords="304,133,555,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,107,323,128,321,133,224,112"/>
+</map>

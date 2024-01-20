@@ -1,0 +1,7 @@
+<map id="src.view.view_pageParametres.vpp_init" name="src.view.view_pageParametres.vpp_init">
+<area shape="rect" id="Node000001" title="Fonction initialisant la page des paramètres." alt="" coords="5,45,284,70"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1view_1_1view__pageParametres.html#aa9282516e7758e88ec4b459c9a587d0c" title="Fonction initialisant la partie personnalisation des paramètres." alt="" coords="332,5,583,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,42,318,37,318,42,269,47"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1view_1_1view__pageParametres.html#ac640b38e84d99cdeca4eaea904bdbb92" title="Fonction initialisant la partie paramètres du jeu." alt="" coords="332,69,583,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,67,318,72,318,78,269,73"/>
+</map>

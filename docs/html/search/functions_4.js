@@ -1,11 +1,20 @@
 var searchData=
 [
-  ['tg_5finit_5fgrille_271',['tg_init_grille',['../namespacetests_1_1test__grid.html#abd1e217c51c4ec2bb4d911605484016c',1,'tests::test_grid']]],
-  ['tg_5ftest_5fall_272',['tg_test_all',['../namespacetests_1_1test__grid.html#abf69f5081480eb7fd3a2a89fc425baa6',1,'tests::test_grid']]],
-  ['tp_5fajout_5fpiece_273',['tp_ajout_piece',['../namespacetests_1_1test__puissanceQuatre.html#a50ee15df29277e36dd8c7b091e6e6839',1,'tests::test_puissanceQuatre']]],
-  ['tp_5ftest_5fall_274',['tp_test_all',['../namespacetests_1_1test__puissanceQuatre.html#a556aebc26980d14ace085502929938a9',1,'tests::test_puissanceQuatre']]],
-  ['tp_5fverif_5fcolonne_275',['tp_verif_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a3d1cea88a0c0ecf7a46333b4d98a0065',1,'tests::test_puissanceQuatre']]],
-  ['tp_5fvictoire_5fcolonne_276',['tp_victoire_colonne',['../namespacetests_1_1test__puissanceQuatre.html#a6b60c67d64944868f7f29f4ecd75dff0',1,'tests::test_puissanceQuatre']]],
-  ['tp_5fvictoire_5fdiago_277',['tp_victoire_diago',['../namespacetests_1_1test__puissanceQuatre.html#afca80042370ade9eff4620f6f8ffd306',1,'tests::test_puissanceQuatre']]],
-  ['tp_5fvictoire_5fligne_278',['tp_victoire_ligne',['../namespacetests_1_1test__puissanceQuatre.html#a35ef85b234ed41628b728d3daeda6d29',1,'tests::test_puissanceQuatre']]]
+  ['p4b_5fflip_5fgrid_0',['p4b_flip_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5finvert_5fgrid_1',['p4b_invert_grid',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fno_5fbonus_2',['p4b_no_bonus',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a701d695636d49d7658d9877df3326efe',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5frandom_5fplacement_3',['p4b_random_placement',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#aa70f2715fdecaebaa86f7255cd1be4d5',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fremove_5ffull_5fline_4',['p4b_remove_full_line',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f',1,'src::puissanceQuatre::bonus']]],
+  ['p4b_5fuse_5fmin_5fmax_5',['p4b_use_min_max',['../namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459',1,'src::puissanceQuatre::bonus']]],
+  ['pq_5fajout_5fpiece_6',['pq_ajout_piece',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5ffind_5fhole_7',['pq_find_hole',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fminmax_8',['pq_minmax',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fpartie_5ffinie_9',['pq_partie_finie',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fredo_10',['pq_redo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a06bdaec03582d0146e06983760361992',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fundo_11',['pq_undo',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a1b4eb42574730ac4cf337f9c6dac9f50',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fverif_5fcolonne_12',['pq_verif_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_13',['pq_victoire',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fcolonne_14',['pq_victoire_colonne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a662f22c97ca3b952383ae42f8bca4cad',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fdiago_15',['pq_victoire_diago',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a2f76c9e9fd0ced658f382d854abdefea',1,'src::puissanceQuatre::puissanceQuatre']]],
+  ['pq_5fvictoire_5fligne_16',['pq_victoire_ligne',['../namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b',1,'src::puissanceQuatre::puissanceQuatre']]]
 ];

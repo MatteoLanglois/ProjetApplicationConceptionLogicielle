@@ -1,0 +1,7 @@
+<map id="src.controller.ctrl_pageJeu.cpj_init" name="src.controller.ctrl_pageJeu.cpj_init">
+<area shape="rect" id="Node000001" title="Affiche la page de jeu." alt="" coords="5,37,137,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a78551bcfdafd534d8aa90cea38b57585" title="Dessine la grille de jeu." alt="" coords="185,5,360,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,44,171,39,172,44,138,49"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6c4585487aedfb2339c206fe793fcd78" title="Affiche le joueur qui doit jouer." alt="" coords="188,69,357,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,65,175,71,174,76,137,70"/>
+</map>

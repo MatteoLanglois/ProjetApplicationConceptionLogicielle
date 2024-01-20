@@ -1,14 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projet d&#39;application : P4++: Fonctions de paquetage</title>
+<title>Projet d&#39;application : P4++: Membres de paquetage</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -19,8 +21,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">Projet d&#39;application : P4++
    </div>
    <div id="projectbrief">Réalisation d&#39;un puissance 4 avec tkinter en python</div>
@@ -30,21 +32,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.10.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
@@ -56,461 +59,195 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
 <div class="textblock">Liste de tous les membres des espaces de nommage avec des liens vers la documentation de namespace de chaque membre :</div>
 
-<h3><a id="index_b"></a>- b -</h3><ul>
-<li>bu_format_bonus_name()
-: <a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#aab0b9f992e848b802cd816f02e7fad84">src.utils.bonus_utils</a>
-</li>
-<li>bu_get_bonus_description()
-: <a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a19203c3fb97b1d2ee01ec170583929a2">src.utils.bonus_utils</a>
-</li>
-<li>bu_get_bonus_name()
-: <a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a5a716619d8ad9a44e859a69e66494e57">src.utils.bonus_utils</a>
-</li>
-<li>bu_get_bonuses()
-: <a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#acfff3be431a3e359c164bf3cce167fff">src.utils.bonus_utils</a>
-</li>
-<li>bu_unformat_bonus_name()
-: <a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a24e02962d639e6aa1eb1c2bc8cf3a4e9">src.utils.bonus_utils</a>
-</li>
+<h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>bu_format_bonus_name()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#aab0b9f992e848b802cd816f02e7fad84">src.utils.bonus_utils</a></li>
+<li>bu_get_bonus_description()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a19203c3fb97b1d2ee01ec170583929a2">src.utils.bonus_utils</a></li>
+<li>bu_get_bonus_name()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a5a716619d8ad9a44e859a69e66494e57">src.utils.bonus_utils</a></li>
+<li>bu_get_bonuses()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#acfff3be431a3e359c164bf3cce167fff">src.utils.bonus_utils</a></li>
+<li>bu_unformat_bonus_name()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1bonus__utils.html#a24e02962d639e6aa1eb1c2bc8cf3a4e9">src.utils.bonus_utils</a></li>
 </ul>
 
 
-<h3><a id="index_c"></a>- c -</h3><ul>
-<li>cm_ended_game()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a54688bd9c133c30482bfd04771376202">src.controller.ctrl_main</a>
-</li>
-<li>cm_info()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a3ae3b84a620ae0f55c98d8d89b3c3809">src.controller.ctrl_main</a>
-</li>
-<li>cm_init()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ad4089499e6b14761718f8d364351884a">src.controller.ctrl_main</a>
-</li>
-<li>cm_menu()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a61fd0465a5dbb149125d2f32ef9e4472">src.controller.ctrl_main</a>
-</li>
-<li>cm_page_accueil()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a8fdce8d8dcf92ddee23da3a5e22c705d">src.controller.ctrl_main</a>
-</li>
-<li>cm_page_bonus()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a3d09afe52ac4275294ac2b930d47112a">src.controller.ctrl_main</a>
-</li>
-<li>cm_page_parameters()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a0cd0f0a0ac3edbade38eaa77c6cc7e95">src.controller.ctrl_main</a>
-</li>
-<li>cm_page_play()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a8eaca19ef0fa1b79357877a458c23f2e">src.controller.ctrl_main</a>
-</li>
-<li>cm_quit()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#aadb66adbf5dae2be4c63626e3e1a4b85">src.controller.ctrl_main</a>
-</li>
-<li>cm_update()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a7cac094e4154ea2dd9325ccf8e57ee92">src.controller.ctrl_main</a>
-</li>
-<li>cm_warning()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a949b8fa235c3e16937f485936a9b26f3">src.controller.ctrl_main</a>
-</li>
-<li>cpa_init()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageAccueil.html#afef6b4681839e4cc8d8ea15b30ac5339">src.controller.ctrl_pageAccueil</a>
-</li>
-<li>cpa_play()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageAccueil.html#aca3bacfe76883aedb26a35b0d0c1d202">src.controller.ctrl_pageAccueil</a>
-</li>
-<li>cpb_get_bonuses()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#adada698a3b6ae1acee5ba7c424f3f30d">src.controller.ctrl_PageBonus</a>
-</li>
-<li>cpb_get_chosen_bonus()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a4f3496b3f6be69421ac5c46e8ec01686">src.controller.ctrl_PageBonus</a>
-</li>
-<li>cpb_init()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a7b29e9bee741f5cd88b82426c2a3e12e">src.controller.ctrl_PageBonus</a>
-</li>
-<li>cpb_show_bonus_description()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a09463a6299c903d6078dd4c2b57cfcda">src.controller.ctrl_PageBonus</a>
-</li>
-<li>cpb_valider_bonus()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a37db4dbfdab85bd08b5117b3e0eb1b97">src.controller.ctrl_PageBonus</a>
-</li>
-<li>cpj_bot_play()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ae47c3cc32463683be9c6da658860d411">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_draw_grid()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#aabe0a49b2f1118bb3e5c60c17e5dece3">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_hover()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac2c55e41a86c25e68af7e46b69ca7fbd">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_info_turn()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a9b24be9078b1c7e614d53bfda036587f">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_init()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3fd86d8e8a9c1e6605d5164f822337a7">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_play()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a40404805f413c0c4832002ab40bb935f">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_put_coin()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a01c802112e2d4e1e2180446c6fe48b65">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_quit()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a1bb30ed375d988d1772e54acfa9677fb">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_redo()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a46555fa951b27730d85476196e84c594">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_undo()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ae21bd21e863bcfecc6295c0432e8ef1d">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_update()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a526e2cc7f8308a8a2c1da0c5730947af">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_update_coin()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#afa44bf9c2e10d25ff9e39ac5e0dc5726">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_update_grid()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a81868138c404cf6214153a7fa1aac7e5">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpj_use_bonus()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a2cb6e3e3f71344d368f0c2abf858cb68">src.controller.ctrl_pageJeu</a>
-</li>
-<li>cpp_askcolor()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#afae422de112c48199bb975538758d2b4">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_custom_load()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#af15eef5d46c59b6bc40d88b82c22d0ed">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_custom_reset()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a150237cdc549e2c3cc5e9c1c0c7bfda3">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_custom_save()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a66914d9cb27ee0aa433d0e5bc7f7fca9">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_init()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#afcc04bdee11f04a60c3a8e30acebaa2c">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_settings_load()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#aa5c7d95bcb32b47ba9083b62edf66204">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_settings_reset()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#ae714c478969f938d133b9472f8922752">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cpp_settings_save()
-: <a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a7b20d31c8617796ebddd1f49f294af13">src.controller.ctrl_pageParametres</a>
-</li>
-<li>cu_colors_too_close()
-: <a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aea89fda63d253c8d3c7444d3038fd0e8">src.utils.colors_utils</a>
-</li>
-<li>cu_hex_to_rgb()
-: <a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aff7eee88e24302eb29145e855777ced6">src.utils.colors_utils</a>
-</li>
-<li>cu_reduce_hue()
-: <a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#a7ad084cedc6f1df119151c2f6b2d96e9">src.utils.colors_utils</a>
-</li>
-<li>cu_rgb_distance()
-: <a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ae837cf3d4fe1d34a89570faa533ce262">src.utils.colors_utils</a>
-</li>
-<li>cu_rgb_to_hex()
-: <a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ac192ed293f57672fd6dd1dc72e934b6d">src.utils.colors_utils</a>
-</li>
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>cm_ended_game()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a252f52449cbca56ca9a3e91420fa093c">src.controller.ctrl_main</a></li>
+<li>cm_info()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a5a2eaaeae6a7e47cdc2d6dc8685df454">src.controller.ctrl_main</a></li>
+<li>cm_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ad808e279daddc6985981222157a1379c">src.controller.ctrl_main</a></li>
+<li>cm_menu()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a61fd0465a5dbb149125d2f32ef9e4472">src.controller.ctrl_main</a></li>
+<li>cm_page_accueil()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#a1d341d77b2fd0bf315709b9c54bc7860">src.controller.ctrl_main</a></li>
+<li>cm_page_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#af0810b7e66fa26373bcf1c466ffcef98">src.controller.ctrl_main</a></li>
+<li>cm_page_parameters()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#afa3e8f420cc77403cc579dae84a4b4cc">src.controller.ctrl_main</a></li>
+<li>cm_page_play()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#acb4730e95afd9277387231de9bd60cd7">src.controller.ctrl_main</a></li>
+<li>cm_quit()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ad3a57f05988560fe980a7a21a3947cff">src.controller.ctrl_main</a></li>
+<li>cm_update()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#ad1099cb7538c4d4579c553cbdfb4a73b">src.controller.ctrl_main</a></li>
+<li>cm_warning()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__main.html#aa1dd9db1d87ee9ed6eb6d1392edd93c1">src.controller.ctrl_main</a></li>
+<li>cpa_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageAccueil.html#a82c6876e6b4f8973c08059f2d40082c8">src.controller.ctrl_pageAccueil</a></li>
+<li>cpa_play()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageAccueil.html#ab72df4c6a29e1307bd2dd80fb9f97c60">src.controller.ctrl_pageAccueil</a></li>
+<li>cpb_get_bonuses()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#adada698a3b6ae1acee5ba7c424f3f30d">src.controller.ctrl_PageBonus</a></li>
+<li>cpb_get_chosen_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a4f3496b3f6be69421ac5c46e8ec01686">src.controller.ctrl_PageBonus</a></li>
+<li>cpb_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a12d76aef12203641845d655f6befea0a">src.controller.ctrl_PageBonus</a></li>
+<li>cpb_show_bonus_description()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a9c274ae8b968deda24597dbda4ca17ff">src.controller.ctrl_PageBonus</a></li>
+<li>cpb_valider_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__PageBonus.html#a83b5d64a98abf0a5ce1a94d271ba467d">src.controller.ctrl_PageBonus</a></li>
+<li>cpj_bot_play()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#adfe22b506775bc4282ffe2dd1768427c">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_draw_grid()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a78551bcfdafd534d8aa90cea38b57585">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_hover()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac79da7d63efb417759acbfb173323615">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_info_turn()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6c4585487aedfb2339c206fe793fcd78">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a540ec039fb625bf8f192a8b731e2c39f">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_play()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ab02263adc48ce5d29f5428c28ff81f42">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_put_coin()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a672fc84221142d0c882ef87bb7ff5764">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_quit()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3b9c56de00b1dff8f2fd0531de7567cc">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_redo()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a992aebf5b78270aa5aad2cd0f03e0568">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_undo()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3dd68421fb8d0edc5ec271c9904cb6cc">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_update()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a8f47beed48fb6b08847161950e1d4ec0">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_update_coin()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#aea57256e0fd3b373ce6008c8be52c9aa">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_update_grid()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3b1f3eaf369683943243d07811fe578f">src.controller.ctrl_pageJeu</a></li>
+<li>cpj_use_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a6522f20b78261f4f0a9a60b7d9598e7b">src.controller.ctrl_pageJeu</a></li>
+<li>cpp_askcolor()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#ae348d50b775c26fbe307f66112d3f56e">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_custom_load()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#af15eef5d46c59b6bc40d88b82c22d0ed">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_custom_reset()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a7e28e095e5e6754f288b553d9f0f5e7b">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_custom_save()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#ada7a3304b0203d4e663cbd28935416d9">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a074d44e05a3092a142589c0da59c07d4">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_settings_load()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#aa5c7d95bcb32b47ba9083b62edf66204">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_settings_reset()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a88ee549e73fb0a68abd65f7893b7d379">src.controller.ctrl_pageParametres</a></li>
+<li>cpp_settings_save()&#160;:&#160;<a class="el" href="namespacesrc_1_1controller_1_1ctrl__pageParametres.html#a8d65dd985cefc4d5d649e3e8ca7db395">src.controller.ctrl_pageParametres</a></li>
+<li>cu_colors_too_close()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aea89fda63d253c8d3c7444d3038fd0e8">src.utils.colors_utils</a></li>
+<li>cu_hex_to_rgb()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#aff7eee88e24302eb29145e855777ced6">src.utils.colors_utils</a></li>
+<li>cu_reduce_hue()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#a7ad084cedc6f1df119151c2f6b2d96e9">src.utils.colors_utils</a></li>
+<li>cu_rgb_distance()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ae837cf3d4fe1d34a89570faa533ce262">src.utils.colors_utils</a></li>
+<li>cu_rgb_to_hex()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1colors__utils.html#ac192ed293f57672fd6dd1dc72e934b6d">src.utils.colors_utils</a></li>
 </ul>
 
 
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>gp_choose_bonus()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a42f2cc988c6e4770679ee41338cb9b90">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_gestion_partie()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a55a50f97978a4774714ab8d68ec0b4e1">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_get_player_choice()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a2c9221fc25e78996f3683b31c811f11a">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_handle_bot_turn()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ae4acc672f179f6743db825d25a89bb99">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_handle_player_turn()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ac3d6dcae1a72fd90acd662feaa074007">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_handle_undo_redo()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ad9924d90e2191d3bd3af6b4c0c8b99be">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_handle_victory()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a89cefc02a3c31d4556fa77770daa6bed">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_show_rules()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4887c31c02066bdc08dac180d8d52a38">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_start_game()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a0c2f0e73f54278bb91fae166f0adebe3">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gp_use_bonus()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a297578efc5c2beb75e2e5e18927f17f5">src.puissanceQuatre.gestionPartie</a>
-</li>
-<li>gr_apply_gravity()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#abb828106767e96183e55c5014c0f0005">src.puissanceQuatre.grid</a>
-</li>
-<li>gr_init_grille()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#ad9f577ccf1afd57f6455856e082f92b8">src.puissanceQuatre.grid</a>
-</li>
-<li>gr_print_grille()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a0a77c79499fe3b65c1ecbef958971d3d">src.puissanceQuatre.grid</a>
-</li>
-<li>gr_reset_grille()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a7bbfa41cba7fd4b85137eb6e19514712">src.puissanceQuatre.grid</a>
-</li>
+<h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>gp_choose_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a7457ad13dd17d42ccf7ab82b8016a2ed">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_gestion_partie()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a4e8b66a7bf337c6a25bf52f931f98164">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_get_player_choice()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a2c9221fc25e78996f3683b31c811f11a">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_handle_bot_turn()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a51002e3fd99cf2917a42b7e471beefd5">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_handle_player_turn()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a87175ad265e007bc6ee697f4d9539254">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_handle_undo_redo()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ad9924d90e2191d3bd3af6b4c0c8b99be">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_handle_victory()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#abbcab5142d713a4647dac37511e5c9a8">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_show_rules()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#ae5955463d297453ce99b6188e2962570">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_start_game()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#aa466c9df31fc3b2b1d95c718feb5a735">src.puissanceQuatre.gestionPartie</a></li>
+<li>gp_use_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1gestionPartie.html#a6840a3ba32bb77e469f305f7c620f8e6">src.puissanceQuatre.gestionPartie</a></li>
+<li>gr_apply_gravity()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#abb828106767e96183e55c5014c0f0005">src.puissanceQuatre.grid</a></li>
+<li>gr_init_grille()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#ad9f577ccf1afd57f6455856e082f92b8">src.puissanceQuatre.grid</a></li>
+<li>gr_print_grille()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#ad6eeefa62ec9e52bb12c8e7db6107078">src.puissanceQuatre.grid</a></li>
+<li>gr_reset_grille()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1grid.html#a7bbfa41cba7fd4b85137eb6e19514712">src.puissanceQuatre.grid</a></li>
 </ul>
 
 
-<h3><a id="index_p"></a>- p -</h3><ul>
-<li>p4b_flip_grid()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73">src.puissanceQuatre.bonus</a>
-</li>
-<li>p4b_invert_grid()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b">src.puissanceQuatre.bonus</a>
-</li>
-<li>p4b_no_bonus()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a701d695636d49d7658d9877df3326efe">src.puissanceQuatre.bonus</a>
-</li>
-<li>p4b_random_placement()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#aa70f2715fdecaebaa86f7255cd1be4d5">src.puissanceQuatre.bonus</a>
-</li>
-<li>p4b_remove_full_line()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f">src.puissanceQuatre.bonus</a>
-</li>
-<li>p4b_use_min_max()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459">src.puissanceQuatre.bonus</a>
-</li>
-<li>pq_ajout_piece()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_find_hole()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_minmax()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_partie_finie()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_redo()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a06bdaec03582d0146e06983760361992">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_undo()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a1b4eb42574730ac4cf337f9c6dac9f50">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_verif_colonne()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_victoire()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_victoire_colonne()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a662f22c97ca3b952383ae42f8bca4cad">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_victoire_diago()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a2f76c9e9fd0ced658f382d854abdefea">src.puissanceQuatre.puissanceQuatre</a>
-</li>
-<li>pq_victoire_ligne()
-: <a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b">src.puissanceQuatre.puissanceQuatre</a>
-</li>
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>main()&#160;:&#160;<a class="el" href="namespacemain.html#a3140e9a5b6a71ffbf498198cfc471b88">main</a></li>
 </ul>
 
 
-<h3><a id="index_t"></a>- t -</h3><ul>
-<li>tg_init_grille()
-: <a class="el" href="namespacetests_1_1test__grid.html#abd1e217c51c4ec2bb4d911605484016c">tests.test_grid</a>
-</li>
-<li>tg_test_all()
-: <a class="el" href="namespacetests_1_1test__grid.html#abf69f5081480eb7fd3a2a89fc425baa6">tests.test_grid</a>
-</li>
-<li>tp_ajout_piece()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a50ee15df29277e36dd8c7b091e6e6839">tests.test_puissanceQuatre</a>
-</li>
-<li>tp_test_all()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a556aebc26980d14ace085502929938a9">tests.test_puissanceQuatre</a>
-</li>
-<li>tp_verif_colonne()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a3d1cea88a0c0ecf7a46333b4d98a0065">tests.test_puissanceQuatre</a>
-</li>
-<li>tp_victoire_colonne()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a6b60c67d64944868f7f29f4ecd75dff0">tests.test_puissanceQuatre</a>
-</li>
-<li>tp_victoire_diago()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#afca80042370ade9eff4620f6f8ffd306">tests.test_puissanceQuatre</a>
-</li>
-<li>tp_victoire_ligne()
-: <a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a35ef85b234ed41628b728d3daeda6d29">tests.test_puissanceQuatre</a>
-</li>
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>p4b_flip_grid()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#af9c2820cab1c2496e2fecb6bb5e48e73">src.puissanceQuatre.bonus</a></li>
+<li>p4b_invert_grid()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a807a155ca42efd08b4fdda7db535586b">src.puissanceQuatre.bonus</a></li>
+<li>p4b_no_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a701d695636d49d7658d9877df3326efe">src.puissanceQuatre.bonus</a></li>
+<li>p4b_random_placement()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#aa70f2715fdecaebaa86f7255cd1be4d5">src.puissanceQuatre.bonus</a></li>
+<li>p4b_remove_full_line()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a2f6027d252a8e7462c433d31423de14f">src.puissanceQuatre.bonus</a></li>
+<li>p4b_use_min_max()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1bonus.html#a612b03c34c59e092d08cb2757d0fa459">src.puissanceQuatre.bonus</a></li>
+<li>pq_ajout_piece()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a0d16eac42f24323fdda7fbff6a0cbcf2">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_find_hole()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a950aa9633e9676b64e28a4f98bb7cc3a">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_minmax()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a8e0776ccc28cc6ea375e5231a9b9387a">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_partie_finie()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a43c21a259daf90f3409ef02cf8a7ddd2">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_redo()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a06bdaec03582d0146e06983760361992">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_undo()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a1b4eb42574730ac4cf337f9c6dac9f50">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_verif_colonne()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#af19be5e310e9f1158c585b014264aa08">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_victoire()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#ac684727bae3bfbadc62404364e4511b8">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_victoire_colonne()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a662f22c97ca3b952383ae42f8bca4cad">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_victoire_diago()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#a2f76c9e9fd0ced658f382d854abdefea">src.puissanceQuatre.puissanceQuatre</a></li>
+<li>pq_victoire_ligne()&#160;:&#160;<a class="el" href="namespacesrc_1_1puissanceQuatre_1_1puissanceQuatre.html#aa13c5a20d8aa478adda10bc609f1fc1b">src.puissanceQuatre.puissanceQuatre</a></li>
 </ul>
 
 
-<h3><a id="index_v"></a>- v -</h3><ul>
-<li>vm_init()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a27f2a4099a97bea464396870d85d3d4f">src.view.view_main</a>
-</li>
-<li>vm_menu()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a2ba7a18fed9f16b17fae1ecfcc0e5d17">src.view.view_main</a>
-</li>
-<li>vm_message_game_ended()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a4b3945581f516544aeb0675d4104da59">src.view.view_main</a>
-</li>
-<li>vm_message_info()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a72fdc36736a48d3b7b0059f555ae7e22">src.view.view_main</a>
-</li>
-<li>vm_message_warning()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a97c7b850d8e2927320372c1086c0443a">src.view.view_main</a>
-</li>
-<li>vm_quit()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#ae47a061923540ba4218d18675ff8859e">src.view.view_main</a>
-</li>
-<li>vm_remove_frame()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#a726767b573cad248429575580a825faf">src.view.view_main</a>
-</li>
-<li>vm_update()
-: <a class="el" href="namespacesrc_1_1view_1_1view__main.html#ad6d3b82b38012c80f6aae638cc16037c">src.view.view_main</a>
-</li>
-<li>vpa_destroy()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageAccueil.html#a07326fdc3a741ce92efbf57340c5ff11">src.view.view_pageAccueil</a>
-</li>
-<li>vpa_init()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageAccueil.html#a6977631b935a63a2e0294728ff206390">src.view.view_pageAccueil</a>
-</li>
-<li>vpb_get_bonus()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a6453c22abd57f0a070a547c7d70c9717">src.view.view_pageBonus</a>
-</li>
-<li>vpb_get_frame()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a0378cbba1dd9e0d489ee95b97e4e2b2c">src.view.view_pageBonus</a>
-</li>
-<li>vpb_init()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a959818936a8dedaa6540407efce04524">src.view.view_pageBonus</a>
-</li>
-<li>vpb_show_bonus_description()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a637144805af67135d67a2a002563d79c">src.view.view_pageBonus</a>
-</li>
-<li>vpj_bonus_activation()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#ae81202a33309b28df706a2d5d8aa9996">src.view.view_pageJeu</a>
-</li>
-<li>vpj_bot_turn()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#ab7dd6ce5f05ed66c18522b68289ee8ab">src.view.view_pageJeu</a>
-</li>
-<li>vpj_destroy()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aba56a0358fac83aeeed378578565bf65">src.view.view_pageJeu</a>
-</li>
-<li>vpj_disable_bonus()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a200675c1948e4b941a19621dec899fc0">src.view.view_pageJeu</a>
-</li>
-<li>vpj_draw_grid()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a25e401eb65721ca85f530cacb38504f5">src.view.view_pageJeu</a>
-</li>
-<li>vpj_get_frame()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a7a6943df6975a6283f8f331171537eef">src.view.view_pageJeu</a>
-</li>
-<li>vpj_get_grid_cell()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aa18eb1e225804aceaf9b20ee09352b2c">src.view.view_pageJeu</a>
-</li>
-<li>vpj_init_page_jeu()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a25df1780623f762df8a738d598be518d">src.view.view_pageJeu</a>
-</li>
-<li>vpj_reset_hover()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a8c42a66d7b3e4ea7b855242958f35faa">src.view.view_pageJeu</a>
-</li>
-<li>vpj_set_info()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a817d4dee00b53adbe1546300e6f48c5c">src.view.view_pageJeu</a>
-</li>
-<li>vpj_show_coin()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aa14eb9e79e02ebf929deb033ff2a91b6">src.view.view_pageJeu</a>
-</li>
-<li>vpj_show_hover()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a6dcdd844a8ec6cd893549f47d3de67c1">src.view.view_pageJeu</a>
-</li>
-<li>vpp_askcolor()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a9a98a4a004de4f17d97c7323e9bd35a0">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_bot_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#abcea9bce2636ae49868940ed3a798d64">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_difficulty()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a905cb31f499d20dc6b27754055a5d145">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_grid_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aed46c5c2f7b78f49baf366afaa7ee7ff">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_joueur_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a6642180df1959d8389401f668453403f">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_nb_columns()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aa216b7944530a2520115c0194e90979c">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_nb_jetons()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a63afae28d16d49d03edcaeba507c6654">src.view.view_pageParametres</a>
-</li>
-<li>vpp_get_nb_rows()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aac93046974009bae599bcf0771ea2c6e">src.view.view_pageParametres</a>
-</li>
-<li>vpp_init()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a754bab732916fb3493b77fa0ce367216">src.view.view_pageParametres</a>
-</li>
-<li>vpp_init_custom()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ab87b76b71bfe9f24190f978af8703c41">src.view.view_pageParametres</a>
-</li>
-<li>vpp_init_settings()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a376af49dba36f41d871b20833b9f0256">src.view.view_pageParametres</a>
-</li>
-<li>vpp_reset_customs()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a678348e97980ad89b64438f6a95e5bad">src.view.view_pageParametres</a>
-</li>
-<li>vpp_reset_settings()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a78b8c153b629b14a0313c1267680047e">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_bot_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aa39cbcf76d29408a5883a7d305399f7f">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_difficulty()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a9cad55701612d2cad0b7673868733140">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_grid_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a5161b5a0c1da7ce2b3c9bfb782da50a0">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_joueur_color()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ab38ff2b2b061b7226f434b9405b89673">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_nb_columns()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a1dbaa972107dc2766d06c02eabc1318b">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_nb_jetons()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a306c31fcf0822e3399d0983dd1c817cb">src.view.view_pageParametres</a>
-</li>
-<li>vpp_set_nb_rows()
-: <a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a249d5b0ddd243797a6eb18a6694ccaec">src.view.view_pageParametres</a>
-</li>
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>tg_init_grille()&#160;:&#160;<a class="el" href="namespacetests_1_1test__grid.html#ad82b63eca2aba44c5309b7597c28ce74">tests.test_grid</a></li>
+<li>tg_test_all()&#160;:&#160;<a class="el" href="namespacetests_1_1test__grid.html#a6f0e243b74ebc165625724157877828b">tests.test_grid</a></li>
+<li>tp_ajout_piece()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#abb0f25f21e66d41cbed7dafb21ef453e">tests.test_puissanceQuatre</a></li>
+<li>tp_test_all()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#a16434fb6325a6b8d12a7566bd06b55bb">tests.test_puissanceQuatre</a></li>
+<li>tp_verif_colonne()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#adb8d3adbab201a138b984cc5e3fc0162">tests.test_puissanceQuatre</a></li>
+<li>tp_victoire_colonne()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#afc12dead8e5f0b8925962770fbf86dc7">tests.test_puissanceQuatre</a></li>
+<li>tp_victoire_diago()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#aa89c818c86b6e6e098a319831f94b59b">tests.test_puissanceQuatre</a></li>
+<li>tp_victoire_ligne()&#160;:&#160;<a class="el" href="namespacetests_1_1test__puissanceQuatre.html#ad37eb17f066165700d2e876bdf1f1036">tests.test_puissanceQuatre</a></li>
 </ul>
 
 
-<h3><a id="index_w"></a>- w -</h3><ul>
-<li>wu_get_font_size()
-: <a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">src.utils.widget_utils</a>
-</li>
-<li>wu_get_font_size_window()
-: <a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a0b0ef78c2172546a0b08d78254fdfab8">src.utils.widget_utils</a>
-</li>
-<li>wu_get_grid_size()
-: <a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#ade716c55da64db8772861e33fcb9e055">src.utils.widget_utils</a>
-</li>
-<li>wu_get_screen_size()
-: <a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a54a3d7633e2b51753081b1b800ad7ad7">src.utils.widget_utils</a>
-</li>
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>vm_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#a27f2a4099a97bea464396870d85d3d4f">src.view.view_main</a></li>
+<li>vm_menu()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#a2ba7a18fed9f16b17fae1ecfcc0e5d17">src.view.view_main</a></li>
+<li>vm_message_game_ended()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#af0434bf2ee3eb470069de93b1dfa91d2">src.view.view_main</a></li>
+<li>vm_message_info()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#aced9c91e323b8ff44ab12bd37d36356b">src.view.view_main</a></li>
+<li>vm_message_warning()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#ad23def539bd50966e112933ee3099b56">src.view.view_main</a></li>
+<li>vm_quit()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#a8057dd060277d06dff46bfe33653dbb1">src.view.view_main</a></li>
+<li>vm_remove_frame()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#a0cfff7ad4714ff6a417513cacd99745d">src.view.view_main</a></li>
+<li>vm_update()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__main.html#a72645bdb27edefda58ad6699b344ec64">src.view.view_main</a></li>
+<li>vpa_destroy()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageAccueil.html#abdd71447495f882d3bde43186f74f485">src.view.view_pageAccueil</a></li>
+<li>vpa_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageAccueil.html#af29df5a52547f3ad4bdd8e0382645306">src.view.view_pageAccueil</a></li>
+<li>vpb_get_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a6453c22abd57f0a070a547c7d70c9717">src.view.view_pageBonus</a></li>
+<li>vpb_get_frame()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a0378cbba1dd9e0d489ee95b97e4e2b2c">src.view.view_pageBonus</a></li>
+<li>vpb_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#a959818936a8dedaa6540407efce04524">src.view.view_pageBonus</a></li>
+<li>vpb_show_bonus_description()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageBonus.html#ab6c2d26e650619e9e6feb04da813c7c8">src.view.view_pageBonus</a></li>
+<li>vpj_bonus_activation()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a3144484dc93d3a4f9952f1e1407e1a48">src.view.view_pageJeu</a></li>
+<li>vpj_bot_turn()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a2fa74b02280c5b6487bcd162f90ecc7e">src.view.view_pageJeu</a></li>
+<li>vpj_destroy()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a3c74162abd4a7a7013e89da179ed2d50">src.view.view_pageJeu</a></li>
+<li>vpj_disable_bonus()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aec63222be86738164d156170e89a0425">src.view.view_pageJeu</a></li>
+<li>vpj_draw_grid()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#ad02650573b5514c746513c32d81dc6a1">src.view.view_pageJeu</a></li>
+<li>vpj_get_frame()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a7a6943df6975a6283f8f331171537eef">src.view.view_pageJeu</a></li>
+<li>vpj_get_grid_cell()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#aa18eb1e225804aceaf9b20ee09352b2c">src.view.view_pageJeu</a></li>
+<li>vpj_init_page_jeu()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#af4fa60fe37bf3cfd4a8625de2e9ae8ec">src.view.view_pageJeu</a></li>
+<li>vpj_reset_hover()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a8fe50b283e001fb45ee668a9c9441120">src.view.view_pageJeu</a></li>
+<li>vpj_set_info()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a5bf13a1f7c0714527aaab39220f5b76f">src.view.view_pageJeu</a></li>
+<li>vpj_show_coin()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a721f25bc5f03adb5d90966387cc69040">src.view.view_pageJeu</a></li>
+<li>vpj_show_hover()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageJeu.html#a020db46f8edd2869beae645be1e33014">src.view.view_pageJeu</a></li>
+<li>vpp_askcolor()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a2579085230e54e45ba0778f690abe449">src.view.view_pageParametres</a></li>
+<li>vpp_get_bot_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ae31911fa26e9ddd475a3ef327e6afa62">src.view.view_pageParametres</a></li>
+<li>vpp_get_difficulty()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ae0e5c44b37a5b826a09b06174750d929">src.view.view_pageParametres</a></li>
+<li>vpp_get_grid_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a1bb21292c0ea625a6eae17b8e060bcb2">src.view.view_pageParametres</a></li>
+<li>vpp_get_joueur_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ab63fdf1300e17b6f27c9184ddf333df4">src.view.view_pageParametres</a></li>
+<li>vpp_get_nb_columns()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aedba2da959c3fbb77b936e07d4190fe1">src.view.view_pageParametres</a></li>
+<li>vpp_get_nb_jetons()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a568efcf4d8be56d36945f6da92ae9aa4">src.view.view_pageParametres</a></li>
+<li>vpp_get_nb_rows()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a9d1f4a1ec8eb6d73187956fc494d5899">src.view.view_pageParametres</a></li>
+<li>vpp_init()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a974c25da573950aca9213e6979cbed5e">src.view.view_pageParametres</a></li>
+<li>vpp_init_custom()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#aa9282516e7758e88ec4b459c9a587d0c">src.view.view_pageParametres</a></li>
+<li>vpp_init_settings()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ac640b38e84d99cdeca4eaea904bdbb92">src.view.view_pageParametres</a></li>
+<li>vpp_reset_customs()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ac081c4b9b9e921071b983ec9cef40918">src.view.view_pageParametres</a></li>
+<li>vpp_reset_settings()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a668a3b57d4df9025c1d0d885866248a2">src.view.view_pageParametres</a></li>
+<li>vpp_set_bot_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a8038789dcb2ddfabf6e49281a701f71f">src.view.view_pageParametres</a></li>
+<li>vpp_set_difficulty()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a6e0f5a65f9cbea40bd0ac046150fbedb">src.view.view_pageParametres</a></li>
+<li>vpp_set_grid_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a8972fc8e3e06339f306fe537790488a4">src.view.view_pageParametres</a></li>
+<li>vpp_set_joueur_color()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a66c69aa30d25b9833ec0bda3345075f7">src.view.view_pageParametres</a></li>
+<li>vpp_set_nb_columns()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a143176e6416225112080e5ba2fb83989">src.view.view_pageParametres</a></li>
+<li>vpp_set_nb_jetons()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#a367073fe74c5742d9d7d55c5aa62fea1">src.view.view_pageParametres</a></li>
+<li>vpp_set_nb_rows()&#160;:&#160;<a class="el" href="namespacesrc_1_1view_1_1view__pageParametres.html#ad1196ff4826cf21e6d173c1cbd54474f">src.view.view_pageParametres</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>wu_get_font_size()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a7576f56a08e301f20e68433a4445f4c4">src.utils.widget_utils</a></li>
+<li>wu_get_font_size_window()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a0b0ef78c2172546a0b08d78254fdfab8">src.utils.widget_utils</a></li>
+<li>wu_get_grid_size()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#ade716c55da64db8772861e33fcb9e055">src.utils.widget_utils</a></li>
+<li>wu_get_screen_size()&#160;:&#160;<a class="el" href="namespacesrc_1_1utils_1_1widget__utils.html#a54a3d7633e2b51753081b1b800ad7ad7">src.utils.widget_utils</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

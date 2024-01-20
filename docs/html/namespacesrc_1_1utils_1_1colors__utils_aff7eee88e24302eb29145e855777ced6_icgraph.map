@@ -1,0 +1,7 @@
+<map id="src.utils.colors_utils.cu_hex_to_rgb" name="src.utils.colors_utils.cu_hex_to_rgb">
+<area shape="rect" id="Node000001" title="Convertit une couleur hexadécimale en RGB." alt="" coords="224,37,395,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1utils_1_1colors__utils.html#aea89fda63d253c8d3c7444d3038fd0e8" title="Vérifie si deux couleurs sont trop proches." alt="" coords="5,5,176,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,46,176,40,177,35,211,40"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1utils_1_1colors__utils.html#a7ad084cedc6f1df119151c2f6b2d96e9" title="Réduit la teinte d&#39;une couleur." alt="" coords="5,69,176,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,74,177,79,176,74,210,69"/>
+</map>

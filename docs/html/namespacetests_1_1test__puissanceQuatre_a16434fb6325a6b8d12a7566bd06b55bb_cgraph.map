@@ -1,0 +1,14 @@
+<map id="tests.test_puissanceQuatre.tp_test_all" name="tests.test_puissanceQuatre.tp_test_all">
+<area shape="rect" id="Node000001" title="Fonction qui lance tous les tests unitaires." alt="" coords="5,133,221,173"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="64,134,61,124,69,114,87,109,113,107,144,109,161,117,158,122,143,115,113,112,88,114,72,119,67,125,69,132"/>
+<area shape="rect" id="Node000002" href="$namespacetests_1_1test__puissanceQuatre.html#abb0f25f21e66d41cbed7dafb21ef453e" title="Teste la fonction pq_ajout_piece." alt="" coords="269,5,485,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,131,198,93,268,55,286,48,288,52,270,60,201,98,143,136"/>
+<area shape="rect" id="Node000003" href="$namespacetests_1_1test__puissanceQuatre.html#adb8d3adbab201a138b984cc5e3fc0162" title="Teste la fonction pq_verif_colonne." alt="" coords="269,69,485,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="196,131,281,110,282,115,197,136"/>
+<area shape="rect" id="Node000004" href="$namespacetests_1_1test__puissanceQuatre.html#afc12dead8e5f0b8925962770fbf86dc7" title="Test de la fonction pq_victoire_colonne." alt="" coords="269,133,485,173"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="221,151,256,151,256,156,221,156"/>
+<area shape="rect" id="Node000005" href="$namespacetests_1_1test__puissanceQuatre.html#aa89c818c86b6e6e098a319831f94b59b" title="Test de la fonction pq_victoire_diagonale." alt="" coords="269,197,485,237"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="197,171,282,192,281,197,196,176"/>
+<area shape="rect" id="Node000006" href="$namespacetests_1_1test__puissanceQuatre.html#ad37eb17f066165700d2e876bdf1f1036" title="Test de la fonction pq_victoire_ligne." alt="" coords="269,261,485,301"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="143,171,201,209,270,247,288,254,286,259,268,252,198,214,140,176"/>
+</map>

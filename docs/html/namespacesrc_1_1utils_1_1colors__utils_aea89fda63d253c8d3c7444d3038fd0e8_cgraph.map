@@ -1,0 +1,7 @@
+<map id="src.utils.colors_utils.cu_colors_too_close" name="src.utils.colors_utils.cu_colors_too_close">
+<area shape="rect" id="Node000001" title="Vérifie si deux couleurs sont trop proches." alt="" coords="5,37,176,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1utils_1_1colors__utils.html#aff7eee88e24302eb29145e855777ced6" title="Convertit une couleur hexadécimale en RGB." alt="" coords="224,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,42,210,37,211,42,177,48"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1utils_1_1colors__utils.html#ae837cf3d4fe1d34a89570faa533ce262" title="Calcule la distance entre deux couleurs RGB." alt="" coords="224,69,395,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,67,211,72,210,78,176,72"/>
+</map>

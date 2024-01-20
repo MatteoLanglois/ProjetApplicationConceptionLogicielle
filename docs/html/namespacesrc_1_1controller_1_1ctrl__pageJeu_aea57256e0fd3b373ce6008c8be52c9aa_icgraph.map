@@ -1,0 +1,5 @@
+<map id="src.controller.ctrl_pageJeu.cpj_update_coin" name="src.controller.ctrl_pageJeu.cpj_update_coin">
+<area shape="rect" id="Node000001" title="Réaffiche les jetons de la grille de jeu." alt="" coords="201,5,392,45"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#ac79da7d63efb417759acbfb173323615" title="Affiche le jeton qui sera posé" alt="" coords="5,5,153,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,28,153,28,153,23,188,23"/>
+</map>

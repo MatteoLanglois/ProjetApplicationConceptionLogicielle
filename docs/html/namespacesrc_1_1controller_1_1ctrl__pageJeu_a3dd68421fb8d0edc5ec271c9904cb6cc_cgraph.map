@@ -1,0 +1,9 @@
+<map id="src.controller.ctrl_pageJeu.cpj_undo" name="src.controller.ctrl_pageJeu.cpj_undo">
+<area shape="rect" id="Node000001" title="Annule le dernier coup." alt="" coords="5,37,148,77"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a3b1f3eaf369683943243d07811fe578f" title="Réinitialise la grille de jeu." alt="" coords="196,37,384,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,55,182,55,182,60,148,60"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a78551bcfdafd534d8aa90cea38b57585" title="Dessine la grille de jeu." alt="" coords="432,5,607,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,42,418,37,419,42,385,47"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1controller_1_1ctrl__pageJeu.html#a672fc84221142d0c882ef87bb7ff5764" title="Place un jeton dans la grille de jeu." alt="" coords="436,69,603,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="385,68,423,73,422,78,384,73"/>
+</map>
